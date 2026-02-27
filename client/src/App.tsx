@@ -22,6 +22,9 @@ import VoIP from "./pages/services/VoIP";
 import AiVoiceAgent from "./pages/services/AiVoiceAgent";
 import CommercialSecurity from "./pages/services/CommercialSecurity";
 import ApartmentSecurity from "./pages/services/ApartmentSecurity";
+import LocationPage from "./pages/LocationPage";
+import CountyPage from "./pages/CountyPage";
+import ClientPortal from "./pages/ClientPortal";
 import { useEffect } from "react";
 import { useLocation } from "wouter";
 
@@ -43,6 +46,7 @@ function Router() {
       <Route path="/blog" component={Blog} />
       <Route path="/blog/:slug" component={BlogPost} />
       <Route path="/faq" component={FAQ} />
+      <Route path="/client-portal" component={ClientPortal} />
       <Route path="/services/video-surveillance" component={VideoSurveillance} />
       <Route path="/services/access-control" component={AccessControl} />
       <Route path="/services/fire-alarm-systems" component={FireAlarm} />
@@ -52,6 +56,10 @@ function Router() {
       <Route path="/services/ai-voice-agent" component={AiVoiceAgent} />
       <Route path="/services/commercial-security" component={CommercialSecurity} />
       <Route path="/services/apartment-security" component={ApartmentSecurity} />
+      {/* Dynamic location pages — 60+ towns */}
+      <Route path="/locations/:slug" component={LocationPage} />
+      {/* Dynamic county pages — 8 NJ counties */}
+      <Route path="/counties/:slug" component={CountyPage} />
       <Route path="/404" component={NotFound} />
       <Route component={NotFound} />
     </Switch>

@@ -60,6 +60,7 @@ export const NAV_ITEMS = [
   { label: "Service Areas", href: "/service-areas" },
   { label: "FAQ", href: "/faq" },
   { label: "Contact", href: "/contact" },
+  { label: "Client Portal", href: "/client-portal" },
 ];
 
 export const TESTIMONIALS = [

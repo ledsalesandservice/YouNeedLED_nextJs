@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://youneedled.com/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://youneedled.com/about</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://youneedled.com/contact</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://youneedled.com/service-areas</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://youneedled.com/faq</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://youneedled.com/blog</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://youneedled.com/services/commercial-security</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://youneedled.com/services/video-surveillance</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://youneedled.com/services/access-control</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://youneedled.com/services/fire-alarm-systems</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://youneedled.com/services/intrusion-detection</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://youneedled.com/services/jobsite-security</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://youneedled.com/services/apartment-security</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://youneedled.com/services/voip</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://youneedled.com/services/ai-voice-agent</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://youneedled.com/blog/environmental-monitoring-server-rooms</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://youneedled.com/blog/fiber-backbone-security-systems</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://youneedled.com/blog/alarm-com-unified-platform</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+</urlset>

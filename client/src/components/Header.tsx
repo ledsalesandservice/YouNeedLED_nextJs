@@ -36,11 +36,13 @@ export default function Header() {
         <div className="container flex items-center justify-between py-3">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 shrink-0">
-            <div className="w-10 h-10 rounded-full bg-[#0e319a] flex items-center justify-center">
-              <svg viewBox="0 0 24 24" className="w-6 h-6 text-white" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-              </svg>
-            </div>
+            <img
+              src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030082570/Tfe6MLMokmY8tMP4sdwDCa/youneedled-logo-round_7c57df0e.png"
+              alt="You Need L.E.D. Smart Automation Systems logo"
+              className="w-12 h-12 rounded-full object-cover"
+              width={48}
+              height={48}
+            />
             <div>
               <div className="font-heading text-lg font-bold text-[#0e319a] leading-tight">You Need L.E.D.</div>
               <div className="text-xs text-slate-500 leading-tight">Professional Technology Services</div>

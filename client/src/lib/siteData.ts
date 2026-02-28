@@ -135,32 +135,7 @@ export const SERVICES = [
   },
 ];
 
-export const BLOG_POSTS = [
-  {
-    slug: "environmental-monitoring-server-rooms",
-    title: "Environmental monitoring for server rooms: sensors every IT director needs",
-    excerpt: "Server room environmental monitoring sensors track rack temps, humidity, leaks, airflow, and smoke—turning trends into alarms to protect uptime.",
-    date: "2025-02-09",
-    readTime: "5 min",
-    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&q=80",
-  },
-  {
-    slug: "fiber-backbone-security-systems",
-    title: "Fiber backbone for security systems: when to choose single-mode vs multi-mode",
-    excerpt: "Choose the right single mode vs multimode fiber for security cameras based on distance, expansion plans, and indoor vs outdoor pathways.",
-    date: "2025-02-04",
-    readTime: "5 min",
-    image: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=800&q=80",
-  },
-  {
-    slug: "alarm-com-unified-platform",
-    title: "Alarm.com's unified platform: integrating security, video, energy management, and automation",
-    excerpt: "Integrate video, access control, and intrusion in a single pane of glass to speed verification, reduce false alarms, and streamline response.",
-    date: "2025-02-03",
-    readTime: "5 min",
-    image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&q=80",
-  },
-];
+// Blog posts are now in blogData.ts — import ALL_BLOG_POSTS from there
 
 export const SERVICE_AREAS = {
   newJersey: {

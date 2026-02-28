@@ -4,7 +4,8 @@
  * testimonials carousel, service areas tabs, blog preview, CTA
  */
 import { Link } from "wouter";
-import { SITE, IMAGES, SERVICES, TESTIMONIALS, BLOG_POSTS, SERVICE_AREAS, CERTIFICATIONS } from "@/lib/siteData";
+import { SITE, IMAGES, SERVICES, TESTIMONIALS, SERVICE_AREAS, CERTIFICATIONS } from "@/lib/siteData";
+import { ALL_BLOG_POSTS } from "@/lib/blogData";
 import SEOHead from "@/components/SEOHead";
 import {
   Phone, ArrowRight, Star, Shield, Clock, Users, Award,
@@ -317,7 +318,7 @@ export default function Home() {
             </Link>
           </div>
           <div className="grid md:grid-cols-3 gap-6">
-            {BLOG_POSTS.map((post) => (
+            {ALL_BLOG_POSTS.slice(0, 3).map((post) => (
               <Link key={post.slug} href={`/blog/${post.slug}`} className="group">
                 <div className="aspect-[16/10] rounded-xl overflow-hidden mb-4 bg-slate-100">
                   <img src={post.image} alt={post.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />

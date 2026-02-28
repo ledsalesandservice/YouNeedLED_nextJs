@@ -110,7 +110,7 @@ export default function ClientPortal() {
                 YouNeedLED Connect Platform — Manage your digital displays with advanced content control. Upload content, schedule displays, and manage your screens remotely.
               </p>
               <a
-                href="https://auth.onsignage.com/auth/realms/574ba19b-0310-4541-9909-b5ce5fc990ad/protocol/openid-connect/auth?state=%7B%22apiOrigin%22%3A%22app.onsignage.com%22%7D&redirect_uri=https%3A%2F%2Fyouneedled.onsignage.com%2Fstudio%2F&client_id=sso-client&response_type=code"
+                href="https://youneedled.onsignage.com/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#0e319a] text-white text-sm font-semibold rounded-lg hover:bg-[#0c2a82] transition-colors"

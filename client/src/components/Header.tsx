@@ -32,14 +32,15 @@ export default function Header() {
       </div>
 
       {/* Main navigation */}
-      <nav className="bg-white border-b border-slate-200 shadow-sm">
-        <div className="container flex items-center justify-between py-3">
+      <nav className="bg-white border-b border-slate-200 shadow-sm overflow-visible">
+        <div className="container flex items-center justify-between py-2">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 shrink-0">
             <img
               src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030082570/Tfe6MLMokmY8tMP4sdwDCa/youneedled-logo-round_7c57df0e.png"
               alt="You Need L.E.D. Smart Automation Systems logo"
-              className="h-10 w-auto shrink-0 object-contain"
+              className="shrink-0 object-contain p-0.5"
+              style={{ height: '52px', width: '52px' }}
             />
             <div>
               <div className="font-heading text-lg font-bold text-[#0e319a] leading-tight">You Need L.E.D.</div>

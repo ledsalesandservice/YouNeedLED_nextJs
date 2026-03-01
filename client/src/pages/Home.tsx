@@ -170,7 +170,7 @@ export default function Home() {
                   <Phone className="w-4 h-4" /> {SITE.phone}
                 </a>
               </div>
-            </div>
+            </FadeIn>
             <FadeIn direction="left">
             <div className="relative">
               <img

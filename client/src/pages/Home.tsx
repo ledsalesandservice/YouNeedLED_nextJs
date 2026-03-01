@@ -14,6 +14,7 @@ import {
   MapPin, ChevronRight
 } from "lucide-react";
 import { useState } from "react";
+import { FadeIn, StaggerContainer, StaggerItem, HeroAnimate, CountUp } from "@/components/animations";
 
 const iconMap: Record<string, React.ReactNode> = {
   Camera: <Camera className="w-6 h-6" />,
@@ -49,34 +50,42 @@ export default function Home() {
         </div>
         <div className="relative container py-20 lg:py-28">
           <div className="max-w-2xl">
-            <div className="flex items-center gap-3 mb-6 flex-wrap">
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-white/15 backdrop-blur-sm rounded-full text-white/90 text-xs font-medium border border-white/20">
-                <Shield className="w-3.5 h-3.5" /> NJ DCA Licensed
-              </span>
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-white/15 backdrop-blur-sm rounded-full text-white/90 text-xs font-medium border border-white/20">
-                <MapPin className="w-3.5 h-3.5" /> South Jersey & Delaware Valley
-              </span>
-            </div>
-            <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-[1.1] mb-6">
-              State-of-the-Art Commercial & Residential Security
-            </h1>
-            <p className="text-lg text-white/85 leading-relaxed mb-8 max-w-xl">
-              Professional installation and 24/7 monitoring of security cameras, alarm systems, access control, VoIP phone systems, and fire detection — all from one trusted local team.
-            </p>
-            <div className="flex flex-wrap items-center gap-4">
-              <Link
-                href="/contact"
-                className="inline-flex items-center gap-2 px-6 py-3.5 bg-[#f97015] text-white font-semibold rounded-lg hover:bg-[#e86510] transition-all shadow-lg shadow-orange-500/25 text-sm"
-              >
-                Get a Free Security Quote <ArrowRight className="w-4 h-4" />
-              </Link>
-              <a
-                href={SITE.phoneTel}
-                className="inline-flex items-center gap-2 px-6 py-3.5 bg-white/10 backdrop-blur-sm text-white font-semibold rounded-lg hover:bg-white/20 transition-all border border-white/20 text-sm"
-              >
-                <Phone className="w-4 h-4" /> {SITE.phone}
-              </a>
-            </div>
+            <HeroAnimate delay={0.1}>
+              <div className="flex items-center gap-3 mb-6 flex-wrap">
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-white/15 backdrop-blur-sm rounded-full text-white/90 text-xs font-medium border border-white/20">
+                  <Shield className="w-3.5 h-3.5" /> NJ DCA Licensed
+                </span>
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-white/15 backdrop-blur-sm rounded-full text-white/90 text-xs font-medium border border-white/20">
+                  <MapPin className="w-3.5 h-3.5" /> South Jersey & Delaware Valley
+                </span>
+              </div>
+            </HeroAnimate>
+            <HeroAnimate delay={0.25}>
+              <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-[1.1] mb-6">
+                State-of-the-Art Commercial & Residential Security
+              </h1>
+            </HeroAnimate>
+            <HeroAnimate delay={0.4}>
+              <p className="text-lg text-white/85 leading-relaxed mb-8 max-w-xl">
+                Professional installation and 24/7 monitoring of security cameras, alarm systems, access control, VoIP phone systems, and fire detection — all from one trusted local team.
+              </p>
+            </HeroAnimate>
+            <HeroAnimate delay={0.55}>
+              <div className="flex flex-wrap items-center gap-4">
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center gap-2 px-6 py-3.5 bg-[#f97015] text-white font-semibold rounded-lg hover:bg-[#e86510] transition-all shadow-lg shadow-orange-500/25 text-sm"
+                >
+                  Get a Free Security Quote <ArrowRight className="w-4 h-4" />
+                </Link>
+                <a
+                  href={SITE.phoneTel}
+                  className="inline-flex items-center gap-2 px-6 py-3.5 bg-white/10 backdrop-blur-sm text-white font-semibold rounded-lg hover:bg-white/20 transition-all border border-white/20 text-sm"
+                >
+                  <Phone className="w-4 h-4" /> {SITE.phone}
+                </a>
+              </div>
+            </HeroAnimate>
           </div>
         </div>
       </section>
@@ -84,7 +93,7 @@ export default function Home() {
       {/* ===== SERVICES GRID ===== */}
       <section className="py-20 lg:py-28 bg-white">
         <div className="container">
-          <div className="text-center max-w-2xl mx-auto mb-14">
+          <FadeIn className="text-center max-w-2xl mx-auto mb-14">
             <p className="text-sm font-semibold text-[#f97015] uppercase tracking-wider mb-3">Our Services</p>
             <h2 className="font-heading text-3xl sm:text-4xl font-bold text-slate-900 mb-4">
               Complete Security & Technology Solutions
@@ -92,27 +101,28 @@ export default function Home() {
             <p className="text-slate-600 leading-relaxed">
               From surveillance cameras to VoIP phone systems, we provide end-to-end technology solutions for businesses and homes across the tri-state area.
             </p>
-          </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          </FadeIn>
+          <StaggerContainer className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {SERVICES.map((svc) => (
-              <Link
-                key={svc.href}
-                href={svc.href}
-                className="group p-6 bg-white rounded-xl border border-slate-200 hover:border-[#0e319a]/30 hover:shadow-lg transition-all duration-300"
-              >
-                <div className="w-12 h-12 rounded-lg bg-[#0e319a]/5 group-hover:bg-[#0e319a]/10 flex items-center justify-center text-[#0e319a] mb-4 transition-colors">
-                  {iconMap[svc.icon]}
-                </div>
-                <h3 className="font-heading text-lg font-semibold text-slate-900 mb-2 group-hover:text-[#0e319a] transition-colors">
-                  {svc.title}
-                </h3>
-                <p className="text-sm text-slate-600 leading-relaxed mb-3">{svc.description}</p>
-                <span className="inline-flex items-center gap-1 text-sm font-medium text-[#0e319a] group-hover:gap-2 transition-all">
-                  Learn More <ArrowRight className="w-3.5 h-3.5" />
-                </span>
-              </Link>
+              <StaggerItem key={svc.href}>
+                <Link
+                  href={svc.href}
+                  className="group p-6 bg-white rounded-xl border border-slate-200 hover:border-[#0e319a]/30 hover:shadow-lg transition-all duration-300 block h-full"
+                >
+                  <div className="w-12 h-12 rounded-lg bg-[#0e319a]/5 group-hover:bg-[#0e319a]/10 flex items-center justify-center text-[#0e319a] mb-4 transition-colors">
+                    {iconMap[svc.icon]}
+                  </div>
+                  <h3 className="font-heading text-lg font-semibold text-slate-900 mb-2 group-hover:text-[#0e319a] transition-colors">
+                    {svc.title}
+                  </h3>
+                  <p className="text-sm text-slate-600 leading-relaxed mb-3">{svc.description}</p>
+                  <span className="inline-flex items-center gap-1 text-sm font-medium text-[#0e319a] group-hover:gap-2 transition-all">
+                    Learn More <ArrowRight className="w-3.5 h-3.5" />
+                  </span>
+                </Link>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerContainer>
         </div>
       </section>
 
@@ -120,7 +130,7 @@ export default function Home() {
       <section className="py-20 lg:py-28 bg-gradient-to-br from-[#0e319a] to-[#081d5e]">
         <div className="container">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
+            <FadeIn direction="right">
               <span className="inline-flex items-center gap-2 px-3 py-1.5 bg-[#f97015]/20 text-[#f97015] rounded-full text-xs font-semibold uppercase tracking-wider mb-6">
                 <Zap className="w-3.5 h-3.5" /> New Service
               </span>
@@ -161,6 +171,7 @@ export default function Home() {
                 </a>
               </div>
             </div>
+            <FadeIn direction="left">
             <div className="relative">
               <img
                 src={IMAGES.heroAiAgent}
@@ -176,6 +187,7 @@ export default function Home() {
                 <p className="text-xs text-slate-500">Handling calls for 200+ local businesses</p>
               </div>
             </div>
+            </FadeIn>
           </div>
         </div>
       </section>
@@ -195,9 +207,9 @@ export default function Home() {
             </div>
             <p className="text-sm text-slate-500">5.0 Stars on Google &middot; Based on 32+ reviews</p>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <StaggerContainer className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {TESTIMONIALS.slice(0, 3).map((t, i) => (
-              <div key={i} className="bg-white rounded-xl p-6 shadow-sm border border-slate-100">
+              <StaggerItem key={i}><div className="bg-white rounded-xl p-6 shadow-sm border border-slate-100">
                 <div className="flex gap-1 mb-4">
                   {[...Array(5)].map((_, j) => (
                     <Star key={j} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
@@ -213,9 +225,9 @@ export default function Home() {
                     <p className="text-xs text-slate-500">{t.type}</p>
                   </div>
                 </div>
-              </div>
+              </div></StaggerItem>
             ))}
-          </div>
+          </StaggerContainer>
         </div>
       </section>
 
@@ -228,23 +240,29 @@ export default function Home() {
               Licensed, Certified & Trusted
             </h2>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-14">
+          <StaggerContainer className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-14">
             {[
-              { icon: <Award className="w-7 h-7" />, stat: "30+", label: "Years Experience", desc: "Combined industry expertise across our team" },
-              { icon: <Clock className="w-7 h-7" />, stat: "24/7", label: "Support Available", desc: "Round-the-clock emergency response" },
-              { icon: <Users className="w-7 h-7" />, stat: "500+", label: "Satisfied Clients", desc: "Businesses across the tri-state area" },
-              { icon: <Shield className="w-7 h-7" />, stat: "NJ DCA", label: "Licensed", desc: "Fully licensed and insured contractor" },
+              { icon: <Award className="w-7 h-7" />, stat: "30+", count: 30, suffix: "+", label: "Years Experience", desc: "Combined industry expertise across our team" },
+              { icon: <Clock className="w-7 h-7" />, stat: "24/7", count: null, label: "Support Available", desc: "Round-the-clock emergency response" },
+              { icon: <Users className="w-7 h-7" />, stat: "500+", count: 500, suffix: "+", label: "Satisfied Clients", desc: "Businesses across the tri-state area" },
+              { icon: <Shield className="w-7 h-7" />, stat: "NJ DCA", count: null, label: "Licensed", desc: "Fully licensed and insured contractor" },
             ].map((item) => (
-              <div key={item.label} className="text-center p-6">
-                <div className="w-14 h-14 rounded-xl bg-[#0e319a]/5 flex items-center justify-center text-[#0e319a] mx-auto mb-4">
-                  {item.icon}
+              <StaggerItem key={item.label}>
+                <div className="text-center p-6">
+                  <div className="w-14 h-14 rounded-xl bg-[#0e319a]/5 flex items-center justify-center text-[#0e319a] mx-auto mb-4">
+                    {item.icon}
+                  </div>
+                  <div className="font-heading text-3xl font-extrabold text-[#0e319a] mb-1">
+                    {item.count !== null
+                      ? <CountUp value={item.count} suffix={item.suffix} />
+                      : item.stat}
+                  </div>
+                  <div className="font-heading text-sm font-semibold text-slate-900 mb-1">{item.label}</div>
+                  <p className="text-xs text-slate-500">{item.desc}</p>
                 </div>
-                <div className="font-heading text-3xl font-extrabold text-[#0e319a] mb-1">{item.stat}</div>
-                <div className="font-heading text-sm font-semibold text-slate-900 mb-1">{item.label}</div>
-                <p className="text-xs text-slate-500">{item.desc}</p>
-              </div>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerContainer>
           <div className="bg-slate-50 rounded-2xl p-8 lg:p-10">
             <h3 className="font-heading text-xl font-bold text-slate-900 mb-5">Professional Certifications</h3>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
@@ -317,9 +335,9 @@ export default function Home() {
               View All Insights <ArrowRight className="w-3.5 h-3.5" />
             </Link>
           </div>
-          <div className="grid md:grid-cols-3 gap-6">
+          <StaggerContainer className="grid md:grid-cols-3 gap-6">
             {ALL_BLOG_POSTS.slice(0, 3).map((post) => (
-              <Link key={post.slug} href={`/blog/${post.slug}`} className="group">
+              <StaggerItem key={post.slug}><Link href={`/blog/${post.slug}`} className="group block">
                 <div className="aspect-[16/10] rounded-xl overflow-hidden mb-4 bg-slate-100">
                   <img src={post.image} alt={post.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
                 </div>
@@ -328,15 +346,16 @@ export default function Home() {
                   {post.title}
                 </h3>
                 <p className="text-sm text-slate-600 line-clamp-2">{post.excerpt}</p>
-              </Link>
+              </Link></StaggerItem>
             ))}
-          </div>
+          </StaggerContainer>
         </div>
       </section>
 
       {/* ===== CTA ===== */}
       <section className="py-16 lg:py-20 bg-slate-50">
         <div className="container">
+          <FadeIn>
           <div className="bg-gradient-to-r from-[#0e319a] to-[#1a42b8] rounded-2xl p-8 lg:p-12 text-center">
             <h2 className="font-heading text-2xl sm:text-3xl font-bold text-white mb-4">
               Ready to Secure Your Property?
@@ -359,6 +378,7 @@ export default function Home() {
               </a>
             </div>
           </div>
+          </FadeIn>
         </div>
       </section>
 

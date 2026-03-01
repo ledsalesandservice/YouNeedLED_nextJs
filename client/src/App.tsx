@@ -27,6 +27,7 @@ import CountyPage from "./pages/CountyPage";
 import ClientPortal from "./pages/ClientPortal";
 import { useEffect } from "react";
 import { useLocation } from "wouter";
+import { PageTransition } from "./components/animations";
 
 function ScrollToTop() {
   const [location] = useLocation();
@@ -76,7 +77,9 @@ function App() {
           <div className="min-h-screen flex flex-col">
             <Header />
             <main className="flex-1">
-              <Router />
+              <PageTransition>
+                <Router />
+              </PageTransition>
             </main>
             <Footer />
           </div>

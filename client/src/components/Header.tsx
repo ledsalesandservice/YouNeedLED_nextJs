@@ -39,7 +39,7 @@ export default function Header() {
             <img
               src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030082570/Tfe6MLMokmY8tMP4sdwDCa/youneedled-logo-round_7c57df0e.png"
               alt="You Need L.E.D. Smart Automation Systems logo"
-              className="w-12 h-12 rounded-full object-contain"
+              className="w-14 h-14 object-contain"
               width={48}
               height={48}
             />

@@ -547,13 +547,13 @@ The best security systems in 2025 don’t just deter crime—they elevate the gu
 Trust You Need L.E.D. to deliver AI-driven, cyber-hardened protection for your hotel or resort. We serve properties across Atlantic City, Wildwood, Cape May, and throughout the mid-Atlantic region.`,
   },
   {
-    slug: "why-every-hotel-needs-ai-security-2025",
-    title: "Why Every Hotel Needs AI Security in 2025: A Practical Guide for Property Managers",
+    slug: "why-every-hotel-needs-ai-security-2026",
+    title: "Why Every Hotel Needs AI Security in 2026: A Practical Guide for Property Managers",
     date: "2026-02-01",
     category: "Hotel Security",
     excerpt: "Hotels and resorts are upgrading to AI-powered security cameras, digital keys, and smart monitoring. Learn how AI security protects guests, reduces liability, and improves operations for hospitality p",
     readTime: "3 min",
-    image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&q=80",
+    image: "https://images.unsplash.com/photo-1551882547-ff40c63fe2e2?w=800&q=80",
     content: `**Date:** February 1, 2026
 **Category:** Hotel Security
 
@@ -1003,7 +1003,7 @@ This is also where you can require a cutover plan and acceptance testing criteri
     category: "VoIP",
     excerpt: "Phones are still the front door for a lot of organizations. A patient trying to reach a clinic, a tenant calling a property manager, a customer checking an order, a security guard escalating an...",
     readTime: "9 min",
-    image: "https://images.unsplash.com/photo-1423666639041-f56000c27a9a?w=800&q=80",
+    image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&q=80",
     content: `Phones are still the front door for a lot of organizations. A patient trying to reach a clinic, a tenant calling a property manager, a customer checking an order, a security guard escalating an incident, they all start with a call. When the phone system is unreliable or hard to manage, service slips fast.
 
 VoIP phone service fixes many of the problems that came with older phone lines and on site PBX hardware. Done right, it delivers clearer calls, simpler management, better uptime options, and modern features that help teams answer faster, route smarter, and support remote staff without juggling personal cell numbers.
@@ -1284,10 +1284,10 @@ Contact You Need L.E.D. for a free consultation on professional security solutio
     slug: "access-control-for-multi-tenant-office-buildings-best-practices-for-property-managers",
     title: "Access control for multi-tenant office buildings: best practices for property managers",
     date: "2026-01-31",
-    category: "access control",
+    category: "Access Control",
     excerpt: "A multi-tenant office building has a different security problem than a single-company headquarters. The lobby belongs to everyone. The loading dock is busy at odd hours. Vendors, cleaners, and...",
     readTime: "9 min",
-    image: "https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=800&q=80",
+    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80",
     content: `A multi-tenant office building has a different security problem than a single-company headquarters. The lobby belongs to everyone. The loading dock is busy at odd hours. Vendors, cleaners, and short-term visitors move through shared corridors. Tenants want strong control of their own suites without feeling like the property is “locked down.”
 
 Good [access control]() in this setting is less about buying readers and more about designing rules that stay workable when tenants change, headcounts fluctuate, and after-hours schedules collide.
@@ -1759,7 +1759,7 @@ Ready to protect your Hammonton home or business? Get a free, no-obligation quot
     category: "Comparison Guide",
     excerpt: "Ring doorbells and DIY cameras have made security more accessible than ever. But are they right for your situation? Here's an honest breakdown of Ring cameras vs. professional security systems—includi",
     readTime: "3 min",
-    image: "https://images.unsplash.com/photo-1557597774-9d273605dfa9?w=800&q=80",
+    image: "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=800&q=80",
     content: `Ring doorbells and DIY cameras have made security more accessible than ever. But are they right for your situation? Here's an honest breakdown of **Ring cameras vs. professional security systems**—including when DIY actually makes sense.
 
 ## The Complete Comparison Table
@@ -1850,7 +1850,7 @@ If you're ready to upgrade from Ring or other DIY cameras, we'll design a profes
     category: "Crime Prevention",
     excerpt: "Practical guide to preventing car theft and catalytic converter theft in South Jersey. Learn how security cameras, lighting, and signage protect driveways, parking lots, and street parking.",
     readTime: "3 min",
-    image: "https://images.unsplash.com/photo-1549317661-bd32c8ce0afa?w=800&q=80",
+    image: "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=800&q=80",
     content: `**January 22, 2026**
 
 **Category:** Crime Prevention
@@ -2016,11 +2016,11 @@ Want to see how AI video analytics can work for your South Jersey business? Sche
   {
     slug: "cannabis-cultivation-security-plan-guide-nj-crc-requirements-explained",
     title: "Cannabis cultivation security plan guide: NJ CRC requirements explained",
-    date: "2023-06-20",
-    category: "Security",
+    date: "2026-01-15",
+    category: "Commercial Security",
     excerpt: "A comprehensive guide to creating a NJ CRC-compliant cannabis cultivation security plan. Learn the key requirements for perimeter security, access control, video surveillance, and more.",
     readTime: "5 min",
-    image: "https://images.unsplash.com/photo-1589484044012-3e4e3d174d3e?w=800&q=80",
+    image: "https://images.unsplash.com/photo-1603909223429-69bb7101f420?w=800&q=80",
     content: `**Date:** June 20, 2023
 
 **Category:** Security

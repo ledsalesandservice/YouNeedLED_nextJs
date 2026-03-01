@@ -37,10 +37,10 @@ export default function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 shrink-0">
             <img
-              src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030082570/Tfe6MLMokmY8tMP4sdwDCa/youneedled-logo-round_7c57df0e.png"
+              src="/logo.png"
               alt="You Need L.E.D. Smart Automation Systems logo"
-              className="shrink-0 object-contain p-0.5"
-              style={{ height: '52px', width: '52px' }}
+              className="shrink-0 object-contain"
+              style={{ height: '56px', width: '56px' }}
             />
             <div>
               <div className="font-heading text-lg font-bold text-[#0e319a] leading-tight">You Need L.E.D.</div>

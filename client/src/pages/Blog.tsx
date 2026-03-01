@@ -11,12 +11,16 @@ import { ArrowRight, Search } from "lucide-react";
 export default function Blog() {
   const [activeCategory, setActiveCategory] = useState("All");
 
+  // Filter out future-dated posts
+  const today = new Date().toISOString().split("T")[0];
+  const published = ALL_BLOG_POSTS.filter((p) => p.date <= today);
+
   // Get unique categories
-  const categories = ["All", ...Array.from(new Set(ALL_BLOG_POSTS.map((p) => p.category)))];
+  const categories = ["All", ...Array.from(new Set(published.map((p) => p.category)))];
 
   const filtered = activeCategory === "All"
-    ? ALL_BLOG_POSTS
-    : ALL_BLOG_POSTS.filter((p) => p.category === activeCategory);
+    ? published
+    : published.filter((p) => p.category === activeCategory);
 
   return (
     <>

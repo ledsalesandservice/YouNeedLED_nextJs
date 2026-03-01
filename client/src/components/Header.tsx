@@ -33,13 +33,13 @@ export default function Header() {
 
       {/* Main navigation */}
       <nav className="bg-white border-b border-slate-200 shadow-sm">
-        <div className="container flex items-center justify-between py-2">
+        <div className="container flex items-center justify-between py-3">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 shrink-0">
             <img
               src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030082570/Tfe6MLMokmY8tMP4sdwDCa/youneedled-logo-round_7c57df0e.png"
               alt="You Need L.E.D. Smart Automation Systems logo"
-              className="h-12 w-auto shrink-0 object-contain"
+              className="h-10 w-auto shrink-0 object-contain"
             />
             <div>
               <div className="font-heading text-lg font-bold text-[#0e319a] leading-tight">You Need L.E.D.</div>

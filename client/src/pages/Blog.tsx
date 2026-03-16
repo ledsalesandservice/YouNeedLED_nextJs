@@ -11,8 +11,8 @@ import { ArrowRight, Search } from "lucide-react";
 export default function Blog() {
   const [activeCategory, setActiveCategory] = useState("All");
 
-  // Show all posts — scheduling is handled by only adding posts to blogData.ts when ready to publish
-  const published = ALL_BLOG_POSTS;
+  // Show all posts sorted newest-first — scheduling is handled by only adding posts to blogData.ts when ready to publish
+  const published = [...ALL_BLOG_POSTS].sort((a, b) => b.date.localeCompare(a.date));
 
   // Get unique categories
   const categories = ["All", ...Array.from(new Set(published.map((p) => p.category)))];

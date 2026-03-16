@@ -11,9 +11,8 @@ import { ArrowRight, Search } from "lucide-react";
 export default function Blog() {
   const [activeCategory, setActiveCategory] = useState("All");
 
-  // Filter out future-dated posts
-  const today = new Date().toISOString().split("T")[0];
-  const published = ALL_BLOG_POSTS.filter((p) => p.date <= today);
+  // Show all posts — scheduling is handled by only adding posts to blogData.ts when ready to publish
+  const published = ALL_BLOG_POSTS;
 
   // Get unique categories
   const categories = ["All", ...Array.from(new Set(published.map((p) => p.category)))];

@@ -4,10 +4,6 @@
   "installCommand": "pnpm install",
   "framework": null,
   "rewrites": [
-    { "source": "/cameras", "destination": "/cameras/index.html" },
-    { "source": "/cameras/(.*)", "destination": "/cameras/index.html" },
-    { "source": "/phone-systems", "destination": "/phone-systems/index.html" },
-    { "source": "/phone-systems/(.*)", "destination": "/phone-systems/index.html" },
     { "source": "/(.*)", "destination": "/index.html" }
   ]
 }

@@ -13,6 +13,63 @@ export interface BlogPost {
 
 export const ALL_BLOG_POSTS: BlogPost[] = [
   {
+    slug: "nj-crc-security-compliance-guide-cannabis-businesses",
+    title: "NJ CRC Security Compliance: A Plain-English Guide for Cannabis Businesses",
+    date: "2026-03-29",
+    category: "Cannabis Security",
+    excerpt: "A guide to NJ CRC security requirements for cannabis dispensaries and grow facilities. Learn about access control, 24/7 surveillance, and alarm systems from a licensed expert.",
+    readTime: "5 min",
+    image: "https://images.unsplash.com/photo-1556928045-16f7f50be0f3?w=800&q=80",
+    content: `
+# NJ CRC Security Compliance: A Plain-English Guide for Cannabis Businesses
+
+**Introduction: Cannabis Security is Not Optional, It’s Mandatory**
+
+Navigating the complex web of regulations for a cannabis business in New Jersey can be a daunting task. The security requirements set forth by the Cannabis Regulatory Commission (CRC) are among the most stringent and non-negotiable. For the nine cannabis dispensaries and grow facilities we have successfully guided through this process, building a compliant security plan was a critical step on the path to opening their doors.
+
+This guide aims to demystify the security section of the NJ CRC requirements, providing a plain-English overview for cannabis entrepreneurs. Our goal is to help you understand the core components of a security plan that will not only meet state mandates but also protect your significant investment.
+
+**Access Control: Who Goes Where, and When**
+
+The CRC requires strict control over who can access different areas of your facility. Not all employees should have access to every room. The solution is a robust, commercial-grade access control system that allows you to define granular permissions for every person and every door.
+
+With a modern access control system, you can:
+
+*   Assign different access levels for roles like budtenders, inventory managers, and administrative staff.
+*   Restrict access to sensitive areas such as vaults, server rooms, and grow rooms to only authorized personnel.
+*   Generate detailed audit logs of every door entry, providing a clear record for regulators.
+*   Instantly deactivate credentials for terminated employees, eliminating the risk of unauthorized access.
+
+**Video Surveillance: The CRC is Always Watching**
+
+Video surveillance is the cornerstone of CRC security compliance. The regulations are explicit, demanding 100% camera coverage of all areas where cannabis is grown, processed, stored, or sold. This includes every corner of your facility, with no blind spots.
+
+The requirements don’t stop at coverage. The CRC mandates specific minimums for camera resolution, frame rate, and video retention. You must be able to provide clear, uninterrupted video footage to regulators upon request. This necessitates a professionally designed, multi-camera system connected to a high-capacity Network Video Recorder (NVR) or cloud storage solution that can meet and exceed the state’s data retention policies.
+
+**Intrusion Detection & Alarms: Your 24/7 Watchdog**
+
+Your facility must be protected by a multi-layered, professionally monitored intrusion detection system. This is your 24/7 watchdog, ensuring that your facility is secure even when no one is there. A CRC-compliant alarm system includes:
+
+*   **Perimeter Protection:** Door and window contacts that trigger an alarm if an entry point is breached.
+*   **Interior Protection:** Motion detectors and glass-break sensors to detect unauthorized movement within the facility.
+*   **Duress/Panic Alarms:** Discreetly placed panic buttons that allow employees to signal for help in an emergency.
+*   **Professional Monitoring:** The system must be monitored 24/7 by a licensed central station that can dispatch law enforcement.
+
+**Why Your Security Vendor MUST Be NJ Licensed**
+
+This point cannot be overstated: the NJ CRC will verify the license of your security installer. Attempting to use an unlicensed or underqualified contractor is a guaranteed way to fail your security inspection, leading to costly delays and potential fines. A licensed security provider is not just a vendor; they are a compliance partner.
+
+As a licensed New Jersey security provider (DCA License #34BF00056900), You Need L.E.D. has the proven experience to design and install a security system that meets every CRC requirement. We understand the nuances of the regulations and have a track record of successful inspections.
+
+**Conclusion: Pass Your Inspection the First Time**
+
+Building a cannabis business is challenging enough without the added stress of a failed security inspection. Partnering with an experienced, licensed security expert is the most effective way to ensure your security plan is approved without issue.
+
+We have successfully guided nine cannabis businesses through the NJ CRC security compliance process. Call us at **(609) 335-0123** to build a security plan that gets you approved and protects your investment for your investment.
+`,
+  },
+
+  {
     slug: "5-must-have-security-upgrades-for-jersey-shore-restaurants-retail-shops",
     title: "5 Must-Have Security Upgrades for Jersey Shore Restaurants & Retail Shops",
     date: "2026-03-22",

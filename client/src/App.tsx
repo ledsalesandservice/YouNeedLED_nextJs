@@ -28,7 +28,6 @@ import ClientPortal from "./pages/ClientPortal";
 import { useEffect } from "react";
 import { useLocation } from "wouter";
 import { PageTransition } from "./components/animations";
-
 function ScrollToTop() {
   const [location] = useLocation();
   useEffect(() => {
@@ -36,7 +35,6 @@ function ScrollToTop() {
   }, [location]);
   return null;
 }
-
 function Router() {
   return (
     <Switch>
@@ -57,6 +55,9 @@ function Router() {
       <Route path="/services/ai-voice-agent" component={AiVoiceAgent} />
       <Route path="/services/commercial-security" component={CommercialSecurity} />
       <Route path="/services/apartment-security" component={ApartmentSecurity} />
+      {/* Short URL aliases for landing pages */}
+      <Route path="/cameras" component={VideoSurveillance} />
+      <Route path="/phone-systems" component={VoIP} />
       {/* Dynamic location pages — 60+ towns */}
       <Route path="/locations/:slug" component={LocationPage} />
       {/* Dynamic county pages — 8 NJ counties */}
@@ -66,7 +67,6 @@ function Router() {
     </Switch>
   );
 }
-
 function App() {
   return (
     <ErrorBoundary>
@@ -88,5 +88,4 @@ function App() {
     </ErrorBoundary>
   );
 }
-
 export default App;

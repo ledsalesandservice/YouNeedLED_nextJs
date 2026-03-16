@@ -1,0 +1,1871 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <title>You Need LED - Professional Security Camera Systems | South Jersey</title>
+    <meta name="description" content="South Jersey's most trusted security camera installer. 30+ years experience. NJ DCA Licensed. Professional 4K surveillance systems for homes and businesses. Free on-site assessment.">
+
+    <!-- Facebook Pixel — Replace 'XXXXXXXXXXXXXXXXX' with your actual Pixel ID -->
+    <!--
+    <script>
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', 'XXXXXXXXXXXXXXXXX');
+      fbq('track', 'PageView');
+    </script>
+    <noscript>
+      <img height="1" width="1" style="display:none"
+        src="https://www.facebook.com/tr?id=XXXXXXXXXXXXXXXXX&ev=PageView&noscript=1"/>
+    </noscript>
+    -->
+    <!-- End Facebook Pixel -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Source+Sans+3:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* ============================================
+           RESET & BASE
+           ============================================ */
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --navy-950: #0a1628;
+            --navy-900: #0f1f35;
+            --navy-800: #1a2f4a;
+            --navy-700: #2a4563;
+            --navy-600: #3a5a80;
+            --amber-500: #e8860c;
+            --amber-400: #f0a020;
+            --amber-600: #c06a08;
+            --slate-100: #f5f5f7;
+            --slate-200: #e8e8eb;
+            --slate-300: #d1d5db;
+            --slate-400: #9ca3af;
+            --slate-500: #6b7280;
+            --slate-600: #4b5563;
+            --red-400: #f87171;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: "Source Sans 3", sans-serif;
+            background-color: var(--navy-950);
+            color: var(--slate-100);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: "Oswald", sans-serif;
+            font-weight: 700;
+        }
+
+        a { text-decoration: none; color: inherit; }
+        img { max-width: 100%; height: auto; display: block; }
+        button, input, select, textarea { font-family: inherit; }
+
+        /* ============================================
+           CONTAINER
+           ============================================ */
+        .container {
+            width: 100%;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        @media (min-width: 640px) { .container { padding: 0 1.5rem; } }
+        @media (min-width: 1024px) { .container { padding: 0 2rem; max-width: 1280px; } }
+
+        /* ============================================
+           SCROLLBAR
+           ============================================ */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--navy-950); }
+        ::-webkit-scrollbar-thumb { background: #1e3a5f; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #2d5a8f; }
+
+        /* ============================================
+           ANIMATIONS
+           ============================================ */
+        @keyframes amber-pulse {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(232,134,12,0.4); }
+            50% { box-shadow: 0 0 20px 4px rgba(232,134,12,0.2); }
+        }
+        .cta-glow { animation: amber-pulse 3s ease-in-out infinite; }
+
+        @keyframes pulse-dot {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.4; }
+        }
+
+        /* ============================================
+           SCAN LINES OVERLAY
+           ============================================ */
+        .scan-lines { position: relative; }
+        .scan-lines::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(10,22,40,0.03) 2px, rgba(10,22,40,0.03) 4px);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        /* ============================================
+           SVG ICONS (inline)
+           ============================================ */
+        .icon { display: inline-block; vertical-align: middle; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+        /* ============================================
+           STICKY TOP BAR
+           ============================================ */
+        .sticky-bar { position: fixed; top: 0; left: 0; right: 0; z-index: 50; }
+        .announcement-bar {
+            background: var(--navy-950);
+            border-bottom: 1px solid rgba(42,69,99,0.5);
+            padding: 6px 0;
+            overflow: hidden;
+        }
+        .announcement-inner {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            height: 20px;
+        }
+        .announcement-item {
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: all 0.5s ease;
+            white-space: nowrap;
+        }
+        .announcement-item.active { transform: translateY(0); opacity: 1; }
+        .announcement-item.above { transform: translateY(-100%); opacity: 0; }
+        .announcement-item.below { transform: translateY(100%); opacity: 0; }
+        .announcement-text {
+            font-family: "JetBrains Mono", monospace;
+            font-size: 0.75rem;
+            color: var(--slate-300);
+            letter-spacing: 0.05em;
+        }
+        .main-bar {
+            background: rgba(15,31,53,0.95);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 2px solid rgba(232,134,12,0.6);
+            padding: 10px 0;
+        }
+        .main-bar-inner {
+            display: flex;
+            align-items: center;
+            justify-content: between;
+        }
+        .brand { display: flex; align-items: center; gap: 8px; flex: 1; }
+        .brand-icon {
+            width: 32px; height: 32px; border-radius: 4px;
+            background: var(--amber-500);
+            display: flex; align-items: center; justify-content: center;
+        }
+        .brand-name {
+            font-family: "Oswald", sans-serif;
+            font-size: 1rem; font-weight: 700;
+            color: white; letter-spacing: 0.05em;
+        }
+        .brand-sub {
+            display: none;
+            font-family: "JetBrains Mono", monospace;
+            font-size: 10px; color: var(--slate-400);
+            letter-spacing: 0.15em; text-transform: uppercase;
+        }
+        @media (min-width: 640px) {
+            .brand-name { font-size: 1.125rem; }
+            .brand-sub { display: block; }
+            .brand-icon { width: 36px; height: 36px; }
+        }
+        .bar-ctas { display: flex; align-items: center; gap: 8px; }
+        @media (min-width: 640px) { .bar-ctas { gap: 12px; } }
+        .bar-phone {
+            display: flex; align-items: center; gap: 6px;
+            color: white; transition: color 0.2s;
+        }
+        .bar-phone:hover { color: var(--amber-400); }
+        .bar-phone-text { display: none; font-size: 0.875rem; font-weight: 600; }
+        @media (min-width: 640px) { .bar-phone-text { display: inline; } }
+        .bar-btn {
+            background: var(--amber-500);
+            color: var(--navy-950);
+            font-family: "Oswald", sans-serif;
+            font-weight: 700;
+            font-size: 0.75rem;
+            padding: 8px 12px;
+            border-radius: 4px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .bar-btn:hover { background: var(--amber-400); transform: scale(1.05); }
+        @media (min-width: 640px) { .bar-btn { font-size: 0.875rem; padding: 8px 20px; } }
+
+        /* ============================================
+           HERO SECTION
+           ============================================ */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 96px;
+            padding-bottom: 64px;
+        }
+        @media (min-width: 640px) { .hero { padding-top: 112px; } }
+        .hero-bg {
+            position: absolute; inset: 0;
+        }
+        .hero-bg img {
+            width: 100%; height: 100%; object-fit: cover;
+        }
+        .hero-overlay1 {
+            position: absolute; inset: 0;
+            background: linear-gradient(to right, rgba(10,22,40,0.95), rgba(10,22,40,0.85), rgba(10,22,40,0.70));
+        }
+        .hero-overlay2 {
+            position: absolute; inset: 0;
+            background: linear-gradient(to top, var(--navy-950), transparent, rgba(10,22,40,0.40));
+        }
+        .hero-content { position: relative; z-index: 10; max-width: 768px; }
+        .urgency-badge {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: rgba(232,134,12,0.1);
+            border: 1px solid rgba(232,134,12,0.3);
+            border-radius: 2px;
+            padding: 6px 12px;
+            margin-bottom: 24px;
+        }
+        .pulse-dot {
+            width: 8px; height: 8px;
+            background: var(--amber-500);
+            border-radius: 50%;
+            animation: pulse-dot 2s ease-in-out infinite;
+        }
+        .urgency-text {
+            color: var(--amber-400);
+            font-family: "JetBrains Mono", monospace;
+            font-size: 0.75rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+        @media (min-width: 640px) { .urgency-text { font-size: 0.875rem; } }
+        .hero h1 {
+            font-size: 2.25rem;
+            line-height: 1.05;
+            letter-spacing: -0.01em;
+            color: white;
+            margin-bottom: 24px;
+        }
+        @media (min-width: 640px) { .hero h1 { font-size: 3rem; } }
+        @media (min-width: 768px) { .hero h1 { font-size: 3.75rem; } }
+        @media (min-width: 1024px) { .hero h1 { font-size: 4.5rem; } }
+        .hero h1 .amber { color: var(--amber-500); display: block; margin-top: 4px; }
+        .hero-sub {
+            font-size: 1.125rem;
+            color: var(--slate-300);
+            line-height: 1.7;
+            max-width: 640px;
+            margin-bottom: 32px;
+            font-weight: 300;
+        }
+        @media (min-width: 640px) { .hero-sub { font-size: 1.25rem; } }
+        .hero-ctas { display: flex; flex-direction: column; gap: 12px; margin-bottom: 48px; }
+        @media (min-width: 640px) { .hero-ctas { flex-direction: row; gap: 16px; } }
+        .cta-primary {
+            display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+            background: var(--amber-500);
+            color: var(--navy-950);
+            font-family: "Oswald", sans-serif;
+            font-weight: 700;
+            font-size: 1.125rem;
+            padding: 16px 32px;
+            border-radius: 4px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .cta-primary:hover { background: var(--amber-400); transform: scale(1.05); }
+        @media (min-width: 640px) { .cta-primary { font-size: 1.25rem; } }
+        .cta-secondary {
+            display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+            border: 2px solid rgba(255,255,255,0.3);
+            color: white;
+            font-family: "Oswald", sans-serif;
+            font-weight: 600;
+            font-size: 1.125rem;
+            padding: 16px 32px;
+            border-radius: 4px;
+            background: transparent;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .cta-secondary:hover { border-color: rgba(232,134,12,0.6); color: var(--amber-400); }
+
+        /* Trust bar */
+        .trust-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+        @media (min-width: 1024px) { .trust-grid { grid-template-columns: repeat(4, 1fr); gap: 16px; } }
+        .trust-card {
+            background: rgba(15,31,53,0.6);
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(42,69,99,0.5);
+            border-radius: 2px;
+            padding: 12px;
+        }
+        @media (min-width: 640px) { .trust-card { padding: 16px; } }
+        .trust-label {
+            color: var(--amber-500);
+            font-family: "JetBrains Mono", monospace;
+            font-size: 10px;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-bottom: 4px;
+        }
+        @media (min-width: 640px) { .trust-label { font-size: 0.75rem; } }
+        .trust-value {
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            line-height: 1.3;
+        }
+        @media (min-width: 640px) { .trust-value { font-size: 0.875rem; } }
+
+        /* ============================================
+           SOCIAL PROOF STRIP
+           ============================================ */
+        .social-proof {
+            background: var(--navy-900);
+            border-top: 1px solid rgba(42,69,99,0.5);
+            border-bottom: 1px solid rgba(42,69,99,0.5);
+            padding: 48px 0;
+        }
+        @media (min-width: 640px) { .social-proof { padding: 64px 0; } }
+        .section-divider {
+            display: flex; align-items: center; gap: 12px; margin-bottom: 32px;
+        }
+        .divider-line {
+            flex: 1; height: 1px;
+            background: linear-gradient(to right, transparent, rgba(232,134,12,0.3));
+        }
+        .divider-line.right {
+            background: linear-gradient(to left, transparent, rgba(232,134,12,0.3));
+        }
+        .divider-text {
+            color: var(--amber-500);
+            font-family: "JetBrains Mono", monospace;
+            font-size: 0.75rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+        .testimonials-grid {
+            display: grid; gap: 24px;
+        }
+        @media (min-width: 768px) { .testimonials-grid { grid-template-columns: repeat(3, 1fr); } }
+        .testimonial-card {
+            position: relative;
+            background: rgba(10,22,40,0.6);
+            border: 1px solid rgba(42,69,99,0.4);
+            border-radius: 2px;
+            padding: 24px;
+            transition: border-color 0.2s;
+        }
+        .testimonial-card:hover { border-color: rgba(232,134,12,0.3); }
+        .quote-icon {
+            position: absolute; top: 16px; right: 16px;
+            color: rgba(232,134,12,0.2);
+        }
+        .stars { display: flex; gap: 2px; margin-bottom: 16px; }
+        .star { color: var(--amber-500); }
+        .testimonial-text {
+            color: var(--slate-300);
+            font-size: 0.875rem;
+            line-height: 1.7;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+        @media (min-width: 640px) { .testimonial-text { font-size: 1rem; } }
+        .testimonial-attr {
+            border-top: 1px solid rgba(42,69,99,0.5);
+            padding-top: 16px;
+        }
+        .attr-name { color: white; font-weight: 600; font-size: 0.875rem; }
+        .attr-title {
+            color: rgba(232,134,12,0.8);
+            font-family: "JetBrains Mono", monospace;
+            font-size: 0.75rem;
+        }
+        .google-badge {
+            display: flex; align-items: center; justify-content: center; gap: 8px;
+            margin-top: 32px;
+        }
+        .google-badge-text {
+            color: var(--slate-400);
+            font-family: "JetBrains Mono", monospace;
+            font-size: 0.75rem;
+        }
+
+        /* ============================================
+           PROBLEM SECTION
+           ============================================ */
+        .problem-section {
+            background: var(--navy-950);
+            padding: 64px 0;
+        }
+        @media (min-width: 640px) { .problem-section { padding: 96px 0; } }
+        .section-label {
+            display: flex; align-items: center; gap: 12px;
+            margin-bottom: 16px;
+        }
+        .section-label-text {
+            color: var(--amber-500);
+            font-family: "JetBrains Mono", monospace;
+            font-size: 0.75rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+        }
+        .section-heading {
+            font-size: 1.875rem;
+            color: white;
+            line-height: 1.15;
+            margin-bottom: 16px;
+        }
+        .section-heading .amber { color: var(--amber-500); }
+        @media (min-width: 640px) { .section-heading { font-size: 2.25rem; } }
+        @media (min-width: 768px) { .section-heading { font-size: 3rem; } }
+        .section-sub { color: var(--slate-400); font-size: 1.125rem; line-height: 1.6; }
+        .problem-grid {
+            display: grid; gap: 32px;
+        }
+        @media (min-width: 1024px) { .problem-grid { grid-template-columns: 1fr 1fr; gap: 48px; } }
+        .problem-list { display: flex; flex-direction: column; gap: 24px; }
+        .problem-card {
+            display: flex; gap: 16px;
+            background: rgba(15,31,53,0.4);
+            border: 1px solid rgba(42,69,99,0.3);
+            border-radius: 2px;
+            padding: 20px;
+            transition: border-color 0.2s;
+        }
+        .problem-card:hover { border-color: rgba(232,134,12,0.2); }
+        .problem-number {
+            flex-shrink: 0;
+            width: 48px; height: 48px;
+            background: rgba(232,134,12,0.1);
+            border: 1px solid rgba(232,134,12,0.2);
+            border-radius: 2px;
+            display: flex; align-items: center; justify-content: center;
+            font-family: "Oswald", sans-serif;
+            color: var(--amber-500);
+            font-weight: 700;
+            font-size: 1.125rem;
+        }
+        .problem-title {
+            font-family: "Oswald", sans-serif;
+            color: white;
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+        .problem-desc { color: var(--slate-400); font-size: 0.875rem; line-height: 1.6; }
+        .problem-callout {
+            background: rgba(232,134,12,0.05);
+            border-left: 2px solid var(--amber-500);
+            padding: 20px;
+            border-radius: 0 2px 2px 0;
+        }
+        .problem-callout p { color: var(--slate-200); font-size: 0.875rem; line-height: 1.7; }
+        @media (min-width: 640px) { .problem-callout p { font-size: 1rem; } }
+        .problem-callout strong { color: var(--amber-400); }
+        .problem-callout .white { color: white; }
+        .comparison-img-wrap {
+            position: relative;
+            border-radius: 2px;
+            overflow: hidden;
+            border: 1px solid rgba(42,69,99,0.5);
+        }
+        .comparison-img-wrap img { width: 100%; height: auto; }
+        .comparison-badge {
+            position: absolute; bottom: -12px; right: -12px;
+            background: var(--amber-500);
+            color: var(--navy-950);
+            font-family: "Oswald", sans-serif;
+            font-weight: 700;
+            font-size: 0.75rem;
+            padding: 8px 16px;
+            border-radius: 2px;
+        }
+        @media (min-width: 640px) { .comparison-badge { font-size: 0.875rem; } }
+
+        /* ============================================
+           SERVICES SECTION
+           ============================================ */
+        .services-section {
+            background: var(--navy-900);
+            padding: 64px 0;
+            position: relative;
+        }
+        @media (min-width: 640px) { .services-section { padding: 96px 0; } }
+        .services-section::before {
+            content: '';
+            position: absolute; top: 0; left: 0; right: 0;
+            height: 1px;
+            background: linear-gradient(to right, transparent, rgba(232,134,12,0.4), transparent);
+        }
+        .text-center { text-align: center; }
+        .section-header-centered { max-width: 768px; margin: 0 auto 48px; }
+        .packages-grid { display: grid; gap: 24px; margin-bottom: 64px; }
+        @media (min-width: 768px) { .packages-grid { grid-template-columns: repeat(3, 1fr); } }
+        .package-card {
+            position: relative;
+            border-radius: 2px;
+            overflow: hidden;
+            border: 1px solid rgba(42,69,99,0.4);
+            background: rgba(10,22,40,0.6);
+            transition: transform 0.2s;
+        }
+        .package-card:hover { transform: translateY(-4px); }
+        .package-card.featured { border-color: rgba(232,134,12,0.5); background: var(--navy-950); }
+        .package-card.featured::before {
+            content: '';
+            position: absolute; top: 0; left: 0; right: 0;
+            height: 3px;
+            background: var(--amber-500);
+        }
+        .package-img {
+            height: 160px; overflow: hidden; position: relative;
+        }
+        .package-img img { width: 100%; height: 100%; object-fit: cover; }
+        .package-img-overlay {
+            position: absolute; inset: 0;
+            background: linear-gradient(to top, var(--navy-950), transparent);
+        }
+        .package-img-placeholder {
+            height: 160px;
+            background: linear-gradient(135deg, var(--navy-800), var(--navy-950));
+            display: flex; align-items: center; justify-content: center;
+        }
+        .package-body { padding: 24px; }
+        .package-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px; }
+        .package-title {
+            font-family: "Oswald", sans-serif;
+            color: white;
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+        .package-subtitle { color: var(--slate-400); font-size: 0.875rem; }
+        .package-price {
+            color: var(--amber-500);
+            font-family: "Oswald", sans-serif;
+            font-weight: 700;
+            font-size: 0.875rem;
+        }
+        .package-features { list-style: none; margin-bottom: 24px; }
+        .package-features li {
+            display: flex; align-items: flex-start; gap: 8px;
+            color: var(--slate-300);
+            font-size: 0.875rem;
+            line-height: 1.4;
+            margin-bottom: 10px;
+        }
+        .check-icon { color: var(--amber-500); flex-shrink: 0; margin-top: 2px; }
+        .package-btn {
+            width: 100%;
+            font-family: "Oswald", sans-serif;
+            font-weight: 700;
+            font-size: 0.875rem;
+            padding: 12px;
+            border-radius: 2px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .package-btn.primary {
+            background: var(--amber-500);
+            color: var(--navy-950);
+        }
+        .package-btn.primary:hover { background: var(--amber-400); }
+        .package-btn.outline {
+            background: transparent;
+            border: 1px solid rgba(232,134,12,0.4);
+            color: var(--amber-500);
+        }
+        .package-btn.outline:hover { background: rgba(232,134,12,0.1); }
+
+        /* Capabilities grid */
+        .capabilities { border-top: 1px solid rgba(42,69,99,0.4); padding-top: 48px; }
+        .capabilities h3 {
+            font-family: "Oswald", sans-serif;
+            color: white;
+            font-size: 1.25rem;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 32px;
+        }
+        .cap-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+        }
+        @media (min-width: 640px) { .cap-grid { grid-template-columns: repeat(4, 1fr); } }
+        .cap-item {
+            display: flex; align-items: center; gap: 12px;
+            background: rgba(10,22,40,0.4);
+            border: 1px solid rgba(42,69,99,0.3);
+            border-radius: 2px;
+            padding: 12px 16px;
+        }
+        .cap-item span {
+            color: var(--slate-300);
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+        @media (min-width: 640px) { .cap-item span { font-size: 0.875rem; } }
+
+        /* ============================================
+           COMPARISON TABLE
+           ============================================ */
+        .comparison-section {
+            background: var(--navy-950);
+            padding: 64px 0;
+        }
+        @media (min-width: 640px) { .comparison-section { padding: 96px 0; } }
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            border: 1px solid rgba(42,69,99,0.4);
+            border-radius: 2px;
+            overflow: hidden;
+        }
+        .comparison-table th {
+            text-align: left;
+            padding: 16px 24px;
+            background: var(--navy-900);
+            color: var(--slate-400);
+            font-family: "JetBrains Mono", monospace;
+            font-size: 0.75rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+        .comparison-table th.pro-header {
+            background: rgba(232,134,12,0.1);
+            border-left: 2px solid var(--amber-500);
+            color: var(--amber-500);
+        }
+        .comparison-table td {
+            padding: 14px 24px;
+            font-size: 0.875rem;
+            border-top: 1px solid rgba(42,69,99,0.3);
+        }
+        .comparison-table tr:nth-child(even) td { background: rgba(10,22,40,0.5); }
+        .comparison-table tr:nth-child(odd) td { background: rgba(15,31,53,0.3); }
+        .comparison-table td.feature { color: white; font-weight: 600; }
+        .comparison-table td.diy { color: var(--slate-400); }
+        .comparison-table td.pro {
+            color: var(--slate-200);
+            background: rgba(232,134,12,0.05) !important;
+            border-left: 2px solid rgba(232,134,12,0.3);
+        }
+        .cell-content { display: flex; align-items: flex-start; gap: 8px; }
+        .x-icon { color: rgba(248,113,113,0.6); flex-shrink: 0; margin-top: 2px; }
+        .desktop-table { display: none; }
+        @media (min-width: 768px) { .desktop-table { display: block; } }
+        .mobile-cards { display: block; }
+        @media (min-width: 768px) { .mobile-cards { display: none; } }
+        .mobile-comparison-card {
+            background: rgba(15,31,53,0.4);
+            border: 1px solid rgba(42,69,99,0.3);
+            border-radius: 2px;
+            overflow: hidden;
+            margin-bottom: 16px;
+        }
+        .mobile-card-header {
+            background: rgba(26,47,74,0.5);
+            padding: 8px 16px;
+        }
+        .mobile-card-header span {
+            font-family: "Oswald", sans-serif;
+            color: white;
+            font-weight: 600;
+            font-size: 0.875rem;
+        }
+        .mobile-card-row {
+            padding: 12px 16px;
+            display: flex; align-items: flex-start; gap: 8px;
+            border-top: 1px solid rgba(42,69,99,0.3);
+        }
+        .mobile-card-row.pro {
+            background: rgba(232,134,12,0.05);
+            border-left: 2px solid rgba(232,134,12,0.3);
+        }
+        .mobile-card-label {
+            font-family: "JetBrains Mono", monospace;
+            font-size: 10px;
+            text-transform: uppercase;
+            display: block;
+            margin-bottom: 2px;
+        }
+        .mobile-card-label.diy { color: var(--slate-500); }
+        .mobile-card-label.pro { color: var(--amber-500); }
+        .mobile-card-value { font-size: 0.875rem; }
+        .mobile-card-value.diy { color: var(--slate-400); }
+        .mobile-card-value.pro { color: var(--slate-200); }
+
+        /* ============================================
+           AUTHORITY SECTION
+           ============================================ */
+        .authority-section {
+            position: relative;
+            padding: 64px 0;
+            overflow: hidden;
+        }
+        @media (min-width: 640px) { .authority-section { padding: 96px 0; } }
+        .authority-bg {
+            position: absolute; inset: 0;
+        }
+        .authority-bg img { width: 100%; height: 100%; object-fit: cover; }
+        .authority-overlay {
+            position: absolute; inset: 0;
+            background: rgba(10,22,40,0.90);
+        }
+        .env-grid {
+            display: grid; gap: 16px; margin-bottom: 48px;
+        }
+        @media (min-width: 640px) { .env-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (min-width: 1024px) { .env-grid { grid-template-columns: repeat(3, 1fr); } }
+        .env-card {
+            background: rgba(15,31,53,0.6);
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(42,69,99,0.4);
+            border-radius: 2px;
+            padding: 20px;
+            transition: border-color 0.2s;
+        }
+        .env-card:hover { border-color: rgba(232,134,12,0.3); }
+        .env-card h3 {
+            font-family: "Oswald", sans-serif;
+            color: var(--amber-500);
+            font-weight: 700;
+            font-size: 1.125rem;
+            margin-bottom: 8px;
+        }
+        .env-card p { color: var(--slate-400); font-size: 0.875rem; line-height: 1.6; }
+        .authority-callout {
+            background: rgba(232,134,12,0.05);
+            border: 1px solid rgba(232,134,12,0.2);
+            border-radius: 2px;
+            padding: 24px 32px;
+            margin-bottom: 48px;
+            text-align: center;
+        }
+        .authority-callout p {
+            color: var(--slate-200);
+            font-size: 1rem;
+            line-height: 1.7;
+            max-width: 768px;
+            margin: 0 auto;
+        }
+        @media (min-width: 640px) { .authority-callout p { font-size: 1.125rem; } }
+        .authority-callout strong { color: var(--amber-400); }
+        .cred-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+        }
+        @media (min-width: 1024px) { .cred-grid { grid-template-columns: repeat(4, 1fr); } }
+        .cred-card {
+            background: rgba(15,31,53,0.6);
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(42,69,99,0.4);
+            border-radius: 2px;
+            padding: 16px;
+            text-align: center;
+        }
+        .cred-card .cred-label { color: white; font-weight: 600; font-size: 0.875rem; margin-bottom: 2px; }
+        .cred-card .cred-value {
+            color: var(--slate-400);
+            font-family: "JetBrains Mono", monospace;
+            font-size: 0.75rem;
+        }
+
+        /* ============================================
+           FAQ SECTION
+           ============================================ */
+        .faq-section {
+            background: var(--navy-900);
+            padding: 64px 0;
+        }
+        @media (min-width: 640px) { .faq-section { padding: 96px 0; } }
+        .faq-list { max-width: 768px; margin: 0 auto; }
+        .faq-item {
+            border: 1px solid rgba(42,69,99,0.4);
+            border-radius: 2px;
+            overflow: hidden;
+            margin-bottom: 12px;
+            transition: border-color 0.2s;
+            background: rgba(10,22,40,0.4);
+        }
+        .faq-item.open {
+            border-color: rgba(232,134,12,0.4);
+            background: var(--navy-950);
+        }
+        .faq-question {
+            width: 100%;
+            display: flex; align-items: flex-start; gap: 12px;
+            padding: 20px;
+            text-align: left;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--slate-300);
+            font-weight: 600;
+            font-size: 0.875rem;
+        }
+        @media (min-width: 640px) { .faq-question { font-size: 1rem; } }
+        .faq-item.open .faq-question { color: white; }
+        .faq-q-icon { flex-shrink: 0; margin-top: 2px; color: var(--slate-500); transition: color 0.2s; }
+        .faq-item.open .faq-q-icon { color: var(--amber-500); }
+        .faq-chevron {
+            flex-shrink: 0;
+            margin-left: auto;
+            color: var(--slate-500);
+            transition: all 0.3s;
+        }
+        .faq-item.open .faq-chevron { color: var(--amber-500); transform: rotate(180deg); }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, opacity 0.3s ease;
+            opacity: 0;
+        }
+        .faq-item.open .faq-answer {
+            max-height: 400px;
+            opacity: 1;
+        }
+        .faq-answer-inner {
+            padding: 0 20px 20px 52px;
+            color: var(--slate-400);
+            font-size: 0.875rem;
+            line-height: 1.7;
+        }
+        @media (min-width: 640px) { .faq-answer-inner { font-size: 1rem; } }
+
+        /* ============================================
+           LEAD FORM SECTION
+           ============================================ */
+        .lead-section {
+            background: var(--navy-950);
+            padding: 64px 0;
+            position: relative;
+        }
+        @media (min-width: 640px) { .lead-section { padding: 96px 0; } }
+        .lead-section::before {
+            content: '';
+            position: absolute; top: 0; left: 0; right: 0;
+            height: 2px;
+            background: linear-gradient(to right, transparent, var(--amber-500), transparent);
+        }
+        .lead-grid {
+            display: grid; gap: 48px;
+        }
+        @media (min-width: 1024px) { .lead-grid { grid-template-columns: 1fr 1fr; gap: 64px; } }
+        .lead-info h2 {
+            font-size: 1.875rem;
+            color: white;
+            line-height: 1.15;
+            margin-bottom: 16px;
+        }
+        @media (min-width: 640px) { .lead-info h2 { font-size: 2.25rem; } }
+        @media (min-width: 768px) { .lead-info h2 { font-size: 3rem; } }
+        .lead-info .amber { color: var(--amber-500); }
+        .lead-desc {
+            color: var(--slate-300);
+            font-size: 1rem;
+            line-height: 1.7;
+            margin-bottom: 24px;
+        }
+        .lead-benefits { list-style: none; margin-bottom: 32px; }
+        .lead-benefits li {
+            display: flex; align-items: center; gap: 8px;
+            color: var(--slate-300);
+            font-size: 0.875rem;
+            margin-bottom: 12px;
+        }
+        .lead-phone-box {
+            background: var(--navy-900);
+            border: 1px solid rgba(42,69,99,0.4);
+            border-radius: 2px;
+            padding: 16px 20px;
+        }
+        .lead-phone-label { color: var(--slate-400); font-size: 0.875rem; margin-bottom: 4px; }
+        .lead-phone-number {
+            color: var(--amber-500);
+            font-family: "Oswald", sans-serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+        .lead-form-card {
+            background: var(--navy-900);
+            border: 1px solid rgba(42,69,99,0.4);
+            border-radius: 2px;
+            padding: 32px;
+        }
+        .form-title {
+            font-family: "Oswald", sans-serif;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        .form-subtitle {
+            color: var(--slate-400);
+            font-size: 0.875rem;
+            margin-bottom: 24px;
+        }
+        .form-group { margin-bottom: 16px; }
+        .form-row { display: grid; gap: 16px; }
+        @media (min-width: 640px) { .form-row { grid-template-columns: 1fr 1fr; } }
+        .form-label {
+            display: block;
+            color: var(--slate-300);
+            font-family: "JetBrains Mono", monospace;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 6px;
+        }
+        .form-input, .form-select, .form-textarea {
+            width: 100%;
+            background: var(--navy-950);
+            border: 1px solid rgba(42,69,99,0.5);
+            border-radius: 2px;
+            padding: 12px 16px;
+            color: white;
+            font-size: 0.875rem;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+        .form-input:focus, .form-select:focus, .form-textarea:focus {
+            border-color: var(--amber-500);
+            box-shadow: 0 0 0 2px rgba(232,134,12,0.15);
+        }
+        .form-input::placeholder, .form-textarea::placeholder { color: var(--slate-600); }
+        .form-select { appearance: none; }
+        .form-textarea { resize: none; }
+        .form-submit {
+            width: 100%;
+            background: var(--amber-500);
+            color: var(--navy-950);
+            font-family: "Oswald", sans-serif;
+            font-weight: 700;
+            font-size: 1.125rem;
+            padding: 16px;
+            border-radius: 2px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex; align-items: center; justify-content: center; gap: 8px;
+        }
+        .form-submit:hover { background: var(--amber-400); transform: scale(1.02); }
+        .form-trust {
+            text-align: center;
+            color: var(--slate-500);
+            font-family: "JetBrains Mono", monospace;
+            font-size: 0.75rem;
+            margin-top: 16px;
+        }
+        .form-success {
+            display: none;
+            text-align: center;
+            padding: 32px;
+        }
+        .form-success.show { display: block; }
+        .form-success h3 {
+            font-family: "Oswald", sans-serif;
+            color: var(--amber-500);
+            font-size: 1.5rem;
+            margin-bottom: 8px;
+        }
+        .form-success p { color: var(--slate-300); font-size: 1rem; }
+
+        /* ============================================
+           FOOTER
+           ============================================ */
+        .footer {
+            background: var(--navy-950);
+            border-top: 2px solid rgba(232,134,12,0.4);
+            padding-top: 48px;
+            padding-bottom: 24px;
+        }
+        .footer-grid {
+            display: grid; gap: 32px;
+            margin-bottom: 40px;
+        }
+        @media (min-width: 640px) { .footer-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (min-width: 1024px) { .footer-grid { grid-template-columns: repeat(3, 1fr); } }
+        .footer-brand { display: flex; align-items: center; gap: 8px; margin-bottom: 16px; }
+        .footer-links { display: flex; flex-direction: column; gap: 10px; }
+        .footer-link {
+            display: flex; align-items: center; gap: 8px;
+            color: var(--slate-300);
+            font-size: 0.875rem;
+            transition: color 0.2s;
+        }
+        .footer-link:hover { color: var(--amber-400); }
+        .footer-address {
+            display: flex; align-items: flex-start; gap: 8px;
+            color: var(--slate-400);
+            font-size: 0.875rem;
+        }
+        .footer-services h4 {
+            font-family: "Oswald", sans-serif;
+            color: white;
+            font-weight: 600;
+            font-size: 0.875rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+        }
+        .footer-services-list { display: flex; flex-direction: column; gap: 6px; }
+        .footer-services-list span { color: var(--slate-400); font-size: 0.875rem; }
+        .footer-creds h4 {
+            font-family: "Oswald", sans-serif;
+            color: white;
+            font-weight: 600;
+            font-size: 0.875rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+        }
+        .cred-box {
+            background: rgba(15,31,53,0.6);
+            border: 1px solid rgba(42,69,99,0.4);
+            border-radius: 2px;
+            padding: 12px;
+            margin-bottom: 12px;
+        }
+        .cred-box-label {
+            color: var(--amber-500);
+            font-family: "JetBrains Mono", monospace;
+            font-size: 0.75rem;
+            letter-spacing: 0.1em;
+            margin-bottom: 4px;
+        }
+        .cred-box-value {
+            color: white;
+            font-family: "JetBrains Mono", monospace;
+            font-size: 0.875rem;
+            font-weight: 600;
+        }
+        .footer-bottom {
+            border-top: 1px solid rgba(42,69,99,0.4);
+            padding-top: 24px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+        }
+        @media (min-width: 640px) { .footer-bottom { flex-direction: row; justify-content: space-between; } }
+        .footer-bottom p {
+            color: var(--slate-500);
+            font-family: "JetBrains Mono", monospace;
+            font-size: 0.75rem;
+            text-align: center;
+        }
+        @media (min-width: 640px) { .footer-bottom p { text-align: left; } }
+
+        /* Utility */
+        .amber-icon { color: var(--amber-500); }
+        .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
+    </style>
+</head>
+<body>
+
+    <!-- ============================================
+         STICKY TOP BAR
+         ============================================ -->
+    <div class="sticky-bar">
+        <!-- Announcement bar -->
+        <div class="announcement-bar">
+            <div class="container">
+                <div class="announcement-inner">
+                    <div class="announcement-item active" data-announce="0">
+                        <svg class="icon amber-icon" width="14" height="14" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                        <span class="announcement-text">NJ DCA Licensed &amp; Fully Insured — Lic. #34BF00056900</span>
+                    </div>
+                    <div class="announcement-item below" data-announce="1">
+                        <svg class="icon amber-icon" width="14" height="14" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                        <span class="announcement-text">Free On-Site Security Assessment — Call (609) 335-0123</span>
+                    </div>
+                    <div class="announcement-item below" data-announce="2">
+                        <svg class="icon amber-icon" width="14" height="14" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        <span class="announcement-text">Serving South Jersey &amp; Philadelphia Since 2010</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main bar -->
+        <div class="main-bar">
+            <div class="container" style="display:flex;align-items:center;justify-content:space-between;">
+                <div class="brand">
+                    <div class="brand-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0a1628" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    </div>
+                    <div style="line-height:1.1;">
+                        <span class="brand-name">YOU NEED LED</span>
+                        <span class="brand-sub">Security Systems</span>
+                    </div>
+                </div>
+                <div class="bar-ctas">
+                    <a href="tel:6093350123" class="bar-phone">
+                        <svg class="icon amber-icon" width="16" height="16" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                        <span class="bar-phone-text">(609) 335-0123</span>
+                    </a>
+                    <button class="bar-btn cta-glow" onclick="scrollToForm()">FREE ASSESSMENT</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================
+         HERO SECTION
+         ============================================ -->
+    <section class="hero">
+        <div class="hero-bg">
+            <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030082570/XTjXrzgYH6PYe8CHvmsFWg/hero-bg-RicGMAP6yn8VzzJ9mpBBok.webp" alt="Professional security camera installation on luxury property" loading="eager">
+            <div class="hero-overlay1"></div>
+            <div class="hero-overlay2"></div>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="urgency-badge">
+                    <div class="pulse-dot"></div>
+                    <span class="urgency-text">Limited Install Slots Available This Month</span>
+                </div>
+                <h1>
+                    South Jersey's Most Trusted<br>
+                    Security Camera Installer
+                    <span class="amber">— 30+ Years. Zero Compromises.</span>
+                </h1>
+                <p class="hero-sub">
+                    Professional-grade surveillance systems for homes, businesses, and commercial
+                    properties across South Jersey and the Philadelphia region. LTS, Platinum, and
+                    Pro X camera systems — installed by a licensed expert, not a franchise.
+                </p>
+                <div class="hero-ctas">
+                    <button class="cta-primary cta-glow" onclick="scrollToForm()">
+                        GET MY FREE ON-SITE ASSESSMENT
+                        <svg class="icon" width="20" height="20" viewBox="0 0 24 24"><path d="M12 5v14"/><path d="m19 12-7 7-7-7"/></svg>
+                    </button>
+                    <a href="tel:6093350123" class="cta-secondary">
+                        <svg class="icon" width="20" height="20" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                        CALL NOW: (609) 335-0123
+                    </a>
+                </div>
+                <div class="trust-grid">
+                    <div class="trust-card">
+                        <div class="trust-label">NJ DCA Licensed</div>
+                        <div class="trust-value">#34BF00056900</div>
+                    </div>
+                    <div class="trust-card">
+                        <div class="trust-label">Experience</div>
+                        <div class="trust-value">30+ Years</div>
+                    </div>
+                    <div class="trust-card">
+                        <div class="trust-label">Elite Installations</div>
+                        <div class="trust-value">Hospitals &bull; Casinos &bull; Police</div>
+                    </div>
+                    <div class="trust-card">
+                        <div class="trust-label">Service Area</div>
+                        <div class="trust-value">South Jersey &amp; Philadelphia</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         SOCIAL PROOF STRIP
+         ============================================ -->
+    <section class="social-proof">
+        <div class="container">
+            <div class="section-divider">
+                <div class="divider-line"></div>
+                <span class="divider-text">What Our Clients Say</span>
+                <div class="divider-line right"></div>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <svg class="quote-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V21z"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"/></svg>
+                    <div class="stars">
+                        <svg class="star" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg class="star" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg class="star" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg class="star" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg class="star" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    </div>
+                    <p class="testimonial-text">"Derek installed a 16-camera system at our restaurant. The clarity is unreal — we can read license plates from 200 feet away. Best investment we've made."</p>
+                    <div class="testimonial-attr">
+                        <div class="attr-name">Mike T.</div>
+                        <div class="attr-title">Restaurant Owner, Atlantic City, NJ</div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <svg class="quote-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V21z"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"/></svg>
+                    <div class="stars">
+                        <svg class="star" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg class="star" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg class="star" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg class="star" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg class="star" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    </div>
+                    <p class="testimonial-text">"After getting broken into twice, we called You Need LED. Derek walked the property himself, designed the system, and had everything running in two days. Haven't had an issue since."</p>
+                    <div class="testimonial-attr">
+                        <div class="attr-name">Sarah K.</div>
+                        <div class="attr-title">Homeowner, Margate, NJ</div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <svg class="quote-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V21z"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"/></svg>
+                    <div class="stars">
+                        <svg class="star" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg class="star" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg class="star" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg class="star" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg class="star" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    </div>
+                    <p class="testimonial-text">"We've used You Need LED for three of our commercial properties. Professional, knowledgeable, and always available when we need support."</p>
+                    <div class="testimonial-attr">
+                        <div class="attr-name">James R.</div>
+                        <div class="attr-title">Property Manager, Egg Harbor Township, NJ</div>
+                    </div>
+                </div>
+            </div>
+            <div class="google-badge">
+                <div class="stars">
+                    <svg class="star" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    <svg class="star" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    <svg class="star" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    <svg class="star" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    <svg class="star" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                </div>
+                <span class="google-badge-text">5.0 Rated on Google — Verified Reviews</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         PROBLEM SECTION
+         ============================================ -->
+    <section class="problem-section scan-lines">
+        <div class="container" style="position:relative;z-index:10;">
+            <div style="max-width:768px;margin-bottom:48px;">
+                <div class="section-label">
+                    <svg class="icon amber-icon" width="20" height="20" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                    <span class="section-label-text">The Reality Check</span>
+                </div>
+                <h2 class="section-heading">
+                    Your Current Camera System May Be Giving You <span class="amber">False Confidence</span>
+                </h2>
+                <p class="section-sub">Most homeowners and business owners in South Jersey have one of three situations:</p>
+            </div>
+            <div class="problem-grid">
+                <div class="problem-list">
+                    <div class="problem-card">
+                        <div class="problem-number">01</div>
+                        <div>
+                            <div class="problem-title">No Cameras At All</div>
+                            <p class="problem-desc">You know you need them, but you've been putting it off. Every week that passes is another week your property is unprotected.</p>
+                        </div>
+                    </div>
+                    <div class="problem-card">
+                        <div class="problem-number">02</div>
+                        <div>
+                            <div class="problem-title">Consumer Cameras (Ring, Arlo, Nest)</div>
+                            <p class="problem-desc">They look good in the app, but they record in short clips, depend entirely on cloud subscriptions, compress footage so heavily it's often unusable as evidence, and go offline when you need them most.</p>
+                        </div>
+                    </div>
+                    <div class="problem-card">
+                        <div class="problem-number">03</div>
+                        <div>
+                            <div class="problem-title">Old, Outdated System</div>
+                            <p class="problem-desc">Analog cameras from 10+ years ago with blurry footage, dead hard drives, and no remote access. You think you're covered. You're not.</p>
+                        </div>
+                    </div>
+                    <div class="problem-callout">
+                        <p><strong>The reality:</strong> When something happens — a break-in, a slip-and-fall, a theft, a vandalism incident — the quality of your footage determines whether you get justice or get nothing. <strong class="white">Evidence-grade recording is not a luxury. It's the difference between a solved case and a closed file.</strong></p>
+                    </div>
+                </div>
+                <div>
+                    <div class="comparison-img-wrap">
+                        <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030082570/XTjXrzgYH6PYe8CHvmsFWg/problem-section-W82MbZ5NWz5CVHjPs73FiS.webp" alt="Consumer camera vs professional 4K camera footage comparison" loading="lazy">
+                    </div>
+                    <div class="comparison-badge">SEE THE DIFFERENCE</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         SERVICES SECTION
+         ============================================ -->
+    <section class="services-section">
+        <div class="container">
+            <div class="section-header-centered text-center">
+                <span class="section-label-text" style="display:block;margin-bottom:12px;">What We Install</span>
+                <h2 class="section-heading">
+                    Professional Security Camera Systems<br>
+                    <span class="amber">Built for Real Protection</span>
+                </h2>
+                <p class="section-sub">Custom-designed systems for every property type. No cookie-cutter kits.</p>
+            </div>
+            <div class="packages-grid">
+                <!-- Residential -->
+                <div class="package-card">
+                    <div class="package-img">
+                        <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030082570/XTjXrzgYH6PYe8CHvmsFWg/services-residential-T92fgSkKRdPzgqxeiqnvzC.webp" alt="Residential security camera installation" loading="lazy">
+                        <div class="package-img-overlay"></div>
+                    </div>
+                    <div class="package-body">
+                        <div class="package-header">
+                            <div>
+                                <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px;">
+                                    <svg class="icon amber-icon" width="20" height="20" viewBox="0 0 24 24"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                                    <span class="package-title">Residential</span>
+                                </div>
+                                <span class="package-subtitle">Homes &amp; Properties</span>
+                            </div>
+                            <span class="package-price">From $1,500</span>
+                        </div>
+                        <ul class="package-features">
+                            <li><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>4K cameras for home, garage, driveway &amp; perimeter</li>
+                            <li><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Smart doorbell &amp; entry cameras</li>
+                            <li><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Remote viewing from any device</li>
+                            <li><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Local NVR storage — no monthly fees</li>
+                            <li><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Smart home integration via Alarm.com</li>
+                        </ul>
+                        <button class="package-btn outline" onclick="scrollToForm()">GET FREE ASSESSMENT</button>
+                    </div>
+                </div>
+                <!-- Commercial (featured) -->
+                <div class="package-card featured">
+                    <div class="package-img">
+                        <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030082570/XTjXrzgYH6PYe8CHvmsFWg/services-commercial-MkjxBSQnMuJM2ePZrMmCAb.webp" alt="Commercial security camera installation" loading="lazy">
+                        <div class="package-img-overlay"></div>
+                    </div>
+                    <div class="package-body">
+                        <div class="package-header">
+                            <div>
+                                <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px;">
+                                    <svg class="icon amber-icon" width="20" height="20" viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01"/><path d="M16 6h.01"/><path d="M12 6h.01"/><path d="M12 10h.01"/><path d="M12 14h.01"/><path d="M16 10h.01"/><path d="M16 14h.01"/><path d="M8 10h.01"/><path d="M8 14h.01"/></svg>
+                                    <span class="package-title">Commercial</span>
+                                </div>
+                                <span class="package-subtitle">Business &amp; Enterprise</span>
+                            </div>
+                            <span class="package-price">Custom Quote</span>
+                        </div>
+                        <ul class="package-features">
+                            <li><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Retail, restaurants, warehouses &amp; offices</li>
+                            <li><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Multi-camera PTZ deployments</li>
+                            <li><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Access control integration</li>
+                            <li><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>AI-powered motion detection</li>
+                            <li><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Scalable for multi-property portfolios</li>
+                        </ul>
+                        <button class="package-btn primary" onclick="scrollToForm()">GET FREE ASSESSMENT</button>
+                    </div>
+                </div>
+                <!-- System Upgrade -->
+                <div class="package-card">
+                    <div class="package-img-placeholder">
+                        <svg class="icon" width="64" height="64" viewBox="0 0 24 24" style="color:rgba(232,134,12,0.2);"><path d="M21.5 2v6h-6M2.5 22v-6h6M2 11.5a10 10 0 0 1 18.8-4.3M22 12.5a10 10 0 0 1-18.8 4.2"/></svg>
+                    </div>
+                    <div class="package-body">
+                        <div class="package-header">
+                            <div>
+                                <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px;">
+                                    <svg class="icon amber-icon" width="20" height="20" viewBox="0 0 24 24"><path d="M21.5 2v6h-6M2.5 22v-6h6M2 11.5a10 10 0 0 1 18.8-4.3M22 12.5a10 10 0 0 1-18.8 4.2"/></svg>
+                                    <span class="package-title">System Upgrade</span>
+                                </div>
+                                <span class="package-subtitle">Replace Outdated Cameras</span>
+                            </div>
+                            <span class="package-price">Free Assessment</span>
+                        </div>
+                        <ul class="package-features">
+                            <li><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Replace analog with 4K digital</li>
+                            <li><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Reuse existing cabling where possible</li>
+                            <li><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Add remote viewing capability</li>
+                            <li><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Upgrade to evidence-grade recording</li>
+                            <li><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Construction &amp; jobsite monitoring</li>
+                        </ul>
+                        <button class="package-btn outline" onclick="scrollToForm()">GET FREE ASSESSMENT</button>
+                    </div>
+                </div>
+            </div>
+            <!-- System Capabilities -->
+            <div class="capabilities">
+                <h3>SYSTEM CAPABILITIES</h3>
+                <div class="cap-grid">
+                    <div class="cap-item"><svg class="icon amber-icon" width="20" height="20" viewBox="0 0 24 24"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg><span>4K Ultra-HD Resolution</span></div>
+                    <div class="cap-item"><svg class="icon amber-icon" width="20" height="20" viewBox="0 0 24 24"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg><span>Pan-Tilt-Zoom (PTZ)</span></div>
+                    <div class="cap-item"><svg class="icon amber-icon" width="20" height="20" viewBox="0 0 24 24"><path d="M12 2a8 8 0 0 0-8 8c0 6 8 12 8 12s8-6 8-12a8 8 0 0 0-8-8z"/><circle cx="12" cy="10" r="3"/></svg><span>AI Motion Detection</span></div>
+                    <div class="cap-item"><svg class="icon amber-icon" width="20" height="20" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><span>Color Night Vision</span></div>
+                    <div class="cap-item"><svg class="icon amber-icon" width="20" height="20" viewBox="0 0 24 24"><line x1="22" y1="12" x2="2" y2="12"/><path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/><line x1="6" y1="16" x2="6.01" y2="16"/><line x1="10" y1="16" x2="10.01" y2="16"/></svg><span>Local NVR Storage</span></div>
+                    <div class="cap-item"><svg class="icon amber-icon" width="20" height="20" viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg><span>Remote Viewing</span></div>
+                    <div class="cap-item"><svg class="icon amber-icon" width="20" height="20" viewBox="0 0 24 24"><path d="M4.9 19.1C1 15.2 1 8.8 4.9 4.9"/><path d="M7.8 16.2c-2.3-2.3-2.3-6.1 0-8.4"/><circle cx="12" cy="12" r="2"/><path d="M16.2 7.8c2.3 2.3 2.3 6.1 0 8.4"/><path d="M19.1 4.9C23 8.8 23 15.1 19.1 19"/></svg><span>LTS / Platinum / Pro X</span></div>
+                    <div class="cap-item"><svg class="icon amber-icon" width="20" height="20" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg><span>Alarm.com Integration</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         COMPARISON TABLE SECTION
+         ============================================ -->
+    <section class="comparison-section scan-lines">
+        <div class="container" style="position:relative;z-index:10;">
+            <div class="section-header-centered text-center">
+                <span class="section-label-text" style="display:block;margin-bottom:12px;">Know The Difference</span>
+                <h2 class="section-heading">
+                    Ring and Arlo Are Great Products.<br>
+                    <span class="amber">They're Just Not Security Systems.</span>
+                </h2>
+                <p class="section-sub">Consumer cameras are designed for convenience. Professional systems are designed for protection. Here's the difference:</p>
+            </div>
+
+            <!-- Desktop table -->
+            <div class="desktop-table">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Feature</th>
+                            <th><span style="display:flex;align-items:center;gap:8px;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f87171" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg> Ring / Arlo / Nest</span></th>
+                            <th class="pro-header"><span style="display:flex;align-items:center;gap:8px;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> You Need LED Professional</span></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="feature">Video Quality</td><td class="diy"><span class="cell-content"><svg class="x-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>1080p compressed, cloud-dependent</span></td><td class="pro"><span class="cell-content"><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>4K Ultra-HD, uncompressed local recording</span></td></tr>
+                        <tr><td class="feature">Recording</td><td class="diy"><span class="cell-content"><svg class="x-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Short clips, gaps between events</span></td><td class="pro"><span class="cell-content"><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>24/7 continuous recording, 30+ days storage</span></td></tr>
+                        <tr><td class="feature">Monthly Fees</td><td class="diy"><span class="cell-content"><svg class="x-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>$3–$20/month per camera, required</span></td><td class="pro"><span class="cell-content"><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>No monthly fees — local NVR storage included</span></td></tr>
+                        <tr><td class="feature">Night Vision</td><td class="diy"><span class="cell-content"><svg class="x-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Basic IR, black and white</span></td><td class="pro"><span class="cell-content"><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Full-color night vision, AI-enhanced</span></td></tr>
+                        <tr><td class="feature">Reliability</td><td class="diy"><span class="cell-content"><svg class="x-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>WiFi-dependent, drops during outages</span></td><td class="pro"><span class="cell-content"><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Hardwired PoE, records during internet outages</span></td></tr>
+                        <tr><td class="feature">Evidence Value</td><td class="diy"><span class="cell-content"><svg class="x-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Often too low-res for identification</span></td><td class="pro"><span class="cell-content"><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Court-admissible footage</span></td></tr>
+                        <tr><td class="feature">Installation</td><td class="diy"><span class="cell-content"><svg class="x-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Self-install, adhesive mounts</span></td><td class="pro"><span class="cell-content"><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Professional hardwired install, weatherproof</span></td></tr>
+                        <tr><td class="feature">Support</td><td class="diy"><span class="cell-content"><svg class="x-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Offshore chat support</span></td><td class="pro"><span class="cell-content"><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Local South Jersey technician, direct phone</span></td></tr>
+                        <tr><td class="feature">Scalability</td><td class="diy"><span class="cell-content"><svg class="x-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Limited to app ecosystem</span></td><td class="pro"><span class="cell-content"><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Unlimited cameras, integrated with access control</span></td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Mobile cards -->
+            <div class="mobile-cards" id="mobile-comparison"></div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         AUTHORITY SECTION
+         ============================================ -->
+    <section class="authority-section">
+        <div class="authority-bg">
+            <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030082570/XTjXrzgYH6PYe8CHvmsFWg/authority-bg-ftHL9ajbBQJTDZ9GvWCJms.webp" alt="Professional security operations center" loading="lazy">
+            <div class="authority-overlay"></div>
+        </div>
+        <div class="container" style="position:relative;z-index:10;">
+            <div style="max-width:768px;margin-bottom:48px;">
+                <span class="section-label-text" style="display:block;margin-bottom:12px;">Why Trust Us</span>
+                <h2 class="section-heading">
+                    30+ Years Protecting the Properties<br>
+                    <span class="amber">That Matter Most</span>
+                </h2>
+                <p class="section-sub" style="color:var(--slate-300);">Derek founded You Need LED LLC in 2010 after spending 18 years leading a security and technology team serving some of the most demanding environments in the region.</p>
+            </div>
+            <div class="env-grid">
+                <div class="env-card"><h3>Hospitals</h3><p>HIPAA-compliant camera placement, 24/7 reliability, and zero tolerance for system failure</p></div>
+                <div class="env-card"><h3>Casinos</h3><p>Highest-resolution coverage, multi-camera coordination, and evidence-grade recording</p></div>
+                <div class="env-card"><h3>Police Departments</h3><p>Systems meeting law enforcement standards for footage integrity and chain of custody</p></div>
+                <div class="env-card"><h3>Bars &amp; Nightclubs</h3><p>High-traffic, high-risk environments requiring low-light performance and incident documentation</p></div>
+                <div class="env-card"><h3>Luxury Beach Houses</h3><p>Discreet, aesthetically integrated systems for high-value residential properties</p></div>
+                <div class="env-card"><h3>Resorts &amp; Hotels</h3><p>Large-scale multi-camera deployments with centralized monitoring</p></div>
+            </div>
+            <div class="authority-callout">
+                <p>When you hire You Need LED, you're not getting a technician who learned from a YouTube tutorial. You're getting <strong>three decades of real-world experience</strong> applied to your specific property.</p>
+            </div>
+            <div class="cred-grid">
+                <div class="cred-card">
+                    <svg class="icon amber-icon" width="32" height="32" viewBox="0 0 24 24" style="margin-bottom:8px;"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    <div class="cred-label">NJ DCA Licensed Contractor</div>
+                    <div class="cred-value">License #34BF00056900</div>
+                </div>
+                <div class="cred-card">
+                    <svg class="icon amber-icon" width="32" height="32" viewBox="0 0 24 24" style="margin-bottom:8px;"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
+                    <div class="cred-label">In Business Since 2010</div>
+                    <div class="cred-value">Locally Owned &amp; Operated</div>
+                </div>
+                <div class="cred-card">
+                    <svg class="icon amber-icon" width="32" height="32" viewBox="0 0 24 24" style="margin-bottom:8px;"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    <div class="cred-label">Service Area</div>
+                    <div class="cred-value">South Jersey &amp; Philadelphia Region</div>
+                </div>
+                <div class="cred-card">
+                    <svg class="icon amber-icon" width="32" height="32" viewBox="0 0 24 24" style="margin-bottom:8px;"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+                    <div class="cred-label">Authorized Installer</div>
+                    <div class="cred-value">LTS / Platinum / Pro X</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         FAQ SECTION
+         ============================================ -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="faq-list">
+                <div class="text-center" style="margin-bottom:48px;">
+                    <span class="section-label-text" style="display:block;margin-bottom:12px;">Common Questions</span>
+                    <h2 class="section-heading">Frequently Asked Questions</h2>
+                </div>
+                <div class="faq-item open" data-faq="0">
+                    <button class="faq-question" onclick="toggleFaq(0)">
+                        <svg class="faq-q-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                        <span style="flex:1;">How much does a camera system cost?</span>
+                        <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-answer"><div class="faq-answer-inner">A typical residential 4-camera system starts around $1,500–$2,500 installed. Commercial systems vary based on camera count, cabling requirements, and storage capacity. The best way to get an accurate number is a free on-site assessment — we'll walk your property and give you a written quote with no obligation.</div></div>
+                </div>
+                <div class="faq-item" data-faq="1">
+                    <button class="faq-question" onclick="toggleFaq(1)">
+                        <svg class="faq-q-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                        <span style="flex:1;">How quickly can you install?</span>
+                        <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-answer"><div class="faq-answer-inner">In most cases, we can schedule installation within 3–7 business days of your assessment. For businesses with urgent needs or after an incident, we offer priority scheduling. Call us directly at (609) 335-0123 to discuss your timeline.</div></div>
+                </div>
+                <div class="faq-item" data-faq="2">
+                    <button class="faq-question" onclick="toggleFaq(2)">
+                        <svg class="faq-q-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                        <span style="flex:1;">Do I need internet for my cameras to work?</span>
+                        <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-answer"><div class="faq-answer-inner">Internet is not required for local recording — your footage is stored on a dedicated NVR (network video recorder) on your property. However, remote viewing, mobile alerts, and cloud backup do require an internet connection. We'll assess your current network during the site visit and recommend any upgrades if needed.</div></div>
+                </div>
+                <div class="faq-item" data-faq="3">
+                    <button class="faq-question" onclick="toggleFaq(3)">
+                        <svg class="faq-q-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                        <span style="flex:1;">Are you licensed and insured?</span>
+                        <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-answer"><div class="faq-answer-inner">Yes. You Need LED LLC holds NJ DCA License #34BF00056900 and is fully insured. You can verify our license directly with the New Jersey Division of Consumer Affairs. We recommend always asking any contractor for their license number before allowing them on your property.</div></div>
+                </div>
+                <div class="faq-item" data-faq="4">
+                    <button class="faq-question" onclick="toggleFaq(4)">
+                        <svg class="faq-q-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                        <span style="flex:1;">Do you service both homes and businesses?</span>
+                        <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-answer"><div class="faq-answer-inner">Absolutely. We install systems for single-family homes, multi-unit residential properties, retail stores, restaurants, warehouses, offices, construction sites, and large commercial facilities. Our experience spans hospitals, casinos, and police departments — we're equipped for any scale.</div></div>
+                </div>
+                <div class="faq-item" data-faq="5">
+                    <button class="faq-question" onclick="toggleFaq(5)">
+                        <svg class="faq-q-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                        <span style="flex:1;">What brands of cameras do you install?</span>
+                        <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-answer"><div class="faq-answer-inner">We install LTS, Platinum, and Pro X professional-grade camera systems — the same brands used in commercial and institutional environments. We do not install consumer-grade products. All hardware comes with manufacturer warranties, and we provide ongoing local support.</div></div>
+                </div>
+                <div class="faq-item" data-faq="6">
+                    <button class="faq-question" onclick="toggleFaq(6)">
+                        <svg class="faq-q-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                        <span style="flex:1;">Do you offer financing?</span>
+                        <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-answer"><div class="faq-answer-inner">We offer flexible payment options for qualified customers. Ask about financing when you schedule your free assessment.</div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         LEAD CAPTURE FORM
+         ============================================ -->
+    <section class="lead-section" id="lead-form">
+        <div class="container">
+            <div class="lead-grid">
+                <!-- Left info -->
+                <div class="lead-info">
+                    <span class="section-label-text" style="display:block;margin-bottom:12px;">Get Started</span>
+                    <h2 style="font-size:1.875rem;color:white;line-height:1.15;margin-bottom:16px;">
+                        Schedule Your Free<br><span class="amber">On-Site Security Assessment</span>
+                    </h2>
+                    <p class="lead-desc">Schedule your free on-site security assessment today. Derek personally reviews every assessment and will walk your property with you to identify vulnerabilities, recommend the right camera placement, and give you a written quote with no surprises.</p>
+                    <ul class="lead-benefits">
+                        <li>
+                            <svg class="icon amber-icon" width="16" height="16" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/></svg>
+                            No obligation. No sales pressure.
+                        </li>
+                        <li>
+                            <svg class="icon amber-icon" width="16" height="16" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/></svg>
+                            We'll call you within 24 hours to schedule.
+                        </li>
+                        <li>
+                            <svg class="icon amber-icon" width="16" height="16" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/></svg>
+                            Derek personally reviews every property assessment.
+                        </li>
+                    </ul>
+                    <div class="lead-phone-box">
+                        <div class="lead-phone-label">Prefer to talk now?</div>
+                        <a href="tel:6093350123" class="lead-phone-number" style="display:flex;align-items:center;gap:8px;">
+                            <svg class="icon" width="20" height="20" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                            (609) 335-0123
+                        </a>
+                    </div>
+                </div>
+                <!-- Right form -->
+                <div class="lead-form-card">
+                    <div id="form-content">
+                        <div class="form-title">Request Your Free Assessment</div>
+                        <div class="form-subtitle">Fill out the form below and we'll contact you within 24 hours.</div>
+                        <form id="lead-capture-form" onsubmit="handleSubmit(event)">
+                            <div class="form-group">
+                                <label class="form-label">Full Name *</label>
+                                <input type="text" name="name" required class="form-input" placeholder="John Smith">
+                            </div>
+                            <div class="form-group form-row">
+                                <div>
+                                    <label class="form-label">Email Address *</label>
+                                    <input type="email" name="email" required class="form-input" placeholder="john@email.com">
+                                </div>
+                                <div>
+                                    <label class="form-label">Phone Number *</label>
+                                    <input type="tel" name="phone" required class="form-input" placeholder="(609) 555-1234">
+                                </div>
+                            </div>
+                            <div class="form-group form-row">
+                                <div>
+                                    <label class="form-label">Property Type *</label>
+                                    <select name="propertyType" required class="form-select">
+                                        <option value="" disabled selected>Select type...</option>
+                                        <option value="home">Home</option>
+                                        <option value="business">Business</option>
+                                        <option value="multi-unit">Multi-Unit</option>
+                                        <option value="construction">Construction Site</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="form-label">Zip Code *</label>
+                                    <input type="text" name="zipCode" required class="form-input" placeholder="08221" maxlength="5">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Tell Us About Your Property (Optional)</label>
+                                <textarea name="message" rows="3" class="form-textarea" placeholder="Describe your property, current setup, or what you're looking for..."></textarea>
+                            </div>
+                            <button type="submit" class="form-submit cta-glow">
+                                <svg class="icon" width="20" height="20" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                                SCHEDULE MY FREE ASSESSMENT
+                            </button>
+                            <p class="form-trust">NJ DCA Licensed #34BF00056900 | Fully Insured | Serving South Jersey &amp; Philadelphia</p>
+                        </form>
+                    </div>
+                    <div class="form-success" id="form-success">
+                        <svg class="icon amber-icon" width="48" height="48" viewBox="0 0 24 24" style="margin:0 auto 16px;"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        <h3>Assessment Request Received!</h3>
+                        <p>Thank you! We'll contact you within 24 hours to schedule your free on-site security assessment.</p>
+                        <p style="margin-top:16px;color:var(--slate-400);font-size:0.875rem;">Or call us now: <a href="tel:6093350123" style="color:var(--amber-500);font-weight:600;">(609) 335-0123</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         FOOTER
+         ============================================ -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Brand + Contact -->
+                <div>
+                    <div class="footer-brand">
+                        <div class="brand-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0a1628" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                        </div>
+                        <span class="brand-name">YOU NEED LED LLC</span>
+                    </div>
+                    <div class="footer-links">
+                        <a href="tel:6093350123" class="footer-link">
+                            <svg class="icon amber-icon" width="16" height="16" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                            (609) 335-0123
+                        </a>
+                        <a href="mailto:info@youneedled.com" class="footer-link">
+                            <svg class="icon amber-icon" width="16" height="16" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                            info@youneedled.com
+                        </a>
+                        <div class="footer-address">
+                            <svg class="icon amber-icon" width="16" height="16" viewBox="0 0 24 24" style="flex-shrink:0;margin-top:2px;"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                            <span>199 New Rd Ste 61<br>Linwood, NJ 08221</span>
+                        </div>
+                        <a href="https://youneedled.com" target="_blank" rel="noopener noreferrer" class="footer-link">
+                            <svg class="icon amber-icon" width="16" height="16" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                            youneedled.com
+                        </a>
+                    </div>
+                </div>
+                <!-- Services -->
+                <div class="footer-services">
+                    <h4>Our Services</h4>
+                    <div class="footer-services-list">
+                        <span>Security Cameras</span>
+                        <span>VoIP Phone Systems</span>
+                        <span>Access Control</span>
+                        <span>Fire Alarm</span>
+                        <span>Intrusion Detection</span>
+                        <span>LED Digital Signage</span>
+                        <span>AI Voice Agents</span>
+                        <span>Smart Home Automation</span>
+                    </div>
+                </div>
+                <!-- Credentials -->
+                <div class="footer-creds">
+                    <h4>Credentials</h4>
+                    <div class="cred-box">
+                        <div class="cred-box-label">NJ DCA LICENSE</div>
+                        <div class="cred-box-value">#34BF00056900</div>
+                    </div>
+                    <div class="cred-box">
+                        <div class="cred-box-label">ESTABLISHED</div>
+                        <div class="cred-box-value">2010</div>
+                    </div>
+                    <div class="cred-box">
+                        <div class="cred-box-label">FULLY INSURED</div>
+                        <div class="cred-box-value">Commercial &amp; Residential</div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 You Need LED LLC. All Rights Reserved.</p>
+                <p>Serving South Jersey and the Philadelphia Region</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============================================
+         VANILLA JAVASCRIPT
+         ============================================ -->
+    <script>
+        // Scroll to lead form
+        function scrollToForm() {
+            document.getElementById('lead-form').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Announcement bar rotation
+        (function() {
+            var items = document.querySelectorAll('.announcement-item');
+            var current = 0;
+            setInterval(function() {
+                items[current].className = 'announcement-item above';
+                current = (current + 1) % items.length;
+                items[current].className = 'announcement-item active';
+                // Reset the one that just went above to below after transition
+                var prev = (current - 1 + items.length) % items.length;
+                setTimeout(function() {
+                    items[prev].className = 'announcement-item below';
+                }, 500);
+            }, 4000);
+        })();
+
+        // FAQ accordion
+        function toggleFaq(index) {
+            var items = document.querySelectorAll('.faq-item');
+            items.forEach(function(item, i) {
+                if (i === index) {
+                    item.classList.toggle('open');
+                } else {
+                    item.classList.remove('open');
+                }
+            });
+        }
+
+        // Form submission
+        function handleSubmit(e) {
+            e.preventDefault();
+            var form = document.getElementById('lead-capture-form');
+            var formData = new FormData(form);
+            var data = {};
+            formData.forEach(function(value, key) { data[key] = value; });
+
+            // Log form data (replace with actual endpoint)
+            console.log('Lead form submitted:', data);
+
+            // Fire Facebook Pixel Lead event if pixel is active
+            if (typeof fbq === 'function') {
+                fbq('track', 'Lead', {
+                    content_name: 'Security Camera Assessment',
+                    content_category: data.propertyType
+                });
+            }
+
+            // Show success state
+            document.getElementById('form-content').style.display = 'none';
+            document.getElementById('form-success').style.display = 'block';
+        }
+
+        // Mobile comparison cards (generated from JS to keep HTML lighter)
+        (function() {
+            var rows = [
+                { feature: 'Video Quality', diy: '1080p compressed, cloud-dependent', pro: '4K Ultra-HD, uncompressed local recording' },
+                { feature: 'Recording', diy: 'Short clips, gaps between events', pro: '24/7 continuous recording, 30+ days storage' },
+                { feature: 'Monthly Fees', diy: '$3–$20/month per camera, required', pro: 'No monthly fees — local NVR storage included' },
+                { feature: 'Night Vision', diy: 'Basic IR, black and white', pro: 'Full-color night vision, AI-enhanced' },
+                { feature: 'Reliability', diy: 'WiFi-dependent, drops during outages', pro: 'Hardwired PoE, records during internet outages' },
+                { feature: 'Evidence Value', diy: 'Often too low-res for identification', pro: 'Court-admissible footage' },
+                { feature: 'Installation', diy: 'Self-install, adhesive mounts', pro: 'Professional hardwired install, weatherproof' },
+                { feature: 'Support', diy: 'Offshore chat support', pro: 'Local South Jersey technician, direct phone' },
+                { feature: 'Scalability', diy: 'Limited to app ecosystem', pro: 'Unlimited cameras, integrated with access control' }
+            ];
+            var container = document.getElementById('mobile-comparison');
+            var html = '';
+            rows.forEach(function(row) {
+                html += '<div class="mobile-comparison-card">';
+                html += '<div class="mobile-card-header"><span>' + row.feature + '</span></div>';
+                html += '<div class="mobile-card-row"><svg class="x-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg><div><span class="mobile-card-label diy">Ring / Arlo</span><span class="mobile-card-value diy">' + row.diy + '</span></div></div>';
+                html += '<div class="mobile-card-row pro"><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><div><span class="mobile-card-label pro">You Need LED</span><span class="mobile-card-value pro">' + row.pro + '</span></div></div>';
+                html += '</div>';
+            });
+            container.innerHTML = html;
+        })();
+
+        // Track phone clicks for Facebook Pixel
+        document.querySelectorAll('a[href="tel:6093350123"]').forEach(function(link) {
+            link.addEventListener('click', function() {
+                if (typeof fbq === 'function') {
+                    fbq('track', 'Contact', { content_name: 'Phone Call' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

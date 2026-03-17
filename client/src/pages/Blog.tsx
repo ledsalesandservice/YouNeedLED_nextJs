@@ -11,8 +11,13 @@ import { ArrowRight, Search } from "lucide-react";
 export default function Blog() {
   const [activeCategory, setActiveCategory] = useState("All");
 
-  // Show all posts sorted newest-first — scheduling is handled by only adding posts to blogData.ts when ready to publish
-  const published = [...ALL_BLOG_POSTS].sort((a, b) => b.date.localeCompare(a.date));
+  // Filter to posts dated on or before today (evaluated in the visitor's browser at render time)
+  // and sort newest-first. Future-dated posts are hidden until their publish date.
+  const today = new Date();
+  today.setHours(23, 59, 59, 999); // include posts dated today regardless of time
+  const published = [...ALL_BLOG_POSTS]
+    .filter((p) => new Date(p.date) <= today)
+    .sort((a, b) => b.date.localeCompare(a.date));
 
   // Get unique categories
   const categories = ["All", ...Array.from(new Set(published.map((p) => p.category)))];

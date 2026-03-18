@@ -73,7 +73,7 @@ export default function Blog() {
             {filtered.map((post) => (
               <Link key={post.slug} href={`/blog/${post.slug}`} className="group">
                 <div className="aspect-[16/10] rounded-xl overflow-hidden mb-4 bg-slate-100">
-                  <img src={post.image} alt={post.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+                  <img src={post.image} alt={post.title} className="w-full h-full object-cover max-w-full group-hover:scale-105 transition-transform duration-500" loading="lazy" width="800" height="500" />
                 </div>
                 <div className="flex items-center gap-2 mb-2">
                   <span className="text-xs font-medium text-[#0e319a] bg-blue-50 px-2 py-0.5 rounded">{post.category}</span>

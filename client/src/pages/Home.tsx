@@ -45,7 +45,17 @@ export default function Home() {
       {/* ===== HERO ===== */}
       <section className="relative min-h-[600px] lg:min-h-[700px] flex items-center">
         <div className="absolute inset-0">
-          <img src={IMAGES.heroMain} alt="Modern commercial building with security systems" className="w-full h-full object-cover" loading="eager" />
+          <img
+            src="/hero-main-1920w.webp"
+            srcSet="/hero-main-400w.webp 400w, /hero-main-800w.webp 800w, /hero-main-1200w.webp 1200w, /hero-main-1920w.webp 1920w"
+            sizes="(max-width: 600px) 400px, (max-width: 900px) 800px, (max-width: 1400px) 1200px, 1920px"
+            alt="Modern commercial building with security systems"
+            className="w-full h-full object-cover max-w-full"
+            loading="eager"
+            fetchPriority="high"
+            width="1920"
+            height="1072"
+          />
           <div className="absolute inset-0 bg-gradient-to-r from-[#0e319a]/90 via-[#0e319a]/75 to-[#0e319a]/50" />
         </div>
         <div className="relative container py-20 lg:py-28">
@@ -176,8 +186,10 @@ export default function Home() {
               <img
                 src={IMAGES.heroAiAgent}
                 alt="LEDConnect AI Voice Agent phone system with holographic waveform"
-                className="rounded-2xl shadow-2xl shadow-black/30 w-full"
+                className="rounded-2xl shadow-2xl shadow-black/30 w-full max-w-full h-auto"
                 loading="lazy"
+                width="800"
+                height="600"
               />
               <div className="absolute -bottom-4 -left-4 bg-white rounded-xl p-4 shadow-lg max-w-[220px]">
                 <div className="flex items-center gap-2 mb-1.5">
@@ -339,7 +351,7 @@ export default function Home() {
             {ALL_BLOG_POSTS.slice(0, 3).map((post) => (
               <StaggerItem key={post.slug}><Link href={`/blog/${post.slug}`} className="group block">
                 <div className="aspect-[16/10] rounded-xl overflow-hidden mb-4 bg-slate-100">
-                  <img src={post.image} alt={post.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+                  <img src={post.image} alt={post.title} className="w-full h-full object-cover max-w-full group-hover:scale-105 transition-transform duration-500" loading="lazy" width="800" height="500" />
                 </div>
                 <p className="text-xs text-slate-500 mb-2">{new Date(post.date).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" })} &middot; {post.readTime}</p>
                 <h3 className="font-heading text-base font-semibold text-slate-900 group-hover:text-[#0e319a] transition-colors leading-snug mb-2">

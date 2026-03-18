@@ -17,7 +17,7 @@ export default function About() {
       {/* Hero */}
       <section className="relative py-20 lg:py-28 bg-[#0e319a]">
         <div className="absolute inset-0 opacity-15">
-          <img src={IMAGES.heroMain} alt="" className="w-full h-full object-cover" loading="eager" />
+          <img src={IMAGES.heroMain} alt="" className="w-full h-full object-cover max-w-full" loading="eager" fetchPriority="high" width="1920" height="1072" />
         </div>
         <div className="relative container text-center">
           <h1 className="font-heading text-4xl sm:text-5xl font-extrabold text-white mb-5">About You Need L.E.D.</h1>

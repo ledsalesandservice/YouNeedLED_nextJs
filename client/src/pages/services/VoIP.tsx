@@ -100,7 +100,7 @@ export default function VoIP() {
               </Link>
             </div>
             <div>
-              <img src={IMAGES.heroAiAgent} alt="LEDConnect AI Voice Agent" className="rounded-2xl shadow-2xl shadow-black/30 w-full" loading="lazy" />
+              <img src={IMAGES.heroAiAgent} alt="LEDConnect AI Voice Agent" className="rounded-2xl shadow-2xl shadow-black/30 w-full max-w-full h-auto" loading="lazy" width="800" height="600" />
             </div>
           </div>
         </div>

@@ -24,7 +24,7 @@ export default function AiVoiceAgent() {
       {/* Hero */}
       <section className="relative py-20 lg:py-28 bg-gradient-to-br from-[#0e319a] to-[#081d5e] overflow-hidden">
         <div className="absolute inset-0 opacity-10">
-          <img src={IMAGES.heroAiAgent} alt="" className="w-full h-full object-cover" loading="eager" />
+          <img src={IMAGES.heroAiAgent} alt="" className="w-full h-full object-cover max-w-full" loading="eager" fetchPriority="high" width="1920" height="1072" />
         </div>
         <div className="relative container">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -58,8 +58,11 @@ export default function AiVoiceAgent() {
               <img
                 src={IMAGES.heroAiAgent}
                 alt="LEDConnect AI Voice Agent phone system"
-                className="rounded-2xl shadow-2xl shadow-black/30 w-full"
+                className="rounded-2xl shadow-2xl shadow-black/30 w-full max-w-full h-auto"
                 loading="eager"
+                fetchPriority="high"
+                width="800"
+                height="600"
               />
               <div className="absolute -bottom-4 -left-4 bg-white rounded-xl p-4 shadow-lg max-w-[220px]">
                 <div className="flex items-center gap-2 mb-1.5">

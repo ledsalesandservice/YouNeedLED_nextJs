@@ -36,12 +36,18 @@ export default function Header() {
         <div className="container flex items-center justify-between py-2">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 shrink-0">
-            <img
-              src="/logo.png"
-              alt="You Need L.E.D. Smart Automation Systems logo"
-              className="shrink-0 object-contain"
-              style={{ height: '56px', width: '56px' }}
-            />
+            <picture>
+              <source srcSet="/logo-optimized.webp" type="image/webp" />
+              <img
+                src="/logo-optimized.png"
+                alt="You Need L.E.D. Smart Automation Systems logo"
+                className="shrink-0 object-contain max-w-full h-auto"
+                width="56"
+                height="56"
+                loading="eager"
+                fetchPriority="high"
+              />
+            </picture>
             <div>
               <div className="font-heading text-lg font-bold text-[#0e319a] leading-tight">You Need L.E.D.</div>
               <div className="text-xs text-slate-500 leading-tight">Professional Technology Services</div>

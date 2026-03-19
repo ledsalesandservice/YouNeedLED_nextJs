@@ -19,7 +19,7 @@ export const ALL_BLOG_POSTS: BlogPost[] = [
     category: "Commercial Security",
     excerpt: "A guide for Atlantic City, NJ business owners on upgrading their security. Learn about 4K AI cameras, access control, and alarm systems from a local, licensed expert.",
     readTime: "4 min",
-    image: "https://images.unsplash.com/photo-1570223932594-736a6961214b?w=800&q=80",
+    image: "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800&q=80",
     content: `
 # Securing Your Business in Atlantic City: A 2026 Guide
 
@@ -2911,7 +2911,7 @@ Don't compromise on the clarity and reliability of your security footage. For a 
     category: "Fire Safety",
     excerpt: "A fire alarm that isn't monitored is just a noisemaker. Learn why 24/7 professional fire alarm monitoring is a non-negotiable for any commercial property in New Jersey — and what NFPA 72 actually requires.",
     readTime: "5 min",
-    image: "https://images.unsplash.com/photo-1579532539450-589314b8a61d?w=800&q=80",
+    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80",
     content: `
 # Is Your Commercial Fire Alarm Monitored 24/7? Why NJ Businesses Can't Afford to Guess
 
@@ -3052,7 +3052,7 @@ If you're managing a construction project in South Jersey, Philadelphia, or anyw
     category: "LEDConnect AI",
     excerpt: "Tired of after-hours maintenance calls and endless leasing questions? Discover how the LEDConnect AI Voice Agent answers calls 24/7, qualifies leads, and captures information — freeing your team to focus on residents.",
     readTime: "4 min",
-    image: "https://images.unsplash.com/photo-1587582423242-7853f3553459?w=800&q=80",
+    image: "https://images.unsplash.com/photo-1560179707-f14e90ef3623?w=800&q=80",
     content: `
 # Never Miss a Maintenance Call Again: How LEDConnect AI Helps Property Managers
 
@@ -3095,7 +3095,7 @@ To learn more about LEDConnect AI and how it can be configured for your property
     category: "Access Control",
     excerpt: "From loading docks to inventory cages, warehouses have unique security challenges. Learn how modern access control systems with RFID, biometrics, and detailed audit logs can secure your South Jersey logistics facility.",
     readTime: "6 min",
-    image: "https://images.unsplash.com/photo-1587293852726-70cdb122c296?w=800&q=80",
+    image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&q=80",
     content: `
 # Securing the Supply Chain: Access Control Best Practices for South Jersey Warehouses
 
@@ -3142,7 +3142,7 @@ To discuss access control for your warehouse or distribution facility, call **(6
     category: "Security Cameras",
     excerpt: "Don't wait for an incident to discover your cameras are down. This simple 5-point checklist helps South Jersey business owners verify their security camera system is recording, storing footage, and ready when they need it most.",
     readTime: "5 min",
-    image: "https://images.unsplash.com/photo-1517420704952-d9f39e95b412?w=800&q=80",
+    image: "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=800&q=80",
     content: `
 # Is Your Security System Actually Working? A 5-Point Maintenance Checklist for Business Owners
 

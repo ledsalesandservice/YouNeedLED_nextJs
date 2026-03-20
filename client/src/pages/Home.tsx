@@ -48,7 +48,7 @@ export default function Home() {
           <img
             src="/hero-main-1920w.webp"
             srcSet="/hero-main-400w.webp 400w, /hero-main-800w.webp 800w, /hero-main-1200w.webp 1200w, /hero-main-1920w.webp 1920w"
-            sizes="(max-width: 600px) 400px, (max-width: 900px) 800px, (max-width: 1400px) 1200px, 1920px"
+            sizes="100vw"
             alt="Modern commercial building with security systems"
             className="w-full h-full object-cover max-w-full"
             loading="eager"

@@ -24,7 +24,17 @@ export default function AiVoiceAgent() {
       {/* Hero */}
       <section className="relative py-20 lg:py-28 bg-gradient-to-br from-[#0e319a] to-[#081d5e] overflow-hidden">
         <div className="absolute inset-0 opacity-10">
-          <img src={IMAGES.heroAiAgent} alt="" className="w-full h-full object-cover max-w-full" loading="eager" fetchPriority="high" width="1920" height="1072" />
+          <img
+            src="/hero-ai-agent-1920w.webp"
+            srcSet="/hero-ai-agent-400w.webp 400w, /hero-ai-agent-800w.webp 800w, /hero-ai-agent-1200w.webp 1200w, /hero-ai-agent-1920w.webp 1920w"
+            sizes="100vw"
+            alt=""
+            className="w-full h-full object-cover max-w-full"
+            loading="eager"
+            fetchPriority="high"
+            width="1920"
+            height="1072"
+          />
         </div>
         <div className="relative container">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -56,13 +66,15 @@ export default function AiVoiceAgent() {
             </div>
             <div className="relative">
               <img
-                src={IMAGES.heroAiAgent}
+                src="/hero-ai-agent-800w.webp"
+                srcSet="/hero-ai-agent-400w.webp 400w, /hero-ai-agent-800w.webp 800w, /hero-ai-agent-1200w.webp 1200w"
+                sizes="(max-width: 1024px) 100vw, 50vw"
                 alt="LEDConnect AI Voice Agent phone system"
                 className="rounded-2xl shadow-2xl shadow-black/30 w-full max-w-full h-auto"
                 loading="eager"
                 fetchPriority="high"
                 width="800"
-                height="600"
+                height="447"
               />
               <div className="absolute -bottom-4 -left-4 bg-white rounded-xl p-4 shadow-lg max-w-[220px]">
                 <div className="flex items-center gap-2 mb-1.5">

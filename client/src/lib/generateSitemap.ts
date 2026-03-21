@@ -22,6 +22,7 @@ export function getAllSitemapUrls(): string[] {
     "/services/ai-voice-agent",
     "/services/commercial-security",
     "/services/apartment-security",
+    "/services/digital-signage",
     // Blog posts
     "/blog/environmental-monitoring-server-rooms",
     "/blog/voip-phone-systems-small-business",

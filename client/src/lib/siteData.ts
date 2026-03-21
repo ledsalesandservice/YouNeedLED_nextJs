@@ -37,6 +37,7 @@ export const IMAGES = {
   heroCameras: "https://d2xsxph8kpxj0f.cloudfront.net/310419663030082570/Tfe6MLMokmY8tMP4sdwDCa/hero-cameras-Epwbn9AsuWE6eQcF4RnUJr.webp",
   heroAiAgent: "https://d2xsxph8kpxj0f.cloudfront.net/310419663030082570/Tfe6MLMokmY8tMP4sdwDCa/hero-ai-agent-NEVWnYfLcWxHS9dfuYkND8.webp",
   heroAccess: "https://d2xsxph8kpxj0f.cloudfront.net/310419663030082570/Tfe6MLMokmY8tMP4sdwDCa/hero-access-control-9nuBCFGBp72MkRE4DdoFf3.webp",
+  heroDigitalSignage: "/digital-signage/corporate.jpg",
 };
 
 // Responsive srcset strings — local WebP files at 400/800/1200/1920w
@@ -63,6 +64,7 @@ export const NAV_ITEMS = [
     ],
   },
   { label: "Hosted PBX & VoIP", href: "/services/voip" },
+  { label: "Digital Signage", href: "/services/digital-signage" },
   { label: "LEDConnect AI Voice", href: "/services/ai-voice-agent" },
   { label: "Blog", href: "/blog" },
   { label: "About", href: "/about" },
@@ -141,6 +143,12 @@ export const SERVICES = [
     description: "Solar-powered wireless cameras and alarm systems for construction sites. No power or internet required.",
     href: "/services/jobsite-security",
     icon: "HardHat",
+  },
+  {
+    title: "Digital Signage",
+    description: "Cloud-managed digital displays for restaurants, retail, offices, healthcare, schools, and more. Professional installation throughout South Jersey.",
+    href: "/services/digital-signage",
+    icon: "Monitor",
   },
 ];
 

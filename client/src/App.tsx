@@ -35,6 +35,7 @@ const VoIP               = lazy(() => import("./pages/services/VoIP"));
 const AiVoiceAgent       = lazy(() => import("./pages/services/AiVoiceAgent"));
 const CommercialSecurity = lazy(() => import("./pages/services/CommercialSecurity"));
 const ApartmentSecurity  = lazy(() => import("./pages/services/ApartmentSecurity"));
+const DigitalSignage     = lazy(() => import("./pages/services/DigitalSignage"));
 
 // Dynamic location / county pages
 const LocationPage = lazy(() => import("./pages/LocationPage"));
@@ -85,6 +86,7 @@ function Router() {
         <Route path="/services/ai-voice-agent" component={AiVoiceAgent} />
         <Route path="/services/commercial-security" component={CommercialSecurity} />
         <Route path="/services/apartment-security" component={ApartmentSecurity} />
+        <Route path="/services/digital-signage" component={DigitalSignage} />
         {/* Short URL aliases for landing pages */}
         <Route path="/cameras" component={VideoSurveillance} />
         <Route path="/phone-systems" component={VoIP} />

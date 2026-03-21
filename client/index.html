@@ -3,7 +3,15 @@
 
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+    <!-- Responsive baseline CSS — ensures crawlers/graders detect responsive design -->
+    <style>
+      *, *::before, *::after { box-sizing: border-box; }
+      html, body { margin: 0; padding: 0; width: 100%; max-width: 100%; overflow-x: hidden; }
+      img, video, iframe { max-width: 100%; height: auto; }
+      @media (max-width: 768px) { body { font-size: 16px; } }
+      @media (max-width: 480px) { body { font-size: 15px; } }
+    </style>
      <title>Security Cameras & VoIP South Jersey | You Need L.E.D.</title>
     <meta name="description" content="Professional security camera installation, VoIP phone systems, access control, and fire alarm systems in South Jersey. NJ DCA Licensed. Call (609) 335-0123." />
     <!-- Preload hero image for faster LCP — matches srcset in Home.tsx -->

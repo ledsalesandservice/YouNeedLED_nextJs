@@ -23,6 +23,7 @@ const BlogPost          = lazy(() => import("./pages/BlogPost"));
 const FAQ               = lazy(() => import("./pages/FAQ"));
 const ClientPortal      = lazy(() => import("./pages/ClientPortal"));
 const NotFound          = lazy(() => import("./pages/NotFound"));
+const TermsOfService    = lazy(() => import("./pages/TermsOfService"));
 
 // Service pages
 const VideoSurveillance  = lazy(() => import("./pages/services/VideoSurveillance"));
@@ -91,6 +92,7 @@ function Router() {
         <Route path="/locations/:slug" component={LocationPage} />
         {/* Dynamic county pages — 8 NJ counties */}
         <Route path="/counties/:slug" component={CountyPage} />
+        <Route path="/terms-of-service" component={TermsOfService} />
         <Route path="/404" component={NotFound} />
         <Route component={NotFound} />
       </Switch>

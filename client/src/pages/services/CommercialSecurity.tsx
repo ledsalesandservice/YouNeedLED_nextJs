@@ -4,7 +4,7 @@
  */
 import { Link } from "wouter";
 import SEOHead from "@/components/SEOHead";
-import { SITE, IMAGES } from "@/lib/siteData";
+import { SITE, IMAGES, IMAGE_SRCSETS } from "@/lib/siteData";
 import { Camera, KeyRound, Flame, ShieldAlert, HardHat, Building2, ArrowRight, Phone, CheckCircle2 } from "lucide-react";
 
 const services = [
@@ -28,7 +28,7 @@ export default function CommercialSecurity() {
       {/* Hero */}
       <section className="relative py-20 lg:py-28 bg-[#0e319a]">
         <div className="absolute inset-0 opacity-20">
-          <img src={IMAGES.heroMain} alt="" className="w-full h-full object-cover max-w-full" loading="eager" fetchPriority="high" width="1920" height="1072" />
+          <img src={IMAGES.heroMain} srcSet={IMAGE_SRCSETS.heroMain} sizes="100vw" alt="" className="w-full h-full object-cover max-w-full" loading="eager" fetchPriority="high" width="1920" height="1072" />
         </div>
         <div className="relative container text-center">
           <h1 className="font-heading text-4xl sm:text-5xl font-extrabold text-white mb-5">

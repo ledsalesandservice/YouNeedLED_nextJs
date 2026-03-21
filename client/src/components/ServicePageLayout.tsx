@@ -28,6 +28,7 @@ interface Props {
   title: string;
   subtitle: string;
   heroImage: string;
+  heroSrcSet?: string;
   primaryCta: { label: string; href: string };
   secondaryCta?: { label: string; href: string };
   features: Feature[];
@@ -41,6 +42,7 @@ export default function ServicePageLayout({
   title,
   subtitle,
   heroImage,
+  heroSrcSet,
   primaryCta,
   secondaryCta,
   features,
@@ -56,7 +58,17 @@ export default function ServicePageLayout({
       {/* Hero */}
       <section className="relative py-20 lg:py-28 bg-[#0e319a]">
         <div className="absolute inset-0 opacity-20">
-          <img src={heroImage} alt="" className="w-full h-full object-cover max-w-full" loading="eager" fetchPriority="high" width="1920" height="1072" />
+          <img
+            src={heroImage}
+            srcSet={heroSrcSet}
+            sizes="100vw"
+            alt=""
+            className="w-full h-full object-cover max-w-full"
+            loading="eager"
+            fetchPriority="high"
+            width="1920"
+            height="1072"
+          />
         </div>
         <div className="relative container text-center">
           <h1 className="font-heading text-4xl sm:text-5xl font-extrabold text-white mb-5">{title}</h1>

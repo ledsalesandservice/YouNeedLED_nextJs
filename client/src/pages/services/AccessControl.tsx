@@ -1,5 +1,5 @@
 import ServicePageLayout from "@/components/ServicePageLayout";
-import { IMAGES } from "@/lib/siteData";
+import { IMAGES, IMAGE_SRCSETS } from "@/lib/siteData";
 import SEOHead from "@/components/SEOHead";
 import { KeyRound, Smartphone, Users, Lock, Fingerprint, Cloud } from "lucide-react";
 
@@ -15,6 +15,7 @@ export default function AccessControl() {
       title="Access Control Systems"
       subtitle="CDVI & Alarm.com powered keyless entry systems with RFID, biometric, and mobile credentials. Cloud-managed security for any facility."
       heroImage={IMAGES.heroAccess}
+      heroSrcSet={IMAGE_SRCSETS.heroAccess}
       primaryCta={{ label: "Get Access Control Quote", href: "/contact" }}
       secondaryCta={{ label: "Schedule Demo", href: "/contact" }}
       features={[

@@ -39,6 +39,15 @@ export const IMAGES = {
   heroAccess: "https://d2xsxph8kpxj0f.cloudfront.net/310419663030082570/Tfe6MLMokmY8tMP4sdwDCa/hero-access-control-9nuBCFGBp72MkRE4DdoFf3.webp",
 };
 
+// Responsive srcset strings — local WebP files at 400/800/1200/1920w
+export const IMAGE_SRCSETS = {
+  heroMain: "/hero-main-400w.webp 400w, /hero-main-800w.webp 800w, /hero-main-1200w.webp 1200w, /hero-main-1920w.webp 1920w",
+  heroVoip: "/hero-voip-400w.webp 400w, /hero-voip-800w.webp 800w, /hero-voip-1200w.webp 1200w, /hero-voip-1920w.webp 1920w",
+  heroCameras: "/hero-cameras-400w.webp 400w, /hero-cameras-800w.webp 800w, /hero-cameras-1200w.webp 1200w, /hero-cameras-1920w.webp 1920w",
+  heroAiAgent: "/hero-ai-agent-400w.webp 400w, /hero-ai-agent-800w.webp 800w, /hero-ai-agent-1200w.webp 1200w, /hero-ai-agent-1920w.webp 1920w",
+  heroAccess: "/hero-access-400w.webp 400w, /hero-access-800w.webp 800w, /hero-access-1200w.webp 1200w, /hero-access-1920w.webp 1920w",
+};
+
 export const NAV_ITEMS = [
   { label: "Home", href: "/" },
   {

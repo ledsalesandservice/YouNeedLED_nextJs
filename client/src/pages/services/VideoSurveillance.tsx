@@ -1,5 +1,5 @@
 import ServicePageLayout from "@/components/ServicePageLayout";
-import { IMAGES } from "@/lib/siteData";
+import { IMAGES, IMAGE_SRCSETS } from "@/lib/siteData";
 import SEOHead from "@/components/SEOHead";
 import { Camera, Eye, Cloud, Cpu, Wifi, Shield } from "lucide-react";
 
@@ -15,6 +15,7 @@ export default function VideoSurveillance() {
       title="Video Surveillance Systems"
       subtitle="Enterprise-grade 4K security cameras with AI-powered analytics, license plate recognition, and cloud storage. Professional installation by licensed experts."
       heroImage={IMAGES.heroCameras}
+      heroSrcSet={IMAGE_SRCSETS.heroCameras}
       primaryCta={{ label: "Get a Free Camera Quote", href: "/contact" }}
       secondaryCta={{ label: "View Camera Options", href: "#systems" }}
       features={[

@@ -1,5 +1,5 @@
 import ServicePageLayout from "@/components/ServicePageLayout";
-import { SITE, IMAGES } from "@/lib/siteData";
+import { SITE, IMAGES, IMAGE_SRCSETS } from "@/lib/siteData";
 import SEOHead from "@/components/SEOHead";
 import { Link } from "wouter";
 import { Phone, Headphones, Cloud, Users, Settings, Monitor, Bot, PhoneOff, CalendarCheck, UserCheck, Zap, ArrowRight } from "lucide-react";
@@ -16,6 +16,7 @@ export default function VoIP() {
       title="Hosted PBX & VoIP Phone Systems"
       subtitle="Enterprise-grade cloud phone systems with auto-attendant, call routing, Microsoft Teams integration, and now LEDConnect AI Voice Agents for 24/7 call handling."
       heroImage={IMAGES.heroVoip}
+      heroSrcSet={IMAGE_SRCSETS.heroVoip}
       primaryCta={{ label: "Get VoIP Quote", href: "/contact" }}
       secondaryCta={{ label: "Book AI Voice Demo", href: "/services/ai-voice-agent" }}
       features={[
@@ -100,7 +101,7 @@ export default function VoIP() {
               </Link>
             </div>
             <div>
-              <img src={IMAGES.heroAiAgent} alt="LEDConnect AI Voice Agent" className="rounded-2xl shadow-2xl shadow-black/30 w-full max-w-full h-auto" loading="lazy" width="800" height="600" />
+              <img src={IMAGES.heroAiAgent} srcSet={IMAGE_SRCSETS.heroAiAgent} sizes="(max-width: 768px) 100vw, 50vw" alt="LEDConnect AI Voice Agent" className="rounded-2xl shadow-2xl shadow-black/30 w-full max-w-full h-auto" loading="lazy" width="800" height="600" />
             </div>
           </div>
         </div>

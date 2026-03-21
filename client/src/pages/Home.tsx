@@ -4,7 +4,7 @@
  * testimonials carousel, service areas tabs, blog preview, CTA
  */
 import { Link } from "wouter";
-import { SITE, IMAGES, SERVICES, TESTIMONIALS, SERVICE_AREAS, CERTIFICATIONS } from "@/lib/siteData";
+import { SITE, IMAGES, IMAGE_SRCSETS, SERVICES, TESTIMONIALS, SERVICE_AREAS, CERTIFICATIONS } from "@/lib/siteData";
 import { ALL_BLOG_POSTS } from "@/lib/blogData";
 import SEOHead from "@/components/SEOHead";
 import {
@@ -185,6 +185,8 @@ export default function Home() {
             <div className="relative">
               <img
                 src={IMAGES.heroAiAgent}
+                srcSet={IMAGE_SRCSETS.heroAiAgent}
+                sizes="(max-width: 768px) 100vw, 50vw"
                 alt="LEDConnect AI Voice Agent phone system with holographic waveform"
                 className="rounded-2xl shadow-2xl shadow-black/30 w-full max-w-full h-auto"
                 loading="lazy"

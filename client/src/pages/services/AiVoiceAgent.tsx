@@ -16,11 +16,23 @@ export default function AiVoiceAgent() {
   return (
     <>
       <SEOHead
-        title="LEDConnect AI Voice Agents | 24/7 AI Call Handling"
-        description="Stop missing calls. LEDConnect AI Voice Agents block spam, handle overflow and after-hours calls, capture leads, and book appointments 24/7. Call (609) 335-0123."
+        title="LEDConnect AI Voice Agent South Jersey | 24/7 AI Receptionist | You Need L.E.D."
+        description="Never miss a call again. LEDConnect AI answers 24/7, blocks spam, captures leads & books appointments for South Jersey businesses. Free demo: (609) 335-0123."
         canonical="/services/ai-voice-agent"
         ogImage={IMAGES.heroAiAgent}
       />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@graph": [
+          { "@type": "Service", name: "LEDConnect AI Voice Agent", description: "AI-powered virtual receptionist that answers calls 24/7, blocks spam, captures leads, and books appointments for South Jersey businesses. Never miss a call again.", provider: { "@type": "LocalBusiness", name: SITE.name, url: SITE.url, telephone: SITE.phone }, areaServed: ["South Jersey", "Delaware Valley", "Cherry Hill NJ", "Voorhees NJ", "Egg Harbor Township NJ"], serviceType: "AI Voice Agent", url: `${SITE.url}/services/ai-voice-agent` },
+          { "@type": "FAQPage", mainEntity: [
+            { "@type": "Question", name: "What is the LEDConnect AI Voice Agent?", acceptedAnswer: { "@type": "Answer", text: "LEDConnect is an AI-powered virtual receptionist that answers your business calls 24/7. It blocks spam and robocalls, captures lead information, books appointments on your calendar, and handles after-hours and overflow calls automatically." } },
+            { "@type": "Question", name: "Will callers know they are talking to an AI?", acceptedAnswer: { "@type": "Answer", text: "LEDConnect uses natural-sounding AI voices and conversational responses. You can configure it to be transparent about being an AI assistant or to introduce itself by a custom name. Either way, it handles calls professionally and efficiently." } },
+            { "@type": "Question", name: "What types of businesses benefit most from an AI Voice Agent?", acceptedAnswer: { "@type": "Answer", text: "Any business that receives high call volume or cannot always answer the phone benefits greatly. This includes medical and dental offices, law firms, home service contractors, restaurants, and retail stores in South Jersey." } },
+            { "@type": "Question", name: "How does LEDConnect integrate with my existing phone system?", acceptedAnswer: { "@type": "Answer", text: "LEDConnect integrates with your existing VoIP or landline phone system. It can act as your primary receptionist, an overflow handler, or an after-hours answering service. Setup typically takes less than one business day." } },
+          ] },
+        ],
+      }) }} />
       {/* Hero */}
       <section className="relative py-20 lg:py-28 bg-gradient-to-br from-[#0e319a] to-[#081d5e] overflow-hidden">
         <div className="absolute inset-0 opacity-10">

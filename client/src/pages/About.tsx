@@ -10,10 +10,25 @@ export default function About() {
   return (
     <>
       <SEOHead
-        title="About You Need L.E.D. | Security & Technology Experts"
-        description="Founded in 2010, You Need L.E.D. provides professional security camera installation, VoIP phone systems, and fire alarm services in South Jersey. NJ DCA Licensed."
+        title="About You Need L.E.D. | 15+ Years | NJ DCA Licensed Security Company South Jersey"
+        description="15+ years serving South Jersey. NJ DCA Licensed (#34BF00056900). 5.0 stars, 500+ satisfied clients. Security cameras, fire alarms, VoIP & more. Call (609) 335-0123."
         canonical="/about"
       />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        name: SITE.name,
+        url: SITE.url,
+        telephone: SITE.phone,
+        description: "NJ DCA Licensed commercial and residential technology services company serving South Jersey and the Delaware Valley for 15+ years. 5.0 stars on Google with 32+ reviews and 500+ satisfied clients.",
+        foundingDate: "2010",
+        address: { "@type": "PostalAddress", streetAddress: "199 New Rd Ste 61", addressLocality: "Linwood", addressRegion: "NJ", postalCode: "08221", addressCountry: "US" },
+        geo: { "@type": "GeoCoordinates", latitude: 39.3398, longitude: -74.5774 },
+        areaServed: ["South Jersey", "Delaware Valley", "Cherry Hill NJ", "Voorhees NJ", "Mount Laurel NJ", "Egg Harbor Township NJ", "Somers Point NJ", "Atlantic City NJ", "Philadelphia PA"],
+        hasCredential: "NJ DCA License #34BF00056900",
+        aggregateRating: { "@type": "AggregateRating", ratingValue: "5.0", reviewCount: "32", bestRating: "5" },
+        sameAs: ["https://www.facebook.com/youneedled"],
+      }) }} />
       {/* Hero */}
       <section className="relative py-20 lg:py-28 bg-[#0e319a]">
         <div className="absolute inset-0 opacity-15">

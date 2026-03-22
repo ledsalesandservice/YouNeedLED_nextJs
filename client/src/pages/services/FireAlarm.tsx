@@ -1,5 +1,5 @@
 import ServicePageLayout from "@/components/ServicePageLayout";
-import { IMAGES } from "@/lib/siteData";
+import { IMAGES, SITE } from "@/lib/siteData";
 import SEOHead from "@/components/SEOHead";
 import { Flame, Clock, AlertTriangle, Radio, Wrench, Settings } from "lucide-react";
 
@@ -7,10 +7,22 @@ export default function FireAlarm() {
   return (
     <>
     <SEOHead
-      title="Fire Alarm Systems | NFPA 72 Compliant Installation"
-      description="NJ DCA licensed fire alarm installation, monitoring, and inspection. NFPA 72 compliant systems with 24/7 monitoring. License #34FA00102800. Call (609) 335-0123."
+      title="Fire Alarm Systems South Jersey | NFPA 72 Compliant | You Need L.E.D."
+      description="NJ DCA Licensed fire alarm installation, monitoring & inspection in South Jersey. NFPA 72 compliant. License #34FA00102800. Free quote: (609) 335-0123."
       canonical="/services/fire-alarm-systems"
     />
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+      "@context": "https://schema.org",
+      "@graph": [
+        { "@type": "Service", name: "Fire Alarm System Installation", description: "NJ DCA Licensed NFPA 72 compliant fire alarm installation, monitoring, and inspection for commercial and residential properties in South Jersey.", provider: { "@type": "LocalBusiness", name: SITE.name, url: SITE.url, telephone: SITE.phone }, areaServed: ["South Jersey", "Atlantic County NJ", "Cape May County NJ", "Camden County NJ"], serviceType: "Fire Alarm Installation", url: `${SITE.url}/services/fire-alarm-systems` },
+        { "@type": "FAQPage", mainEntity: [
+          { "@type": "Question", name: "Are you licensed to install fire alarm systems in New Jersey?", acceptedAnswer: { "@type": "Answer", text: "Yes. We hold NJ DCA Fire Alarm License #34FA00102800. Our technicians are NFPA 72 certified and factory trained on major fire alarm brands." } },
+          { "@type": "Question", name: "What is NFPA 72 and why does it matter?", acceptedAnswer: { "@type": "Answer", text: "NFPA 72 is the National Fire Alarm and Signaling Code that governs the installation, testing, and maintenance of fire alarm systems in the United States. All our installations are fully NFPA 72 compliant to protect your building, occupants, and insurance coverage." } },
+          { "@type": "Question", name: "How often do fire alarm systems need inspection in New Jersey?", acceptedAnswer: { "@type": "Answer", text: "Per NFPA 72 and NJ local codes, fire alarm systems require annual inspections at minimum. Some components like smoke detectors may need semi-annual testing. We offer maintenance contracts to keep your system compliant year-round." } },
+          { "@type": "Question", name: "Can you integrate fire alarms with other building systems?", acceptedAnswer: { "@type": "Answer", text: "Yes. We integrate fire alarm systems with access control for automatic door release, HVAC for smoke control, elevator recall systems, and mass notification systems." } },
+        ] },
+      ],
+    }) }} />
     <ServicePageLayout
       title="Fire Alarm Systems"
       subtitle="Protect lives and property with professionally installed fire alarm systems. Our NFPA 72 compliant solutions include 24/7 monitoring and emergency response coordination."

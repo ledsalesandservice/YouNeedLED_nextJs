@@ -23,10 +23,17 @@ export default function Contact() {
   return (
     <>
       <SEOHead
-        title="Contact You Need L.E.D. | Free Security Quote"
-        description="Contact You Need L.E.D. for a free security assessment. Call (609) 335-0123 or visit us at 199 New Rd Ste 61, Linwood, NJ 08221. 24/7 emergency support."
+        title="Contact You Need L.E.D. | Free Security Quote South Jersey | (609) 335-0123"
+        description="Get a free security assessment from South Jersey's NJ DCA Licensed technology experts. Call (609) 335-0123 or request a quote online. Serving South Jersey & Delaware Valley."
         canonical="/contact"
       />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@graph": [
+          { "@type": "ContactPage", name: "Contact You Need L.E.D.", url: `${SITE.url}/contact`, description: "Contact You Need L.E.D. for a free security assessment, quote, or consultation. NJ DCA Licensed technology services in South Jersey and the Delaware Valley." },
+          { "@type": "LocalBusiness", name: SITE.name, url: SITE.url, telephone: SITE.phone, address: { "@type": "PostalAddress", streetAddress: "199 New Rd Ste 61", addressLocality: "Linwood", addressRegion: "NJ", postalCode: "08221", addressCountry: "US" }, geo: { "@type": "GeoCoordinates", latitude: 39.3398, longitude: -74.5774 }, openingHoursSpecification: [{ "@type": "OpeningHoursSpecification", dayOfWeek: ["Monday","Tuesday","Wednesday","Thursday","Friday"], opens: "08:00", closes: "18:00" }], hasCredential: "NJ DCA License #34BF00056900" },
+        ],
+      }) }} />
       {/* Hero */}
       <section className="py-16 lg:py-20 bg-[#0e319a]">
         <div className="container text-center">

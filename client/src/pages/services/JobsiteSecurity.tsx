@@ -1,15 +1,28 @@
 import ServicePageLayout from "@/components/ServicePageLayout";
 import SEOHead from "@/components/SEOHead";
 import { Wifi, Battery, Smartphone, Video, Eye, Wrench } from "lucide-react";
+import { SITE } from "@/lib/siteData";
 
 export default function JobsiteSecurity() {
   return (
     <>
     <SEOHead
-      title="Jobsite & Construction Site Security Cameras"
-      description="Solar-powered wireless security cameras for construction sites. No power or internet required. Remote monitoring and theft prevention. Call (609) 335-0123."
+      title="Construction Site Security Cameras South Jersey | Solar Wireless | You Need L.E.D."
+      description="Solar-powered wireless jobsite security cameras for South Jersey construction sites. No power or internet needed. Remote monitoring & theft prevention. Call (609) 335-0123."
       canonical="/services/jobsite-security"
     />
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+      "@context": "https://schema.org",
+      "@graph": [
+        { "@type": "Service", name: "Jobsite & Construction Site Security Camera Installation", description: "Solar-powered wireless security cameras for construction sites and temporary locations in South Jersey. No power or internet required. Includes cellular connectivity, remote monitoring, and theft deterrence.", provider: { "@type": "LocalBusiness", name: SITE.name, url: SITE.url, telephone: SITE.phone }, areaServed: ["South Jersey", "Atlantic County NJ", "Cape May County NJ", "Camden County NJ", "Delaware Valley"], serviceType: "Jobsite Security Camera Installation", url: `${SITE.url}/services/jobsite-security` },
+        { "@type": "FAQPage", mainEntity: [
+          { "@type": "Question", name: "Do construction site security cameras need power or internet?", acceptedAnswer: { "@type": "Answer", text: "No. Our solar-powered wireless cameras are completely self-contained. They run on solar power with battery backup and connect via cellular network, so no on-site power or internet is required." } },
+          { "@type": "Question", name: "Can I rent construction site security cameras?", acceptedAnswer: { "@type": "Answer", text: "Yes. We offer flexible rental options for short-term and long-term jobsite security deployments. This is ideal for construction projects, temporary storage yards, and event venues." } },
+          { "@type": "Question", name: "How do jobsite cameras deter theft?", acceptedAnswer: { "@type": "Answer", text: "Our cameras feature visible deterrence signage, motion-activated spotlights, and two-way audio so operators can issue live verbal warnings to trespassers. Combined with 24/7 monitoring, this dramatically reduces equipment theft on construction sites." } },
+          { "@type": "Question", name: "How quickly can you deploy jobsite security cameras in South Jersey?", acceptedAnswer: { "@type": "Answer", text: "We can typically deploy a complete jobsite security system within 24–48 hours of order confirmation. Our wireless solar systems require no trenching or electrical work, making installation fast and non-disruptive." } },
+        ] },
+      ],
+    }) }} />
     <ServicePageLayout
       title="Jobsite Security Solutions"
       subtitle="Advanced wireless cameras and alarm systems for construction sites, equipment storage, and temporary locations. No power or internet required at your property."

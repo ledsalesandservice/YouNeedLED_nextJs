@@ -1,5 +1,5 @@
 import ServicePageLayout from "@/components/ServicePageLayout";
-import { IMAGES, IMAGE_SRCSETS } from "@/lib/siteData";
+import { IMAGES, IMAGE_SRCSETS, SITE } from "@/lib/siteData";
 import SEOHead from "@/components/SEOHead";
 import { KeyRound, Smartphone, Users, Lock, Fingerprint, Cloud } from "lucide-react";
 
@@ -7,10 +7,22 @@ export default function AccessControl() {
   return (
     <>
     <SEOHead
-      title="Access Control Systems | Keyless Entry & RFID"
-      description="CDVI & Alarm.com powered access control systems with RFID, biometric, and mobile credentials. Professional installation in South Jersey. Call (609) 335-0123."
+      title="Access Control Systems South Jersey | Keyless Entry & RFID | You Need L.E.D."
+      description="CDVI & Alarm.com access control with RFID, biometric & mobile credentials. NJ DCA Licensed installation in South Jersey. Free quote: (609) 335-0123."
       canonical="/services/access-control"
     />
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+      "@context": "https://schema.org",
+      "@graph": [
+        { "@type": "Service", name: "Access Control System Installation", description: "Professional access control installation including RFID card readers, biometric scanners, mobile credentials, and cloud-managed door access for commercial properties in South Jersey.", provider: { "@type": "LocalBusiness", name: SITE.name, url: SITE.url, telephone: SITE.phone }, areaServed: ["South Jersey", "Cherry Hill NJ", "Voorhees NJ", "Mount Laurel NJ", "Philadelphia PA"], serviceType: "Access Control Installation", url: `${SITE.url}/services/access-control` },
+        { "@type": "FAQPage", mainEntity: [
+          { "@type": "Question", name: "What is an access control system?", acceptedAnswer: { "@type": "Answer", text: "An access control system replaces traditional keys with electronic credentials — RFID cards, key fobs, mobile apps, or biometric readers — that let you control who enters your building and when. You can grant or revoke access instantly from anywhere." } },
+          { "@type": "Question", name: "What access control brands do you install in South Jersey?", acceptedAnswer: { "@type": "Answer", text: "We are authorized dealers for CDVI and Alarm.com access control systems, offering cloud-managed door access, mobile credentials, and seamless integration with video surveillance and intrusion detection." } },
+          { "@type": "Question", name: "Can I manage access control from my phone?", acceptedAnswer: { "@type": "Answer", text: "Yes. Our Alarm.com-powered systems let you lock/unlock doors, view access logs, add or remove users, and receive alerts from any smartphone or computer in real time." } },
+          { "@type": "Question", name: "Are you licensed to install access control in New Jersey?", acceptedAnswer: { "@type": "Answer", text: "Yes. You Need L.E.D. is NJ DCA Licensed (#34BF00056900) and has been installing commercial access control systems in South Jersey and the Delaware Valley for over 15 years." } },
+        ] },
+      ],
+    }) }} />
     <ServicePageLayout
       title="Access Control Systems"
       subtitle="CDVI & Alarm.com powered keyless entry systems with RFID, biometric, and mobile credentials. Cloud-managed security for any facility."

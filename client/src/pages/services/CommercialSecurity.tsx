@@ -20,10 +20,35 @@ export default function CommercialSecurity() {
   return (
     <>
       <SEOHead
-        title="Commercial Security Systems South Jersey"
-        description="Complete commercial security solutions: video surveillance, access control, fire alarms, intrusion detection, and jobsite security. NJ DCA Licensed. Call (609) 335-0123."
+        title="Commercial Security Systems South Jersey | NJ DCA Licensed | You Need L.E.D."
+        description="Complete commercial security in South Jersey: 4K cameras, access control, fire alarms, intrusion detection & jobsite security. NJ DCA Licensed. Call (609) 335-0123."
         canonical="/services/commercial-security"
       />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        name: SITE.name,
+        url: SITE.url,
+        telephone: SITE.phone,
+        description: "NJ DCA Licensed commercial security company serving South Jersey and the Delaware Valley for 15+ years. Services include 4K security cameras, access control, fire alarm systems, intrusion detection, jobsite security, VoIP, and digital signage.",
+        address: { "@type": "PostalAddress", streetAddress: "199 New Rd Ste 61", addressLocality: "Linwood", addressRegion: "NJ", postalCode: "08221", addressCountry: "US" },
+        geo: { "@type": "GeoCoordinates", latitude: 39.3398, longitude: -74.5774 },
+        areaServed: ["South Jersey", "Delaware Valley", "Cherry Hill NJ", "Voorhees NJ", "Mount Laurel NJ", "Egg Harbor Township NJ", "Atlantic City NJ", "Philadelphia PA"],
+        hasCredential: "NJ DCA License #34BF00056900",
+        aggregateRating: { "@type": "AggregateRating", ratingValue: "5.0", reviewCount: "32", bestRating: "5" },
+        hasOfferCatalog: {
+          "@type": "OfferCatalog",
+          name: "Commercial Security Services",
+          itemListElement: [
+            { "@type": "Offer", itemOffered: { "@type": "Service", name: "Video Surveillance", url: `${SITE.url}/services/video-surveillance` } },
+            { "@type": "Offer", itemOffered: { "@type": "Service", name: "Access Control", url: `${SITE.url}/services/access-control` } },
+            { "@type": "Offer", itemOffered: { "@type": "Service", name: "Fire Alarm Systems", url: `${SITE.url}/services/fire-alarm-systems` } },
+            { "@type": "Offer", itemOffered: { "@type": "Service", name: "Intrusion Detection", url: `${SITE.url}/services/intrusion-detection` } },
+            { "@type": "Offer", itemOffered: { "@type": "Service", name: "Jobsite Security", url: `${SITE.url}/services/jobsite-security` } },
+            { "@type": "Offer", itemOffered: { "@type": "Service", name: "Digital Signage", url: `${SITE.url}/services/digital-signage` } },
+          ],
+        },
+      }) }} />
 
       {/* Hero */}
       <section className="relative py-20 lg:py-28 bg-[#0e319a]">

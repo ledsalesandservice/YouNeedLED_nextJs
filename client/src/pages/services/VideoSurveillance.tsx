@@ -1,5 +1,5 @@
 import ServicePageLayout from "@/components/ServicePageLayout";
-import { IMAGES, IMAGE_SRCSETS } from "@/lib/siteData";
+import { IMAGES, IMAGE_SRCSETS, SITE } from "@/lib/siteData";
 import SEOHead from "@/components/SEOHead";
 import { Camera, Eye, Cloud, Cpu, Wifi, Shield } from "lucide-react";
 
@@ -7,10 +7,35 @@ export default function VideoSurveillance() {
   return (
     <>
     <SEOHead
-      title="Video Surveillance & Security Camera Installation"
-      description="Professional 4K security camera installation with AI analytics, license plate recognition, and cloud storage. NJ DCA Licensed. Call (609) 335-0123."
+      title="Security Camera Installation South Jersey | 4K AI Cameras | You Need L.E.D."
+      description="NJ DCA Licensed security camera installation in South Jersey. 4K AI cameras with license plate recognition, cloud storage & 24/7 monitoring. Free quote: (609) 335-0123."
       canonical="/services/video-surveillance"
     />
+    {/* Service + FAQPage Schema */}
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Service",
+          name: "Security Camera Installation",
+          description: "Professional 4K AI-powered security camera installation for commercial and residential properties in South Jersey. Includes license plate recognition, cloud storage, and 24/7 monitoring.",
+          provider: { "@type": "LocalBusiness", name: SITE.name, url: SITE.url, telephone: SITE.phone },
+          areaServed: ["South Jersey", "Cherry Hill NJ", "Voorhees NJ", "Mount Laurel NJ", "Egg Harbor Township NJ", "Atlantic City NJ"],
+          serviceType: "Security Camera Installation",
+          url: `${SITE.url}/services/video-surveillance`,
+        },
+        {
+          "@type": "FAQPage",
+          mainEntity: [
+            { "@type": "Question", name: "What type of security cameras do you install in South Jersey?", acceptedAnswer: { "@type": "Answer", text: "We install commercial and residential cameras including dome, bullet, PTZ, and specialty cameras from Hanwha, Axis, and Alarm.com. All cameras support 4K resolution with AI analytics for people, vehicle, and license plate detection." } },
+            { "@type": "Question", name: "How much does security camera installation cost?", acceptedAnswer: { "@type": "Answer", text: "Our Essential package starts at $2,499 for a 4-camera 4K system with professional installation. Professional 8-camera systems start at $4,999. Contact us at (609) 335-0123 for a free on-site assessment." } },
+            { "@type": "Question", name: "Do your security cameras work without internet?", acceptedAnswer: { "@type": "Answer", text: "Yes. We offer local NVR recording that stores footage on-site without requiring internet. We also offer cellular-connected and solar-powered cameras for remote locations." } },
+            { "@type": "Question", name: "How long is security camera footage stored?", acceptedAnswer: { "@type": "Answer", text: "Local NVR storage provides 30–90 day retention. Cloud storage options offer flexible retention. Enterprise clients can customize retention to meet compliance requirements." } },
+            { "@type": "Question", name: "Are you licensed to install security cameras in New Jersey?", acceptedAnswer: { "@type": "Answer", text: "Yes. You Need L.E.D. is NJ DCA Licensed (#34BF00056900) with over 15 years of experience installing commercial and residential security camera systems throughout South Jersey and the Delaware Valley." } },
+          ],
+        },
+      ],
+    }) }} />
     <ServicePageLayout
       title="Video Surveillance Systems"
       subtitle="Enterprise-grade 4K security cameras with AI-powered analytics, license plate recognition, and cloud storage. Professional installation by licensed experts."
@@ -28,7 +53,8 @@ export default function VideoSurveillance() {
       ]}
       faqs={[
         { q: "What type of cameras do you install?", a: "We install a wide range of commercial and residential cameras including dome, bullet, PTZ, and specialty cameras from top manufacturers like Hanwha, Axis, and Alarm.com. All our cameras support 4K resolution with AI analytics." },
-        { q: "Can I view my cameras remotely?", a: "Yes! All our camera systems include mobile app access so you can view live and recorded footage from your smartphone, tablet, or computer from anywhere in the world." },
+        { q: "Can I view my cameras remotely?", a: "Yes. All our camera systems include mobile app access so you can view live and recorded footage from your smartphone, tablet, or computer from anywhere in the world." },
+        { q: "How much does installation cost?", a: "Pricing depends on the number of cameras, system complexity, and any infrastructure work required. Our Essential package starts at $2,499 for a 4-camera system. Contact us for a free on-site assessment and quote." },
         { q: "How long is footage stored?", a: "Storage duration depends on your plan. We offer local NVR storage with 30-90 day retention, and cloud storage options with flexible retention periods. Enterprise clients can customize retention to meet compliance requirements." },
         { q: "Do you offer camera system maintenance?", a: "Yes, we provide ongoing maintenance plans that include regular cleaning, firmware updates, system health checks, and priority support. This ensures your system operates at peak performance." },
       ]}

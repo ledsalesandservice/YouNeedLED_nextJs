@@ -8,10 +8,22 @@ export default function VoIP() {
   return (
     <>
     <SEOHead
-      title="Hosted PBX & VoIP Phone Systems South Jersey"
-      description="Enterprise-grade cloud phone systems with auto-attendant, Microsoft Teams integration, and LEDConnect AI Voice Agents. Professional installation. Call (609) 335-0123."
+      title="VoIP Phone Systems South Jersey | Hosted PBX & Microsoft Teams | You Need L.E.D."
+      description="Cloud PBX & VoIP with auto-attendant, Microsoft Teams integration & LEDConnect AI Voice Agents. NJ DCA Licensed. Free quote: (609) 335-0123."
       canonical="/services/voip"
     />
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+      "@context": "https://schema.org",
+      "@graph": [
+        { "@type": "Service", name: "Hosted PBX & VoIP Phone System Installation", description: "Enterprise-grade cloud phone systems with auto-attendant, Microsoft Teams integration, and LEDConnect AI Voice Agents for South Jersey businesses. Professional installation and support.", provider: { "@type": "LocalBusiness", name: SITE.name, url: SITE.url, telephone: SITE.phone }, areaServed: ["South Jersey", "Cherry Hill NJ", "Voorhees NJ", "Philadelphia PA", "Delaware Valley"], serviceType: "VoIP Phone System Installation", url: `${SITE.url}/services/voip` },
+        { "@type": "FAQPage", mainEntity: [
+          { "@type": "Question", name: "What is a Hosted PBX VoIP system?", acceptedAnswer: { "@type": "Answer", text: "A Hosted PBX is a cloud-based phone system that handles all your business calling needs without on-premise hardware. All call routing, voicemail, and features are managed in the cloud, reducing costs and complexity." } },
+          { "@type": "Question", name: "Can I keep my existing phone numbers when switching to VoIP?", acceptedAnswer: { "@type": "Answer", text: "Yes. We handle the number porting process to transfer your existing business phone numbers to the new VoIP system. The process typically takes 5–10 business days with no downtime." } },
+          { "@type": "Question", name: "Does your VoIP system integrate with Microsoft Teams?", acceptedAnswer: { "@type": "Answer", text: "Yes. Our Professional and Enterprise VoIP packages include full Microsoft Teams integration, allowing your team to make and receive business calls directly within Teams on any device." } },
+          { "@type": "Question", name: "What is the LEDConnect AI Voice Agent?", acceptedAnswer: { "@type": "Answer", text: "The LEDConnect AI Voice Agent is an AI-powered virtual receptionist that answers calls 24/7, blocks spam, captures leads, schedules appointments, and handles overflow calls automatically alongside your existing VoIP system." } },
+        ] },
+      ],
+    }) }} />
     <ServicePageLayout
       title="Hosted PBX & VoIP Phone Systems"
       subtitle="Enterprise-grade cloud phone systems with auto-attendant, call routing, Microsoft Teams integration, and now LEDConnect AI Voice Agents for 24/7 call handling."

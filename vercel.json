@@ -68,7 +68,7 @@
     { "source": "/cameras", "destination": "/cameras/index.html" },
     { "source": "/phone-systems", "destination": "/phone-systems/index.html" },
     {
-      "source": "/((?!assets|digital-signage|cameras|phone-systems|favicon|robots\\.txt|sitemap\\.xml|.*\\.(js|css|webp|jpg|jpeg|png|svg|ico|gif|woff|woff2|ttf|otf|eot|json|xml|txt|map|br|gz)).*)",
+      "source": "/((?!assets|fonts|digital-signage|cameras|phone-systems|favicon|robots\\.txt|sitemap\\.xml|.*\\.(js|css|webp|jpg|jpeg|png|svg|ico|gif|woff|woff2|ttf|otf|eot|json|xml|txt|map|br|gz)).*)",
       "destination": "/index.html"
     }
   ]

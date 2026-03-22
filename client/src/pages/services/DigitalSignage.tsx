@@ -33,7 +33,7 @@ const USE_CASES = [
     title: "Corporate & Internal Communications",
     description:
       "Keep your team informed whether they're on the floor, in the breakroom, or walking through the lobby. Broadcast real-time company updates, HR announcements, KPIs, and meeting schedules.",
-    image: "/digital-signage/corporate.jpg",
+    image: "/digital-signage/corporate.webp",
     alt: "Corporate lobby digital signage display",
   },
   {
@@ -41,7 +41,7 @@ const USE_CASES = [
     title: "Retail Environments",
     description:
       "Drive sales and strengthen your brand on the sales floor. Promote new products, upcoming sales, and special offers. Manage messaging across one store or multiple Tri-State locations from a single dashboard.",
-    image: "/digital-signage/retail.jpg",
+    image: "/digital-signage/retail.webp",
     alt: "Retail store digital signage display wall",
   },
   {
@@ -49,7 +49,7 @@ const USE_CASES = [
     title: "Hospitality & Hotels",
     description:
       "Elevate the guest experience from the moment they walk in. Display daily activity schedules, promote on-site dining, welcome VIP guests, and feature local sponsored content — all on one managed platform.",
-    image: "/digital-signage/hospitality.jpg",
+    image: "/digital-signage/hospitality.webp",
     alt: "Hotel lobby digital signage kiosk",
   },
   {
@@ -73,7 +73,7 @@ const USE_CASES = [
     title: "Sports Facilities & Gyms",
     description:
       "Keep the energy high with real-time class schedules, promotional offers, member announcements, and safety alerts. Engage members with dynamic, high-impact visuals on every screen.",
-    image: "/digital-signage/sports-gym.jpg",
+    image: "/digital-signage/sports-gym.webp",
     alt: "Gym fitness center digital signage display",
   },
   {
@@ -81,7 +81,7 @@ const USE_CASES = [
     title: "Banks & Financial Services",
     description:
       "Streamline lobby communication with real-time rate displays, product promotions, and live queue updates. Reduce perceived wait times and highlight key services exactly when customers are paying attention.",
-    image: "/digital-signage/banking.png",
+    image: "/digital-signage/banking.webp",
     alt: "Bank lobby digital signage showing mortgage rates",
   },
 ];

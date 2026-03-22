@@ -37,7 +37,7 @@ export const IMAGES = {
   heroCameras: "https://d2xsxph8kpxj0f.cloudfront.net/310419663030082570/Tfe6MLMokmY8tMP4sdwDCa/hero-cameras-Epwbn9AsuWE6eQcF4RnUJr.webp",
   heroAiAgent: "https://d2xsxph8kpxj0f.cloudfront.net/310419663030082570/Tfe6MLMokmY8tMP4sdwDCa/hero-ai-agent-NEVWnYfLcWxHS9dfuYkND8.webp",
   heroAccess: "https://d2xsxph8kpxj0f.cloudfront.net/310419663030082570/Tfe6MLMokmY8tMP4sdwDCa/hero-access-control-9nuBCFGBp72MkRE4DdoFf3.webp",
-  heroDigitalSignage: "/digital-signage/corporate.jpg",
+  heroDigitalSignage: "/digital-signage/corporate.webp",
 };
 
 // Responsive srcset strings — local WebP files at 400/800/1200/1920w

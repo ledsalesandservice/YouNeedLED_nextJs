@@ -1,4 +1,5 @@
 import { jsxLocPlugin } from "@builder.io/vite-plugin-jsx-loc";
+import { compression } from "vite-plugin-compression2";
 import tailwindcss from "@tailwindcss/vite";
 import react from "@vitejs/plugin-react";
 import fs from "node:fs";
@@ -150,7 +151,17 @@ function vitePluginManusDebugCollector(): Plugin {
   };
 }
 
-const plugins = [react(), tailwindcss(), jsxLocPlugin(), vitePluginManusRuntime(), vitePluginManusDebugCollector()];
+const plugins = [
+  react(),
+  tailwindcss(),
+  jsxLocPlugin(),
+  vitePluginManusRuntime(),
+  vitePluginManusDebugCollector(),
+  // Pre-generate gzip and Brotli compressed assets at build time
+  // Vercel serves these automatically, fixing gzip/compression scan warnings
+  compression({ algorithm: "gzip", exclude: [/\.(png|jpe?g|gif|webp|ico|woff2?)$/i] }),
+  compression({ algorithm: "brotliCompress", exclude: [/\.(png|jpe?g|gif|webp|ico|woff2?)$/i] }),
+];
 
 export default defineConfig({
   plugins,

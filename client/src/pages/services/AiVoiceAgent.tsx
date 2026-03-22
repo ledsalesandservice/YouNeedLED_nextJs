@@ -214,7 +214,7 @@ export default function AiVoiceAgent() {
               <h3 className="font-heading text-xl font-bold text-slate-900 mb-2">AI Voice Add-On</h3>
               <p className="text-sm text-slate-500 mb-4">For existing LEDConnect VoIP customers</p>
               <div className="mb-6">
-                <span className="font-heading text-4xl font-extrabold text-[#0e319a]">$49</span>
+                <span className="font-heading text-4xl font-extrabold text-[#0e319a]">$75</span>
                 <span className="text-slate-500">/month</span>
               </div>
               <ul className="space-y-3 mb-6">

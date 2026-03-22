@@ -19,6 +19,7 @@ import {
 } from "lucide-react";
 
 // Use cases with photos — images live in /public/digital-signage/
+// srcSet provides 224w / 448w (2x retina) / 672w (3x retina) responsive versions
 const USE_CASES = [
   {
     icon: <Utensils className="w-5 h-5" />,
@@ -26,6 +27,7 @@ const USE_CASES = [
     description:
       "Restaurants, cafes, and bars can ditch static paper menus and go fully dynamic. Update pricing, promote daily specials, and schedule dayparting transitions — all from the cloud, instantly.",
     image: "/digital-signage/menu-boards.webp",
+    srcSet: "/digital-signage/menu-boards-224w.webp 224w, /digital-signage/menu-boards-448w.webp 448w, /digital-signage/menu-boards-672w.webp 672w",
     alt: "Digital menu board display in a restaurant",
   },
   {
@@ -34,6 +36,7 @@ const USE_CASES = [
     description:
       "Keep your team informed whether they're on the floor, in the breakroom, or walking through the lobby. Broadcast real-time company updates, HR announcements, KPIs, and meeting schedules.",
     image: "/digital-signage/corporate.webp",
+    srcSet: "/digital-signage/corporate-224w.webp 224w, /digital-signage/corporate-448w.webp 448w, /digital-signage/corporate-672w.webp 672w",
     alt: "Corporate lobby digital signage display",
   },
   {
@@ -42,6 +45,7 @@ const USE_CASES = [
     description:
       "Drive sales and strengthen your brand on the sales floor. Promote new products, upcoming sales, and special offers. Manage messaging across one store or multiple Tri-State locations from a single dashboard.",
     image: "/digital-signage/retail.webp",
+    srcSet: "/digital-signage/retail-224w.webp 224w, /digital-signage/retail-448w.webp 448w, /digital-signage/retail-672w.webp 672w",
     alt: "Retail store digital signage display wall",
   },
   {
@@ -50,6 +54,7 @@ const USE_CASES = [
     description:
       "Elevate the guest experience from the moment they walk in. Display daily activity schedules, promote on-site dining, welcome VIP guests, and feature local sponsored content — all on one managed platform.",
     image: "/digital-signage/hospitality.webp",
+    srcSet: "/digital-signage/hospitality-224w.webp 224w, /digital-signage/hospitality-448w.webp 448w, /digital-signage/hospitality-672w.webp 672w",
     alt: "Hotel lobby digital signage kiosk",
   },
   {
@@ -58,6 +63,7 @@ const USE_CASES = [
     description:
       "From K-12 schools to universities, our displays transform hallways, lobbies, and cafeterias into communication hubs. Share event schedules, emergency notifications, and campus news with centralized control.",
     image: "/digital-signage/education.webp",
+    srcSet: "/digital-signage/education-224w.webp 224w, /digital-signage/education-448w.webp 448w, /digital-signage/education-672w.webp 672w",
     alt: "School campus hallway digital signage display",
   },
   {
@@ -66,6 +72,7 @@ const USE_CASES = [
     description:
       "Replace inefficient paper notices with cloud-managed displays showing hourly schedules, room assignments, and directional information. Keep events running smoothly and attendees well-informed.",
     image: "/digital-signage/conference.webp",
+    srcSet: "/digital-signage/conference-224w.webp 224w, /digital-signage/conference-448w.webp 448w, /digital-signage/conference-672w.webp 672w",
     alt: "Conference center room schedule digital signage",
   },
   {
@@ -74,6 +81,7 @@ const USE_CASES = [
     description:
       "Keep the energy high with real-time class schedules, promotional offers, member announcements, and safety alerts. Engage members with dynamic, high-impact visuals on every screen.",
     image: "/digital-signage/sports-gym.webp",
+    srcSet: "/digital-signage/sports-gym-224w.webp 224w, /digital-signage/sports-gym-448w.webp 448w, /digital-signage/sports-gym-672w.webp 672w",
     alt: "Gym fitness center digital signage display",
   },
   {
@@ -82,6 +90,7 @@ const USE_CASES = [
     description:
       "Streamline lobby communication with real-time rate displays, product promotions, and live queue updates. Reduce perceived wait times and highlight key services exactly when customers are paying attention.",
     image: "/digital-signage/banking.webp",
+    srcSet: "/digital-signage/banking-224w.webp 224w, /digital-signage/banking-448w.webp 448w, /digital-signage/banking-672w.webp 672w",
     alt: "Bank lobby digital signage showing mortgage rates",
   },
 ];
@@ -199,9 +208,13 @@ export default function DigitalSignage() {
                   <div className="sm:w-48 lg:w-56 shrink-0 overflow-hidden">
                     <img
                       src={uc.image}
+                      srcSet={uc.srcSet}
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 192px, 224px"
                       alt={uc.alt}
                       className="w-full h-48 sm:h-full object-cover group-hover:scale-105 transition-transform duration-500"
                       loading="lazy"
+                      width="224"
+                      height="149"
                     />
                   </div>
                   <div className="p-5 flex flex-col justify-center">

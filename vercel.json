@@ -7,79 +7,49 @@
     {
       "source": "/assets/(.*)",
       "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
-        },
-        {
-          "key": "Vary",
-          "value": "Accept-Encoding"
-        }
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" },
+        { "key": "Expires", "value": "Thu, 31 Dec 2026 23:59:59 GMT" },
+        { "key": "Vary", "value": "Accept-Encoding" }
       ]
     },
     {
       "source": "/(.*\\.js|.*\\.mjs|.*\\.cjs)",
       "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
-        },
-        {
-          "key": "Vary",
-          "value": "Accept-Encoding"
-        }
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" },
+        { "key": "Expires", "value": "Thu, 31 Dec 2026 23:59:59 GMT" },
+        { "key": "Vary", "value": "Accept-Encoding" }
       ]
     },
     {
       "source": "/(.*\\.css)",
       "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
-        },
-        {
-          "key": "Vary",
-          "value": "Accept-Encoding"
-        }
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" },
+        { "key": "Expires", "value": "Thu, 31 Dec 2026 23:59:59 GMT" },
+        { "key": "Vary", "value": "Accept-Encoding" }
       ]
     },
     {
       "source": "/(.*\\.woff|.*\\.woff2|.*\\.ttf|.*\\.otf|.*\\.eot)",
       "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
-        },
-        {
-          "key": "Vary",
-          "value": "Accept-Encoding"
-        }
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" },
+        { "key": "Expires", "value": "Thu, 31 Dec 2026 23:59:59 GMT" },
+        { "key": "Vary", "value": "Accept-Encoding" }
       ]
     },
     {
-      "source": "/(.*\\.webp|.*\\.jpg|.*\\.jpeg|.*\\.png|.*\\.ico|.*\\.svg|.*\\.gif)",
+      "source": "/(.*\\.webp|.*\\.jpg|.*\\.jpeg|.*\\.png|.*\\.ico|.*\\.svg|.*\\.gif|.*\\.avif)",
       "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=604800, stale-while-revalidate=86400"
-        },
-        {
-          "key": "Vary",
-          "value": "Accept-Encoding"
-        }
+        { "key": "Cache-Control", "value": "public, max-age=2592000, stale-while-revalidate=86400" },
+        { "key": "Expires", "value": "Thu, 21 Apr 2026 00:00:00 GMT" },
+        { "key": "Vary", "value": "Accept-Encoding" }
       ]
     },
     {
       "source": "/(.*\\.json|.*\\.xml|.*\\.txt)",
       "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=3600, stale-while-revalidate=600"
-        },
-        {
-          "key": "Vary",
-          "value": "Accept-Encoding"
-        }
+        { "key": "Cache-Control", "value": "public, max-age=3600, stale-while-revalidate=600" },
+        { "key": "Expires", "value": "Sun, 22 Mar 2026 01:00:00 GMT" },
+        { "key": "Vary", "value": "Accept-Encoding" }
       ]
     },
     {

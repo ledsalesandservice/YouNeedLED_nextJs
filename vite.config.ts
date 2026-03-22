@@ -166,6 +166,19 @@ export default defineConfig({
   build: {
     outDir: path.resolve(import.meta.dirname, "dist/public"),
     emptyOutDir: true,
+    // Improve chunk splitting for better caching and smaller initial payload
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          // Separate vendor bundle so it can be cached independently
+          vendor: ["react", "react-dom"],
+          router: ["wouter"],
+          ui: ["lucide-react", "framer-motion"],
+        },
+      },
+    },
+    // Increase chunk size warning threshold (our chunks are intentionally split)
+    chunkSizeWarningLimit: 600,
   },
   server: {
     port: 3000,

@@ -48,7 +48,7 @@
       "source": "/(.*\\.json|.*\\.xml|.*\\.txt)",
       "headers": [
         { "key": "Cache-Control", "value": "public, max-age=3600, stale-while-revalidate=600" },
-        { "key": "Expires", "value": "Sun, 22 Mar 2026 01:00:00 GMT" },
+        { "key": "Expires", "value": "Sun, 22 Mar 2026 02:00:00 GMT" },
         { "key": "Vary", "value": "Accept-Encoding" }
       ]
     },
@@ -58,13 +58,18 @@
         { "key": "X-Content-Type-Options", "value": "nosniff" },
         { "key": "X-Frame-Options", "value": "SAMEORIGIN" },
         { "key": "X-XSS-Protection", "value": "1; mode=block" },
-        { "key": "Vary", "value": "Accept-Encoding" }
+        { "key": "Vary", "value": "Accept-Encoding" },
+        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" },
+        { "key": "Expires", "value": "Thu, 22 Mar 2026 13:30:00 GMT" }
       ]
     }
   ],
   "rewrites": [
     { "source": "/cameras", "destination": "/cameras/index.html" },
     { "source": "/phone-systems", "destination": "/phone-systems/index.html" },
-    { "source": "/((?!cameras|phone-systems).*)", "destination": "/index.html" }
+    {
+      "source": "/((?!assets|digital-signage|cameras|phone-systems|favicon|robots\\.txt|sitemap\\.xml|.*\\.(js|css|webp|jpg|jpeg|png|svg|ico|gif|woff|woff2|ttf|otf|eot|json|xml|txt|map|br|gz)).*)",
+      "destination": "/index.html"
+    }
   ]
 }

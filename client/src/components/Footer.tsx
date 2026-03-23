@@ -49,6 +49,7 @@ export default function Footer() {
                 { label: "Intrusion Detection", href: "/services/intrusion-detection" },
                 { label: "LEDConnect AI Voice", href: "/services/ai-voice-agent" },
                 { label: "Digital Signage", href: "/services/digital-signage" },
+                { label: "Case Studies", href: "/case-studies" },
               ].map((link) => (
                 <li key={link.href}>
                   <Link href={link.href} className="text-sm text-white/60 hover:text-white transition-colors">

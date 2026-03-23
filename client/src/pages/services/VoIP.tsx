@@ -2,7 +2,8 @@ import ServicePageLayout from "@/components/ServicePageLayout";
 import { SITE, IMAGES, IMAGE_SRCSETS } from "@/lib/siteData";
 import SEOHead from "@/components/SEOHead";
 import { Link } from "wouter";
-import { Phone, Headphones, Cloud, Users, Settings, Monitor, Bot, PhoneOff, CalendarCheck, UserCheck, Zap, ArrowRight } from "lucide-react";
+import { Phone, Headphones, Cloud, Users, Settings, Monitor, Bot, PhoneOff, CalendarCheck, UserCheck, Zap, ArrowRight, CheckCircle2 } from "lucide-react";
+import { FadeIn, StaggerContainer, StaggerItem } from "@/components/animations";
 
 export default function VoIP() {
   return (
@@ -15,7 +16,15 @@ export default function VoIP() {
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
       "@context": "https://schema.org",
       "@graph": [
-        { "@type": "Service", name: "Hosted PBX & VoIP Phone System Installation", description: "Enterprise-grade cloud phone systems with auto-attendant, Microsoft Teams integration, and LEDConnect AI Voice Agents for South Jersey businesses. Professional installation and support.", provider: { "@type": "LocalBusiness", name: SITE.name, url: SITE.url, telephone: SITE.phone }, areaServed: ["South Jersey", "Cherry Hill NJ", "Voorhees NJ", "Philadelphia PA", "Delaware Valley"], serviceType: "VoIP Phone System Installation", url: `${SITE.url}/services/voip` },
+        { "@type": "Service", name: "Hosted PBX & VoIP Phone System Installation", description: "Enterprise-grade cloud phone systems with auto-attendant, Microsoft Teams integration, and LEDConnect AI Voice Agents for South Jersey businesses. Professional installation and support.", provider: { "@type": "LocalBusiness", name: SITE.name, url: SITE.url, telephone: SITE.phone }, areaServed: [
+              { "@type": "State", name: "New Jersey" },
+              { "@type": "City", name: "Cherry Hill, NJ" },
+              { "@type": "City", name: "Voorhees, NJ" },
+              { "@type": "City", name: "Mount Laurel, NJ" },
+              { "@type": "City", name: "Egg Harbor Township, NJ" },
+              { "@type": "City", name: "Atlantic City, NJ" },
+              { "@type": "City", name: "Somers Point, NJ" },
+            ], serviceType: "VoIP Phone System Installation", url: `${SITE.url}/services/voip`, "@id": `${SITE.url}/services/voip#service` },
         { "@type": "FAQPage", mainEntity: [
           { "@type": "Question", name: "What is a Hosted PBX VoIP system?", acceptedAnswer: { "@type": "Answer", text: "A Hosted PBX is a cloud-based phone system that handles all your business calling needs without on-premise hardware. All call routing, voicemail, and features are managed in the cloud, reducing costs and complexity." } },
           { "@type": "Question", name: "Can I keep my existing phone numbers when switching to VoIP?", acceptedAnswer: { "@type": "Answer", text: "Yes. We handle the number porting process to transfer your existing business phone numbers to the new VoIP system. The process typically takes 5–10 business days with no downtime." } },
@@ -115,6 +124,79 @@ export default function VoIP() {
             <div>
               <img src={IMAGES.heroAiAgent} srcSet={IMAGE_SRCSETS.heroAiAgent} sizes="(max-width: 768px) 100vw, 50vw" alt="LEDConnect AI Voice Agent" className="rounded-2xl shadow-2xl shadow-black/30 w-full max-w-full h-auto" loading="lazy" width="800" height="600" />
             </div>
+          </div>
+        </div>
+      </section>
+      {/* ===== INDUSTRIES ===== */}
+      <section className="py-16 lg:py-20 bg-slate-50">
+        <div className="container">
+          <FadeIn className="text-center max-w-2xl mx-auto mb-12">
+            <p className="text-sm font-semibold text-[#f97015] uppercase tracking-wider mb-3">Industries We Serve</p>
+            <h2 className="font-heading text-2xl sm:text-3xl font-bold text-slate-900 mb-4">
+              VoIP Phone Systems for Every South Jersey Business
+            </h2>
+          </FadeIn>
+          <StaggerContainer className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {[
+              { name: "Medical & Dental Offices", desc: "HIPAA-compliant call recording, appointment reminder integrations, and after-hours routing to our LEDConnect AI Voice Agent so no patient call goes unanswered." },
+              { name: "Law Firms", desc: "Call recording for compliance, client call routing by practice area, and a professional auto-attendant that reflects your firm's brand 24/7." },
+              { name: "Real Estate Offices", desc: "Route calls to agents by availability, record client calls, and integrate with CRM systems. Works on mobile so agents never miss a lead." },
+              { name: "Retail & Restaurants", desc: "Auto-attendant handles hours, directions, and reservations. Integrate with your POS or reservation system for seamless customer communication." },
+              { name: "Property Management", desc: "Manage tenant calls across multiple properties from a single system. Route maintenance requests, leasing inquiries, and emergency calls automatically." },
+              { name: "Construction & Trades", desc: "Keep your office and field crews connected on one system. Mobile app means your team has their business line on their personal phone." },
+            ].map((ind) => (
+              <StaggerItem key={ind.name}>
+                <div className="p-5 rounded-xl border border-slate-200 bg-white h-full">
+                  <h3 className="font-heading text-base font-semibold text-slate-900 mb-2">{ind.name}</h3>
+                  <p className="text-sm text-slate-600 leading-relaxed">{ind.desc}</p>
+                </div>
+              </StaggerItem>
+            ))}
+          </StaggerContainer>
+        </div>
+      </section>
+
+      {/* ===== LOCATION LINKS ===== */}
+      <section className="py-14 bg-white">
+        <div className="container">
+          <FadeIn className="text-center max-w-2xl mx-auto mb-10">
+            <p className="text-sm font-semibold text-[#f97015] uppercase tracking-wider mb-3">Local Coverage</p>
+            <h2 className="font-heading text-2xl font-bold text-slate-900 mb-3">VoIP Installation Throughout South Jersey</h2>
+          </FadeIn>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl mx-auto">
+            {[
+              { city: "Cherry Hill, NJ", href: "/locations/cherry-hill-nj" },
+              { city: "Voorhees, NJ", href: "/locations/voorhees-nj" },
+              { city: "Mount Laurel, NJ", href: "/locations/mount-laurel-nj" },
+              { city: "Egg Harbor Township, NJ", href: "/locations/egg-harbor-township-nj" },
+              { city: "Somers Point, NJ", href: "/locations/somers-point-nj" },
+              { city: "Atlantic City, NJ", href: "/locations/atlantic-city-nj" },
+            ].map((loc) => (
+              <Link key={loc.city} href={loc.href} className="flex items-center gap-2 p-4 bg-slate-50 rounded-lg border border-slate-200 hover:border-[#0e319a]/30 hover:shadow-sm transition-all text-sm font-medium text-slate-700 hover:text-[#0e319a]">
+                <ArrowRight className="w-4 h-4 text-[#f97015] shrink-0" />
+                VoIP Systems in {loc.city}
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ===== INTERNAL LINKS ===== */}
+      <section className="py-10 bg-slate-50 border-t border-slate-100">
+        <div className="container">
+          <p className="text-sm font-semibold text-slate-500 uppercase tracking-wider mb-4">Explore Related Services</p>
+          <div className="flex flex-wrap gap-3">
+            {[
+              { label: "LEDConnect AI Voice Agent", href: "/services/ai-voice-agent" },
+              { label: "Security Cameras", href: "/services/video-surveillance" },
+              { label: "Access Control Systems", href: "/services/access-control" },
+              { label: "Intrusion Detection", href: "/services/intrusion-detection" },
+              { label: "Digital Signage", href: "/services/digital-signage" },
+            ].map((link) => (
+              <Link key={link.href} href={link.href} className="inline-flex items-center gap-1.5 px-4 py-2 bg-white border border-slate-200 rounded-lg text-sm text-slate-700 hover:border-[#0e319a]/30 hover:text-[#0e319a] transition-colors">
+                {link.label} <ArrowRight className="w-3.5 h-3.5" />
+              </Link>
+            ))}
           </div>
         </div>
       </section>

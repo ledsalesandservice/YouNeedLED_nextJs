@@ -1,7 +1,9 @@
 import ServicePageLayout from "@/components/ServicePageLayout";
 import { IMAGES, SITE } from "@/lib/siteData";
 import SEOHead from "@/components/SEOHead";
-import { Flame, Clock, AlertTriangle, Radio, Wrench, Settings } from "lucide-react";
+import { Flame, Clock, AlertTriangle, Radio, Wrench, Settings, ArrowRight } from "lucide-react";
+import { Link } from "wouter";
+import { FadeIn, StaggerContainer, StaggerItem } from "@/components/animations";
 
 export default function FireAlarm() {
   return (
@@ -72,6 +74,80 @@ export default function FireAlarm() {
                 ))}
               </ul>
             </div>
+          </div>
+        </div>
+      </section>
+      {/* ===== INDUSTRIES ===== */}
+      <section className="py-16 lg:py-20 bg-white">
+        <div className="container">
+          <FadeIn className="text-center max-w-2xl mx-auto mb-12">
+            <p className="text-sm font-semibold text-[#f97015] uppercase tracking-wider mb-3">Industries We Serve</p>
+            <h2 className="font-heading text-2xl sm:text-3xl font-bold text-slate-900 mb-4">
+              Fire Alarm Systems for South Jersey Commercial Properties
+            </h2>
+            <p className="text-slate-600">We design, install, and service NFPA 72-compliant fire alarm systems for a wide range of commercial occupancies throughout South Jersey and the Delaware Valley.</p>
+          </FadeIn>
+          <StaggerContainer className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {[
+              { name: "Office Buildings", desc: "Multi-zone addressable systems with smoke, heat, and CO detection. Integrate with your building's HVAC and access control for automatic lockdown and ventilation control." },
+              { name: "Retail & Restaurants", desc: "Kitchen hood suppression system integration, customer-area smoke detection, and emergency notification systems that meet NJ DCA and local fire marshal requirements." },
+              { name: "Warehouses & Industrial", desc: "High-bay heat detectors, beam detectors for large open spaces, and early warning systems designed for the unique challenges of industrial occupancies." },
+              { name: "Multi-Family & Apartments", desc: "Unit-level and common-area detection with central monitoring. Fully compliant with NJ residential fire code and ADA notification requirements." },
+              { name: "Healthcare Facilities", desc: "NFPA 101 Life Safety Code compliant systems for hospitals, clinics, and assisted living facilities. Integration with nurse call and emergency communication systems." },
+              { name: "Schools & Daycares", desc: "Code-compliant systems with voice evacuation, strobe notification, and integration with door access control for lockdown capability." },
+            ].map((ind) => (
+              <StaggerItem key={ind.name}>
+                <div className="p-5 rounded-xl border border-slate-200 bg-slate-50 h-full">
+                  <h3 className="font-heading text-base font-semibold text-slate-900 mb-2">{ind.name}</h3>
+                  <p className="text-sm text-slate-600 leading-relaxed">{ind.desc}</p>
+                </div>
+              </StaggerItem>
+            ))}
+          </StaggerContainer>
+        </div>
+      </section>
+
+      {/* ===== LOCATION LINKS ===== */}
+      <section className="py-14 bg-slate-50">
+        <div className="container">
+          <FadeIn className="text-center max-w-2xl mx-auto mb-10">
+            <p className="text-sm font-semibold text-[#f97015] uppercase tracking-wider mb-3">Local Coverage</p>
+            <h2 className="font-heading text-2xl font-bold text-slate-900 mb-3">Fire Alarm Installation Throughout South Jersey</h2>
+          </FadeIn>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl mx-auto">
+            {[
+              { city: "Cherry Hill, NJ", href: "/locations/cherry-hill-nj" },
+              { city: "Voorhees, NJ", href: "/locations/voorhees-nj" },
+              { city: "Mount Laurel, NJ", href: "/locations/mount-laurel-nj" },
+              { city: "Egg Harbor Township, NJ", href: "/locations/egg-harbor-township-nj" },
+              { city: "Somers Point, NJ", href: "/locations/somers-point-nj" },
+              { city: "Atlantic City, NJ", href: "/locations/atlantic-city-nj" },
+            ].map((loc) => (
+              <Link key={loc.city} href={loc.href} className="flex items-center gap-2 p-4 bg-white rounded-lg border border-slate-200 hover:border-[#0e319a]/30 hover:shadow-sm transition-all text-sm font-medium text-slate-700 hover:text-[#0e319a]">
+                <ArrowRight className="w-4 h-4 text-[#f97015] shrink-0" />
+                Fire Alarm Systems in {loc.city}
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ===== INTERNAL LINKS ===== */}
+      <section className="py-10 bg-white border-t border-slate-100">
+        <div className="container">
+          <p className="text-sm font-semibold text-slate-500 uppercase tracking-wider mb-4">Explore Related Services</p>
+          <div className="flex flex-wrap gap-3">
+            {[
+              { label: "Intrusion Detection", href: "/services/intrusion-detection" },
+              { label: "Security Cameras", href: "/services/video-surveillance" },
+              { label: "Access Control Systems", href: "/services/access-control" },
+              { label: "Commercial Security", href: "/services/commercial-security" },
+              { label: "Apartment Security", href: "/services/apartment-security" },
+            ].map((link) => (
+              <Link key={link.href} href={link.href} className="inline-flex items-center gap-1.5 px-4 py-2 bg-slate-50 border border-slate-200 rounded-lg text-sm text-slate-700 hover:border-[#0e319a]/30 hover:text-[#0e319a] transition-colors">
+                {link.label} <ArrowRight className="w-3.5 h-3.5" />
+              </Link>
+            ))}
           </div>
         </div>
       </section>

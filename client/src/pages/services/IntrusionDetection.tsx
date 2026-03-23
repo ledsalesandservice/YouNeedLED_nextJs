@@ -1,7 +1,9 @@
 import ServicePageLayout from "@/components/ServicePageLayout";
 import SEOHead from "@/components/SEOHead";
-import { ShieldAlert, Smartphone, Clock, Eye, Radio, Lock } from "lucide-react";
+import { ShieldAlert, Smartphone, Clock, Eye, Radio, Lock, ArrowRight } from "lucide-react";
 import { SITE } from "@/lib/siteData";
+import { Link } from "wouter";
+import { FadeIn, StaggerContainer, StaggerItem } from "@/components/animations";
 
 export default function IntrusionDetection() {
   return (
@@ -70,6 +72,80 @@ export default function IntrusionDetection() {
                   ))}
                 </ul>
               </div>
+            ))}
+          </div>
+        </div>
+      </section>
+      {/* ===== INDUSTRIES ===== */}
+      <section className="py-16 lg:py-20 bg-white">
+        <div className="container">
+          <FadeIn className="text-center max-w-2xl mx-auto mb-12">
+            <p className="text-sm font-semibold text-[#f97015] uppercase tracking-wider mb-3">Industries We Protect</p>
+            <h2 className="font-heading text-2xl sm:text-3xl font-bold text-slate-900 mb-4">
+              Commercial Intrusion Detection for South Jersey Businesses
+            </h2>
+            <p className="text-slate-600">From single-location retail shops to multi-site commercial properties, we design intrusion detection systems that match your risk profile and budget.</p>
+          </FadeIn>
+          <StaggerContainer className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {[
+              { name: "Retail Stores", desc: "After-hours motion detection, glass break sensors, and video verification to confirm break-ins before police dispatch — reducing false alarm fees." },
+              { name: "Office Buildings", desc: "Perimeter and interior zone protection with access control integration. Know exactly who entered, when, and where during any incident." },
+              { name: "Warehouses & Distribution", desc: "Large-footprint coverage with long-range motion detectors, dock door contacts, and Alarm.com mobile alerts for after-hours intrusions." },
+              { name: "Medical & Dental Offices", desc: "Protect controlled substances, patient records, and expensive equipment. HIPAA-aware monitoring with restricted access zones." },
+              { name: "Restaurants & Bars", desc: "After-hours protection for cash, equipment, and inventory. Integrate with your POS system and video surveillance for a complete security picture." },
+              { name: "Multi-Tenant Properties", desc: "Individual tenant zones with shared building monitoring. Landlords and property managers get a single dashboard for all units." },
+            ].map((ind) => (
+              <StaggerItem key={ind.name}>
+                <div className="p-5 rounded-xl border border-slate-200 bg-slate-50 h-full">
+                  <h3 className="font-heading text-base font-semibold text-slate-900 mb-2">{ind.name}</h3>
+                  <p className="text-sm text-slate-600 leading-relaxed">{ind.desc}</p>
+                </div>
+              </StaggerItem>
+            ))}
+          </StaggerContainer>
+        </div>
+      </section>
+
+      {/* ===== LOCATION LINKS ===== */}
+      <section className="py-14 bg-slate-50">
+        <div className="container">
+          <FadeIn className="text-center max-w-2xl mx-auto mb-10">
+            <p className="text-sm font-semibold text-[#f97015] uppercase tracking-wider mb-3">Local Coverage</p>
+            <h2 className="font-heading text-2xl font-bold text-slate-900 mb-3">Alarm System Installation Throughout South Jersey</h2>
+          </FadeIn>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl mx-auto">
+            {[
+              { city: "Cherry Hill, NJ", href: "/locations/cherry-hill-nj" },
+              { city: "Voorhees, NJ", href: "/locations/voorhees-nj" },
+              { city: "Mount Laurel, NJ", href: "/locations/mount-laurel-nj" },
+              { city: "Egg Harbor Township, NJ", href: "/locations/egg-harbor-township-nj" },
+              { city: "Somers Point, NJ", href: "/locations/somers-point-nj" },
+              { city: "Atlantic City, NJ", href: "/locations/atlantic-city-nj" },
+            ].map((loc) => (
+              <Link key={loc.city} href={loc.href} className="flex items-center gap-2 p-4 bg-white rounded-lg border border-slate-200 hover:border-[#0e319a]/30 hover:shadow-sm transition-all text-sm font-medium text-slate-700 hover:text-[#0e319a]">
+                <ArrowRight className="w-4 h-4 text-[#f97015] shrink-0" />
+                Alarm Systems in {loc.city}
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ===== INTERNAL LINKS ===== */}
+      <section className="py-10 bg-white border-t border-slate-100">
+        <div className="container">
+          <p className="text-sm font-semibold text-slate-500 uppercase tracking-wider mb-4">Explore Related Services</p>
+          <div className="flex flex-wrap gap-3">
+            {[
+              { label: "Security Cameras", href: "/services/video-surveillance" },
+              { label: "Access Control Systems", href: "/services/access-control" },
+              { label: "Fire Alarm Systems", href: "/services/fire-alarm-systems" },
+              { label: "Jobsite Security", href: "/services/jobsite-security" },
+              { label: "Commercial Security", href: "/services/commercial-security" },
+            ].map((link) => (
+              <Link key={link.href} href={link.href} className="inline-flex items-center gap-1.5 px-4 py-2 bg-slate-50 border border-slate-200 rounded-lg text-sm text-slate-700 hover:border-[#0e319a]/30 hover:text-[#0e319a] transition-colors">
+                {link.label} <ArrowRight className="w-3.5 h-3.5" />
+              </Link>
             ))}
           </div>
         </div>

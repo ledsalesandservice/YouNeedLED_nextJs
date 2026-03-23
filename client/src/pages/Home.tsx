@@ -320,15 +320,25 @@ export default function Home() {
             ))}
           </div>
           <div className="flex flex-wrap justify-center gap-2 max-w-3xl mx-auto mb-10">
-            {(SERVICE_AREAS.newJersey as Record<string, string[]>)[activeCounty]?.map((town: string) => (
-              <Link
-                key={town}
-                href="/service-areas"
-                className="px-3 py-1.5 bg-white/5 border border-white/15 rounded-md text-sm text-white/80 hover:bg-white/15 hover:text-white transition-colors"
-              >
-                {town}
-              </Link>
-            ))}
+            {(SERVICE_AREAS.newJersey as Record<string, string[]>)[activeCounty]?.map((town: string) => {
+              const locationSlug: Record<string, string> = {
+                "Cherry Hill": "/locations/cherry-hill-nj",
+                "Voorhees": "/locations/voorhees-nj",
+                "Mount Laurel": "/locations/mount-laurel-nj",
+                "Egg Harbor Township": "/locations/egg-harbor-township-nj",
+                "Somers Point": "/locations/somers-point-nj",
+                "Atlantic City": "/locations/atlantic-city-nj",
+              };
+              return (
+                <Link
+                  key={town}
+                  href={locationSlug[town] || "/service-areas"}
+                  className="px-3 py-1.5 bg-white/5 border border-white/15 rounded-md text-sm text-white/80 hover:bg-white/15 hover:text-white transition-colors"
+                >
+                  {town}
+                </Link>
+              );
+            })}
           </div>
           <div className="text-center">
             <Link href="/service-areas" className="inline-flex items-center gap-2 text-white font-medium text-sm hover:text-[#f97015] transition-colors">
@@ -397,21 +407,85 @@ export default function Home() {
         </div>
       </section>
 
-      {/* LocalBusiness + WebSite Schema on Homepage */}
+      {/* ===== FULL AEO SCHEMA: Organization + LocalBusiness + WebSite ===== */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "WebSite",
-            name: "You Need L.E.D.",
-            url: SITE.url,
-            potentialAction: {
-              "@type": "SearchAction",
-              target: `${SITE.url}/search?q={search_term_string}`,
-              "query-input": "required name=search_term_string",
+          __html: JSON.stringify([
+            {
+              "@context": "https://schema.org",
+              "@type": ["LocalBusiness", "SecurityAlarmAgency"],
+              "@id": `${SITE.url}/#organization`,
+              name: SITE.name,
+              alternateName: "You Need LED",
+              url: SITE.url,
+              logo: `${SITE.url}/logo.png`,
+              image: `${SITE.url}/hero-main-1200w.webp`,
+              description: "NJ DCA Licensed commercial and residential security camera, access control, fire alarm, VoIP, and digital signage installation company serving South Jersey and the Delaware Valley for 15+ years.",
+              telephone: SITE.phone,
+              email: SITE.email,
+              address: {
+                "@type": "PostalAddress",
+                streetAddress: SITE.address.street,
+                addressLocality: SITE.address.city,
+                addressRegion: SITE.address.state,
+                postalCode: SITE.address.zip,
+                addressCountry: "US",
+              },
+              geo: {
+                "@type": "GeoCoordinates",
+                latitude: 39.5871,
+                longitude: -74.5654,
+              },
+              areaServed: [
+                { "@type": "State", name: "New Jersey" },
+                { "@type": "State", name: "Pennsylvania" },
+                { "@type": "State", name: "Delaware" },
+                { "@type": "City", name: "Cherry Hill, NJ" },
+                { "@type": "City", name: "Voorhees, NJ" },
+                { "@type": "City", name: "Mount Laurel, NJ" },
+                { "@type": "City", name: "Egg Harbor Township, NJ" },
+                { "@type": "City", name: "Somers Point, NJ" },
+                { "@type": "City", name: "Atlantic City, NJ" },
+                { "@type": "City", name: "Philadelphia, PA" },
+              ],
+              openingHoursSpecification: [
+                { "@type": "OpeningHoursSpecification", dayOfWeek: ["Monday","Tuesday","Wednesday","Thursday","Friday"], opens: "08:00", closes: "18:00" },
+                { "@type": "OpeningHoursSpecification", dayOfWeek: "Saturday", opens: "09:00", closes: "14:00" },
+              ],
+              aggregateRating: {
+                "@type": "AggregateRating",
+                ratingValue: "5.0",
+                reviewCount: "32",
+                bestRating: "5",
+              },
+              hasCredential: [
+                { "@type": "EducationalOccupationalCredential", credentialCategory: "license", name: "NJ DCA Security License", identifier: "34BF00056900" },
+                { "@type": "EducationalOccupationalCredential", credentialCategory: "license", name: "NJ DCA Fire Alarm License", identifier: "34FA00102800" },
+              ],
+              sameAs: [
+                SITE.social.facebook,
+                SITE.social.instagram,
+                "https://www.yelp.com/biz/you-need-led",
+              ],
+              priceRange: "$$",
+              currenciesAccepted: "USD",
+              paymentAccepted: "Cash, Credit Card, Check, Financing",
             },
-          }),
+            {
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              "@id": `${SITE.url}/#website`,
+              name: SITE.name,
+              url: SITE.url,
+              publisher: { "@id": `${SITE.url}/#organization` },
+              potentialAction: {
+                "@type": "SearchAction",
+                target: { "@type": "EntryPoint", urlTemplate: `${SITE.url}/blog?q={search_term_string}` },
+                "query-input": "required name=search_term_string",
+              },
+            },
+          ]),
         }}
       />
     </>

@@ -180,11 +180,14 @@ export default defineConfig({
     // Improve chunk splitting for better caching and smaller initial payload
     rollupOptions: {
       output: {
-        manualChunks: {
-          // Separate vendor bundle so it can be cached independently
-          vendor: ["react", "react-dom"],
-          router: ["wouter"],
-          ui: ["lucide-react", "framer-motion"],
+        manualChunks: (id) => {
+          // Split large data files into their own chunks (loaded lazily)
+          if (id.includes('/lib/blogData')) return 'blog-data';
+          if (id.includes('/lib/caseStudyData')) return 'case-study-data';
+          // Core vendor chunks cached independently
+          if (id.includes('node_modules/react-dom') || id.includes('node_modules/react/')) return 'vendor';
+          if (id.includes('node_modules/wouter')) return 'router';
+          if (id.includes('node_modules/lucide-react') || id.includes('node_modules/framer-motion')) return 'ui';
         },
       },
     },

@@ -40,6 +40,8 @@ export default function Header() {
               <source srcSet="/logo-optimized.webp" type="image/webp" />
               <img
                 src="/logo-optimized.png"
+                srcSet="/logo-optimized.webp 56w, /logo-optimized.webp 112w"
+                sizes="56px"
                 alt="You Need L.E.D. Smart Automation Systems logo"
                 className="shrink-0 object-contain max-w-full h-auto"
                 width="56"

@@ -54,8 +54,8 @@ export default function Home() {
             className="w-full h-full object-cover max-w-full"
             loading="eager"
             fetchPriority="high"
-            width="800"
-            height="446"
+            width="1920"
+            height="1072"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-[#0e319a]/90 via-[#0e319a]/75 to-[#0e319a]/50" />
         </div>
@@ -191,7 +191,7 @@ export default function Home() {
                 alt="LEDConnect AI Voice Agent phone system with holographic waveform"
                 className="rounded-2xl shadow-2xl shadow-black/30 w-full max-w-full h-auto"
                 loading="lazy"
-                width="800"
+                width="1920"
                 height="600"
               />
               <div className="absolute -bottom-4 -left-4 bg-white rounded-xl p-4 shadow-lg max-w-[220px]">
@@ -483,7 +483,7 @@ export default function Home() {
                     alt={post.title}
                     className="w-full h-full object-cover max-w-full group-hover:scale-105 transition-transform duration-500"
                     loading="lazy"
-                    width="800"
+                    width="1920"
                     height="500"
                   />
                 </div>

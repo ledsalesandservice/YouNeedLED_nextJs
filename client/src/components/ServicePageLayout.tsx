@@ -66,8 +66,8 @@ export default function ServicePageLayout({
             className="w-full h-full object-cover max-w-full"
             loading="eager"
             fetchPriority="high"
-            width="800"
-            height="446"
+            width="1920"
+            height="1072"
           />
         </div>
         <div className="relative container text-center">

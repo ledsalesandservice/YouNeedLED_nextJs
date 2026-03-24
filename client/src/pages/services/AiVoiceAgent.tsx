@@ -44,8 +44,8 @@ export default function AiVoiceAgent() {
             className="w-full h-full object-cover max-w-full"
             loading="eager"
             fetchPriority="high"
-            width="800"
-            height="446"
+            width="1920"
+            height="1072"
           />
         </div>
         <div className="relative container">
@@ -85,7 +85,7 @@ export default function AiVoiceAgent() {
                 className="rounded-2xl shadow-2xl shadow-black/30 w-full max-w-full h-auto"
                 loading="eager"
                 fetchPriority="high"
-                width="800"
+                width="1920"
                 height="447"
               />
               <div className="absolute -bottom-4 -left-4 bg-white rounded-xl p-4 shadow-lg max-w-[220px]">

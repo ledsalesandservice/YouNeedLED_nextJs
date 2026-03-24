@@ -5,7 +5,7 @@
  */
 import { Link } from "wouter";
 import { SITE, IMAGES, IMAGE_SRCSETS, SERVICES, TESTIMONIALS, SERVICE_AREAS, CERTIFICATIONS } from "@/lib/siteData";
-import { ALL_BLOG_POSTS } from "@/lib/blogData";
+import { FEATURED_BLOG_POSTS } from "@/lib/blogPreviewData";
 import SEOHead from "@/components/SEOHead";
 import {
   Phone, ArrowRight, Star, Shield, Clock, Users, Award,
@@ -473,7 +473,7 @@ export default function Home() {
             </Link>
           </div>
           <StaggerContainer className="grid md:grid-cols-3 gap-6">
-            {ALL_BLOG_POSTS.slice(0, 3).map((post) => (
+            {FEATURED_BLOG_POSTS.map((post) => (
               <StaggerItem key={post.slug}><Link href={`/blog/${post.slug}`} className="group block">
                 <div className="aspect-[16/10] rounded-xl overflow-hidden mb-4 bg-slate-100">
                   <img

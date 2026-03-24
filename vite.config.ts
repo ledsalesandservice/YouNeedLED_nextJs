@@ -151,19 +151,25 @@ function vitePluginManusDebugCollector(): Plugin {
   };
 }
 
-const plugins = [
-  react(),
-  tailwindcss(),
-  jsxLocPlugin(),
-  vitePluginManusRuntime(),
-  vitePluginManusDebugCollector(),
-  // Pre-generate gzip and Brotli compressed assets at build time
-  // Vercel serves these automatically, fixing gzip/compression scan warnings
-  compression({ algorithm: "gzip", exclude: [/\.(png|jpe?g|gif|webp|ico|woff2?)$/i] }),
-  compression({ algorithm: "brotliCompress", exclude: [/\.(png|jpe?g|gif|webp|ico|woff2?)$/i] }),
-];
+export default defineConfig(({ command }) => {
+  // Only include the manus-runtime plugin in dev mode (vite serve).
+  // In production builds (vite build) it injects a 358 KB inline script that
+  // blocks the main thread and tanks LCP — we skip it entirely for production.
+  const isDevMode = command === "serve";
 
-export default defineConfig({
+  const plugins = [
+    react(),
+    tailwindcss(),
+    jsxLocPlugin(),
+    // Manus runtime: only inject in dev to avoid 358 KB inline script in production
+    ...(isDevMode ? [vitePluginManusRuntime(), vitePluginManusDebugCollector()] : []),
+    // Pre-generate gzip and Brotli compressed assets at build time
+    // Vercel serves these automatically, fixing gzip/compression scan warnings
+    compression({ algorithm: "gzip", exclude: [/\.(png|jpe?g|gif|webp|ico|woff2?)$/i] }),
+    compression({ algorithm: "brotliCompress", exclude: [/\.(png|jpe?g|gif|webp|ico|woff2?)$/i] }),
+  ];
+
+  return {
   plugins,
   resolve: {
     alias: {
@@ -209,4 +215,5 @@ export default defineConfig({
       deny: ["**/.*"],
     },
   },
+  };
 });

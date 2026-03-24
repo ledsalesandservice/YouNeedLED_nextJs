@@ -5,7 +5,7 @@
  */
 import { Link } from "wouter";
 import { SITE, IMAGES, IMAGE_SRCSETS, SERVICES, TESTIMONIALS, SERVICE_AREAS, CERTIFICATIONS } from "@/lib/siteData";
-import type { BlogPost } from "@/lib/blogData";
+import { ALL_BLOG_POSTS } from "@/lib/blogData";
 import SEOHead from "@/components/SEOHead";
 import {
   Phone, ArrowRight, Star, Shield, Clock, Users, Award,
@@ -13,7 +13,7 @@ import {
   Bot, PhoneOff, CalendarCheck, UserCheck, Zap, CheckCircle2,
   MapPin, ChevronRight
 } from "lucide-react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { FadeIn, StaggerContainer, StaggerItem, HeroAnimate, CountUp } from "@/components/animations";
 
 const iconMap: Record<string, React.ReactNode> = {
@@ -28,15 +28,6 @@ const iconMap: Record<string, React.ReactNode> = {
 
 export default function Home() {
   const [activeCounty, setActiveCounty] = useState("southJersey");
-  const [blogPosts, setBlogPosts] = useState<BlogPost[]>([]);
-
-  // Lazy-load blog data after initial render — keeps 3,300-line blogData.ts
-  // out of the critical JS bundle, improving LCP and TTI
-  useEffect(() => {
-    import("@/lib/blogData").then((m) => {
-      setBlogPosts(m.ALL_BLOG_POSTS.slice(0, 3));
-    });
-  }, []);
   const counties = [
     { key: "southJersey", label: "South Jersey" },
     { key: "centralJersey", label: "Central Jersey" },
@@ -482,7 +473,7 @@ export default function Home() {
             </Link>
           </div>
           <StaggerContainer className="grid md:grid-cols-3 gap-6">
-            {blogPosts.map((post) => (
+            {ALL_BLOG_POSTS.slice(0, 3).map((post) => (
               <StaggerItem key={post.slug}><Link href={`/blog/${post.slug}`} className="group block">
                 <div className="aspect-[16/10] rounded-xl overflow-hidden mb-4 bg-slate-100">
                   <img

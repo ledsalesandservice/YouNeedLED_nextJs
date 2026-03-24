@@ -44,7 +44,16 @@ export default function CaseStudy() {
       {/* ===== HERO ===== */}
       <section className="relative bg-gradient-to-br from-[#0a1f6e] via-[#0e319a] to-[#1a4bc4] text-white py-20 lg:py-28 overflow-hidden">
         <div className="absolute inset-0 opacity-10">
-          <img src={cs.heroImage} alt="" className="w-full h-full object-cover" loading="eager" />
+          <img
+            src={cs.heroImage}
+            srcSet={cs.heroImage.includes('unsplash.com') ? `${cs.heroImage.replace(/w=\d+/, 'w=600')} 600w, ${cs.heroImage.replace(/w=\d+/, 'w=1200')} 1200w` : undefined}
+            sizes="100vw"
+            alt=""
+            className="w-full h-full object-cover"
+            loading="eager"
+            width="1200"
+            height="675"
+          />
         </div>
         <div className="container relative z-10">
           <FadeIn>
@@ -180,7 +189,16 @@ export default function CaseStudy() {
               <StaggerItem key={other.slug}>
                 <Link href={`/case-studies/${other.slug}`} className="block bg-white rounded-xl border border-slate-200 overflow-hidden hover:shadow-md transition-shadow group">
                   <div className="h-36 overflow-hidden">
-                    <img src={other.heroImage} alt={other.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" width="400" height="144" />
+                    <img
+                      src={other.heroImage}
+                      srcSet={other.heroImage.includes('unsplash.com') ? `${other.heroImage.replace(/w=\d+/, 'w=400')} 400w, ${other.heroImage.replace(/w=\d+/, 'w=800')} 800w` : undefined}
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                      alt={other.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      loading="lazy"
+                      width="400"
+                      height="144"
+                    />
                   </div>
                   <div className="p-4">
                     <span className="text-xs font-semibold text-[#f97015] uppercase tracking-wider">{other.industry}</span>

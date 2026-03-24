@@ -476,7 +476,16 @@ export default function Home() {
             {ALL_BLOG_POSTS.slice(0, 3).map((post) => (
               <StaggerItem key={post.slug}><Link href={`/blog/${post.slug}`} className="group block">
                 <div className="aspect-[16/10] rounded-xl overflow-hidden mb-4 bg-slate-100">
-                  <img src={post.image} alt={post.title} className="w-full h-full object-cover max-w-full group-hover:scale-105 transition-transform duration-500" loading="lazy" width="800" height="500" />
+                  <img
+                    src={post.image}
+                    srcSet={post.image.includes('unsplash.com') ? `${post.image.replace(/w=\d+/, 'w=400')} 400w, ${post.image.replace(/w=\d+/, 'w=800')} 800w, ${post.image.replace(/w=\d+/, 'w=1200')} 1200w` : undefined}
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                    alt={post.title}
+                    className="w-full h-full object-cover max-w-full group-hover:scale-105 transition-transform duration-500"
+                    loading="lazy"
+                    width="800"
+                    height="500"
+                  />
                 </div>
                 <p className="text-xs text-slate-500 mb-2">{new Date(post.date).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" })} &middot; {post.readTime}</p>
                 <h3 className="font-heading text-base font-semibold text-slate-900 group-hover:text-[#0e319a] transition-colors leading-snug mb-2">

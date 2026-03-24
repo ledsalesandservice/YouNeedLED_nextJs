@@ -60,7 +60,16 @@ export default function BlogPost() {
       <section className="bg-white">
         <div className="container max-w-3xl">
           <div className="aspect-[16/9] rounded-xl overflow-hidden -mt-6 shadow-lg">
-            <img src={post.image} alt={post.title} className="w-full h-full object-cover max-w-full" loading="eager" width="1200" height="675" />
+            <img
+              src={post.image}
+              srcSet={post.image.includes('unsplash.com') ? `${post.image.replace(/w=\d+/, 'w=600')} 600w, ${post.image.replace(/w=\d+/, 'w=1200')} 1200w, ${post.image.replace(/w=\d+/, 'w=1800')} 1800w` : undefined}
+              sizes="(max-width: 768px) 100vw, 800px"
+              alt={post.title}
+              className="w-full h-full object-cover max-w-full"
+              loading="eager"
+              width="1200"
+              height="675"
+            />
           </div>
         </div>
       </section>

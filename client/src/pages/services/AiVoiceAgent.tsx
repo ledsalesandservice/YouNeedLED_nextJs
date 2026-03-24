@@ -37,7 +37,7 @@ export default function AiVoiceAgent() {
       <section className="relative py-20 lg:py-28 bg-gradient-to-br from-[#0e319a] to-[#081d5e] overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <img
-            src="/hero-ai-agent-1920w.webp"
+            src="/hero-ai-agent-800w.webp"
             srcSet="/hero-ai-agent-400w.webp 400w, /hero-ai-agent-800w.webp 800w, /hero-ai-agent-1200w.webp 1200w, /hero-ai-agent-1920w.webp 1920w"
             sizes="100vw"
             alt=""

@@ -32,11 +32,13 @@ export const SITE = {
 };
 
 export const IMAGES = {
-  heroMain: "https://d2xsxph8kpxj0f.cloudfront.net/310419663030082570/Tfe6MLMokmY8tMP4sdwDCa/hero-main-FzzWNkqcRL6wNVgyaZbhwS.webp",
-  heroVoip: "https://d2xsxph8kpxj0f.cloudfront.net/310419663030082570/Tfe6MLMokmY8tMP4sdwDCa/hero-voip-C3K9kFAyBKoUKXyoFDRn2A.webp",
-  heroCameras: "https://d2xsxph8kpxj0f.cloudfront.net/310419663030082570/Tfe6MLMokmY8tMP4sdwDCa/hero-cameras-Epwbn9AsuWE6eQcF4RnUJr.webp",
-  heroAiAgent: "https://d2xsxph8kpxj0f.cloudfront.net/310419663030082570/Tfe6MLMokmY8tMP4sdwDCa/hero-ai-agent-NEVWnYfLcWxHS9dfuYkND8.webp",
-  heroAccess: "https://d2xsxph8kpxj0f.cloudfront.net/310419663030082570/Tfe6MLMokmY8tMP4sdwDCa/hero-access-control-9nuBCFGBp72MkRE4DdoFf3.webp",
+  // Use local 800w WebP as src fallback — srcset handles responsive sizing for modern browsers.
+  // The CloudFront originals are 88–258 KB and caused the HubSpot grader IMAGE SIZE FAIL.
+  heroMain: "/hero-main-800w.webp",
+  heroVoip: "/hero-voip-800w.webp",
+  heroCameras: "/hero-cameras-800w.webp",
+  heroAiAgent: "/hero-ai-agent-800w.webp",
+  heroAccess: "/hero-access-800w.webp",
   heroDigitalSignage: "/digital-signage/corporate.webp",
 };
 

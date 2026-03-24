@@ -47,7 +47,7 @@ export default function Home() {
       <section className="relative min-h-[600px] lg:min-h-[700px] flex items-center">
         <div className="absolute inset-0">
           <img
-            src="/hero-main-800w.webp"
+            src="/hero-main-1920w.webp"
             srcSet="/hero-main-400w.webp 400w, /hero-main-800w.webp 800w, /hero-main-1200w.webp 1200w, /hero-main-1920w.webp 1920w"
             sizes="100vw"
             alt="Modern commercial building with security systems"

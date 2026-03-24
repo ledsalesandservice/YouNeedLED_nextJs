@@ -478,7 +478,7 @@ export default function Home() {
                 <div className="aspect-[16/10] rounded-xl overflow-hidden mb-4 bg-slate-100">
                   <img
                     src={post.image}
-                    srcSet={post.image.includes('unsplash.com') ? `${post.image.replace(/w=\d+/, 'w=400')} 400w, ${post.image.replace(/w=\d+/, 'w=800')} 800w, ${post.image.replace(/w=\d+/, 'w=1200')} 1200w` : undefined}
+                    srcSet={post.image.startsWith('/blog-images/') ? `${post.image.replace(/-800w\.webp$/, '-400w.webp')} 400w, ${post.image} 800w, ${post.image.replace(/-800w\.webp$/, '-1200w.webp')} 1200w` : undefined}
                     sizes="(max-width: 768px) 100vw, 33vw"
                     alt={post.title}
                     className="w-full h-full object-cover max-w-full group-hover:scale-105 transition-transform duration-500"

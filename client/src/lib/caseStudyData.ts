@@ -32,7 +32,7 @@ export const caseStudies: CaseStudy[] = [
     location: "Egg Harbor Township, NJ",
     industry: "Warehousing & Distribution",
     services: ["Commercial Security Cameras", "AI Video Analytics", "Cloud Storage"],
-    heroImage: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1200&q=80",
+    heroImage: "/blog-images/blog-warehouse2-1200w.webp",
     challenge: "A large distribution warehouse in Atlantic County was operating with an aging analog camera system that had significant blind spots along the loading docks, staging areas, and perimeter fence line. Inventory shrinkage had become a serious problem — management could not determine whether losses were due to external theft, internal pilferage, or shipping errors. The existing DVR footage was low-resolution and often unusable for insurance claims or police reports.",
     solution: "You Need L.E.D. conducted a full on-site security assessment and designed a 32-camera 4K IP system using AI-powered cameras with built-in license plate recognition (LPR) on all dock entrances and the main gate. The system was integrated with cloud storage for 90-day retention and a mobile app for remote monitoring.",
     solutionDetails: [
@@ -81,7 +81,7 @@ export const caseStudies: CaseStudy[] = [
     location: "Cherry Hill, Voorhees, Mount Laurel & Marlton, NJ",
     industry: "Retail",
     services: ["Hosted PBX & VoIP", "Microsoft Teams Integration", "Auto-Attendant"],
-    heroImage: "https://images.unsplash.com/photo-1556761175-4b46a572b786?w=1200&q=80",
+    heroImage: "/blog-images/blog-voip-phone-1200w.webp",
     challenge: "A regional retail group with four South Jersey locations was running four separate legacy phone systems — each with its own carrier contract, different hardware, and no ability to transfer calls between stores. Staff had to use personal cell phones to reach colleagues at other locations. The monthly telecom bill across all four sites was over $1,200/month, and the systems had no voicemail-to-email, no auto-attendant, and no way to handle after-hours calls professionally.",
     solution: "You Need L.E.D. designed and deployed a unified Hosted PBX system across all four locations, with a single auto-attendant, shared extension dialing between stores, Microsoft Teams integration for mobile staff, and LEDConnect AI Voice Agent handling after-hours calls and lead capture.",
     solutionDetails: [
@@ -130,7 +130,7 @@ export const caseStudies: CaseStudy[] = [
     location: "Somers Point, NJ",
     industry: "Multi-Family Residential",
     services: ["Access Control", "Mobile Credentials", "Video Surveillance", "Intercom"],
-    heroImage: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=1200&q=80",
+    heroImage: "/blog-images/blog-apartment-1200w.webp",
     challenge: "A 48-unit condominium association in Somers Point was dealing with ongoing security headaches: lost and copied physical keys, no way to revoke access for former residents, no record of who entered common areas, and a constant stream of lockout calls to the property manager. The building had no intercom system, so delivery drivers and guests had no way to reach residents — leading to propped-open doors and unauthorized access.",
     solution: "You Need L.E.D. designed and installed a complete CDVI and Alarm.com access control system with mobile credentials, a video intercom at the main entrance, and 4K cameras covering all common areas and parking. The property manager now controls all access from a smartphone — no more physical keys.",
     solutionDetails: [

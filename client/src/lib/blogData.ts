@@ -19,7 +19,7 @@ export const ALL_BLOG_POSTS: BlogPost[] = [
     category: "Commercial Security",
     excerpt: "A guide for Atlantic City, NJ business owners on upgrading their security. Learn about 4K AI cameras, access control, and alarm systems from a local, licensed expert.",
     readTime: "4 min",
-    image: "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800&q=80",
+    image: "/blog-images/blog-commercial-building-800w.webp",
     content: `
 # Securing Your Business in Atlantic City: A 2026 Guide
 
@@ -65,7 +65,7 @@ We live here, we work here. For a security system designed to meet the unique ch
     category: "Cannabis Security",
     excerpt: "A guide to NJ CRC security requirements for cannabis dispensaries and grow facilities. Learn about access control, 24/7 surveillance, and alarm systems from a licensed expert.",
     readTime: "5 min",
-    image: "https://images.unsplash.com/photo-1556928045-16f7f50be0f3?w=800&q=80",
+    image: "/blog-images/blog-kitchen-800w.webp",
     content: `
 # NJ CRC Security Compliance: A Plain-English Guide for Cannabis Businesses
 
@@ -122,7 +122,7 @@ We have successfully guided nine cannabis businesses through the NJ CRC security
     category: "Retail Security",
     excerpt: "Protecting your Jersey Shore retail store or restaurant. Learn about POS integration, 24/7 color cameras, and alarm systems from a local, 5-star rated security pro.",
     readTime: "5 min",
-    image: "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=800&q=80",
+    image: "/blog-images/blog-pizza-800w.webp",
     content: `
 # 5 Must-Have Security Upgrades for Jersey Shore Restaurants & Retail Shops
 
@@ -171,7 +171,7 @@ If you\'re ready to upgrade your security, call the local experts who understand
     category: "Apartment Security",
     excerpt: "A guide for property managers on securing multi-family housing in NJ & MD. Learn about access control, video surveillance, and reducing liability from a licensed expert.",
     readTime: "5 min",
-    image: "https://images.unsplash.com/photo-1515263487990-61b07816b324?w=800&q=80",
+    image: "/blog-images/blog-restaurant-800w.webp",
     content: `
 # The Property Manager's Guide to Apartment Security in South Jersey & Maryland
 
@@ -222,7 +222,7 @@ You've seen our work in over 30 apartment communities across New Jersey and Mary
     category: "Technology",
     excerpt: "Server rooms fail in predictable ways. Environmental monitoring sensors turn those “surprises” into visible trends and actionable alarms, so IT and facilities teams can respond before uptime is...",
     readTime: "7 min",
-    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&q=80",
+    image: "/blog-images/blog-server-room-800w.webp",
     content: `'''
 
 [Back to Insights]()
@@ -356,7 +356,7 @@ Our team has designed and installed environmental monitoring for data centers, n
     category: "Security",
     excerpt: "Security camera systems are only as reliable as the pathways that carry video back to storage and operators. Once you move beyond a single building, copper Ethernet quickly runs into distance...",
     readTime: "7 min",
-    image: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=800&q=80",
+    image: "/blog-images/blog-network-800w.webp",
     content: `[Back to Insights]()
 
 single mode vs multimode fiber for security cameras
@@ -491,7 +491,7 @@ Common signals that single-mode is the right backbone:
     category: "Security",
     excerpt: "Integrate video, access control, and intrusion in a single pane of glass to speed verification, reduce false alarms, and streamline response.",
     readTime: "3 min",
-    image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&q=80",
+    image: "/blog-images/blog-credit-card-800w.webp",
     content: `Managing separate security systems — video, access control, intrusion detection — through different interfaces is inefficient and creates blind spots. Alarm.com's unified platform brings everything together in a single pane of glass.
 
 ## The Power of Integration
@@ -532,7 +532,7 @@ Contact You Need L.E.D. to learn how Alarm.com's unified platform can transform 
     category: "Fire Safety",
     excerpt: "Facility managers in New Jersey wear a lot of hats, but life safety compliance is the one area where “we’ll get to it next month” can create real exposure. Fire alarm inspections are not just a box...",
     readTime: "9 min",
-    image: "https://images.unsplash.com/photo-1582139329536-e7284fece509?w=800&q=80",
+    image: "/blog-images/blog-ambulance-800w.webp",
     content: `**February 2, 2026**
 
 **10 min read**
@@ -687,7 +687,7 @@ If you are building next year’s inspection calendar or dealing with a system t
     category: "Industry Trends",
     excerpt: "The top security technology trends for resorts and hotels in 2025: AI-powered surveillance, mobile access control, cybersecurity for IoT, and smart guest experience integrations.",
     readTime: "3 min",
-    image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&q=80",
+    image: "/blog-images/blog-hotel-800w.webp",
     content: `**Date:** February 1, 2026
 
 **Category:** Industry Trends
@@ -756,7 +756,7 @@ Trust You Need L.E.D. to deliver AI-driven, cyber-hardened protection for your h
     category: "Hotel Security",
     excerpt: "Hotels and resorts are upgrading to AI-powered security cameras, digital keys, and smart monitoring. Learn how AI security protects guests, reduces liability, and improves operations for hospitality p",
     readTime: "3 min",
-    image: "https://images.unsplash.com/photo-1660557989695-14fac79c086d?w=800&q=80",
+    image: "/blog-images/blog-ai-tech-800w.webp",
     content: `**Date:** February 1, 2026
 **Category:** Hotel Security
 
@@ -825,7 +825,7 @@ FacebookTwitterLinkedIn`,
     category: "Beachfront Security",
     excerpt: "How beachfront resorts are upgrading to weatherproof AI-powered security cameras in 2025. Learn about corrosion-resistant housings, 4K night vision, remote monitoring, and privacy compliance for coast",
     readTime: "3 min",
-    image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=80",
+    image: "/blog-images/blog-beach-800w.webp",
     content: `**Date:** February 1, 2026
 
 **Category:** Beachfront Security
@@ -895,7 +895,7 @@ From Atlantic City high-rises to Ocean City family resorts and Wildwood vacation
     category: "VoIP",
     excerpt: "Choosing a phone system for a 50–200 seat office is rarely about one feature. It comes down to two questions that operations and IT both care about: what will it cost over time, and what happens when.",
     readTime: "9 min",
-    image: "https://images.unsplash.com/photo-1596524430615-b46475ddff6e?w=800&q=80",
+    image: "/blog-images/blog-remote-work-800w.webp",
     content: `Choosing a phone system for a 50–200 seat office is rarely about one feature. It comes down to two questions that operations and IT both care about: what will it cost over time, and what happens when something breaks. Hosted (cloud) VoIP and on‑prem PBX can both support busy offices, call queues, auto attendants, paging, softphones, and remote users. The difference is where the responsibility lives and how you pay for it.
 
 ## What “hosted VoIP” and “on‑prem PBX” really mean in this size range
@@ -1048,7 +1048,7 @@ Contact You Need L.E.D. for a free consultation on professional security solutio
     category: "Commercial Security",
     excerpt: "Instead of “upgrade security,” write a short mission that ties the system to outcomes and constraints. This is where you tell vendors what success looks like and what tradeoffs you will not accept.",
     readTime: "7 min",
-    image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&q=80",
+    image: "/blog-images/blog-office-work-800w.webp",
     content: `## Start with a mission statement vendors can design to
 
 Instead of “upgrade security,” write a short mission that ties the system to outcomes and constraints. This is where you tell vendors what success looks like and what tradeoffs you will not accept.
@@ -1206,7 +1206,7 @@ This is also where you can require a cutover plan and acceptance testing criteri
     category: "VoIP",
     excerpt: "Phones are still the front door for a lot of organizations. A patient trying to reach a clinic, a tenant calling a property manager, a customer checking an order, a security guard escalating an...",
     readTime: "9 min",
-    image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&q=80",
+    image: "/blog-images/blog-laptop-800w.webp",
     content: `Phones are still the front door for a lot of organizations. A patient trying to reach a clinic, a tenant calling a property manager, a customer checking an order, a security guard escalating an incident, they all start with a call. When the phone system is unreliable or hard to manage, service slips fast.
 
 VoIP phone service fixes many of the problems that came with older phone lines and on site PBX hardware. Done right, it delivers clearer calls, simpler management, better uptime options, and modern features that help teams answer faster, route smarter, and support remote staff without juggling personal cell numbers.
@@ -1344,7 +1344,7 @@ Organizations that want to evaluate VoIP usually start with a free on site consu
     category: "business phone service",
     excerpt: "A personal cell phone can get a new business off the ground. It is quick, it is familiar, and it feels “good enough” until the first missed call, the first after-hours text thread, or the day an...",
     readTime: "9 min",
-    image: "https://images.unsplash.com/photo-1423666639041-f56000c27a9a?w=800&q=80",
+    image: "/blog-images/blog-fire-alarm-800w.webp",
     content: `A personal cell phone can get a new business off the ground. It is quick, it is familiar, and it feels “good enough” until the first missed call, the first after-hours text thread, or the day an employee leaves with half the customer list sitting in their contacts.
 
 The harder truth is that customers, auditors, and incident reports do not care that it started as a temporary workaround. They only see outcomes: responsiveness, privacy, professionalism, and control. A dedicated business phone service fixes those issues in a way a consumer mobile plan never will.
@@ -1490,7 +1490,7 @@ Contact You Need L.E.D. for a free consultation on professional security solutio
     category: "Access Control",
     excerpt: "A multi-tenant office building has a different security problem than a single-company headquarters. The lobby belongs to everyone. The loading dock is busy at odd hours. Vendors, cleaners, and...",
     readTime: "9 min",
-    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80",
+    image: "/blog-images/blog-modern-building-800w.webp",
     content: `A multi-tenant office building has a different security problem than a single-company headquarters. The lobby belongs to everyone. The loading dock is busy at odd hours. Vendors, cleaners, and short-term visitors move through shared corridors. Tenants want strong control of their own suites without feeling like the property is “locked down.”
 
 Good [access control]() in this setting is less about buying readers and more about designing rules that stay workable when tenants change, headcounts fluctuate, and after-hours schedules collide.
@@ -1629,7 +1629,7 @@ A good next step is a walk-through that documents each opening, identifies share
     category: "Security",
     excerpt: "Hospitals in New Jersey rarely struggle with the _idea_ of security compliance. The hard part is that the “rules” come from multiple directions at once: state licensure, fire and life-safety code,...",
     readTime: "7 min",
-    image: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=800&q=80",
+    image: "/blog-images/blog-hospital-800w.webp",
     content: `[Back to Insights]()
 
 
@@ -1734,7 +1734,7 @@ If you are reviewing your hospital’s security and compliance posture, the righ
     category: "Apartment Security",
     excerpt: "Property managers face unique security challenges in South Jersey apartment complexes. Learn about parking lot theft, unauthorized access, package theft, and how 24/7 remote monitoring solves these pr",
     readTime: "4 min",
-    image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&q=80",
+    image: "/blog-images/blog-apartment-800w.webp",
     content: `8 min read
 
 You Need L.E.D. Team
@@ -1813,7 +1813,7 @@ NJ DCA Licensed #34BF00056900 | 30+ Years Experience | 500+ Satisfied Clients`,
     category: "Security",
     excerpt: "Professional 24/7 security monitoring for South Jersey homes and businesses. Learn why professional monitoring outperforms self-monitoring and how You Need L.E.D. keeps your property protected around ",
     readTime: "3 min",
-    image: "https://images.unsplash.com/photo-1558002038-1055907df827?w=800&q=80",
+    image: "/blog-images/blog-smart-home-800w.webp",
     content: `**Date:** January 22, 2026
 
 **Category:** Security Monitoring
@@ -1878,7 +1878,7 @@ Want to know if 24/7 monitoring is right for your South Jersey property? Our exp
     category: "Security",
     excerpt: "Expert security camera installation for Hammonton businesses and homes. Serving Main Street shops, warehouses, farms, and residential properties. NJ licensed installer with 30+ years experience.",
     readTime: "3 min",
-    image: "https://images.unsplash.com/photo-1557597774-9d273605dfa9?w=800&q=80",
+    image: "/blog-images/blog-warehouse-800w.webp",
     content: `**January 22, 2026**
 
 Hammonton—the "Blueberry Capital of the World"—is a unique South Jersey community where family businesses, agricultural operations, and residential neighborhoods all have distinct security needs. Here's why **professional security camera installation in Hammonton** outperforms DIY for local property owners.
@@ -1962,7 +1962,7 @@ Ready to protect your Hammonton home or business? Get a free, no-obligation quot
     category: "Comparison Guide",
     excerpt: "Ring doorbells and DIY cameras have made security more accessible than ever. But are they right for your situation? Here's an honest breakdown of Ring cameras vs. professional security systems—includi",
     readTime: "3 min",
-    image: "https://images.unsplash.com/photo-1621886943381-cb97cc18b17a?w=800&q=80",
+    image: "/blog-images/blog-led-display-800w.webp",
     content: `Ring doorbells and DIY cameras have made security more accessible than ever. But are they right for your situation? Here's an honest breakdown of **Ring cameras vs. professional security systems**—including when DIY actually makes sense.
 
 ## The Complete Comparison Table
@@ -2053,7 +2053,7 @@ If you're ready to upgrade from Ring or other DIY cameras, we'll design a profes
     category: "Crime Prevention",
     excerpt: "Practical guide to preventing car theft and catalytic converter theft in South Jersey. Learn how security cameras, lighting, and signage protect driveways, parking lots, and street parking.",
     readTime: "3 min",
-    image: "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=800&q=80",
+    image: "/blog-images/blog-car-800w.webp",
     content: `**January 22, 2026**
 
 **Category:** Crime Prevention
@@ -2145,7 +2145,7 @@ Ready to secure your driveway, parking lot, or business from vehicle theft? Get 
     category: "AI Technology",
     excerpt: "Plain-language guide to AI video analytics for South Jersey businesses. Learn how person detection, vehicle tracking, and smart alerts reduce false alarms and improve security response.",
     readTime: "3 min",
-    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80",
+    image: "/blog-images/blog-ai-robot-800w.webp",
     content: `**Date:** January 22, 2026
 
 **Category:** AI Technology
@@ -2223,7 +2223,7 @@ Want to see how AI video analytics can work for your South Jersey business? Sche
     category: "Commercial Security",
     excerpt: "A comprehensive guide to creating a NJ CRC-compliant cannabis cultivation security plan. Learn the key requirements for perimeter security, access control, video surveillance, and more.",
     readTime: "5 min",
-    image: "https://images.unsplash.com/photo-1603909223429-69bb7101f420?w=800&q=80",
+    image: "/blog-images/blog-security-camera-800w.webp",
     content: `**Date:** June 20, 2023
 
 **Category:** Security
@@ -2289,7 +2289,7 @@ At You Need L.E.D., we specialize in designing and installing comprehensive secu
     category: "Security Cameras",
     excerpt: "As a business owner in South Jersey, you understand the unique challenges and opportunities our vibrant region presents. Keeping your business safe and secure is paramount, especially when it comes to deterring nighttime theft.",
     readTime: "5 min",
-    image: "https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=800&q=80",
+    image: "/blog-images/blog-doctor-800w.webp",
     content: `# Why Your South Jersey Business Needs Color 24/7 Security Cameras
 
 ## Protecting Your Business Around the Clock in South Jersey
@@ -2347,7 +2347,7 @@ Nighttime theft can be devastating for a small business, leading to financial lo
     category: "Commercial Security",
     excerpt: "As a business owner in Philadelphia, securing your commercial property is paramount. With over 30 years of experience, we compare LTS Platinum and Pro X series cameras to help you choose the right system for your needs.",
     readTime: "6 min",
-    image: "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800&q=80",
+    image: "/blog-images/blog-commercial-building-800w.webp",
     content: `# The Best Security Cameras for Philadelphia Commercial Properties: Platinum vs. Pro X
 
 As a business owner in Philadelphia, securing your commercial property is paramount. From bustling storefronts to expansive warehouses, the threats are real, and the need for robust surveillance is undeniable. With over 30 years of experience in the security and technology industry, I, Derek, owner of You Need LED LLC, have seen it all. My team and I have been safeguarding businesses across South Jersey and the greater Philadelphia region since 2010, bringing a wealth of knowledge from securing diverse properties like hospitals, casinos, police departments, bars, resorts, and even million-dollar beach houses on the shore.
@@ -2421,7 +2421,7 @@ Don’t leave the security of your Philadelphia commercial property to chance. W
     category: "Residential Security",
     excerpt: "Summer in Linwood, New Jersey, brings sunshine, beach days, and unfortunately, a rise in opportunistic scams targeting homeowners. With the right security measures, you can effectively deter these criminals and keep your home safe.",
     readTime: "5 min",
-    image: "https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=800&q=80",
+    image: "/blog-images/blog-house-800w.webp",
     content: `# Protecting Your Linwood Home from Summer Scams: A Guide for Homeowners
 
 Summer in Linwood, New Jersey, brings sunshine, beach days, and unfortunately, a rise in opportunistic scams targeting homeowners. As Derek, owner of You Need LED LLC, with over 30 years of experience securing properties across South Jersey and the Philadelphia region, I’ve seen it all. From the bustling casinos and police departments to the serene, million-dollar beach houses on the shore, my team and I have been dedicated to providing peace of mind through cutting-edge security solutions. Before starting You Need LED in 2010, I led a team at another company for 18 years, honing my expertise in protecting diverse clients.
@@ -2486,7 +2486,7 @@ Ready to enhance your home security and deter summer scammers? Visit [youneedled
     category: "Access Control",
     excerpt: "Ocean City, New Jersey, with its vibrant boardwalk and bustling seasonal activity, is a highly desirable location for residents and visitors alike. Modern smart intercom systems are transforming outdated entrance security into a sophisticated, integrated solution.",
     readTime: "6 min",
-    image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&q=80",
+    image: "/blog-images/blog-apartment-800w.webp",
     content: `# Smart Intercom Solutions for Apartment Buildings in Ocean City, NJ
 
 ## Modernizing Entrance Security for Multi-Family Units
@@ -2563,7 +2563,7 @@ Ready to modernize your apartment building’s entrance security in Ocean City, 
     category: "Commercial Security",
     excerpt: "Cherry Hill, with its bustling shopping centers and corporate parks, presents unique challenges when securing large parking lots. Wireless video stations offer a robust and cost-effective solution for remote surveillance without expensive trenching.",
     readTime: "5 min",
-    image: "https://images.unsplash.com/photo-1506521781263-d8422e82f27a?w=800&q=80",
+    image: "/blog-images/blog-church-800w.webp",
     content: `# Securing Large Parking Lots in Cherry Hill: The Power of Wireless Video Stations
 
 Cherry Hill, with its bustling shopping centers, corporate parks, and residential communities, presents a unique set of challenges when it comes to securing large parking lots. From deterring vandalism and theft to ensuring the safety of customers and employees, effective surveillance is paramount. However, the traditional approach to installing security cameras—involving extensive trenching for power and data cables—can be a logistical nightmare, not to mention a significant drain on resources. This is where the innovative power of **wireless video stations** comes into play, offering a robust and cost-effective solution for remote surveillance without the expensive and disruptive need for trenching.
@@ -2617,7 +2617,7 @@ Don’t let the complexities of parking lot security leave your Cherry Hill prop
     category: "Security Cameras",
     excerpt: "At You Need LED LLC, based right here in Linwood, NJ, we’ve been safeguarding homes and businesses across South Jersey since 2010. After decades in the field, we’ve made a deliberate decision: we exclusively install LTS Security’s Platinum and Pro X lines.",
     readTime: "5 min",
-    image: "https://images.unsplash.com/photo-1557597774-9d273605dfa9?w=800&q=80",
+    image: "/blog-images/blog-warehouse-800w.webp",
     content: `# Why We Only Install LTS Platinum Cameras for South Jersey Clients
 
 At You Need LED LLC, based right here in Linwood, NJ, we’ve been safeguarding homes and businesses across South Jersey and the greater Philadelphia region since 2010. As Derek, the owner, I’ve dedicated over 30 years to the security and technology industry. This isn’t just a job for me; it’s a lifelong commitment to ensuring peace of mind for our community. Before founding You Need LED, I spent 18 years leading a team at another company, gaining invaluable experience that has shaped our approach today. My journey has taken me through securing diverse environments, from the intricate needs of hospitals and bustling casinos to the critical operations of police departments, vibrant bars, luxurious resorts, and even million-dollar beach houses along our beautiful shore.
@@ -2671,7 +2671,7 @@ Protect your South Jersey property with the trusted expertise of You Need LED LL
     category: "Commercial Security",
     excerpt: "Retail theft is a growing concern for businesses in Voorhees, NJ. At You Need LED LLC, we’ve learned that preventing crime before it happens is always more effective than reacting to it — and that’s exactly what active deterrence technology delivers.",
     readTime: "5 min",
-    image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&q=80",
+    image: "/blog-images/blog-retail-store-800w.webp",
     content: `# How to Deter Retail Theft in Voorhees with Active Deterrence Technology
 
 Retail theft is a growing concern for businesses in Voorhees, NJ, and across the South Jersey and Philadelphia regions. The financial impact can be significant, but beyond the immediate losses, there’s the erosion of peace of mind for business owners and their employees. At You Need LED LLC, we understand these challenges, and with over 30 years of experience in the security and technology industry, I’ve seen firsthand how proactive measures can make all the difference. My journey, which began with leading a team at another company for 18 years before founding You Need LED in 2010, has equipped me with a deep and diverse understanding of security needs, from securing hospitals and casinos to police departments, bars, resorts, and even million-dollar beach houses on the shore.
@@ -2738,7 +2738,7 @@ Don’t wait for an incident to happen. Take proactive steps to protect your bus
     category: "Residential Security",
     excerpt: "Margate, New Jersey, with its pristine beaches and vibrant community, is a cherished retreat for many. Owning a shore house here comes with the unique responsibility of safeguarding your investment, especially when you’re not there.",
     readTime: "6 min",
-    image: "https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?w=800&q=80",
+    image: "/blog-images/blog-beach-house-800w.webp",
     content: `# Upgrade Your Margate Shore House with 4K Remote Video Monitoring
 
 ## Introduction
@@ -2793,7 +2793,7 @@ Ready to enhance the security of your Margate shore house? Visit youneedled.com 
     category: "Access Control",
     excerpt: "As a business owner in Egg Harbor Township, traditional lock-and-key systems simply don’t offer the comprehensive protection that modern businesses demand. Advanced entrance security solutions integrating cameras and smart locks are transforming how businesses protect their assets.",
     readTime: "5 min",
-    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80",
+    image: "/blog-images/blog-fire-station-800w.webp",
     content: `# The Future of Entrance Security: Combining Cameras and Smart Locks in Egg Harbor Township, NJ
 
 As a business owner in Egg Harbor Township, you understand the importance of keeping your premises secure. In today’s rapidly evolving world, traditional lock-and-key systems simply don’t offer the comprehensive protection and control that modern businesses demand. That’s where advanced entrance security solutions, integrating cutting-edge cameras and smart locks, come into play. With over 30 years of experience in the security and technology industry, I’ve seen firsthand how these integrated systems are transforming the way businesses in South Jersey and the Philadelphia region protect their assets, employees, and customers.
@@ -2857,7 +2857,7 @@ Don’t leave your business vulnerable. Take the first step towards a more secur
     category: "Law Enforcement",
     excerpt: "In the realm of security and surveillance, the clarity and detail captured by cameras can make all the difference when it comes to law enforcement and forensic investigations. Here in South Jersey, the demand for superior video evidence is paramount.",
     readTime: "5 min",
-    image: "https://images.unsplash.com/photo-1453873531674-2151bcd01707?w=800&q=80",
+    image: "/blog-images/blog-city-night-800w.webp",
     content: `# Forensic Video: Empowering South Jersey Law Enforcement with High-Resolution Cameras
 
 In the realm of security and surveillance, the clarity and detail captured by cameras can make all the difference, especially when it comes to law enforcement and forensic investigations. Here in South Jersey, from the bustling streets of Vineland to the serene shores where million-dollar beach houses stand, the demand for superior video evidence is paramount. As Derek, owner of You Need LED LLC, with over 30 years of experience in the security and technology industry, I’ve seen firsthand how advancements in camera technology have revolutionized how crimes are investigated and solved.
@@ -2911,7 +2911,7 @@ Don't compromise on the clarity and reliability of your security footage. For a 
     category: "Fire Safety",
     excerpt: "A fire alarm that isn't monitored is just a noisemaker. Learn why 24/7 professional fire alarm monitoring is a non-negotiable for any commercial property in New Jersey — and what NFPA 72 actually requires.",
     readTime: "5 min",
-    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80",
+    image: "/blog-images/blog-fire-station-800w.webp",
     content: `
 # Is Your Commercial Fire Alarm Monitored 24/7? Why NJ Businesses Can't Afford to Guess
 
@@ -2962,7 +2962,7 @@ Call us at **(609) 335-0123** or visit [youneedled.com](https://youneedled.com) 
     category: "VoIP",
     excerpt: "Your phone system is a sales tool, not just a utility. See how a modern VoIP system with auto-attendants, mobile integration, and call analytics can help your South Jersey retail store improve customer service and capture more revenue.",
     readTime: "4 min",
-    image: "https://images.unsplash.com/photo-1556742044-3c52d6e88c62?w=800&q=80",
+    image: "/blog-images/blog-pos-system-800w.webp",
     content: `
 # Beyond the Counter: How Modern VoIP Helps South Jersey Retail Shops Compete
 
@@ -3009,7 +3009,7 @@ Call **(609) 335-0123** or visit [youneedled.com](https://youneedled.com) to sch
     category: "Commercial Security",
     excerpt: "Construction sites are prime targets for equipment and material theft. Learn how rapidly-deployable, solar-powered wireless security cameras are providing 24/7 surveillance for jobsites across the Delaware Valley — with no power or internet required.",
     readTime: "5 min",
-    image: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=800&q=80",
+    image: "/blog-images/blog-construction-800w.webp",
     content: `
 # Theft on the Jobsite: How Solar-Powered Cameras Are Protecting Delaware Valley Construction Sites
 
@@ -3052,7 +3052,7 @@ If you're managing a construction project in South Jersey, Philadelphia, or anyw
     category: "LEDConnect AI",
     excerpt: "Tired of after-hours maintenance calls and endless leasing questions? Discover how the LEDConnect AI Voice Agent answers calls 24/7, qualifies leads, and captures information — freeing your team to focus on residents.",
     readTime: "4 min",
-    image: "https://images.unsplash.com/photo-1560179707-f14e90ef3623?w=800&q=80",
+    image: "/blog-images/blog-office-building-800w.webp",
     content: `
 # Never Miss a Maintenance Call Again: How LEDConnect AI Helps Property Managers
 
@@ -3095,7 +3095,7 @@ To learn more about LEDConnect AI and how it can be configured for your property
     category: "Access Control",
     excerpt: "From loading docks to inventory cages, warehouses have unique security challenges. Learn how modern access control systems with RFID, biometrics, and detailed audit logs can secure your South Jersey logistics facility.",
     readTime: "6 min",
-    image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&q=80",
+    image: "/blog-images/blog-warehouse2-800w.webp",
     content: `
 # Securing the Supply Chain: Access Control Best Practices for South Jersey Warehouses
 
@@ -3142,7 +3142,7 @@ To discuss access control for your warehouse or distribution facility, call **(6
     category: "Security Cameras",
     excerpt: "Don't wait for an incident to discover your cameras are down. This simple 5-point checklist helps South Jersey business owners verify their security camera system is recording, storing footage, and ready when they need it most.",
     readTime: "5 min",
-    image: "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=800&q=80",
+    image: "/blog-images/blog-city-skyline-800w.webp",
     content: `
 # Is Your Security System Actually Working? A 5-Point Maintenance Checklist for Business Owners
 
@@ -3189,7 +3189,7 @@ We'll inspect every camera, test every recording channel, verify storage health,
     category: "Security",
     excerpt: "From law firms to medical practices, professional offices in Cherry Hill need more than a lock and key. Learn how a professionally monitored intrusion detection system protects your client data, assets, and people 24/7.",
     readTime: "5 min",
-    image: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=800&q=80",
+    image: "/blog-images/blog-team-meeting-800w.webp",
     content: `
 # Protecting Your Practice: Why Monitored Intrusion Detection Is Essential for Cherry Hill Professional Offices
 
@@ -3234,7 +3234,7 @@ If you operate a professional office in Cherry Hill or anywhere in Camden County
     category: "Comparison Guide",
     excerpt: "Consumer-grade cameras are popular, but are they right for your business? We break down the key differences between professional-grade LTS security cameras and popular consumer brands like Ring and Wyze — and why it matters for your bottom line.",
     readTime: "6 min",
-    image: "https://images.unsplash.com/photo-1558002038-1055907df827?w=800&q=80",
+    image: "/blog-images/blog-smart-home-800w.webp",
     content: `
 # LTS vs. Ring & Wyze: An Honest Comparison for South Jersey Business Owners
 
@@ -3281,7 +3281,7 @@ Call **(609) 335-0123** or visit [youneedled.com](https://youneedled.com) to sch
     category: "Cost Guide",
     excerpt: "A complete breakdown of commercial security camera installation costs in South Jersey, including hardware, labor, and cloud storage fees.",
     readTime: "7 min",
-    image: "https://images.unsplash.com/photo-1557597774-9d273605dfa9?w=800&q=80",
+    image: "/blog-images/blog-warehouse-800w.webp",
     content: `
 # How Much Do Commercial Security Cameras Cost in South Jersey? (2026 Guide)
 

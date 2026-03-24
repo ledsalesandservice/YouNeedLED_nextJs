@@ -28,7 +28,7 @@ export default function ApartmentSecurity() {
       <ServicePageLayout
         title="Apartment Complex Security"
         subtitle="Complete security solutions for multi-family properties including video surveillance, access control, intercom systems, and 24/7 monitoring."
-        heroImage="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=1200&q=80"
+        heroImage="/blog-images/blog-apartment-1200w.webp"
         primaryCta={{ label: "Get Property Assessment", href: "/contact" }}
         secondaryCta={{ label: "View Solutions", href: "#solutions" }}
         features={[

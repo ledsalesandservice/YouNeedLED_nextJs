@@ -46,7 +46,7 @@ export default function CaseStudy() {
         <div className="absolute inset-0 opacity-10">
           <img
             src={cs.heroImage}
-            srcSet={cs.heroImage.includes('unsplash.com') ? `${cs.heroImage.replace(/w=\d+/, 'w=600')} 600w, ${cs.heroImage.replace(/w=\d+/, 'w=1200')} 1200w` : undefined}
+            srcSet={cs.heroImage.startsWith('/blog-images/') ? `${cs.heroImage.replace(/-1200w\.webp$/, '-800w.webp')} 800w, ${cs.heroImage} 1200w` : undefined}
             sizes="100vw"
             alt=""
             className="w-full h-full object-cover"
@@ -191,7 +191,7 @@ export default function CaseStudy() {
                   <div className="h-36 overflow-hidden">
                     <img
                       src={other.heroImage}
-                      srcSet={other.heroImage.includes('unsplash.com') ? `${other.heroImage.replace(/w=\d+/, 'w=400')} 400w, ${other.heroImage.replace(/w=\d+/, 'w=800')} 800w` : undefined}
+                      srcSet={other.heroImage.startsWith('/blog-images/') ? `${other.heroImage.replace(/-1200w\.webp$/, '-400w.webp')} 400w, ${other.heroImage.replace(/-1200w\.webp$/, '-800w.webp')} 800w` : undefined}
                       sizes="(max-width: 768px) 100vw, 33vw"
                       alt={other.title}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"

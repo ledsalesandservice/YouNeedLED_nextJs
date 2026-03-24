@@ -26,7 +26,7 @@ export default function JobsiteSecurity() {
     <ServicePageLayout
       title="Jobsite Security Solutions"
       subtitle="Advanced wireless cameras and alarm systems for construction sites, equipment storage, and temporary locations. No power or internet required at your property."
-      heroImage="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1200&q=80"
+      heroImage="/blog-images/blog-jobsite-1200w.webp"
       primaryCta={{ label: "Get Quote Today", href: "/contact" }}
       secondaryCta={{ label: "View Rental Options", href: "#rentals" }}
       features={[

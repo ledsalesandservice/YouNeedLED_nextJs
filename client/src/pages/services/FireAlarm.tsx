@@ -28,7 +28,7 @@ export default function FireAlarm() {
     <ServicePageLayout
       title="Fire Alarm Systems"
       subtitle="Protect lives and property with professionally installed fire alarm systems. Our NFPA 72 compliant solutions include 24/7 monitoring and emergency response coordination."
-      heroImage="https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=1200&q=80"
+      heroImage="/blog-images/blog-fire-alarm2-1200w.webp"
       primaryCta={{ label: "Get Fire Safety Quote", href: "/contact" }}
       secondaryCta={{ label: "Schedule Inspection", href: "/contact" }}
       features={[

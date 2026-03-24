@@ -28,7 +28,7 @@ export default function IntrusionDetection() {
     <ServicePageLayout
       title="Intrusion Detection Systems"
       subtitle="Protect your business with advanced intrusion detection systems. Mobile alerts, 24/7 monitoring, and professional installation by licensed security experts."
-      heroImage="https://images.unsplash.com/photo-1557597774-9d273605dfa9?w=1200&q=80"
+      heroImage="/blog-images/blog-warehouse-1200w.webp"
       primaryCta={{ label: "Free Security Assessment", href: "/contact" }}
       secondaryCta={{ label: "View Packages", href: "#packages" }}
       features={[

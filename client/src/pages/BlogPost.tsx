@@ -62,7 +62,7 @@ export default function BlogPost() {
           <div className="aspect-[16/9] rounded-xl overflow-hidden -mt-6 shadow-lg">
             <img
               src={post.image}
-              srcSet={post.image.includes('unsplash.com') ? `${post.image.replace(/w=\d+/, 'w=600')} 600w, ${post.image.replace(/w=\d+/, 'w=1200')} 1200w, ${post.image.replace(/w=\d+/, 'w=1800')} 1800w` : undefined}
+              srcSet={post.image.startsWith('/blog-images/') ? `${post.image.replace(/-800w\.webp$/, '-400w.webp')} 400w, ${post.image} 800w, ${post.image.replace(/-800w\.webp$/, '-1200w.webp')} 1200w` : undefined}
               sizes="(max-width: 768px) 100vw, 800px"
               alt={post.title}
               className="w-full h-full object-cover max-w-full"

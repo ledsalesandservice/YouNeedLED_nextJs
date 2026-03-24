@@ -54,8 +54,8 @@ export default function Home() {
             className="w-full h-full object-cover max-w-full"
             loading="eager"
             fetchPriority="high"
-            width="1920"
-            height="1072"
+            width="800"
+            height="446"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-[#0e319a]/90 via-[#0e319a]/75 to-[#0e319a]/50" />
         </div>

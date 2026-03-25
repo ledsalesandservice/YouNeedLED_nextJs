@@ -23,6 +23,8 @@ export const ALL_BLOG_POSTS: BlogPost[] = [
     content: `
 # Securing Your Business in Atlantic City: A 2026 Guide
 
+> **TL;DR:** Atlantic City businesses need layered security — access control for multi-family properties, POS-integrated cameras for retail, and AI-powered video analytics for proactive threat detection. You Need L.E.D. is a locally-based, NJ DCA Licensed installer (#34BF00056900) with 15+ years and 12+ completed projects in Atlantic City. Call **(609) 335-0123** for a free on-site assessment.
+
 **Introduction: More Than Just the Boardwalk**
 
 As a company with deep roots in the Atlantic City area, we understand the city\'s unique rhythm. It\'s a city of vibrant contrasts, from the bustling energy of the world-famous boardwalk to the quiet, residential neighborhoods that are its backbone. For over 15 years, You Need L.E.D. has been the trusted security partner for a diverse range of Atlantic City businesses, completing over a dozen projects for condos, retail establishments, and rooming houses.
@@ -69,7 +71,9 @@ We live here, we work here. For a security system designed to meet the unique ch
     content: `
 # NJ CRC Security Compliance: A Plain-English Guide for Cannabis Businesses
 
-**Introduction: Cannabis Security is Not Optional, It’s Mandatory**
+> **TL;DR:** NJ CRC requires cannabis businesses to have: (1) granular access control with audit logs, (2) 100% camera coverage at 720p HD minimum with 30+ days retention, and (3) a 24/7 professionally monitored alarm system with panic buttons. Your security installer **must** hold a valid NJ DCA license — the CRC verifies this. You Need L.E.D. (License #34BF00056900) has guided 9 NJ cannabis businesses through successful CRC security inspections. Call **(609) 335-0123**.
+
+**Introduction: Cannabis Security is Not Optional, It's Mandatory**
 
 Navigating the complex web of regulations for a cannabis business in New Jersey can be a daunting task. The security requirements set forth by the Cannabis Regulatory Commission (CRC) are among the most stringent and non-negotiable. For the nine cannabis dispensaries and grow facilities we have successfully guided through this process, building a compliant security plan was a critical step on the path to opening their doors.
 
@@ -125,6 +129,8 @@ We have successfully guided nine cannabis businesses through the NJ CRC security
     image: "/blog-images/blog-pizza-800w.webp",
     content: `
 # 5 Must-Have Security Upgrades for Jersey Shore Restaurants & Retail Shops
+
+> **TL;DR:** The 5 most impactful security upgrades for Jersey Shore restaurants and retail shops are: (1) POS-integrated cameras to catch employee theft, (2) 24/7 full-color night cameras for after-hours incidents, (3) panic buttons with video-verified alarms for staff safety, (4) temperature sensors to protect freezer inventory, and (5) a professionally monitored alarm system. You Need L.E.D. serves Ocean City, Margate, Ventnor, and Atlantic City. Free security review: **(609) 335-0123**.
 
 **Introduction: Protecting Your Business in a Seasonal Economy**
 
@@ -3012,6 +3018,8 @@ Call **(609) 335-0123** or visit [youneedled.com](https://youneedled.com) to sch
     image: "/blog-images/blog-construction-800w.webp",
     content: `
 # Theft on the Jobsite: How Solar-Powered Cameras Are Protecting Delaware Valley Construction Sites
+
+> **TL;DR:** Solar-powered, cellular-connected security cameras require no power or internet hookup and can be deployed on any construction site within hours. They provide 4K AI video, real-time monitoring with two-way audio, and cloud-stored footage. Rental and purchase options available. You Need L.E.D. deploys jobsite cameras across South Jersey, Philadelphia, and the Delaware Valley. Call **(609) 335-0123** to have a system on your site within days.
 
 **The Real Cost of Construction Site Theft**
 

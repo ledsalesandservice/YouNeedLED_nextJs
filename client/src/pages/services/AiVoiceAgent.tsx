@@ -46,6 +46,7 @@ export default function AiVoiceAgent() {
             srcSet="/hero-ai-agent-400w.webp 400w, /hero-ai-agent-800w.webp 800w, /hero-ai-agent-1200w.webp 1200w, /hero-ai-agent-1920w.webp 1920w"
             sizes="100vw"
             alt=""
+            aria-hidden="true"
             className="w-full h-full object-cover max-w-full"
             loading="eager"
             fetchPriority="high"

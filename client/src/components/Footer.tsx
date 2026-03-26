@@ -162,6 +162,19 @@ export default function Footer() {
               { "@type": "State", name: "Delaware" },
               { "@type": "State", name: "Maryland" },
             ],
+            aggregateRating: {
+              "@type": "AggregateRating",
+              ratingValue: "5.0",
+              reviewCount: "32",
+              bestRating: "5",
+              worstRating: "1",
+            },
+            hasCredential: {
+              "@type": "EducationalOccupationalCredential",
+              credentialCategory: "license",
+              name: "NJ DCA License",
+              identifier: "34BF00056900",
+            },
             hasOfferCatalog: {
               "@type": "OfferCatalog",
               name: "Security & Technology Services",
@@ -171,6 +184,8 @@ export default function Footer() {
                 { "@type": "Offer", itemOffered: { "@type": "Service", name: "Access Control Systems" } },
                 { "@type": "Offer", itemOffered: { "@type": "Service", name: "Fire Alarm Systems" } },
                 { "@type": "Offer", itemOffered: { "@type": "Service", name: "Intrusion Detection" } },
+                { "@type": "Offer", itemOffered: { "@type": "Service", name: "Jobsite Security" } },
+                { "@type": "Offer", itemOffered: { "@type": "Service", name: "LEDConnect AI Voice Agent" } },
               ],
             },
           }),

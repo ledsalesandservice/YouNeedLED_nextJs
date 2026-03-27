@@ -308,6 +308,8 @@ export default function AiVoiceAgent() {
                 { "@type": "Question", name: "Do I need a LEDConnect VoIP system to use the AI Voice Agent?", acceptedAnswer: { "@type": "Answer", text: "The AI Voice Agent is designed to work with the LEDConnect VoIP phone system for the best experience. However, we can configure call forwarding from most existing phone systems to route calls through the AI agent." } },
                 { "@type": "Question", name: "Will the AI replace my receptionist?", acceptedAnswer: { "@type": "Answer", text: "No — the AI Voice Agent is designed to work alongside your existing staff. It handles overflow calls when your team is busy, after-hours calls, and spam filtering. Your team stays in control of all important calls." } },
                 { "@type": "Question", name: "How does the AI handle complex questions?", acceptedAnswer: { "@type": "Answer", text: "The AI is trained on your business information and can answer common questions about your services, hours, and location. For complex inquiries, it captures the caller's information and schedules a callback from your team." } },
+                { "@type": "Question", name: "Can I customize the AI's responses?", acceptedAnswer: { "@type": "Answer", text: "Absolutely. We work with you to create custom call scripts, greetings, and response flows that match your brand voice and business processes." } },
+                { "@type": "Question", name: "What happens if the AI can't handle a call?", acceptedAnswer: { "@type": "Answer", text: "If the AI determines a call needs human attention, it seamlessly transfers to your team during business hours, or captures detailed information for a callback during off-hours." } },
               ],
             }),
           }}

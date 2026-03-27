@@ -138,7 +138,7 @@ export default function ServicePageLayout({
               ))}
             </div>
           </div>
-          {/* FAQ Schema */}
+          {/* FAQ Schema — each service page gets its own valid FAQPage schema */}
           <script
             type="application/ld+json"
             dangerouslySetInnerHTML={{

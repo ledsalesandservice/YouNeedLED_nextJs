@@ -70,9 +70,19 @@ export default function ClientPortal() {
     const errs = validate();
     if (Object.keys(errs).length) { setErrors(errs); return; }
     setSubmitting(true);
-    await new Promise(r => setTimeout(r, 1500));
-    setSubmitting(false);
-    setSubmitted(true);
+    try {
+      const res = await fetch("/api/port-out", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+      if (!res.ok) throw new Error("Send failed");
+      setSubmitted(true);
+    } catch {
+      setErrors({ _form: "Couldn't submit your request. Please call us at " + SITE.phone + " or email " + SITE.email + " directly." });
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -225,6 +235,9 @@ export default function ClientPortal() {
                   className={`${inputCls()} resize-y`} />
               </Field>
 
+              {errors._form && (
+                <p className="text-red-600 text-sm bg-red-50 border border-red-200 rounded-lg px-4 py-3">{errors._form}</p>
+              )}
               <div className="pt-2">
                 <button type="submit" disabled={submitting}
                   className="inline-flex items-center gap-2 px-8 py-3.5 bg-[#0e319a] text-white font-semibold rounded-lg hover:bg-[#0c2a82] transition-colors text-sm disabled:opacity-60 disabled:cursor-not-allowed">

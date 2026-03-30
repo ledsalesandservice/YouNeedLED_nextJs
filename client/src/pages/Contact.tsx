@@ -3,7 +3,7 @@
  */
 import { SITE } from "@/lib/siteData";
 import SEOHead from "@/components/SEOHead";
-import { Phone, Mail, MapPin, Clock, ArrowRight } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, ArrowRight, Loader2 } from "lucide-react";
 import { useState } from "react";
 import { toast } from "sonner";
 
@@ -11,13 +11,27 @@ export default function Contact() {
   const [formData, setFormData] = useState({
     name: "", email: "", phone: "", service: "", message: "",
   });
+  const [submitting, setSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast.success("Thank you! We'll be in touch within 24 hours.", {
-      description: "For immediate assistance, call " + SITE.phone,
-    });
-    setFormData({ name: "", email: "", phone: "", service: "", message: "" });
+    setSubmitting(true);
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+      if (!res.ok) throw new Error("Send failed");
+      toast.success("Message sent! We'll be in touch within 24 hours.", {
+        description: "For immediate assistance, call " + SITE.phone,
+      });
+      setFormData({ name: "", email: "", phone: "", service: "", message: "" });
+    } catch {
+      toast.error("Couldn't send your message. Please call us at " + SITE.phone + " or email " + SITE.email + " directly.");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -112,9 +126,14 @@ export default function Contact() {
                 </div>
                 <button
                   type="submit"
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-[#f97015] text-white font-semibold rounded-lg hover:bg-[#e86510] transition-colors text-sm shadow-sm"
+                  disabled={submitting}
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-[#f97015] text-white font-semibold rounded-lg hover:bg-[#e86510] transition-colors text-sm shadow-sm disabled:opacity-60 disabled:cursor-not-allowed"
                 >
-                  Send Message <ArrowRight className="w-4 h-4" />
+                  {submitting ? (
+                    <><Loader2 className="w-4 h-4 animate-spin" /> Sending…</>
+                  ) : (
+                    <>Send Message <ArrowRight className="w-4 h-4" /></>
+                  )}
                 </button>
               </form>
             </div>

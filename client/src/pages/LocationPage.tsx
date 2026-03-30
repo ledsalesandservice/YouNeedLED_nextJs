@@ -3,7 +3,8 @@
  * SEO-optimized with unique content per location
  * Includes LEDConnect AI Voice Agent CTA per Derek's instructions
  */
-import { useParams, Link } from "wouter";
+import { useParams, Link, useLocation } from "wouter";
+import { useEffect } from "react";
 import { getLocationBySlug, LOCATION_SERVICES } from "@/lib/locationData";
 import { SITE } from "@/lib/siteData";
 import SEOHead from "@/components/SEOHead";
@@ -12,7 +13,6 @@ import {
   Flame, Monitor, Cable, MessageSquare, Bell, CheckCircle2, Star,
   Building2, Clock, BadgeCheck
 } from "lucide-react";
-import NotFound from "./NotFound";
 
 const iconMap: Record<string, React.ReactNode> = {
   Bell: <Bell className="w-5 h-5" />,
@@ -27,9 +27,14 @@ const iconMap: Record<string, React.ReactNode> = {
 
 export default function LocationPage() {
   const params = useParams<{ slug: string }>();
+  const [, setLocation] = useLocation();
   const location = getLocationBySlug(params.slug || "");
 
-  if (!location) return <NotFound />;
+  useEffect(() => {
+    if (!location) setLocation("/service-areas");
+  }, [location, setLocation]);
+
+  if (!location) return null;
 
   const isCounty = location.name.includes("County");
   const isRegion = location.stateAbbr === "US";

@@ -7,64 +7,336 @@
     {
       "source": "/assets/(.*)",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" },
-        { "key": "Expires", "value": "Thu, 31 Dec 2026 23:59:59 GMT" },
-        { "key": "Vary", "value": "Accept-Encoding" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        },
+        {
+          "key": "Expires",
+          "value": "Thu, 31 Dec 2026 23:59:59 GMT"
+        },
+        {
+          "key": "Vary",
+          "value": "Accept-Encoding"
+        }
       ]
     },
     {
       "source": "/(.*\\.js|.*\\.mjs|.*\\.cjs)",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" },
-        { "key": "Expires", "value": "Thu, 31 Dec 2026 23:59:59 GMT" },
-        { "key": "Vary", "value": "Accept-Encoding" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        },
+        {
+          "key": "Expires",
+          "value": "Thu, 31 Dec 2026 23:59:59 GMT"
+        },
+        {
+          "key": "Vary",
+          "value": "Accept-Encoding"
+        }
       ]
     },
     {
       "source": "/(.*\\.css)",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" },
-        { "key": "Expires", "value": "Thu, 31 Dec 2026 23:59:59 GMT" },
-        { "key": "Vary", "value": "Accept-Encoding" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        },
+        {
+          "key": "Expires",
+          "value": "Thu, 31 Dec 2026 23:59:59 GMT"
+        },
+        {
+          "key": "Vary",
+          "value": "Accept-Encoding"
+        }
       ]
     },
     {
       "source": "/(.*\\.woff|.*\\.woff2|.*\\.ttf|.*\\.otf|.*\\.eot)",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" },
-        { "key": "Expires", "value": "Thu, 31 Dec 2026 23:59:59 GMT" },
-        { "key": "Vary", "value": "Accept-Encoding" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        },
+        {
+          "key": "Expires",
+          "value": "Thu, 31 Dec 2026 23:59:59 GMT"
+        },
+        {
+          "key": "Vary",
+          "value": "Accept-Encoding"
+        }
       ]
     },
     {
       "source": "/(.*\\.webp|.*\\.jpg|.*\\.jpeg|.*\\.png|.*\\.ico|.*\\.svg|.*\\.gif|.*\\.avif)",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=2592000, stale-while-revalidate=86400" },
-        { "key": "Expires", "value": "Thu, 21 Apr 2026 00:00:00 GMT" },
-        { "key": "Vary", "value": "Accept-Encoding" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=2592000, stale-while-revalidate=86400"
+        },
+        {
+          "key": "Expires",
+          "value": "Thu, 21 Apr 2026 00:00:00 GMT"
+        },
+        {
+          "key": "Vary",
+          "value": "Accept-Encoding"
+        }
       ]
     },
     {
       "source": "/(.*\\.json|.*\\.xml|.*\\.txt)",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=3600, stale-while-revalidate=600" },
-        { "key": "Vary", "value": "Accept-Encoding" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600, stale-while-revalidate=600"
+        },
+        {
+          "key": "Vary",
+          "value": "Accept-Encoding"
+        }
       ]
     },
     {
       "source": "/(.*)",
       "headers": [
-        { "key": "X-Content-Type-Options", "value": "nosniff" },
-        { "key": "X-Frame-Options", "value": "SAMEORIGIN" },
-        { "key": "X-XSS-Protection", "value": "1; mode=block" },
-        { "key": "Vary", "value": "Accept-Encoding" },
-        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "SAMEORIGIN"
+        },
+        {
+          "key": "X-XSS-Protection",
+          "value": "1; mode=block"
+        },
+        {
+          "key": "Vary",
+          "value": "Accept-Encoding"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, must-revalidate"
+        }
       ]
     }
   ],
   "rewrites": [
-    { "source": "/cameras", "destination": "/cameras/index.html" },
-    { "source": "/phone-systems", "destination": "/phone-systems/index.html" },
-    { "source": "/(.*)", "destination": "/index.html" }
+    {
+      "source": "/cameras",
+      "destination": "/cameras/index.html"
+    },
+    {
+      "source": "/phone-systems",
+      "destination": "/phone-systems/index.html"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/locations/absecon-nj",
+      "destination": "/service-areas",
+      "permanent": true
+    },
+    {
+      "source": "/locations/audubon-nj",
+      "destination": "/service-areas",
+      "permanent": true
+    },
+    {
+      "source": "/locations/barrington-nj",
+      "destination": "/service-areas",
+      "permanent": true
+    },
+    {
+      "source": "/locations/bellmawr-nj",
+      "destination": "/service-areas",
+      "permanent": true
+    },
+    {
+      "source": "/locations/berlin-nj",
+      "destination": "/service-areas",
+      "permanent": true
+    },
+    {
+      "source": "/locations/blackwood-nj",
+      "destination": "/service-areas",
+      "permanent": true
+    },
+    {
+      "source": "/locations/bridgeton-nj",
+      "destination": "/service-areas",
+      "permanent": true
+    },
+    {
+      "source": "/locations/collingswood-nj",
+      "destination": "/service-areas",
+      "permanent": true
+    },
+    {
+      "source": "/locations/egg-harbor-township-nj",
+      "destination": "/service-areas",
+      "permanent": true
+    },
+    {
+      "source": "/locations/galloway-nj",
+      "destination": "/service-areas",
+      "permanent": true
+    },
+    {
+      "source": "/locations/gibbsboro-nj",
+      "destination": "/service-areas",
+      "permanent": true
+    },
+    {
+      "source": "/locations/gloucester-city-nj",
+      "destination": "/service-areas",
+      "permanent": true
+    },
+    {
+      "source": "/locations/haddonfield-nj",
+      "destination": "/service-areas",
+      "permanent": true
+    },
+    {
+      "source": "/locations/haddon-heights-nj",
+      "destination": "/service-areas",
+      "permanent": true
+    },
+    {
+      "source": "/locations/haddon-township-nj",
+      "destination": "/service-areas",
+      "permanent": true
+    },
+    {
+      "source": "/locations/hammonton-nj",
+      "destination": "/service-areas",
+      "permanent": true
+    },
+    {
+      "source": "/locations/hi-nella-nj",
+      "destination": "/service-areas",
+      "permanent": true
+    },
+    {
+      "source": "/locations/laurel-springs-nj",
+      "destination": "/service-areas",
+      "permanent": true
+    },
+    {
+      "source": "/locations/lawnside-nj",
+      "destination": "/service-areas",
+      "permanent": true
+    },
+    {
+      "source": "/locations/lindenwold-nj",
+      "destination": "/service-areas",
+      "permanent": true
+    },
+    {
+      "source": "/locations/linwood-nj",
+      "destination": "/service-areas",
+      "permanent": true
+    },
+    {
+      "source": "/locations/longport-nj",
+      "destination": "/service-areas",
+      "permanent": true
+    },
+    {
+      "source": "/locations/magnolia-nj",
+      "destination": "/service-areas",
+      "permanent": true
+    },
+    {
+      "source": "/locations/margate-nj",
+      "destination": "/service-areas",
+      "permanent": true
+    },
+    {
+      "source": "/locations/millville-nj",
+      "destination": "/service-areas",
+      "permanent": true
+    },
+    {
+      "source": "/locations/mount-ephraim-nj",
+      "destination": "/service-areas",
+      "permanent": true
+    },
+    {
+      "source": "/locations/northfield-nj",
+      "destination": "/service-areas",
+      "permanent": true
+    },
+    {
+      "source": "/locations/oaklyn-nj",
+      "destination": "/service-areas",
+      "permanent": true
+    },
+    {
+      "source": "/locations/pine-hill-nj",
+      "destination": "/service-areas",
+      "permanent": true
+    },
+    {
+      "source": "/locations/pleasantville-nj",
+      "destination": "/service-areas",
+      "permanent": true
+    },
+    {
+      "source": "/locations/runnemede-nj",
+      "destination": "/service-areas",
+      "permanent": true
+    },
+    {
+      "source": "/locations/somerdale-nj",
+      "destination": "/service-areas",
+      "permanent": true
+    },
+    {
+      "source": "/locations/somers-point-nj",
+      "destination": "/service-areas",
+      "permanent": true
+    },
+    {
+      "source": "/locations/stratford-nj",
+      "destination": "/service-areas",
+      "permanent": true
+    },
+    {
+      "source": "/locations/ventnor-nj",
+      "destination": "/service-areas",
+      "permanent": true
+    },
+    {
+      "source": "/locations/vineland-nj",
+      "destination": "/service-areas",
+      "permanent": true
+    },
+    {
+      "source": "/locations/winslow-nj",
+      "destination": "/service-areas",
+      "permanent": true
+    },
+    {
+      "source": "/locations/woodbury-nj",
+      "destination": "/service-areas",
+      "permanent": true
+    },
+    {
+      "source": "/services/fire-alarm",
+      "destination": "/services/fire-alarm-systems",
+      "permanent": true
+    }
   ]
 }

@@ -56,9 +56,27 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       );
     }
 
-    // Mask the access token (short-lived, not needed long-term)
     const refreshToken = tokens.refresh_token;
     const accessToken = tokens.access_token;
+
+    // Auto-persist the refresh token to Vercel env var if configured
+    let autoPersisted = false;
+    const vercelApiToken = process.env.VERCEL_API_TOKEN;
+    const vercelProjectId = process.env.VERCEL_PROJECT_ID;
+    const vercelEnvId = process.env.VERCEL_REFRESH_ENV_ID;
+    if (vercelApiToken && vercelProjectId && vercelEnvId) {
+      const patchRes = await fetch(
+        `https://api.vercel.com/v9/projects/${vercelProjectId}/env/${vercelEnvId}`,
+        {
+          method: "PATCH",
+          headers: { Authorization: `Bearer ${vercelApiToken}`, "Content-Type": "application/json" },
+          body: JSON.stringify({ value: refreshToken }),
+        }
+      );
+      autoPersisted = patchRes.ok;
+    }
+
+    const syncSecret = process.env.SYNC_SECRET || "YOUR_SYNC_SECRET";
 
     return res.status(200).send(`<!DOCTYPE html>
 <html>
@@ -66,34 +84,25 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 <style>body{font-family:sans-serif;max-width:700px;margin:40px auto;padding:20px}
 .token{background:#f0f7ff;border:1px solid #0e319a;padding:12px;border-radius:6px;word-break:break-all;font-family:monospace;font-size:13px}
 .step{background:#f8f8f8;padding:16px;border-radius:8px;margin:12px 0}
+.success{background:#f0fff4;border:1px solid #22863a;padding:16px;border-radius:8px;margin:12px 0}
 h1{color:#0e319a}</style></head>
 <body>
 <h1>✓ FreshBooks Connected Successfully</h1>
-<p>Copy the refresh token below into your Vercel environment variables. You won't need to redo this unless you revoke access.</p>
-
+${autoPersisted
+  ? `<div class="success"><strong>✓ Refresh token automatically saved to Vercel.</strong> No manual steps needed — the daily sync will use this token and auto-rotate it on each run.</div>`
+  : `<p>Copy the refresh token below into your Vercel environment variables.</p>
 <div class="step">
-<h3>Step 1 — Copy this value</h3>
-<p><strong>FRESHBOOKS_REFRESH_TOKEN</strong></p>
+<h3>Add to Vercel (FRESHBOOKS_REFRESH_TOKEN)</h3>
 <div class="token">${refreshToken}</div>
-</div>
+</div>`
+}
 
 <div class="step">
-<h3>Step 2 — Add to Vercel</h3>
-<ol>
-<li>Go to <a href="https://vercel.com" target="_blank">vercel.com</a> → your project → Settings → Environment Variables</li>
-<li>Add or update <code>FRESHBOOKS_REFRESH_TOKEN</code> with the value above</li>
-<li>Make sure <code>FRESHBOOKS_CLIENT_ID</code> and <code>FRESHBOOKS_CLIENT_SECRET</code> are also set</li>
-<li>Redeploy the project</li>
-</ol>
+<h3>${autoPersisted ? "Test the sync now" : "After adding to Vercel, test the sync"}</h3>
+<div class="token">curl -X POST https://youneedled.com/api/sync/manus-freshbooks?dry_run=1 \\<br>  -H "Authorization: Bearer ${syncSecret}"</div>
 </div>
 
-<div class="step">
-<h3>Step 3 — Test the sync</h3>
-<p>Run this in your terminal (replace YOUR_SYNC_SECRET):</p>
-<div class="token">curl -X POST https://youneedled.com/api/sync/manus-freshbooks?dry_run=1 -H "Authorization: Bearer YOUR_SYNC_SECRET"</div>
-</div>
-
-<p style="color:#666;font-size:12px;margin-top:32px">Access token (short-lived, for reference only): ${accessToken.substring(0, 20)}...</p>
+<p style="color:#666;font-size:12px;margin-top:32px">Access token (short-lived, expires in 12h): ${accessToken.substring(0, 20)}...</p>
 </body></html>`);
   } catch (err) {
     return res.status(500).send(`<h1>Error</h1><pre>${err}</pre>`);

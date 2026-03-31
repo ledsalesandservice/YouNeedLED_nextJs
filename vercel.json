@@ -338,5 +338,11 @@
       "destination": "/services/fire-alarm-systems",
       "permanent": true
     }
+  ],
+  "crons": [
+    {
+      "path": "/api/sync/manus-freshbooks",
+      "schedule": "0 12 * * 1-5"
+    }
   ]
 }

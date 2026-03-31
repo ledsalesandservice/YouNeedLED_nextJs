@@ -7,8 +7,8 @@ import type { VercelRequest, VercelResponse } from "@vercel/node";
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   try {
     // Dynamic import to catch module-load errors
-    const { manus } = await import("../../integrations/manus");
-    const { freshbooks } = await import("../../integrations/freshbooks");
+    const { manus } = await import("../_integrations/manus");
+    const { freshbooks } = await import("../_integrations/freshbooks");
     return res.status(200).json({
       ok: true,
       hasManusKey: !!process.env.MANUS_API_KEY,

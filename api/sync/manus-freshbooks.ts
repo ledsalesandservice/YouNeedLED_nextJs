@@ -20,7 +20,7 @@
  */
 
 import type { VercelRequest, VercelResponse } from "@vercel/node";
-import { syncManusToFreshBooks } from "../../integrations/sync-manus-freshbooks";
+import { syncManusToFreshBooks } from "../_integrations/sync-manus-freshbooks";
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   if (req.method !== "POST") {

@@ -6,7 +6,7 @@
  */
 
 import { ALL_LOCATIONS, COUNTY_DATA } from "./locationData";
-import { blogPosts } from "./blogData";
+import { ALL_BLOG_POSTS as blogPosts, BlogPost } from "./blogData";
 import { caseStudies } from "./caseStudyData";
 
 const BASE_URL = "https://youneedled.com";

@@ -27,7 +27,8 @@ import type { VercelRequest, VercelResponse } from "@vercel/node";
 
 const MANUS_BASE =
   process.env.MANUS_API_URL ||
-  "https://3000-iujn5eifihv0yz7osu35w-876aec97.us2.manus.computer/api/sync";
+  process.env.MANUS_CRM_BASE_URL ||
+  "https://ledservice.manus.space/api/sync";
 
 interface ManusClient {
   id: number;

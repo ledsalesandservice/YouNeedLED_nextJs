@@ -3,10 +3,6 @@
   "outputDirectory": "dist/public",
   "installCommand": "pnpm install",
   "framework": null,
-  "functions": {
-    "api/sync/manus-freshbooks.ts": { "includeFiles": "integrations/**" },
-    "api/auth/freshbooks-callback.ts": { "includeFiles": "integrations/**" }
-  },
   "headers": [
     {
       "source": "/assets/(.*)",

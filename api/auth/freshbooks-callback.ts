@@ -29,7 +29,8 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
   const clientId = process.env.FRESHBOOKS_CLIENT_ID;
   const clientSecret = process.env.FRESHBOOKS_CLIENT_SECRET;
-  const redirectUri = `${process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "https://youneedled.com"}/api/auth/freshbooks-callback`;
+  // Must match exactly what was sent in the authorization request and registered in FreshBooks portal
+  const redirectUri = "https://youneedled.com/api/auth/freshbooks-callback";
 
   if (!clientId || !clientSecret) {
     return res.status(500).send("<h1>FRESHBOOKS_CLIENT_ID and FRESHBOOKS_CLIENT_SECRET not set in Vercel</h1>");

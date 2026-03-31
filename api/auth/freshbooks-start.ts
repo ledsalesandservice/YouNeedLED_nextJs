@@ -16,9 +16,9 @@ export default function handler(req: VercelRequest, res: VercelResponse) {
     return res.status(500).send("<h1>FRESHBOOKS_CLIENT_ID not set in Vercel environment variables</h1>");
   }
 
-  const redirectUri = encodeURIComponent(
-    `${process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "https://youneedled.com"}/api/auth/freshbooks-callback`
-  );
+  // Always use the canonical domain — VERCEL_URL is a deployment-specific preview URL
+  // and will not match the redirect URI registered in the FreshBooks developer portal.
+  const redirectUri = encodeURIComponent("https://youneedled.com/api/auth/freshbooks-callback");
 
   const authUrl =
     `https://my.freshbooks.com/service/auth/oauth/authorize` +

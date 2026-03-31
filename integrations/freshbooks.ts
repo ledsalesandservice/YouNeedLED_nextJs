@@ -3,12 +3,16 @@
  *
  * Required env vars:
  *   FRESHBOOKS_CLIENT_ID      — OAuth app client ID
- *   FRESHBOOKS_CLIENT_SECRET  — OAuth app client secret  ← NEEDED FROM DEREK
- *   FRESHBOOKS_REFRESH_TOKEN  — Long-lived refresh token
+ *   FRESHBOOKS_CLIENT_SECRET  — OAuth app client secret
+ *   FRESHBOOKS_REFRESH_TOKEN  — Long-lived refresh token (FreshBooks rotates on each use)
  *   FRESHBOOKS_ACCOUNT_ID     — Account ID (e.g. "Plgr6")
  *   FRESHBOOKS_BUSINESS_ID    — Business ID (e.g. "4504335")
  *
- * The access token is short-lived (12h). This client refreshes automatically.
+ * Token rotation note:
+ *   FreshBooks rotates refresh tokens on each use. The new refresh_token is returned
+ *   in every token response. If VERCEL_API_TOKEN + VERCEL_PROJECT_ID + VERCEL_REFRESH_ENV_ID
+ *   are set, this client will automatically update the Vercel env var so the next run works.
+ *   Without those, update FRESHBOOKS_REFRESH_TOKEN in Vercel manually after each rotation.
  */
 
 const FB_BASE = "https://api.freshbooks.com";
@@ -16,6 +20,22 @@ const ACCOUNT_ID = process.env.FRESHBOOKS_ACCOUNT_ID!;
 
 let cachedToken: string | null = null;
 let tokenExpiry: number = 0;
+
+async function persistRotatedToken(newRefreshToken: string): Promise<void> {
+  const vercelApiToken = process.env.VERCEL_API_TOKEN;
+  const vercelProjectId = process.env.VERCEL_PROJECT_ID;
+  const vercelEnvId = process.env.VERCEL_REFRESH_ENV_ID;
+  if (!vercelApiToken || !vercelProjectId || !vercelEnvId) {
+    console.warn("[freshbooks] Refresh token rotated but VERCEL_API_TOKEN/VERCEL_PROJECT_ID/VERCEL_REFRESH_ENV_ID not set — update FRESHBOOKS_REFRESH_TOKEN in Vercel manually:", newRefreshToken.slice(0, 8) + "...");
+    return;
+  }
+  await fetch(`https://api.vercel.com/v9/projects/${vercelProjectId}/env/${vercelEnvId}`, {
+    method: "PATCH",
+    headers: { Authorization: `Bearer ${vercelApiToken}`, "Content-Type": "application/json" },
+    body: JSON.stringify({ value: newRefreshToken }),
+  });
+  console.log("[freshbooks] Refresh token rotated and persisted to Vercel env var.");
+}
 
 async function getAccessToken(): Promise<string> {
   if (cachedToken && Date.now() < tokenExpiry - 60_000) return cachedToken;
@@ -39,6 +59,12 @@ async function getAccessToken(): Promise<string> {
   const data = await res.json();
   cachedToken = data.access_token;
   tokenExpiry = Date.now() + data.expires_in * 1000;
+
+  // FreshBooks rotates refresh tokens — persist the new one
+  if (data.refresh_token && data.refresh_token !== process.env.FRESHBOOKS_REFRESH_TOKEN) {
+    await persistRotatedToken(data.refresh_token);
+  }
+
   return cachedToken!;
 }
 

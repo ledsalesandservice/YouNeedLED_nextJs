@@ -56,6 +56,19 @@ function injectMeta(html: string, urlPath: string): string {
     `<meta name="twitter:description" content="${escapeHtml(meta.description)}"`
   );
 
+  // Replace og:url with the actual page URL
+  const fullUrl = `https://youneedled.com${urlPath}`;
+  html = html.replace(
+    /<meta property="og:url" content="[^"]*"/,
+    `<meta property="og:url" content="${fullUrl}"`
+  );
+
+  // Replace canonical link
+  html = html.replace(
+    /<link rel="canonical" href="[^"]*"/,
+    `<link rel="canonical" href="${fullUrl}"`
+  );
+
   return html;
 }
 

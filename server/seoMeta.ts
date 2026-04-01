@@ -129,7 +129,7 @@ for (const county of COUNTY_DATA) {
 }
 
 // ─── Public lookup ───────────────────────────────────────────────────────────
-const ALL_META: Record<string, PageMeta> = {
+export const ALL_META: Record<string, PageMeta> = {
   ...STATIC_META,
   ...LOCATION_META,
   ...COUNTY_META,

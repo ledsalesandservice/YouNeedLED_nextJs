@@ -5,7 +5,7 @@
  *
  * Required env vars:
  *   MANUS_API_KEY            — Manus CRM API key (X-API-Key header)
- *   MANUS_BASE_URL           — e.g. https://3000-xxx.manus.computer/api/sync
+ *   MANUS_BASE_URL           — e.g. https://ledservice.manus.space/api/sync
  *   FRESHBOOKS_CLIENT_ID     — OAuth app client ID
  *   FRESHBOOKS_CLIENT_SECRET — OAuth app client secret
  *   FRESHBOOKS_REFRESH_TOKEN — long-lived refresh token

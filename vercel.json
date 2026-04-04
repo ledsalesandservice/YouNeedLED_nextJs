@@ -343,6 +343,10 @@
     {
       "path": "/api/sync/manus-freshbooks",
       "schedule": "0 12 * * 1-5"
+    },
+    {
+      "path": "/api/telegram/daily-summary",
+      "schedule": "0 11 * * 1-5"
     }
   ]
 }

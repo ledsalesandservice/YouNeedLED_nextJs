@@ -25,8 +25,8 @@ import type { VercelRequest, VercelResponse } from "@vercel/node";
 
 // ─── Manus CRM client ────────────────────────────────────────────────────────
 
+// Use the stable custom domain — MANUS_API_URL was the old sandbox URL and caused 502s
 const MANUS_BASE =
-  process.env.MANUS_API_URL ||
   process.env.MANUS_CRM_BASE_URL ||
   "https://ledservice.manus.space/api/sync";
 

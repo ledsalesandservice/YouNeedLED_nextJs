@@ -1,10 +1,10 @@
 /**
  * Manus CRM API client
- * Base URL: https://3000-iujn5eifihv0yz7osu35w-876aec97.us2.manus.computer/api/sync
+ * Base URL: https://ledservice.manus.space/api/sync
  * Auth: X-API-Key header
  */
 
-const MANUS_BASE = process.env.MANUS_API_URL || "https://3000-iujn5eifihv0yz7osu35w-876aec97.us2.manus.computer/api/sync";
+const MANUS_BASE = process.env.MANUS_API_URL || "https://ledservice.manus.space/api/sync";
 const MANUS_KEY = process.env.MANUS_API_KEY!;
 
 export interface ManusClient {

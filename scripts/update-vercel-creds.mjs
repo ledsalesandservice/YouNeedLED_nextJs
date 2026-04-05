@@ -125,20 +125,18 @@ async function main() {
     }
   }
 
-  // Trigger redeployment by finding the latest production deployment
+  // Trigger redeployment by promoting the latest production deployment
   console.log("\nTriggering redeployment...");
   const deploysRes = await vercelRequest("GET", `/v13/deployments?projectId=${projectId}&target=production&limit=1`);
   if (deploysRes.status === 200 && deploysRes.body.deployments?.[0]) {
     const latest = deploysRes.body.deployments[0];
-    const redepRes = await vercelRequest("POST", `/v13/deployments`, {
-      name: PROJECT_NAME,
-      deploymentId: latest.uid,
-      target: "production",
-    });
+    // Vercel redeploy: POST to /v13/deployments/:id/redeploy
+    const redepRes = await vercelRequest("POST", `/v13/deployments/${latest.uid}/redeploy?forceNew=1`, {});
     if (redepRes.status === 200 || redepRes.status === 201) {
       console.log("✓ Redeployment triggered — will be live in ~1 minute.");
     } else {
-      console.log("⚠ Redeploy API returned", redepRes.status, "— trigger manually from vercel.com");
+      console.log("⚠ Redeploy API returned", redepRes.status, JSON.stringify(redepRes.body).slice(0, 100));
+      console.log("  → Trigger manually: vercel.com → YouNeedLED project → Deployments → Redeploy");
     }
   } else {
     console.log("⚠ Could not find latest deployment — trigger redeploy manually from vercel.com");

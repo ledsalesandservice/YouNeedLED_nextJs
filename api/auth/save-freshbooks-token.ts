@@ -178,3 +178,4 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       : "Token saved to Vercel. Trigger a redeployment from vercel.com for it to take effect.",
   });
 }
+// trigger: redeploy

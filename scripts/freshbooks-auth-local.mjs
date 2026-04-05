@@ -2,27 +2,25 @@
  * FreshBooks Local OAuth — run this on your laptop to get a new refresh token.
  *
  * Usage:
- *   node scripts/freshbooks-auth-local.js
+ *   node scripts/freshbooks-auth-local.mjs
  *
  * What it does:
  *   1. Starts a local HTTPS server on port 8080
  *   2. Opens your browser to FreshBooks authorization
  *   3. After you click Authorize, captures the code automatically
  *   4. Exchanges the code for tokens
- *   5. Auto-pushes the token to Vercel via the save endpoint — no manual steps
+ *   5. Auto-pushes the token to Vercel — no manual steps needed
  *
- * Requires: Node.js + openssl (already on your machine)
+ * Requires: Node.js 18+ + openssl (already on your machine)
  */
 
-const https = require("https");
-const http = require("http");
-const { execSync, exec } = require("child_process");
-const fs = require("fs");
-const os = require("os");
-const path = require("path");
+import https from "https";
+import { execSync, exec } from "child_process";
+import fs from "fs";
+import os from "os";
+import path from "path";
 
 // ─── Credentials ─────────────────────────────────────────────────────────────
-// These are pre-filled — just run the script.
 
 const CLIENT_ID =
   process.env.FRESHBOOKS_CLIENT_ID ||
@@ -32,6 +30,9 @@ const CLIENT_SECRET =
   "4fabe098f2cd7e524dd9cd8c317026faf3c5831c3edf4617475b4baa1dbf24cb";
 const REDIRECT_URI = "https://localhost:8080";
 const PORT = 8080;
+const SYNC_SECRET =
+  process.env.SYNC_SECRET ||
+  "9e2c103fb574b44e513abf82764cf453d44310d40fbb5def00b9c8e05802e4ae";
 
 // ─── Generate self-signed cert ────────────────────────────────────────────────
 
@@ -62,32 +63,59 @@ function openBrowser(url) {
 
 // ─── Exchange code for tokens ─────────────────────────────────────────────────
 
-async function exchangeCode(code) {
-  const body = JSON.stringify({
-    grant_type: "authorization_code",
-    client_id: CLIENT_ID,
-    client_secret: CLIENT_SECRET,
-    code,
-    redirect_uri: REDIRECT_URI,
-  });
-
+function exchangeCode(code) {
   return new Promise((resolve, reject) => {
+    const body = JSON.stringify({
+      grant_type: "authorization_code",
+      client_id: CLIENT_ID,
+      client_secret: CLIENT_SECRET,
+      code,
+      redirect_uri: REDIRECT_URI,
+    });
     const req = https.request(
       {
         hostname: "api.freshbooks.com",
         path: "/auth/oauth/token",
         method: "POST",
-        headers: { "Content-Type": "application/json", "Content-Length": body.length },
+        headers: { "Content-Type": "application/json", "Content-Length": Buffer.byteLength(body) },
       },
       (res) => {
         let data = "";
-        res.on("data", (chunk) => (data += chunk));
+        res.on("data", (c) => (data += c));
         res.on("end", () => {
-          try {
-            resolve(JSON.parse(data));
-          } catch (e) {
-            reject(new Error("Failed to parse token response: " + data));
-          }
+          try { resolve(JSON.parse(data)); }
+          catch (e) { reject(new Error("Bad token response: " + data)); }
+        });
+      }
+    );
+    req.on("error", reject);
+    req.write(body);
+    req.end();
+  });
+}
+
+// ─── Push token to Vercel via save endpoint ───────────────────────────────────
+
+function saveToVercel(refreshToken, clientId, clientSecret) {
+  return new Promise((resolve, reject) => {
+    const body = JSON.stringify({ refreshToken, clientId, clientSecret });
+    const req = https.request(
+      {
+        hostname: "www.youneedled.com",
+        path: "/api/auth/save-freshbooks-token",
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Content-Length": Buffer.byteLength(body),
+          Authorization: `Bearer ${SYNC_SECRET}`,
+        },
+      },
+      (res) => {
+        let data = "";
+        res.on("data", (c) => (data += c));
+        res.on("end", () => {
+          try { resolve(JSON.parse(data)); }
+          catch { resolve({ raw: data }); }
         });
       }
     );
@@ -111,7 +139,7 @@ async function main() {
     certs = generateCert();
   } catch (e) {
     console.error("Failed to generate certificate:", e.message);
-    console.log("\nFallback: open this URL in your browser, authorize, then paste the redirect URL here.");
+    console.log("\nOpen this URL manually, authorize, then paste the redirect URL back.");
     console.log("\nAuth URL:\n" + authUrl);
     return;
   }
@@ -156,66 +184,29 @@ async function main() {
           return;
         }
 
-        console.log("\n✓ Tokens received. Pushing to Vercel automatically...\n");
-
-        // Auto-push to Vercel via the save endpoint
-        const SAVE_URL = "https://www.youneedled.com/api/auth/save-freshbooks-token";
-        const SYNC_SECRET =
-          process.env.SYNC_SECRET ||
-          "9e2c103fb574b44e513abf82764cf453d44310d40fbb5def00b9c8e05802e4ae";
+        console.log("✓ Tokens received. Pushing to Vercel automatically...\n");
 
         try {
-          const saveBody = JSON.stringify({
-            refreshToken: tokens.refresh_token,
-            clientId: CLIENT_ID,
-            clientSecret: CLIENT_SECRET,
-          });
-
-          const saveResult = await new Promise((res, rej) => {
-            const saveReq = https.request(
-              {
-                hostname: "www.youneedled.com",
-                path: "/api/auth/save-freshbooks-token",
-                method: "POST",
-                headers: {
-                  "Content-Type": "application/json",
-                  "Content-Length": Buffer.byteLength(saveBody),
-                  Authorization: `Bearer ${SYNC_SECRET}`,
-                },
-              },
-              (r) => {
-                let d = "";
-                r.on("data", (c) => (d += c));
-                r.on("end", () => {
-                  try { res(JSON.parse(d)); } catch { res({ raw: d }); }
-                });
-              }
-            );
-            saveReq.on("error", rej);
-            saveReq.write(saveBody);
-            saveReq.end();
-          });
-
+          const saveResult = await saveToVercel(tokens.refresh_token, CLIENT_ID, CLIENT_SECRET);
           if (saveResult.ok) {
             console.log("=".repeat(60));
-            console.log("✅ DONE — Token saved to Vercel automatically!");
+            console.log("✅ DONE — FreshBooks connected and Vercel updated!");
             console.log(saveResult.message || "");
             console.log("=".repeat(60));
           } else {
-            throw new Error(saveResult.error || "Save failed");
+            throw new Error(saveResult.error || "Save endpoint returned error");
           }
         } catch (saveErr) {
           console.log("=".repeat(60));
-          console.log("⚠️  Auto-save failed: " + saveErr.message);
+          console.log("⚠️  Auto-save to Vercel failed: " + saveErr.message);
           console.log("\nManual fallback — update these 3 vars in Vercel:");
           console.log("FRESHBOOKS_REFRESH_TOKEN=" + tokens.refresh_token);
           console.log("FRESHBOOKS_CLIENT_ID=" + CLIENT_ID);
           console.log("FRESHBOOKS_CLIENT_SECRET=" + CLIENT_SECRET);
           console.log("=".repeat(60));
-          console.log("vercel.com → your project → Settings → Environment Variables");
         }
-      } catch (e) {
-        console.error("Token exchange error:", e.message);
+      } catch (err) {
+        console.error("Token exchange error:", err.message);
       }
 
       resolve();
@@ -230,7 +221,6 @@ async function main() {
       );
     });
 
-    // Timeout after 3 minutes
     setTimeout(() => {
       console.log("\nTimeout — no authorization received after 3 minutes.");
       server.close();

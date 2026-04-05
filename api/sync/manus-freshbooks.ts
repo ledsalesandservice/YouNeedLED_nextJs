@@ -260,6 +260,7 @@ const freshbooks = {
       {
         invoice: {
           customerid: data.clientId,
+          create_date: new Date().toISOString().split("T")[0], // YYYY-MM-DD required by FreshBooks
           notes: data.notes || "",
           lines: data.lines.map((l) => ({
             type: 0,

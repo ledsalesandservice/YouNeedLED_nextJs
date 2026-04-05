@@ -19,6 +19,7 @@ import { execSync, exec } from "child_process";
 import fs from "fs";
 import os from "os";
 import path from "path";
+import { fileURLToPath } from "url";
 
 // ─── Credentials ─────────────────────────────────────────────────────────────
 
@@ -184,25 +185,41 @@ async function main() {
           return;
         }
 
-        console.log("✓ Tokens received. Pushing to Vercel automatically...\n");
+        console.log("✓ Tokens received.\n");
 
-        try {
-          const saveResult = await saveToVercel(tokens.refresh_token, CLIENT_ID, CLIENT_SECRET);
-          if (saveResult.ok) {
-            console.log("=".repeat(60));
-            console.log("✅ DONE — FreshBooks connected and Vercel updated!");
-            console.log(saveResult.message || "");
-            console.log("=".repeat(60));
+        // Always save to .env.local so update-vercel-creds.mjs can use it
+        const envLocalPath = path.join(path.dirname(fileURLToPath(import.meta.url)), "..", ".env.local");
+        const envLine = `FRESHBOOKS_REFRESH_TOKEN=${tokens.refresh_token}\n`;
+        // Update or append the token line
+        if (fs.existsSync(envLocalPath)) {
+          let contents = fs.readFileSync(envLocalPath, "utf8");
+          if (contents.includes("FRESHBOOKS_REFRESH_TOKEN=")) {
+            contents = contents.replace(/FRESHBOOKS_REFRESH_TOKEN=.*\n?/, envLine);
           } else {
-            throw new Error(saveResult.error || "Save endpoint returned error");
+            contents += envLine;
           }
-        } catch (saveErr) {
+          fs.writeFileSync(envLocalPath, contents);
+        } else {
+          fs.writeFileSync(envLocalPath, envLine);
+        }
+        console.log("✓ Refresh token saved to .env.local\n");
+
+        // If VERCEL_TOKEN is available, update Vercel directly now
+        const vercelToken = process.env.VERCEL_TOKEN;
+        if (vercelToken) {
+          console.log("VERCEL_TOKEN found — running update-vercel-creds.mjs automatically...\n");
+          process.env.FRESHBOOKS_REFRESH_TOKEN = tokens.refresh_token;
+          try {
+            await import("./update-vercel-creds.mjs");
+          } catch (e) {
+            console.log("Auto-update failed:", e.message);
+            console.log("Run manually: node scripts/update-vercel-creds.mjs");
+          }
+        } else {
           console.log("=".repeat(60));
-          console.log("⚠️  Auto-save to Vercel failed: " + saveErr.message);
-          console.log("\nManual fallback — update these 3 vars in Vercel:");
-          console.log("FRESHBOOKS_REFRESH_TOKEN=" + tokens.refresh_token);
-          console.log("FRESHBOOKS_CLIENT_ID=" + CLIENT_ID);
-          console.log("FRESHBOOKS_CLIENT_SECRET=" + CLIENT_SECRET);
+          console.log("✓ Token saved. Now run:");
+          console.log("  node scripts/update-vercel-creds.mjs");
+          console.log("\n(Make sure VERCEL_TOKEN is in .env.local first)");
           console.log("=".repeat(60));
         }
       } catch (err) {

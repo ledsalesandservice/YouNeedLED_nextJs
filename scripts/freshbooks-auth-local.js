@@ -9,7 +9,7 @@
  *   2. Opens your browser to FreshBooks authorization
  *   3. After you click Authorize, captures the code automatically
  *   4. Exchanges the code for tokens
- *   5. Prints FRESHBOOKS_REFRESH_TOKEN — copy it to Vercel
+ *   5. Auto-pushes the token to Vercel via the save endpoint — no manual steps
  *
  * Requires: Node.js + openssl (already on your machine)
  */
@@ -156,17 +156,64 @@ async function main() {
           return;
         }
 
-        console.log("=".repeat(60));
-        console.log("✓ SUCCESS — Copy this refresh token to Vercel:\n");
-        console.log("FRESHBOOKS_REFRESH_TOKEN=" + tokens.refresh_token);
-        console.log("\nAlso update these if different from current Vercel values:");
-        console.log("FRESHBOOKS_CLIENT_ID=" + CLIENT_ID);
-        console.log("FRESHBOOKS_CLIENT_SECRET=" + CLIENT_SECRET);
-        console.log("=".repeat(60));
-        console.log(
-          "\nIn Vercel: vercel.com → your project → Settings → Environment Variables"
-        );
-        console.log("Update the three vars above, then Redeploy.");
+        console.log("\n✓ Tokens received. Pushing to Vercel automatically...\n");
+
+        // Auto-push to Vercel via the save endpoint
+        const SAVE_URL = "https://www.youneedled.com/api/auth/save-freshbooks-token";
+        const SYNC_SECRET =
+          process.env.SYNC_SECRET ||
+          "9e2c103fb574b44e513abf82764cf453d44310d40fbb5def00b9c8e05802e4ae";
+
+        try {
+          const saveBody = JSON.stringify({
+            refreshToken: tokens.refresh_token,
+            clientId: CLIENT_ID,
+            clientSecret: CLIENT_SECRET,
+          });
+
+          const saveResult = await new Promise((res, rej) => {
+            const saveReq = https.request(
+              {
+                hostname: "www.youneedled.com",
+                path: "/api/auth/save-freshbooks-token",
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/json",
+                  "Content-Length": Buffer.byteLength(saveBody),
+                  Authorization: `Bearer ${SYNC_SECRET}`,
+                },
+              },
+              (r) => {
+                let d = "";
+                r.on("data", (c) => (d += c));
+                r.on("end", () => {
+                  try { res(JSON.parse(d)); } catch { res({ raw: d }); }
+                });
+              }
+            );
+            saveReq.on("error", rej);
+            saveReq.write(saveBody);
+            saveReq.end();
+          });
+
+          if (saveResult.ok) {
+            console.log("=".repeat(60));
+            console.log("✅ DONE — Token saved to Vercel automatically!");
+            console.log(saveResult.message || "");
+            console.log("=".repeat(60));
+          } else {
+            throw new Error(saveResult.error || "Save failed");
+          }
+        } catch (saveErr) {
+          console.log("=".repeat(60));
+          console.log("⚠️  Auto-save failed: " + saveErr.message);
+          console.log("\nManual fallback — update these 3 vars in Vercel:");
+          console.log("FRESHBOOKS_REFRESH_TOKEN=" + tokens.refresh_token);
+          console.log("FRESHBOOKS_CLIENT_ID=" + CLIENT_ID);
+          console.log("FRESHBOOKS_CLIENT_SECRET=" + CLIENT_SECRET);
+          console.log("=".repeat(60));
+          console.log("vercel.com → your project → Settings → Environment Variables");
+        }
       } catch (e) {
         console.error("Token exchange error:", e.message);
       }

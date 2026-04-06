@@ -265,9 +265,28 @@ async function handleApprove(chatId: number): Promise<void> {
 
 // ─── Business context builder ─────────────────────────────────────────────────
 
+interface PendingBillingItem {
+  kind: "work_order" | "service_log";
+  id: number;
+  clientName: string;
+  serviceType?: string;
+  serviceDate?: string;
+  workOrderNumber?: string;
+  title?: string;
+  laborHours: number;
+  laborRate: number;
+  totalEstimate: number;
+}
+
 interface BusinessContext {
   tasks: { inProgress: number; blocked: number; blockerTitles: string[] };
-  billing: { pendingCount: number; estimatedRevenue: string } | null;
+  billing: {
+    pendingCount: number;
+    pendingWorkOrders: number;
+    pendingServiceLogs: number;
+    estimatedRevenue: string;
+    items: PendingBillingItem[];
+  } | null;
 }
 
 async function buildBusinessContext(): Promise<BusinessContext> {
@@ -302,8 +321,20 @@ async function buildBusinessContext(): Promise<BusinessContext> {
   }
 
   if (billingResult.status === "fulfilled" && billingResult.value) {
-    const b = billingResult.value as { pendingCount: number; estimatedRevenue: string };
-    ctx.billing = { pendingCount: b.pendingCount, estimatedRevenue: b.estimatedRevenue };
+    const b = billingResult.value as {
+      pendingCount: number;
+      pendingWorkOrders: number;
+      pendingServiceLogs: number;
+      estimatedRevenue: string;
+      items?: PendingBillingItem[];
+    };
+    ctx.billing = {
+      pendingCount: b.pendingCount,
+      pendingWorkOrders: b.pendingWorkOrders ?? 0,
+      pendingServiceLogs: b.pendingServiceLogs ?? 0,
+      estimatedRevenue: b.estimatedRevenue,
+      items: b.items ?? [],
+    };
   }
 
   return ctx;
@@ -331,17 +362,37 @@ async function askClaude(userMessage: string, ctx: BusinessContext): Promise<str
 
   if (ctx.billing) {
     contextLines.push(
-      `- Uninvoiced items ready to bill: ${ctx.billing.pendingCount} (est. $${ctx.billing.estimatedRevenue})`
+      `- Uninvoiced items ready to bill: ${ctx.billing.pendingCount} (${ctx.billing.pendingWorkOrders} work orders, ${ctx.billing.pendingServiceLogs} service logs, est. $${ctx.billing.estimatedRevenue})`
     );
+    if (ctx.billing.items.length > 0) {
+      contextLines.push("", "Pending billing items (full list from Manus CRM):");
+      // Group by client for readability
+      const byClient = new Map<string, PendingBillingItem[]>();
+      for (const item of ctx.billing.items) {
+        const arr = byClient.get(item.clientName) ?? [];
+        arr.push(item);
+        byClient.set(item.clientName, arr);
+      }
+      for (const [client, items] of byClient) {
+        const total = items.reduce((s, i) => s + i.totalEstimate, 0);
+        const detail = items.map((i) =>
+          i.kind === "service_log"
+            ? `${i.serviceType} on ${i.serviceDate ?? "?"} (${i.laborHours}h)`
+            : `WO ${i.workOrderNumber}: ${i.title}`
+        ).join("; ");
+        contextLines.push(`  - ${client}: $${total.toFixed(2)} — ${detail}`);
+      }
+    }
   }
 
   contextLines.push(
     "",
-    "Available bot commands Derek can use: /status, /blockers, /pending, /approve",
+    "Available bot commands: /status, /blockers, /pending, /approve",
     "",
-    "Respond conversationally and concisely — this is a Telegram chat. Keep replies under 200 words.",
-    "Use plain text only, no markdown formatting (no *, **, _, etc).",
-    "If asked to take an action like approve invoices, tell Derek to use the relevant command instead."
+    "Respond conversationally and concisely. This is a Telegram chat — keep replies under 200 words.",
+    "Use plain text only. No asterisks, underscores, backticks, or other markdown symbols.",
+    "You have full visibility into the pending billing items above — answer questions about specific clients, service types, and dates directly from that data.",
+    "If asked to approve/create invoices, tell Derek to send /approve."
   );
 
   const res = await fetch("https://api.anthropic.com/v1/messages", {

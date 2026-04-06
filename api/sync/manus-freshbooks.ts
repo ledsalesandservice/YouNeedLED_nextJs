@@ -95,6 +95,7 @@ interface ManusServiceLog {
   description: string | null;
   notes: string | null;
   technicianName: string | null;
+  partsUsed: string | null;
   invoiceNumber: string | null;
   freshbooksInvoiceId: string | null;
   freshbooksClientId: string | null;
@@ -311,9 +312,57 @@ const freshbooks = {
     );
     return { invoiceId: r.result.invoice.id, invoiceNumber: r.result.invoice.invoice_number };
   },
+
+  /** Fetch the last 50 FreshBooks invoices and build a name→{unitPrice,source} lookup map.
+   *  Used to suggest prices for parts/materials found in Manus service logs. */
+  async getRecentInvoiceLines(): Promise<Map<string, { unitPrice: number; source: string }>> {
+    const r = await fbGet<{
+      result: {
+        invoices: Array<{
+          invoice_number: string;
+          lines: Array<{
+            name: string;
+            description: string;
+            qty: number;
+            unit_cost: { amount: string };
+          }>;
+        }>;
+      };
+    }>(`/accounting/account/${ACCOUNT_ID}/invoices/invoices`, {
+      page: 1,
+      per_page: 50,
+    });
+    const map = new Map<string, { unitPrice: number; source: string }>();
+    for (const inv of r.result.invoices || []) {
+      for (const line of inv.lines || []) {
+        if (!line.name) continue;
+        const key = line.name.toLowerCase().trim();
+        const unitPrice = parseFloat(line.unit_cost?.amount || "0");
+        if (unitPrice > 0 && !map.has(key)) {
+          map.set(key, { unitPrice, source: inv.invoice_number });
+        }
+      }
+    }
+    return map;
+  },
 };
 
+// ─── Labor rate calculation ───────────────────────────────────────────────────
+
+/** $125/hr for the first tech, +$50/hr for each additional tech on site. */
+function calcLaborRate(technicianName: string | null): number {
+  if (!technicianName?.trim()) return 125;
+  const count = technicianName.split(",").map((s) => s.trim()).filter(Boolean).length;
+  return 125 + Math.max(0, count - 1) * 50;
+}
+
 // ─── Preview types ────────────────────────────────────────────────────────────
+
+interface SuggestedPart {
+  description: string;
+  unitPrice: number | null;
+  historicalSource: string | null;
+}
 
 interface PendingWorkOrder {
   kind: "work_order";
@@ -336,6 +385,8 @@ interface PendingServiceLog {
   serviceDate: string;
   laborHours: number;
   laborRate: number;
+  partsUsed: string | null;
+  suggestedParts: SuggestedPart[];
   totalEstimate: number;
   technicianName?: string;
   techCount?: number;
@@ -398,9 +449,23 @@ async function sendTelegramPreview(pending: PendingItem[]): Promise<void> {
       const techLabel = item.techCount && item.techCount > 1
         ? ` ${item.techCount} techs`
         : "";
-      lines.push(
-        `• ${item.clientName} — ${item.serviceType} on ${item.serviceDate} (${item.laborHours}h${techLabel} @ $${item.laborRate}/hr) = *$${item.totalEstimate.toFixed(2)}*`
-      );
+      const laborLine = item.laborHours > 0
+        ? `${item.laborHours}h${techLabel} @ $${item.laborRate}/hr`
+        : "0h labor";
+      lines.push(`• ${item.clientName} — ${item.serviceType} on ${item.serviceDate} (${laborLine}) = *$${item.totalEstimate.toFixed(2)}*`);
+      if (item.partsUsed) {
+        if (item.suggestedParts.length > 0 && item.suggestedParts.some((p) => p.unitPrice !== null)) {
+          for (const p of item.suggestedParts) {
+            if (p.unitPrice !== null) {
+              lines.push(`  📦 ${p.description}: *$${p.unitPrice.toFixed(2)}* (from ${p.historicalSource})`);
+            } else {
+              lines.push(`  📦 ${p.description}: *price unknown — will add as $0*`);
+            }
+          }
+        } else {
+          lines.push(`  📦 Parts: ${item.partsUsed} _(no price history — will add as $0)_`);
+        }
+      }
     }
     lines.push("");
   }
@@ -443,6 +508,15 @@ async function getPendingItems(
 ): Promise<PendingItem[]> {
   const pending: PendingItem[] = [];
 
+  // Load FreshBooks line item history for parts price lookup (best-effort)
+  let lineHistory: Map<string, { unitPrice: number; source: string }> = new Map();
+  try {
+    lineHistory = await freshbooks.getRecentInvoiceLines();
+    console.log(`[sync] Loaded ${lineHistory.size} historical line items for price lookup`);
+  } catch (err) {
+    console.warn("[sync] Could not load FreshBooks line history:", err);
+  }
+
   // Work orders
   const workOrders = await manus.getWorkOrders();
   const uninvoicedWOs = workOrders.filter(
@@ -482,10 +556,41 @@ async function getPendingItems(
     const clientName = mc?.propertyName ?? `Client #${sl.clientId}`;
     const laborHours = parseFloat(sl.laborHours || "0");
     const laborRate = calcLaborRate(sl.technicianName);
-    const totalEstimate = laborHours * laborRate;
     const techCount = sl.technicianName
       ? sl.technicianName.split(",").filter((n) => n.trim()).length
       : 1;
+
+    // Build parts suggestions from partsUsed + historical line items
+    const partsText = sl.partsUsed?.trim() || null;
+    const suggestedParts: SuggestedPart[] = [];
+    if (partsText) {
+      const partsLower = partsText.toLowerCase();
+      const matched = new Set<string>();
+      for (const [key, val] of lineHistory) {
+        if (partsLower.includes(key)) {
+          suggestedParts.push({
+            description: key,
+            unitPrice: val.unitPrice,
+            historicalSource: val.source,
+          });
+          matched.add(key);
+        }
+      }
+      if (suggestedParts.length === 0) {
+        suggestedParts.push({
+          description: partsText,
+          unitPrice: null,
+          historicalSource: null,
+        });
+      }
+    }
+
+    const partsEstimate = suggestedParts.reduce(
+      (sum, p) => sum + (p.unitPrice ?? 0),
+      0
+    );
+    const totalEstimate = laborHours * laborRate + partsEstimate;
+
     pending.push({
       kind: "service_log",
       id: sl.id,
@@ -494,6 +599,8 @@ async function getPendingItems(
       serviceDate: sl.serviceDate?.split("T")[0] ?? "unknown",
       laborHours,
       laborRate,
+      partsUsed: partsText,
+      suggestedParts,
       totalEstimate,
       technicianName: sl.technicianName ?? undefined,
       techCount,
@@ -675,6 +782,14 @@ async function syncManusToFreshBooks(): Promise<SyncResult> {
   );
   console.log(`[sync] ${uninvoicedSLs.length} completed service logs need invoicing`);
 
+  // Load FreshBooks line history for parts price lookup
+  let lineHistory: Map<string, { unitPrice: number; source: string }> = new Map();
+  try {
+    lineHistory = await freshbooks.getRecentInvoiceLines();
+  } catch (err) {
+    console.warn("[sync] Could not load FreshBooks line history for parts lookup:", err);
+  }
+
   // Group service logs by client to batch into one invoice per client
   const slsByClient = new Map<number, ManusServiceLog[]>();
   for (const sl of uninvoicedSLs) {
@@ -723,6 +838,41 @@ async function syncManusToFreshBooks(): Promise<SyncResult> {
             unit_cost: { amount: String(laborRate), code: "USD" },
           });
         }
+
+        // Parts/materials line items from partsUsed
+        const partsText = sl.partsUsed?.trim();
+        if (partsText) {
+          const partsLower = partsText.toLowerCase();
+          const matched: string[] = [];
+          for (const [key, val] of lineHistory) {
+            if (partsLower.includes(key)) {
+              lines.push({
+                name: key.charAt(0).toUpperCase() + key.slice(1),
+                description: `Parts from service log ${sl.id} (ref: ${val.source})`,
+                qty: 1,
+                unit_cost: { amount: String(val.unitPrice), code: "USD" },
+              });
+              matched.push(key);
+            }
+          }
+          // Any unmatched parts → $0 line so Derek can fill price in FreshBooks
+          if (matched.length === 0) {
+            lines.push({
+              name: "Parts & Materials",
+              description: partsText,
+              qty: 1,
+              unit_cost: { amount: "0.00", code: "USD" },
+            });
+          } else if (partsText.length > 0) {
+            // Add the full raw partsUsed as an invoice note line
+            lines.push({
+              name: "Parts & Materials — review",
+              description: `Full parts list: ${partsText}`,
+              qty: 1,
+              unit_cost: { amount: "0.00", code: "USD" },
+            });
+          }
+        }
       }
 
       if (lines.length === 0) {
@@ -736,9 +886,11 @@ async function syncManusToFreshBooks(): Promise<SyncResult> {
       }
 
       const logDates = [...new Set(logs.map((sl) => sl.serviceDate?.split("T")[0]).filter(Boolean))];
+      const rateDisplay = [...new Set(logs.map((sl) => `$${calcLaborRate(sl.technicianName)}/hr`))].join(", ");
       const notes = [
         `Service log IDs: ${logs.map((sl) => sl.id).join(", ")}`,
         logDates.length > 0 ? `Service dates: ${logDates.join(", ")}` : null,
+        `Labor rate(s): ${rateDisplay}`,
       ]
         .filter(Boolean)
         .join("\n");

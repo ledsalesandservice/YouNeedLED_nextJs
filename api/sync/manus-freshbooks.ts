@@ -696,8 +696,8 @@ async function syncManusToFreshBooks(): Promise<SyncResult> {
       if (laborHours > 0) {
         const laborRate = parseFloat(wo.laborRate || "95");
         lines.push({
-          name: "Labor",
-          description: wo.title || "Service call",
+          name: `Labor — ${wo.title || "Service call"}`,
+          description: wo.workPerformed || wo.description || wo.title || "Service call",
           qty: laborHours,
           unit_cost: { amount: String(laborRate), code: "USD" },
         });
@@ -707,7 +707,7 @@ async function syncManusToFreshBooks(): Promise<SyncResult> {
       if (partsTotal > 0) {
         lines.push({
           name: "Parts & Materials",
-          description: wo.description || "",
+          description: wo.description || wo.title || "",
           qty: 1,
           unit_cost: { amount: String(partsTotal), code: "USD" },
         });
@@ -716,7 +716,7 @@ async function syncManusToFreshBooks(): Promise<SyncResult> {
       if (lines.length === 0) {
         lines.push({
           name: wo.title || "Service",
-          description: wo.description || "",
+          description: wo.workPerformed || wo.description || "",
           qty: 1,
           unit_cost: { amount: "0.00", code: "USD" },
         });
@@ -726,7 +726,6 @@ async function syncManusToFreshBooks(): Promise<SyncResult> {
         `Work Order: ${wo.workOrderNumber}`,
         wo.siteAddress ? `Site: ${wo.siteAddress}` : null,
         wo.completedDate ? `Completed: ${wo.completedDate.split("T")[0]}` : null,
-        wo.workPerformed ? `Work performed: ${wo.workPerformed}` : null,
       ]
         .filter(Boolean)
         .join("\n");
@@ -819,12 +818,9 @@ async function syncManusToFreshBooks(): Promise<SyncResult> {
           ? sl.technicianName.split(",").filter((n) => n.trim()).length
           : 1;
         if (laborHours > 0) {
-          const rateLabel = techCount > 1
-            ? `$125 + ${techCount - 1}×$50 = $${laborRate}/hr (${techCount} techs)`
-            : `$${laborRate}/hr`;
           lines.push({
             name: `${sl.serviceType.charAt(0).toUpperCase() + sl.serviceType.slice(1)} — ${sl.serviceDate?.split("T")[0] ?? ""}`,
-            description: `${sl.description || sl.notes || ""} | Techs: ${sl.technicianName || "1"} | Rate: ${rateLabel}`.trim().replace(/^\|/, "").trim(),
+            description: sl.description || sl.notes || sl.serviceType,
             qty: laborHours,
             unit_cost: { amount: String(laborRate), code: "USD" },
           });
@@ -877,10 +873,12 @@ async function syncManusToFreshBooks(): Promise<SyncResult> {
       }
 
       const logDates = [...new Set(logs.map((sl) => sl.serviceDate?.split("T")[0]).filter(Boolean))];
+      const techNames = [...new Set(logs.map((sl) => sl.technicianName).filter(Boolean))];
       const rateDisplay = [...new Set(logs.map((sl) => `$${calcLaborRate(sl.technicianName)}/hr`))].join(", ");
       const notes = [
         `Service log IDs: ${logs.map((sl) => sl.id).join(", ")}`,
         logDates.length > 0 ? `Service dates: ${logDates.join(", ")}` : null,
+        techNames.length > 0 ? `Technicians: ${techNames.join("; ")}` : null,
         `Labor rate(s): ${rateDisplay}`,
       ]
         .filter(Boolean)

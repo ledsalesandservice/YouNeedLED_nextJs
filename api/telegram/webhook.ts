@@ -5,10 +5,12 @@
  * from his phone. Webhook is registered with Telegram pointing here.
  *
  * Commands:
- *   /start   — Register Derek's chat_id (run this once after creating the bot)
- *   /status  — Open/blocked task counts
+ *   /start    — Register Derek's chat_id (run this once after creating the bot)
+ *   /status   — Open/blocked task counts
  *   /blockers — List all blocked tasks needing Derek's attention
- *   <text>   — Post free-text as a comment on YOU-1 in Paperclip
+ *   /pending  — Show pending uninvoiced items (preview without creating)
+ *   /approve  — Create FreshBooks draft invoices for all pending items
+ *   <text>    — Post free-text as a comment on YOU-1 in Paperclip
  *
  * Required env vars in Vercel:
  *   TELEGRAM_BOT_TOKEN            — From BotFather
@@ -175,6 +177,80 @@ async function handleBlockers(chatId: number): Promise<void> {
   );
 }
 
+async function callSyncEndpoint(mode: "preview" | "execute"): Promise<Response> {
+  const secret = process.env.SYNC_SECRET;
+  if (!secret) throw new Error("SYNC_SECRET not configured");
+  const url =
+    mode === "execute"
+      ? "https://www.youneedled.com/api/sync/manus-freshbooks?execute=1"
+      : "https://www.youneedled.com/api/sync/manus-freshbooks";
+  return fetch(url, {
+    method: "POST",
+    headers: { Authorization: `Bearer ${secret}`, "Content-Type": "application/json" },
+  });
+}
+
+async function handlePending(chatId: number): Promise<void> {
+  await sendMessage(chatId, "🔍 Checking pending items...");
+  const res = await callSyncEndpoint("preview");
+  if (!res.ok) {
+    const err = await res.text();
+    await sendMessage(chatId, `❌ Preview failed: ${err.slice(0, 200)}`);
+    return;
+  }
+  const data = await res.json() as {
+    pendingCount: number;
+    pendingWorkOrders: number;
+    pendingServiceLogs: number;
+    estimatedRevenue: string;
+  };
+  if (data.pendingCount === 0) {
+    await sendMessage(chatId, "✅ No pending items to invoice right now.");
+    return;
+  }
+  await sendMessage(
+    chatId,
+    `📋 *Pending Invoice Items*\n\n` +
+      `• Work orders: ${data.pendingWorkOrders}\n` +
+      `• Service logs: ${data.pendingServiceLogs}\n` +
+      `• Est. revenue: *$${data.estimatedRevenue}*\n\n` +
+      `Reply /approve to create these as drafts in FreshBooks.`
+  );
+}
+
+async function handleApprove(chatId: number): Promise<void> {
+  await sendMessage(chatId, "⏳ Creating FreshBooks draft invoices...");
+  const res = await callSyncEndpoint("execute");
+  if (!res.ok) {
+    const err = await res.text();
+    await sendMessage(chatId, `❌ Sync failed: ${err.slice(0, 200)}`);
+    return;
+  }
+  const data = await res.json() as {
+    invoicesCreated: number;
+    clientsLinked: number;
+    clientsCreated: number;
+    errors: { id: number | string; error: string }[];
+  };
+  if (data.errors?.length > 0) {
+    const errLines = data.errors.slice(0, 5).map((e) => `• ${e.id}: ${e.error}`).join("\n");
+    await sendMessage(
+      chatId,
+      `⚠️ *Done with errors*\n\n` +
+        `✅ ${data.invoicesCreated} invoice(s) created\n` +
+        `❌ ${data.errors.length} error(s):\n${errLines}\n\n` +
+        `Check FreshBooks and Manus for details.`
+    );
+  } else {
+    await sendMessage(
+      chatId,
+      `✅ *Invoices Created*\n\n` +
+        `${data.invoicesCreated} draft invoice(s) are now in FreshBooks.\n` +
+        `Review and send when ready.`
+    );
+  }
+}
+
 async function handleFreeText(
   chatId: number,
   text: string,
@@ -216,17 +292,23 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
           `I'll ping you when something needs your attention.\n\n` +
           `Commands:\n` +
           `/status — Open tasks summary\n` +
-          `/blockers — What's blocked and waiting on you\n\n` +
+          `/blockers — What's blocked and waiting on you\n` +
+          `/pending — Show uninvoiced items ready to bill\n` +
+          `/approve — Create FreshBooks draft invoices now\n\n` +
           `Or send any message to post it as a note to the team.`
       );
     } else if (text === "/status") {
       await handleStatus(chatId);
     } else if (text === "/blockers") {
       await handleBlockers(chatId);
+    } else if (text === "/pending") {
+      await handlePending(chatId);
+    } else if (text === "/approve") {
+      await handleApprove(chatId);
     } else if (!text.startsWith("/")) {
       await handleFreeText(chatId, text, message.from);
     } else {
-      await sendMessage(chatId, "Unknown command. Try /status or /blockers.");
+      await sendMessage(chatId, "Unknown command. Try /status, /blockers, /pending, or /approve.");
     }
   } catch (err) {
     const msg = err instanceof Error ? err.message : String(err);

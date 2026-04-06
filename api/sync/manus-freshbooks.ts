@@ -347,15 +347,6 @@ const freshbooks = {
   },
 };
 
-// ─── Labor rate calculation ───────────────────────────────────────────────────
-
-/** $125/hr for the first tech, +$50/hr for each additional tech on site. */
-function calcLaborRate(technicianName: string | null): number {
-  if (!technicianName?.trim()) return 125;
-  const count = technicianName.split(",").map((s) => s.trim()).filter(Boolean).length;
-  return 125 + Math.max(0, count - 1) * 50;
-}
-
 // ─── Preview types ────────────────────────────────────────────────────────────
 
 interface SuggestedPart {

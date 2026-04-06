@@ -111,9 +111,12 @@ interface PaperclipIssue {
   priority: string;
 }
 
-async function paperclipGet<T>(path: string): Promise<T> {
+async function paperclipGet<T>(path: string): Promise<T | null> {
   const key = process.env.PAPERCLIP_API_KEY;
-  if (!key) throw new Error("PAPERCLIP_API_KEY not set");
+  if (!key) {
+    console.warn("[telegram] PAPERCLIP_API_KEY not set — skipping Paperclip fetch");
+    return null;
+  }
   const res = await fetch(`${PAPERCLIP_BASE}${path}`, {
     headers: { Authorization: `Bearer ${key}` },
   });
@@ -121,9 +124,12 @@ async function paperclipGet<T>(path: string): Promise<T> {
   return res.json();
 }
 
-async function paperclipPost(path: string, body: unknown): Promise<void> {
+async function paperclipPost(path: string, body: unknown): Promise<boolean> {
   const key = process.env.PAPERCLIP_API_KEY;
-  if (!key) throw new Error("PAPERCLIP_API_KEY not set");
+  if (!key) {
+    console.warn("[telegram] PAPERCLIP_API_KEY not set — skipping Paperclip post");
+    return false;
+  }
   const res = await fetch(`${PAPERCLIP_BASE}${path}`, {
     method: "POST",
     headers: {
@@ -133,18 +139,20 @@ async function paperclipPost(path: string, body: unknown): Promise<void> {
     body: JSON.stringify(body),
   });
   if (!res.ok) throw new Error(`Paperclip POST ${path} → ${res.status}: ${await res.text()}`);
+  return true;
 }
 
 // ─── Command handlers ─────────────────────────────────────────────────────────
 
 async function handleStatus(chatId: number): Promise<void> {
-  if (!PAPERCLIP_COMPANY_ID) {
-    await sendMessage(chatId, "❌ PAPERCLIP_COMPANY_ID not configured.");
+  if (!PAPERCLIP_COMPANY_ID || !process.env.PAPERCLIP_API_KEY) {
+    await sendMessage(chatId, "⚠️ Paperclip not connected — /status unavailable.\nThe billing commands (/approve, /pending) work without it.");
     return;
   }
   const issues = await paperclipGet<PaperclipIssue[]>(
     `/api/companies/${PAPERCLIP_COMPANY_ID}/issues?status=in_progress,blocked`
   );
+  if (!issues) return;
   const inProgress = issues.filter((i) => i.status === "in_progress").length;
   const blocked = issues.filter((i) => i.status === "blocked").length;
   await sendMessage(
@@ -157,13 +165,14 @@ async function handleStatus(chatId: number): Promise<void> {
 }
 
 async function handleBlockers(chatId: number): Promise<void> {
-  if (!PAPERCLIP_COMPANY_ID) {
-    await sendMessage(chatId, "❌ PAPERCLIP_COMPANY_ID not configured.");
+  if (!PAPERCLIP_COMPANY_ID || !process.env.PAPERCLIP_API_KEY) {
+    await sendMessage(chatId, "⚠️ Paperclip not connected — /blockers unavailable.\nThe billing commands (/approve, /pending) work without it.");
     return;
   }
   const issues = await paperclipGet<PaperclipIssue[]>(
     `/api/companies/${PAPERCLIP_COMPANY_ID}/issues?status=blocked`
   );
+  if (!issues) return;
   if (issues.length === 0) {
     await sendMessage(chatId, "✅ No blocked tasks right now — all clear!");
     return;
@@ -257,10 +266,14 @@ async function handleFreeText(
   from?: TelegramUser
 ): Promise<void> {
   const senderName = from?.first_name || from?.username || "Derek";
-  await paperclipPost(`/api/issues/${DEFAULT_ISSUE_ID}/comments`, {
+  const posted = await paperclipPost(`/api/issues/${DEFAULT_ISSUE_ID}/comments`, {
     body: `💬 **Message from ${senderName} via Telegram:**\n\n${text}`,
   });
-  await sendMessage(chatId, "✅ Message posted to team board.");
+  if (posted) {
+    await sendMessage(chatId, "✅ Message posted to team board.");
+  } else {
+    await sendMessage(chatId, "⚠️ Note received but Paperclip is not connected yet. Message was not saved.");
+  }
 }
 
 // ─── Handler ──────────────────────────────────────────────────────────────────

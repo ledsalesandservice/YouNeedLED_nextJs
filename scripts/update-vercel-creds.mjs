@@ -31,7 +31,8 @@ if (fs.existsSync(envFile)) {
 // ─── Config ───────────────────────────────────────────────────────────────────
 
 const VERCEL_TOKEN = process.env.VERCEL_TOKEN;
-const PROJECT_NAME = "youneedled-nextjs"; // Vercel project name
+// Vercel project name — override with VERCEL_PROJECT_NAME in .env.local if different
+const PROJECT_NAME = process.env.VERCEL_PROJECT_NAME || "youneedled-nextjs";
 
 // New FreshBooks credentials from the local OAuth run
 const NEW_CREDS = {

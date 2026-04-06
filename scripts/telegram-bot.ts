@@ -5,11 +5,10 @@
  * Uses long polling so no webhook or public URL is required.
  *
  * Run:
- *   npx tsx scripts/telegram-bot.ts
+ *   npx tsx --env-file=.env scripts/telegram-bot.ts
  *
- * Or compile once and run:
- *   npx tsc --outDir dist scripts/telegram-bot.ts --esModuleInterop --module commonjs
- *   node dist/scripts/telegram-bot.js
+ * Create a .env file in the repo root with the vars below.
+ * (tsx 4.x loads it natively — no dotenv package needed)
  *
  * Required env vars (.env or shell):
  *   TELEGRAM_BOT_TOKEN       — From BotFather
@@ -29,9 +28,6 @@
  *   /wo       — List open/completed work orders from Manus
  *   <text>    — Posts free-text as a comment on YOU-1 in Paperclip
  */
-
-import * as dotenv from "dotenv";
-dotenv.config();
 
 // ─── Config ───────────────────────────────────────────────────────────────────
 

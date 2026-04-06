@@ -337,6 +337,8 @@ interface PendingServiceLog {
   laborHours: number;
   laborRate: number;
   totalEstimate: number;
+  technicianName?: string;
+  techCount?: number;
 }
 
 type PendingItem = PendingWorkOrder | PendingServiceLog;
@@ -393,8 +395,11 @@ async function sendTelegramPreview(pending: PendingItem[]): Promise<void> {
     lines.push(`*Service Logs (${slCount}):*`);
     for (const item of pending) {
       if (item.kind !== "service_log") continue;
+      const techLabel = item.techCount && item.techCount > 1
+        ? ` ${item.techCount} techs`
+        : "";
       lines.push(
-        `• ${item.clientName} — ${item.serviceType} on ${item.serviceDate} (${item.laborHours}h @ $${item.laborRate}/hr) = *$${item.totalEstimate.toFixed(2)}*`
+        `• ${item.clientName} — ${item.serviceType} on ${item.serviceDate} (${item.laborHours}h${techLabel} @ $${item.laborRate}/hr) = *$${item.totalEstimate.toFixed(2)}*`
       );
     }
     lines.push("");
@@ -415,12 +420,27 @@ async function sendTelegramPreview(pending: PendingItem[]): Promise<void> {
   }
 }
 
+// ─── Rate calculation ─────────────────────────────────────────────────────────
+
+/**
+ * Labor rate based on tech count.
+ * Derek's structure: $125/hr for first tech, +$50/hr per additional tech.
+ * technicianName field is comma-separated names, e.g. "Derek, Matej, Sammy"
+ */
+function calcLaborRate(technicianName: string | null | undefined): number {
+  if (!technicianName || technicianName.trim() === "" || technicianName.trim().toLowerCase() === "unknown") {
+    return 125; // default: 1 tech
+  }
+  const techCount = technicianName.split(",").map((n) => n.trim()).filter(Boolean).length;
+  if (techCount <= 1) return 125;
+  return 125 + (techCount - 1) * 50;
+}
+
 // ─── Pending items query (shared by preview and execute) ──────────────────────
 
 async function getPendingItems(
   manusClientById: Map<number, ManusClient>
 ): Promise<PendingItem[]> {
-  const serviceLogRate = parseFloat(process.env.SERVICE_LOG_LABOR_RATE || "95");
   const pending: PendingItem[] = [];
 
   // Work orders
@@ -461,7 +481,11 @@ async function getPendingItems(
     const mc = manusClientById.get(sl.clientId);
     const clientName = mc?.propertyName ?? `Client #${sl.clientId}`;
     const laborHours = parseFloat(sl.laborHours || "0");
-    const totalEstimate = laborHours * serviceLogRate;
+    const laborRate = calcLaborRate(sl.technicianName);
+    const totalEstimate = laborHours * laborRate;
+    const techCount = sl.technicianName
+      ? sl.technicianName.split(",").filter((n) => n.trim()).length
+      : 1;
     pending.push({
       kind: "service_log",
       id: sl.id,
@@ -469,8 +493,10 @@ async function getPendingItems(
       serviceType: sl.serviceType,
       serviceDate: sl.serviceDate?.split("T")[0] ?? "unknown",
       laborHours,
-      laborRate: serviceLogRate,
+      laborRate,
       totalEstimate,
+      technicianName: sl.technicianName ?? undefined,
+      techCount,
     });
   }
 
@@ -486,8 +512,6 @@ async function syncManusToFreshBooks(): Promise<SyncResult> {
     invoicesCreated: 0,
     errors: [],
   };
-
-  const serviceLogRate = parseFloat(process.env.SERVICE_LOG_LABOR_RATE || "95");
 
   console.log("[sync] Loading Manus clients and FreshBooks clients...");
   const [manusClients, fbClients] = await Promise.all([
@@ -684,12 +708,19 @@ async function syncManusToFreshBooks(): Promise<SyncResult> {
 
       for (const sl of logs) {
         const laborHours = parseFloat(sl.laborHours || "0");
+        const laborRate = calcLaborRate(sl.technicianName);
+        const techCount = sl.technicianName
+          ? sl.technicianName.split(",").filter((n) => n.trim()).length
+          : 1;
         if (laborHours > 0) {
+          const rateLabel = techCount > 1
+            ? `$125 + ${techCount - 1}×$50 = $${laborRate}/hr (${techCount} techs)`
+            : `$${laborRate}/hr`;
           lines.push({
             name: `${sl.serviceType.charAt(0).toUpperCase() + sl.serviceType.slice(1)} — ${sl.serviceDate?.split("T")[0] ?? ""}`,
-            description: sl.description || sl.notes || "",
+            description: `${sl.description || sl.notes || ""} | Techs: ${sl.technicianName || "1"} | Rate: ${rateLabel}`.trim().replace(/^\|/, "").trim(),
             qty: laborHours,
-            unit_cost: { amount: String(serviceLogRate), code: "USD" },
+            unit_cost: { amount: String(laborRate), code: "USD" },
           });
         }
       }
@@ -708,7 +739,6 @@ async function syncManusToFreshBooks(): Promise<SyncResult> {
       const notes = [
         `Service log IDs: ${logs.map((sl) => sl.id).join(", ")}`,
         logDates.length > 0 ? `Service dates: ${logDates.join(", ")}` : null,
-        `Rate: $${serviceLogRate}/hr`,
       ]
         .filter(Boolean)
         .join("\n");

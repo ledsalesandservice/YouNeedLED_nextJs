@@ -10,7 +10,7 @@
  *   /blockers — List all blocked tasks needing Derek's attention
  *   /pending  — Show pending uninvoiced items (preview without creating)
  *   /approve  — Create FreshBooks draft invoices for all pending items
- *   <text>    — Post free-text as a comment on YOU-1 in Paperclip
+ *   <text>    — AI-powered conversation (Claude) or smart intent handler
  *
  * Required env vars in Vercel:
  *   TELEGRAM_BOT_TOKEN            — From BotFather
@@ -20,6 +20,9 @@
  *   PAPERCLIP_COMPANY_ID          — YNLED company ID
  *   PAPERCLIP_API_KEY             — Persistent Paperclip API key (not the run JWT)
  *   PAPERCLIP_DEFAULT_ISSUE_ID    — Issue ID to post free-text comments to (defaults to YOU-1)
+ *
+ * Optional (for AI-powered free text):
+ *   ANTHROPIC_API_KEY             — Enables Claude-powered conversational responses
  *
  * Optional (for auto-saving chat_id on /start):
  *   VERCEL_API_TOKEN              — Vercel personal access token
@@ -260,19 +263,198 @@ async function handleApprove(chatId: number): Promise<void> {
   }
 }
 
+// ─── Business context builder ─────────────────────────────────────────────────
+
+interface BusinessContext {
+  tasks: { inProgress: number; blocked: number; blockerTitles: string[] };
+  billing: { pendingCount: number; estimatedRevenue: string } | null;
+}
+
+async function buildBusinessContext(): Promise<BusinessContext> {
+  const ctx: BusinessContext = {
+    tasks: { inProgress: 0, blocked: 0, blockerTitles: [] },
+    billing: null,
+  };
+
+  // Fetch Paperclip tasks and sync preview in parallel
+  const [issuesResult, billingResult] = await Promise.allSettled([
+    PAPERCLIP_COMPANY_ID && process.env.PAPERCLIP_API_KEY
+      ? paperclipGet<PaperclipIssue[]>(
+          `/api/companies/${PAPERCLIP_COMPANY_ID}/issues?status=in_progress,blocked`
+        )
+      : Promise.resolve(null),
+    process.env.SYNC_SECRET
+      ? fetch("https://www.youneedled.com/api/sync/manus-freshbooks", {
+          method: "POST",
+          headers: { Authorization: `Bearer ${process.env.SYNC_SECRET}` },
+        }).then((r) => (r.ok ? r.json() : null))
+      : Promise.resolve(null),
+  ]);
+
+  if (issuesResult.status === "fulfilled" && issuesResult.value) {
+    const issues = issuesResult.value;
+    ctx.tasks.inProgress = issues.filter((i) => i.status === "in_progress").length;
+    ctx.tasks.blocked = issues.filter((i) => i.status === "blocked").length;
+    ctx.tasks.blockerTitles = issues
+      .filter((i) => i.status === "blocked")
+      .slice(0, 5)
+      .map((i) => `${i.identifier}: ${i.title}`);
+  }
+
+  if (billingResult.status === "fulfilled" && billingResult.value) {
+    const b = billingResult.value as { pendingCount: number; estimatedRevenue: string };
+    ctx.billing = { pendingCount: b.pendingCount, estimatedRevenue: b.estimatedRevenue };
+  }
+
+  return ctx;
+}
+
+// ─── Claude-powered free text ─────────────────────────────────────────────────
+
+async function askClaude(userMessage: string, ctx: BusinessContext): Promise<string> {
+  const apiKey = process.env.ANTHROPIC_API_KEY;
+  if (!apiKey) throw new Error("ANTHROPIC_API_KEY not set");
+
+  const contextLines: string[] = [
+    "You are the YNLED business assistant bot. YNLED (You Need LED) is a security systems and LED signage company in South Jersey run by Derek.",
+    "Services: security cameras, alarms, access control, VoIP (YouNeedLED Connect), LED signage, alarm monitoring.",
+    "Staff: Derek (owner) + 3 technicians.",
+    "",
+    "Current business context:",
+    `- Tasks in progress: ${ctx.tasks.inProgress}`,
+    `- Tasks blocked/need Derek: ${ctx.tasks.blocked}`,
+  ];
+
+  if (ctx.tasks.blockerTitles.length > 0) {
+    contextLines.push(`- Blocked tasks: ${ctx.tasks.blockerTitles.join(" | ")}`);
+  }
+
+  if (ctx.billing) {
+    contextLines.push(
+      `- Uninvoiced items ready to bill: ${ctx.billing.pendingCount} (est. $${ctx.billing.estimatedRevenue})`
+    );
+  }
+
+  contextLines.push(
+    "",
+    "Available bot commands Derek can use: /status, /blockers, /pending, /approve",
+    "",
+    "Respond conversationally and concisely — this is a Telegram chat. Keep replies under 200 words.",
+    "Use plain text only, no markdown formatting (no *, **, _, etc).",
+    "If asked to take an action like approve invoices, tell Derek to use the relevant command instead."
+  );
+
+  const res = await fetch("https://api.anthropic.com/v1/messages", {
+    method: "POST",
+    headers: {
+      "x-api-key": apiKey,
+      "anthropic-version": "2023-06-01",
+      "content-type": "application/json",
+    },
+    body: JSON.stringify({
+      model: "claude-haiku-4-5-20251001",
+      max_tokens: 400,
+      system: contextLines.join("\n"),
+      messages: [{ role: "user", content: userMessage }],
+    }),
+  });
+
+  if (!res.ok) {
+    const err = await res.text();
+    throw new Error(`Claude API error: ${res.status} ${err.slice(0, 200)}`);
+  }
+
+  const data = await res.json() as { content: { type: string; text: string }[] };
+  return data.content.find((b) => b.type === "text")?.text ?? "I couldn't generate a response.";
+}
+
+// ─── Smart intent fallback (no API key needed) ────────────────────────────────
+
+async function handleIntentFallback(chatId: number, text: string, ctx: BusinessContext): Promise<void> {
+  const lower = text.toLowerCase();
+
+  // Billing / invoice intent
+  if (/pending|invoice|bill|unbilled|billing|how much.*owe|revenue/.test(lower)) {
+    if (ctx.billing) {
+      if (ctx.billing.pendingCount === 0) {
+        await sendMessage(chatId, "✅ Nothing pending to invoice right now.");
+      } else {
+        await sendMessage(
+          chatId,
+          `📋 ${ctx.billing.pendingCount} item(s) ready to invoice — est. $${ctx.billing.estimatedRevenue}\n\nUse /pending for details or /approve to create drafts in FreshBooks.`
+        );
+      }
+    } else {
+      await sendMessage(chatId, "Use /pending to see what's ready to invoice.");
+    }
+    return;
+  }
+
+  // Status / tasks intent
+  if (/status|tasks?|what.*(going on|happening)|progress|update/.test(lower)) {
+    const parts: string[] = [];
+    if (ctx.tasks.inProgress > 0) parts.push(`🔄 ${ctx.tasks.inProgress} task(s) in progress`);
+    if (ctx.tasks.blocked > 0) parts.push(`🚫 ${ctx.tasks.blocked} blocked — need your input`);
+    if (parts.length === 0) {
+      await sendMessage(chatId, "✅ All clear — nothing active or blocked.");
+    } else {
+      await sendMessage(chatId, parts.join("\n") + "\n\nUse /blockers to see what needs you.");
+    }
+    return;
+  }
+
+  // Blockers intent
+  if (/block|stuck|waiting|need me|action|urgent/.test(lower)) {
+    if (ctx.tasks.blocked === 0) {
+      await sendMessage(chatId, "✅ Nothing blocked right now.");
+    } else {
+      const lines = ctx.tasks.blockerTitles.map((t) => `• ${t}`).join("\n");
+      await sendMessage(chatId, `🚫 ${ctx.tasks.blocked} blocked task(s):\n\n${lines}\n\nUse /blockers for full list.`);
+    }
+    return;
+  }
+
+  // Help intent
+  if (/help|what can you|commands|what do you do/.test(lower)) {
+    await sendMessage(
+      chatId,
+      `Here's what I can do:\n\n/pending — Show uninvoiced items\n/approve — Create FreshBooks draft invoices\n/status — Task summary\n/blockers — What needs your action\n\nOr just ask me anything about your business.`
+    );
+    return;
+  }
+
+  // Default: post to Paperclip board as a note
+  const posted = await paperclipPost(`/api/issues/${DEFAULT_ISSUE_ID}/comments`, {
+    body: `💬 **Message via Telegram:**\n\n${text}`,
+  });
+  if (posted) {
+    await sendMessage(chatId, "✅ Noted — posted to the team board.");
+  } else {
+    await sendMessage(chatId, "I'm not sure how to help with that yet. Try /status, /blockers, /pending, or /approve.");
+  }
+}
+
+// ─── Free text handler (AI + fallback) ───────────────────────────────────────
+
 async function handleFreeText(
   chatId: number,
   text: string,
-  from?: TelegramUser
 ): Promise<void> {
-  const senderName = from?.first_name || from?.username || "Derek";
-  const posted = await paperclipPost(`/api/issues/${DEFAULT_ISSUE_ID}/comments`, {
-    body: `💬 **Message from ${senderName} via Telegram:**\n\n${text}`,
-  });
-  if (posted) {
-    await sendMessage(chatId, "✅ Message posted to team board.");
+  // Build context once — used by both paths
+  const ctx = await buildBusinessContext();
+
+  if (process.env.ANTHROPIC_API_KEY) {
+    try {
+      const reply = await askClaude(text, ctx);
+      await sendMessage(chatId, reply);
+    } catch (err) {
+      const msg = err instanceof Error ? err.message : String(err);
+      console.error("[telegram] Claude error:", msg);
+      // Fall through to intent handler on AI failure
+      await handleIntentFallback(chatId, text, ctx);
+    }
   } else {
-    await sendMessage(chatId, "⚠️ Note received but Paperclip is not connected yet. Message was not saved.");
+    await handleIntentFallback(chatId, text, ctx);
   }
 }
 
@@ -319,7 +501,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     } else if (text === "/approve") {
       await handleApprove(chatId);
     } else if (!text.startsWith("/")) {
-      await handleFreeText(chatId, text, message.from);
+      await handleFreeText(chatId, text);
     } else {
       await sendMessage(chatId, "Unknown command. Try /status, /blockers, /pending, or /approve.");
     }

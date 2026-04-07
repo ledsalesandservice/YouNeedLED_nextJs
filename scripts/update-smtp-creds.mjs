@@ -1,17 +1,14 @@
 /**
- * Updates SMTP credentials in Vercel and triggers a redeployment.
+ * Sets the Resend API key in Vercel and triggers a redeployment.
+ * This fixes the contact form — no Gmail App Password needed.
  *
  * Usage:
- *   1. Add your Gmail App Password to .env.local:
- *        SMTP_USER=youneedled@gmail.com
- *        SMTP_PASS=xxxx-xxxx-xxxx-xxxx   <-- 16-char App Password (NOT your Google login password)
- *   2. Run: node scripts/update-smtp-creds.mjs
- *
- * How to get a Gmail App Password:
- *   1. Enable 2-Step Verification: myaccount.google.com/security
- *   2. Create App Password: myaccount.google.com/apppasswords
- *      → Select app: "Mail", device: "Other" → name it "Vercel SMTP"
- *   3. Copy the 16-character password (spaces don't matter)
+ *   1. Sign up free at resend.com (use youneedled@gmail.com or any email)
+ *   2. In Resend dashboard → API Keys → Create API Key → copy it
+ *   3. Add to .env.local:
+ *        RESEND_API_KEY=re_xxxxxxxxxxxx
+ *        CONTACT_TO_EMAIL=derek@youneedled.com   (optional, this is the default)
+ *   4. Run: node scripts/update-smtp-creds.mjs
  */
 
 import https from "https";
@@ -29,21 +26,22 @@ if (fs.existsSync(envFile)) {
 }
 
 const VERCEL_TOKEN = process.env.VERCEL_TOKEN;
-const SMTP_USER = process.env.SMTP_USER;
-const SMTP_PASS = process.env.SMTP_PASS;
-const CONTACT_TO_EMAIL = process.env.CONTACT_TO_EMAIL || "info@youneedled.com";
+const RESEND_API_KEY = process.env.RESEND_API_KEY;
+const CONTACT_TO_EMAIL = process.env.CONTACT_TO_EMAIL || "derek@youneedled.com";
 const PROJECT_NAME = "you-need-led-website";
 
 if (!VERCEL_TOKEN) {
   console.error("VERCEL_TOKEN not set in .env.local");
   process.exit(1);
 }
-if (!SMTP_PASS || SMTP_PASS.includes("xxxx")) {
-  console.error("SMTP_PASS not set. Add your Gmail App Password to .env.local:\n  SMTP_PASS=your-app-password-here");
-  process.exit(1);
-}
-if (!SMTP_USER) {
-  console.error("SMTP_USER not set in .env.local");
+if (!RESEND_API_KEY || !RESEND_API_KEY.startsWith("re_")) {
+  console.error(
+    "RESEND_API_KEY not set or invalid.\n" +
+    "1. Go to resend.com → sign up (free)\n" +
+    "2. Dashboard → API Keys → Create → copy the key\n" +
+    "3. Add to .env.local:  RESEND_API_KEY=re_xxxxxxxxx\n" +
+    "4. Re-run this script"
+  );
   process.exit(1);
 }
 
@@ -65,7 +63,7 @@ function vercelRequest(method, path, body) {
 }
 
 async function main() {
-  console.log("Fetching project...");
+  console.log("Fetching Vercel project...");
   const projectRes = await vercelRequest("GET", `/v9/projects/${PROJECT_NAME}`);
   if (projectRes.status !== 200) { console.error("Project not found:", projectRes.body); process.exit(1); }
   const projectId = projectRes.body.id;
@@ -75,7 +73,7 @@ async function main() {
   const existing = envRes.body.envs || [];
   const byKey = Object.fromEntries(existing.map((e) => [e.key, e.id]));
 
-  const updates = { SMTP_USER, SMTP_PASS, CONTACT_TO_EMAIL };
+  const updates = { RESEND_API_KEY, CONTACT_TO_EMAIL };
   for (const [key, value] of Object.entries(updates)) {
     if (byKey[key]) {
       const r = await vercelRequest("PATCH", `/v9/projects/${projectId}/env/${byKey[key]}`, { value });

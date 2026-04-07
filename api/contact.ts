@@ -12,18 +12,20 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     return res.status(400).json({ error: "Missing required fields" });
   }
 
-  const smtpUser = process.env.SMTP_USER;
-  const smtpPass = process.env.SMTP_PASS;
-  const toEmail = process.env.CONTACT_TO_EMAIL || "info@youneedled.com";
+  const resendApiKey = process.env.RESEND_API_KEY;
+  const toEmail = process.env.CONTACT_TO_EMAIL || "derek@youneedled.com";
 
-  if (!smtpUser || !smtpPass) {
-    console.error("SMTP credentials not configured");
+  if (!resendApiKey) {
+    console.error("RESEND_API_KEY not configured");
     return res.status(500).json({ error: "Email service not configured" });
   }
 
+  // Use Resend's SMTP relay — no App Password needed, just the API key
   const transporter = nodemailer.createTransport({
-    service: "gmail",
-    auth: { user: smtpUser, pass: smtpPass },
+    host: "smtp.resend.com",
+    port: 465,
+    secure: true,
+    auth: { user: "resend", pass: resendApiKey },
   });
 
   const subject = `New Contact Form Submission — ${service ? service.toUpperCase() : "General Inquiry"}`;
@@ -41,7 +43,7 @@ ${message}
 
   try {
     await transporter.sendMail({
-      from: `"YouNeedLED Website" <${smtpUser}>`,
+      from: "YouNeedLED Website <contact@youneedled.com>",
       to: toEmail,
       replyTo: email,
       subject,

@@ -138,6 +138,10 @@
       "destination": "/phone-systems/index.html"
     },
     {
+      "source": "/live/:streamId",
+      "destination": "/index.html"
+    },
+    {
       "source": "/(.*)",
       "destination": "/index.html"
     }

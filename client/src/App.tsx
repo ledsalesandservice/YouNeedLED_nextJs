@@ -43,6 +43,9 @@ const DigitalSignage     = lazy(() => import("./pages/services/DigitalSignage"))
 const LocationPage = lazy(() => import("./pages/LocationPage"));
 const CountyPage   = lazy(() => import("./pages/CountyPage"));
 
+// Live camera viewer
+const LiveView = lazy(() => import("./pages/LiveView"));
+
 // ─── Loading fallback ────────────────────────────────────────────────────────
 // Minimal spinner shown while a lazy chunk is being fetched.
 // Matches the site's primary brand colour to avoid a jarring flash.
@@ -99,6 +102,8 @@ function Router() {
         <Route path="/case-studies" component={CaseStudies} />
         <Route path="/case-studies/:slug" component={CaseStudy} />
         <Route path="/terms-of-service" component={TermsOfService} />
+        {/* Live camera viewer — auto-generated per stream ID */}
+        <Route path="/live/:streamId" component={LiveView} />
         <Route path="/404" component={NotFound} />
         <Route component={NotFound} />
       </Switch>

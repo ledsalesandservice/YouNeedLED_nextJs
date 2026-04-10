@@ -14,9 +14,8 @@ import { SITE } from "@/lib/siteData";
 import { Video, Wifi, WifiOff, RefreshCw, ExternalLink, Phone } from "lucide-react";
 
 // ── Config ────────────────────────────────────────────────────────────────────
-const VPS_BASE = "https://liveview.youneedled.com"; // production domain (proxied)
-// Fallback to direct IP if domain not yet set up
-const VPS_IP   = "http://147.93.191.167";
+const VPS_BASE = "https://live.youneedled.com"; // HTTPS domain for live streams
+const VPS_IP   = "https://live.youneedled.com"; // same — SSL is now set up
 
 // ── Types ─────────────────────────────────────────────────────────────────────
 interface CameraInfo {
@@ -166,7 +165,7 @@ export default function LiveView() {
 
   const [camera, setCamera]     = useState<CameraInfo | null>(null);
   const [loading, setLoading]   = useState(true);
-  const [vpsBase, setVpsBase]   = useState(VPS_IP);
+  const [vpsBase, setVpsBase]   = useState(VPS_BASE);
 
   // Fetch camera info from the public VPS endpoint
   useEffect(() => {

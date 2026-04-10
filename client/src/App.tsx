@@ -44,7 +44,8 @@ const LocationPage = lazy(() => import("./pages/LocationPage"));
 const CountyPage   = lazy(() => import("./pages/CountyPage"));
 
 // Live camera viewer
-const LiveView = lazy(() => import("./pages/LiveView"));
+const LiveView        = lazy(() => import("./pages/LiveView"));
+const LiveCameras     = lazy(() => import("./pages/LiveCameras"));
 
 // ─── Loading fallback ────────────────────────────────────────────────────────
 // Minimal spinner shown while a lazy chunk is being fetched.
@@ -103,6 +104,7 @@ function Router() {
         <Route path="/case-studies/:slug" component={CaseStudy} />
         <Route path="/terms-of-service" component={TermsOfService} />
         {/* Live camera viewer — auto-generated per stream ID */}
+        <Route path="/live-cameras" component={LiveCameras} />
         <Route path="/live/:streamId" component={LiveView} />
         <Route path="/404" component={NotFound} />
         <Route component={NotFound} />

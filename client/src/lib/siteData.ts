@@ -74,6 +74,7 @@ export const NAV_ITEMS = [
   { label: "FAQ", href: "/faq" },
   { label: "Contact", href: "/contact" },
   { label: "Client Portal", href: "/client-portal" },
+  { label: "Live Cameras", href: "/live-cameras" },
 ];
 
 export const TESTIMONIALS = [

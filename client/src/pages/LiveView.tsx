@@ -23,10 +23,11 @@ interface CameraInfo {
   status: "live" | "offline" | "connecting";
   yt_url: string | null;
   published_to_web: number;
+  show_watermark: number;
 }
 
 // ── HLS Player ────────────────────────────────────────────────────────────────
-function HlsPlayer({ streamId }: { streamId: string }) {
+function HlsPlayer({ streamId, showWatermark }: { streamId: string; showWatermark: boolean }) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const hlsRef   = useRef<any>(null);
   const retryRef = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -90,6 +91,16 @@ function HlsPlayer({ streamId }: { streamId: string }) {
 
   return (
     <div className="relative w-full bg-black" style={{ aspectRatio: "16/9" }}>
+      {/* YNLED logo watermark — lower left corner */}
+      {showWatermark && (
+        <div className="absolute bottom-4 left-4 z-10 pointer-events-none">
+          <img
+            src="/ynled-watermark.webp"
+            alt="You Need LED"
+            className="w-12 h-12 opacity-40 rounded-full"
+          />
+        </div>
+      )}
       <video
         ref={videoRef}
         className="w-full h-full object-contain"
@@ -255,7 +266,7 @@ export default function LiveView() {
               {/* Video player — fills available space */}
               <div className="w-full bg-black">
                 <div className="max-w-7xl mx-auto">
-                  <HlsPlayer streamId={streamId} />
+                  <HlsPlayer streamId={streamId} showWatermark={camera.show_watermark === 1} />
                 </div>
               </div>
 

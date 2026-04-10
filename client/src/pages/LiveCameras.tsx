@@ -4,7 +4,8 @@
  * Route: /live-cameras
  *
  * Fetches all published cameras from the VPS public API (no auth required),
- * shows live/offline badges, and links each camera to its full-screen viewer.
+ * shows hourly-refreshed thumbnail previews, live/offline badges, and links
+ * each camera to its full-screen viewer.
  */
 import { useEffect, useState } from "react";
 import { Link } from "wouter";
@@ -27,36 +28,59 @@ interface Camera {
 // ── Camera Card ───────────────────────────────────────────────────────────────
 function CameraCard({ camera }: { camera: Camera }) {
   const isLive = camera.status === "live";
+  const thumbUrl = `${VPS_BASE}/thumbs/${camera.id}.jpg`;
+  const [thumbLoaded, setThumbLoaded] = useState(false);
+  const [thumbError, setThumbError]   = useState(false);
 
   return (
     <Link href={`/live/${camera.id}`}>
       <div className="group relative bg-[#111827] rounded-xl overflow-hidden border border-gray-800 hover:border-[#F97316]/60 transition-all duration-200 cursor-pointer shadow-lg hover:shadow-[#F97316]/10 hover:shadow-xl">
-        {/* Thumbnail area */}
-        <div className="relative aspect-video bg-[#0a0f1a] flex items-center justify-center overflow-hidden">
-          {isLive ? (
-            <>
-              <div className="absolute inset-0 flex items-center justify-center">
+
+        {/* Thumbnail / Preview area */}
+        <div className="relative aspect-video bg-[#0a0f1a] overflow-hidden">
+
+          {/* Thumbnail image — shown when live and loaded */}
+          {isLive && !thumbError && (
+            <img
+              src={thumbUrl}
+              alt={`${camera.name} preview`}
+              className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${
+                thumbLoaded ? "opacity-100" : "opacity-0"
+              }`}
+              onLoad={() => setThumbLoaded(true)}
+              onError={() => setThumbError(true)}
+            />
+          )}
+
+          {/* Fallback icon — shown while thumb loads or if offline/error */}
+          {(!isLive || thumbError || !thumbLoaded) && (
+            <div className="absolute inset-0 flex flex-col items-center justify-center gap-2">
+              {isLive ? (
                 <Video className="w-12 h-12 text-gray-700" />
-              </div>
-              {/* Bottom gradient */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#111827] via-transparent to-transparent" />
-              {/* Play button on hover */}
-              <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                <div className="w-14 h-14 rounded-full bg-[#F97316]/90 flex items-center justify-center shadow-lg">
-                  <svg className="w-6 h-6 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M8 5v14l11-7z" />
-                  </svg>
-                </div>
-              </div>
-            </>
-          ) : (
-            <div className="flex flex-col items-center gap-2">
-              <WifiOff className="w-10 h-10 text-gray-700" />
-              <span className="text-gray-600 text-xs font-medium">Offline</span>
+              ) : (
+                <>
+                  <WifiOff className="w-10 h-10 text-gray-700" />
+                  <span className="text-gray-600 text-xs font-medium">Offline</span>
+                </>
+              )}
             </div>
           )}
 
-          {/* Live / Offline badge */}
+          {/* Dark gradient overlay — always present for badge readability */}
+          <div className="absolute inset-0 bg-gradient-to-t from-[#111827]/80 via-transparent to-black/20" />
+
+          {/* Play button overlay — visible on hover when live */}
+          {isLive && (
+            <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+              <div className="w-16 h-16 rounded-full bg-[#F97316]/90 flex items-center justify-center shadow-2xl ring-4 ring-white/10">
+                <svg className="w-7 h-7 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z" />
+                </svg>
+              </div>
+            </div>
+          )}
+
+          {/* Live / Offline badge — top left */}
           <div className="absolute top-3 left-3">
             {isLive ? (
               <div className="flex items-center gap-1.5 bg-black/70 backdrop-blur-sm rounded-full px-2.5 py-1 border border-red-500/30">
@@ -71,7 +95,14 @@ function CameraCard({ camera }: { camera: Camera }) {
             )}
           </div>
 
-          {/* Watermark logo — lower left of thumbnail */}
+          {/* External link icon — top right on hover */}
+          <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity">
+            <div className="bg-black/70 backdrop-blur-sm rounded-lg p-1.5">
+              <ExternalLink className="w-3.5 h-3.5 text-gray-400" />
+            </div>
+          </div>
+
+          {/* YNLED watermark — bottom left */}
           {camera.show_watermark === 1 && (
             <div className="absolute bottom-2 left-2 pointer-events-none">
               <img
@@ -82,12 +113,12 @@ function CameraCard({ camera }: { camera: Camera }) {
             </div>
           )}
 
-          {/* External link icon on hover */}
-          <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity">
-            <div className="bg-black/70 backdrop-blur-sm rounded-lg p-1.5">
-              <ExternalLink className="w-3.5 h-3.5 text-gray-400" />
+          {/* "Preview refreshes hourly" label — bottom right, subtle */}
+          {isLive && thumbLoaded && (
+            <div className="absolute bottom-2 right-2 pointer-events-none">
+              <span className="text-[9px] text-white/30 font-medium">Preview · updated hourly</span>
             </div>
-          </div>
+          )}
         </div>
 
         {/* Card footer */}
@@ -135,7 +166,7 @@ export default function LiveCameras() {
 
   useEffect(() => {
     fetchCameras();
-    // Refresh every 30 seconds to update live/offline status
+    // Refresh status every 30 seconds
     const interval = setInterval(fetchCameras, 30000);
     return () => clearInterval(interval);
   }, []);

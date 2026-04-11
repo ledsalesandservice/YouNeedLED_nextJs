@@ -8,12 +8,16 @@
  *
  * Pattern precedence (highest → lowest):
  *  1. Exact static path  (/about, /services/voip, …)
- *  2. /locations/:slug   — generated from ALL_LOCATIONS data
- *  3. /counties/:slug    — generated from COUNTY_DATA data
- *  4. Default fallback   (homepage title/description)
+ *  2. /blog/:slug        — generated from ALL_BLOG_POSTS data
+ *  3. /case-studies/:slug — generated from caseStudies data
+ *  4. /locations/:slug   — generated from ALL_LOCATIONS data
+ *  5. /counties/:slug    — generated from COUNTY_DATA data
+ *  6. Default fallback   (homepage title/description)
  */
 
 import { ALL_LOCATIONS, COUNTY_DATA } from "../client/src/lib/locationData.js";
+import { ALL_BLOG_POSTS } from "../client/src/lib/blogData.js";
+import { caseStudies } from "../client/src/lib/caseStudyData.js";
 
 export interface PageMeta {
   title: string;
@@ -107,6 +111,24 @@ const STATIC_META: Record<string, PageMeta> = {
   },
 };
 
+// ─── Dynamic blog post pages ─────────────────────────────────────────────────
+const BLOG_META: Record<string, PageMeta> = {};
+for (const post of ALL_BLOG_POSTS) {
+  BLOG_META[`/blog/${post.slug}`] = {
+    title: `${post.title} | ${SUFFIX}`,
+    description: post.excerpt,
+  };
+}
+
+// ─── Dynamic case study pages ─────────────────────────────────────────────────
+const CASE_STUDY_META: Record<string, PageMeta> = {};
+for (const cs of caseStudies) {
+  CASE_STUDY_META[`/case-studies/${cs.slug}`] = {
+    title: cs.metaTitle,
+    description: cs.metaDescription,
+  };
+}
+
 // ─── Dynamic location pages ──────────────────────────────────────────────────
 const LOCATION_META: Record<string, PageMeta> = {};
 for (const loc of ALL_LOCATIONS) {
@@ -131,6 +153,8 @@ for (const county of COUNTY_DATA) {
 // ─── Public lookup ───────────────────────────────────────────────────────────
 export const ALL_META: Record<string, PageMeta> = {
   ...STATIC_META,
+  ...BLOG_META,
+  ...CASE_STUDY_META,
   ...LOCATION_META,
   ...COUNTY_META,
 };

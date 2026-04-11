@@ -190,7 +190,7 @@ export default function LiveCameras() {
               <div>
                 <div className="inline-flex items-center gap-2 bg-[#F97316]/10 border border-[#F97316]/20 rounded-full px-3 py-1 mb-4">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#F97316]" />
-                  <span className="text-[#F97316] text-xs font-bold uppercase tracking-wider">YNLED LiveView</span>
+                  <span className="text-[#F97316] text-xs font-bold uppercase tracking-wider">LED Live View</span>
                 </div>
                 <h1 className="text-3xl sm:text-4xl font-bold text-white mb-3">
                   Live Camera Feeds

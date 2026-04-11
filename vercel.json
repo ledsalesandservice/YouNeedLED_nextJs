@@ -341,6 +341,36 @@
       "source": "/services/fire-alarm",
       "destination": "/services/fire-alarm-systems",
       "permanent": true
+    },
+    {
+      "source": "/locations/gloucester-county",
+      "destination": "/locations/gloucester-county-nj",
+      "permanent": true
+    },
+    {
+      "source": "/locations/cherry-hill",
+      "destination": "/locations/cherry-hill-nj",
+      "permanent": true
+    },
+    {
+      "source": "/locations/cumberland-county",
+      "destination": "/locations/cumberland-county-nj",
+      "permanent": true
+    },
+    {
+      "source": "/insights/:slug",
+      "destination": "/blog/:slug",
+      "permanent": true
+    },
+    {
+      "source": "/services/security-cameras",
+      "destination": "/services/video-surveillance",
+      "permanent": true
+    },
+    {
+      "source": "/services/sound-systems",
+      "destination": "/services/voip",
+      "permanent": true
     }
   ],
   "crons": [

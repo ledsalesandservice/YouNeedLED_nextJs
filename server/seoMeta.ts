@@ -61,6 +61,10 @@ const STATIC_META: Record<string, PageMeta> = {
     title: `Terms of Service | ${SUFFIX} Business Services Agreement`,
     description: `Read the You Need L.E.D. Business Services Agreement covering VoIP, security cameras, access control, fire alarms, and technology services for South Jersey businesses.`,
   },
+  "/live-cameras": {
+    title: `Live Security Camera Feeds South Jersey | Real-Time Monitoring | ${SUFFIX}`,
+    description: `Watch live security camera feeds from South Jersey locations monitored by You Need L.E.D. Real-time video surveillance powered by professional-grade cameras. Call ${PHONE}.`,
+  },
   "/services/video-surveillance": {
     title: `Commercial Security Cameras South Jersey | 4K AI Cameras | ${SUFFIX}`,
     description: `NJ DCA Licensed security camera installation in South Jersey. 4K AI cameras with license plate recognition, cloud storage & 24/7 monitoring. Free quote: ${PHONE}.`,

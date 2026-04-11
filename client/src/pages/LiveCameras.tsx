@@ -196,7 +196,7 @@ export default function LiveCameras() {
                   Live Camera Feeds
                 </h1>
                 <p className="text-gray-400 text-base max-w-xl">
-                  Real-time security camera streams powered by YNLED LiveView. Click any camera to open the full-screen viewer.
+                  Real-time security camera streams powered by LED Live View. Click any camera to open the full-screen viewer.
                 </p>
               </div>
 
@@ -269,7 +269,7 @@ export default function LiveCameras() {
           <div className="max-w-4xl mx-auto px-4 sm:px-6 py-12 text-center">
             <p className="text-[#F97316] font-bold text-lg mb-2">Want cameras like these at your property?</p>
             <p className="text-gray-400 text-sm mb-6 max-w-lg mx-auto">
-              You Need LED installs professional 4K AI-powered security camera systems for commercial and residential properties throughout South Jersey and the Delaware Valley. NJ DCA Licensed · 15+ Years · 500+ Satisfied Clients.
+              You Need LED installs professional 4K security cameras with AI options for commercial and residential properties throughout South Jersey and the Delaware Valley. NJ DCA Licensed · 15+ Years · 500+ Satisfied Clients.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
               <a

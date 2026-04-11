@@ -22,6 +22,7 @@ import { caseStudies } from "../client/src/lib/caseStudyData.js";
 export interface PageMeta {
   title: string;
   description: string;
+  ogImage?: string;
 }
 
 const PHONE = "(609) 335-0123";
@@ -121,6 +122,7 @@ for (const post of ALL_BLOG_POSTS) {
   BLOG_META[`/blog/${post.slug}`] = {
     title: `${post.title} | ${SUFFIX}`,
     description: post.excerpt,
+    ogImage: post.image ? `https://youneedled.com${post.image}` : undefined,
   };
 }
 

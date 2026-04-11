@@ -26,6 +26,7 @@ export function getAllSitemapUrls(): string[] {
     "/client-portal",
     "/cameras",
     "/phone-systems",
+    "/live-cameras",
     "/services/video-surveillance",
     "/services/access-control",
     "/services/fire-alarm-systems",
@@ -65,6 +66,7 @@ function buildSitemapXml(): string {
     { url: "/client-portal", priority: "0.5", changefreq: "yearly" },
     { url: "/cameras", priority: "0.9", changefreq: "monthly" },
     { url: "/phone-systems", priority: "0.9", changefreq: "monthly" },
+    { url: "/live-cameras", priority: "0.7", changefreq: "weekly" },
     { url: "/services/video-surveillance", priority: "0.9", changefreq: "monthly" },
     { url: "/services/access-control", priority: "0.9", changefreq: "monthly" },
     { url: "/services/fire-alarm-systems", priority: "0.9", changefreq: "monthly" },
@@ -103,9 +105,10 @@ function buildSitemapXml(): string {
     );
   }
 
+  // Use actual post.date for lastmod so Google knows when content was published
   for (const post of [...blogPosts].sort((a, b) => a.slug.localeCompare(b.slug))) {
     entries.push(
-      `  <url>\n    <loc>${BASE_URL}/blog/${post.slug}</loc>\n    <lastmod>${TODAY}</lastmod>\n    <changefreq>yearly</changefreq>\n    <priority>0.6</priority>\n  </url>`
+      `  <url>\n    <loc>${BASE_URL}/blog/${post.slug}</loc>\n    <lastmod>${post.date || TODAY}</lastmod>\n    <changefreq>yearly</changefreq>\n    <priority>0.6</priority>\n  </url>`
     );
   }
 

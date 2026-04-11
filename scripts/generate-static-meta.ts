@@ -4,7 +4,7 @@
  *
  * Post-build script: creates pre-rendered index.html files for every URL defined
  * in server/seoMeta.ts, with unique <title>, canonical, og:url, meta description,
- * and social tags baked in at build time.
+ * og:image, and social tags baked in at build time.
  *
  * Why this exists: the site runs on Vercel static hosting (outputDirectory:
  * dist/public). The Express server's injectMeta() never executes on Vercel —
@@ -40,7 +40,8 @@ function injectPageMeta(
   html: string,
   urlPath: string,
   title: string,
-  description: string
+  description: string,
+  ogImage?: string
 ): string {
   const fullUrl = `${BASE_URL}${urlPath}`;
 
@@ -76,6 +77,17 @@ function injectPageMeta(
     /<meta name="twitter:description" content="[^"]*"/,
     `<meta name="twitter:description" content="${escapeHtml(description)}"`
   );
+  // Inject per-page og:image when available (e.g. blog post featured images)
+  if (ogImage) {
+    html = html.replace(
+      /<meta property="og:image" content="[^"]*"/,
+      `<meta property="og:image" content="${escapeHtml(ogImage)}"`
+    );
+    html = html.replace(
+      /<meta name="twitter:image" content="[^"]*"/,
+      `<meta name="twitter:image" content="${escapeHtml(ogImage)}"`
+    );
+  }
 
   return html;
 }
@@ -86,7 +98,7 @@ let skipped = 0;
 for (const [urlPath, meta] of Object.entries(ALL_META)) {
   if (urlPath === "/") {
     // Update root index.html in-place with canonical + og:url for homepage
-    const injected = injectPageMeta(templateHtml, "/", meta.title, meta.description);
+    const injected = injectPageMeta(templateHtml, "/", meta.title, meta.description, meta.ogImage);
     writeFileSync(join(distPublic, "index.html"), injected, "utf-8");
     generated++;
     continue;
@@ -102,7 +114,7 @@ for (const [urlPath, meta] of Object.entries(ALL_META)) {
     continue;
   }
 
-  const injected = injectPageMeta(templateHtml, urlPath, meta.title, meta.description);
+  const injected = injectPageMeta(templateHtml, urlPath, meta.title, meta.description, meta.ogImage);
   mkdirSync(outDir, { recursive: true });
   writeFileSync(outFile, injected, "utf-8");
   generated++;

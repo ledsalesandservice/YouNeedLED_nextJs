@@ -124,7 +124,7 @@ interface PaperclipIssue {
 interface PaperclipComment {
   id: string;
   body: string;
-  createdAt: string;
+  createdAt: string; // ISO timestamp — used for new-comment detection
   authorAgentId?: string;
   authorUserId?: string;
 }
@@ -175,6 +175,7 @@ async function manusGet<T>(path: string): Promise<{ data: T }> {
 interface IssueState {
   status: string;
   latestCommentId: string | null;
+  latestCommentAt: string | null; // ISO timestamp — used for client-side new-comment filtering
 }
 
 interface PushState {
@@ -230,45 +231,66 @@ async function checkAndPush(pushChatId: number): Promise<void> {
       notifications.push(`✅ *DONE* — [${issue.identifier}] ${issue.title}`);
     }
 
-    // Check for new comments on in_progress and blocked issues
+    // Check for new comments on in_progress and blocked issues.
+    // Note: the ?after= cursor API returns 500 in some environments, so we always
+    // fetch all comments and filter client-side by createdAt timestamp.
     if (issue.status === "in_progress" || issue.status === "blocked") {
       try {
-        const afterParam = prev?.latestCommentId
-          ? `?after=${prev.latestCommentId}&order=asc`
-          : "";
-        const comments = await pcGet<PaperclipComment[]>(
-          `/api/issues/${issue.id}/comments${afterParam}`
+        const allComments = await pcGet<PaperclipComment[]>(
+          `/api/issues/${issue.id}/comments`
+        );
+        // Comments arrive in descending order (newest first); find the true latest by createdAt
+        const lastComment = allComments.reduce<PaperclipComment | null>(
+          (max, c) => (!max || c.createdAt > max.createdAt ? c : max),
+          null
         );
 
         if (!prev) {
-          // First time seeing this issue — just record latest comment, don't notify
-          const latestCommentId =
-            comments.length > 0 ? comments[comments.length - 1].id : null;
-          newState.issues[issue.id] = { status: issue.status, latestCommentId };
-          continue;
-        } else if (comments.length > 0) {
-          // prev exists — afterParam was "" when latestCommentId was null (gets all comments),
-          // or "?after=..." when it was set (gets only new comments). Either way, any
-          // comments returned here are new ones we haven't notified about.
-          const lastComment = comments[comments.length - 1];
-          notifications.push(
-            `💬 *${comments.length} new comment${comments.length > 1 ? "s" : ""}* on [${issue.identifier}] ${issue.title}`
-          );
+          // First time seeing this issue — seed state, no notification
           newState.issues[issue.id] = {
             status: issue.status,
-            latestCommentId: lastComment.id,
+            latestCommentId: lastComment?.id ?? null,
+            latestCommentAt: lastComment?.createdAt ?? null,
           };
           continue;
         }
+
+        // Find comments newer than what we last saw
+        const sinceAt = prev.latestCommentAt ?? null;
+        const newComments = sinceAt
+          ? allComments.filter((c) => c.createdAt > sinceAt)
+          : [];
+
+        if (newComments.length > 0) {
+          const newestComment = newComments[newComments.length - 1];
+          notifications.push(
+            `💬 *${newComments.length} new comment${newComments.length > 1 ? "s" : ""}* on [${issue.identifier}] ${issue.title}`
+          );
+          newState.issues[issue.id] = {
+            status: issue.status,
+            latestCommentId: newestComment.id,
+            latestCommentAt: newestComment.createdAt,
+          };
+          continue;
+        }
+
+        // No new comments — preserve cursor
+        newState.issues[issue.id] = {
+          status: issue.status,
+          latestCommentId: lastComment?.id ?? prev.latestCommentId,
+          latestCommentAt: lastComment?.createdAt ?? prev.latestCommentAt ?? null,
+        };
+        continue;
       } catch (err) {
         console.error(`[push] Failed to fetch comments for ${issue.identifier}:`, err);
       }
     }
 
-    // Update state for this issue
+    // Update state for this issue (done issues — no comment check needed)
     newState.issues[issue.id] = {
       status: issue.status,
       latestCommentId: prev?.latestCommentId ?? null,
+      latestCommentAt: prev?.latestCommentAt ?? null,
     };
   }
 

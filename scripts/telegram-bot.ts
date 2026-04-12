@@ -240,24 +240,24 @@ async function checkAndPush(pushChatId: number): Promise<void> {
           `/api/issues/${issue.id}/comments${afterParam}`
         );
 
-        if (prev?.latestCommentId) {
-          // afterParam returns comments AFTER that ID — all are new
-          if (comments.length > 0) {
-            const lastComment = comments[comments.length - 1];
-            notifications.push(
-              `💬 *${comments.length} new comment${comments.length > 1 ? "s" : ""}* on [${issue.identifier}] ${issue.title}`
-            );
-            newState.issues[issue.id] = {
-              status: issue.status,
-              latestCommentId: lastComment.id,
-            };
-            continue;
-          }
-        } else if (!prev) {
+        if (!prev) {
           // First time seeing this issue — just record latest comment, don't notify
           const latestCommentId =
             comments.length > 0 ? comments[comments.length - 1].id : null;
           newState.issues[issue.id] = { status: issue.status, latestCommentId };
+          continue;
+        } else if (comments.length > 0) {
+          // prev exists — afterParam was "" when latestCommentId was null (gets all comments),
+          // or "?after=..." when it was set (gets only new comments). Either way, any
+          // comments returned here are new ones we haven't notified about.
+          const lastComment = comments[comments.length - 1];
+          notifications.push(
+            `💬 *${comments.length} new comment${comments.length > 1 ? "s" : ""}* on [${issue.identifier}] ${issue.title}`
+          );
+          newState.issues[issue.id] = {
+            status: issue.status,
+            latestCommentId: lastComment.id,
+          };
           continue;
         }
       } catch (err) {

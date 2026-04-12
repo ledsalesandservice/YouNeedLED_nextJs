@@ -10,7 +10,8 @@
     "preview": "vite preview --host",
     "check": "tsc --noEmit",
     "format": "prettier --write .",
-    "generate-sitemap": "tsx client/src/lib/generateSitemap.ts"
+    "generate-sitemap": "tsx client/src/lib/generateSitemap.ts",
+    "telegram": "tsx --env-file=.env scripts/telegram-bot.ts"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",

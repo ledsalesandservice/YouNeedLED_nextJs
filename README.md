@@ -50,6 +50,43 @@ All hero images are served locally from `client/public/` as WebP with responsive
 
 ---
 
+## Telegram Bot (YNLED AI Assistant)
+
+`scripts/telegram-bot.ts` — runs on Derek's laptop in polling mode (no public URL needed).
+
+### Quick start
+
+1. Copy `.env.example` to `.env` and fill in the Telegram vars:
+   - `TELEGRAM_BOT_TOKEN` — from [@BotFather](https://t.me/BotFather) → `/newbot`
+   - `TELEGRAM_ALLOWED_CHAT_ID` — run the bot once, send `/start`, copy the chat ID it prints
+   - `PAPERCLIP_API_URL` / `PAPERCLIP_COMPANY_ID` / `PAPERCLIP_API_KEY` — Paperclip connection
+
+2. Run:
+   ```bash
+   pnpm run telegram
+   ```
+
+### Commands
+
+| Command | What it does |
+|---------|-------------|
+| `/start` | Prints your chat ID (copy to `TELEGRAM_ALLOWED_CHAT_ID`) |
+| `/status` | In-progress + blocked task counts |
+| `/blockers` | List all blocked tasks needing your action |
+| `/wo` | Open work orders from Manus CRM |
+| any text | Posts as a comment on the LED OS board (YOU-1) |
+
+### Push notifications
+
+Runs automatically every 5 minutes (override with `PUSH_INTERVAL_MS`):
+- 🚫 **BLOCKED** — task just became blocked (needs your attention)
+- ✅ **DONE** — task just completed
+- 💬 **New comments** — on in-progress or blocked tasks
+
+State is persisted in `~/.ynled-telegram-state.json` so restarts don't re-fire old events.
+
+---
+
 ## Location Pages — Content Audit (Mar 2026)
 
 **Status: All 76 location entries have unique content. No boilerplate detected.**

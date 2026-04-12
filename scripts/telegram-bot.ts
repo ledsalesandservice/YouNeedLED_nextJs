@@ -255,21 +255,24 @@ async function checkAndPush(pushChatId: number): Promise<void> {
           continue;
         }
 
-        // Find comments newer than what we last saw
+        // Find comments newer than what we last saw.
+        // If sinceAt is null (issue was seeded with no prior comments), treat all
+        // current comments as new so first-comment notifications aren't dropped.
         const sinceAt = prev.latestCommentAt ?? null;
         const newComments = sinceAt
           ? allComments.filter((c) => c.createdAt > sinceAt)
-          : [];
+          : allComments;
 
         if (newComments.length > 0) {
-          const newestComment = newComments[newComments.length - 1];
           notifications.push(
             `💬 *${newComments.length} new comment${newComments.length > 1 ? "s" : ""}* on [${issue.identifier}] ${issue.title}`
           );
+          // Advance cursor to the true latest comment (computed via reduce above)
+          // so we never re-notify on the same comments next cycle.
           newState.issues[issue.id] = {
             status: issue.status,
-            latestCommentId: newestComment.id,
-            latestCommentAt: newestComment.createdAt,
+            latestCommentId: lastComment?.id ?? null,
+            latestCommentAt: lastComment?.createdAt ?? null,
           };
           continue;
         }

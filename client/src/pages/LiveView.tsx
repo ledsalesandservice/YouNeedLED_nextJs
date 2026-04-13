@@ -191,7 +191,7 @@ export default function LiveView() {
     <>
       <SEOHead
         title={`${cameraName} — Live Camera | You Need LED`}
-        description={`Watch the live security camera feed for ${cameraName}, powered by YNLED LiveView. Professional security camera systems by You Need LED, serving South Jersey.`}
+        description={`Watch the live security camera feed for ${cameraName}, powered by LED Live View. Professional security camera systems by You Need LED, serving South Jersey.`}
         canonical={`${SITE.url}/live/${streamId}`}
       />
 
@@ -201,8 +201,8 @@ export default function LiveView() {
         <header className="bg-[#111111] border-b border-gray-800 px-4 sm:px-6 py-3 flex items-center justify-between shrink-0">
           <div className="flex items-center gap-3">
             <div className="flex items-center gap-1.5">
-              <span className="font-bold text-[#F97316] text-base sm:text-lg tracking-tight">YNLED</span>
-              <span className="font-bold text-white text-base sm:text-lg tracking-tight">LiveView</span>
+              <span className="font-bold text-[#F97316] text-base sm:text-lg tracking-tight">LED</span>
+              <span className="font-bold text-white text-base sm:text-lg tracking-tight">Live View</span>
             </div>
             {!loading && camera && (
               <>
@@ -295,9 +295,9 @@ export default function LiveView() {
               <div className="bg-[#0a0a0a] border-t border-gray-900 px-4 sm:px-6 py-6">
                 <div className="max-w-3xl mx-auto text-center">
                   <p className="text-gray-600 text-xs mb-1">Powered by</p>
-                  <p className="text-[#F97316] font-bold text-base mb-1">YNLED LiveView</p>
+                  <p className="text-[#F97316] font-bold text-base mb-1">LED Live View</p>
                   <p className="text-gray-700 text-xs mb-4">
-                    Professional 4K AI-powered security cameras · NJ DCA Licensed · 15+ Years · South Jersey
+                    Professional 4K security cameras with AI options · NJ DCA Licensed · 15+ Years · South Jersey
                   </p>
                   <div className="flex flex-col sm:flex-row items-center justify-center gap-2">
                     <a

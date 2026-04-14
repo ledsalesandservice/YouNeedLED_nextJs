@@ -149,17 +149,13 @@ const YT_CAMERAS: YouTubeCamera[] = [
     tags: ["#bay", "#birds", "#boats", "#dock", "#wildlife"],
     installedBy: "Installed by You Need LED",
   },
-];
-
-// ── Partner cameras from seetheview.com (not installed by You Need LED) ────────
-const PARTNER_CAMERAS: YouTubeCamera[] = [
   {
     title: "Ocean City NJ Boardwalk & Music Pier Live – Relaxing Ocean View 24/7",
     location: "Ocean City, NJ",
     youtube_id: "Gz7M7MTWgsM",
     youtube_url: "https://www.youtube.com/watch?v=Gz7M7MTWgsM",
     tags: ["#beach", "#ocean", "#sunset", "#surf"],
-    installedBy: "Partner Camera",
+    installedBy: "Installed by You Need LED",
   },
   {
     title: "Sea Isle City Promenade Live – Relaxing Beach & Ocean View 24/7",
@@ -167,7 +163,7 @@ const PARTNER_CAMERAS: YouTubeCamera[] = [
     youtube_id: "Upc_zX8wlDw",
     youtube_url: "https://www.youtube.com/watch?v=Upc_zX8wlDw",
     tags: ["#beach", "#ocean", "#surf", "#weather"],
-    installedBy: "Partner Camera",
+    installedBy: "Installed by You Need LED",
   },
   {
     title: "EarthCam Live: Seaside Heights, NJ – North View",
@@ -175,7 +171,7 @@ const PARTNER_CAMERAS: YouTubeCamera[] = [
     youtube_id: "gT5x9GU_tbA",
     youtube_url: "https://www.youtube.com/watch?v=gT5x9GU_tbA",
     tags: ["#beach", "#ocean", "#park", "#surf"],
-    installedBy: "Partner Camera",
+    installedBy: "Installed by You Need LED",
   },
   {
     title: "Rittenhouse Square Park, Philadelphia Fountain Cam looking South",
@@ -183,7 +179,7 @@ const PARTNER_CAMERAS: YouTubeCamera[] = [
     youtube_id: "6Ug870cuPgg",
     youtube_url: "https://www.youtube.com/watch?v=6Ug870cuPgg",
     tags: ["#park", "#skyline"],
-    installedBy: "Partner Camera",
+    installedBy: "Installed by You Need LED",
   },
   {
     title: "Smith Island Live Cam Looking West (Sunsets) from Jack and Pickles",
@@ -191,8 +187,12 @@ const PARTNER_CAMERAS: YouTubeCamera[] = [
     youtube_id: "f4bUDl4HbnI",
     youtube_url: "https://www.youtube.com/watch?v=f4bUDl4HbnI",
     tags: ["#bay", "#birds", "#sunset", "#wildlife"],
-    installedBy: "Partner Camera",
+    installedBy: "Installed by You Need LED",
   },
+];
+
+// ── Partner cameras from seetheview.com (not installed by You Need LED) ────────
+const PARTNER_CAMERAS: YouTubeCamera[] = [
   {
     title: "Statue of Liberty Live – New York Harbor",
     location: "Brooklyn, NY",

@@ -6,6 +6,7 @@
  * Section 1: LED Live View — RTMP cameras published from the VPS (HLS streams)
  * Section 2: South Jersey & Delaware Valley — YouTube live cameras installed/managed
  *            by You Need LED (Jim Ginn cameras from seetheview.com)
+ * Section 3: Partner Cameras — Other cameras from seetheview.com partner network
  */
 import { useEffect, useState } from "react";
 import { Link } from "wouter";
@@ -36,6 +37,14 @@ interface YouTubeCamera {
 
 // ── Jim Ginn / You Need LED installed YouTube cameras (scraped from seetheview.com) ──
 const YT_CAMERAS: YouTubeCamera[] = [
+  {
+    title: "Broadway Avenue, Somers Point Birdfeeder Cam Looking UP/West",
+    location: "Somers Point, NJ",
+    youtube_id: "kRBUbXeRcMY",
+    youtube_url: "https://www.youtube.com/watch?v=kRBUbXeRcMY",
+    tags: ["#bay", "#birds", "#weather"],
+    installedBy: "Installed by You Need LED",
+  },
   {
     title: "30th Street Zoomed Beach Cam Live – Ocean City NJ Boardwalk & Surf 24/7",
     location: "Ocean City, NJ",
@@ -139,6 +148,226 @@ const YT_CAMERAS: YouTubeCamera[] = [
     youtube_url: "https://www.youtube.com/watch?v=uVGFmwIqacY",
     tags: ["#bay", "#birds", "#boats", "#dock", "#wildlife"],
     installedBy: "Installed by You Need LED",
+  },
+];
+
+// ── Partner cameras from seetheview.com (not installed by You Need LED) ────────
+const PARTNER_CAMERAS: YouTubeCamera[] = [
+  {
+    title: "Ocean City NJ Boardwalk & Music Pier Live – Relaxing Ocean View 24/7",
+    location: "Ocean City, NJ",
+    youtube_id: "Gz7M7MTWgsM",
+    youtube_url: "https://www.youtube.com/watch?v=Gz7M7MTWgsM",
+    tags: ["#beach", "#ocean", "#sunset", "#surf"],
+    installedBy: "Partner Camera",
+  },
+  {
+    title: "Sea Isle City Promenade Live – Relaxing Beach & Ocean View 24/7",
+    location: "Sea Isle City, NJ",
+    youtube_id: "Upc_zX8wlDw",
+    youtube_url: "https://www.youtube.com/watch?v=Upc_zX8wlDw",
+    tags: ["#beach", "#ocean", "#surf", "#weather"],
+    installedBy: "Partner Camera",
+  },
+  {
+    title: "EarthCam Live: Seaside Heights, NJ – North View",
+    location: "Seaside Heights, NJ",
+    youtube_id: "gT5x9GU_tbA",
+    youtube_url: "https://www.youtube.com/watch?v=gT5x9GU_tbA",
+    tags: ["#beach", "#ocean", "#park", "#surf"],
+    installedBy: "Partner Camera",
+  },
+  {
+    title: "Rittenhouse Square Park, Philadelphia Fountain Cam looking South",
+    location: "Philadelphia, PA",
+    youtube_id: "6Ug870cuPgg",
+    youtube_url: "https://www.youtube.com/watch?v=6Ug870cuPgg",
+    tags: ["#park", "#skyline"],
+    installedBy: "Partner Camera",
+  },
+  {
+    title: "Smith Island Live Cam Looking West (Sunsets) from Jack and Pickles",
+    location: "Ewell, MD",
+    youtube_id: "f4bUDl4HbnI",
+    youtube_url: "https://www.youtube.com/watch?v=f4bUDl4HbnI",
+    tags: ["#bay", "#birds", "#sunset", "#wildlife"],
+    installedBy: "Partner Camera",
+  },
+  {
+    title: "Statue of Liberty Live – New York Harbor",
+    location: "Brooklyn, NY",
+    youtube_id: "cWR8KGKftUw",
+    youtube_url: "https://www.youtube.com/watch?v=cWR8KGKftUw",
+    tags: ["#city", "#harbor", "#skyline", "#sunset"],
+    installedBy: "Partner Camera",
+  },
+  {
+    title: "Live Brooklyn Bridge & Manhattan Skyline",
+    location: "Brooklyn, NY",
+    youtube_id: "c20CGLpuxSk",
+    youtube_url: "https://www.youtube.com/watch?v=c20CGLpuxSk",
+    tags: ["#city", "#harbor", "#skyline"],
+    installedBy: "Partner Camera",
+  },
+  {
+    title: "Times Square Live 4K",
+    location: "New York, NY",
+    youtube_id: "rnXIjl_Rzy4",
+    youtube_url: "https://www.youtube.com/watch?v=rnXIjl_Rzy4",
+    tags: ["#city", "#skyline", "#traffic", "#weather"],
+    installedBy: "Partner Camera",
+  },
+  {
+    title: "SUMMIT One Vanderbilt – New York City Live",
+    location: "New York, NY",
+    youtube_id: "2_PDaUJbfuI",
+    youtube_url: "https://www.youtube.com/watch?v=2_PDaUJbfuI",
+    tags: ["#city", "#skyline"],
+    installedBy: "Partner Camera",
+  },
+  {
+    title: "Red Hook Channel, Brooklyn Harbor Live",
+    location: "Brooklyn, NY",
+    youtube_id: "OgqbZLzEbQU",
+    youtube_url: "https://www.youtube.com/watch?v=OgqbZLzEbQU",
+    tags: ["#bay", "#city", "#harbor", "#traffic"],
+    installedBy: "Partner Camera",
+  },
+  {
+    title: "Big Bear Bald Eagle Live Nest – Cam 1",
+    location: "Fawnskin, CA",
+    youtube_id: "B4-L2nfGcuE",
+    youtube_url: "https://www.youtube.com/watch?v=B4-L2nfGcuE",
+    tags: ["#birds", "#wildlife"],
+    installedBy: "Partner Camera",
+  },
+  {
+    title: "Winter Park Eagle Cam – Brutus & Peanut",
+    location: "Winter Park, FL",
+    youtube_id: "SRvfnHWDsHA",
+    youtube_url: "https://www.youtube.com/watch?v=SRvfnHWDsHA",
+    tags: ["#birds", "#park", "#wetlands", "#wildlife"],
+    installedBy: "Partner Camera",
+  },
+  {
+    title: "Live Cam Jacksonville Beach Pier, Florida",
+    location: "Jacksonville Beach, FL",
+    youtube_id: "bZ4uxyLqV-E",
+    youtube_url: "https://www.youtube.com/watch?v=bZ4uxyLqV-E",
+    tags: ["#beach", "#ocean", "#surf", "#weather"],
+    installedBy: "Partner Camera",
+  },
+  {
+    title: "The Rooftop Bar Oceanside Pier Webcam",
+    location: "Oceanside, CA",
+    youtube_id: "cvP_F-c2Upw",
+    youtube_url: "https://www.youtube.com/watch?v=cvP_F-c2Upw",
+    tags: ["#beach", "#dining", "#ocean", "#sunset", "#surf"],
+    installedBy: "Partner Camera",
+  },
+  {
+    title: "LIVE 4K South Beach Miami – Collins Avenue Street Camera",
+    location: "Miami Beach, FL",
+    youtube_id: "87A5XEiV5fk",
+    youtube_url: "https://www.youtube.com/watch?v=87A5XEiV5fk",
+    tags: ["#beach", "#city", "#ocean", "#traffic", "#weather"],
+    installedBy: "Partner Camera",
+  },
+  {
+    title: "LIVE LAX Airport Plane Spotting | Los Angeles International Airport",
+    location: "Los Angeles, CA",
+    youtube_id: "4ex4t9Pn9R0",
+    youtube_url: "https://www.youtube.com/watch?v=4ex4t9Pn9R0",
+    tags: ["#airfield", "#airline", "#airport", "#city", "#traffic"],
+    installedBy: "Partner Camera",
+  },
+  {
+    title: "Las Vegas Airport Live – Runways 26R & 26L",
+    location: "Las Vegas, NV",
+    youtube_id: "_-Qg5jD-PfA",
+    youtube_url: "https://www.youtube.com/watch?v=_-Qg5jD-PfA",
+    tags: ["#airfield", "#airport", "#city", "#skyline", "#traffic"],
+    installedBy: "Partner Camera",
+  },
+  {
+    title: "Live SFO Plane Spotting | Real-Time Aircraft Tracking and ATC Audio",
+    location: "San Francisco, CA",
+    youtube_id: "B2EBO6eMiKQ",
+    youtube_url: "https://www.youtube.com/watch?v=B2EBO6eMiKQ",
+    tags: ["#airfield", "#airline", "#airport", "#bay", "#city", "#traffic"],
+    installedBy: "Partner Camera",
+  },
+  {
+    title: "Abbey Road Crossing Live – London",
+    location: "London, England",
+    youtube_id: "M3EYAY2MftI",
+    youtube_url: "https://www.youtube.com/watch?v=M3EYAY2MftI",
+    tags: ["#city", "#traffic", "#weather"],
+    installedBy: "Partner Camera",
+  },
+  {
+    title: "Tram Driver's View · 24/7 The Hague Cabview",
+    location: "The Hague, Netherlands",
+    youtube_id: "QRicd-vzRaI",
+    youtube_url: "https://www.youtube.com/watch?v=QRicd-vzRaI",
+    tags: ["#city", "#traffic"],
+    installedBy: "Partner Camera",
+  },
+  {
+    title: "Elvis' Beach Bar LIVE HD Webcam – Sandy Ground, Anguilla",
+    location: "Sandy Ground, Anguilla",
+    youtube_id: "SPj4hMttgJM",
+    youtube_url: "https://www.youtube.com/watch?v=SPj4hMttgJM",
+    tags: ["#bay", "#beach", "#dining", "#ocean"],
+    installedBy: "Partner Camera",
+  },
+  {
+    title: "Live Barbados Airport",
+    location: "Christ Church, Barbados",
+    youtube_id: "v27LPqjiHo4",
+    youtube_url: "https://www.youtube.com/watch?v=v27LPqjiHo4",
+    tags: ["#airfield", "#airline", "#airport", "#beach", "#ocean", "#traffic"],
+    installedBy: "Partner Camera",
+  },
+  {
+    title: "Barbados Port – Cruise Ship Live Camera",
+    location: "Bridgetown, Barbados",
+    youtube_id: "FV6FjrNDfXI",
+    youtube_url: "https://www.youtube.com/watch?v=FV6FjrNDfXI",
+    tags: ["#harbor", "#ocean", "#traffic"],
+    installedBy: "Partner Camera",
+  },
+  {
+    title: "Barbados Live Airport Stream (BGI) – Grantley Adams International Airport",
+    location: "Bridgetown, Barbados",
+    youtube_id: "T7jHPxgz46M",
+    youtube_url: "https://www.youtube.com/watch?v=T7jHPxgz46M",
+    tags: ["#airfield", "#airline", "#airport", "#traffic"],
+    installedBy: "Partner Camera",
+  },
+  {
+    title: "Ocho Rios Town Centre Live Camera",
+    location: "Ocho Rios, Jamaica",
+    youtube_id: "4X9dtsZmSw8",
+    youtube_url: "https://www.youtube.com/watch?v=4X9dtsZmSw8",
+    tags: ["#beach", "#city", "#ocean", "#traffic"],
+    installedBy: "Partner Camera",
+  },
+  {
+    title: "Palacio de Bellas Artes Live Camera – Mexico City",
+    location: "Mexico City, Mexico",
+    youtube_id: "fiUMCo3d9nU",
+    youtube_url: "https://www.youtube.com/watch?v=fiUMCo3d9nU",
+    tags: ["#city", "#skyline"],
+    installedBy: "Partner Camera",
+  },
+  {
+    title: "Basílica de Guadalupe Live – Mexico City",
+    location: "Mexico City, Mexico",
+    youtube_id: "RjWN-JGux5Q",
+    youtube_url: "https://www.youtube.com/watch?v=RjWN-JGux5Q",
+    tags: ["#city", "#park"],
+    installedBy: "Partner Camera",
   },
 ];
 
@@ -344,7 +573,7 @@ export default function LiveCameras() {
   }, []);
 
   const liveCount = cameras.filter(c => c.status === "live").length;
-  const totalCount = cameras.length + YT_CAMERAS.length;
+  const totalCount = cameras.length + YT_CAMERAS.length + PARTNER_CAMERAS.length;
 
   return (
     <>
@@ -380,7 +609,7 @@ export default function LiveCameras() {
                 </div>
                 <div className="w-px h-10 bg-gray-800" />
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-green-400">{loading ? "…" : liveCount + YT_CAMERAS.length}</div>
+                  <div className="text-2xl font-bold text-green-400">{loading ? "…" : liveCount + YT_CAMERAS.length + PARTNER_CAMERAS.length}</div>
                   <div className="text-gray-500 text-xs uppercase tracking-wider mt-0.5">Live Now</div>
                 </div>
               </div>
@@ -459,6 +688,26 @@ export default function LiveCameras() {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
               {YT_CAMERAS.map(cam => (
+                <YouTubeCameraCard key={cam.youtube_id} cam={cam} />
+              ))}
+            </div>
+          </section>
+
+          {/* ── Section 3: Partner Cameras ── */}
+          <section>
+            <div className="flex items-center gap-3 mb-2">
+              <div className="flex items-center gap-2">
+                <Youtube className="w-4 h-4 text-gray-400" />
+                <h2 className="text-lg font-bold text-white">Partner Cameras</h2>
+              </div>
+              <span className="text-xs text-gray-600 bg-gray-800 rounded-full px-2.5 py-0.5">YouTube Live</span>
+            </div>
+            <p className="text-gray-500 text-sm mb-6">
+              Live cameras from our partner network at SeeTheView.com — beaches, skylines, wildlife, and landmarks from around the world. Click any camera to watch on YouTube.
+            </p>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+              {PARTNER_CAMERAS.map(cam => (
                 <YouTubeCameraCard key={cam.youtube_id} cam={cam} />
               ))}
             </div>

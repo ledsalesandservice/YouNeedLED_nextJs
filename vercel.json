@@ -148,6 +148,81 @@
   ],
   "redirects": [
     {
+      "source": "https://www.youneedled.com/:path*",
+      "destination": "https://youneedled.com/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/locations/burlington-county",
+      "destination": "/locations/burlington-county-nj",
+      "permanent": true
+    },
+    {
+      "source": "/locations/atlantic-county",
+      "destination": "/locations/atlantic-county-nj",
+      "permanent": true
+    },
+    {
+      "source": "/locations/toms-river",
+      "destination": "/locations/toms-river-nj",
+      "permanent": true
+    },
+    {
+      "source": "/locations/moorestown",
+      "destination": "/locations/moorestown-nj",
+      "permanent": true
+    },
+    {
+      "source": "/locations/marlton",
+      "destination": "/locations/marlton-nj",
+      "permanent": true
+    },
+    {
+      "source": "/locations/ocean-city",
+      "destination": "/locations/ocean-city-nj",
+      "permanent": true
+    },
+    {
+      "source": "/locations/ocean-city/:service",
+      "destination": "/locations/ocean-city-nj/:service",
+      "permanent": true
+    },
+    {
+      "source": "/locations/camden",
+      "destination": "/locations/camden-nj",
+      "permanent": true
+    },
+    {
+      "source": "/locations/camden/:service",
+      "destination": "/locations/camden-nj/:service",
+      "permanent": true
+    },
+    {
+      "source": "/locations/lakewood",
+      "destination": "/locations/lakewood-nj",
+      "permanent": true
+    },
+    {
+      "source": "/locations/lakewood/:service",
+      "destination": "/locations/lakewood-nj/:service",
+      "permanent": true
+    },
+    {
+      "source": "/locations/wilmington",
+      "destination": "/locations/wilmington-de",
+      "permanent": true
+    },
+    {
+      "source": "/locations/delaware/wilmington/:service",
+      "destination": "/locations/wilmington-de",
+      "permanent": true
+    },
+    {
+      "source": "/locations/bohemia-maryland/:service",
+      "destination": "/locations/bohemia-md",
+      "permanent": true
+    },
+    {
       "source": "/locations/absecon-nj",
       "destination": "/service-areas",
       "permanent": true

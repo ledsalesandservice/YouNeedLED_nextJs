@@ -148,11 +148,6 @@
   ],
   "redirects": [
     {
-      "source": "https://www.youneedled.com/:path*",
-      "destination": "https://youneedled.com/:path*",
-      "permanent": true
-    },
-    {
       "source": "/locations/burlington-county",
       "destination": "/locations/burlington-county-nj",
       "permanent": true

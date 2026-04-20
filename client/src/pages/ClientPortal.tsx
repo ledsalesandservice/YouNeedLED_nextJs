@@ -90,7 +90,7 @@ export default function ClientPortal() {
       <SEOHead
         title="Client Portal | Access Your Services | You Need L.E.D."
         description="Access your YouNeedLED service dashboards — digital signage management, hosted PBX phone system, and port-out requests."
-        canonical="https://youneedled.com/client-portal"
+        canonical="/client-portal"
       />
       {/* ── Hero ── */}
       <section className="py-16 lg:py-20 bg-[#0e319a]">

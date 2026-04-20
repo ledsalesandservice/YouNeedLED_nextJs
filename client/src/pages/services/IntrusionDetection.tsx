@@ -13,17 +13,16 @@ export default function IntrusionDetection() {
       description="Commercial & residential alarm systems with 24/7 monitoring, video verification & mobile alerts. NJ DCA Licensed in South Jersey. Free quote: (609) 335-0123."
       canonical="/services/intrusion-detection"
     />
+    {/* Service Schema (FAQPage is handled by ServicePageLayout) */}
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
       "@context": "https://schema.org",
-      "@graph": [
-        { "@type": "Service", name: "Intrusion Detection & Alarm System Installation", description: "Commercial and residential intrusion detection systems with 24/7 central station monitoring, video verification, and mobile alerts. NJ DCA Licensed installation in South Jersey.", provider: { "@type": "LocalBusiness", name: SITE.name, url: SITE.url, telephone: SITE.phone }, areaServed: ["South Jersey", "Cherry Hill NJ", "Voorhees NJ", "Egg Harbor Township NJ"], serviceType: "Intrusion Detection Installation", url: `${SITE.url}/services/intrusion-detection` },
-        { "@type": "FAQPage", mainEntity: [
-          { "@type": "Question", name: "What is video verification in an alarm system?", acceptedAnswer: { "@type": "Answer", text: "Video verification means that when an alarm triggers, our monitoring center can view live or recorded camera footage to confirm whether the threat is real before dispatching police. This dramatically reduces false alarm fees and gets faster police response." } },
-          { "@type": "Question", name: "How fast does 24/7 monitoring respond to an alarm?", acceptedAnswer: { "@type": "Answer", text: "Our central station monitoring responds to alarm signals within seconds. With video verification, operators can confirm a real threat and dispatch emergency services immediately, typically within 60 seconds of alarm activation." } },
-          { "@type": "Question", name: "Can I get alerts on my phone when my alarm goes off?", acceptedAnswer: { "@type": "Answer", text: "Yes. Our Alarm.com-powered systems send instant push notifications, text messages, and email alerts to your smartphone when sensors are triggered, so you are always informed in real time." } },
-          { "@type": "Question", name: "Do you install alarm systems for businesses in South Jersey?", acceptedAnswer: { "@type": "Answer", text: "Yes. We specialize in commercial intrusion detection for offices, retail stores, warehouses, and multi-tenant buildings throughout South Jersey and the Delaware Valley. We are NJ DCA Licensed (#34BF00056900)." } },
-        ] },
-      ],
+      "@type": "Service",
+      name: "Intrusion Detection & Alarm System Installation",
+      description: "Commercial and residential intrusion detection systems with 24/7 central station monitoring, video verification, and mobile alerts. NJ DCA Licensed installation in South Jersey.",
+      provider: { "@type": "LocalBusiness", name: SITE.name, url: SITE.url, telephone: SITE.phone },
+      areaServed: ["South Jersey", "Cherry Hill NJ", "Voorhees NJ", "Egg Harbor Township NJ"],
+      serviceType: "Intrusion Detection Installation",
+      url: `${SITE.url}/services/intrusion-detection`,
     }) }} />
     <ServicePageLayout
       title="Intrusion Detection Systems"

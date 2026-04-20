@@ -167,10 +167,15 @@ export const ALL_META: Record<string, PageMeta> = {
 
 const DEFAULT_META: PageMeta = STATIC_META["/"];
 
+const NOT_FOUND_META: PageMeta = {
+  title: `Page Not Found | ${SUFFIX}`,
+  description: "The page you are looking for doesn't exist. It may have been moved or deleted.",
+};
+
 export function getPageMeta(path: string): PageMeta {
   // Normalize trailing slash (except root)
   const normalized = path.length > 1 ? path.replace(/\/$/, "") : path;
-  return ALL_META[normalized] ?? DEFAULT_META;
+  return ALL_META[normalized] ?? NOT_FOUND_META;
 }
 
 /** Total number of URL paths with unique metadata (useful for verification) */

@@ -13,37 +13,23 @@ export default function AccessControl() {
         description="CDVI & Alarm.com access control with RFID, biometric & mobile credentials. NJ DCA Licensed installation in South Jersey. Free quote: (609) 335-0123."
         canonical="/services/access-control"
       />
+      {/* Service Schema (FAQPage is handled by ServicePageLayout) */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         "@context": "https://schema.org",
-        "@graph": [
-          {
-            "@type": "Service",
-            name: "Access Control System Installation",
-            description: "Professional access control installation including RFID card readers, biometric scanners, mobile credentials, and cloud-managed door access for commercial properties in South Jersey.",
-            provider: { "@type": "LocalBusiness", "@id": `${SITE.url}/#organization`, name: SITE.name, url: SITE.url, telephone: SITE.phone },
-            areaServed: [
-              { "@type": "State", name: "New Jersey" },
-              { "@type": "City", name: "Cherry Hill, NJ" },
-              { "@type": "City", name: "Voorhees, NJ" },
-              { "@type": "City", name: "Mount Laurel, NJ" },
-              { "@type": "City", name: "Egg Harbor Township, NJ" },
-              { "@type": "City", name: "Atlantic City, NJ" },
-            ],
-            serviceType: "Access Control Installation",
-            url: `${SITE.url}/services/access-control`,
-          },
-          {
-            "@type": "FAQPage",
-            mainEntity: [
-              { "@type": "Question", name: "What is an access control system?", acceptedAnswer: { "@type": "Answer", text: "An access control system replaces traditional keys with electronic credentials — RFID cards, key fobs, mobile apps, or biometric readers — that let you control who enters your building and when. You can grant or revoke access instantly from anywhere." } },
-              { "@type": "Question", name: "What access control brands do you install in South Jersey?", acceptedAnswer: { "@type": "Answer", text: "We are authorized dealers for CDVI and Alarm.com access control systems, offering cloud-managed door access, mobile credentials, and seamless integration with video surveillance and intrusion detection." } },
-              { "@type": "Question", name: "Can I manage access control from my phone?", acceptedAnswer: { "@type": "Answer", text: "Yes. Our Alarm.com-powered systems let you lock/unlock doors, view access logs, add or remove users, and receive alerts from any smartphone or computer in real time." } },
-              { "@type": "Question", name: "Can access control integrate with my existing security cameras?", acceptedAnswer: { "@type": "Answer", text: "Yes. Our access control systems integrate directly with your video surveillance system so you can see who badged in at any door alongside the camera footage from that moment." } },
-              { "@type": "Question", name: "Are you licensed to install access control in New Jersey?", acceptedAnswer: { "@type": "Answer", text: "Yes. You Need L.E.D. is NJ DCA Licensed (#34BF00056900) and has been installing commercial access control systems in South Jersey and the Delaware Valley for over 15 years." } },
-              { "@type": "Question", name: "How much does an access control system cost?", acceptedAnswer: { "@type": "Answer", text: "Small business systems for 1–4 doors start at $1,999 installed. Professional multi-door systems start at $4,499. Enterprise and multi-site systems are custom quoted. Call (609) 335-0123 for a free assessment." } },
-            ],
-          },
+        "@type": "Service",
+        name: "Access Control System Installation",
+        description: "Professional access control installation including RFID card readers, biometric scanners, mobile credentials, and cloud-managed door access for commercial properties in South Jersey.",
+        provider: { "@type": "LocalBusiness", "@id": `${SITE.url}/#organization`, name: SITE.name, url: SITE.url, telephone: SITE.phone },
+        areaServed: [
+          { "@type": "State", name: "New Jersey" },
+          { "@type": "City", name: "Cherry Hill, NJ" },
+          { "@type": "City", name: "Voorhees, NJ" },
+          { "@type": "City", name: "Mount Laurel, NJ" },
+          { "@type": "City", name: "Egg Harbor Township, NJ" },
+          { "@type": "City", name: "Atlantic City, NJ" },
         ],
+        serviceType: "Access Control Installation",
+        url: `${SITE.url}/services/access-control`,
       }) }} />
       <ServicePageLayout
         title="Access Control Systems"

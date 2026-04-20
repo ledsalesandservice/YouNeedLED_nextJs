@@ -14,16 +14,16 @@ export default function ApartmentSecurity() {
         description="Complete security for apartment complexes & multi-family properties in South Jersey. Video surveillance, access control & intercom. NJ DCA Licensed. Call (609) 335-0123."
         canonical="/services/apartment-security"
       />
+      {/* Service Schema (FAQPage is handled by ServicePageLayout) */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         "@context": "https://schema.org",
-        "@graph": [
-          { "@type": "Service", name: "Apartment Complex Security System Installation", description: "Complete security solutions for apartment complexes and multi-family properties in South Jersey, including video surveillance, access control, intercom systems, and 24/7 monitoring.", provider: { "@type": "LocalBusiness", name: SITE.name, url: SITE.url, telephone: SITE.phone }, areaServed: ["South Jersey", "Atlantic County NJ", "Camden County NJ", "Burlington County NJ"], serviceType: "Apartment Security System Installation", url: `${SITE.url}/services/apartment-security` },
-          { "@type": "FAQPage", mainEntity: [
-            { "@type": "Question", name: "What security systems do apartment complexes need?", acceptedAnswer: { "@type": "Answer", text: "Apartment complexes typically need a combination of video surveillance cameras at entrances and common areas, access control for building entry, intercom systems for visitor management, and 24/7 monitoring. We design custom solutions based on your property size and layout." } },
-            { "@type": "Question", name: "Can tenants access the building with their smartphones?", acceptedAnswer: { "@type": "Answer", text: "Yes. Our Alarm.com and CDVI access control systems support mobile credentials, allowing tenants to use their smartphones to access the building via Bluetooth or NFC — no physical key fob required." } },
-            { "@type": "Question", name: "Do you install security systems for apartment complexes in South Jersey?", acceptedAnswer: { "@type": "Answer", text: "Yes. We specialize in multi-family and apartment complex security throughout South Jersey and the Delaware Valley. We are NJ DCA Licensed (#34BF00056900) with over 15 years of experience." } },
-          ] },
-        ],
+        "@type": "Service",
+        name: "Apartment Complex Security System Installation",
+        description: "Complete security solutions for apartment complexes and multi-family properties in South Jersey, including video surveillance, access control, intercom systems, and 24/7 monitoring.",
+        provider: { "@type": "LocalBusiness", name: SITE.name, url: SITE.url, telephone: SITE.phone },
+        areaServed: ["South Jersey", "Atlantic County NJ", "Camden County NJ", "Burlington County NJ"],
+        serviceType: "Apartment Security System Installation",
+        url: `${SITE.url}/services/apartment-security`,
       }) }} />
       <ServicePageLayout
         title="Apartment Complex Security"

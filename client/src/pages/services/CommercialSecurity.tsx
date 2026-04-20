@@ -63,15 +63,17 @@ export default function CommercialSecurity() {
               ],
             },
           },
-          {
-            "@type": "FAQPage",
-            mainEntity: faqs.map((faq) => ({
-              "@type": "Question",
-              name: faq.q,
-              acceptedAnswer: { "@type": "Answer", text: faq.a },
-            })),
-          },
         ],
+      }) }} />
+      {/* Single FAQPage schema (this page has its own FAQ section, not using ServicePageLayout) */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: faqs.map((faq) => ({
+          "@type": "Question",
+          name: faq.q,
+          acceptedAnswer: { "@type": "Answer", text: faq.a },
+        })),
       }) }} />
 
       {/* Hero */}

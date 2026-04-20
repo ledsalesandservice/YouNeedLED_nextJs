@@ -13,51 +13,32 @@ export default function VideoSurveillance() {
         description="NJ DCA Licensed security camera installation in South Jersey. 4K AI cameras with license plate recognition, cloud storage & 24/7 monitoring. Free quote: (609) 335-0123."
         canonical="/services/video-surveillance"
       />
-      {/* Service + FAQPage Schema */}
+      {/* Service Schema (FAQPage is handled by ServicePageLayout) */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         "@context": "https://schema.org",
-        "@graph": [
-          {
-            "@type": "Service",
-            name: "Security Camera Installation",
-            description: "Professional 4K AI-powered security camera installation for commercial and residential properties in South Jersey. Includes license plate recognition, cloud storage, and 24/7 monitoring.",
-            provider: { "@type": "LocalBusiness", "@id": `${SITE.url}/#organization`, name: SITE.name, url: SITE.url, telephone: SITE.phone },
-            areaServed: [
-              { "@type": "State", name: "New Jersey" },
-              { "@type": "City", name: "Cherry Hill, NJ" },
-              { "@type": "City", name: "Voorhees, NJ" },
-              { "@type": "City", name: "Mount Laurel, NJ" },
-              { "@type": "City", name: "Egg Harbor Township, NJ" },
-              { "@type": "City", name: "Atlantic City, NJ" },
-              { "@type": "City", name: "Somers Point, NJ" },
-            ],
-            serviceType: "Security Camera Installation",
-            url: `${SITE.url}/services/video-surveillance`,
-            hasOfferCatalog: {
-              "@type": "OfferCatalog",
-              name: "Security Camera Packages",
-              itemListElement: [
-                { "@type": "Offer", name: "Essential Camera Package", price: "2499", priceCurrency: "USD" },
-                { "@type": "Offer", name: "Professional Camera Package", price: "4999", priceCurrency: "USD" },
-              ],
-            },
-          },
-          {
-            "@type": "FAQPage",
-            mainEntity: [
-              { "@type": "Question", name: "What type of security cameras do you install in South Jersey?", acceptedAnswer: { "@type": "Answer", text: "We install commercial and residential cameras including dome, bullet, PTZ, and specialty cameras from Hanwha, Axis, and Alarm.com. All cameras support 4K resolution with AI analytics for people, vehicle, and license plate detection." } },
-              { "@type": "Question", name: "How much does security camera installation cost in South Jersey?", acceptedAnswer: { "@type": "Answer", text: "Our Essential package starts at $2,499 for a 4-camera 4K system with professional installation. Professional 8-camera systems start at $4,999. Contact us at (609) 335-0123 for a free on-site assessment." } },
-              { "@type": "Question", name: "Do your security cameras work without internet?", acceptedAnswer: { "@type": "Answer", text: "Yes. We offer local NVR recording that stores footage on-site without requiring internet. We also offer cellular-connected and solar-powered cameras for remote locations and construction sites." } },
-              { "@type": "Question", name: "How long is security camera footage stored?", acceptedAnswer: { "@type": "Answer", text: "Local NVR storage provides 30–90 day retention. Cloud storage options offer flexible retention. Enterprise clients can customize retention to meet compliance requirements." } },
-              { "@type": "Question", name: "Are you licensed to install security cameras in New Jersey?", acceptedAnswer: { "@type": "Answer", text: "Yes. You Need L.E.D. is NJ DCA Licensed (#34BF00056900) with over 15 years of experience installing commercial and residential security camera systems throughout South Jersey and the Delaware Valley." } },
-              { "@type": "Question", name: "Do you install cameras at construction sites?", acceptedAnswer: { "@type": "Answer", text: "Yes — we specialize in solar-powered wireless jobsite security cameras that require no power or internet connection. These are ideal for active construction sites across South Jersey and the Delaware Valley." } },
-              { "@type": "Question", name: "Is a permit required to install security cameras in New Jersey?", acceptedAnswer: { "@type": "Answer", text: "In New Jersey, most residential and small commercial security camera installations do not require a building permit. However, larger commercial systems involving new conduit runs, structural mounting, or integration with fire and access control systems may require a permit from the local AHJ (Authority Having Jurisdiction). You Need L.E.D. handles all permitting requirements as part of our installation process." } },
-              { "@type": "Question", name: "Who is responsible for security cameras in a NJ rental property?", acceptedAnswer: { "@type": "Answer", text: "In New Jersey, responsibility for security cameras in a rental property depends on the lease agreement. Landlords are generally responsible for common area security such as parking lots, hallways, and building entrances. Tenants may install cameras inside their unit with landlord written approval. For commercial leases, the lease should specify who is responsible for security systems. You Need L.E.D. works with both landlords and tenants to design appropriate systems." } },
-              { "@type": "Question", name: "What are the NJ CRC security camera requirements for cannabis dispensaries?", acceptedAnswer: { "@type": "Answer", text: "The New Jersey Cannabis Regulatory Commission (NJ CRC) requires cannabis dispensaries to maintain continuous video surveillance covering all entrances, exits, point-of-sale areas, storage rooms, and exterior perimeters. Cameras must record at a minimum resolution of 1280x720 (720p HD) with at least 30 days of retained footage accessible to the NJ CRC upon request. You Need L.E.D. specializes in NJ CRC-compliant cannabis security systems and has completed multiple dispensary installations." } },
-              { "@type": "Question", name: "Can security camera footage be used as evidence in a New Jersey court?", acceptedAnswer: { "@type": "Answer", text: "Yes. Security camera footage is admissible as evidence in New Jersey courts provided it is properly authenticated, the recording system was functioning correctly, and the footage has not been tampered with. We recommend systems with tamper-evident cloud backup and audit logs to ensure footage integrity for legal proceedings." } },
-            ],
-          },
+        "@type": "Service",
+        name: "Security Camera Installation",
+        description: "Professional 4K AI-powered security camera installation for commercial and residential properties in South Jersey. Includes license plate recognition, cloud storage, and 24/7 monitoring.",
+        provider: { "@type": "LocalBusiness", "@id": `${SITE.url}/#organization`, name: SITE.name, url: SITE.url, telephone: SITE.phone },
+        areaServed: [
+          { "@type": "State", name: "New Jersey" },
+          { "@type": "City", name: "Cherry Hill, NJ" },
+          { "@type": "City", name: "Voorhees, NJ" },
+          { "@type": "City", name: "Mount Laurel, NJ" },
+          { "@type": "City", name: "Egg Harbor Township, NJ" },
+          { "@type": "City", name: "Atlantic City, NJ" },
+          { "@type": "City", name: "Somers Point, NJ" },
         ],
+        serviceType: "Security Camera Installation",
+        url: `${SITE.url}/services/video-surveillance`,
+        hasOfferCatalog: {
+          "@type": "OfferCatalog",
+          name: "Security Camera Packages",
+          itemListElement: [
+            { "@type": "Offer", name: "Essential Camera Package", price: "2499", priceCurrency: "USD" },
+            { "@type": "Offer", name: "Professional Camera Package", price: "4999", priceCurrency: "USD" },
+          ],
+        },
       }) }} />
       <ServicePageLayout
         title="Commercial Security Camera Systems"

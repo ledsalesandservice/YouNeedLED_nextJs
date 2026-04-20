@@ -192,7 +192,7 @@ export default function LiveView() {
       <SEOHead
         title={`${cameraName} — Live Camera | You Need LED`}
         description={`Watch the live security camera feed for ${cameraName}, powered by LED Live View. Professional security camera systems by You Need LED, serving South Jersey.`}
-        canonical={`${SITE.url}/live/${streamId}`}
+        canonical={`/live/${streamId}`}
       />
 
       {/* Full-page dark layout */}

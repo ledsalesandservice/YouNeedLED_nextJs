@@ -16,8 +16,14 @@ function escapeHtml(str: string): string {
     .replace(/>/g, "&gt;");
 }
 
+/** Check if a URL path has explicit metadata (i.e., is a known page) */
+function isKnownPath(urlPath: string): boolean {
+  const normalized = urlPath.length > 1 ? urlPath.replace(/\/$/, "") : urlPath;
+  return normalized in ALL_META;
+}
+
 /** Inject per-page title + description into the index.html template. */
-function injectMeta(html: string, urlPath: string): string {
+function injectMeta(html: string, urlPath: string, is404 = false): string {
   const meta = getPageMeta(urlPath);
 
   // Replace <title>
@@ -74,6 +80,14 @@ function injectMeta(html: string, urlPath: string): string {
     html = html.replace(
       /<meta property="og:image" content="[^"]*"/,
       `<meta property="og:image" content="${escapeHtml(meta.ogImage)}"`
+    );
+  }
+
+  // Add noindex for unknown/404 pages so Google doesn't index them
+  if (is404) {
+    html = html.replace(
+      "</head>",
+      `<meta name="robots" content="noindex, nofollow" />\n</head>`
     );
   }
 
@@ -174,9 +188,11 @@ async function startServer() {
       }
     }
 
-    const injected = injectMeta(html, req.path);
+    const known = isKnownPath(req.path);
+    const injected = injectMeta(html, req.path, !known);
     res.setHeader("Content-Type", "text/html; charset=utf-8");
-    res.send(injected);
+    // Return 404 status for unknown paths so crawlers know it's not a real page
+    res.status(known ? 200 : 404).send(injected);
   });
 
   const port = process.env.PORT || 3000;

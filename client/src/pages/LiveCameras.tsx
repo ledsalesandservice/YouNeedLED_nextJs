@@ -580,7 +580,7 @@ export default function LiveCameras() {
       <SEOHead
         title="Live Security Camera Feeds | LED Live View | You Need LED"
         description="Watch live security camera feeds powered by LED Live View. Professional 4K security cameras with AI options installed by You Need LED — NJ DCA Licensed, serving South Jersey and the Delaware Valley."
-        canonical={`${SITE.url}/live-cameras`}
+        canonical="/live-cameras"
       />
 
       <div className="min-h-screen bg-[#0a0f1a]">

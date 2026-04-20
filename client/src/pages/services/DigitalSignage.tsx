@@ -103,17 +103,16 @@ export default function DigitalSignage() {
         description="Cloud-managed digital signage for restaurants, retail, healthcare, schools & offices in South Jersey. Professional installation by NJ DCA Licensed experts. Call (609) 335-0123."
         canonical="/services/digital-signage"
       />
+      {/* Service Schema (FAQPage is handled by ServicePageLayout) */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         "@context": "https://schema.org",
-        "@graph": [
-          { "@type": "Service", name: "Digital Signage Installation", description: "Cloud-managed digital signage solutions for restaurants, retail, healthcare, education, hospitality, and offices in South Jersey. Professional installation and setup by NJ DCA Licensed technology experts.", provider: { "@type": "LocalBusiness", name: SITE.name, url: SITE.url, telephone: SITE.phone }, areaServed: ["South Jersey", "Cherry Hill NJ", "Voorhees NJ", "Egg Harbor Township NJ", "Atlantic City NJ"], serviceType: "Digital Signage Installation", url: `${SITE.url}/services/digital-signage` },
-          { "@type": "FAQPage", mainEntity: [
-            { "@type": "Question", name: "What hardware do I need for digital signage?", acceptedAnswer: { "@type": "Answer", text: "You need a commercial display screen and a media player (a small device that connects to the screen and runs your content). We supply and install both. Our systems work with most commercial TVs and dedicated digital signage displays." } },
-            { "@type": "Question", name: "Can I update my digital signs myself without calling a technician?", acceptedAnswer: { "@type": "Answer", text: "Yes. Our cloud-based platform lets you update content, swap images, change pricing, and schedule playlists from any web browser or mobile device. No technical skills required." } },
-            { "@type": "Question", name: "Can I manage digital signs across multiple locations?", acceptedAnswer: { "@type": "Answer", text: "Yes. Our platform supports multi-location management from a single dashboard. You can push the same content to all locations or customize messaging per location, all from one login." } },
-            { "@type": "Question", name: "What industries do you serve with digital signage in South Jersey?", acceptedAnswer: { "@type": "Answer", text: "We serve restaurants, retail stores, healthcare facilities, schools and universities, hotels, corporate offices, gyms, banks, and construction sites throughout South Jersey and the Delaware Valley." } },
-          ] },
-        ],
+        "@type": "Service",
+        name: "Digital Signage Installation",
+        description: "Cloud-managed digital signage solutions for restaurants, retail, healthcare, education, hospitality, and offices in South Jersey. Professional installation and setup by NJ DCA Licensed technology experts.",
+        provider: { "@type": "LocalBusiness", name: SITE.name, url: SITE.url, telephone: SITE.phone },
+        areaServed: ["South Jersey", "Cherry Hill NJ", "Voorhees NJ", "Egg Harbor Township NJ", "Atlantic City NJ"],
+        serviceType: "Digital Signage Installation",
+        url: `${SITE.url}/services/digital-signage`,
       }) }} />
       <ServicePageLayout
         title="Digital Signage Solutions"

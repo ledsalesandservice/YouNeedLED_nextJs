@@ -21,22 +21,16 @@ export default function AiVoiceAgent() {
         canonical="/services/ai-voice-agent"
         ogImage={IMAGES.heroAiAgent}
       />
+      {/* Service Schema only — FAQPage schema is below in the FAQ section */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         "@context": "https://schema.org",
-        "@graph": [
-          { "@type": "Service", name: "LEDConnect AI Voice Agent", description: "AI-powered virtual receptionist that answers calls 24/7, blocks spam, captures leads, and books appointments for South Jersey businesses. Never miss a call again.", provider: { "@type": "LocalBusiness", name: SITE.name, url: SITE.url, telephone: SITE.phone }, areaServed: ["South Jersey", "Delaware Valley", "Cherry Hill NJ", "Voorhees NJ", "Egg Harbor Township NJ"], serviceType: "AI Voice Agent", url: `${SITE.url}/services/ai-voice-agent` },
-          { "@type": "FAQPage", mainEntity: [
-            { "@type": "Question", name: "What is the LEDConnect AI Voice Agent?", acceptedAnswer: { "@type": "Answer", text: "LEDConnect is an AI-powered virtual receptionist that answers your business calls 24/7. It blocks spam and robocalls, captures lead information, books appointments on your calendar, and handles after-hours and overflow calls automatically." } },
-            { "@type": "Question", name: "Will callers know they are talking to an AI?", acceptedAnswer: { "@type": "Answer", text: "LEDConnect uses natural-sounding AI voices and conversational responses. You can configure it to be transparent about being an AI assistant or to introduce itself by a custom name. Either way, it handles calls professionally and efficiently." } },
-            { "@type": "Question", name: "What types of businesses benefit most from an AI Voice Agent?", acceptedAnswer: { "@type": "Answer", text: "Any business that receives high call volume or cannot always answer the phone benefits greatly. This includes medical and dental offices, law firms, home service contractors, restaurants, and retail stores in South Jersey." } },
-            { "@type": "Question", name: "How does LEDConnect integrate with my existing phone system?", acceptedAnswer: { "@type": "Answer", text: "LEDConnect integrates with your existing VoIP or landline phone system. It can act as your primary receptionist, an overflow handler, or an after-hours answering service. Setup typically takes less than one business day." } },
-            { "@type": "Question", name: "How much does an AI voice agent cost for a small business?", acceptedAnswer: { "@type": "Answer", text: "LEDConnect AI Voice Agent pricing starts at a low monthly subscription with no per-minute charges for most plans. This is significantly less expensive than a human receptionist ($35,000–$50,000/year salary plus benefits) or a traditional answering service ($200–$800/month). Contact You Need L.E.D. at (609) 335-0123 for current pricing and a free demo." } },
-            { "@type": "Question", name: "Can an AI voice agent book appointments automatically?", acceptedAnswer: { "@type": "Answer", text: "Yes. LEDConnect AI Voice Agent integrates with popular calendar and scheduling platforms to book appointments in real time during the call. It checks availability, confirms the appointment with the caller, and sends confirmation messages. This eliminates phone tag and reduces no-shows for medical offices, contractors, salons, and other appointment-based businesses." } },
-            { "@type": "Question", name: "Is an AI voice agent HIPAA compliant for medical offices?", acceptedAnswer: { "@type": "Answer", text: "LEDConnect AI Voice Agent can be configured for HIPAA-compliant operation for medical and dental practices. This includes encrypted call recordings, business associate agreements (BAA), and strict data handling protocols. Contact us to discuss your specific compliance requirements before deployment." } },
-            { "@type": "Question", name: "What is the difference between an AI voice agent and a traditional answering service?", acceptedAnswer: { "@type": "Answer", text: "A traditional answering service uses human operators who take messages and relay them to your staff. An AI voice agent like LEDConnect handles calls instantly with no hold time, 24/7/365, at a fraction of the cost. It can answer FAQs, book appointments, capture lead information, and transfer urgent calls to a live person — all without human intervention. Unlike human operators, it never calls in sick, goes on vacation, or has a bad day." } },
-            { "@type": "Question", name: "Can the AI voice agent handle calls in Spanish?", acceptedAnswer: { "@type": "Answer", text: "Yes. LEDConnect AI Voice Agent supports multilingual operation including Spanish. This is particularly valuable for South Jersey businesses serving diverse communities in Atlantic City, Vineland, and the greater Philadelphia metro area." } },
-          ] },
-        ],
+        "@type": "Service",
+        name: "LEDConnect AI Voice Agent",
+        description: "AI-powered virtual receptionist that answers calls 24/7, blocks spam, captures leads, and books appointments for South Jersey businesses. Never miss a call again.",
+        provider: { "@type": "LocalBusiness", name: SITE.name, url: SITE.url, telephone: SITE.phone },
+        areaServed: ["South Jersey", "Delaware Valley", "Cherry Hill NJ", "Voorhees NJ", "Egg Harbor Township NJ"],
+        serviceType: "AI Voice Agent",
+        url: `${SITE.url}/services/ai-voice-agent`,
       }) }} />
       {/* Hero */}
       <section className="relative py-20 lg:py-28 bg-gradient-to-br from-[#0e319a] to-[#081d5e] overflow-hidden">
@@ -297,7 +291,7 @@ export default function AiVoiceAgent() {
             ))}
           </div>
         </div>
-        {/* FAQ Schema */}
+        {/* Single FAQPage schema for this page (not using ServicePageLayout) */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -306,7 +300,7 @@ export default function AiVoiceAgent() {
               "@type": "FAQPage",
               mainEntity: [
                 { "@type": "Question", name: "Do I need a LEDConnect VoIP system to use the AI Voice Agent?", acceptedAnswer: { "@type": "Answer", text: "The AI Voice Agent is designed to work with the LEDConnect VoIP phone system for the best experience. However, we can configure call forwarding from most existing phone systems to route calls through the AI agent." } },
-                { "@type": "Question", name: "Will the AI replace my receptionist?", acceptedAnswer: { "@type": "Answer", text: "No — the AI Voice Agent is designed to work alongside your existing staff. It handles overflow calls when your team is busy, after-hours calls, and spam filtering. Your team stays in control of all important calls." } },
+                { "@type": "Question", name: "Will the AI replace my receptionist?", acceptedAnswer: { "@type": "Answer", text: "No \u2014 the AI Voice Agent is designed to work alongside your existing staff. It handles overflow calls when your team is busy, after-hours calls, and spam filtering. Your team stays in control of all important calls." } },
                 { "@type": "Question", name: "How does the AI handle complex questions?", acceptedAnswer: { "@type": "Answer", text: "The AI is trained on your business information and can answer common questions about your services, hours, and location. For complex inquiries, it captures the caller's information and schedules a callback from your team." } },
                 { "@type": "Question", name: "Can I customize the AI's responses?", acceptedAnswer: { "@type": "Answer", text: "Absolutely. We work with you to create custom call scripts, greetings, and response flows that match your brand voice and business processes." } },
                 { "@type": "Question", name: "What happens if the AI can't handle a call?", acceptedAnswer: { "@type": "Answer", text: "If the AI determines a call needs human attention, it seamlessly transfers to your team during business hours, or captures detailed information for a callback during off-hours." } },

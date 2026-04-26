@@ -42,7 +42,7 @@ function injectMeta(html: string, urlPath: string, is404 = false): string {
 
 const app = express();
 
-const staticPath = path.resolve(process.cwd(), "dist", "public");
+const staticPath = path.resolve(__dirname, "..", "dist", "public");
 app.use(express.static(staticPath, { index: false }));
 
 const indexPath = path.join(staticPath, "index.html");

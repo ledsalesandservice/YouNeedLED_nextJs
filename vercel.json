@@ -3,454 +3,138 @@
   "outputDirectory": "dist/public",
   "installCommand": "pnpm install",
   "framework": null,
+  "functions": {
+    "api/index.ts": {
+      "runtime": "@vercel/node@5.6.22"
+    }
+  },
   "headers": [
     {
       "source": "/assets/(.*)",
       "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
-        },
-        {
-          "key": "Expires",
-          "value": "Thu, 31 Dec 2026 23:59:59 GMT"
-        },
-        {
-          "key": "Vary",
-          "value": "Accept-Encoding"
-        }
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" },
+        { "key": "Expires", "value": "Thu, 31 Dec 2026 23:59:59 GMT" },
+        { "key": "Vary", "value": "Accept-Encoding" }
       ]
     },
     {
       "source": "/(.*\\.js|.*\\.mjs|.*\\.cjs)",
       "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
-        },
-        {
-          "key": "Expires",
-          "value": "Thu, 31 Dec 2026 23:59:59 GMT"
-        },
-        {
-          "key": "Vary",
-          "value": "Accept-Encoding"
-        }
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" },
+        { "key": "Expires", "value": "Thu, 31 Dec 2026 23:59:59 GMT" },
+        { "key": "Vary", "value": "Accept-Encoding" }
       ]
     },
     {
       "source": "/(.*\\.css)",
       "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
-        },
-        {
-          "key": "Expires",
-          "value": "Thu, 31 Dec 2026 23:59:59 GMT"
-        },
-        {
-          "key": "Vary",
-          "value": "Accept-Encoding"
-        }
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" },
+        { "key": "Expires", "value": "Thu, 31 Dec 2026 23:59:59 GMT" },
+        { "key": "Vary", "value": "Accept-Encoding" }
       ]
     },
     {
       "source": "/(.*\\.woff|.*\\.woff2|.*\\.ttf|.*\\.otf|.*\\.eot)",
       "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
-        },
-        {
-          "key": "Expires",
-          "value": "Thu, 31 Dec 2026 23:59:59 GMT"
-        },
-        {
-          "key": "Vary",
-          "value": "Accept-Encoding"
-        }
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" },
+        { "key": "Expires", "value": "Thu, 31 Dec 2026 23:59:59 GMT" },
+        { "key": "Vary", "value": "Accept-Encoding" }
       ]
     },
     {
       "source": "/(.*\\.webp|.*\\.jpg|.*\\.jpeg|.*\\.png|.*\\.ico|.*\\.svg|.*\\.gif|.*\\.avif)",
       "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=2592000, stale-while-revalidate=86400"
-        },
-        {
-          "key": "Expires",
-          "value": "Thu, 21 Apr 2026 00:00:00 GMT"
-        },
-        {
-          "key": "Vary",
-          "value": "Accept-Encoding"
-        }
+        { "key": "Cache-Control", "value": "public, max-age=2592000, stale-while-revalidate=86400" },
+        { "key": "Expires", "value": "Thu, 21 Apr 2026 00:00:00 GMT" },
+        { "key": "Vary", "value": "Accept-Encoding" }
       ]
     },
     {
       "source": "/(.*\\.json|.*\\.xml|.*\\.txt)",
       "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=3600, stale-while-revalidate=600"
-        },
-        {
-          "key": "Vary",
-          "value": "Accept-Encoding"
-        }
+        { "key": "Cache-Control", "value": "public, max-age=3600, stale-while-revalidate=600" },
+        { "key": "Vary", "value": "Accept-Encoding" }
       ]
     },
     {
       "source": "/(.*)",
       "headers": [
-        {
-          "key": "X-Content-Type-Options",
-          "value": "nosniff"
-        },
-        {
-          "key": "X-Frame-Options",
-          "value": "SAMEORIGIN"
-        },
-        {
-          "key": "X-XSS-Protection",
-          "value": "1; mode=block"
-        },
-        {
-          "key": "Vary",
-          "value": "Accept-Encoding"
-        },
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=0, must-revalidate"
-        }
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "X-Frame-Options", "value": "SAMEORIGIN" },
+        { "key": "X-XSS-Protection", "value": "1; mode=block" },
+        { "key": "Vary", "value": "Accept-Encoding" },
+        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
       ]
     }
   ],
   "rewrites": [
-    {
-      "source": "/cameras",
-      "destination": "/cameras/index.html"
-    },
-    {
-      "source": "/phone-systems",
-      "destination": "/phone-systems/index.html"
-    },
-    {
-      "source": "/live/:streamId",
-      "destination": "/index.html"
-    },
-    {
-      "source": "/(.*)",
-      "destination": "/index.html"
-    }
+    { "source": "/cameras", "destination": "/cameras/index.html" },
+    { "source": "/phone-systems", "destination": "/phone-systems/index.html" },
+    { "source": "/(.*)", "destination": "/api/index" }
   ],
   "redirects": [
-    {
-      "source": "/locations/burlington-county",
-      "destination": "/locations/burlington-county-nj",
-      "permanent": true
-    },
-    {
-      "source": "/locations/atlantic-county",
-      "destination": "/locations/atlantic-county-nj",
-      "permanent": true
-    },
-    {
-      "source": "/locations/toms-river",
-      "destination": "/locations/toms-river-nj",
-      "permanent": true
-    },
-    {
-      "source": "/locations/moorestown",
-      "destination": "/locations/moorestown-nj",
-      "permanent": true
-    },
-    {
-      "source": "/locations/marlton",
-      "destination": "/locations/marlton-nj",
-      "permanent": true
-    },
-    {
-      "source": "/locations/ocean-city",
-      "destination": "/locations/ocean-city-nj",
-      "permanent": true
-    },
-    {
-      "source": "/locations/ocean-city/:service",
-      "destination": "/locations/ocean-city-nj/:service",
-      "permanent": true
-    },
-    {
-      "source": "/locations/camden",
-      "destination": "/locations/camden-nj",
-      "permanent": true
-    },
-    {
-      "source": "/locations/camden/:service",
-      "destination": "/locations/camden-nj/:service",
-      "permanent": true
-    },
-    {
-      "source": "/locations/lakewood",
-      "destination": "/locations/lakewood-nj",
-      "permanent": true
-    },
-    {
-      "source": "/locations/lakewood/:service",
-      "destination": "/locations/lakewood-nj/:service",
-      "permanent": true
-    },
-    {
-      "source": "/locations/wilmington",
-      "destination": "/locations/wilmington-de",
-      "permanent": true
-    },
-    {
-      "source": "/locations/delaware/wilmington/:service",
-      "destination": "/locations/wilmington-de",
-      "permanent": true
-    },
-    {
-      "source": "/locations/bohemia-maryland/:service",
-      "destination": "/locations/bohemia-md",
-      "permanent": true
-    },
-    {
-      "source": "/locations/absecon-nj",
-      "destination": "/service-areas",
-      "permanent": true
-    },
-    {
-      "source": "/locations/audubon-nj",
-      "destination": "/service-areas",
-      "permanent": true
-    },
-    {
-      "source": "/locations/barrington-nj",
-      "destination": "/service-areas",
-      "permanent": true
-    },
-    {
-      "source": "/locations/bellmawr-nj",
-      "destination": "/service-areas",
-      "permanent": true
-    },
-    {
-      "source": "/locations/berlin-nj",
-      "destination": "/service-areas",
-      "permanent": true
-    },
-    {
-      "source": "/locations/blackwood-nj",
-      "destination": "/service-areas",
-      "permanent": true
-    },
-    {
-      "source": "/locations/bridgeton-nj",
-      "destination": "/service-areas",
-      "permanent": true
-    },
-    {
-      "source": "/locations/collingswood-nj",
-      "destination": "/service-areas",
-      "permanent": true
-    },
-    {
-      "source": "/locations/egg-harbor-township-nj",
-      "destination": "/service-areas",
-      "permanent": true
-    },
-    {
-      "source": "/locations/galloway-nj",
-      "destination": "/service-areas",
-      "permanent": true
-    },
-    {
-      "source": "/locations/gibbsboro-nj",
-      "destination": "/service-areas",
-      "permanent": true
-    },
-    {
-      "source": "/locations/gloucester-city-nj",
-      "destination": "/service-areas",
-      "permanent": true
-    },
-    {
-      "source": "/locations/haddonfield-nj",
-      "destination": "/service-areas",
-      "permanent": true
-    },
-    {
-      "source": "/locations/haddon-heights-nj",
-      "destination": "/service-areas",
-      "permanent": true
-    },
-    {
-      "source": "/locations/haddon-township-nj",
-      "destination": "/service-areas",
-      "permanent": true
-    },
-    {
-      "source": "/locations/hammonton-nj",
-      "destination": "/service-areas",
-      "permanent": true
-    },
-    {
-      "source": "/locations/hi-nella-nj",
-      "destination": "/service-areas",
-      "permanent": true
-    },
-    {
-      "source": "/locations/laurel-springs-nj",
-      "destination": "/service-areas",
-      "permanent": true
-    },
-    {
-      "source": "/locations/lawnside-nj",
-      "destination": "/service-areas",
-      "permanent": true
-    },
-    {
-      "source": "/locations/lindenwold-nj",
-      "destination": "/service-areas",
-      "permanent": true
-    },
-    {
-      "source": "/locations/linwood-nj",
-      "destination": "/service-areas",
-      "permanent": true
-    },
-    {
-      "source": "/locations/longport-nj",
-      "destination": "/service-areas",
-      "permanent": true
-    },
-    {
-      "source": "/locations/magnolia-nj",
-      "destination": "/service-areas",
-      "permanent": true
-    },
-    {
-      "source": "/locations/margate-nj",
-      "destination": "/service-areas",
-      "permanent": true
-    },
-    {
-      "source": "/locations/millville-nj",
-      "destination": "/service-areas",
-      "permanent": true
-    },
-    {
-      "source": "/locations/mount-ephraim-nj",
-      "destination": "/service-areas",
-      "permanent": true
-    },
-    {
-      "source": "/locations/northfield-nj",
-      "destination": "/service-areas",
-      "permanent": true
-    },
-    {
-      "source": "/locations/oaklyn-nj",
-      "destination": "/service-areas",
-      "permanent": true
-    },
-    {
-      "source": "/locations/pine-hill-nj",
-      "destination": "/service-areas",
-      "permanent": true
-    },
-    {
-      "source": "/locations/pleasantville-nj",
-      "destination": "/service-areas",
-      "permanent": true
-    },
-    {
-      "source": "/locations/runnemede-nj",
-      "destination": "/service-areas",
-      "permanent": true
-    },
-    {
-      "source": "/locations/somerdale-nj",
-      "destination": "/service-areas",
-      "permanent": true
-    },
-    {
-      "source": "/locations/somers-point-nj",
-      "destination": "/service-areas",
-      "permanent": true
-    },
-    {
-      "source": "/locations/stratford-nj",
-      "destination": "/service-areas",
-      "permanent": true
-    },
-    {
-      "source": "/locations/ventnor-nj",
-      "destination": "/service-areas",
-      "permanent": true
-    },
-    {
-      "source": "/locations/vineland-nj",
-      "destination": "/service-areas",
-      "permanent": true
-    },
-    {
-      "source": "/locations/winslow-nj",
-      "destination": "/service-areas",
-      "permanent": true
-    },
-    {
-      "source": "/locations/woodbury-nj",
-      "destination": "/service-areas",
-      "permanent": true
-    },
-    {
-      "source": "/services/fire-alarm",
-      "destination": "/services/fire-alarm-systems",
-      "permanent": true
-    },
-    {
-      "source": "/locations/gloucester-county",
-      "destination": "/locations/gloucester-county-nj",
-      "permanent": true
-    },
-    {
-      "source": "/locations/cherry-hill",
-      "destination": "/locations/cherry-hill-nj",
-      "permanent": true
-    },
-    {
-      "source": "/locations/cumberland-county",
-      "destination": "/locations/cumberland-county-nj",
-      "permanent": true
-    },
-    {
-      "source": "/insights/:slug",
-      "destination": "/blog/:slug",
-      "permanent": true
-    },
-    {
-      "source": "/services/security-cameras",
-      "destination": "/services/video-surveillance",
-      "permanent": true
-    },
-    {
-      "source": "/services/sound-systems",
-      "destination": "/services/voip",
-      "permanent": true
-    }
+    { "source": "/locations/burlington-county", "destination": "/locations/burlington-county-nj", "permanent": true },
+    { "source": "/locations/atlantic-county", "destination": "/locations/atlantic-county-nj", "permanent": true },
+    { "source": "/locations/toms-river", "destination": "/locations/toms-river-nj", "permanent": true },
+    { "source": "/locations/moorestown", "destination": "/locations/moorestown-nj", "permanent": true },
+    { "source": "/locations/marlton", "destination": "/locations/marlton-nj", "permanent": true },
+    { "source": "/locations/ocean-city", "destination": "/locations/ocean-city-nj", "permanent": true },
+    { "source": "/locations/ocean-city/:service", "destination": "/locations/ocean-city-nj/:service", "permanent": true },
+    { "source": "/locations/camden", "destination": "/locations/camden-nj", "permanent": true },
+    { "source": "/locations/camden/:service", "destination": "/locations/camden-nj/:service", "permanent": true },
+    { "source": "/locations/lakewood", "destination": "/locations/lakewood-nj", "permanent": true },
+    { "source": "/locations/lakewood/:service", "destination": "/locations/lakewood-nj/:service", "permanent": true },
+    { "source": "/locations/wilmington", "destination": "/locations/wilmington-de", "permanent": true },
+    { "source": "/locations/delaware/wilmington/:service", "destination": "/locations/wilmington-de", "permanent": true },
+    { "source": "/locations/bohemia-maryland/:service", "destination": "/locations/bohemia-md", "permanent": true },
+    { "source": "/locations/absecon-nj", "destination": "/service-areas", "permanent": true },
+    { "source": "/locations/audubon-nj", "destination": "/service-areas", "permanent": true },
+    { "source": "/locations/barrington-nj", "destination": "/service-areas", "permanent": true },
+    { "source": "/locations/bellmawr-nj", "destination": "/service-areas", "permanent": true },
+    { "source": "/locations/berlin-nj", "destination": "/service-areas", "permanent": true },
+    { "source": "/locations/blackwood-nj", "destination": "/service-areas", "permanent": true },
+    { "source": "/locations/bridgeton-nj", "destination": "/service-areas", "permanent": true },
+    { "source": "/locations/collingswood-nj", "destination": "/service-areas", "permanent": true },
+    { "source": "/locations/egg-harbor-township-nj", "destination": "/service-areas", "permanent": true },
+    { "source": "/locations/galloway-nj", "destination": "/service-areas", "permanent": true },
+    { "source": "/locations/gibbsboro-nj", "destination": "/service-areas", "permanent": true },
+    { "source": "/locations/gloucester-city-nj", "destination": "/service-areas", "permanent": true },
+    { "source": "/locations/haddonfield-nj", "destination": "/service-areas", "permanent": true },
+    { "source": "/locations/haddon-heights-nj", "destination": "/service-areas", "permanent": true },
+    { "source": "/locations/haddon-township-nj", "destination": "/service-areas", "permanent": true },
+    { "source": "/locations/hammonton-nj", "destination": "/service-areas", "permanent": true },
+    { "source": "/locations/hi-nella-nj", "destination": "/service-areas", "permanent": true },
+    { "source": "/locations/laurel-springs-nj", "destination": "/service-areas", "permanent": true },
+    { "source": "/locations/lawnside-nj", "destination": "/service-areas", "permanent": true },
+    { "source": "/locations/lindenwold-nj", "destination": "/service-areas", "permanent": true },
+    { "source": "/locations/linwood-nj", "destination": "/service-areas", "permanent": true },
+    { "source": "/locations/longport-nj", "destination": "/service-areas", "permanent": true },
+    { "source": "/locations/magnolia-nj", "destination": "/service-areas", "permanent": true },
+    { "source": "/locations/margate-nj", "destination": "/service-areas", "permanent": true },
+    { "source": "/locations/millville-nj", "destination": "/service-areas", "permanent": true },
+    { "source": "/locations/mount-ephraim-nj", "destination": "/service-areas", "permanent": true },
+    { "source": "/locations/northfield-nj", "destination": "/service-areas", "permanent": true },
+    { "source": "/locations/oaklyn-nj", "destination": "/service-areas", "permanent": true },
+    { "source": "/locations/pine-hill-nj", "destination": "/service-areas", "permanent": true },
+    { "source": "/locations/pleasantville-nj", "destination": "/service-areas", "permanent": true },
+    { "source": "/locations/runnemede-nj", "destination": "/service-areas", "permanent": true },
+    { "source": "/locations/somerdale-nj", "destination": "/service-areas", "permanent": true },
+    { "source": "/locations/somers-point-nj", "destination": "/service-areas", "permanent": true },
+    { "source": "/locations/stratford-nj", "destination": "/service-areas", "permanent": true },
+    { "source": "/locations/ventnor-nj", "destination": "/service-areas", "permanent": true },
+    { "source": "/locations/vineland-nj", "destination": "/service-areas", "permanent": true },
+    { "source": "/locations/winslow-nj", "destination": "/service-areas", "permanent": true },
+    { "source": "/locations/woodbury-nj", "destination": "/service-areas", "permanent": true },
+    { "source": "/services/fire-alarm", "destination": "/services/fire-alarm-systems", "permanent": true },
+    { "source": "/locations/gloucester-county", "destination": "/locations/gloucester-county-nj", "permanent": true },
+    { "source": "/locations/cherry-hill", "destination": "/locations/cherry-hill-nj", "permanent": true },
+    { "source": "/locations/cumberland-county", "destination": "/locations/cumberland-county-nj", "permanent": true },
+    { "source": "/insights/:slug", "destination": "/blog/:slug", "permanent": true },
+    { "source": "/services/security-cameras", "destination": "/services/video-surveillance", "permanent": true },
+    { "source": "/services/sound-systems", "destination": "/services/voip", "permanent": true }
   ],
   "crons": [
-    {
-      "path": "/api/sync/manus-freshbooks",
-      "schedule": "0 12 * * 1-5"
-    },
-    {
-      "path": "/api/telegram/daily-summary",
-      "schedule": "0 11 * * 1-5"
-    }
+    { "path": "/api/sync/manus-freshbooks", "schedule": "0 12 * * 1-5" },
+    { "path": "/api/telegram/daily-summary", "schedule": "0 11 * * 1-5" }
   ]
 }

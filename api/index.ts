@@ -60,32 +60,4 @@ try {
   // will be caught per-request
 }
 
-// Force www → non-www
-app.use((req, res, next) => {
-  if (req.headers.host?.startsWith("www.")) {
-    const newHost = req.headers.host.slice(4);
-    return res.redirect(301, `${req.protocol}://${newHost}${req.originalUrl}`);
-  }
-  next();
-});
-
-// Catch-all: inject meta and serve index.html
-app.get("*", (req, res) => {
-  let html = indexHtml;
-  if (!html) {
-    try {
-      html = readFileSync(indexPath, "utf-8");
-      indexHtml = html;
-    } catch {
-      res.status(503).send("Server starting…");
-      return;
-    }
-  }
-
-  const known = isKnownPath(req.path);
-  const injected = injectMeta(html, req.path, !known);
-  res.setHeader("Content-Type", "text/html; charset=utf-8");
-  res.status(known ? 200 : 404).send(injected);
-});
-
-export default app;
+// Catch-all: i

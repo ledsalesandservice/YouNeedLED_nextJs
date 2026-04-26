@@ -1,7 +1,6 @@
 import express, { Request, Response } from "express";
-import path from "path";
-import { readFileSync } from "fs";
 import { fileURLToPath } from "url";
+import path from "path";
 import { getPageMeta, ALL_META } from "../server/seoMeta.js";
 
 const __filename = fileURLToPath(import.meta.url);
@@ -42,30 +41,25 @@ function injectMeta(html: string, urlPath: string, is404 = false): string {
 
 const app = express();
 
-const staticPath = path.resolve(__dirname, "..", "dist", "public");
-app.use(express.static(staticPath, { index: false }));
+let cachedHtml = "";
 
-const indexPath = path.join(staticPath, "index.html");
-let indexHtml = "";
-try {
-  indexHtml = readFileSync(indexPath, "utf-8");
-} catch {}
+async function getIndexHtml(): Promise<string> {
+  if (cachedHtml) return cachedHtml;
+  const res = await fetch("https://you-need-led-website.vercel.app/index.html");
+  cachedHtml = await res.text();
+  return cachedHtml;
+}
 
-app.get("*", (req: Request, res: Response) => {
-  let html = indexHtml;
-  if (!html) {
-    try {
-      html = readFileSync(indexPath, "utf-8");
-      indexHtml = html;
-    } catch {
-      res.status(503).send("Server starting…");
-      return;
-    }
+app.get("*", async (req: Request, res: Response) => {
+  try {
+    const html = await getIndexHtml();
+    const known = isKnownPath(req.path);
+    const injected = injectMeta(html, req.path, !known);
+    res.setHeader("Content-Type", "text/html; charset=utf-8");
+    res.status(known ? 200 : 404).send(injected);
+  } catch (err) {
+    res.status(503).send("Server starting…");
   }
-  const known = isKnownPath(req.path);
-  const injected = injectMeta(html, req.path, !known);
-  res.setHeader("Content-Type", "text/html; charset=utf-8");
-  res.status(known ? 200 : 404).send(injected);
 });
 
 export default app;

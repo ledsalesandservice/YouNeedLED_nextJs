@@ -1,6 +1,7 @@
 import express, { Request, Response } from "express";
-import { fileURLToPath } from "url";
 import path from "path";
+import { readFileSync } from "fs";
+import { fileURLToPath } from "url";
 import { getPageMeta, ALL_META } from "../server/seoMeta.js";
 
 const __filename = fileURLToPath(import.meta.url);
@@ -39,27 +40,58 @@ function injectMeta(html: string, urlPath: string, is404 = false): string {
   return html;
 }
 
+// Legacy URL redirects — handled here because vercel.json rewrites take priority over redirects
+const REDIRECTS: Record<string, string> = {
+  "/services/fire-alarms": "/services/fire-alarm-systems",
+  "/services/fire-alarm": "/services/fire-alarm-systems",
+  "/services/security-cameras": "/services/video-surveillance",
+  "/services/sound-systems": "/services/voip",
+  "/locations/burlington-county": "/locations/burlington-county-nj",
+  "/locations/atlantic-county": "/locations/atlantic-county-nj",
+  "/locations/toms-river": "/locations/toms-river-nj",
+  "/locations/moorestown": "/locations/moorestown-nj",
+  "/locations/marlton": "/locations/marlton-nj",
+  "/locations/ocean-city": "/locations/ocean-city-nj",
+  "/locations/camden": "/locations/camden-nj",
+  "/locations/lakewood": "/locations/lakewood-nj",
+  "/locations/wilmington": "/locations/wilmington-de",
+  "/locations/gloucester-county": "/locations/gloucester-county-nj",
+  "/locations/cherry-hill": "/locations/cherry-hill-nj",
+  "/locations/cumberland-county": "/locations/cumberland-county-nj",
+};
+
 const app = express();
 
-let cachedHtml = "";
+const staticPath = path.resolve(process.cwd(), "dist", "public");
+app.use(express.static(staticPath, { index: false }));
 
-async function getIndexHtml(): Promise<string> {
-  if (cachedHtml) return cachedHtml;
-  const res = await fetch("https://you-need-led-website.vercel.app/index.html");
-  cachedHtml = await res.text();
-  return cachedHtml;
-}
+const indexPath = path.join(staticPath, "index.html");
+let indexHtml = "";
+try {
+  indexHtml = readFileSync(indexPath, "utf-8");
+} catch {}
 
-app.get("*", async (req: Request, res: Response) => {
-  try {
-    const html = await getIndexHtml();
-    const known = isKnownPath(req.path);
-    const injected = injectMeta(html, req.path, !known);
-    res.setHeader("Content-Type", "text/html; charset=utf-8");
-    res.status(known ? 200 : 404).send(injected);
-  } catch (err) {
-    res.status(503).send("Server starting…");
+app.get("*", (req: Request, res: Response) => {
+  // Handle legacy redirects
+  const redirect = REDIRECTS[req.path];
+  if (redirect) {
+    return res.redirect(301, redirect);
   }
+
+  let html = indexHtml;
+  if (!html) {
+    try {
+      html = readFileSync(indexPath, "utf-8");
+      indexHtml = html;
+    } catch {
+      res.status(503).send("Server starting…");
+      return;
+    }
+  }
+  const known = isKnownPath(req.path);
+  const injected = injectMeta(html, req.path, !known);
+  res.setHeader("Content-Type", "text/html; charset=utf-8");
+  res.status(known ? 200 : 404).send(injected);
 });
 
 export default app;

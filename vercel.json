@@ -74,6 +74,7 @@
     { "source": "/(.*)", "destination": "/api/index" }
   ],
   "redirects": [
+    { "source": "/services/fire-alarms", "destination": "/services/fire-alarm-systems", "permanent": true },
     { "source": "/locations/burlington-county", "destination": "/locations/burlington-county-nj", "permanent": true },
     { "source": "/locations/atlantic-county", "destination": "/locations/atlantic-county-nj", "permanent": true },
     { "source": "/locations/toms-river", "destination": "/locations/toms-river-nj", "permanent": true },

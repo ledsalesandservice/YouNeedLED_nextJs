@@ -114,6 +114,10 @@ const STATIC_META: Record<string, PageMeta> = {
     title: `Digital Signage South Jersey | Cloud-Managed Displays | ${SUFFIX}`,
     description: `Cloud-managed digital signage for restaurants, retail, healthcare, schools & offices in South Jersey. Professional installation by NJ DCA Licensed experts. Call ${PHONE}.`,
   },
+  "/services/fiber-optic": {
+    title: `Fiber Optic Installation South Jersey | Single-Mode & Multimode | ${SUFFIX}`,
+    description: `Professional fiber optic installation, fusion splicing & emergency repair in South Jersey. Single-mode & multimode, aerial & underground runs. NJ DCA Licensed. Call ${PHONE}.`,
+  },
 };
 
 // ─── Dynamic blog post pages ─────────────────────────────────────────────────

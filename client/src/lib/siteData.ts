@@ -32,8 +32,6 @@ export const SITE = {
 };
 
 export const IMAGES = {
-  // Use local 800w WebP as src fallback — srcset handles responsive sizing for modern browsers.
-  // The CloudFront originals are 88–258 KB and caused the HubSpot grader IMAGE SIZE FAIL.
   heroMain: "https://d2xsxph8kpxj0f.cloudfront.net/310419663030082570/Tfe6MLMokmY8tMP4sdwDCa/hero-main-FzzWNkqcRL6wNVgyaZbhwS.webp",
   heroVoip: "https://d2xsxph8kpxj0f.cloudfront.net/310419663030082570/Tfe6MLMokmY8tMP4sdwDCa/hero-voip-C3K9kFAyBKoUKXyoFDRn2A.webp",
   heroCameras: "https://d2xsxph8kpxj0f.cloudfront.net/310419663030082570/Tfe6MLMokmY8tMP4sdwDCa/hero-cameras-Epwbn9AsuWE6eQcF4RnUJr.webp",
@@ -42,7 +40,6 @@ export const IMAGES = {
   heroDigitalSignage: "/digital-signage/corporate.webp",
 };
 
-// Responsive srcset strings — local WebP files at 400/800/1200/1920w
 export const IMAGE_SRCSETS = {
   heroMain: "/hero-main-400w.webp 400w, /hero-main-800w.webp 800w, /hero-main-1200w.webp 1200w, /hero-main-1920w.webp 1920w",
   heroVoip: "/hero-voip-400w.webp 400w, /hero-voip-800w.webp 800w, /hero-voip-1200w.webp 1200w, /hero-voip-1920w.webp 1920w",
@@ -63,6 +60,7 @@ export const NAV_ITEMS = [
       { label: "Intrusion Detection", href: "/services/intrusion-detection" },
       { label: "Jobsite Security", href: "/services/jobsite-security" },
       { label: "Apartment Complexes", href: "/services/apartment-security" },
+      { label: "Fiber Optic Installation", href: "/services/fiber-optic" },
     ],
   },
   { label: "Hosted PBX & VoIP", href: "/services/voip" },
@@ -148,14 +146,18 @@ export const SERVICES = [
     icon: "HardHat",
   },
   {
+    title: "Fiber Optic Installation",
+    description: "Single-mode and multimode fiber optic installation, fusion splicing, and emergency repair for commercial buildings, campuses, warehouses, and multi-building complexes.",
+    href: "/services/fiber-optic",
+    icon: "Cable",
+  },
+  {
     title: "Digital Signage",
     description: "Cloud-managed digital displays for restaurants, retail, offices, healthcare, schools, and more. Professional installation throughout South Jersey.",
     href: "/services/digital-signage",
     icon: "Monitor",
   },
 ];
-
-// Blog posts are now in blogData.ts — import ALL_BLOG_POSTS from there
 
 export const SERVICE_AREAS = {
   newJersey: {
@@ -175,7 +177,7 @@ export const CERTIFICATIONS = [
   "Professional Fire Alarm Licensed Contractor",
   "Security System Installation Licensed",
   "Telecommunications Infrastructure Certified",
-  "Fiber Optic Installation Specialist",
+  "Fiber Optic Installation & Fusion Splicing",
   "Emergency Response Protocol Trained",
 ];
 

@@ -15,6 +15,7 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 import { FadeIn, StaggerContainer, StaggerItem, HeroAnimate, CountUp } from "@/components/animations";
+import ServiceAreaMap from "@/components/ServiceAreaMap";
 
 const iconMap: Record<string, React.ReactNode> = {
   Camera: <Camera className="w-6 h-6" />,
@@ -382,6 +383,11 @@ export default function Home() {
               );
             })}
           </div>
+          {/* Interactive service coverage map */}
+          <div className="mb-10">
+            <ServiceAreaMap />
+          </div>
+
           <div className="text-center">
             <Link href="/service-areas" className="inline-flex items-center gap-2 text-white font-medium text-sm hover:text-[#f97015] transition-colors">
               View All Service Areas <ChevronRight className="w-4 h-4" />

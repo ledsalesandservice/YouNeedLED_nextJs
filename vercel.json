@@ -71,6 +71,10 @@
   "rewrites": [
     { "source": "/cameras", "destination": "/cameras/index.html" },
     { "source": "/phone-systems", "destination": "/phone-systems/index.html" },
+    { "source": "/llms.txt", "destination": "/llms.txt" },
+    { "source": "/llms-full.txt", "destination": "/llms-full.txt" },
+    { "source": "/robots.txt", "destination": "/robots.txt" },
+    { "source": "/sitemap.xml", "destination": "/sitemap.xml" },
     { "source": "/(.*)", "destination": "/api/index" }
   ],
   "redirects": [

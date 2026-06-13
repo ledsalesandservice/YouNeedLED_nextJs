@@ -37,8 +37,10 @@ export function getAllSitemapUrls(): string[] {
     "/services/commercial-security",
     "/services/apartment-security",
     "/services/digital-signage",
+    "/services/fiber-optic",
     "/case-studies",
     "/terms-of-service",
+    "/privacy-policy",
   ];
 
   const locationUrls = ALL_LOCATIONS
@@ -78,7 +80,9 @@ function buildSitemapXml(): string {
     { url: "/services/apartment-security", priority: "0.8", changefreq: "monthly" },
     { url: "/services/digital-signage", priority: "0.8", changefreq: "monthly" },
     { url: "/case-studies", priority: "0.7", changefreq: "monthly" },
+    { url: "/services/fiber-optic", priority: "0.8", changefreq: "monthly" },
     { url: "/terms-of-service", priority: "0.4", changefreq: "yearly" },
+    { url: "/privacy-policy", priority: "0.4", changefreq: "yearly" },
   ];
 
   const entries: string[] = [];

@@ -49,6 +49,7 @@ export default function Footer() {
                 { label: "Intrusion Detection", href: "/services/intrusion-detection" },
                 { label: "LEDConnect AI Voice", href: "/services/ai-voice-agent" },
                 { label: "Digital Signage", href: "/services/digital-signage" },
+                { label: "Fiber Optic Cabling", href: "/services/fiber-optic" },
                 { label: "Case Studies", href: "/case-studies" },
               ].map((link) => (
                 <li key={link.href}>
@@ -118,7 +119,7 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} You Need L.E.D. All rights reserved. {SITE.license}
           </p>
           <div className="flex gap-4">
-            <Link href="/privacy" className="text-xs text-white/40 hover:text-white/70 transition-colors">Privacy Policy</Link>
+            <Link href="/privacy-policy" className="text-xs text-white/40 hover:text-white/70 transition-colors">Privacy Policy</Link>
             <Link href="/terms-of-service" className="text-xs text-white/40 hover:text-white/70 transition-colors">Terms of Service</Link>
           </div>
         </div>

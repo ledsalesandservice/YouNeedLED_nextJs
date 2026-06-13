@@ -24,6 +24,7 @@ const FAQ               = lazy(() => import("./pages/FAQ"));
 const ClientPortal      = lazy(() => import("./pages/ClientPortal"));
 const NotFound          = lazy(() => import("./pages/NotFound"));
 const TermsOfService    = lazy(() => import("./pages/TermsOfService"));
+const PrivacyPolicy     = lazy(() => import("./pages/PrivacyPolicy"));
 const CaseStudies       = lazy(() => import("./pages/CaseStudies"));
 const CaseStudy         = lazy(() => import("./pages/CaseStudy"));
 
@@ -105,6 +106,7 @@ function Router() {
         <Route path="/case-studies" component={CaseStudies} />
         <Route path="/case-studies/:slug" component={CaseStudy} />
         <Route path="/terms-of-service" component={TermsOfService} />
+        <Route path="/privacy-policy" component={PrivacyPolicy} />
         {/* Live camera viewer — auto-generated per stream ID */}
         <Route path="/live-cameras" component={LiveCameras} />
         <Route path="/live/:streamId" component={LiveView} />

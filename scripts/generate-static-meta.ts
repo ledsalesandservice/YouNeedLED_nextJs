@@ -24,7 +24,7 @@ import { ALL_META } from "../server/seoMeta.js";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const distPublic = join(__dirname, "..", "dist", "public");
-const BASE_URL = "https://youneedled.com";
+const BASE_URL = "https://www.youneedled.com";
 
 const templateHtml = readFileSync(join(distPublic, "index.html"), "utf-8");
 

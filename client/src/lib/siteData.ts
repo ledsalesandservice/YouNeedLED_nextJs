@@ -18,7 +18,7 @@ export const SITE = {
   },
   license: "NJ DCA Licensed: 34BF00056900",
   fireLicense: "NJ DCA License: 34FA00102800",
-  url: "https://youneedled.com",
+  url: "https://www.youneedled.com",
   social: {
     facebook: "https://www.facebook.com/youneedled",
     instagram: "https://www.instagram.com/youneedled",

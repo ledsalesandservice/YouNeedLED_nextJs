@@ -9,7 +9,7 @@ import { ALL_LOCATIONS, COUNTY_DATA } from "./locationData";
 import { ALL_BLOG_POSTS as blogPosts, BlogPost } from "./blogData";
 import { caseStudies } from "./caseStudyData";
 
-const BASE_URL = "https://youneedled.com";
+const BASE_URL = "https://www.youneedled.com";
 const TODAY = new Date().toISOString().split("T")[0];
 
 // County slugs - these live at /counties/:slug, NOT /locations/:slug

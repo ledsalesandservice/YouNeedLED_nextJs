@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://youneedled.com/sitemap.xml
+Sitemap: https://www.youneedled.com/sitemap.xml

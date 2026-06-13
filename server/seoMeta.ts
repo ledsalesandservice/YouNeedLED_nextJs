@@ -126,7 +126,7 @@ for (const post of ALL_BLOG_POSTS) {
   BLOG_META[`/blog/${post.slug}`] = {
     title: `${post.title} | ${SUFFIX}`,
     description: post.excerpt,
-    ogImage: post.image ? `https://youneedled.com${post.image}` : undefined,
+    ogImage: post.image ? `https://www.youneedled.com${post.image}` : undefined,
   };
 }
 

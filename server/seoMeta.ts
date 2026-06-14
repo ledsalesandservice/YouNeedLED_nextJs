@@ -67,12 +67,12 @@ const STATIC_META: Record<string, PageMeta> = {
     description: `Watch live security camera feeds from South Jersey locations monitored by You Need L.E.D. Real-time video surveillance powered by professional-grade cameras. Call ${PHONE}.`,
   },
   "/services/video-surveillance": {
-    title: `Commercial Security Cameras South Jersey | 4K AI Cameras | ${SUFFIX}`,
-    description: `NJ DCA Licensed security camera installation in South Jersey. 4K AI cameras with license plate recognition, cloud storage & 24/7 monitoring. Free quote: ${PHONE}.`,
+    title: `Camera Installation Near Me | Security Cameras South Jersey | ${SUFFIX}`,
+    description: `Looking for camera installation near you in South Jersey? You Need L.E.D. installs 4K AI security cameras for homes & businesses. NJ DCA Licensed. Call ${PHONE} for a free quote.`,
   },
   "/cameras": {
-    title: `Commercial Security Cameras South Jersey | 4K AI Cameras | ${SUFFIX}`,
-    description: `NJ DCA Licensed security camera installation in South Jersey. 4K AI cameras with license plate recognition, cloud storage & 24/7 monitoring. Free quote: ${PHONE}.`,
+    title: `Camera Installation Near Me | Security Cameras South Jersey | ${SUFFIX}`,
+    description: `Looking for camera installation near you in South Jersey? You Need L.E.D. installs 4K AI security cameras for homes & businesses. NJ DCA Licensed. Call ${PHONE} for a free quote.`,
   },
   "/services/access-control": {
     title: `Access Control Systems South Jersey | Keyless Entry & RFID | ${SUFFIX}`,

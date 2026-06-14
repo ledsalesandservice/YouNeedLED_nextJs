@@ -9,8 +9,8 @@ export default function VideoSurveillance() {
   return (
     <>
       <SEOHead
-        title="Commercial Security Cameras South Jersey | 4K AI Cameras | You Need L.E.D."
-        description="NJ DCA Licensed security camera installation in South Jersey. 4K AI cameras with license plate recognition, cloud storage & 24/7 monitoring. Free quote: (609) 335-0123."
+        title="Camera Installation Near Me | Security Cameras South Jersey | You Need L.E.D."
+        description="Looking for camera installation near you in South Jersey? You Need L.E.D. installs 4K AI security cameras for homes & businesses. NJ DCA Licensed. Call (609) 335-0123 for a free quote."
         canonical="/services/video-surveillance"
       />
       {/* Service Schema (FAQPage is handled by ServicePageLayout) */}

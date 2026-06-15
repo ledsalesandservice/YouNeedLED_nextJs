@@ -105,6 +105,18 @@ export default function FiberOptic() {
             q: "Do you test fiber after installation?",
             a: "Every run is OTDR tested to verify insertion loss and confirm there are no breaks or bad splices before we hand off the job. You receive documentation of test results.",
           },
+          {
+            q: "What areas of South Jersey do you serve for fiber optic installation?",
+            a: "We serve all of South Jersey and the Delaware Valley from our Linwood, NJ office — including Atlantic City, Egg Harbor Township, Somers Point, Galloway, Cherry Hill, Voorhees, Mount Laurel, Vineland, Cape May County, Camden County, and Burlington County. We also serve commercial clients in Philadelphia and Delaware.",
+          },
+          {
+            q: "Are you licensed to install fiber optic cabling in New Jersey?",
+            a: "Yes. You Need L.E.D. is NJ DCA Licensed (#34BF00056900), fully bonded and insured for commercial low-voltage and fiber optic installation throughout New Jersey. We have been serving South Jersey since 2010 with 15+ years of experience.",
+          },
+          {
+            q: "How long does a commercial fiber optic installation take?",
+            a: "Most commercial fiber runs are completed in one to two days depending on the scope. Building-to-building runs and conduit work may take two to three days. We provide a detailed timeline during the free on-site assessment. Call (609) 335-0123 to schedule.",
+          },
         ]}
         relatedServices={[
           {

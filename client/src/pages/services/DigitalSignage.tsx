@@ -179,6 +179,18 @@ export default function DigitalSignage() {
             q: "What industries do you serve with digital signage?",
             a: "We install digital signage for restaurants, retail stores, corporate offices, healthcare facilities, schools, hotels, gyms, banks, houses of worship, conference centers, and more throughout South Jersey and the Delaware Valley.",
           },
+          {
+            q: "Can I control my digital signs from anywhere in the world?",
+            a: "Yes. Our cloud-based digital signage content management platform lets you update, schedule, and manage your screens from any device with an internet connection — whether you're in the office, at home, or traveling. Push new content to one screen or hundreds instantly.",
+          },
+          {
+            q: "What areas of South Jersey do you serve for digital signage?",
+            a: "We serve all of South Jersey and the Delaware Valley from our Linwood, NJ office — including Atlantic City, Egg Harbor Township, Somers Point, Galloway, Cherry Hill, Voorhees, Mount Laurel, Vineland, Cape May County, Camden County, and Burlington County.",
+          },
+          {
+            q: "How long has You Need L.E.D. been installing digital signage?",
+            a: "We have been designing and installing LED digital signage and video walls in South Jersey since 2010 — over 15 years of experience. We are NJ DCA Licensed (#34BF00056900), fully insured, and have completed signage projects for 500+ satisfied commercial clients.",
+          },
         ]}
         relatedServices={[
           {

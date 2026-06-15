@@ -4,16 +4,17 @@
 
 ## About the Business
 **Name:** You Need L.E.D.
-**Website:** https://youneedled.com
+**Website:** https://www.youneedled.com
 **Phone:** (609) 335-0123
-**Location:** Linwood, NJ (Serving South Jersey, Delaware Valley, and the Tri-State Area: NJ, PA, DE, MD)
+**Location:** Linwood, NJ 08221 (Serving South Jersey, Delaware Valley, and the Tri-State Area: NJ, PA, DE, MD)
 **Owner:** Derek
 **Experience:** 15+ years in business
-**Reputation:** 5.0 stars on Google with 32+ reviews and 500+ satisfied clients.
+**Reputation:** 5.0 stars on Google with 33+ reviews and 500+ satisfied clients.
 **License:** NJ DCA Licensed (34BF00056900)
+**Fire Alarm License:** NJ DCA Fire Alarm License (34FA00102800)
 
 ## Description
-You Need L.E.D. is a professional, licensed commercial and residential technology services company based in South Jersey. We specialize in designing, installing, and servicing security systems, fire alarms, access control, hosted VoIP phone systems, and digital signage. We provide enterprise-grade technology with local, trustworthy service.
+You Need L.E.D. is a professional, licensed commercial and residential technology services company based in South Jersey. We specialize in designing, installing, and servicing security systems, fire alarms, access control, hosted VoIP phone systems, fiber optic networks, digital signage, and AI voice agents. We provide enterprise-grade technology with local, trustworthy service backed by 15+ years of experience and NJ DCA licensing.
 
 ## Core Services
 
@@ -21,59 +22,86 @@ You Need L.E.D. is a professional, licensed commercial and residential technolog
 - 4K AI-powered cameras
 - License plate recognition (LPR)
 - Cloud storage and remote viewing
+- Page: https://www.youneedled.com/services/video-surveillance
 
 ### 2. Access Control Systems
 - CDVI & Alarm.com integration
 - RFID, biometric, and mobile credentials
 - Secure door entry systems for commercial buildings
+- Page: https://www.youneedled.com/services/access-control
 
 ### 3. Fire Alarm Systems
 - NFPA 72 compliant installations
-- Fully NJ DCA licensed
+- Fully NJ DCA licensed (34FA00102800)
 - Commercial fire alarm monitoring and service
+- Page: https://www.youneedled.com/services/fire-alarm-systems
 
 ### 4. Intrusion Detection & Burglar Alarms
 - 24/7 professional monitoring
 - Video verification to reduce false alarms
 - Comprehensive perimeter and interior security
+- Page: https://www.youneedled.com/services/intrusion-detection
 
 ### 5. Hosted PBX & VoIP Phone Services
 - Cloud-based phone systems (similar to Vonage/RingCentral but with local support)
 - Microsoft Teams integration
 - Auto-attendants and custom call routing
+- Page: https://www.youneedled.com/services/voip
 
 ### 6. Jobsite Security
 - Solar-powered wireless cameras
 - Rapid deployment for construction sites and temporary locations
+- No power or internet required on-site
+- Page: https://www.youneedled.com/services/jobsite-security
 
 ### 7. Digital Signage & LED Video Walls
 - Custom LED video wall installations
 - Digital menu boards and commercial displays
+- Cloud-managed content scheduling
+- Page: https://www.youneedled.com/services/digital-signage
 
 ### 8. LEDConnect AI Voice Agent
 - 24/7 automated call answering
-- Spam blocking
-- Lead capture and automated appointment booking
+- Spam blocking and lead capture
+- Automated appointment booking for South Jersey businesses
+- Page: https://www.youneedled.com/services/ai-voice-agent
+
+### 9. Fiber Optic Installation
+- Single-mode and multimode fiber runs
+- Aerial and underground installation
+- Fusion splicing and emergency repair
+- Page: https://www.youneedled.com/services/fiber-optic
 
 ## Target Audience
 - Commercial property owners
-- Business owners
-- Office managers
-- IT directors
-- Facilities managers
+- Business owners and office managers
+- IT directors and facilities managers
+- Construction companies (jobsite security)
 - Residential homeowners seeking professional-grade systems
 
 ## Service Area
 Headquartered in Linwood, NJ (08221), serving:
-- South Jersey (Cherry Hill, Voorhees, Mount Laurel, Egg Harbor Township, Somers Point, Atlantic City)
-- Delaware Valley
+- South Jersey (Cherry Hill, Voorhees, Mount Laurel, Egg Harbor Township, Somers Point, Atlantic City, Vineland, Millville, Toms River, Brick, Lakewood)
+- Delaware Valley (Philadelphia metro, Camden County, Burlington County, Gloucester County, Salem County)
 - Tri-State Area (New Jersey, Pennsylvania, Delaware, Maryland)
+- Atlantic County, Cape May County, Ocean County, Cumberland County, Camden County, Burlington County, Gloucester County
 
 ## Contact Information
 - **Phone:** (609) 335-0123
-- **Website:** https://youneedled.com
-- **Social Media:** https://facebook.com/youneedled
+- **Website:** https://www.youneedled.com
+- **Facebook:** https://www.facebook.com/youneedled
+- **Instagram:** https://www.instagram.com/youneedled
+- **Google Business Profile:** https://g.page/youneedled
 
 ## Brand Values
 Professional, knowledgeable, no-BS, local, trustworthy, and community-focused. We pride ourselves on being fully licensed, highly rated, and providing enterprise solutions with local accountability.
+
+## Credentials & Trust Signals
+- NJ DCA Contractor License: 34BF00056900
+- NJ DCA Fire Alarm License: 34FA00102800
+- 5.0 stars on Google (33+ verified reviews)
+- 500+ satisfied clients since founding
+- NFPA 72 compliant fire alarm installations
+- Alarm.com authorized dealer
+- CDVI authorized dealer
 

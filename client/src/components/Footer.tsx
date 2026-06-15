@@ -147,8 +147,8 @@ export default function Footer() {
             },
             geo: {
               "@type": "GeoCoordinates",
-              latitude: 39.3412,
-              longitude: -74.5751,
+              latitude: 39.3398,
+              longitude: -74.5774,
             },
             openingHoursSpecification: [
               { "@type": "OpeningHoursSpecification", dayOfWeek: ["Monday","Tuesday","Wednesday","Thursday","Friday"], opens: "08:00", closes: "18:00" },
@@ -156,7 +156,7 @@ export default function Footer() {
             ],
             priceRange: "$$",
             image: SITE.url + "/og-image.jpg",
-            sameAs: [SITE.social.facebook, SITE.social.instagram],
+            sameAs: [SITE.social.facebook, SITE.social.instagram, SITE.social.google, SITE.social.youtube],
             areaServed: [
               { "@type": "State", name: "New Jersey" },
               { "@type": "State", name: "Pennsylvania" },

@@ -118,6 +118,14 @@ const STATIC_META: Record<string, PageMeta> = {
     title: `Fiber Optic Installation South Jersey | Single-Mode & Multimode | ${SUFFIX}`,
     description: `Professional fiber optic installation, fusion splicing & emergency repair in South Jersey. Single-mode & multimode, aerial & underground runs. NJ DCA Licensed. Call ${PHONE}.`,
   },
+  "/privacy-policy": {
+    title: `Privacy Policy | ${SUFFIX}`,
+    description: `Read the You Need L.E.D. Privacy Policy. We are committed to protecting your personal information. NJ DCA Licensed technology services company in South Jersey.`,
+  },
+  "/client-portal": {
+    title: `Client Portal | ${SUFFIX}`,
+    description: `Access the You Need L.E.D. client portal to view your system status, service history, and account information. Call ${PHONE} for support.`,
+  },
 };
 
 // ─── Dynamic blog post pages ─────────────────────────────────────────────────

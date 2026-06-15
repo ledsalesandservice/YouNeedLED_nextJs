@@ -22,6 +22,8 @@ export const SITE = {
   social: {
     facebook: "https://www.facebook.com/youneedled",
     instagram: "https://www.instagram.com/youneedled",
+    google: "https://g.page/youneedled",
+    youtube: "https://www.youtube.com/@youneedled",
   },
   hours: {
     weekday: "Monday – Friday: 8:00 AM – 6:00 PM",

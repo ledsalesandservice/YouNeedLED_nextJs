@@ -534,6 +534,107 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ===== Review Schema — 5 verified Google reviews ===== */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify([
+            {
+              "@context": "https://schema.org",
+              "@type": "Review",
+              reviewBody: "This truly is a 5 star company. Derek and his team exhibited a high degree of knowledge and professionalism while replacing my home security cameras. They returned my initial call promptly and were flexible when scheduling both the consult and installation. I will absolutely be referring this company to others!",
+              reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
+              author: { "@type": "Person", name: "Alexa Previti" },
+              itemReviewed: { "@type": "LocalBusiness", "@id": `${SITE.url}/#organization`, name: SITE.name },
+              publisher: { "@type": "Organization", name: "Google" },
+            },
+            {
+              "@context": "https://schema.org",
+              "@type": "Review",
+              reviewBody: "Derek and his team just installed 7 cameras at my home, fast, reasonably priced and great equipment. I couldn't be happier and would definitely recommend.",
+              reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
+              author: { "@type": "Person", name: "Steven Berman" },
+              itemReviewed: { "@type": "LocalBusiness", "@id": `${SITE.url}/#organization`, name: SITE.name },
+              publisher: { "@type": "Organization", name: "Google" },
+            },
+            {
+              "@context": "https://schema.org",
+              "@type": "Review",
+              reviewBody: "Derek and his team are the best in the business. I only call him when I want the job done right. His team came in they designed a slatted wood wall with integrated lighting that everyone is raving over. He handled my lights, my security cameras, and a few other odds and ends. FRANCHISE LEVEL service!",
+              reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
+              author: { "@type": "Person", name: "Mitchell Sands" },
+              itemReviewed: { "@type": "LocalBusiness", "@id": `${SITE.url}/#organization`, name: SITE.name },
+              publisher: { "@type": "Organization", name: "Google" },
+            },
+            {
+              "@context": "https://schema.org",
+              "@type": "Review",
+              reviewBody: "You Need L.E.D. (Derek) installed security cameras in our 20,000 square foot building. His service is efficient, thorough and customer service is first rate!",
+              reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
+              author: { "@type": "Person", name: "Margarete Roberts" },
+              itemReviewed: { "@type": "LocalBusiness", "@id": `${SITE.url}/#organization`, name: SITE.name },
+              publisher: { "@type": "Organization", name: "Google" },
+            },
+            {
+              "@context": "https://schema.org",
+              "@type": "Review",
+              reviewBody: "I would highly recommend You Need L.E.D. The entire process from start to finish was flawless! Derek is always there for a question, even years after completion. This is a top shelf company!",
+              reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
+              author: { "@type": "Person", name: "Michael Montemuro" },
+              itemReviewed: { "@type": "LocalBusiness", "@id": `${SITE.url}/#organization`, name: SITE.name },
+              publisher: { "@type": "Organization", name: "Google" },
+            },
+          ]),
+        }}
+      />
+
+      {/* ===== Person Schema — Derek Weikel, Owner ===== */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Person",
+            name: "Derek Weikel",
+            jobTitle: "Owner & Lead Technician",
+            description: "Derek Weikel is the founder and owner of You Need L.E.D., a NJ DCA Licensed security and technology services company based in Linwood, NJ. With 15+ years of experience, Derek leads all commercial security camera, access control, fire alarm, VoIP, and jobsite security installations across South Jersey and the Delaware Valley.",
+            worksFor: {
+              "@type": "Organization",
+              "@id": `${SITE.url}/#organization`,
+              name: SITE.name,
+              url: SITE.url,
+            },
+            address: {
+              "@type": "PostalAddress",
+              addressLocality: "Linwood",
+              addressRegion: "NJ",
+              postalCode: "08221",
+              addressCountry: "US",
+            },
+            knowsAbout: [
+              "Commercial Security Camera Systems",
+              "Access Control Systems",
+              "Fire Alarm Installation",
+              "Intrusion Detection",
+              "Hosted VoIP Phone Systems",
+              "Jobsite Security",
+              "Digital Signage",
+              "Fiber Optic Installation",
+              "AI Voice Agents",
+              "NJ DCA Licensed Contractor",
+            ],
+            hasCredential: [
+              { "@type": "EducationalOccupationalCredential", credentialCategory: "license", name: "NJ DCA Security License", identifier: "34BF00056900" },
+              { "@type": "EducationalOccupationalCredential", credentialCategory: "license", name: "NJ DCA Fire Alarm License", identifier: "34FA00102800" },
+            ],
+            sameAs: [
+              "https://www.facebook.com/youneedled",
+              "https://www.linkedin.com/company/youneedled",
+            ],
+          }),
+        }}
+      />
+
       {/* ===== FULL AEO SCHEMA: Organization + LocalBusiness + WebSite ===== */}
       <script
         type="application/ld+json"

@@ -5,6 +5,7 @@
 import { useState } from "react";
 import { Link } from "wouter";
 import { ALL_BLOG_POSTS } from "@/lib/blogData";
+import { SITE } from "@/lib/siteData";
 import SEOHead from "@/components/SEOHead";
 import { ArrowRight, Search } from "lucide-react";
 
@@ -32,6 +33,65 @@ export default function Blog() {
         title="Security Blog | Expert Articles on Cameras, VoIP & Access Control"
         description="Expert articles on commercial security, VoIP technology, fire alarm systems, and business protection strategies from You Need L.E.D."
         canonical="/blog"
+      />
+
+      {/* Blog listing — Blog + ItemList schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify([
+            {
+              "@context": "https://schema.org",
+              "@type": "Blog",
+              "@id": `${SITE.url}/blog#blog`,
+              name: "You Need L.E.D. Security Insights Blog",
+              description: "Expert articles on commercial security cameras, VoIP phone systems, fire alarm systems, access control, and business protection strategies from South Jersey's NJ DCA Licensed technology team.",
+              url: `${SITE.url}/blog`,
+              publisher: {
+                "@type": "Organization",
+                "@id": `${SITE.url}/#organization`,
+                name: SITE.name,
+                url: SITE.url,
+                logo: {
+                  "@type": "ImageObject",
+                  url: `${SITE.url}/logo-optimized.png`,
+                  width: 300,
+                  height: 60,
+                },
+              },
+              author: {
+                "@type": "Person",
+                name: "Derek Weikel",
+                jobTitle: "Owner & Lead Technician",
+                worksFor: { "@type": "Organization", "@id": `${SITE.url}/#organization` },
+              },
+              blogPost: published.slice(0, 10).map((post) => ({
+                "@type": "BlogPosting",
+                headline: post.title,
+                description: post.excerpt,
+                url: `${SITE.url}/blog/${post.slug}`,
+                datePublished: post.date,
+                image: post.image.startsWith('http') ? post.image : `${SITE.url}${post.image}`,
+                author: { "@type": "Person", name: "Derek Weikel" },
+              })),
+            },
+            {
+              "@context": "https://schema.org",
+              "@type": "ItemList",
+              name: "You Need L.E.D. Security Blog Articles",
+              description: "Security camera, VoIP, fire alarm, and access control articles for South Jersey businesses.",
+              url: `${SITE.url}/blog`,
+              numberOfItems: published.length,
+              itemListElement: published.slice(0, 20).map((post, idx) => ({
+                "@type": "ListItem",
+                position: idx + 1,
+                name: post.title,
+                url: `${SITE.url}/blog/${post.slug}`,
+                description: post.excerpt,
+              })),
+            },
+          ]),
+        }}
       />
       {/* Hero */}
       <section className="py-16 lg:py-20 bg-[#0e319a]">

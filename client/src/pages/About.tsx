@@ -14,20 +14,80 @@ export default function About() {
         description="15+ years serving South Jersey. NJ DCA Licensed (#34BF00056900). 5.0 stars, 500+ satisfied clients. Security cameras, fire alarms, VoIP & more. Call (609) 335-0123."
         canonical="/about"
       />
+      {/* LocalBusiness schema — full entity with credentials, rating, and social */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         "@context": "https://schema.org",
         "@type": "LocalBusiness",
         name: SITE.name,
         url: SITE.url,
         telephone: SITE.phone,
+        email: SITE.email,
         description: "NJ DCA Licensed commercial and residential technology services company serving South Jersey and the Delaware Valley for 15+ years. 5.0 stars on Google with 33+ reviews and 500+ satisfied clients.",
         foundingDate: "2010",
         address: { "@type": "PostalAddress", streetAddress: "199 New Rd Ste 61", addressLocality: "Linwood", addressRegion: "NJ", postalCode: "08221", addressCountry: "US" },
         geo: { "@type": "GeoCoordinates", latitude: 39.3398, longitude: -74.5774 },
         areaServed: ["South Jersey", "Delaware Valley", "Cherry Hill NJ", "Voorhees NJ", "Mount Laurel NJ", "Egg Harbor Township NJ", "Somers Point NJ", "Atlantic City NJ", "Philadelphia PA"],
-        hasCredential: "NJ DCA License #34BF00056900",
+        hasCredential: [
+          { "@type": "EducationalOccupationalCredential", credentialCategory: "license", name: "NJ DCA Security License", identifier: "34BF00056900" },
+          { "@type": "EducationalOccupationalCredential", credentialCategory: "license", name: "NJ DCA Fire Alarm License", identifier: "34FA00102800" },
+        ],
         aggregateRating: { "@type": "AggregateRating", ratingValue: "5.0", reviewCount: "33", bestRating: "5" },
-        sameAs: ["https://www.facebook.com/youneedled", "https://www.instagram.com/youneedled", "https://www.youtube.com/@youneedled"],
+        employee: {
+          "@type": "Person",
+          name: "Derek Weikel",
+          jobTitle: "Owner & Lead Technician",
+          worksFor: { "@type": "Organization", name: SITE.name, url: SITE.url },
+          knowsAbout: ["Security Camera Installation", "Access Control Systems", "Fire Alarm Systems", "VoIP Phone Systems", "Intrusion Detection", "Jobsite Security", "Digital Signage", "Fiber Optic Installation"],
+          address: { "@type": "PostalAddress", addressLocality: "Linwood", addressRegion: "NJ", addressCountry: "US" },
+        },
+        sameAs: [
+          "https://www.facebook.com/youneedled",
+          "https://www.instagram.com/youneedled",
+          "https://www.youtube.com/@youneedled",
+          "https://g.page/youneedled",
+        ],
+      }) }} />
+
+      {/* Person schema — Derek Weikel, Owner */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Person",
+        name: "Derek Weikel",
+        jobTitle: "Owner & Lead Technician",
+        description: "Derek Weikel is the founder and owner of You Need L.E.D., a NJ DCA Licensed security and technology services company based in Linwood, NJ. With 15+ years of experience, Derek leads all commercial security camera, access control, fire alarm, VoIP, and jobsite security installations across South Jersey and the Delaware Valley.",
+        worksFor: {
+          "@type": "Organization",
+          name: SITE.name,
+          url: SITE.url,
+          telephone: SITE.phone,
+        },
+        address: {
+          "@type": "PostalAddress",
+          addressLocality: "Linwood",
+          addressRegion: "NJ",
+          postalCode: "08221",
+          addressCountry: "US",
+        },
+        knowsAbout: [
+          "Commercial Security Camera Systems",
+          "Access Control Systems",
+          "Fire Alarm Installation",
+          "Intrusion Detection",
+          "Hosted VoIP Phone Systems",
+          "Jobsite Security",
+          "Digital Signage",
+          "Fiber Optic Installation",
+          "AI Voice Agents",
+          "NJ DCA Licensed Contractor",
+        ],
+        hasCredential: [
+          { "@type": "EducationalOccupationalCredential", credentialCategory: "license", name: "NJ DCA Security License", identifier: "34BF00056900" },
+          { "@type": "EducationalOccupationalCredential", credentialCategory: "license", name: "NJ DCA Fire Alarm License", identifier: "34FA00102800" },
+        ],
+        sameAs: [
+          "https://www.facebook.com/youneedled",
+          "https://www.linkedin.com/company/youneedled",
+        ],
       }) }} />
       {/* Hero */}
       <section className="relative py-20 lg:py-28 bg-[#0e319a]">

@@ -26,6 +26,7 @@ export default function FireAlarm() {
     }) }} />
     <ServicePageLayout
       title="Fire Alarm Systems"
+      pageSlug="/services/fire-alarm-systems"
       subtitle="Protect lives and property with professionally installed fire alarm systems. Our NFPA 72 compliant solutions include 24/7 monitoring and emergency response coordination."
       heroImage="/blog-images/blog-fire-alarm2-1200w.webp"
       primaryCta={{ label: "Get Fire Safety Quote", href: "/contact" }}

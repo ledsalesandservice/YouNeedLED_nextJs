@@ -116,6 +116,7 @@ export default function DigitalSignage() {
       }) }} />
       <ServicePageLayout
         title="Digital Signage Solutions"
+        pageSlug="/services/digital-signage"
         subtitle="Cloud-managed displays for restaurants, retail, healthcare, education, hospitality, and more. Professional installation and setup by South Jersey's trusted technology team."
         heroImage={IMAGES.heroMain}
         primaryCta={{ label: "Get a Digital Signage Quote", href: "/contact" }}

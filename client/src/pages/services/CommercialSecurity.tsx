@@ -51,7 +51,7 @@ export default function CommercialSecurity() {
             geo: { "@type": "GeoCoordinates", latitude: 39.3398, longitude: -74.5774 },
             areaServed: ["South Jersey", "Delaware Valley", "Cherry Hill NJ", "Voorhees NJ", "Mount Laurel NJ", "Egg Harbor Township NJ", "Atlantic City NJ", "Philadelphia PA"],
             hasCredential: "NJ DCA License #34BF00056900",
-            aggregateRating: { "@type": "AggregateRating", ratingValue: "5.0", reviewCount: "32", bestRating: "5" },
+            aggregateRating: { "@type": "AggregateRating", ratingValue: "5.0", reviewCount: "33", bestRating: "5" },
             hasOfferCatalog: {
               "@type": "OfferCatalog",
               name: "Commercial Security Services",

@@ -35,6 +35,7 @@ export default function VoIP() {
     }) }} />
     <ServicePageLayout
       title="Hosted PBX & VoIP Phone Systems"
+      pageSlug="/services/voip"
       subtitle="Enterprise-grade cloud phone systems with auto-attendant, call routing, Microsoft Teams integration, and now LEDConnect AI Voice Agents for 24/7 call handling."
       heroImage={IMAGES.heroVoip}
       heroSrcSet={IMAGE_SRCSETS.heroVoip}

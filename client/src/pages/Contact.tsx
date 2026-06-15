@@ -45,7 +45,7 @@ export default function Contact() {
         "@context": "https://schema.org",
         "@graph": [
           { "@type": "ContactPage", name: "Contact You Need L.E.D.", url: `${SITE.url}/contact`, description: "Contact You Need L.E.D. for a free security assessment, quote, or consultation. NJ DCA Licensed technology services in South Jersey and the Delaware Valley." },
-          { "@type": "LocalBusiness", name: SITE.name, url: SITE.url, telephone: SITE.phone, address: { "@type": "PostalAddress", streetAddress: "199 New Rd Ste 61", addressLocality: "Linwood", addressRegion: "NJ", postalCode: "08221", addressCountry: "US" }, geo: { "@type": "GeoCoordinates", latitude: 39.3398, longitude: -74.5774 }, openingHoursSpecification: [{ "@type": "OpeningHoursSpecification", dayOfWeek: ["Monday","Tuesday","Wednesday","Thursday","Friday"], opens: "08:00", closes: "18:00" }], hasCredential: "NJ DCA License #34BF00056900" },
+          { "@type": "LocalBusiness", name: SITE.name, url: SITE.url, telephone: SITE.phone, address: { "@type": "PostalAddress", streetAddress: "199 New Rd Ste 61", addressLocality: "Linwood", addressRegion: "NJ", postalCode: "08221", addressCountry: "US" }, geo: { "@type": "GeoCoordinates", latitude: 39.3398, longitude: -74.5774 }, openingHoursSpecification: [{ "@type": "OpeningHoursSpecification", dayOfWeek: ["Monday","Tuesday","Wednesday","Thursday","Friday"], opens: "08:00", closes: "18:00" }, { "@type": "OpeningHoursSpecification", dayOfWeek: "Saturday", opens: "09:00", closes: "14:00" }], hasCredential: "NJ DCA License #34BF00056900" },
         ],
       }) }} />
       {/* Hero */}

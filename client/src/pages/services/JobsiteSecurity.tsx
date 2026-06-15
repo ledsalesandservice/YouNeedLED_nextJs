@@ -24,6 +24,7 @@ export default function JobsiteSecurity() {
     }) }} />
     <ServicePageLayout
       title="Jobsite Security Solutions"
+      pageSlug="/services/jobsite-security"
       subtitle="Advanced wireless cameras and alarm systems for construction sites, equipment storage, and temporary locations. No power or internet required at your property."
       heroImage="/blog-images/blog-jobsite-1200w.webp"
       primaryCta={{ label: "Get Quote Today", href: "/contact" }}

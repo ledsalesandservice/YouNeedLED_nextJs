@@ -36,6 +36,7 @@ interface Props {
   faqs?: FAQ[];
   relatedServices?: RelatedService[];
   schemaType?: string;
+  pageSlug?: string; // e.g. "/services/video-surveillance" — used for BreadcrumbList schema
 }
 
 export default function ServicePageLayout({
@@ -50,6 +51,7 @@ export default function ServicePageLayout({
   faqs,
   relatedServices,
   schemaType,
+  pageSlug,
 }: Props) {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
@@ -172,6 +174,24 @@ export default function ServicePageLayout({
             </div>
           </div>
         </section>
+      )}
+
+      {/* BreadcrumbList Schema — Home > Services > [Page Title] */}
+      {pageSlug && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              itemListElement: [
+                { "@type": "ListItem", position: 1, name: "Home", item: SITE.url },
+                { "@type": "ListItem", position: 2, name: "Services", item: `${SITE.url}/service-areas` },
+                { "@type": "ListItem", position: 3, name: title, item: `${SITE.url}${pageSlug}` },
+              ],
+            }),
+          }}
+        />
       )}
 
       {/* Bottom CTA */}

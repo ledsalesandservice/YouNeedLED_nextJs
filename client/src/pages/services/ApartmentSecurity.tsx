@@ -27,6 +27,7 @@ export default function ApartmentSecurity() {
       }) }} />
       <ServicePageLayout
         title="Apartment Complex Security"
+        pageSlug="/services/apartment-security"
         subtitle="Complete security solutions for multi-family properties including video surveillance, access control, intercom systems, and 24/7 monitoring."
         heroImage="/blog-images/blog-apartment-1200w.webp"
         primaryCta={{ label: "Get Property Assessment", href: "/contact" }}

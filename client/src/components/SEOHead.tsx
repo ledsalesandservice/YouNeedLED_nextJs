@@ -24,9 +24,9 @@ export default function SEOHead({
   const fullTitle = title.includes("You Need L.E.D.")
     ? title
     : `${title} | You Need L.E.D.`;
-  const baseUrl = "https://youneedled.com";
+  const baseUrl = "https://www.youneedled.com";
   const canonicalUrl = canonical ? `${baseUrl}${canonical}` : undefined;
-  const image = ogImage || `${baseUrl}/og-image.jpg`;
+  const image = ogImage || `${baseUrl}/hero-main-1200w.webp`;
 
   useEffect(() => {
     // Title

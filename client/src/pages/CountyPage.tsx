@@ -239,7 +239,7 @@ export default function CountyPage() {
         </div>
       </section>
 
-      {/* LocalBusiness Schema */}
+      {/* LocalBusiness Schema with AggregateRating and Credentials */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -247,10 +247,11 @@ export default function CountyPage() {
             "@context": "https://schema.org",
             "@type": "LocalBusiness",
             name: "You Need L.E.D.",
-            description: `Professional security and technology services in ${county.name}, ${county.state}`,
+            description: `Professional security and technology services serving all of ${county.name}, ${county.state}. NJ DCA Licensed. 15+ years experience. 5.0 stars on Google.`,
             url: `${SITE.url}/counties/${county.slug}`,
             telephone: SITE.phone,
             email: SITE.email,
+            foundingDate: "2010",
             address: {
               "@type": "PostalAddress",
               streetAddress: SITE.address.street,
@@ -259,11 +260,56 @@ export default function CountyPage() {
               postalCode: SITE.address.zip,
               addressCountry: "US",
             },
+            geo: { "@type": "GeoCoordinates", latitude: 39.3398, longitude: -74.5774 },
             areaServed: {
               "@type": "AdministrativeArea",
               name: `${county.name}, ${county.state}`,
             },
             priceRange: "$$",
+            aggregateRating: {
+              "@type": "AggregateRating",
+              ratingValue: "5.0",
+              reviewCount: "33",
+              bestRating: "5",
+            },
+            hasCredential: [
+              { "@type": "EducationalOccupationalCredential", credentialCategory: "license", name: "NJ DCA Security License", identifier: "34BF00056900" },
+              { "@type": "EducationalOccupationalCredential", credentialCategory: "license", name: "NJ DCA Fire Alarm License", identifier: "34FA00102800" },
+            ],
+            sameAs: [SITE.social.facebook, SITE.social.instagram, SITE.social.google, SITE.social.youtube],
+          }),
+        }}
+      />
+
+      {/* FAQPage Schema — county-level Q&A for AI Overviews and local search */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: [
+              {
+                "@type": "Question",
+                name: `Do you install security cameras in ${county.name}, ${county.state}?`,
+                acceptedAnswer: { "@type": "Answer", text: `Yes. You Need L.E.D. serves all of ${county.name}, ${county.state} with professional security camera installation. We install 4K AI-powered cameras for homes and businesses throughout the county. Call (609) 335-0123 for a free quote.` },
+              },
+              {
+                "@type": "Question",
+                name: `Is You Need L.E.D. licensed to install security systems in ${county.name}?`,
+                acceptedAnswer: { "@type": "Answer", text: `Yes. You Need L.E.D. holds NJ DCA Security License #34BF00056900 and NJ DCA Fire Alarm License #34FA00102800, authorizing licensed security and fire alarm installations throughout ${county.name} and all of New Jersey, Pennsylvania, Delaware, and Maryland.` },
+              },
+              {
+                "@type": "Question",
+                name: `What towns in ${county.name} do you serve?`,
+                acceptedAnswer: { "@type": "Answer", text: `You Need L.E.D. serves all municipalities in ${county.name}, ${county.state}, including ${county.towns.slice(0, 5).join(", ")}${county.towns.length > 5 ? ", and more" : ""}. We are based in Linwood, NJ and provide on-site assessments throughout the county. Call (609) 335-0123 to schedule.` },
+              },
+              {
+                "@type": "Question",
+                name: `What security services do you offer in ${county.name}?`,
+                acceptedAnswer: { "@type": "Answer", text: `In ${county.name}, You Need L.E.D. offers: 4K security camera installation, access control systems (RFID, biometric, mobile credentials), NFPA 72 fire alarm systems, intrusion detection with 24/7 monitoring, hosted VoIP phone systems, jobsite security cameras, digital signage, and LEDConnect AI Voice Agents. All services backed by our NJ DCA license and 15+ years of experience.` },
+              },
+            ],
           }),
         }}
       />

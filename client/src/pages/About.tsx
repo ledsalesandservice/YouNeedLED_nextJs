@@ -20,14 +20,14 @@ export default function About() {
         name: SITE.name,
         url: SITE.url,
         telephone: SITE.phone,
-        description: "NJ DCA Licensed commercial and residential technology services company serving South Jersey and the Delaware Valley for 15+ years. 5.0 stars on Google with 32+ reviews and 500+ satisfied clients.",
+        description: "NJ DCA Licensed commercial and residential technology services company serving South Jersey and the Delaware Valley for 15+ years. 5.0 stars on Google with 33+ reviews and 500+ satisfied clients.",
         foundingDate: "2010",
         address: { "@type": "PostalAddress", streetAddress: "199 New Rd Ste 61", addressLocality: "Linwood", addressRegion: "NJ", postalCode: "08221", addressCountry: "US" },
         geo: { "@type": "GeoCoordinates", latitude: 39.3398, longitude: -74.5774 },
         areaServed: ["South Jersey", "Delaware Valley", "Cherry Hill NJ", "Voorhees NJ", "Mount Laurel NJ", "Egg Harbor Township NJ", "Somers Point NJ", "Atlantic City NJ", "Philadelphia PA"],
         hasCredential: "NJ DCA License #34BF00056900",
-        aggregateRating: { "@type": "AggregateRating", ratingValue: "5.0", reviewCount: "32", bestRating: "5" },
-        sameAs: ["https://www.facebook.com/youneedled"],
+        aggregateRating: { "@type": "AggregateRating", ratingValue: "5.0", reviewCount: "33", bestRating: "5" },
+        sameAs: ["https://www.facebook.com/youneedled", "https://www.instagram.com/youneedled", "https://www.youtube.com/@youneedled"],
       }) }} />
       {/* Hero */}
       <section className="relative py-20 lg:py-28 bg-[#0e319a]">

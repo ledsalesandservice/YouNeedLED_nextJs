@@ -99,23 +99,56 @@ export default function BlogPost() {
         </div>
       </section>
 
-      {/* Article Schema */}
+      {/* Article Schema — full BlogPosting with all Google-recommended fields */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
-            "@type": "Article",
+            "@type": "BlogPosting",
+            mainEntityOfPage: {
+              "@type": "WebPage",
+              "@id": `${SITE.url}/blog/${post.slug}`,
+            },
             headline: post.title,
             description: post.excerpt,
             datePublished: post.date,
-            author: { "@type": "Organization", name: SITE.name },
+            dateModified: post.date,
+            author: {
+              "@type": "Person",
+              name: "Derek Weikel",
+              jobTitle: "Owner & Lead Technician",
+              worksFor: { "@type": "Organization", name: SITE.name, url: SITE.url },
+            },
             publisher: {
               "@type": "Organization",
               name: SITE.name,
               url: SITE.url,
+              telephone: SITE.phone,
+              address: {
+                "@type": "PostalAddress",
+                streetAddress: "199 New Rd Ste 61",
+                addressLocality: "Linwood",
+                addressRegion: "NJ",
+                postalCode: "08221",
+                addressCountry: "US",
+              },
+              logo: {
+                "@type": "ImageObject",
+                url: `${SITE.url}/logo-optimized.png`,
+                width: 300,
+                height: 60,
+              },
             },
-            image: post.image,
+            image: {
+              "@type": "ImageObject",
+              url: post.image.startsWith('http') ? post.image : `${SITE.url}${post.image}`,
+              width: 1200,
+              height: 675,
+            },
+            url: `${SITE.url}/blog/${post.slug}`,
+            articleSection: post.category,
+            keywords: `${post.category}, South Jersey, security cameras, VoIP, access control, fire alarm, You Need L.E.D.`,
           }),
         }}
       />

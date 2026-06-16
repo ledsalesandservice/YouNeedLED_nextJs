@@ -19,25 +19,68 @@ export default function CaseStudy() {
         description={cs.metaDescription}
         canonical={`/case-studies/${cs.slug}`}
       />
+      {/* Article schema — case study as a structured article */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Article",
-            headline: cs.title,
-            description: cs.metaDescription,
-            datePublished: cs.publishDate,
-            author: { "@type": "Organization", name: SITE.name, url: SITE.url },
-            publisher: {
-              "@type": "Organization",
-              name: SITE.name,
-              url: SITE.url,
-              logo: { "@type": "ImageObject", url: `${SITE.url}/logo.png` },
+          __html: JSON.stringify([
+            {
+              "@context": "https://schema.org",
+              "@type": "Article",
+              "@id": `${SITE.url}/case-studies/${cs.slug}#article`,
+              headline: cs.title,
+              description: cs.metaDescription,
+              datePublished: cs.publishDate,
+              dateModified: cs.publishDate,
+              articleSection: "Case Studies",
+              keywords: cs.services.join(", "),
+              author: {
+                "@type": "Person",
+                name: "Derek Weikel",
+                jobTitle: "Owner & Lead Technician",
+                worksFor: { "@type": "Organization", "@id": `${SITE.url}/#organization` },
+              },
+              publisher: {
+                "@type": "Organization",
+                "@id": `${SITE.url}/#organization`,
+                name: SITE.name,
+                url: SITE.url,
+                logo: {
+                  "@type": "ImageObject",
+                  url: `${SITE.url}/logo-optimized.png`,
+                  width: 300,
+                  height: 60,
+                },
+              },
+              mainEntityOfPage: { "@type": "WebPage", "@id": `${SITE.url}/case-studies/${cs.slug}` },
+              image: {
+                "@type": "ImageObject",
+                url: cs.heroImage.startsWith('http') ? cs.heroImage : `${SITE.url}${cs.heroImage}`,
+                width: 1200,
+                height: 675,
+              },
+              about: {
+                "@type": "LocalBusiness",
+                "@id": `${SITE.url}/#organization`,
+                name: SITE.name,
+              },
             },
-            mainEntityOfPage: { "@type": "WebPage", "@id": `${SITE.url}/case-studies/${cs.slug}` },
-            image: cs.heroImage,
-          }),
+            // Review schema — only rendered when a testimonial exists
+            ...(cs.testimonial ? [{
+              "@context": "https://schema.org",
+              "@type": "Review",
+              reviewBody: cs.testimonial.quote,
+              reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
+              author: { "@type": "Person", name: cs.testimonial.author },
+              itemReviewed: {
+                "@type": "LocalBusiness",
+                "@id": `${SITE.url}/#organization`,
+                name: SITE.name,
+                url: SITE.url,
+              },
+              publisher: { "@type": "Organization", name: "You Need L.E.D. Case Study" },
+            }] : []),
+          ]),
         }}
       />
 

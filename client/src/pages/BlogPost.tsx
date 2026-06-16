@@ -83,8 +83,32 @@ export default function BlogPost() {
         </div>
       </section>
 
+      {/* Related Services — internal links based on category */}
+      <section className="py-10 bg-slate-50 border-t border-slate-200">
+        <div className="container max-w-3xl">
+          <h2 className="font-heading text-lg font-bold text-slate-900 mb-4">Related Services</h2>
+          <div className="grid sm:grid-cols-2 gap-3">
+            {getRelatedServices(post.category).map((svc) => (
+              <Link
+                key={svc.href}
+                href={svc.href}
+                className="flex items-center gap-3 p-4 bg-white rounded-xl border border-slate-200 hover:border-[#0e319a] hover:shadow-sm transition-all group"
+              >
+                <div className="w-8 h-8 rounded-lg bg-[#0e319a]/10 flex items-center justify-center shrink-0">
+                  <span className="text-[#0e319a] text-xs font-bold">{svc.label.charAt(0)}</span>
+                </div>
+                <div>
+                  <div className="text-sm font-semibold text-slate-900 group-hover:text-[#0e319a] transition-colors">{svc.label}</div>
+                  <div className="text-xs text-slate-500">{svc.description}</div>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
-      <section className="py-12 bg-slate-50">
+      <section className="py-12 bg-white">
         <div className="container max-w-3xl text-center">
           <h2 className="font-heading text-2xl font-bold text-slate-900 mb-3">Ready to Get Started?</h2>
           <p className="text-slate-600 mb-6">Contact You Need L.E.D. for a free consultation on your security and technology needs.</p>
@@ -154,6 +178,26 @@ export default function BlogPost() {
       />
     </>
   );
+}
+
+/* Map blog categories to related service page links */
+function getRelatedServices(category: string): { label: string; href: string; description: string }[] {
+  const ALL_SERVICES = [
+    { label: "Security Camera Installation", href: "/services/video-surveillance", description: "4K AI cameras, LPR, cloud storage", categories: ["Commercial Security", "Security Cameras", "Retail Security", "Hotel Security", "Beachfront Security", "Apartment Security", "Cannabis Security", "Law Enforcement", "Security", "Residential Security", "Comparison Guide", "Cost Guide"] },
+    { label: "Access Control Systems", href: "/services/access-control", description: "Keyless entry, RFID, mobile credentials", categories: ["Access Control", "Commercial Security", "Apartment Security", "Hotel Security"] },
+    { label: "Fire Alarm Systems", href: "/services/fire-alarm-systems", description: "NFPA 72 compliant, NJ DCA licensed", categories: ["Fire Safety", "Apartment Security", "Commercial Security"] },
+    { label: "Intrusion Detection", href: "/services/intrusion-detection", description: "24/7 monitored burglar alarms", categories: ["Security", "Commercial Security", "Retail Security", "Hotel Security"] },
+    { label: "Hosted VoIP Phone Systems", href: "/services/voip", description: "Cloud PBX, Teams integration", categories: ["VoIP", "Technology", "Industry Trends"] },
+    { label: "LEDConnect AI Voice Agent", href: "/services/ai-voice-agent", description: "24/7 AI receptionist for your business", categories: ["LEDConnect AI", "Technology", "Industry Trends", "VoIP"] },
+    { label: "Jobsite Security", href: "/services/jobsite-security", description: "Solar-powered wireless cameras", categories: ["Commercial Security", "Security"] },
+    { label: "Digital Signage", href: "/services/digital-signage", description: "LED video walls, menu boards", categories: ["Technology", "Industry Trends", "Retail Security"] },
+  ];
+
+  // Return services that match the category, up to 4; always include cameras + one other
+  const matched = ALL_SERVICES.filter((s) => s.categories.includes(category));
+  if (matched.length >= 2) return matched.slice(0, 4);
+  // Fallback: return top 4 general services
+  return ALL_SERVICES.slice(0, 4);
 }
 
 /* Simple markdown-to-JSX renderer for blog content */

@@ -27,6 +27,7 @@ const TermsOfService    = lazy(() => import("./pages/TermsOfService"));
 const PrivacyPolicy     = lazy(() => import("./pages/PrivacyPolicy"));
 const CaseStudies       = lazy(() => import("./pages/CaseStudies"));
 const CaseStudy         = lazy(() => import("./pages/CaseStudy"));
+const Testimonials      = lazy(() => import("./pages/Testimonials"));
 
 // Service pages
 const VideoSurveillance  = lazy(() => import("./pages/services/VideoSurveillance"));
@@ -105,6 +106,7 @@ function Router() {
         <Route path="/counties/:slug" component={CountyPage} />
         <Route path="/case-studies" component={CaseStudies} />
         <Route path="/case-studies/:slug" component={CaseStudy} />
+        <Route path="/testimonials" component={Testimonials} />
         <Route path="/terms-of-service" component={TermsOfService} />
         <Route path="/privacy-policy" component={PrivacyPolicy} />
         {/* Live camera viewer — auto-generated per stream ID */}

@@ -58,6 +58,10 @@ const STATIC_META: Record<string, PageMeta> = {
     title: `Case Studies | Security & Technology Projects South Jersey | ${SUFFIX}`,
     description: `Real project stories from South Jersey businesses. See how You Need L.E.D. has installed security cameras, VoIP systems, and access control for warehouses, retailers, and condo associations.`,
   },
+  "/testimonials": {
+    title: `Client Reviews & Testimonials | 5.0 Stars | You Need L.E.D. South Jersey`,
+    description: `Read verified Google reviews from 33+ satisfied clients across South Jersey. You Need L.E.D. is NJ DCA Licensed with 15+ years of experience. 5.0 stars. Call ${PHONE}.`,
+  },
   "/terms-of-service": {
     title: `Terms of Service | ${SUFFIX} Business Services Agreement`,
     description: `Read the You Need L.E.D. Business Services Agreement covering VoIP, security cameras, access control, fire alarms, and technology services for South Jersey businesses.`,

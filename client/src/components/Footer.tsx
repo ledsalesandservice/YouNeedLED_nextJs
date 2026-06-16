@@ -51,6 +51,7 @@ export default function Footer() {
                 { label: "Digital Signage", href: "/services/digital-signage" },
                 { label: "Fiber Optic Cabling", href: "/services/fiber-optic" },
                 { label: "Case Studies", href: "/case-studies" },
+                { label: "Client Testimonials", href: "/testimonials" },
               ].map((link) => (
                 <li key={link.href}>
                   <Link href={link.href} className="text-sm text-white/60 hover:text-white transition-colors">

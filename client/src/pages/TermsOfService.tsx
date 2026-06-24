@@ -63,6 +63,7 @@ export default function TermsOfService() {
                 "Security Services",
                 "Digital Signage",
                 "YouNeedLED Connect",
+                "SMS & Text Messaging Services",
                 "General Provisions",
                 "Contact Information",
               ].map((item, i) => (
@@ -321,7 +322,21 @@ export default function TermsOfService() {
             },
             {
               id: "section-11",
-              title: "11. General Provisions",
+              title: "11. SMS & Text Messaging Services",
+              content: (
+                <div className="space-y-4 text-sm text-slate-700">
+                  <p>By providing your mobile phone number, you consent to receive SMS/text messages from You Need L.E.D. related to service updates, appointment reminders, maintenance notifications, and customer support.</p>
+                  <div><strong className="text-slate-900">Opt-In</strong><p className="mt-1">Consent to receive SMS messages is explicitly requested when you provide your phone number through our contact forms, service requests, or direct communication. Your consent to receive SMS messages is not a condition of purchase.</p></div>
+                  <div><strong className="text-slate-900">Opt-Out & Cancellation</strong><p className="mt-1">You can cancel the SMS service at any time. Simply text "STOP" to the shortcode or phone number you received the message from. Upon sending "STOP", we will confirm your unsubscribe status via SMS. Following this confirmation, you will no longer receive SMS messages from us. To rejoin, sign up as you did initially, and we will resume sending SMS messages to you.</p></div>
+                  <div><strong className="text-slate-900">Help & Support</strong><p className="mt-1">If you experience issues with the messaging program you can reply with the keyword "HELP" for more assistance, or you can get help directly at info@youneedled.com or (609) 335-0123.</p></div>
+                  <div><strong className="text-slate-900">Carrier Liability & Rates</strong><p className="mt-1">Carriers are not liable for delayed or undelivered messages. As always, message and data rates may apply for any messages sent to you from us and to us from you. Message frequency varies. If you have any questions about your text plan or data plan, it is best to contact your wireless provider.</p></div>
+                  <div><strong className="text-slate-900">Privacy</strong><p className="mt-1">If you have any questions regarding privacy, please read our <Link href="/privacy-policy" className="text-[#0e319a] hover:underline">Privacy Policy</Link>. We explicitly do not sell, rent, or share your phone number or SMS consent data with any third parties for marketing purposes.</p></div>
+                </div>
+              ),
+            },
+            {
+              id: "section-12",
+              title: "12. General Provisions",
               content: (
                 <div className="space-y-4 text-sm text-slate-700">
                   <div><strong className="text-slate-900">Governing Law</strong><p className="mt-1">This Agreement is governed by the laws of the State of New Jersey, without regard to conflict of law principles.</p></div>
@@ -332,8 +347,8 @@ export default function TermsOfService() {
               ),
             },
             {
-              id: "section-12",
-              title: "12. Contact Information",
+              id: "section-13",
+              title: "13. Contact Information",
               content: (
                 <div className="space-y-4 text-sm text-slate-700">
                   <p>We're here to help with any questions about this Agreement or our services.</p>

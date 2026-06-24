@@ -76,6 +76,7 @@ export default function PrivacyPolicy() {
               <p>We may collect the following types of information:</p>
               <ul>
                 <li><strong>Personal Identification Information:</strong> Name, email address, phone number, business name, and mailing address — collected when you fill out a contact form, request a quote, or call us.</li>
+                <li><strong>SMS & Text Messaging Data:</strong> If you opt-in to receive text messages from us, we collect your mobile phone number and a record of your consent.</li>
                 <li><strong>Technical Data:</strong> IP address, browser type, operating system, referring URLs, and pages visited — collected automatically via Google Analytics and standard web server logs.</li>
                 <li><strong>Communications:</strong> Records of emails, phone calls, or messages you send us, including any information you voluntarily provide.</li>
                 <li><strong>Service Data:</strong> Information related to the security systems, VoIP services, or technology installations we provide to you as a customer.</li>
@@ -91,6 +92,7 @@ export default function PrivacyPolicy() {
                 <li>Improve our website and services based on usage data</li>
                 <li>Comply with legal obligations and protect against fraud</li>
                 <li>Send occasional marketing communications (you may opt out at any time)</li>
+                <li>Send SMS/text messages regarding service updates, appointment reminders, and customer support (only if you have opted in)</li>
               </ul>
               <p>We do <strong>not</strong> sell your personal information to third parties.</p>
             </PolicySection>
@@ -102,6 +104,9 @@ export default function PrivacyPolicy() {
                 <li><strong>Legal Requirements:</strong> When required by law, court order, or governmental authority.</li>
                 <li><strong>Business Transfers:</strong> In connection with a merger, acquisition, or sale of company assets, your information may be transferred as a business asset.</li>
               </ul>
+              <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mt-4">
+                <p className="text-blue-800 text-sm"><strong>SMS Privacy Commitment:</strong> We respect your privacy regarding text messaging. We explicitly do not sell, rent, or share your mobile phone number, SMS consent data, or text messaging history with any third parties or affiliates for marketing or promotional purposes. Your phone number is used strictly for the service-related communications you opted into.</p>
+              </div>
             </PolicySection>
 
             <PolicySection number="4" title="Cookies and Tracking Technologies">

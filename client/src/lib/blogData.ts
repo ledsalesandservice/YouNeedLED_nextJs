@@ -218,7 +218,7 @@ As a licensed security integrator, You Need L.E.D. has the expertise to secure y
     category: "Commercial Security",
     excerpt: "Don't risk your liability. Learn why hiring a NJ DCA Licensed contractor is essential for commercial security cameras, fire alarms, and access control.",
     readTime: "4 min read",
-    image: "/blog-images/blog-retail-1200w.webp",
+    image: "/blog-images/blog-commercial-building-1200w.webp",
     content: `When it's time to upgrade your business's security cameras or fire alarms, you might be tempted to hire a general contractor, an IT guy, or even attempt a DIY installation to save money. In the state of New Jersey, that is a dangerous and potentially illegal mistake.
 
 Commercial security and fire alarm installations are heavily regulated. Here is why you must hire a properly licensed integrator like You Need L.E.D.
@@ -296,7 +296,7 @@ Don't leave your expensive materials unprotected. Contact You Need L.E.D. to dep
     category: "Technology",
     excerpt: "Ditch the printed posters. Learn how LED video walls and digital menu boards drive sales and modernize the customer experience in retail and hospitality.",
     readTime: "4 min read",
-    image: "/blog-images/blog-retail-1200w.webp",
+    image: "/blog-images/blog-restaurant-1200w.webp",
     content: `Walk into any modern quick-service restaurant, sports bar, or high-end retail store in South Jersey, and you will notice one major change: printed posters and static menus are gone. They have been replaced by vibrant, dynamic Digital Signage.
 
 At You Need L.E.D., we design and install commercial digital displays and massive LED video walls that capture attention and drive revenue. Here is why local businesses are making the upgrade.

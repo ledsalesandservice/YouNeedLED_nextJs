@@ -35,8 +35,8 @@ const STATIC_META: Record<string, PageMeta> = {
     description: `Professional security camera installation, VoIP phone systems, access control, and fire alarm systems in South Jersey. NJ DCA Licensed. Call ${PHONE}.`,
   },
   "/about": {
-    title: `About You Need L.E.D. | 15+ Years | NJ DCA Licensed Security Company South Jersey`,
-    description: `15+ years serving South Jersey. NJ DCA Licensed (#34BF00056900). 5.0 stars, 500+ satisfied clients. Security cameras, fire alarms, VoIP & more. Call ${PHONE}.`,
+    title: `About You Need L.E.D. | 34 Years Experience | NJ DCA Licensed Security Company South Jersey`,
+    description: `34 years of industry experience. NJ DCA Licensed (#34BF00056900). 5.0 stars, 500+ satisfied clients. Security cameras, fire alarms, VoIP & more. Call ${PHONE}.`,
   },
   "/contact": {
     title: `Contact You Need L.E.D. | Free Security Quote South Jersey | ${PHONE}`,
@@ -60,7 +60,7 @@ const STATIC_META: Record<string, PageMeta> = {
   },
   "/testimonials": {
     title: `Client Reviews & Testimonials | 5.0 Stars | You Need L.E.D. South Jersey`,
-    description: `Read verified Google reviews from 33+ satisfied clients across South Jersey. You Need L.E.D. is NJ DCA Licensed with 15+ years of experience. 5.0 stars. Call ${PHONE}.`,
+    description: `Read verified Google reviews from 33+ satisfied clients across South Jersey. You Need L.E.D. is NJ DCA Licensed with 34 years of industry experience. 5.0 stars. Call ${PHONE}.`,
   },
   "/terms-of-service": {
     title: `Terms of Service | ${SUFFIX} Business Services Agreement`,
@@ -121,6 +121,14 @@ const STATIC_META: Record<string, PageMeta> = {
   "/services/fiber-optic": {
     title: `Fiber Optic Installation South Jersey | Single-Mode & Multimode | ${SUFFIX}`,
     description: `Professional fiber optic installation, fusion splicing & emergency repair in South Jersey. Single-mode & multimode, aerial & underground runs. NJ DCA Licensed. Call ${PHONE}.`,
+  },
+  "/services/cannabis-security": {
+    title: `Cannabis Security Systems NJ | CRC Compliant | ${SUFFIX}`,
+    description: `CRC-compliant cannabis security for NJ cultivators, manufacturers & dispensaries. 4K cameras, access control, 24/7 monitoring. NJ DCA Licensed since 2004. Call ${PHONE}.`,
+  },
+  "/services/business-phone-systems-south-jersey": {
+    title: `Business Phone Systems South Jersey | Hosted VoIP | ${SUFFIX}`,
+    description: `Hosted VoIP business phone systems for South Jersey. Local installation, AI receptionist, 24/7 support & flat monthly pricing. NJ DCA Licensed. Call ${PHONE}.`,
   },
   "/privacy-policy": {
     title: `Privacy Policy | ${SUFFIX}`,

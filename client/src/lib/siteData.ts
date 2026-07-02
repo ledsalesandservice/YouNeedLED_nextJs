@@ -63,11 +63,19 @@ export const NAV_ITEMS = [
       { label: "Jobsite Security", href: "/services/jobsite-security" },
       { label: "Apartment Complexes", href: "/services/apartment-security" },
       { label: "Fiber Optic Installation", href: "/services/fiber-optic" },
+      { label: "Cannabis Security", href: "/services/cannabis-security" },
     ],
   },
-  { label: "Hosted PBX & VoIP", href: "/services/voip" },
+  {
+    label: "Business Phone Systems",
+    href: "/services/business-phone-systems-south-jersey",
+    children: [
+      { label: "Business Phone Systems", href: "/services/business-phone-systems-south-jersey" },
+      { label: "Hosted PBX & VoIP", href: "/services/voip" },
+      { label: "LEDConnect AI Voice", href: "/services/ai-voice-agent" },
+    ],
+  },
   { label: "Digital Signage", href: "/services/digital-signage" },
-  { label: "LEDConnect AI Voice", href: "/services/ai-voice-agent" },
   { label: "Blog", href: "/blog" },
   { label: "About", href: "/about" },
   { label: "Service Areas", href: "/service-areas" },
@@ -202,6 +210,6 @@ export const FAQ_GENERAL = [
   },
   {
     q: "How long have you been in business?",
-    a: "You Need L.E.D. was founded in 2010 by Derek Weikel and has over 15 years of experience in the security and technology industry, with team members bringing 30+ years of combined expertise.",
+    a: "You Need L.E.D. was founded in 2010 by Derek Weikel, who brings over 34 years of industry experience — 18 years working in the field before launching the company, and 16 years as owner and lead technician.",
   },
 ];

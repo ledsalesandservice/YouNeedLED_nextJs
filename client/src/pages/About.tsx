@@ -10,8 +10,8 @@ export default function About() {
   return (
     <>
       <SEOHead
-        title="About You Need L.E.D. | 15+ Years | NJ DCA Licensed Security Company South Jersey"
-        description="15+ years serving South Jersey. NJ DCA Licensed (#34BF00056900). 5.0 stars, 500+ satisfied clients. Security cameras, fire alarms, VoIP & more. Call (609) 335-0123."
+        title="About You Need L.E.D. | 34 Years Experience | NJ DCA Licensed Security Company South Jersey"
+        description="34 years of industry experience. NJ DCA Licensed (#34BF00056900). 5.0 stars, 500+ satisfied clients. Security cameras, fire alarms, VoIP & more. Call (609) 335-0123."
         canonical="/about"
       />
       {/* LocalBusiness schema — full entity with credentials, rating, and social */}
@@ -22,7 +22,7 @@ export default function About() {
         url: SITE.url,
         telephone: SITE.phone,
         email: SITE.email,
-        description: "NJ DCA Licensed commercial and residential technology services company serving South Jersey and the Delaware Valley for 15+ years. 5.0 stars on Google with 33+ reviews and 500+ satisfied clients.",
+        description: "NJ DCA Licensed commercial and residential technology services company serving South Jersey and the Delaware Valley since 2010. Founded by Derek Weikel, who brings 34 years of industry experience. 5.0 stars on Google with 33+ reviews and 500+ satisfied clients.",
         foundingDate: "2010",
         address: { "@type": "PostalAddress", streetAddress: "199 New Rd Ste 61", addressLocality: "Linwood", addressRegion: "NJ", postalCode: "08221", addressCountry: "US" },
         geo: { "@type": "GeoCoordinates", latitude: 39.3398, longitude: -74.5774 },
@@ -54,7 +54,7 @@ export default function About() {
         "@type": "Person",
         name: "Derek Weikel",
         jobTitle: "Owner & Lead Technician",
-        description: "Derek Weikel is the founder and owner of You Need L.E.D., a NJ DCA Licensed security and technology services company based in Linwood, NJ. With 15+ years of experience, Derek leads all commercial security camera, access control, fire alarm, VoIP, and jobsite security installations across South Jersey and the Delaware Valley.",
+        description: "Derek Weikel is the founder and owner of You Need L.E.D., a NJ DCA Licensed security and technology services company based in Linwood, NJ. With 34 years of industry experience — including 18 years in the field before founding the company in 2010 — Derek leads all commercial security camera, access control, fire alarm, VoIP, and jobsite security installations across South Jersey and the Delaware Valley.",
         worksFor: {
           "@type": "Organization",
           name: SITE.name,
@@ -111,13 +111,13 @@ export default function About() {
               <h2 className="font-heading text-3xl font-bold text-slate-900 mb-6">From LED Lighting to Complete Security Solutions</h2>
               <div className="space-y-4 text-slate-600 leading-relaxed">
                 <p>
-                  You Need L.E.D. was founded in 2010 by Derek Weikel with a simple mission: provide South Jersey businesses and homeowners with professional, reliable technology services at fair prices.
+                  You Need L.E.D. was founded in 2010 by Derek Weikel — but Derek's story in the industry started long before that. With 18 years of hands-on field experience before launching the company, Derek brings a total of 34 years of industry expertise to every project.
                 </p>
                 <p>
-                  What started as an LED lighting installation company quickly evolved as clients began asking for security cameras, alarm systems, and phone systems. Derek recognized the opportunity to become a one-stop technology partner for local businesses.
+                  What started as an LED lighting installation company quickly evolved as clients began asking for security cameras, alarm systems, and phone systems. Derek recognized the opportunity to become a one-stop technology partner for local businesses — and never looked back.
                 </p>
                 <p>
-                  Today, we're a fully licensed NJ DCA contractor specializing in commercial security systems, VoIP phone systems, fire alarm installation, and our newest offering — LEDConnect AI Voice Agents. Our team brings over 30 years of combined experience to every project.
+                  Today, we're a fully NJ DCA Licensed contractor specializing in commercial security systems, access control, fire alarms, VoIP phone systems, and our newest offering — LEDConnect AI Voice Agents. Every installation is led by Derek personally, bringing that 34-year depth of knowledge to every South Jersey client.
                 </p>
                 <p>
                   We're proud to serve over 500 clients across New Jersey, Pennsylvania, Delaware, and Maryland, maintaining a perfect 5-star Google rating built on honest work and exceptional service.
@@ -127,9 +127,9 @@ export default function About() {
             <div className="space-y-6">
               <div className="grid grid-cols-2 gap-4">
                 {[
-                  { icon: <Award className="w-6 h-6" />, stat: "15+", label: "Years in Business" },
+                  { icon: <Award className="w-6 h-6" />, stat: "16", label: "Years in Business" },
                   { icon: <Users className="w-6 h-6" />, stat: "500+", label: "Clients Served" },
-                  { icon: <Clock className="w-6 h-6" />, stat: "30+", label: "Years Experience" },
+                  { icon: <Clock className="w-6 h-6" />, stat: "34", label: "Years Experience" },
                   { icon: <Shield className="w-6 h-6" />, stat: "5.0★", label: "Google Rating" },
                 ].map((s) => (
                   <div key={s.label} className="p-5 bg-slate-50 rounded-xl text-center">

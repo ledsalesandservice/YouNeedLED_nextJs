@@ -40,7 +40,9 @@ const AiVoiceAgent       = lazy(() => import("./pages/services/AiVoiceAgent"));
 const CommercialSecurity = lazy(() => import("./pages/services/CommercialSecurity"));
 const ApartmentSecurity  = lazy(() => import("./pages/services/ApartmentSecurity"));
 const DigitalSignage     = lazy(() => import("./pages/services/DigitalSignage"));
-const FiberOptic         = lazy(() => import("./pages/services/FiberOptic"));
+const FiberOptic           = lazy(() => import("./pages/services/FiberOptic"));
+const CannabisSecurity     = lazy(() => import("./pages/services/CannabisSecurity"));
+const BusinessPhoneSystems = lazy(() => import("./pages/services/BusinessPhoneSystems"));
 
 // Dynamic location / county pages
 const LocationPage = lazy(() => import("./pages/LocationPage"));
@@ -97,6 +99,8 @@ function Router() {
         <Route path="/services/apartment-security" component={ApartmentSecurity} />
         <Route path="/services/digital-signage" component={DigitalSignage} />
         <Route path="/services/fiber-optic" component={FiberOptic} />
+        <Route path="/services/cannabis-security" component={CannabisSecurity} />
+        <Route path="/services/business-phone-systems-south-jersey" component={BusinessPhoneSystems} />
         {/* Short URL aliases for landing pages */}
         <Route path="/cameras" component={VideoSurveillance} />
         <Route path="/phone-systems" component={VoIP} />

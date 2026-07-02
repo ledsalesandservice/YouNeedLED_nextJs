@@ -94,7 +94,7 @@ export default function LocationPage() {
           <div className="flex flex-wrap justify-center gap-x-10 gap-y-3 text-sm text-slate-600">
             <span className="flex items-center gap-2"><BadgeCheck className="w-4 h-4 text-[#0e319a]" /> NJ Licensed & Insured</span>
             <span className="flex items-center gap-2"><Clock className="w-4 h-4 text-[#0e319a]" /> {location.responseTime}</span>
-            <span className="flex items-center gap-2"><Star className="w-4 h-4 text-[#f97015]" /> 15+ Years Experience</span>
+            <span className="flex items-center gap-2"><Star className="w-4 h-4 text-[#f97015]" /> 34 Years Experience</span>
             <span className="flex items-center gap-2"><Shield className="w-4 h-4 text-[#0e319a]" /> 24/7 Monitoring Available</span>
           </div>
         </div>
@@ -272,7 +272,7 @@ export default function LocationPage() {
             "@context": "https://schema.org",
             "@type": "LocalBusiness",
             name: "You Need L.E.D.",
-            description: `Professional security and technology services in ${location.name}${!isRegion ? `, ${location.state}` : ""}. NJ DCA Licensed. 15+ years experience. 5.0 stars on Google.`,
+            description: `Professional security and technology services in ${location.name}${!isRegion ? `, ${location.state}` : ""}. NJ DCA Licensed. 34 years of industry experience. 5.0 stars on Google.`,
             url: `${SITE.url}/locations/${location.slug}`,
             telephone: SITE.phone,
             email: SITE.email,
@@ -332,7 +332,7 @@ export default function LocationPage() {
               {
                 "@type": "Question",
                 name: `What security services do you offer in ${location.name}?`,
-                acceptedAnswer: { "@type": "Answer", text: `In ${location.name}, You Need L.E.D. offers: 4K security camera installation, access control systems (RFID, biometric, mobile credentials), NFPA 72 fire alarm systems, intrusion detection with 24/7 monitoring, hosted VoIP phone systems, jobsite security cameras, digital signage, and LEDConnect AI Voice Agents. All services are backed by our NJ DCA license and 15+ years of experience.` },
+                acceptedAnswer: { "@type": "Answer", text: `In ${location.name}, You Need L.E.D. offers: 4K security camera installation, access control systems (RFID, biometric, mobile credentials), NFPA 72 fire alarm systems, intrusion detection with 24/7 monitoring, hosted VoIP phone systems, jobsite security cameras, digital signage, and LEDConnect AI Voice Agents. All services are backed by our NJ DCA license and 34 years of industry experience.` },
               },
             ],
           }),

@@ -300,7 +300,7 @@ export default function Home() {
           </div>
           <StaggerContainer className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-14">
             {[
-              { icon: <Award className="w-7 h-7" />, stat: "30+", count: 30, suffix: "+", label: "Years Experience", desc: "Combined industry expertise across our team" },
+              { icon: <Award className="w-7 h-7" />, stat: "34", count: 34, suffix: "", label: "Years Experience", desc: "Derek's hands-on industry expertise since 1992" },
               { icon: <Clock className="w-7 h-7" />, stat: "24/7", count: null, label: "Support Available", desc: "Round-the-clock emergency response" },
               { icon: <Users className="w-7 h-7" />, stat: "500+", count: 500, suffix: "+", label: "Satisfied Clients", desc: "Businesses across the tri-state area" },
               { icon: <Shield className="w-7 h-7" />, stat: "NJ DCA", count: null, label: "Licensed", desc: "Fully licensed and insured contractor" },
@@ -597,7 +597,7 @@ export default function Home() {
             "@type": "Person",
             name: "Derek Weikel",
             jobTitle: "Owner & Lead Technician",
-            description: "Derek Weikel is the founder and owner of You Need L.E.D., a NJ DCA Licensed security and technology services company based in Linwood, NJ. With 15+ years of experience, Derek leads all commercial security camera, access control, fire alarm, VoIP, and jobsite security installations across South Jersey and the Delaware Valley.",
+            description: "Derek Weikel is the founder and owner of You Need L.E.D., a NJ DCA Licensed security and technology services company based in Linwood, NJ. With 34 years of industry experience — including 18 years in the field before founding the company in 2010 — Derek leads all commercial security camera, access control, fire alarm, VoIP, and jobsite security installations across South Jersey and the Delaware Valley.",
             worksFor: {
               "@type": "Organization",
               "@id": `${SITE.url}/#organization`,
@@ -649,7 +649,7 @@ export default function Home() {
               url: SITE.url,
               logo: `${SITE.url}/logo.png`,
               image: `${SITE.url}/hero-main-1200w.webp`,
-              description: "NJ DCA Licensed commercial and residential security camera, access control, fire alarm, VoIP, and digital signage installation company serving South Jersey and the Delaware Valley for 15+ years.",
+              description: "NJ DCA Licensed commercial and residential security camera, access control, fire alarm, VoIP, and digital signage installation company serving South Jersey and the Delaware Valley since 2010.",
               telephone: SITE.phone,
               email: SITE.email,
               address: {

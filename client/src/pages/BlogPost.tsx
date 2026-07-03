@@ -328,8 +328,12 @@ function renderInlineMarkdown(text: string, keyBase: number): React.ReactNode {
     } else if (first.type === "link") {
       // Convert internal links
       const href = (first as any).href;
-      if (href && href !== "" && !href.startsWith("#")) {
-        parts.push(<span key={`${keyBase}-${partKey++}`} className="text-[#0e319a] font-medium">{first.content}</span>);
+      if (href && href.startsWith("/")) {
+        // Internal link — use wouter Link for client-side navigation
+        parts.push(<Link key={`${keyBase}-${partKey++}`} href={href} className="text-[#0e319a] font-medium underline hover:text-[#0a2470]">{first.content}</Link>);
+      } else if (href && href !== "" && !href.startsWith("#")) {
+        // External link — open in new tab
+        parts.push(<a key={`${keyBase}-${partKey++}`} href={href} target="_blank" rel="noopener noreferrer" className="text-[#0e319a] font-medium underline hover:text-[#0a2470]">{first.content}</a>);
       } else {
         parts.push(<span key={`${keyBase}-${partKey++}`}>{first.content}</span>);
       }

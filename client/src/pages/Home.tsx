@@ -738,6 +738,7 @@ export default function Home() {
                 width: 112,
                 height: 112,
               },
+              image: `${SITE.url}/hero-main-1200w.webp`,
               foundingDate: "2009",
               description: "You Need L.E.D. L.L.C. is a New Jersey-licensed security systems integrator specializing in commercial security cameras, fire alarm systems, access control, VoIP phone systems, AI voice agents, and digital signage. Serving South Jersey, Philadelphia, and the Delaware Valley.",
               telephone: SITE.phone,

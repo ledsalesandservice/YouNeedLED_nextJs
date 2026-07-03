@@ -123,7 +123,7 @@ export default function BlogPost() {
         </div>
       </section>
 
-      {/* Article Schema — full BlogPosting with all Google-recommended fields */}
+      {/* Article Schema — BlogPosting with speakable, AI citation signals, and breadcrumb */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -138,10 +138,13 @@ export default function BlogPost() {
             description: post.excerpt,
             datePublished: post.date,
             dateModified: post.date,
+            inLanguage: "en-US",
+            isAccessibleForFree: true,
             author: {
               "@type": "Person",
               name: "Derek Weikel",
               jobTitle: "Owner & Lead Technician",
+              url: `${SITE.url}/about`,
               worksFor: { "@type": "Organization", name: SITE.name, url: SITE.url },
             },
             publisher: {
@@ -172,10 +175,77 @@ export default function BlogPost() {
             },
             url: `${SITE.url}/blog/${post.slug}`,
             articleSection: post.category,
-            keywords: `${post.category}, South Jersey, security cameras, VoIP, access control, fire alarm, You Need L.E.D.`,
+            keywords: [
+              post.title,
+              post.category,
+              "South Jersey",
+              "NJ DCA Licensed",
+              "You Need L.E.D.",
+              "security cameras South Jersey",
+              "commercial security NJ",
+              "access control New Jersey",
+              "fire alarm systems NJ",
+              "VoIP phone systems South Jersey",
+            ].join(", "),
+            // speakable — tells Google AI Overviews and voice assistants which
+            // sections are authoritative and safe to read aloud / cite
+            speakable: {
+              "@type": "SpeakableSpecification",
+              cssSelector: ["h1", "h2", ".prose p:first-of-type"],
+            },
+            // copyrightYear and copyrightHolder strengthen E-E-A-T signals
+            copyrightYear: new Date(post.date).getFullYear(),
+            copyrightHolder: { "@type": "Organization", name: SITE.name, url: SITE.url },
           }),
         }}
       />
+      {/* BreadcrumbList — Home > Blog > Post Title */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Home", item: SITE.url },
+              { "@type": "ListItem", position: 2, name: "Blog", item: `${SITE.url}/blog` },
+              { "@type": "ListItem", position: 3, name: post.title, item: `${SITE.url}/blog/${post.slug}` },
+            ],
+          }),
+        }}
+      />
+      {/* HowTo schema — only emitted for posts with howToSteps defined */}
+      {post.howToSteps && post.howToSteps.length > 0 && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "HowTo",
+              name: post.title,
+              description: post.excerpt,
+              image: {
+                "@type": "ImageObject",
+                url: post.image.startsWith('http') ? post.image : `${SITE.url}${post.image}`,
+                width: 1200,
+                height: 675,
+              },
+              author: {
+                "@type": "Person",
+                name: "Derek Weikel",
+                worksFor: { "@type": "Organization", name: SITE.name, url: SITE.url },
+              },
+              publisher: { "@type": "Organization", name: SITE.name, url: SITE.url },
+              step: post.howToSteps.map((s, i) => ({
+                "@type": "HowToStep",
+                position: i + 1,
+                name: s.name,
+                text: s.text,
+              })),
+            }),
+          }}
+        />
+      )}
     </>
   );
 }

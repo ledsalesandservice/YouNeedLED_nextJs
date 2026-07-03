@@ -650,6 +650,10 @@ export default function Home() {
               logo: `${SITE.url}/logo.png`,
               image: `${SITE.url}/hero-main-1200w.webp`,
               description: "NJ DCA Licensed commercial and residential security camera, access control, fire alarm, VoIP, and digital signage installation company serving South Jersey and the Delaware Valley since 2010.",
+              foundingDate: "2009",
+              slogan: "Professional Security & Technology Solutions for South Jersey",
+              // NAICS 561621 = Security Systems Services (except Locksmiths)
+              naics: "561621",
               telephone: SITE.phone,
               email: SITE.email,
               address: {
@@ -715,6 +719,8 @@ export default function Home() {
                   { "@type": "Offer", itemOffered: { "@type": "Service", "@id": `${SITE.url}/services/intrusion-detection#service`, name: "Intrusion Detection & Burglar Alarms", description: "Professionally monitored burglar alarm systems with motion detection, door/window sensors, and 24/7 central station monitoring.", url: `${SITE.url}/services/intrusion-detection`, provider: { "@id": `${SITE.url}/#organization` } } },
                   { "@type": "Offer", itemOffered: { "@type": "Service", "@id": `${SITE.url}/services/digital-signage#service`, name: "Digital Signage & LED Video Walls", description: "Indoor and outdoor LED video walls, digital menu boards, and managed content display systems for retail, hospitality, and corporate environments.", url: `${SITE.url}/services/digital-signage`, provider: { "@id": `${SITE.url}/#organization` } } },
                   { "@type": "Offer", itemOffered: { "@type": "Service", "@id": `${SITE.url}/services/jobsite-security#service`, name: "Jobsite & Construction Site Security", description: "Solar-powered wireless security cameras and temporary alarm systems for active construction sites with no power or internet required.", url: `${SITE.url}/services/jobsite-security`, provider: { "@id": `${SITE.url}/#organization` } } },
+                  { "@type": "Offer", itemOffered: { "@type": "Service", "@id": `${SITE.url}/services/cannabis-security#service`, name: "Cannabis Facility Security Systems NJ", description: "NJ CRC compliant security camera, access control, and alarm systems for licensed cannabis dispensaries and cultivation facilities in New Jersey.", url: `${SITE.url}/services/cannabis-security`, provider: { "@id": `${SITE.url}/#organization` } } },
+                  { "@type": "Offer", itemOffered: { "@type": "Service", "@id": `${SITE.url}/services/business-phone-systems-south-jersey#service`, name: "Business Phone Systems South Jersey", description: "Hosted PBX, VoIP, and Microsoft Teams-integrated business phone systems for small and mid-size businesses in South Jersey and the Delaware Valley.", url: `${SITE.url}/services/business-phone-systems-south-jersey`, provider: { "@id": `${SITE.url}/#organization` } } },
                 ],
               },
             },

@@ -10,6 +10,8 @@ export interface BlogPost {
   image: string;
   content: string;
   author?: string;
+  // Optional HowTo schema steps — enables Google HowTo rich results
+  howToSteps?: { name: string; text: string }[];
 }
 
 export const ALL_BLOG_POSTS: BlogPost[] = [
@@ -89,7 +91,14 @@ When the local fire marshal arrives for your annual building inspection, the fir
 
 As your licensed service provider, You Need L.E.D. provides comprehensive, digital inspection reports. We document every device tested, any deficiencies found, and the corrective actions taken. We keep your building compliant and your occupants safe.
 
-Don't wait for a violation notice. If your South Jersey business is due for a fire alarm inspection, contact You Need L.E.D. today.`
+Don't wait for a violation notice. If your South Jersey business is due for a fire alarm inspection, contact You Need L.E.D. today.`,
+    howToSteps: [
+      { name: "Verify your system is NFPA 72 compliant", text: "Confirm your fire alarm system was installed and is maintained to the NFPA 72 National Fire Alarm and Signaling Code standard, which governs all commercial fire alarms in New Jersey." },
+      { name: "Schedule annual comprehensive testing", text: "Hire a NJ DCA licensed fire alarm contractor to physically test every device — smoke detectors, heat detectors, pull stations, horn/strobes, and the main control panel — at least once per year." },
+      { name: "Perform sensitivity testing on smoke detectors", text: "Have your licensed technician test smoke detector sensitivity at the intervals required by NFPA 72 to ensure detectors respond correctly without triggering false alarms." },
+      { name: "Confirm 24/7 UL-listed central station monitoring", text: "Verify your fire alarm panel is connected to a UL-listed central monitoring station that can dispatch the fire department automatically when an alarm is triggered." },
+      { name: "Maintain and store your inspection documentation", text: "Keep digital and physical copies of all inspection reports, device test results, and deficiency corrections. Your local fire marshal will request this documentation during building inspections." },
+    ],
   },
   {
     slug: "voip-for-small-business-south-jersey-guide",
@@ -1523,6 +1532,14 @@ These are the short sections that reduce surprises more than any camera spec.
 *   **Billable change rules:** Define how change orders work, who approves them, and that undocumented scope gaps are not automatically billable.
 
 This is also where you can require a cutover plan and acceptance testing criteria, so “installed” is not confused with “operational.”`,
+    howToSteps: [
+      { name: "Define your security objectives and site scope", text: "Document the number of buildings, square footage, entry points, parking areas, and high-risk zones. State whether you need license plate recognition, indoor/outdoor coverage, or integration with access control." },
+      { name: "Specify minimum camera resolution and frame rate", text: "Require a minimum of 4K (8MP) resolution for exterior cameras and 2MP for interior. Specify minimum 15fps for general areas and 30fps for high-traffic zones like entrances and POS areas." },
+      { name: "Define storage requirements", text: "State your required video retention period (typically 30-90 days for commercial). Specify whether you want on-site NVR, cloud storage, or a hybrid solution, and require redundancy." },
+      { name: "Require vendor licensing and insurance documentation", text: "Mandate that all bidding vendors provide their NJ DCA contractor license number, proof of general liability insurance, and worker's compensation certificates before submitting a proposal." },
+      { name: "Request a detailed line-item proposal", text: "Require vendors to itemize every camera model, cable run, switch, NVR, installation labor, and warranty term. Vague lump-sum proposals make apples-to-apples comparison impossible." },
+      { name: "Define acceptance testing criteria", text: "Include a walkthrough checklist in the RFP that must be completed before final payment, verifying every camera angle, remote access functionality, and alert configuration is operational as specified." },
+    ],
   },
   {
     slug: "voip-phone-service",
@@ -3454,6 +3471,13 @@ One of the most valuable features of a modern security camera system is the abil
 If any of these checks reveal issues you can't resolve yourself, or if your system is more than 3–4 years old and hasn't been professionally serviced, it's time to schedule a maintenance visit. At You Need L.E.D., we provide security system health checks and maintenance services for commercial clients throughout South Jersey and the Delaware Valley.
 
 We'll inspect every camera, test every recording channel, verify storage health, update firmware, and provide a written report of our findings. Call **(609) 335-0123** or visit [youneedled.com](https://youneedled.com) to schedule a maintenance visit.`,
+    howToSteps: [
+      { name: "Clean camera lenses and housings", text: "Inspect and clean all camera lenses with a microfiber cloth. Remove spider webs, dust, and debris from outdoor housings. Check that weatherproof seals are intact on exterior cameras." },
+      { name: "Verify camera angles and field of view", text: "Log into your NVR or VMS and review live feeds from every camera. Confirm no cameras have been bumped out of position and that all critical zones remain fully covered." },
+      { name: "Test recording and storage health", text: "Confirm your NVR or cloud storage is actively recording. Check available storage capacity and verify that the system is overwriting old footage correctly. Test playback on at least 3 cameras." },
+      { name: "Check motion detection and alert settings", text: "Trigger a motion event in front of at least 2 cameras and confirm you receive the expected alert on your phone or email. Review AI detection zones to ensure they have not drifted." },
+      { name: "Inspect all cable connections and power supplies", text: "Check PoE switch indicator lights for any cameras showing offline or degraded status. Inspect accessible cable runs for damage from pests, weather, or physical impact." },
+    ],
   },
   {
     slug: "intrusion-detection-for-professional-offices-cherry-hill",
@@ -3612,7 +3636,14 @@ You Need L.E.D. is fully licensed by the NJ DCA (License #34BF00056900). We inst
 The only way to know exactly what your business needs is to have an expert evaluate your property. We don't guess, and we don't give you a "one-size-fits-all" package. 
 
 Call **(609) 335-0123** or visit [youneedled.com/contact](/contact) to schedule a free, no-obligation on-site assessment for your South Jersey business.
-`
+`,
+    howToSteps: [
+      { name: "Assess your site and define coverage requirements", text: "Walk your property and count entry points, parking areas, interior zones, and any high-risk areas. The number of cameras needed is the single biggest cost driver — most small commercial properties need 8–16 cameras." },
+      { name: "Choose your camera tier based on use case", text: "Entry-level 4MP IP cameras suit interior hallways and break rooms. 4K cameras with AI analytics are recommended for entrances, parking lots, and POS areas. License plate recognition cameras are specialized and priced higher." },
+      { name: "Select your storage solution", text: "On-site NVR systems have a higher upfront cost but lower ongoing fees. Cloud-managed systems have lower hardware costs but monthly subscription fees. Hybrid systems offer redundancy. Factor in your required retention period (30, 60, or 90 days)." },
+      { name: "Get at least two licensed contractor quotes", text: "Request itemized proposals from NJ DCA licensed security contractors. Compare camera models, cable infrastructure, labor rates, and warranty terms — not just the bottom-line number." },
+      { name: "Factor in ongoing maintenance costs", text: "Budget for annual maintenance visits ($150–$400 depending on system size), any monitoring fees, and potential camera replacements every 5–7 years. A quality commercial system installed by a licensed contractor will last 10+ years." },
+    ],
   },
   {
     slug: "adt-vs-local-commercial-security-company-nj",

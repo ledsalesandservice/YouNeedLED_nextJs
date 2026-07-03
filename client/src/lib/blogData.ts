@@ -435,7 +435,7 @@ As a licensed New Jersey security provider (DCA License #34BF00056900), You Need
 
 Building a cannabis business is challenging enough without the added stress of a failed security inspection. Partnering with an experienced, licensed security expert is the most effective way to ensure your security plan is approved without issue.
 
-We have successfully guided nine cannabis businesses through the NJ CRC security compliance process. Call us at **(609) 335-0123** to build a security plan that gets you approved and protects your investment for your investment.
+We have successfully guided nine cannabis businesses through the NJ CRC security compliance process. Learn more about our [cannabis facility security systems in NJ](/services/cannabis-security), or call us at **(609) 335-0123** to build a security plan that gets you approved and protects your investment.
 `,
   },
 
@@ -2606,7 +2606,7 @@ Here are a few tips for writing a winning plan:
 * Think like a regulator. Anticipate the CRC’s questions and address them proactively in your plan.
 * Get expert help. If you’re not a security expert, consider hiring a consultant to help you design your system and write your plan.
 
-At You Need L.E.D., we specialize in designing and installing comprehensive security systems for cannabis cultivation facilities. We understand the NJ CRC’s requirements and can help you create a security plan that not only meets compliance but also provides robust protection for your business. Contact us today for a consultation.`,
+At You Need L.E.D., we specialize in designing and installing comprehensive security systems for cannabis cultivation facilities. We understand the NJ CRC’s requirements and can help you create a security plan that not only meets compliance but also provides robust protection for your business. Learn more about our [cannabis facility security systems in NJ](/services/cannabis-security) or contact us today for a consultation.`,
   },
   {
     slug: "why-your-south-jersey-business-needs-color-247-security-cameras",

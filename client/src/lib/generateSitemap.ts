@@ -38,6 +38,8 @@ export function getAllSitemapUrls(): string[] {
     "/services/apartment-security",
     "/services/digital-signage",
     "/services/fiber-optic",
+    "/services/cannabis-security",
+    "/services/business-phone-systems-south-jersey",
     "/case-studies",
     "/terms-of-service",
     "/privacy-policy",
@@ -81,6 +83,8 @@ function buildSitemapXml(): string {
     { url: "/services/digital-signage", priority: "0.8", changefreq: "monthly" },
     { url: "/case-studies", priority: "0.7", changefreq: "monthly" },
     { url: "/services/fiber-optic", priority: "0.8", changefreq: "monthly" },
+    { url: "/services/cannabis-security", priority: "0.9", changefreq: "monthly" },
+    { url: "/services/business-phone-systems-south-jersey", priority: "0.9", changefreq: "monthly" },
     { url: "/terms-of-service", priority: "0.4", changefreq: "yearly" },
     { url: "/privacy-policy", priority: "0.4", changefreq: "yearly" },
   ];

@@ -222,6 +222,11 @@ function renderMarkdown(content: string) {
       elements.push(<h2 key={i}>{cleanInlineMarkdown(block.slice(3))}</h2>);
       continue;
     }
+    // # h1 in content — render as h2 (h1 is reserved for the post title)
+    if (block.startsWith("# ")) {
+      elements.push(<h2 key={i}>{cleanInlineMarkdown(block.slice(2))}</h2>);
+      continue;
+    }
 
     // Tables
     if (block.includes(" | ") && block.includes("---")) {

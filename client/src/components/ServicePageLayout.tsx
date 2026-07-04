@@ -188,8 +188,8 @@ export default function ServicePageLayout({
               url: `${SITE.url}${pageSlug}`,
               telephone: SITE.phone,
               email: SITE.email,
-              image: `${SITE.url}/logo-optimized.png`,
-              logo: `${SITE.url}/logo-optimized.png`,
+              image: `${SITE.url}/logo-192.png`,
+              logo: `${SITE.url}/logo-192.png`,
               foundingDate: "2010",
               priceRange: "$$",
               address: {

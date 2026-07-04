@@ -47,7 +47,7 @@ export default function CaseStudy() {
                 url: SITE.url,
                 logo: {
                   "@type": "ImageObject",
-                  url: `${SITE.url}/logo-optimized.png`,
+                  url: `${SITE.url}/logo-192.png`,
                   width: 300,
                   height: 60,
                 },

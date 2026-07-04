@@ -306,6 +306,22 @@ export default function LocationPage() {
         }}
       />
 
+      {/* BreadcrumbList Schema — Home > Service Areas > [Location, State] */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Home", item: SITE.url },
+              { "@type": "ListItem", position: 2, name: "Service Areas", item: `${SITE.url}/service-areas` },
+              { "@type": "ListItem", position: 3, name: isRegion ? location.name : `${location.name}, ${location.stateAbbr}`, item: `${SITE.url}/locations/${location.slug}` },
+            ],
+          }),
+        }}
+      />
+
       {/* FAQPage Schema — location-specific Q&A for AI Overviews and local search */}
       <script
         type="application/ld+json"

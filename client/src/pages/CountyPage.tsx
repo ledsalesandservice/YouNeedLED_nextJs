@@ -281,6 +281,22 @@ export default function CountyPage() {
         }}
       />
 
+      {/* BreadcrumbList Schema — Home > Service Areas > [County, State] */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Home", item: SITE.url },
+              { "@type": "ListItem", position: 2, name: "Service Areas", item: `${SITE.url}/service-areas` },
+              { "@type": "ListItem", position: 3, name: `${county.name}, ${county.stateAbbr}`, item: `${SITE.url}/counties/${county.slug}` },
+            ],
+          }),
+        }}
+      />
+
       {/* FAQPage Schema — county-level Q&A for AI Overviews and local search */}
       <script
         type="application/ld+json"

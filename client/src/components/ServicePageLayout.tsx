@@ -176,6 +176,48 @@ export default function ServicePageLayout({
         </section>
       )}
 
+      {/* LocalBusiness Schema — full address, image, priceRange for Rich Results */}
+      {pageSlug && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "LocalBusiness",
+              name: SITE.name,
+              url: `${SITE.url}${pageSlug}`,
+              telephone: SITE.phone,
+              email: SITE.email,
+              image: `${SITE.url}/logo-optimized.png`,
+              logo: `${SITE.url}/logo-optimized.png`,
+              foundingDate: "2010",
+              priceRange: "$$",
+              address: {
+                "@type": "PostalAddress",
+                streetAddress: SITE.address.street,
+                addressLocality: SITE.address.city,
+                addressRegion: SITE.address.state,
+                postalCode: SITE.address.zip,
+                addressCountry: "US",
+              },
+              geo: { "@type": "GeoCoordinates", latitude: 39.3398, longitude: -74.5774 },
+              areaServed: { "@type": "State", name: "New Jersey" },
+              aggregateRating: {
+                "@type": "AggregateRating",
+                ratingValue: "5.0",
+                reviewCount: "33",
+                bestRating: "5",
+              },
+              hasCredential: [
+                { "@type": "EducationalOccupationalCredential", credentialCategory: "license", name: "NJ DCA Security License", identifier: "34BF00056900" },
+                { "@type": "EducationalOccupationalCredential", credentialCategory: "license", name: "NJ DCA Fire Alarm License", identifier: "34FA00102800" },
+              ],
+              sameAs: [SITE.social.facebook, SITE.social.instagram, SITE.social.google, SITE.social.youtube],
+            }),
+          }}
+        />
+      )}
+
       {/* BreadcrumbList Schema — Home > Services > [Page Title] */}
       {pageSlug && (
         <script

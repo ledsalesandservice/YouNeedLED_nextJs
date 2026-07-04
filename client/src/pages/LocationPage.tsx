@@ -276,6 +276,8 @@ export default function LocationPage() {
             url: `${SITE.url}/locations/${location.slug}`,
             telephone: SITE.phone,
             email: SITE.email,
+            image: `${SITE.url}/logo-optimized.png`,
+            logo: `${SITE.url}/logo-optimized.png`,
             foundingDate: "2010",
             address: {
               "@type": "PostalAddress",

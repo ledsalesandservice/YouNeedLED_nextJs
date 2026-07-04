@@ -251,6 +251,8 @@ export default function CountyPage() {
             url: `${SITE.url}/counties/${county.slug}`,
             telephone: SITE.phone,
             email: SITE.email,
+            image: `${SITE.url}/logo-optimized.png`,
+            logo: `${SITE.url}/logo-optimized.png`,
             foundingDate: "2010",
             address: {
               "@type": "PostalAddress",

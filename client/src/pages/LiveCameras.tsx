@@ -720,7 +720,7 @@ export default function LiveCameras() {
           <div className="max-w-4xl mx-auto px-4 sm:px-6 py-12 text-center">
             <p className="text-[#F97316] font-bold text-lg mb-2">Want cameras like these at your property?</p>
             <p className="text-gray-400 text-sm mb-6 max-w-lg mx-auto">
-              You Need LED installs professional 4K security cameras with AI options for commercial and residential properties throughout South Jersey and the Delaware Valley. NJ DCA Licensed · 15+ Years · 500+ Satisfied Clients.
+              You Need LED installs professional 4K security cameras with AI options for commercial and residential properties throughout South Jersey and the Delaware Valley. NJ DCA Licensed · 34 Years Experience · 500+ Satisfied Clients.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
               <a

@@ -261,7 +261,7 @@ export default function CaseStudy() {
           <FadeIn>
             <h2 className="font-heading text-2xl sm:text-3xl font-bold text-slate-900 mb-4">Ready to Get Results Like These?</h2>
             <p className="text-slate-600 mb-8 max-w-lg mx-auto">
-              You Need L.E.D. is NJ DCA Licensed with 15+ years of experience serving South Jersey businesses. Get a free on-site assessment and custom quote.
+              You Need L.E.D. is NJ DCA Licensed with 34 years of industry experience serving South Jersey businesses. Get a free on-site assessment and custom quote.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Link href="/contact" className="inline-flex items-center gap-2 px-7 py-3.5 bg-[#f97015] text-white font-semibold rounded-lg hover:bg-[#e86510] transition-colors text-sm shadow-lg">

@@ -72,7 +72,7 @@ export default function CaseStudies() {
           <FadeIn>
             <h2 className="font-heading text-2xl sm:text-3xl font-bold text-slate-900 mb-4">Your Business Could Be Next</h2>
             <p className="text-slate-600 mb-8 max-w-lg mx-auto">
-              NJ DCA Licensed. 15+ years experience. 500+ satisfied clients across South Jersey and the Delaware Valley.
+              NJ DCA Licensed. 34 years of industry experience. 500+ satisfied clients across South Jersey and the Delaware Valley.
             </p>
             <Link href="/contact" className="inline-flex items-center gap-2 px-8 py-4 bg-[#f97015] text-white font-semibold rounded-lg hover:bg-[#e86510] transition-colors text-sm shadow-lg">
               Get a Free Assessment <ArrowRight className="w-4 h-4" />

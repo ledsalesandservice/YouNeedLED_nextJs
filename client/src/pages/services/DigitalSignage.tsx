@@ -190,7 +190,7 @@ export default function DigitalSignage() {
           },
           {
             q: "How long has You Need L.E.D. been installing digital signage?",
-            a: "We have been designing and installing LED digital signage and video walls in South Jersey since 2010 — over 15 years of experience. We are NJ DCA Licensed (#34BF00056900), fully insured, and have completed signage projects for 500+ satisfied commercial clients.",
+            a: "We have been designing and installing LED digital signage and video walls in South Jersey since 2010. Owner Derek Weikel brings 34 years of industry experience to every project. We are NJ DCA Licensed (#34BF00056900), fully insured, and have completed signage projects for 500+ satisfied commercial clients.",
           },
         ]}
         relatedServices={[
@@ -276,7 +276,7 @@ export default function DigitalSignage() {
                 },
                 {
                   title: "NJ DCA Licensed & Insured",
-                  body: "With 15+ years of experience and NJ DCA License #34BF00056900, we bring the same professionalism to digital signage that we bring to every security and technology project.",
+                  body: "With 34 years of industry experience and NJ DCA License #34BF00056900, we bring the same professionalism to digital signage that we bring to every security and technology project.",
                 },
                 {
                   title: "Local Support You Can Call",

@@ -43,7 +43,7 @@ export default function VideoSurveillance() {
       <ServicePageLayout
         title="Commercial Security Camera Systems"
         pageSlug="/services/video-surveillance"
-        subtitle="Enterprise-grade 4K AI cameras with license plate recognition, cloud storage, and 24/7 remote monitoring. Installed by NJ DCA Licensed professionals serving South Jersey for 15+ years."
+        subtitle="Enterprise-grade 4K AI cameras with license plate recognition, cloud storage, and 24/7 remote monitoring. Installed by NJ DCA Licensed professionals serving South Jersey since 2010."
         heroImage={IMAGES.heroCameras}
         heroSrcSet={IMAGE_SRCSETS.heroCameras}
         primaryCta={{ label: "Get a Free Camera Quote", href: "/contact" }}

@@ -297,7 +297,7 @@ export default function LiveView() {
                   <p className="text-gray-600 text-xs mb-1">Powered by</p>
                   <p className="text-[#F97316] font-bold text-base mb-1">LED Live View</p>
                   <p className="text-gray-700 text-xs mb-4">
-                    Professional 4K security cameras with AI options · NJ DCA Licensed · 15+ Years · South Jersey
+                    Professional 4K security cameras with AI options · NJ DCA Licensed · 34 Years Experience · South Jersey
                   </p>
                   <div className="flex flex-col sm:flex-row items-center justify-center gap-2">
                     <a

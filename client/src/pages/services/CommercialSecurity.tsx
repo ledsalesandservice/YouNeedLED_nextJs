@@ -16,7 +16,7 @@ const faqs = [
   { q: "Do you offer 24/7 monitoring for commercial alarm systems?", a: "Yes. Our intrusion detection systems are connected to a UL-listed central monitoring station that monitors alarms 24 hours a day, 7 days a week, 365 days a year. When an alarm triggers, the monitoring center attempts to verify the event and dispatches the appropriate response — police, fire, or EMS — based on the alarm type." },
   { q: "How long does a commercial security installation take?", a: "Installation timelines depend on project scope. A basic camera system for a small business typically takes one day. A full commercial installation with cameras, access control, and fire alarm integration may take 2–5 days. Our project manager will provide a detailed schedule before work begins so your business operations are minimally disrupted." },
   { q: "What areas of South Jersey do you serve for commercial security?", a: "You Need L.E.D. serves all of South Jersey and the Delaware Valley from our Linwood, NJ office. Our service area includes Atlantic, Cape May, Camden, Burlington, Gloucester, Ocean, and Cumberland counties in New Jersey, plus Philadelphia and the greater Delaware Valley. We also serve Delaware and parts of Maryland." },
-  { q: "How long has You Need L.E.D. been in business?", a: "You Need L.E.D. has been serving South Jersey commercial and residential clients since 2010 — over 15 years of experience. We hold a 5.0-star Google rating with 33+ verified reviews and have completed security installations for 500+ satisfied clients across the tri-state area." },
+  { q: "How long has You Need L.E.D. been in business?", a: "You Need L.E.D. has been serving South Jersey commercial and residential clients since 2010. Owner Derek Weikel brings 34 years of industry experience — 18 years in the field before founding the company. We hold a 5.0-star Google rating with 33+ verified reviews and have completed security installations for 500+ satisfied clients across the tri-state area." },
 ];
 
 const services = [
@@ -46,7 +46,7 @@ export default function CommercialSecurity() {
             name: SITE.name,
             url: SITE.url,
             telephone: SITE.phone,
-            description: "NJ DCA Licensed commercial security company serving South Jersey and the Delaware Valley for 15+ years. Services include 4K security cameras, access control, fire alarm systems, intrusion detection, jobsite security, VoIP, and digital signage.",
+            description: "NJ DCA Licensed commercial security company serving South Jersey and the Delaware Valley since 2010. Owner Derek Weikel brings 34 years of industry experience. Services include 4K security cameras, access control, fire alarm systems, intrusion detection, jobsite security, VoIP, and digital signage.",
             address: { "@type": "PostalAddress", streetAddress: "199 New Rd Ste 61", addressLocality: "Linwood", addressRegion: "NJ", postalCode: "08221", addressCountry: "US" },
             geo: { "@type": "GeoCoordinates", latitude: 39.3398, longitude: -74.5774 },
             areaServed: ["South Jersey", "Delaware Valley", "Cherry Hill NJ", "Voorhees NJ", "Mount Laurel NJ", "Egg Harbor Township NJ", "Atlantic City NJ", "Philadelphia PA"],
@@ -140,7 +140,7 @@ export default function CommercialSecurity() {
             {[
               "NJ DCA Licensed & Insured (34BF00056900)",
               "Fire Alarm Licensed (34FA00102800)",
-              "15+ Years in Business",
+              "16 Years in Business",
               "500+ Satisfied Clients",
               "5.0 Star Google Rating",
               "24/7 Emergency Support",

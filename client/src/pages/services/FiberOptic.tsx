@@ -112,7 +112,7 @@ export default function FiberOptic() {
           },
           {
             q: "Are you licensed to install fiber optic cabling in New Jersey?",
-            a: "Yes. You Need L.E.D. is NJ DCA Licensed (#34BF00056900), fully bonded and insured for commercial low-voltage and fiber optic installation throughout New Jersey. We have been serving South Jersey since 2010 with 15+ years of experience.",
+            a: "Yes. You Need L.E.D. is NJ DCA Licensed (#34BF00056900), fully bonded and insured for commercial low-voltage and fiber optic installation throughout New Jersey. We have been serving South Jersey since 2010. Owner Derek Weikel brings 34 years of industry experience.",
           },
           {
             q: "How long does a commercial fiber optic installation take?",

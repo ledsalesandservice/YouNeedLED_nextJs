@@ -88,6 +88,17 @@ export default function FAQ() {
           }),
         }}
       />
+      {/* LocalBusiness Schema */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org", "@type": "LocalBusiness", "@id": `${SITE.url}/#organization`,
+        name: SITE.name, url: SITE.url, telephone: SITE.phone,
+        image: `${SITE.url}/logo-192.png`,
+        logo: { "@type": "ImageObject", url: `${SITE.url}/logo-192.png` },
+        address: { "@type": "PostalAddress", streetAddress: "199 New Rd Ste 61", addressLocality: "Linwood", addressRegion: "NJ", postalCode: "08221", addressCountry: "US" },
+        geo: { "@type": "GeoCoordinates", latitude: 39.3398, longitude: -74.5774 },
+        aggregateRating: { "@type": "AggregateRating", ratingValue: "5.0", reviewCount: "33", bestRating: "5" },
+        hasCredential: "NJ DCA License #34BF00056900",
+      }) }} />
       {/* BreadcrumbList Schema */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         "@context": "https://schema.org", "@type": "BreadcrumbList",

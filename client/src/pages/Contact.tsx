@@ -195,6 +195,16 @@ export default function Contact() {
           </div>
         </div>
       </section>
+      {/* FAQPage Schema */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org", "@type": "FAQPage",
+        mainEntity: [
+          { "@type": "Question", name: "How do I get a free security quote?", acceptedAnswer: { "@type": "Answer", text: "Call us at (609) 335-0123 or fill out the contact form on this page. We'll schedule a free on-site assessment and provide a detailed quote within 24 hours." } },
+          { "@type": "Question", name: "What areas do you serve?", acceptedAnswer: { "@type": "Answer", text: "We serve all of South Jersey, the Jersey Shore, Central Jersey, and the Delaware Valley including Philadelphia suburbs in PA, Delaware, and parts of Maryland." } },
+          { "@type": "Question", name: "Are you licensed and insured?", acceptedAnswer: { "@type": "Answer", text: "Yes. You Need L.E.D. holds NJ DCA License #34BF00056900 and Fire Alarm License #34FA00102800. We are fully licensed and insured for all commercial and residential technology installations." } },
+          { "@type": "Question", name: "How quickly can you respond to a service call?", acceptedAnswer: { "@type": "Answer", text: "We offer same-day and next-day service for most South Jersey locations. Emergency support is available 24/7 for monitored systems." } },
+        ],
+      }) }} />
       {/* BreadcrumbList Schema */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         "@context": "https://schema.org", "@type": "BreadcrumbList",

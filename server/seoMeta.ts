@@ -36,11 +36,11 @@ const STATIC_META: Record<string, PageMeta> = {
   },
   "/about": {
     title: `About ${SUFFIX} | NJ DCA Licensed Security`,
-    description: `15+ years of experience. NJ DCA Licensed (#34BF00056900). 5.0 stars, 500+ satisfied clients. Security cameras, fire alarms, VoIP & more in South Jersey. Call ${PHONE}.`,
+    description: `NJ DCA Licensed security company. 15+ years experience, 5.0 stars, 500+ clients in South Jersey & Delaware Valley. Call ${PHONE}.`,
   },
   "/contact": {
     title: `Contact ${SUFFIX} | Free Security Quote`,
-    description: `Get a free security assessment from South Jersey's NJ DCA Licensed technology experts. Call ${PHONE} or request a quote online. Serving South Jersey & Delaware Valley.`,
+    description: `Free security assessment from NJ DCA Licensed experts. Call ${PHONE} or request a quote. Serving South Jersey & Delaware Valley.`,
   },
   "/faq": {
     title: `FAQ | Security & VoIP Questions Answered`,
@@ -56,27 +56,27 @@ const STATIC_META: Record<string, PageMeta> = {
   },
   "/case-studies": {
     title: `Case Studies | Security Projects South Jersey`,
-    description: `Real project stories from South Jersey businesses. See how You Need L.E.D. has installed security cameras, VoIP systems, and access control for warehouses, retailers, and condo associations.`,
+    description: `Real project stories from South Jersey businesses. See how You Need L.E.D. improved security, VoIP, and access control for commercial clients.`,
   },
   "/testimonials": {
     title: `Client Reviews | 5.0 Stars | ${SUFFIX}`,
-    description: `Read verified Google reviews from 33+ satisfied clients across South Jersey. You Need L.E.D. is NJ DCA Licensed with 34 years of industry experience. 5.0 stars. Call ${PHONE}.`,
+    description: `Verified Google reviews from 33+ satisfied clients in South Jersey. NJ DCA Licensed security camera and technology services. 5.0 stars.`,
   },
   "/terms-of-service": {
     title: `Terms of Service | ${SUFFIX}`,
-    description: `Read the You Need L.E.D. Business Services Agreement covering VoIP, security cameras, access control, fire alarms, and technology services for South Jersey businesses.`,
+    description: `You Need L.E.D. Business Services Agreement for VoIP, security cameras, access control, fire alarms, and technology installation in South Jersey.`,
   },
   "/live-cameras": {
     title: `Live Security Camera Feeds South Jersey | ${SUFFIX}`,
-    description: `Watch live security camera feeds from South Jersey locations monitored by You Need L.E.D. Real-time video surveillance powered by professional-grade cameras. Call ${PHONE}.`,
+    description: `Live security camera feeds from South Jersey locations. Commercial-grade 4K AI cameras with cloud storage by You Need L.E.D. Call ${PHONE}.`,
   },
   "/services/video-surveillance": {
     title: `Security Camera Installation South Jersey | ${SUFFIX}`,
-    description: `Looking for camera installation near you in South Jersey? You Need L.E.D. installs 4K AI security cameras for homes & businesses. NJ DCA Licensed. Call ${PHONE} for a free quote.`,
+    description: `4K AI security camera installation in South Jersey. NJ DCA Licensed. Commercial & residential. Free quote — call ${PHONE}.`,
   },
   "/cameras": {
     title: `Security Camera Installation South Jersey | ${SUFFIX}`,
-    description: `Looking for camera installation near you in South Jersey? You Need L.E.D. installs 4K AI security cameras for homes & businesses. NJ DCA Licensed. Call ${PHONE} for a free quote.`,
+    description: `4K AI security camera installation in South Jersey. NJ DCA Licensed. Commercial & residential. Free quote — call ${PHONE}.`,
   },
   "/services/access-control": {
     title: `Access Control Systems South Jersey | ${SUFFIX}`,
@@ -92,7 +92,7 @@ const STATIC_META: Record<string, PageMeta> = {
   },
   "/services/jobsite-security": {
     title: `Construction Site Security Cameras NJ | ${SUFFIX}`,
-    description: `Solar-powered wireless jobsite security cameras for South Jersey construction sites. No power or internet needed. Remote monitoring & theft prevention. Call ${PHONE}.`,
+    description: `Solar-powered wireless jobsite cameras for South Jersey construction sites. No power or internet needed. NJ DCA Licensed. Call ${PHONE}.`,
   },
   "/services/voip": {
     title: `VoIP Phone Systems South Jersey | ${SUFFIX}`,
@@ -108,27 +108,27 @@ const STATIC_META: Record<string, PageMeta> = {
   },
   "/services/commercial-security": {
     title: `Commercial Security Systems South Jersey | ${SUFFIX}`,
-    description: `Complete commercial security in South Jersey: 4K cameras, access control, fire alarms, intrusion detection & jobsite security. NJ DCA Licensed. Call ${PHONE}.`,
+    description: `Complete South Jersey security: 4K cameras, access control, fire alarms & intrusion detection. NJ DCA Licensed. Call ${PHONE}.`,
   },
   "/services/apartment-security": {
     title: `Apartment Security Systems South Jersey | ${SUFFIX}`,
-    description: `Complete security for apartment complexes & multi-family properties in South Jersey. Video surveillance, access control & intercom. NJ DCA Licensed. Call ${PHONE}.`,
+    description: `Security cameras, access control, intercoms & fire alarms for South Jersey apartment complexes. NJ DCA Licensed. Free quote — ${PHONE}.`,
   },
   "/services/digital-signage": {
     title: `Digital Signage South Jersey | ${SUFFIX}`,
-    description: `Cloud-managed digital signage for restaurants, retail, healthcare, schools & offices in South Jersey. Professional installation by NJ DCA Licensed experts. Call ${PHONE}.`,
+    description: `Cloud-managed digital signage for South Jersey businesses. 50+ widgets, kiosk mode, queue management. Free 30-day trial. Call ${PHONE}.`,
   },
   "/services/fiber-optic": {
     title: `Fiber Optic Installation South Jersey | ${SUFFIX}`,
-    description: `Professional fiber optic installation, fusion splicing & emergency repair in South Jersey. Single-mode & multimode, aerial & underground runs. NJ DCA Licensed. Call ${PHONE}.`,
+    description: `Fiber optic installation, fusion splicing & emergency repair in South Jersey. Single-mode & multimode for commercial buildings. Call ${PHONE}.`,
   },
   "/services/cannabis-security": {
     title: `Cannabis Security Systems NJ | CRC Compliant | ${SUFFIX}`,
-    description: `CRC-compliant cannabis security for NJ cultivators, manufacturers & dispensaries. 4K cameras, access control, 24/7 monitoring. NJ DCA Licensed since 2004. Call ${PHONE}.`,
+    description: `CRC-compliant cannabis security in NJ. 4K cameras, access control, fire alarms & 24/7 monitoring for cultivators and dispensaries. Call ${PHONE}.`,
   },
   "/services/business-phone-systems-south-jersey": {
     title: `Business Phone Systems South Jersey | ${SUFFIX}`,
-    description: `Hosted VoIP business phone systems for South Jersey. Local installation, AI receptionist, 24/7 support & flat monthly pricing. NJ DCA Licensed. Call ${PHONE}.`,
+    description: `Hosted VoIP phone systems for South Jersey businesses. Local install, AI receptionist, 24/7 support. Free quote — call ${PHONE}.`,
   },
   "/privacy-policy": {
     title: `Privacy Policy | ${SUFFIX}`,
@@ -177,7 +177,7 @@ const COUNTY_META: Record<string, PageMeta> = {};
 for (const county of COUNTY_DATA) {
   COUNTY_META[`/counties/${county.slug}`] = {
     title: `Security & VoIP in ${county.name}, ${county.stateAbbr} | ${SUFFIX}`,
-    description: `Professional security cameras, VoIP phone systems, access control, and fire alarm installation serving all of ${county.name}, ${county.state}. Licensed & insured. Call ${PHONE}.`,
+    description: `Professional security cameras, VoIP, access control & fire alarms in South Jersey and Delaware Valley. NJ DCA Licensed. Free quote — ${PHONE}.`,
   };
 }
 

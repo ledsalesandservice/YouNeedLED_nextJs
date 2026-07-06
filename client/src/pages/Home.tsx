@@ -776,6 +776,14 @@ export default function Home() {
           ]),
         }}
       />
+      {/* BreadcrumbList Schema */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: SITE.url },
+        ],
+      }) }} />
     </>
   );
 }

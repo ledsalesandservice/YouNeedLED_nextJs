@@ -50,7 +50,7 @@ export default function ServiceAreas() {
     <>
       <SEOHead
         title="Service Areas | Security & VoIP in NJ, PA, DE, MD"
-        description="You Need L.E.D. serves South Jersey, Central Jersey, the Jersey Shore, Philadelphia, Delaware, and Maryland with security cameras, VoIP, and access control."
+        description="You Need L.E.D. serves South Jersey, Central Jersey, the Jersey Shore, and Philadelphia with full security services. Hosted VoIP phone systems available in Delaware and Maryland."
         canonical="/service-areas"
       />
       {/* Hero */}
@@ -99,7 +99,7 @@ export default function ServiceAreas() {
       <section className="py-16 lg:py-20 bg-slate-50">
         <div className="container">
           <h2 className="font-heading text-2xl sm:text-3xl font-bold text-slate-900 mb-4 text-center">Out of State Services</h2>
-          <p className="text-center text-slate-600 mb-10">VoIP phone systems, CCTV cameras, and access control available throughout the Delaware Valley.</p>
+          <p className="text-center text-slate-600 mb-10">Hosted VoIP phone systems and business communications available throughout the Delaware Valley. Pennsylvania locations also include full security services.</p>
           <div className="grid md:grid-cols-3 gap-8">
             <RegionSection title="Pennsylvania" locations={paLocs} />
             <RegionSection title="Delaware" locations={deLocs} />

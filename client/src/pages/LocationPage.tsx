@@ -38,10 +38,15 @@ export default function LocationPage() {
 
   const isCounty = location.name.includes("County");
   const isRegion = location.stateAbbr === "US";
+  const isLimited = !location.fullService;
   const pageTitle = isRegion
-    ? `Security & VoIP Services in the ${location.name}`
-    : `Security Camera Installation & VoIP in ${location.name}, ${location.stateAbbr}`;
-  const metaDesc = `Professional security cameras, VoIP phone systems, access control, and fire alarm installation in ${location.name}, ${location.stateAbbr}. Licensed & insured. Call ${SITE.phone} for a free quote.`;
+    ? `VoIP & Technology Services in the ${location.name}`
+    : isLimited
+      ? `Hosted VoIP & Business Phone Systems in ${location.name}, ${location.stateAbbr}`
+      : `Security Camera Installation & VoIP in ${location.name}, ${location.stateAbbr}`;
+  const metaDesc = isLimited
+    ? `Hosted VoIP phone systems and business communications in ${location.name}, ${location.stateAbbr}. Cloud PBX, Microsoft Teams integration, and more. Call ${SITE.phone} for a free quote.`
+    : `Professional security cameras, VoIP phone systems, access control, and fire alarm installation in ${location.name}, ${location.stateAbbr}. Licensed & insured. Call ${SITE.phone} for a free quote.`;
 
   return (
     <>
@@ -64,8 +69,10 @@ export default function LocationPage() {
               {isCounty
                 ? `Security & Technology Services in ${location.name}`
                 : isRegion
-                  ? `Security & VoIP Services in the ${location.name}`
-                  : `Security Camera Installation in ${location.name}, ${location.stateAbbr}`}
+                  ? `VoIP & Technology Services in the ${location.name}`
+                  : isLimited
+                    ? `Hosted VoIP & Business Phone Systems in ${location.name}, ${location.stateAbbr}`
+                    : `Security Camera Installation in ${location.name}, ${location.stateAbbr}`}
             </h1>
             <p className="text-lg text-white/80 max-w-2xl mx-auto mb-8 leading-relaxed">
               {location.description}
@@ -110,11 +117,14 @@ export default function LocationPage() {
             <p className="text-slate-600 max-w-2xl mx-auto">
               {location.fullService
                 ? `Full-service security and technology solutions with local technicians serving ${location.name} and surrounding areas.`
-                : `VoIP phone systems, security cameras, and technology solutions available in ${location.name} through our regional service team.`}
+                : `Hosted VoIP phone systems and business communications available in ${location.name} through our regional service team.`}
             </p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            {LOCATION_SERVICES.map((svc) => (
+            {(isLimited
+              ? LOCATION_SERVICES.filter(svc => !["Alarm Systems", "CCTV / Video Surveillance", "Access Control & Card Access", "Fire Alarm Systems"].includes(svc.title))
+              : LOCATION_SERVICES
+            ).map((svc) => (
               <Link
                 key={svc.title}
                 href={svc.href}

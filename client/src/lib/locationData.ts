@@ -976,7 +976,7 @@ const deLocations: LocationData[] = [
     stateAbbr: "DE",
     region: "Delaware",
     fullService: false,
-    description: "Security cameras, VoIP, and access control for Newark's Main Street retail and restaurant corridor, University of Delaware-adjacent businesses, technology companies in the Christiana area, and commercial properties near Route 273. NJ DCA Licensed.",
+    description: "Hosted VoIP phone systems for Newark's Main Street retail and restaurant corridor, University of Delaware-adjacent businesses, technology companies in the Christiana area, and commercial properties near Route 273.",
     industries: ["Education", "Retail", "Restaurant", "Technology"],
     caseStudy: {
       title: "Newark Main Street Multi-Business Camera Share",
@@ -1075,7 +1075,7 @@ const deLocations: LocationData[] = [
     stateAbbr: "DE",
     region: "Delaware",
     fullService: false,
-    description: "Security cameras, VoIP, and discreet access control for Lewes' historic Second Street business district, Cape May-Lewes Ferry terminal area, waterfront restaurants, and the growing residential and commercial corridor along Route 1. NJ DCA Licensed.",
+    description: "Hosted VoIP and business phone systems for Lewes' historic Second Street business district, Cape May-Lewes Ferry terminal area, waterfront restaurants, and the growing residential and commercial corridor along Route 1.",
     industries: ["Tourism", "Retail", "Restaurant", "Marine"],
     caseStudy: {
       title: "Lewes Historic District Boutique Hotel",
@@ -1104,7 +1104,7 @@ const mdLocations: LocationData[] = [
     stateAbbr: "MD",
     region: "Maryland",
     fullService: false,
-    description: "VoIP phone systems and security camera solutions for Baltimore's Inner Harbor businesses, healthcare facilities, and commercial properties.",
+    description: "Hosted VoIP phone systems and business communications for Baltimore's Inner Harbor businesses, healthcare facilities, and commercial properties.",
     industries: ["Healthcare", "Hospitality", "Education", "Corporate"],
     caseStudy: {
       title: "Baltimore Medical Practice",
@@ -1123,7 +1123,7 @@ const mdLocations: LocationData[] = [
     stateAbbr: "MD",
     region: "Maryland",
     fullService: false,
-    description: "Security cameras, hosted VoIP, and access control for Towson's York Road medical corridor, Towson University-adjacent businesses, the Towson Town Center retail area, and professional office buildings along Joppa Road. NJ DCA Licensed.",
+    description: "Hosted VoIP and business phone systems for Towson's York Road medical corridor, Towson University-adjacent businesses, the Towson Town Center retail area, and professional office buildings along Joppa Road.",
     industries: ["Education", "Healthcare", "Retail", "Legal"],
     caseStudy: {
       title: "Towson Mixed-Use Professional Building",
@@ -1165,7 +1165,7 @@ const mdLocations: LocationData[] = [
     stateAbbr: "MD",
     region: "Maryland",
     fullService: false,
-    description: "Security cameras, VoIP, and flood-resilient access control for Ellicott City's historic Old Main Street district, the Columbia Pike commercial corridor, and professional offices and restaurants in the New Cut Road area. NJ DCA Licensed.",
+    description: "Hosted VoIP and business phone systems for Ellicott City's historic Old Main Street district, the Columbia Pike commercial corridor, and professional offices and restaurants in the New Cut Road area.",
     industries: ["Retail", "Restaurant", "Professional Services", "Education"],
     caseStudy: {
       title: "Old Ellicott City Historic District Restaurant",
@@ -1245,7 +1245,7 @@ const mdLocations: LocationData[] = [
     stateAbbr: "MD",
     region: "Maryland",
     fullService: false,
-    description: "Security cameras, hosted VoIP, and access control for Bel Air's Main Street downtown corridor, medical offices along Bel Air South Parkway, professional buildings near Route 1, and the growing Harford County commercial district. NJ DCA Licensed.",
+    description: "Hosted VoIP and business phone systems for Bel Air's Main Street downtown corridor, medical offices along Bel Air South Parkway, professional buildings near Route 1, and the growing Harford County commercial district.",
     industries: ["Healthcare", "Retail", "Legal", "Education"],
     caseStudy: {
       title: "Bel Air Multi-Specialty Medical Complex",
@@ -1274,7 +1274,7 @@ const regionalLocations: LocationData[] = [
     stateAbbr: "US",
     region: "Delaware Valley",
     fullService: false,
-    description: "Serving the entire Delaware Valley region with VoIP phone systems, security cameras, and technology solutions across New Jersey, Pennsylvania, Delaware, and Maryland.",
+    description: "Serving the entire Delaware Valley region with hosted VoIP phone systems and business communications technology across New Jersey, Pennsylvania, Delaware, and Maryland.",
     industries: ["Corporate", "Healthcare", "Education", "Retail", "Hospitality"],
     caseStudy: {
       title: "Delaware Valley Multi-Location Business",

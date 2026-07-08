@@ -2,7 +2,7 @@ import { Link } from "wouter";
 import ServicePageLayout from "@/components/ServicePageLayout";
 import { IMAGES, IMAGE_SRCSETS, SITE } from "@/lib/siteData";
 import SEOHead from "@/components/SEOHead";
-import { Camera, Eye, Cloud, Cpu, Wifi, Shield, ArrowRight, CheckCircle2 } from "lucide-react";
+import { Camera, Eye, Cloud, Cpu, Wifi, Shield, ArrowRight, CheckCircle2, BrainCircuit, Car, Users, AlertTriangle, Package, Flame, Lock, Bell, Zap, MapPin, Clock } from "lucide-react";
 import { FadeIn, StaggerContainer, StaggerItem } from "@/components/animations";
 
 export default function VideoSurveillance() {
@@ -57,10 +57,11 @@ export default function VideoSurveillance() {
           { icon: <Shield className="w-6 h-6" />, title: "NJ DCA Licensed Install", description: "Every installation is performed by our licensed and insured technicians. We pull permits and follow all NJ code requirements." },
         ]}
         faqs={[
-          { q: "What type of cameras do you install?", a: "We install a wide range of commercial and residential cameras including dome, bullet, PTZ, and specialty cameras from top manufacturers like Hanwha, Axis, and Alarm.com. All our cameras support 4K resolution with AI analytics." },
+          { q: "What type of cameras do you install?", a: "We install a wide range of commercial and residential cameras including dome, bullet, PTZ, and specialty cameras from top manufacturers like Hanwha, Axis, Vivotek, and Alarm.com. All our cameras support 4K resolution with AI analytics options." },
           { q: "Can I view my cameras remotely?", a: "Yes. All our camera systems include mobile app access so you can view live and recorded footage from your smartphone, tablet, or computer from anywhere in the world." },
           { q: "How much does installation cost?", a: "Pricing depends on the number of cameras, system complexity, and any infrastructure work required. Our Essential package starts at $2,499 for a 4-camera system. Contact us for a free on-site assessment and quote." },
           { q: "How long is footage stored?", a: "Storage duration depends on your plan. We offer local NVR storage with 30–90 day retention, and cloud storage options with flexible retention periods. Enterprise clients can customize retention to meet compliance requirements." },
+          { q: "What AI features are available as add-ons?", a: "Our optional AI Intelligence Layer adds advanced capabilities including real-time person and vehicle detection, loitering and zone-crossing alerts, license plate recognition with searchable logs, package detection, crowd density monitoring, and natural language video search. These features are available on our Professional and Enterprise packages or as an add-on to any existing system." },
           { q: "Do you install cameras at construction sites?", a: "Yes — we specialize in solar-powered wireless jobsite security cameras that need no power or internet. See our Jobsite Security page for details." },
           { q: "Do you offer camera system maintenance?", a: "Yes, we provide ongoing maintenance plans that include regular cleaning, firmware updates, system health checks, and priority support to ensure your system operates at peak performance." },
           { q: "Are you licensed to install security cameras in New Jersey?", a: "Yes. You Need L.E.D. is NJ DCA Licensed (#34BF00056900), fully bonded and insured for commercial and residential security camera installation throughout New Jersey. We pull all required permits and have been serving South Jersey since 2010." },
@@ -89,7 +90,7 @@ export default function VideoSurveillance() {
                   Our 4K (8-megapixel) cameras deliver four times the detail of standard HD systems. You can digitally zoom in on a face, read a license plate from 60 feet away, or identify a specific item of clothing — all from a single wide-angle camera covering your entire parking lot.
                 </p>
                 <p className="text-slate-600 leading-relaxed mb-6">
-                  Combined with AI-powered analytics, our systems don't just record — they actively alert you to what matters. Person detection, vehicle detection, loitering alerts, and line-crossing notifications mean your team responds to real threats, not wind-blown trash.
+                  Combined with optional AI-powered analytics, our systems don't just record — they actively alert you to what matters. Person detection, vehicle detection, loitering alerts, and line-crossing notifications mean your team responds to real threats, not wind-blown trash.
                 </p>
                 <Link
                   href="/contact"
@@ -132,9 +133,53 @@ export default function VideoSurveillance() {
             </FadeIn>
             <div className="grid md:grid-cols-3 gap-6">
               {[
-                { name: "Essential", price: "Starting at $2,499", features: ["4 × 4K IP cameras", "8-channel NVR", "30-day local storage", "Mobile app access", "Motion alerts", "Professional installation", "1-year labor warranty"] },
-                { name: "Professional", price: "Starting at $4,999", popular: true, features: ["8 × 4K IP cameras", "16-channel NVR", "60-day storage", "AI person/vehicle detection", "License plate recognition", "Cloud backup included", "Professional installation", "2-year labor warranty"] },
-                { name: "Enterprise", price: "Custom pricing", features: ["16+ cameras", "Multi-site management", "90-day cloud storage", "Advanced AI analytics", "Video verification monitoring", "24/7 central station monitoring", "Dedicated account manager", "Priority support SLA"] },
+                {
+                  name: "Essential",
+                  price: "Starting at $2,499",
+                  features: [
+                    "4 × 4K IP cameras",
+                    "8-channel NVR",
+                    "30-day local storage",
+                    "Mobile app access",
+                    "Motion alerts",
+                    "Professional installation",
+                    "1-year labor warranty",
+                  ],
+                  aiAddons: false,
+                },
+                {
+                  name: "Professional",
+                  price: "Starting at $4,999",
+                  popular: true,
+                  features: [
+                    "8 × 4K IP cameras",
+                    "16-channel NVR",
+                    "60-day storage",
+                    "AI person/vehicle detection",
+                    "License plate recognition",
+                    "Loitering & zone alerts",
+                    "Cloud backup included",
+                    "Professional installation",
+                    "2-year labor warranty",
+                  ],
+                  aiAddons: true,
+                },
+                {
+                  name: "Enterprise",
+                  price: "Custom pricing",
+                  features: [
+                    "16+ cameras",
+                    "Multi-site management",
+                    "90-day cloud storage",
+                    "Full AI Intelligence Layer",
+                    "Natural language video search",
+                    "Video verification monitoring",
+                    "24/7 central station monitoring",
+                    "Dedicated account manager",
+                    "Priority support SLA",
+                  ],
+                  aiAddons: true,
+                },
               ].map((pkg) => (
                 <div key={pkg.name} className={`p-6 rounded-xl border ${pkg.popular ? "border-[#0e319a] ring-2 ring-[#0e319a]/20 bg-white" : "border-slate-200 bg-white"}`}>
                   {pkg.popular && <span className="inline-block px-3 py-1 bg-[#0e319a] text-white text-xs font-semibold rounded-full mb-3">Most Popular</span>}
@@ -148,6 +193,9 @@ export default function VideoSurveillance() {
                       </li>
                     ))}
                   </ul>
+                  {pkg.aiAddons && (
+                    <p className="text-xs text-[#f97015] font-semibold mb-4">✦ AI Intelligence Layer available as add-on</p>
+                  )}
                   <Link href="/contact" className="block text-center px-4 py-2.5 bg-[#0e319a] text-white text-sm font-semibold rounded-lg hover:bg-[#0c2a85] transition-colors">
                     Get a Quote
                   </Link>
@@ -157,8 +205,163 @@ export default function VideoSurveillance() {
           </div>
         </section>
 
+        {/* ===== AI INTELLIGENCE LAYER ===== */}
+        <section id="ai-features" className="py-16 lg:py-24 bg-white">
+          <div className="container">
+            <FadeIn className="text-center max-w-2xl mx-auto mb-14">
+              <p className="text-sm font-semibold text-[#f97015] uppercase tracking-wider mb-3">Optional Add-On</p>
+              <h2 className="font-heading text-2xl sm:text-3xl font-bold text-slate-900 mb-4">
+                AI Intelligence Layer — Turn Your Cameras Into Smart Sensors
+              </h2>
+              <p className="text-slate-600 leading-relaxed">
+                Our AI Intelligence Layer is an optional upgrade available on any new or existing IP camera system. It adds on-site edge processing and cloud-assisted analysis so your cameras actively detect, classify, and alert — not just record. No proprietary hardware lock-in. Works with cameras you already own.
+              </p>
+            </FadeIn>
+
+            {/* Standard AI Detection Features */}
+            <FadeIn className="mb-14">
+              <h3 className="font-heading text-lg font-bold text-slate-900 text-center mb-8">
+                Standard AI Detection Features
+              </h3>
+              <StaggerContainer className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+                {[
+                  {
+                    icon: <Users className="w-5 h-5" />,
+                    title: "Person Detection",
+                    desc: "Accurately distinguishes people from animals, vehicles, and environmental motion. Dramatically reduces false alarm rates compared to standard motion detection.",
+                  },
+                  {
+                    icon: <Car className="w-5 h-5" />,
+                    title: "Vehicle Detection & Classification",
+                    desc: "Detects cars, trucks, motorcycles, and bicycles. Classify vehicle type and trigger alerts based on vehicle presence in specific zones.",
+                  },
+                  {
+                    icon: <Eye className="w-5 h-5" />,
+                    title: "License Plate Recognition (LPR)",
+                    desc: "Automatically reads and logs license plates of every vehicle entering or exiting. Searchable plate logs with timestamp and camera source.",
+                  },
+                  {
+                    icon: <AlertTriangle className="w-5 h-5" />,
+                    title: "Loitering Detection",
+                    desc: "Alerts when a person or vehicle remains in a defined zone longer than a set time threshold — ideal for parking lots, ATM areas, and building entrances.",
+                  },
+                  {
+                    icon: <MapPin className="w-5 h-5" />,
+                    title: "Zone Crossing & Line Crossing",
+                    desc: "Define virtual zones or tripwires on any camera view. Receive instant alerts when a person or vehicle crosses into a restricted area.",
+                  },
+                  {
+                    icon: <Package className="w-5 h-5" />,
+                    title: "Package & Object Detection",
+                    desc: "Detect unattended packages, left-behind objects, or missing items in a scene. Useful for loading docks, mailrooms, and retail stockrooms.",
+                  },
+                  {
+                    icon: <Flame className="w-5 h-5" />,
+                    title: "Smoke & Fire Detection",
+                    desc: "AI-assisted visual detection of smoke or fire in camera views, providing an additional early-warning layer alongside your fire alarm system.",
+                  },
+                  {
+                    icon: <Users className="w-5 h-5" />,
+                    title: "Crowd Density Monitoring",
+                    desc: "Monitor occupancy levels in real time. Receive alerts when a space exceeds a defined crowd threshold — useful for retail, events, and compliance.",
+                  },
+                  {
+                    icon: <Lock className="w-5 h-5" />,
+                    title: "Tailgating Detection",
+                    desc: "Detect unauthorized entry attempts where a second person follows an authorized individual through a secured door or gate without credentials.",
+                  },
+                ].map((feat) => (
+                  <StaggerItem key={feat.title}>
+                    <div className="p-5 rounded-xl border border-slate-200 bg-slate-50 h-full">
+                      <div className="flex items-center gap-3 mb-3">
+                        <div className="w-9 h-9 rounded-lg bg-[#0e319a]/10 flex items-center justify-center text-[#0e319a] shrink-0">
+                          {feat.icon}
+                        </div>
+                        <h4 className="font-heading text-sm font-semibold text-slate-900">{feat.title}</h4>
+                      </div>
+                      <p className="text-sm text-slate-600 leading-relaxed">{feat.desc}</p>
+                    </div>
+                  </StaggerItem>
+                ))}
+              </StaggerContainer>
+            </FadeIn>
+
+            {/* Advanced AI Features */}
+            <FadeIn className="mb-14">
+              <h3 className="font-heading text-lg font-bold text-slate-900 text-center mb-8">
+                Advanced AI Features <span className="text-sm font-normal text-[#f97015] ml-2">(Professional & Enterprise)</span>
+              </h3>
+              <StaggerContainer className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+                {[
+                  {
+                    icon: <BrainCircuit className="w-5 h-5" />,
+                    title: "Natural Language Video Search",
+                    desc: 'Search your recorded footage using plain English. Ask "show me everyone in a red jacket near the back door after 10pm" and get results in seconds — no manual scrubbing.',
+                  },
+                  {
+                    icon: <Bell className="w-5 h-5" />,
+                    title: "Intelligent Alert Filtering",
+                    desc: "AI pre-screens every motion event before sending you an alert. Only confirmed person or vehicle detections trigger notifications — eliminating 90%+ of nuisance alerts.",
+                  },
+                  {
+                    icon: <Zap className="w-5 h-5" />,
+                    title: "Real-Time Scene Analysis",
+                    desc: "Advanced vision AI analyzes the full context of a scene — not just motion — to understand what is actually happening and generate a plain-language description of events.",
+                  },
+                  {
+                    icon: <Clock className="w-5 h-5" />,
+                    title: "Event Timeline & Clip Export",
+                    desc: "Every detected event is automatically clipped, timestamped, and organized into a searchable timeline. Share evidence clips directly from your phone in seconds.",
+                  },
+                  {
+                    icon: <Car className="w-5 h-5" />,
+                    title: "Vehicle Watchlist Alerts",
+                    desc: "Add specific license plates to a watchlist. Receive an instant alert the moment a flagged vehicle is detected on any camera at your property.",
+                  },
+                  {
+                    icon: <Shield className="w-5 h-5" />,
+                    title: "After-Hours Behavior Detection",
+                    desc: "Automatically apply stricter detection rules during off-hours. Any person detected on-site after closing triggers an immediate priority alert — no manual scheduling required.",
+                  },
+                ].map((feat) => (
+                  <StaggerItem key={feat.title}>
+                    <div className="p-5 rounded-xl border border-[#0e319a]/20 bg-[#0e319a]/5 h-full">
+                      <div className="flex items-center gap-3 mb-3">
+                        <div className="w-9 h-9 rounded-lg bg-[#0e319a]/15 flex items-center justify-center text-[#0e319a] shrink-0">
+                          {feat.icon}
+                        </div>
+                        <h4 className="font-heading text-sm font-semibold text-slate-900">{feat.title}</h4>
+                      </div>
+                      <p className="text-sm text-slate-600 leading-relaxed">{feat.desc}</p>
+                    </div>
+                  </StaggerItem>
+                ))}
+              </StaggerContainer>
+            </FadeIn>
+
+            {/* AI CTA Banner */}
+            <FadeIn>
+              <div className="rounded-2xl bg-gradient-to-r from-[#0e319a] to-[#1a42b8] p-8 md:p-10 text-center">
+                <BrainCircuit className="w-10 h-10 text-white/70 mx-auto mb-4" />
+                <h3 className="font-heading text-xl sm:text-2xl font-bold text-white mb-3">
+                  Already Have Cameras? Add AI to Your Existing System.
+                </h3>
+                <p className="text-white/80 max-w-xl mx-auto mb-6 text-sm leading-relaxed">
+                  Our AI Intelligence Layer works with most existing IP cameras — no rip-and-replace required. We assess your current system and add the intelligence layer on top of what you already own.
+                </p>
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-[#f97015] text-white font-semibold rounded-lg hover:bg-[#e86510] transition-colors text-sm"
+                >
+                  Get an AI Upgrade Assessment <ArrowRight className="w-4 h-4" />
+                </Link>
+              </div>
+            </FadeIn>
+          </div>
+        </section>
+
         {/* ===== INDUSTRIES SERVED ===== */}
-        <section className="py-16 lg:py-20 bg-white">
+        <section className="py-16 lg:py-20 bg-slate-50">
           <div className="container">
             <FadeIn className="text-center max-w-2xl mx-auto mb-12">
               <p className="text-sm font-semibold text-[#f97015] uppercase tracking-wider mb-3">Industries We Serve</p>
@@ -177,9 +380,12 @@ export default function VideoSurveillance() {
                 { name: "Multi-Family & HOA", desc: "Protect common areas, parking lots, mailrooms, and building entrances for apartment complexes and condo associations throughout South Jersey." },
                 { name: "Construction Sites", desc: "Solar-powered wireless cameras that need no power or internet. Deter theft, document site progress, and protect equipment remotely from your phone." },
                 { name: "Healthcare & Medical", desc: "HIPAA-conscious camera placement for waiting rooms, parking areas, and exterior perimeters of medical offices and urgent care facilities." },
+                { name: "Auto Dealerships", desc: "Lot-wide coverage with license plate recognition and after-hours vehicle monitoring. Protect your inventory and document every vehicle movement on the lot." },
+                { name: "Cannabis Dispensaries", desc: "NJ-CRC compliant camera coverage meeting all state regulatory requirements for cannabis retail and cultivation facilities in New Jersey." },
+                { name: "Schools & Houses of Worship", desc: "Exterior perimeter cameras, parking lot coverage, and entry-point monitoring designed with community safety and privacy best practices in mind." },
               ].map((ind) => (
                 <StaggerItem key={ind.name}>
-                  <div className="p-5 rounded-xl border border-slate-200 bg-slate-50 h-full">
+                  <div className="p-5 rounded-xl border border-slate-200 bg-white h-full">
                     <h3 className="font-heading text-base font-semibold text-slate-900 mb-2">{ind.name}</h3>
                     <p className="text-sm text-slate-600 leading-relaxed">{ind.desc}</p>
                   </div>
@@ -190,7 +396,7 @@ export default function VideoSurveillance() {
         </section>
 
         {/* ===== SOUTH JERSEY SERVICE AREAS ===== */}
-        <section className="py-14 bg-slate-50">
+        <section className="py-14 bg-white">
           <div className="container">
             <FadeIn className="text-center max-w-2xl mx-auto mb-10">
               <p className="text-sm font-semibold text-[#f97015] uppercase tracking-wider mb-3">Local Coverage</p>
@@ -210,7 +416,7 @@ export default function VideoSurveillance() {
                 { city: "Somers Point, NJ", href: "/locations/somers-point-nj" },
                 { city: "Atlantic City, NJ", href: "/locations/atlantic-city-nj" },
               ].map((loc) => (
-                <Link key={loc.city} href={loc.href} className="flex items-center gap-2 p-4 bg-white rounded-lg border border-slate-200 hover:border-[#0e319a]/30 hover:shadow-sm transition-all text-sm font-medium text-slate-700 hover:text-[#0e319a]">
+                <Link key={loc.city} href={loc.href} className="flex items-center gap-2 p-4 bg-slate-50 rounded-lg border border-slate-200 hover:border-[#0e319a]/30 hover:shadow-sm transition-all text-sm font-medium text-slate-700 hover:text-[#0e319a]">
                   <ArrowRight className="w-4 h-4 text-[#f97015] shrink-0" />
                   Security Cameras in {loc.city}
                 </Link>

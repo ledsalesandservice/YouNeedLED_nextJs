@@ -52,7 +52,7 @@ const STATIC_META: Record<string, PageMeta> = {
   },
   "/service-areas": {
     title: `Service Areas | Security & VoIP in NJ, PA, DE, MD`,
-    description: `You Need L.E.D. serves South Jersey, Central Jersey, the Jersey Shore, Philadelphia, Delaware, and Maryland with security cameras, VoIP, and access control.`,
+    description: `You Need L.E.D. serves South Jersey, Central Jersey, the Jersey Shore, and Philadelphia with full security services. VoIP phone systems available in Delaware and Maryland.`,
   },
   "/case-studies": {
     title: `Case Studies | Security Projects South Jersey`,

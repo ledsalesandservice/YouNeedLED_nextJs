@@ -225,21 +225,40 @@ export default function CameraSequence() {
         <div className={`flex-1 flex ${isFullscreen ? "flex-col" : "flex-col lg:flex-row"} min-h-0`}>
 
           {/* ── Video area ── */}
-          <div className="relative flex-1 bg-black min-h-0">
-            {/* iframe fills the entire video area absolutely */}
+          <div className="relative flex-1 bg-black min-h-0 overflow-hidden">
+            {/*
+              Scale the iframe slightly larger than the container so YouTube's
+              black letterbox bars are hidden behind the overflow:hidden edge.
+              The iframe itself is centered via negative margin trick.
+              We also scale up in fullscreen to fill the screen completely.
+            */}
             <iframe
               key={stream.id}
               src={embedUrl}
               title={stream.title}
-              className="absolute inset-0 w-full h-full"
-              allow="autoplay; encrypted-media; fullscreen; picture-in-picture"
-              allowFullScreen
-              style={{ border: "none" }}
+              allow="autoplay; encrypted-media; picture-in-picture"
+              style={{
+                border: "none",
+                position: "absolute",
+                top: "50%",
+                left: "50%",
+                width: "100%",
+                height: "100%",
+                transform: "translate(-50%, -50%) scale(1.01)",
+                pointerEvents: "none",  // block all YouTube UI clicks
+              }}
             />
+
+            {/*
+              Full-area transparent overlay — captures all mouse/touch events
+              so YouTube's mini-player, share buttons, and fullscreen button
+              never receive clicks. Our own buttons use pointer-events-auto.
+            */}
+            <div className="absolute inset-0 z-10" style={{ background: "transparent" }} />
 
             {/* Prev / Next overlays */}
             <div
-              className={`absolute inset-0 flex items-center justify-between px-3 pointer-events-none transition-opacity duration-300 ${isFullscreen && !showControls ? "opacity-0" : "opacity-100"}`}
+              className={`absolute inset-0 z-20 flex items-center justify-between px-3 pointer-events-none transition-opacity duration-300 ${isFullscreen && !showControls ? "opacity-0" : "opacity-100"}`}
             >
               <button
                 onClick={prev}

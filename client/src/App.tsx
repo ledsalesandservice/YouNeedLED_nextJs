@@ -116,7 +116,7 @@ function Router() {
         <Route path="/privacy-policy" component={PrivacyPolicy} />
         {/* Live camera viewer — auto-generated per stream ID */}
         <Route path="/live-cameras" component={LiveCameras} />
-        <Route path="/live-cameras/sequence" component={CameraSequence} />
+        <Route path="/live/9600" component={CameraSequence} />
         <Route path="/live/:streamId" component={LiveView} />
         <Route path="/404" component={NotFound} />
         <Route component={NotFound} />

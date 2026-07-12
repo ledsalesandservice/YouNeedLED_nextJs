@@ -3,6 +3,14 @@
  * Auto-rotating live stream viewer: cycles through all @YouNeedLED-Security
  * YouTube live feeds every 60 seconds (configurable). Designed for lobby
  * displays, digital signage, and public viewing pages.
+ *
+ * Fullscreen strategy:
+ *   - The outer wrapper uses position:fixed + z-[9999] to cover the entire
+ *     viewport including the site Header/Footer when in "page fullscreen" mode.
+ *   - A separate button calls requestFullscreen() on the wrapper div to trigger
+ *     true OS-level fullscreen (F11-style), which hides the browser chrome.
+ *   - The iframe always fills 100% of the available video area via absolute
+ *     inset-0, so it works correctly in both modes.
  */
 import { useState, useEffect, useCallback, useRef } from "react";
 import { Link } from "wouter";
@@ -10,32 +18,37 @@ import { SITE } from "@/lib/siteData";
 import SEOHead from "@/components/SEOHead";
 import {
   Youtube, Play, Pause, SkipForward, SkipBack,
-  Maximize2, Minimize2, Clock, Wifi, Phone
+  Maximize2, Minimize2, Clock, Wifi, Phone, Expand
 } from "lucide-react";
 
 // ── All live streams from @YouNeedLED-Security ────────────────────────────────
 const STREAMS = [
-  { id: "JgSnNRp2cIo", title: "9600 Atlantic — Pano Cam Looking North",   location: "Margate / Atlantic City, NJ", direction: "North" },
-  { id: "VuM5l3WV7rw", title: "9600 Atlantic — Looking East (Sunrise)",   location: "Margate / Atlantic City, NJ", direction: "East"  },
-  { id: "RWZGVNEEI5o", title: "9600 Atlantic — Looking West",              location: "Margate / Atlantic City, NJ", direction: "West"  },
-  { id: "41PY11C6D9Y", title: "9600 Atlantic — Looking South towards OC", location: "Margate / Atlantic City, NJ", direction: "South" },
-  { id: "2MNsMmfdpx8", title: "9600 Atlantic — Looking North Towards AC", location: "Margate / Atlantic City, NJ", direction: "North" },
-  { id: "8be_ykDhH3Q", title: "9600 Atlantic — Pano Cam South",           location: "Margate / Atlantic City, NJ", direction: "South" },
-  { id: "DnMSi9LRulo", title: "9600 Atlantic — Looking Southwest",        location: "Margate / Atlantic City, NJ", direction: "SW"    },
-  { id: "p5DvNl794TA", title: "9600 Atlantic — Pano Cam Looking West",    location: "Margate / Atlantic City, NJ", direction: "West"  },
+  { id: "JgSnNRp2cIo", title: "9600 Atlantic — Pano Cam Looking North",   location: "Margate / Atlantic City, NJ" },
+  { id: "VuM5l3WV7rw", title: "9600 Atlantic — Looking East (Sunrise)",   location: "Margate / Atlantic City, NJ" },
+  { id: "RWZGVNEEI5o", title: "9600 Atlantic — Looking West",              location: "Margate / Atlantic City, NJ" },
+  { id: "41PY11C6D9Y", title: "9600 Atlantic — Looking South towards OC", location: "Margate / Atlantic City, NJ" },
+  { id: "2MNsMmfdpx8", title: "9600 Atlantic — Looking North Towards AC", location: "Margate / Atlantic City, NJ" },
+  { id: "8be_ykDhH3Q", title: "9600 Atlantic — Pano Cam South",           location: "Margate / Atlantic City, NJ" },
+  { id: "DnMSi9LRulo", title: "9600 Atlantic — Looking Southwest",        location: "Margate / Atlantic City, NJ" },
+  { id: "p5DvNl794TA", title: "9600 Atlantic — Pano Cam Looking West",    location: "Margate / Atlantic City, NJ" },
 ];
 
 const DEFAULT_INTERVAL = 60; // seconds
 
 export default function CameraSequence() {
-  const [current, setCurrent]       = useState(0);
-  const [playing, setPlaying]       = useState(true);
-  const [timeLeft, setTimeLeft]     = useState(DEFAULT_INTERVAL);
-  const [interval, setIntervalSec]  = useState(DEFAULT_INTERVAL);
-  const [fullscreen, setFullscreen] = useState(false);
+  const [current, setCurrent]         = useState(0);
+  const [playing, setPlaying]         = useState(true);
+  const [timeLeft, setTimeLeft]       = useState(DEFAULT_INTERVAL);
+  const [interval, setIntervalSec]    = useState(DEFAULT_INTERVAL);
+  // pageFS = cover viewport with fixed overlay (hides header/footer)
+  const [pageFS, setPageFS]           = useState(false);
+  // osFS = true OS-level fullscreen via Fullscreen API
+  const [osFS, setOsFS]               = useState(false);
   const [showControls, setShowControls] = useState(true);
-  const containerRef = useRef<HTMLDivElement>(null);
-  const hideTimer    = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const wrapperRef = useRef<HTMLDivElement>(null);
+  const hideTimer  = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const isFullscreen = pageFS || osFS;
 
   // ── Auto-advance timer ────────────────────────────────────────────────────
   useEffect(() => {
@@ -62,143 +75,191 @@ export default function CameraSequence() {
   const prev = () => goTo((current - 1 + STREAMS.length) % STREAMS.length);
   const next = () => goTo((current + 1) % STREAMS.length);
 
-  // ── Fullscreen API ────────────────────────────────────────────────────────
-  const toggleFullscreen = async () => {
-    if (!document.fullscreenElement && containerRef.current) {
-      await containerRef.current.requestFullscreen();
-      setFullscreen(true);
+  // ── Page fullscreen (covers header/footer) ────────────────────────────────
+  const togglePageFS = () => setPageFS(p => !p);
+
+  // ── OS-level fullscreen (true browser fullscreen) ─────────────────────────
+  const toggleOsFS = async () => {
+    if (!document.fullscreenElement) {
+      if (wrapperRef.current) {
+        await wrapperRef.current.requestFullscreen().catch(() => {});
+      }
     } else {
-      await document.exitFullscreen();
-      setFullscreen(false);
+      await document.exitFullscreen().catch(() => {});
     }
   };
 
   useEffect(() => {
-    const handler = () => setFullscreen(!!document.fullscreenElement);
+    const handler = () => {
+      const inFs = !!document.fullscreenElement;
+      setOsFS(inFs);
+      if (!inFs) setShowControls(true);
+    };
     document.addEventListener("fullscreenchange", handler);
     return () => document.removeEventListener("fullscreenchange", handler);
   }, []);
 
-  // ── Auto-hide controls in fullscreen ─────────────────────────────────────
+  // ── Auto-hide controls when fullscreen ───────────────────────────────────
   const resetHideTimer = useCallback(() => {
     setShowControls(true);
     if (hideTimer.current) clearTimeout(hideTimer.current);
-    if (fullscreen) {
-      hideTimer.current = setTimeout(() => setShowControls(false), 3000);
+    if (isFullscreen) {
+      hideTimer.current = setTimeout(() => setShowControls(false), 3500);
     }
-  }, [fullscreen]);
+  }, [isFullscreen]);
 
   useEffect(() => {
-    if (!fullscreen) { setShowControls(true); return; }
+    if (!isFullscreen) { setShowControls(true); return; }
     resetHideTimer();
     return () => { if (hideTimer.current) clearTimeout(hideTimer.current); };
-  }, [fullscreen, resetHideTimer]);
+  }, [isFullscreen, resetHideTimer]);
+
+  // ── Keyboard shortcuts ────────────────────────────────────────────────────
+  useEffect(() => {
+    const handler = (e: KeyboardEvent) => {
+      if (e.key === "ArrowRight") next();
+      else if (e.key === "ArrowLeft") prev();
+      else if (e.key === " ") { e.preventDefault(); setPlaying(p => !p); }
+      else if (e.key === "f" || e.key === "F") togglePageFS();
+      else if (e.key === "Escape" && pageFS) setPageFS(false);
+    };
+    window.addEventListener("keydown", handler);
+    return () => window.removeEventListener("keydown", handler);
+  }, [current, interval, pageFS]);
 
   const stream = STREAMS[current];
-  const embedUrl = `https://www.youtube.com/embed/${stream.id}?autoplay=1&mute=1&controls=0&modestbranding=1&rel=0&iv_load_policy=3`;
-
-  // ── Progress bar width ────────────────────────────────────────────────────
   const progress = ((interval - timeLeft) / interval) * 100;
+
+  // YouTube embed — autoplay + muted (required by browsers), no YT controls
+  const embedUrl = `https://www.youtube.com/embed/${stream.id}?autoplay=1&mute=1&controls=0&modestbranding=1&rel=0&iv_load_policy=3&playsinline=1`;
 
   return (
     <>
       <SEOHead
-        title="Live Camera Sequence | You Need LED Security Channel"
-        description="Auto-rotating live security camera feeds from 9600 Atlantic Ave, Margate NJ — installed and managed by You Need LED. Watch all 8 views cycle every 60 seconds."
-        canonical="/live-cameras/sequence"
+        title="9600 Atlantic Live Cameras | You Need LED Security"
+        description="Live 24/7 security camera feeds from 9600 Atlantic Ave, Margate NJ — 8 views cycling automatically. Installed and managed by You Need LED, NJ DCA Licensed."
+        canonical="/live/9600"
       />
 
+      {/*
+        Wrapper: in pageFS/osFS mode this becomes a fixed full-viewport overlay
+        that sits above the site Header and Footer (z-[9999]).
+        In normal mode it's just a regular page section.
+      */}
       <div
-        ref={containerRef}
-        className={`bg-[#0a0f1a] ${fullscreen ? "fixed inset-0 z-50" : "min-h-screen"}`}
+        ref={wrapperRef}
+        className={
+          isFullscreen
+            ? "fixed inset-0 z-[9999] bg-black flex flex-col"
+            : "min-h-screen bg-[#0a0f1a] flex flex-col"
+        }
         onMouseMove={resetHideTimer}
         onTouchStart={resetHideTimer}
       >
         {/* ── Top bar ── */}
-        {(!fullscreen || showControls) && (
-          <div className={`${fullscreen ? "absolute top-0 left-0 right-0 z-10 bg-gradient-to-b from-black/80 to-transparent" : "bg-gradient-to-b from-[#0e1a2e] to-[#0a0f1a] border-b border-gray-800/50"} transition-opacity duration-300`}>
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between gap-4">
-              {/* Brand + title */}
-              <div className="flex items-center gap-3 min-w-0">
-                <div className="flex items-center gap-1.5 bg-red-600/20 border border-red-600/30 rounded-full px-2.5 py-1 shrink-0">
-                  <span className="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse" />
-                  <span className="text-red-400 text-[10px] font-bold uppercase tracking-wider">Live</span>
-                </div>
-                <div className="min-w-0">
-                  <p className="text-white font-semibold text-sm truncate">{stream.title}</p>
-                  <p className="text-gray-500 text-xs truncate">{stream.location}</p>
-                </div>
+        <div
+          className={`
+            shrink-0 transition-opacity duration-300
+            ${isFullscreen && !showControls ? "opacity-0 pointer-events-none" : "opacity-100"}
+            ${isFullscreen
+              ? "absolute top-0 left-0 right-0 z-10 bg-gradient-to-b from-black/90 via-black/50 to-transparent pb-6"
+              : "bg-gradient-to-b from-[#0e1a2e] to-[#0a0f1a] border-b border-gray-800/50"
+            }
+          `}
+        >
+          <div className="px-4 sm:px-6 py-3 flex items-center justify-between gap-4">
+            {/* Live badge + title */}
+            <div className="flex items-center gap-3 min-w-0">
+              <div className="flex items-center gap-1.5 bg-red-600/20 border border-red-600/30 rounded-full px-2.5 py-1 shrink-0">
+                <span className="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse" />
+                <span className="text-red-400 text-[10px] font-bold uppercase tracking-wider">Live</span>
               </div>
-
-              {/* Right: channel link + fullscreen */}
-              <div className="flex items-center gap-2 shrink-0">
-                <a
-                  href={SITE.social.youtube}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hidden sm:flex items-center gap-1.5 text-xs text-gray-400 hover:text-red-400 transition-colors"
-                >
-                  <Youtube className="w-3.5 h-3.5" />
-                  @YouNeedLED-Security
-                </a>
-                <button
-                  onClick={toggleFullscreen}
-                  className="w-8 h-8 rounded-lg bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"
-                  title={fullscreen ? "Exit fullscreen" : "Enter fullscreen"}
-                >
-                  {fullscreen ? <Minimize2 className="w-4 h-4 text-white" /> : <Maximize2 className="w-4 h-4 text-white" />}
-                </button>
+              <div className="min-w-0">
+                <p className="text-white font-semibold text-sm truncate">{stream.title}</p>
+                <p className="text-gray-400 text-xs truncate">{stream.location}</p>
               </div>
             </div>
 
-            {/* Progress bar */}
-            <div className="h-0.5 bg-gray-800">
+            {/* Controls: channel link, page-FS, OS-FS */}
+            <div className="flex items-center gap-2 shrink-0">
+              <a
+                href={SITE.social.youtube}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hidden sm:flex items-center gap-1.5 text-xs text-gray-400 hover:text-red-400 transition-colors"
+              >
+                <Youtube className="w-3.5 h-3.5" />
+                @YouNeedLED-Security
+              </a>
+              {/* Page fullscreen (hides header/footer) */}
+              <button
+                onClick={togglePageFS}
+                className="w-8 h-8 rounded-lg bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"
+                title={pageFS ? "Exit page fullscreen" : "Page fullscreen (hides nav)"}
+              >
+                {pageFS ? <Minimize2 className="w-4 h-4 text-white" /> : <Maximize2 className="w-4 h-4 text-white" />}
+              </button>
+              {/* OS fullscreen (true browser fullscreen) */}
+              <button
+                onClick={toggleOsFS}
+                className="w-8 h-8 rounded-lg bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"
+                title="True fullscreen (hides browser chrome)"
+              >
+                <Expand className="w-4 h-4 text-white" />
+              </button>
+            </div>
+          </div>
+
+          {/* Progress bar */}
+          {!isFullscreen && (
+            <div className="h-0.5 bg-gray-800 mx-0">
               <div
                 className="h-full bg-red-500 transition-all duration-1000 ease-linear"
                 style={{ width: `${progress}%` }}
               />
             </div>
-          </div>
-        )}
+          )}
+        </div>
 
-        {/* ── Main layout ── */}
-        <div className={`flex ${fullscreen ? "h-screen flex-col" : "flex-col lg:flex-row"}`}>
+        {/* ── Body: video + sidebar ── */}
+        <div className={`flex-1 flex ${isFullscreen ? "flex-col" : "flex-col lg:flex-row"} min-h-0`}>
 
-          {/* ── Video player ── */}
-          <div className={`relative ${fullscreen ? "flex-1" : "w-full lg:flex-1 aspect-video lg:aspect-auto lg:min-h-[60vh]"} bg-black`}>
+          {/* ── Video area ── */}
+          <div className="relative flex-1 bg-black min-h-0">
+            {/* iframe fills the entire video area absolutely */}
             <iframe
               key={stream.id}
               src={embedUrl}
               title={stream.title}
-              className="w-full h-full"
-              allow="autoplay; encrypted-media; fullscreen"
+              className="absolute inset-0 w-full h-full"
+              allow="autoplay; encrypted-media; fullscreen; picture-in-picture"
               allowFullScreen
-              style={{ border: "none", display: "block" }}
+              style={{ border: "none" }}
             />
 
-            {/* ── Floating prev/next arrows ── */}
-            {(!fullscreen || showControls) && (
-              <>
-                <button
-                  onClick={prev}
-                  className="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/60 hover:bg-black/80 flex items-center justify-center transition-colors backdrop-blur-sm"
-                  title="Previous camera"
-                >
-                  <SkipBack className="w-5 h-5 text-white" />
-                </button>
-                <button
-                  onClick={next}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/60 hover:bg-black/80 flex items-center justify-center transition-colors backdrop-blur-sm"
-                  title="Next camera"
-                >
-                  <SkipForward className="w-5 h-5 text-white" />
-                </button>
-              </>
-            )}
+            {/* Prev / Next overlays */}
+            <div
+              className={`absolute inset-0 flex items-center justify-between px-3 pointer-events-none transition-opacity duration-300 ${isFullscreen && !showControls ? "opacity-0" : "opacity-100"}`}
+            >
+              <button
+                onClick={prev}
+                className="pointer-events-auto w-10 h-10 rounded-full bg-black/60 hover:bg-black/80 flex items-center justify-center transition-colors backdrop-blur-sm"
+                title="Previous camera (←)"
+              >
+                <SkipBack className="w-5 h-5 text-white" />
+              </button>
+              <button
+                onClick={next}
+                className="pointer-events-auto w-10 h-10 rounded-full bg-black/60 hover:bg-black/80 flex items-center justify-center transition-colors backdrop-blur-sm"
+                title="Next camera (→)"
+              >
+                <SkipForward className="w-5 h-5 text-white" />
+              </button>
+            </div>
           </div>
 
-          {/* ── Sidebar / bottom strip ── */}
-          {!fullscreen && (
+          {/* ── Sidebar (hidden in fullscreen) ── */}
+          {!isFullscreen && (
             <div className="w-full lg:w-72 xl:w-80 bg-[#0d1526] border-t lg:border-t-0 lg:border-l border-gray-800/50 flex flex-col">
 
               {/* Controls */}
@@ -213,7 +274,7 @@ export default function CameraSequence() {
                   </button>
                 </div>
 
-                {/* Timer display */}
+                {/* Timer */}
                 <div className="flex items-center gap-2 mb-3">
                   <Clock className="w-3.5 h-3.5 text-gray-500 shrink-0" />
                   <div className="flex-1 bg-gray-800 rounded-full h-1.5 overflow-hidden">
@@ -240,6 +301,9 @@ export default function CameraSequence() {
                     ))}
                   </div>
                 </div>
+
+                {/* Keyboard hint */}
+                <p className="text-gray-700 text-[10px] mt-2">← → to navigate · Space to pause · F for fullscreen</p>
               </div>
 
               {/* Camera list */}
@@ -275,7 +339,6 @@ export default function CameraSequence() {
                         <span className="text-[10px] text-gray-600">Live</span>
                       </div>
                     </div>
-                    {/* Index */}
                     <span className="text-[10px] text-gray-700 shrink-0 mt-0.5">{i + 1}</span>
                   </button>
                 ))}
@@ -285,7 +348,7 @@ export default function CameraSequence() {
               <div className="p-4 border-t border-gray-800/50 bg-[#0a0f1a]">
                 <p className="text-[#F97316] font-semibold text-xs mb-1">Want cameras like these?</p>
                 <p className="text-gray-500 text-[11px] mb-3 leading-snug">
-                  You Need LED installs 4K Security Cameras with AI options for commercial &amp; residential properties across South Jersey.
+                  You Need LED installs 4K Security Cameras with AI options for commercial &amp; residential properties across South Jersey. NJ DCA Licensed.
                 </p>
                 <a
                   href={SITE.phoneTel}
@@ -305,11 +368,21 @@ export default function CameraSequence() {
           )}
         </div>
 
-        {/* ── Bottom camera strip (fullscreen only) ── */}
-        {fullscreen && showControls && (
-          <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent p-4 transition-opacity duration-300">
-            <div className="flex items-center justify-between gap-4 max-w-7xl mx-auto">
-              {/* Prev/Play/Next */}
+        {/* ── Fullscreen bottom controls bar ── */}
+        {isFullscreen && (
+          <div
+            className={`absolute bottom-0 left-0 right-0 z-10 bg-gradient-to-t from-black/90 via-black/50 to-transparent pt-8 pb-4 px-6 transition-opacity duration-300 ${showControls ? "opacity-100" : "opacity-0 pointer-events-none"}`}
+          >
+            {/* Progress bar */}
+            <div className="h-0.5 bg-white/20 mb-4 rounded-full overflow-hidden">
+              <div
+                className="h-full bg-red-500 transition-all duration-1000 ease-linear"
+                style={{ width: `${progress}%` }}
+              />
+            </div>
+
+            <div className="flex items-center justify-between gap-4">
+              {/* Left: playback controls */}
               <div className="flex items-center gap-2">
                 <button onClick={prev} className="w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors">
                   <SkipBack className="w-4 h-4 text-white" />
@@ -320,25 +393,42 @@ export default function CameraSequence() {
                 <button onClick={next} className="w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors">
                   <SkipForward className="w-4 h-4 text-white" />
                 </button>
-                <span className="text-gray-400 text-xs ml-1">{timeLeft}s</span>
+                <span className="text-gray-400 text-xs ml-1 tabular-nums">{timeLeft}s</span>
               </div>
 
-              {/* Camera dots */}
+              {/* Center: camera dots */}
               <div className="flex items-center gap-1.5 overflow-x-auto">
                 {STREAMS.map((s, i) => (
                   <button
                     key={s.id}
                     onClick={() => goTo(i)}
                     title={s.title}
-                    className={`shrink-0 transition-all ${i === current ? "w-6 h-2 rounded-full bg-[#F97316]" : "w-2 h-2 rounded-full bg-gray-600 hover:bg-gray-400"}`}
+                    className={`shrink-0 rounded-full transition-all duration-200 ${i === current ? "w-6 h-2 bg-[#F97316]" : "w-2 h-2 bg-gray-600 hover:bg-gray-400"}`}
                   />
                 ))}
               </div>
 
-              {/* Exit fullscreen */}
-              <button onClick={toggleFullscreen} className="w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors">
-                <Minimize2 className="w-4 h-4 text-white" />
-              </button>
+              {/* Right: interval + exit fullscreen */}
+              <div className="flex items-center gap-2">
+                <div className="flex gap-1">
+                  {[30, 60, 120].map(sec => (
+                    <button
+                      key={sec}
+                      onClick={() => { setIntervalSec(sec); setTimeLeft(sec); }}
+                      className={`text-[10px] px-2 py-1 rounded transition-colors ${interval === sec ? "bg-[#F97316] text-white" : "bg-white/10 text-gray-400 hover:bg-white/20"}`}
+                    >
+                      {sec < 60 ? `${sec}s` : `${sec / 60}m`}
+                    </button>
+                  ))}
+                </div>
+                <button
+                  onClick={osFS ? toggleOsFS : togglePageFS}
+                  className="w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"
+                  title="Exit fullscreen (Esc)"
+                >
+                  <Minimize2 className="w-4 h-4 text-white" />
+                </button>
+              </div>
             </div>
           </div>
         )}

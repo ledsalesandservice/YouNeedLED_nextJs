@@ -33,6 +33,7 @@ interface YouTubeCamera {
   youtube_url: string;
   tags: string[];
   installedBy: string;
+  disabled?: boolean;
 }
 
 // ── You Need LED Security Channel — live webcam feeds from @YouNeedLED-Security ──
@@ -104,6 +105,7 @@ const YT_CAMERAS: YouTubeCamera[] = [
     youtube_url: "https://www.youtube.com/watch?v=kRBUbXeRcMY",
     tags: ["#bay", "#birds", "#weather"],
     installedBy: "Installed by You Need LED",
+    disabled: true,
   },
   {
     title: "30th Street Zoomed Beach Cam Live – Ocean City NJ Boardwalk & Surf 24/7",
@@ -247,6 +249,194 @@ const YT_CAMERAS: YouTubeCamera[] = [
     youtube_id: "f4bUDl4HbnI",
     youtube_url: "https://www.youtube.com/watch?v=f4bUDl4HbnI",
     tags: ["#bay", "#birds", "#sunset", "#wildlife"],
+    installedBy: "Installed by You Need LED",
+  },
+  // ── Avalon cameras ──
+  {
+    title: "Avalon Fishing Pier Surf Cam",
+    location: "Avalon, NJ",
+    youtube_id: "xLayUbapa9c",
+    youtube_url: "https://www.youtube.com/watch?v=xLayUbapa9c",
+    tags: ["#avalon", "#beach", "#surf", "#fishing"],
+    installedBy: "Installed by You Need LED",
+  },
+  {
+    title: "Avalon Fishing Pier Looking East",
+    location: "Avalon, NJ",
+    youtube_id: "ZVvBvkJB0w4",
+    youtube_url: "https://www.youtube.com/watch?v=ZVvBvkJB0w4",
+    tags: ["#avalon", "#beach", "#ocean", "#skyline"],
+    installedBy: "Installed by You Need LED",
+  },
+  {
+    title: "Avalon Boardwalk from the Avalon Fishing Pier",
+    location: "Avalon, NJ",
+    youtube_id: "sOKaSZuSBi0",
+    youtube_url: "https://www.youtube.com/watch?v=sOKaSZuSBi0",
+    tags: ["#avalon", "#beach", "#boardwalk", "#fishing"],
+    installedBy: "Installed by You Need LED",
+  },
+  // ── Wetlands Institute Stone Harbor (second cam) ──
+  {
+    title: "Osprey Nest Live Cam at The Wetlands Institute, Stone Harbor, NJ (North)",
+    location: "Stone Harbor, NJ",
+    youtube_id: "VoCzRbID95c",
+    youtube_url: "https://www.youtube.com/watch?v=VoCzRbID95c",
+    tags: ["#birds", "#osprey", "#wetlands", "#wildlife"],
+    installedBy: "Installed by You Need LED",
+  },
+  // ── Wetlands Institute PTZ far view ──
+  {
+    title: "Wetlands Institute, Stone Harbor, NJ Osprey Cam PTZ (far view)",
+    location: "Stone Harbor, NJ",
+    youtube_id: "h8NAVhAUfW8",
+    youtube_url: "https://www.youtube.com/watch?v=h8NAVhAUfW8",
+    tags: ["#birds", "#osprey", "#wetlands", "#wildlife"],
+    installedBy: "Installed by You Need LED",
+  },
+  // ── Sea Isle City cameras ──
+  {
+    title: "Sea Isle City Beach Cam — Spinnaker Condos",
+    location: "Sea Isle City, NJ",
+    youtube_id: "BY_Lar5zLr8",
+    youtube_url: "https://www.youtube.com/watch?v=BY_Lar5zLr8",
+    tags: ["#beach", "#ocean", "#panoramic", "#sea"],
+    installedBy: "Installed by You Need LED",
+  },
+  {
+    title: "Sea Isle City Skyline Cam — Spinnaker Condos",
+    location: "Sea Isle City, NJ",
+    youtube_id: "wOpwdbFCw_A",
+    youtube_url: "https://www.youtube.com/watch?v=wOpwdbFCw_A",
+    tags: ["#beach", "#city", "#skyline", "#sea"],
+    installedBy: "Installed by You Need LED",
+  },
+  {
+    title: "Sea Isle City Flood Cam at 40th and Central",
+    location: "Sea Isle City, NJ",
+    youtube_id: "F6utTyiLHAo",
+    youtube_url: "https://www.youtube.com/watch?v=F6utTyiLHAo",
+    tags: ["#beach", "#weather", "#street", "#sea"],
+    installedBy: "Installed by You Need LED",
+  },
+  // ── Ocean City additional cameras ──
+  {
+    title: "Ocean City Fishing Club PTZ Cam Looking North",
+    location: "Ocean City, NJ",
+    youtube_id: "9S4VUEFfo_g",
+    youtube_url: "https://www.youtube.com/watch?v=9S4VUEFfo_g",
+    tags: ["#beach", "#fishing", "#harbor", "#ocean"],
+    installedBy: "Installed by You Need LED",
+  },
+  {
+    title: "Ocean City NJ Pickleball Court — 18th & Haven",
+    location: "Ocean City, NJ",
+    youtube_id: "zfFbZp72AyI",
+    youtube_url: "https://www.youtube.com/watch?v=zfFbZp72AyI",
+    tags: ["#pickleball", "#ocean"],
+    installedBy: "Installed by You Need LED",
+  },
+  {
+    title: "Ocean City, NJ Boardwalk Live Camera of the Music Pier",
+    location: "Ocean City, NJ",
+    youtube_id: "kBvlAcTHVlE",
+    youtube_url: "https://www.youtube.com/watch?v=kBvlAcTHVlE",
+    tags: ["#beach", "#boardwalk", "#music", "#ocean"],
+    installedBy: "Installed by You Need LED",
+  },
+  // ── Cape May ──
+  {
+    title: "Cape May Cove Live Cam — Cove Beach, Cape May Lighthouse & Sunsets",
+    location: "Cape May, NJ",
+    youtube_id: "gV2Lj_a-IoQ",
+    youtube_url: "https://www.youtube.com/watch?v=gV2Lj_a-IoQ",
+    tags: ["#beach", "#boats", "#ocean", "#sunset"],
+    installedBy: "Installed by You Need LED",
+  },
+  // ── Smith Island PTZ ──
+  {
+    title: "Smith Island, MD PTZ Camera Looking at County Dock End",
+    location: "Ewell, MD",
+    youtube_id: "iuCiaQe5M-0",
+    youtube_url: "https://www.youtube.com/watch?v=iuCiaQe5M-0",
+    tags: ["#bay", "#boats", "#dock", "#harbor"],
+    installedBy: "Installed by You Need LED",
+  },
+  {
+    title: "Smith Island, MD Sunset Cam",
+    location: "Ewell, MD",
+    youtube_id: "O3nF67z_EGA",
+    youtube_url: "https://www.youtube.com/watch?v=O3nF67z_EGA",
+    tags: ["#bay", "#boats", "#sunset", "#wildlife"],
+    installedBy: "Installed by You Need LED",
+  },
+  // ── Atlantic City additional ──
+  {
+    title: "Golden Nugget Casino Pano Cam from Farley Marina",
+    location: "Atlantic City, NJ",
+    youtube_id: "BNqiCD4Omz0",
+    youtube_url: "https://www.youtube.com/watch?v=BNqiCD4Omz0",
+    tags: ["#bay", "#boats", "#harbor", "#sunrise"],
+    installedBy: "Installed by You Need LED",
+  },
+  {
+    title: "AC Aquarium Ray Tank",
+    location: "Atlantic City, NJ",
+    youtube_id: "MG_nWi4YKA8",
+    youtube_url: "https://www.youtube.com/watch?v=MG_nWi4YKA8",
+    tags: ["#aquarium", "#ocean", "#wildlife", "#underwater"],
+    installedBy: "Installed by You Need LED",
+  },
+  // ── Forsythe second cam ──
+  {
+    title: "Forsythe Wildlife Refuge Osprey Cam — Oceanville, NJ",
+    location: "Oceanville, NJ",
+    youtube_id: "E5I4IF3bCIU",
+    youtube_url: "https://www.youtube.com/watch?v=E5I4IF3bCIU",
+    tags: ["#birds", "#osprey", "#wetlands", "#wildlife"],
+    installedBy: "Installed by You Need LED",
+  },
+  // ── Margate 9600 on SeeTheView ──
+  {
+    title: "Margate, NJ Live Cam Looking Southwest Towards Longport from 9600 Condos",
+    location: "Margate, NJ",
+    youtube_id: "YUjonp_Y_f0",
+    youtube_url: "https://www.youtube.com/watch?v=YUjonp_Y_f0",
+    tags: ["#bay", "#city", "#skyline", "#margate"],
+    installedBy: "Installed by You Need LED",
+  },
+  // ── Updated Rittenhouse Square IDs ──
+  {
+    title: "Rittenhouse Square Park, Philadelphia — PANO Cam Looking South",
+    location: "Philadelphia, PA",
+    youtube_id: "1vGH-8jvKcg",
+    youtube_url: "https://www.youtube.com/watch?v=1vGH-8jvKcg",
+    tags: ["#city", "#park"],
+    installedBy: "Installed by You Need LED",
+  },
+  {
+    title: "Rittenhouse Square Philadelphia Fountain Cam",
+    location: "Philadelphia, PA",
+    youtube_id: "MHK6eExbhsc",
+    youtube_url: "https://www.youtube.com/watch?v=MHK6eExbhsc",
+    tags: ["#city", "#park", "#skyline"],
+    installedBy: "Installed by You Need LED",
+  },
+  // ── Updated Atlantic City IDs ──
+  {
+    title: "America's Greatest Boardwalk — Atlantic City, NJ (Resorts & Hard Rock Casino)",
+    location: "Atlantic City, NJ",
+    youtube_id: "02LvUgBHpss",
+    youtube_url: "https://www.youtube.com/watch?v=02LvUgBHpss",
+    tags: ["#beach", "#boardwalk", "#new"],
+    installedBy: "Installed by You Need LED",
+  },
+  {
+    title: "Atlantic City Steel Pier Observation Wheel",
+    location: "Atlantic City, NJ",
+    youtube_id: "_4mNGQRX6fI",
+    youtube_url: "https://www.youtube.com/watch?v=_4mNGQRX6fI",
+    tags: ["#beach", "#boardwalk", "#ocean", "#skyline"],
     installedBy: "Installed by You Need LED",
   },
 ];
@@ -633,7 +823,7 @@ export default function LiveCameras() {
   }, []);
 
   const liveCount = cameras.filter(c => c.status === "live").length;
-  const totalCount = cameras.length + SECURITY_CHANNEL_CAMERAS.length + YT_CAMERAS.length + PARTNER_CAMERAS.length;
+  const totalCount = cameras.length + SECURITY_CHANNEL_CAMERAS.length + YT_CAMERAS.filter(c => !c.disabled).length + PARTNER_CAMERAS.length;
 
   return (
     <>
@@ -775,7 +965,7 @@ export default function LiveCameras() {
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-              {YT_CAMERAS.map(cam => (
+              {YT_CAMERAS.filter(cam => !cam.disabled).map(cam => (
                 <YouTubeCameraCard key={cam.youtube_id} cam={cam} />
               ))}
             </div>

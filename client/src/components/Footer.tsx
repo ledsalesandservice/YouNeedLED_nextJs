@@ -4,7 +4,7 @@
  */
 import { Link } from "wouter";
 import { SITE } from "@/lib/siteData";
-import { Phone, Mail, MapPin } from "lucide-react";
+import { Phone, Mail, MapPin, Youtube } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -34,6 +34,9 @@ export default function Footer() {
               <a href={SITE.social.instagram} target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-lg bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors" aria-label="Instagram">
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5"/></svg>
               </a>
+              <a href={SITE.social.youtube} target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-lg bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors" aria-label="YouTube Live Cameras">
+                <Youtube className="w-4 h-4" />
+              </a>
             </div>
           </div>
 
@@ -52,6 +55,7 @@ export default function Footer() {
                 { label: "Fiber Optic Cabling", href: "/services/fiber-optic" },
                 { label: "Case Studies", href: "/case-studies" },
                 { label: "Client Testimonials", href: "/testimonials" },
+                { label: "Live Camera Feeds", href: "/live-cameras" },
               ].map((link) => (
                 <li key={link.href}>
                   <Link href={link.href} className="text-sm text-white/60 hover:text-white transition-colors">

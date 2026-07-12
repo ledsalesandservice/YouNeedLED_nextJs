@@ -12,7 +12,7 @@ import { useEffect, useState } from "react";
 import { Link } from "wouter";
 import SEOHead from "@/components/SEOHead";
 import { SITE } from "@/lib/siteData";
-import { Video, WifiOff, ExternalLink, Phone, RefreshCw, Youtube } from "lucide-react";
+import { Video, WifiOff, ExternalLink, Phone, RefreshCw, Youtube, Tv2 } from "lucide-react";
 
 // ── Config ────────────────────────────────────────────────────────────────────
 const VPS_BASE = "https://live.youneedled.com";
@@ -34,6 +34,66 @@ interface YouTubeCamera {
   tags: string[];
   installedBy: string;
 }
+
+// ── You Need LED Security Channel — live webcam feeds from @YouNeedLED-Security ──
+const SECURITY_CHANNEL_CAMERAS: YouTubeCamera[] = [
+  {
+    title: "9600 Atlantic Looking Southwest",
+    location: "Margate / Atlantic City, NJ",
+    youtube_id: "DnMSi9LRulo",
+    youtube_url: "https://www.youtube.com/watch?v=DnMSi9LRulo",
+    tags: ["#live", "#southjersey", "#security"],
+    installedBy: "You Need LED Security Channel",
+  },
+  {
+    title: "Camera 2 — Live Feed",
+    location: "South Jersey, NJ",
+    youtube_id: "8be_ykDhH3Q",
+    youtube_url: "https://www.youtube.com/watch?v=8be_ykDhH3Q",
+    tags: ["#live", "#southjersey", "#security"],
+    installedBy: "You Need LED Security Channel",
+  },
+  {
+    title: "Camera 3 — Live Feed",
+    location: "South Jersey, NJ",
+    youtube_id: "2MNsMmfdpx8",
+    youtube_url: "https://www.youtube.com/watch?v=2MNsMmfdpx8",
+    tags: ["#live", "#southjersey", "#security"],
+    installedBy: "You Need LED Security Channel",
+  },
+  {
+    title: "Camera 4 — Live Feed",
+    location: "South Jersey, NJ",
+    youtube_id: "41PY11C6D9Y",
+    youtube_url: "https://www.youtube.com/watch?v=41PY11C6D9Y",
+    tags: ["#live", "#southjersey", "#security"],
+    installedBy: "You Need LED Security Channel",
+  },
+  {
+    title: "Camera 5 — Live Feed",
+    location: "South Jersey, NJ",
+    youtube_id: "RWZGVNEEI5o",
+    youtube_url: "https://www.youtube.com/watch?v=RWZGVNEEI5o",
+    tags: ["#live", "#southjersey", "#security"],
+    installedBy: "You Need LED Security Channel",
+  },
+  {
+    title: "Camera 6 — Live Feed",
+    location: "South Jersey, NJ",
+    youtube_id: "VuM5l3WV7rw",
+    youtube_url: "https://www.youtube.com/watch?v=VuM5l3WV7rw",
+    tags: ["#live", "#southjersey", "#security"],
+    installedBy: "You Need LED Security Channel",
+  },
+  {
+    title: "Camera 7 — Live Feed",
+    location: "South Jersey, NJ",
+    youtube_id: "JgSnNRp2cIo",
+    youtube_url: "https://www.youtube.com/watch?v=JgSnNRp2cIo",
+    tags: ["#live", "#southjersey", "#security"],
+    installedBy: "You Need LED Security Channel",
+  },
+];
 
 // ── Jim Ginn / You Need LED installed YouTube cameras (scraped from seetheview.com) ──
 const YT_CAMERAS: YouTubeCamera[] = [
@@ -573,7 +633,7 @@ export default function LiveCameras() {
   }, []);
 
   const liveCount = cameras.filter(c => c.status === "live").length;
-  const totalCount = cameras.length + YT_CAMERAS.length + PARTNER_CAMERAS.length;
+  const totalCount = cameras.length + SECURITY_CHANNEL_CAMERAS.length + YT_CAMERAS.length + PARTNER_CAMERAS.length;
 
   return (
     <>
@@ -673,6 +733,34 @@ export default function LiveCameras() {
             )}
           </section>
 
+          {/* ── Section 1b: YouNeedLED Security Channel (YouTube) ── */}
+          <section>
+            <div className="flex items-center gap-3 mb-2">
+              <div className="flex items-center gap-2">
+                <Youtube className="w-4 h-4 text-red-600" />
+                <h2 className="text-lg font-bold text-white">You Need LED Security Channel</h2>
+              </div>
+              <a
+                href="https://www.youtube.com/@YouNeedLED-Security"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xs text-red-500 bg-red-500/10 border border-red-500/20 rounded-full px-2.5 py-0.5 hover:bg-red-500/20 transition-colors"
+              >
+                @YouNeedLED-Security ↗
+              </a>
+            </div>
+            <p className="text-gray-500 text-sm mb-6">
+              Live webcam feeds from the official You Need LED Security YouTube channel — real cameras, real South Jersey locations, streaming 24/7. Subscribe at{" "}
+              <a href="https://www.youtube.com/@YouNeedLED-Security" target="_blank" rel="noopener noreferrer" className="text-red-400 hover:text-red-300 underline">youtube.com/@YouNeedLED-Security</a>.
+            </p>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+              {SECURITY_CHANNEL_CAMERAS.map(cam => (
+                <YouTubeCameraCard key={cam.youtube_id} cam={cam} />
+              ))}
+            </div>
+          </section>
+
           {/* ── Section 2: South Jersey & Delaware Valley YouTube Cameras ── */}
           <section>
             <div className="flex items-center gap-3 mb-2">
@@ -730,6 +818,13 @@ export default function LiveCameras() {
                 <Phone className="w-4 h-4" />
                 Call {SITE.phone}
               </a>
+              <Link
+                href="/live-cameras/sequence"
+                className="flex items-center gap-2 border border-red-700/50 hover:border-red-500 text-red-400 hover:text-red-300 font-semibold px-6 py-3 rounded-lg transition-colors text-sm"
+              >
+                <Tv2 className="w-4 h-4" />
+                Auto-Sequence View
+              </Link>
               <Link
                 href="/contact"
                 className="flex items-center gap-2 border border-gray-700 hover:border-gray-500 text-gray-300 hover:text-white font-semibold px-6 py-3 rounded-lg transition-colors text-sm"

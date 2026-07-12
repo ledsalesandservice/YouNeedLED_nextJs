@@ -11,7 +11,7 @@ import {
   Phone, ArrowRight, Star, Shield, Clock, Users, Award,
   Camera, KeyRound, Flame, ShieldAlert, HardHat, Headphones, Monitor,
   Bot, PhoneOff, CalendarCheck, UserCheck, Zap, CheckCircle2,
-  MapPin, ChevronRight
+  MapPin, ChevronRight, Youtube
 } from "lucide-react";
 import { useState } from "react";
 import { FadeIn, StaggerContainer, StaggerItem, HeroAnimate, CountUp } from "@/components/animations";
@@ -405,7 +405,7 @@ export default function Home() {
               Real Installs. Real Results.
             </h2>
             <p className="text-slate-600 leading-relaxed">
-              Every week our crew is out across South Jersey installing cameras, pulling cable, and setting up systems that protect real businesses and homes. Follow along on Instagram and Facebook.
+              Every week our crew is out across South Jersey installing cameras, pulling cable, and setting up systems that protect real businesses and homes. Follow along on Instagram, Facebook, and our new YouTube Live Camera channel.
             </p>
           </FadeIn>
 
@@ -461,6 +461,15 @@ export default function Home() {
                 <path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.41c0-3.025 1.792-4.697 4.533-4.697 1.312 0 2.686.236 2.686.236v2.97h-1.513c-1.491 0-1.956.93-1.956 1.886v2.268h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/>
               </svg>
               Like Us on Facebook
+            </a>
+            <a
+              href={SITE.social.youtube}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2.5 px-5 py-3 rounded-lg border border-slate-200 text-sm font-medium text-slate-700 hover:border-[#FF0000] hover:text-[#FF0000] transition-colors bg-white shadow-sm"
+            >
+              <Youtube className="w-4 h-4" />
+              Watch Live Cameras on YouTube
             </a>
           </div>
         </div>

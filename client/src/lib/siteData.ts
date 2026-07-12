@@ -23,7 +23,8 @@ export const SITE = {
     facebook: "https://www.facebook.com/youneedled",
     instagram: "https://www.instagram.com/youneedled",
     google: "https://g.page/youneedled",
-    youtube: "https://www.youtube.com/@youneedled",
+    youtube: "https://www.youtube.com/@YouNeedLED-Security",
+    youtubeSecurityChannel: "https://www.youtube.com/@YouNeedLED-Security",
   },
   hours: {
     weekday: "Monday – Friday: 8:00 AM – 6:00 PM",

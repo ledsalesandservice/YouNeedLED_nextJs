@@ -41,10 +41,10 @@ export default function About() {
           address: { "@type": "PostalAddress", addressLocality: "Linwood", addressRegion: "NJ", addressCountry: "US" },
         },
         sameAs: [
-          "https://www.facebook.com/youneedled",
-          "https://www.instagram.com/youneedled",
-          "https://www.youtube.com/@youneedled",
-          "https://g.page/youneedled",
+          SITE.social.facebook,
+          SITE.social.instagram,
+          SITE.social.youtube,
+          SITE.social.google,
         ],
       }) }} />
 

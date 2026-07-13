@@ -335,6 +335,22 @@ export default function AiVoiceAgent() {
           </div>
         </div>
       </section>
+
+      {/* BreadcrumbList Schema — Home > Services > AI Voice Agent */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Home", item: SITE.url },
+              { "@type": "ListItem", position: 2, name: "Services", item: `${SITE.url}/service-areas` },
+              { "@type": "ListItem", position: 3, name: "LEDConnect AI Voice Agent", item: `${SITE.url}/services/ai-voice-agent` },
+            ],
+          }),
+        }}
+      />
     </>
   );
 }

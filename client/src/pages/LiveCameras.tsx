@@ -1009,7 +1009,7 @@ export default function LiveCameras() {
                 Call {SITE.phone}
               </a>
               <Link
-                href="/live-cameras/sequence"
+                href="/live/9600"
                 className="flex items-center gap-2 border border-red-700/50 hover:border-red-500 text-red-400 hover:text-red-300 font-semibold px-6 py-3 rounded-lg transition-colors text-sm"
               >
                 <Tv2 className="w-4 h-4" />

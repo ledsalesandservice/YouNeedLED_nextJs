@@ -925,19 +925,28 @@ export default function LiveCameras() {
 
           {/* ── Section 1b: YouNeedLED Security Channel (YouTube) ── */}
           <section>
-            <div className="flex items-center gap-3 mb-2">
-              <div className="flex items-center gap-2">
-                <Youtube className="w-4 h-4 text-red-600" />
-                <h2 className="text-lg font-bold text-white">You Need LED Security Channel</h2>
+            <div className="flex items-center justify-between gap-3 mb-2 flex-wrap">
+              <div className="flex items-center gap-3">
+                <div className="flex items-center gap-2">
+                  <Youtube className="w-4 h-4 text-red-600" />
+                  <h2 className="text-lg font-bold text-white">You Need LED Security Channel</h2>
+                </div>
+                <a
+                  href="https://www.youtube.com/@YouNeedLED-Security"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xs text-red-500 bg-red-500/10 border border-red-500/20 rounded-full px-2.5 py-0.5 hover:bg-red-500/20 transition-colors"
+                >
+                  @YouNeedLED-Security ↗
+                </a>
               </div>
-              <a
-                href="https://www.youtube.com/@YouNeedLED-Security"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-xs text-red-500 bg-red-500/10 border border-red-500/20 rounded-full px-2.5 py-0.5 hover:bg-red-500/20 transition-colors"
+              <Link
+                href="/live/9600"
+                className="flex items-center gap-1.5 text-xs font-semibold text-orange-400 hover:text-orange-300 border border-orange-500/30 hover:border-orange-400/60 bg-orange-500/10 hover:bg-orange-500/20 rounded-lg px-3 py-1.5 transition-colors"
               >
-                @YouNeedLED-Security ↗
-              </a>
+                <Tv2 className="w-3.5 h-3.5" />
+                Auto-Sequence All 8 Cameras
+              </Link>
             </div>
             <p className="text-gray-500 text-sm mb-6">
               Live webcam feeds from the official You Need LED Security YouTube channel — real cameras, real South Jersey locations, streaming 24/7. Subscribe at{" "}

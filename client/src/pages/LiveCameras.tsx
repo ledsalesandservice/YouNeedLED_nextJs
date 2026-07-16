@@ -869,7 +869,8 @@ export default function LiveCameras() {
 
         <div className="max-w-6xl mx-auto px-4 sm:px-6 py-10 space-y-14">
 
-          {/* ── Section 1: LED Live View (HLS) ── */}
+                    {/* ── Section 1: LED Live View (HLS) — only shown when cameras are published ── */}
+          {!loading && !error && cameras.length > 0 && (
           <section>
             <div className="flex items-center gap-3 mb-6">
               <div className="flex items-center gap-2">
@@ -878,50 +879,18 @@ export default function LiveCameras() {
               </div>
               <span className="text-xs text-gray-600 bg-gray-800 rounded-full px-2.5 py-0.5">HLS · Direct Stream</span>
             </div>
-
-            {loading && (
-              <div className="flex flex-col items-center justify-center py-16 gap-4">
-                <div className="w-10 h-10 rounded-full border-4 border-[#F97316]/20 border-t-[#F97316] animate-spin" />
-                <p className="text-gray-500 text-sm">Loading cameras…</p>
-              </div>
-            )}
-
-            {!loading && error && (
-              <div className="flex flex-col items-center justify-center py-16 gap-4">
-                <WifiOff className="w-12 h-12 text-gray-700" />
-                <p className="text-gray-400 font-medium">Could not connect to camera system</p>
-                <button
-                  onClick={fetchCameras}
-                  className="flex items-center gap-2 bg-[#F97316] hover:bg-[#EA6A0A] text-white text-sm font-semibold px-4 py-2 rounded-lg transition-colors"
-                >
-                  <RefreshCw className="w-4 h-4" />
-                  Try Again
-                </button>
-              </div>
-            )}
-
-            {!loading && !error && cameras.length === 0 && (
-              <div className="flex flex-col items-center justify-center py-16 gap-4">
-                <Video className="w-12 h-12 text-gray-700" />
-                <p className="text-gray-400 font-medium">No LED Live View cameras published at this time</p>
-              </div>
-            )}
-
-            {!loading && !error && cameras.length > 0 && (
-              <>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-                  {cameras.map(camera => (
-                    <CameraCard key={camera.id} camera={camera} />
-                  ))}
-                </div>
-                {lastUpdated && (
-                  <p className="text-gray-700 text-xs mt-6">
-                    Status refreshes automatically · Last updated {lastUpdated.toLocaleTimeString()}
-                  </p>
-                )}
-              </>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+              {cameras.map(camera => (
+                <CameraCard key={camera.id} camera={camera} />
+              ))}
+            </div>
+            {lastUpdated && (
+              <p className="text-gray-700 text-xs mt-6">
+                Status refreshes automatically · Last updated {lastUpdated.toLocaleTimeString()}
+              </p>
             )}
           </section>
+          )}
 
           {/* ── Section 1b: YouNeedLED Security Channel (YouTube) ── */}
           <section>

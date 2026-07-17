@@ -491,14 +491,7 @@ const PARTNER_CAMERAS: YouTubeCamera[] = [
     tags: ["#city", "#skyline"],
     installedBy: "Partner Camera",
   },
-  {
-    title: "Red Hook Channel, Brooklyn Harbor Live",
-    location: "Brooklyn, NY",
-    youtube_id: "OgqbZLzEbQU",
-    youtube_url: "https://www.youtube.com/watch?v=OgqbZLzEbQU",
-    tags: ["#bay", "#city", "#harbor", "#traffic"],
-    installedBy: "Partner Camera",
-  },
+
   {
     title: "Big Bear Bald Eagle Live Nest – Cam 1",
     location: "Fawnskin, CA",
@@ -547,14 +540,7 @@ const PARTNER_CAMERAS: YouTubeCamera[] = [
     tags: ["#airfield", "#airline", "#airport", "#city", "#traffic"],
     installedBy: "Partner Camera",
   },
-  {
-    title: "Las Vegas Airport Live – Runways 26R & 26L",
-    location: "Las Vegas, NV",
-    youtube_id: "_-Qg5jD-PfA",
-    youtube_url: "https://www.youtube.com/watch?v=_-Qg5jD-PfA",
-    tags: ["#airfield", "#airport", "#city", "#skyline", "#traffic"],
-    installedBy: "Partner Camera",
-  },
+
   {
     title: "Live SFO Plane Spotting | Real-Time Aircraft Tracking and ATC Audio",
     location: "San Francisco, CA",
@@ -571,14 +557,7 @@ const PARTNER_CAMERAS: YouTubeCamera[] = [
     tags: ["#city", "#traffic", "#weather"],
     installedBy: "Partner Camera",
   },
-  {
-    title: "Tram Driver's View · 24/7 The Hague Cabview",
-    location: "The Hague, Netherlands",
-    youtube_id: "QRicd-vzRaI",
-    youtube_url: "https://www.youtube.com/watch?v=QRicd-vzRaI",
-    tags: ["#city", "#traffic"],
-    installedBy: "Partner Camera",
-  },
+
   {
     title: "Elvis' Beach Bar LIVE HD Webcam – Sandy Ground, Anguilla",
     location: "Sandy Ground, Anguilla",

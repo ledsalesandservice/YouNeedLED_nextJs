@@ -439,6 +439,22 @@ const YT_CAMERAS: YouTubeCamera[] = [
     tags: ["#beach", "#boardwalk", "#ocean", "#skyline"],
     installedBy: "Installed by You Need LED",
   },
+  {
+    title: "Lucy the Elephant – Exterior Live Cam",
+    location: "Margate City, NJ",
+    youtube_id: "Brsh38JNGdQ",
+    youtube_url: "https://www.youtube.com/live/Brsh38JNGdQ",
+    tags: ["#lucytheelephant", "#margate", "#southjersey", "#historiclandmark"],
+    installedBy: "Installed by You Need LED",
+  },
+  {
+    title: "Lucy the Elephant – Interior Live Cam",
+    location: "Margate City, NJ",
+    youtube_id: "xrZ3H4qHzGE",
+    youtube_url: "https://www.youtube.com/live/xrZ3H4qHzGE",
+    tags: ["#lucytheelephant", "#margate", "#southjersey", "#historiclandmark"],
+    installedBy: "Installed by You Need LED",
+  },
 ];
 
 // ── Partner cameras from seetheview.com (not installed by You Need LED) ────────

@@ -54,6 +54,10 @@ const STATIC_META: Record<string, PageMeta> = {
     title: `Service Areas | Security & VoIP in NJ, PA, DE, MD`,
     description: `You Need L.E.D. serves South Jersey, Central Jersey, the Jersey Shore, and Philadelphia with full security services. VoIP phone systems available in Delaware and Maryland.`,
   },
+  "/free-security-audit": {
+    title: `Free Commercial Security Audit Checklist | ${SUFFIX}`,
+    description: `Download the free 10-point commercial security audit checklist for South Jersey business owners. Identify hidden vulnerabilities in your cameras, access control, and fire alarms. NJ DCA Licensed. Call ${PHONE}.`,
+  },
   "/case-studies": {
     title: `Case Studies | Security Projects South Jersey`,
     description: `Real project stories from South Jersey businesses. See how You Need L.E.D. improved security, VoIP, and access control for commercial clients.`,

@@ -48,6 +48,9 @@ const BusinessPhoneSystems = lazy(() => import("./pages/services/BusinessPhoneSy
 const LocationPage = lazy(() => import("./pages/LocationPage"));
 const CountyPage   = lazy(() => import("./pages/CountyPage"));
 
+// Lead magnet / funnel pages
+const SecurityAudit     = lazy(() => import("./pages/SecurityAudit"));
+
 // Live camera viewer
 const LiveView          = lazy(() => import("./pages/LiveView"));
 const LiveCameras       = lazy(() => import("./pages/LiveCameras"));
@@ -105,6 +108,8 @@ function Router() {
         {/* Short URL aliases for landing pages */}
         <Route path="/cameras" component={VideoSurveillance} />
         <Route path="/phone-systems" component={VoIP} />
+        {/* Lead magnet funnel pages */}
+        <Route path="/free-security-audit" component={SecurityAudit} />
         {/* Dynamic location pages — 60+ towns */}
         <Route path="/locations/:slug" component={LocationPage} />
         {/* Dynamic county pages — 8 NJ counties */}

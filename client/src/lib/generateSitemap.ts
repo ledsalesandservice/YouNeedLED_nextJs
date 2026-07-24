@@ -21,6 +21,7 @@ export function getAllSitemapUrls(): string[] {
     "/about",
     "/contact",
     "/service-areas",
+    "/ai-voice-agent",
     "/blog",
     "/faq",
     "/client-portal",
@@ -51,11 +52,26 @@ export function getAllSitemapUrls(): string[] {
 
   const countyUrls = COUNTY_DATA.map((c) => `/counties/${c.slug}`);
 
+  const serviceAreaUrls = [
+    "/ai-voice-agent",
+    "/service-areas/egg-harbor-township",
+    "/service-areas/somers-point",
+    "/service-areas/linwood",
+    "/service-areas/northfield",
+    "/service-areas/galloway",
+    "/service-areas/absecon",
+    "/service-areas/pleasantville",
+    "/service-areas/atlantic-city",
+    "/service-areas/ocean-city",
+    "/service-areas/ventnor",
+    "/service-areas/margate",
+  ];
+
   const blogUrls = blogPosts.map((b) => `/blog/${b.slug}`);
 
   const caseStudyUrls = caseStudies.map((c) => `/case-studies/${c.slug}`);
 
-  return [...staticUrls, ...locationUrls, ...countyUrls, ...blogUrls, ...caseStudyUrls]
+  return [...staticUrls, ...locationUrls, ...countyUrls, ...serviceAreaUrls, ...blogUrls, ...caseStudyUrls]
     .map((u) => `${BASE_URL}${u}`);
 }
 

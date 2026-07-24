@@ -7,7 +7,7 @@ import { Link } from "wouter";
 import { SITE } from "@/lib/siteData";
 import { ALL_LOCATIONS, COUNTY_DATA } from "@/lib/locationData";
 import SEOHead from "@/components/SEOHead";
-import { Phone, ArrowRight, MapPin, Bot, Zap, Shield } from "lucide-react";
+import { Phone, ArrowRight, MapPin, Bot, Zap, Shield, Building2 } from "lucide-react";
 
 // Group locations by region
 const njSouth = ALL_LOCATIONS.filter((l) => l.region === "South Jersey" && !l.name.includes("County"));
@@ -77,6 +77,38 @@ export default function ServiceAreas() {
               >
                 <Shield className="w-4 h-4 text-[#f97015]" />
                 {county.name}
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Local Service Areas — dedicated pages */}
+      <section className="py-16 lg:py-20 bg-white">
+        <div className="container">
+          <h2 className="font-heading text-2xl sm:text-3xl font-bold text-slate-900 mb-4 text-center">Featured Local Service Areas</h2>
+          <p className="text-center text-slate-600 mb-10 max-w-2xl mx-auto">Click your town for detailed information about our security and technology services available in your area.</p>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 max-w-4xl mx-auto">
+            {[
+              { name: "Egg Harbor Township", slug: "egg-harbor-township" },
+              { name: "Somers Point", slug: "somers-point" },
+              { name: "Linwood", slug: "linwood" },
+              { name: "Northfield", slug: "northfield" },
+              { name: "Galloway", slug: "galloway" },
+              { name: "Absecon", slug: "absecon" },
+              { name: "Pleasantville", slug: "pleasantville" },
+              { name: "Atlantic City", slug: "atlantic-city" },
+              { name: "Ocean City", slug: "ocean-city" },
+              { name: "Ventnor", slug: "ventnor" },
+              { name: "Margate", slug: "margate" },
+            ].map((town) => (
+              <Link
+                key={town.slug}
+                href={`/service-areas/${town.slug}`}
+                className="flex items-center gap-2 px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm font-medium text-[#0e319a] hover:border-[#f97015]/40 hover:bg-orange-50/50 hover:shadow-md transition-all"
+              >
+                <Building2 className="w-4 h-4 text-[#f97015] shrink-0" />
+                {town.name}
               </Link>
             ))}
           </div>

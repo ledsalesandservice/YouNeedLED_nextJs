@@ -48,6 +48,10 @@ const BusinessPhoneSystems = lazy(() => import("./pages/services/BusinessPhoneSy
 const LocationPage = lazy(() => import("./pages/LocationPage"));
 const CountyPage   = lazy(() => import("./pages/CountyPage"));
 
+// AI Voice Agent landing + town pages
+const AiVoiceAgentLanding = lazy(() => import("./pages/AiVoiceAgentLanding"));
+const ServiceAreaTown     = lazy(() => import("./pages/ServiceAreaTown"));
+
 // Lead magnet / funnel pages
 const SecurityAudit     = lazy(() => import("./pages/SecurityAudit"));
 
@@ -99,6 +103,8 @@ function Router() {
         <Route path="/services/jobsite-security" component={JobsiteSecurity} />
         <Route path="/services/voip" component={VoIP} />
         <Route path="/services/ai-voice-agent" component={AiVoiceAgent} />
+        {/* Webinar-derived thought-leadership landing page */}
+        <Route path="/ai-voice-agent" component={AiVoiceAgentLanding} />
         <Route path="/services/commercial-security" component={CommercialSecurity} />
         <Route path="/services/apartment-security" component={ApartmentSecurity} />
         <Route path="/services/digital-signage" component={DigitalSignage} />
@@ -112,6 +118,8 @@ function Router() {
         <Route path="/free-security-audit" component={SecurityAudit} />
         {/* Dynamic location pages — 60+ towns */}
         <Route path="/locations/:slug" component={LocationPage} />
+        {/* Dynamic town service-area pages — 11 local towns */}
+        <Route path="/service-areas/:slug" component={ServiceAreaTown} />
         {/* Dynamic county pages — 8 NJ counties */}
         <Route path="/counties/:slug" component={CountyPage} />
         <Route path="/case-studies" component={CaseStudies} />

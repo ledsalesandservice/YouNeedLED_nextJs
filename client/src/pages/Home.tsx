@@ -9,7 +9,7 @@ import { FEATURED_BLOG_POSTS } from "@/lib/blogPreviewData";
 import SEOHead from "@/components/SEOHead";
 import {
   Phone, ArrowRight, Star, Shield, Clock, Users, Award,
-  Camera, KeyRound, Flame, ShieldAlert, HardHat, Headphones, Monitor, Cable,
+  Camera, KeyRound, Flame, ShieldAlert, HardHat, Monitor, Cable,
   Bot, PhoneOff, CalendarCheck, UserCheck, Zap, CheckCircle2,
   MapPin, ChevronRight, Youtube
 } from "lucide-react";
@@ -22,8 +22,8 @@ const iconMap: Record<string, React.ReactNode> = {
   KeyRound: <KeyRound className="w-6 h-6" />,
   Flame: <Flame className="w-6 h-6" />,
   ShieldAlert: <ShieldAlert className="w-6 h-6" />,
-  Phone: <Headphones className="w-6 h-6" />,
-  HardHat: <HardHat className="w-6 h-6" />,
+  Phone: <Phone className="w-6 h-6" />,
+  HardHat: <Shield className="w-6 h-6" />,
   Monitor: <Monitor className="w-6 h-6" />,
   Cable: <Cable className="w-6 h-6" />,
 };

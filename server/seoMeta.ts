@@ -75,6 +75,14 @@ const STATIC_META: Record<string, PageMeta> = {
     title: `Live Security Camera Feeds South Jersey | ${SUFFIX}`,
     description: `Live security camera feeds from South Jersey locations. Commercial-grade 4K AI cameras with cloud storage by You Need L.E.D. Call ${PHONE}.`,
   },
+  "/live/9600": {
+    title: `Live Security Cameras | ${SUFFIX}`,
+    description: `Live 9600x camera feed from You Need L.E.D. Commercial-grade security cameras streaming in real time.`,
+  },
+  "/services": {
+    title: `Security, VoIP & Technology Services | ${SUFFIX}`,
+    description: `Explore You Need L.E.D. services: 4K security cameras, VoIP phone systems, access control, fire alarms, intrusion detection & LEDConnect AI Voice Agents. NJ DCA Licensed in South Jersey. Call ${PHONE}.`,
+  },
   "/services/video-surveillance": {
     title: `Security Camera Installation South Jersey | ${SUFFIX}`,
     description: `4K AI security camera installation in South Jersey. NJ DCA Licensed. Commercial & residential. Free quote — call ${PHONE}.`,
@@ -110,6 +118,10 @@ const STATIC_META: Record<string, PageMeta> = {
   "/services/ai-voice-agent": {
     title: `LEDConnect AI Voice Agent South Jersey | ${SUFFIX}`,
     description: `Never miss a call again. LEDConnect AI answers 24/7, blocks spam, captures leads & books appointments for South Jersey businesses. Free demo: ${PHONE}.`,
+  },
+  "/ai-voice-agent": {
+    title: `AI Voice Agent for South Jersey Businesses | ${SUFFIX}`,
+    description: `See how an AI voice agent answers every call, resolves routine Tier-1 requests, and turns live calls into structured PSA tickets — freeing your service desk. Book a free demo: ${PHONE}.`,
   },
   "/services/commercial-security": {
     title: `Commercial Security Systems South Jersey | ${SUFFIX}`,

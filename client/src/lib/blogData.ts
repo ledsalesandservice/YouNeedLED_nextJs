@@ -2175,7 +2175,7 @@ Professional 24/7 monitoring means trained security operators watch over your pr
 
 ## How You Need L.E.D. Monitors South Jersey Properties
 
-At You Need L.E.D., we've been providing [professional security camera installation](/services/video-surveillancejersey/) and monitoring services to South Jersey for over 30 years. Our monitoring approach includes:
+At You Need L.E.D., we've been providing [professional security camera installation](/services/video-surveillance) and monitoring services to South Jersey for over 30 years. Our monitoring approach includes:
 
 *   **Commercial monitoring:** UL-listed central stations with redundant communication paths for businesses in [Camden County](/service-areas), [Burlington County](/service-areas), and throughout South Jersey
 *   **Residential monitoring:** Affordable plans for homeowners that include [intrusion detection](/services/intrusion-detection), fire, and environmental alerts
@@ -2213,7 +2213,7 @@ For a deeper comparison of DIY systems versus professional solutions, see our gu
 
 Want to know if 24/7 monitoring is right for your South Jersey property? Our experts will evaluate your current security and recommend the best solution for your needs and budget.
 
-**Related:** Learn more about our [security camera installation services](/services/video-surveillancen/), [intrusion detection systems](/services/intrusion-detection), and service areas including [Gloucester County](/service-areas) and [Atlantic County](/service-areas).`,
+**Related:** Learn more about our [security camera installation services](/services/video-surveillance), [intrusion detection systems](/services/intrusion-detection), and service areas including [Gloucester County](/service-areas) and [Atlantic County](/service-areas).`,
   },
   {
     slug: "professional-security-camera-installation-hammonton",

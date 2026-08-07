@@ -195,7 +195,7 @@ export const CERTIFICATIONS = [
 export const FAQ_GENERAL = [
   {
     q: "What areas do you serve?",
-    a: "We provide full-service security solutions throughout New Jersey, including alarm systems, surveillance cameras, access control, VoIP phone systems, and structured cabling. For customers outside New Jersey, we offer VoIP phone systems, CCTV camera systems, and card access control solutions across Pennsylvania, Delaware, and Maryland.",
+    a: "We provide full-service security solutions throughout New Jersey, including alarm systems, surveillance cameras, access control, VoIP phone systems, and structured cabling. For customers outside New Jersey, we offer VoIP phone systems, fiber optics, digital signage, hospitality WiFi, and commercial music solutions across Pennsylvania, Delaware, and Maryland.",
   },
   {
     q: "Are you licensed and insured?",

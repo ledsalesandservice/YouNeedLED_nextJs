@@ -607,7 +607,7 @@ export default function Home() {
             "@type": "Person",
             name: "Derek Weikel",
             jobTitle: "Owner & Lead Technician",
-            description: "Derek Weikel is the founder and owner of You Need L.E.D., a NJ DCA Licensed security and technology services company based in Linwood, NJ. With 34 years of industry experience — including 18 years in the field before founding the company in 2010 — Derek leads all commercial security camera, access control, fire alarm, VoIP, and jobsite security installations across South Jersey and the Delaware Valley.",
+            description: "Derek Weikel is the founder and owner of You Need L.E.D., a NJ DCA Licensed security and technology services company based in Linwood, NJ. With 34 years of industry experience — including 18 years in the field before founding the company in 2010 — Derek leads all commercial security camera, access control, fire alarm, VoIP, and jobsite security installations across New Jersey.",
             worksFor: {
               "@type": "Organization",
               "@id": `${SITE.url}/#organization`,

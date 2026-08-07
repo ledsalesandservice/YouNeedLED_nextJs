@@ -5,6 +5,8 @@
  */
 import { Link } from "wouter";
 import { SITE, IMAGES, IMAGE_SRCSETS, SERVICES, TESTIMONIALS, SERVICE_AREAS, CERTIFICATIONS } from "@/lib/siteData";
+import { ALL_LOCATIONS } from "@/lib/locationData";
+import { SERVICE_AREA_TOWNS } from "@/lib/serviceAreaData";
 import { FEATURED_BLOG_POSTS } from "@/lib/blogPreviewData";
 import SEOHead from "@/components/SEOHead";
 import {
@@ -27,6 +29,22 @@ const iconMap: Record<string, React.ReactNode> = {
   Monitor: <Monitor className="w-6 h-6" />,
   Cable: <Cable className="w-6 h-6" />,
 };
+
+// Town-name → real page path. Service-area towns are mapped first so their
+// hand-written /service-areas/ pages win on any name collision (they're the
+// richer pages); ALL_LOCATIONS then fills in every other town with its
+// /locations/ page. Keys are normalized (trimmed, lowercased) for lookup.
+const TOWN_PATHS: Record<string, string> = {};
+for (const town of SERVICE_AREA_TOWNS) {
+  TOWN_PATHS[town.name.trim().toLowerCase()] = `/service-areas/${town.slug}`;
+}
+for (const loc of ALL_LOCATIONS) {
+  const key = loc.name.trim().toLowerCase();
+  if (!(key in TOWN_PATHS)) TOWN_PATHS[key] = `/locations/${loc.slug}`;
+}
+function townPath(town: string): string | undefined {
+  return TOWN_PATHS[town.trim().toLowerCase()];
+}
 
 export default function Home() {
   const [activeCounty, setActiveCounty] = useState("southJersey");
@@ -345,7 +363,7 @@ export default function Home() {
               Serving the Tri-State Area
             </h2>
             <p className="text-white/70">
-              Full-service security solutions throughout New Jersey. VoIP, cameras, and access control available in PA, DE, and MD.
+              Full-service security solutions throughout New Jersey. VoIP, fiber optics, digital signage, hospitality WiFi, and commercial music available in PA, DE, and MD.
             </p>
           </div>
           <div className="flex flex-wrap justify-center gap-2 mb-8">
@@ -365,18 +383,10 @@ export default function Home() {
           </div>
           <div className="flex flex-wrap justify-center gap-2 max-w-3xl mx-auto mb-10">
             {(SERVICE_AREAS.newJersey as Record<string, string[]>)[activeCounty]?.map((town: string) => {
-              const locationSlug: Record<string, string> = {
-                "Cherry Hill": "/locations/cherry-hill-nj",
-                "Voorhees": "/locations/voorhees-nj",
-                "Mount Laurel": "/locations/mount-laurel-nj",
-                "Egg Harbor Township": "/locations/egg-harbor-township-nj",
-                "Somers Point": "/locations/somers-point-nj",
-                "Atlantic City": "/locations/atlantic-city-nj",
-              };
               return (
                 <Link
                   key={town}
-                  href={locationSlug[town] || "/service-areas"}
+                  href={townPath(town) ?? "/service-areas"}
                   className="px-3 py-1.5 bg-white/5 border border-white/15 rounded-md text-sm text-white/80 hover:bg-white/15 hover:text-white transition-colors"
                 >
                   {town}

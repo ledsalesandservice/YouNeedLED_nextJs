@@ -321,7 +321,7 @@
     },
     {
       "source": "/locations/pleasantville/:service",
-      "destination": "/service-areas",
+      "destination": "/service-areas/pleasantville",
       "statusCode": 301
     },
     {
@@ -346,7 +346,7 @@
     },
     {
       "source": "/locations/absecon-nj",
-      "destination": "/service-areas",
+      "destination": "/service-areas/absecon",
       "statusCode": 301
     },
     {
@@ -380,47 +380,17 @@
       "statusCode": 301
     },
     {
-      "source": "/locations/collingswood-nj",
-      "destination": "/service-areas",
-      "statusCode": 301
-    },
-    {
       "source": "/locations/egg-harbor-township-nj",
-      "destination": "/service-areas",
+      "destination": "/service-areas/egg-harbor-township",
       "statusCode": 301
     },
     {
       "source": "/locations/galloway-nj",
-      "destination": "/service-areas",
-      "statusCode": 301
-    },
-    {
-      "source": "/locations/gibbsboro-nj",
-      "destination": "/service-areas",
-      "statusCode": 301
-    },
-    {
-      "source": "/locations/gloucester-city-nj",
-      "destination": "/service-areas",
-      "statusCode": 301
-    },
-    {
-      "source": "/locations/haddonfield-nj",
-      "destination": "/service-areas",
+      "destination": "/service-areas/galloway",
       "statusCode": 301
     },
     {
       "source": "/locations/haddon-heights-nj",
-      "destination": "/service-areas",
-      "statusCode": 301
-    },
-    {
-      "source": "/locations/haddon-township-nj",
-      "destination": "/service-areas",
-      "statusCode": 301
-    },
-    {
-      "source": "/locations/hammonton-nj",
       "destination": "/service-areas",
       "statusCode": 301
     },
@@ -430,28 +400,13 @@
       "statusCode": 301
     },
     {
-      "source": "/locations/laurel-springs-nj",
-      "destination": "/service-areas",
-      "statusCode": 301
-    },
-    {
       "source": "/locations/lawnside-nj",
       "destination": "/service-areas",
       "statusCode": 301
     },
     {
-      "source": "/locations/lindenwold-nj",
-      "destination": "/service-areas",
-      "statusCode": 301
-    },
-    {
       "source": "/locations/linwood-nj",
-      "destination": "/service-areas",
-      "statusCode": 301
-    },
-    {
-      "source": "/locations/longport-nj",
-      "destination": "/service-areas",
+      "destination": "/service-areas/linwood",
       "statusCode": 301
     },
     {
@@ -461,7 +416,7 @@
     },
     {
       "source": "/locations/margate-nj",
-      "destination": "/service-areas",
+      "destination": "/service-areas/margate",
       "statusCode": 301
     },
     {
@@ -476,7 +431,7 @@
     },
     {
       "source": "/locations/northfield-nj",
-      "destination": "/service-areas",
+      "destination": "/service-areas/northfield",
       "statusCode": 301
     },
     {
@@ -491,7 +446,7 @@
     },
     {
       "source": "/locations/pleasantville-nj",
-      "destination": "/service-areas",
+      "destination": "/service-areas/pleasantville",
       "statusCode": 301
     },
     {
@@ -500,13 +455,8 @@
       "statusCode": 301
     },
     {
-      "source": "/locations/somerdale-nj",
-      "destination": "/service-areas",
-      "statusCode": 301
-    },
-    {
       "source": "/locations/somers-point-nj",
-      "destination": "/service-areas",
+      "destination": "/service-areas/somers-point",
       "statusCode": 301
     },
     {
@@ -516,7 +466,7 @@
     },
     {
       "source": "/locations/ventnor-nj",
-      "destination": "/service-areas",
+      "destination": "/service-areas/ventnor",
       "statusCode": 301
     },
     {
@@ -526,11 +476,6 @@
     },
     {
       "source": "/locations/winslow-nj",
-      "destination": "/service-areas",
-      "statusCode": 301
-    },
-    {
-      "source": "/locations/woodbury-nj",
       "destination": "/service-areas",
       "statusCode": 301
     },

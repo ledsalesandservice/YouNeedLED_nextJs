@@ -14,7 +14,8 @@ import SEOHead from "@/components/SEOHead";
 import {
   Phone, ArrowRight, MapPin, Bot, Zap, Shield, Camera, KeyRound,
   Flame, Monitor, Cable, MessageSquare, Bell, CheckCircle2, Star,
-  Building2, Clock, BadgeCheck, Landmark, Home as HomeIcon
+  Building2, Clock, BadgeCheck, Landmark, Home as HomeIcon,
+  Wifi, Music
 } from "lucide-react";
 
 const iconMap: Record<string, React.ReactNode> = {
@@ -26,6 +27,8 @@ const iconMap: Record<string, React.ReactNode> = {
   Monitor: <Monitor className="w-5 h-5" />,
   Cable: <Cable className="w-5 h-5" />,
   MessageSquare: <MessageSquare className="w-5 h-5" />,
+  Wifi: <Wifi className="w-5 h-5" />,
+  Music: <Music className="w-5 h-5" />,
 };
 
 export default function LocationPage() {
@@ -192,7 +195,7 @@ export default function LocationPage() {
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {(isLimited
-              ? LOCATION_SERVICES.filter(svc => !["Alarm Systems", "CCTV / Video Surveillance", "Access Control & Card Access", "Fire Alarm Systems"].includes(svc.title))
+              ? LOCATION_SERVICES.filter(svc => !["Alarm Systems", "CCTV / Video Surveillance", "Access Control & Card Access", "Fire Alarm Systems", "Intercom Systems", "Jobsite Security"].includes(svc.title))
               : LOCATION_SERVICES
             ).map((svc) => (
               <Link

@@ -3119,7 +3119,10 @@ export const LOCATION_SERVICES = [
   { title: "Access Control & Card Access", description: "Keyless entry and visitor management", icon: "KeyRound", href: "/services/access-control" },
   { title: "VoIP Phone Systems", description: "Enterprise VoIP with Microsoft Teams integration", icon: "Phone", href: "/services/voip" },
   { title: "Fire Alarm Systems", description: "NFPA 72 compliant with 24/7 monitoring", icon: "Flame", href: "/services/fire-alarm-systems" },
+  { title: "Fiber Optics & Low-Voltage Cabling", description: "Fiber and structured cabling for data and voice", icon: "Cable", href: "/services/fiber-optic" },
   { title: "Digital Signage", description: "Dynamic displays with LEDConnect platform", icon: "Monitor", href: "/services/ai-voice-agent" },
+  { title: "Hospitality WiFi", description: "Reliable guest and business WiFi for hotels, venues, and offices", icon: "Wifi", href: "/services/ai-voice-agent" },
+  { title: "Commercial Music", description: "Licensed background music systems for restaurants, bars, and retail", icon: "Music", href: "/services/ai-voice-agent" },
   { title: "Network & Low-Voltage Cabling", description: "Structured cabling for data and voice", icon: "Cable", href: "/contact" },
   { title: "Intercom Systems", description: "Building-wide communication solutions", icon: "MessageSquare", href: "/contact" },
 ];

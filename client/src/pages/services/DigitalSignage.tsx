@@ -188,6 +188,7 @@ export default function DigitalSignage() {
         pageSlug="/services/digital-signage"
         subtitle="Cloud-managed displays for restaurants, retail, healthcare, education, hospitality, and more. Professional installation and setup by South Jersey's trusted technology team."
         heroImage={IMAGES.heroMain}
+        heroImageAlt="Cloud-managed digital signage displays installed in a South Jersey business"
         primaryCta={{ label: "Get a Digital Signage Quote", href: "/contact" }}
         secondaryCta={{ label: "See Use Cases Below", href: "#use-cases" }}
         features={[

@@ -36,6 +36,7 @@ export default function AccessControl() {
         pageSlug="/services/access-control"
         subtitle="CDVI & Alarm.com powered keyless entry with RFID, biometric, and mobile credentials. Cloud-managed door access for any commercial facility — installed by NJ DCA Licensed professionals."
         heroImage={IMAGES.heroAccess}
+        heroImageAlt="Keyless RFID access control card reader on a commercial door in South Jersey"
         heroSrcSet={IMAGE_SRCSETS.heroAccess}
         primaryCta={{ label: "Get Access Control Quote", href: "/contact" }}
         secondaryCta={{ label: "Schedule a Demo", href: "/contact" }}

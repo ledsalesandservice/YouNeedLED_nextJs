@@ -38,6 +38,7 @@ export default function VoIP() {
       pageSlug="/services/voip"
       subtitle="Enterprise-grade cloud phone systems with auto-attendant, call routing, Microsoft Teams integration, and now LEDConnect AI Voice Agents for 24/7 call handling."
       heroImage={IMAGES.heroVoip}
+      heroImageAlt="Hosted VoIP business phone system installed for a South Jersey office"
       heroSrcSet={IMAGE_SRCSETS.heroVoip}
       primaryCta={{ label: "Get VoIP Quote", href: "/contact" }}
       secondaryCta={{ label: "Book AI Voice Demo", href: "/services/ai-voice-agent" }}

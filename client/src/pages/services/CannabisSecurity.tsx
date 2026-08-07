@@ -103,6 +103,7 @@ export default function CannabisSecurity() {
         pageSlug="/services/cannabis-security"
         subtitle="CRC-compliant video surveillance, access control, monitored intrusion, and backup power — designed and installed by NJ DCA licensed contractors who know what the Commission actually inspects."
         heroImage={IMAGES.heroCameras}
+        heroImageAlt="CRC-compliant surveillance camera system at a New Jersey cannabis facility"
         heroSrcSet={IMAGE_SRCSETS.heroCameras}
         primaryCta={{ label: "Get CRC Compliance Assessment", href: "/contact" }}
         secondaryCta={{ label: "Call (609) 335-0123", href: "tel:6093350123" }}

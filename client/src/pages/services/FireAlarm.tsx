@@ -29,6 +29,7 @@ export default function FireAlarm() {
       pageSlug="/services/fire-alarm-systems"
       subtitle="Protect lives and property with professionally installed fire alarm systems. Our NFPA 72 compliant solutions include 24/7 monitoring and emergency response coordination."
       heroImage="/blog-images/blog-fire-alarm2-1200w.webp"
+      heroImageAlt="NFPA 72 compliant commercial fire alarm system installed in South Jersey"
       primaryCta={{ label: "Get Fire Safety Quote", href: "/contact" }}
       secondaryCta={{ label: "Schedule Inspection", href: "/contact" }}
       features={[

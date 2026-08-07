@@ -45,6 +45,7 @@ export default function FiberOptic() {
         pageSlug="/services/fiber-optic"
         subtitle="High-speed fiber optic infrastructure for commercial buildings, campgrounds, warehouses, and multi-building complexes. Single-mode and multimode installation, fusion splicing, and 24/7 emergency repair throughout South Jersey."
         heroImage="/blog-images/blog-commercial-building-800w.webp"
+        heroImageAlt="Fiber optic cabling installation in a South Jersey commercial building"
         primaryCta={{ label: "Get a Fiber Quote", href: "/contact" }}
         secondaryCta={{ label: "Emergency Repair", href: "/contact" }}
         features={[

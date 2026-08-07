@@ -29,6 +29,7 @@ export default function IntrusionDetection() {
       pageSlug="/services/intrusion-detection"
       subtitle="Protect your business with advanced intrusion detection systems. Mobile alerts, 24/7 monitoring, and professional installation by licensed security experts."
       heroImage="/blog-images/blog-warehouse-1200w.webp"
+      heroImageAlt="Commercial intrusion detection and alarm system in a South Jersey warehouse"
       primaryCta={{ label: "Free Security Assessment", href: "/contact" }}
       secondaryCta={{ label: "View Packages", href: "#packages" }}
       features={[

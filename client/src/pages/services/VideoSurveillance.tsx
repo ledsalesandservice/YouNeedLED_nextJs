@@ -45,6 +45,7 @@ export default function VideoSurveillance() {
         pageSlug="/services/video-surveillance"
         subtitle="Enterprise-grade 4K AI cameras with license plate recognition, cloud storage, and 24/7 remote monitoring. Installed by NJ DCA Licensed professionals serving South Jersey since 2010."
         heroImage={IMAGES.heroCameras}
+        heroImageAlt="4K AI security camera installation on a South Jersey commercial property"
         heroSrcSet={IMAGE_SRCSETS.heroCameras}
         primaryCta={{ label: "Get a Free Camera Quote", href: "/contact" }}
         secondaryCta={{ label: "View Camera Packages", href: "#systems" }}

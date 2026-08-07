@@ -30,6 +30,7 @@ export default function ApartmentSecurity() {
         pageSlug="/services/apartment-security"
         subtitle="Complete security solutions for multi-family properties including video surveillance, access control, intercom systems, and 24/7 monitoring."
         heroImage="/blog-images/blog-apartment-1200w.webp"
+        heroImageAlt="Security cameras and access control protecting a South Jersey apartment complex"
         primaryCta={{ label: "Get Property Assessment", href: "/contact" }}
         secondaryCta={{ label: "View Solutions", href: "#solutions" }}
         features={[

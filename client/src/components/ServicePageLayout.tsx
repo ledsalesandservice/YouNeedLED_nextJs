@@ -28,6 +28,7 @@ interface Props {
   title: string;
   subtitle: string;
   heroImage: string;
+  heroImageAlt?: string;
   heroSrcSet?: string;
   primaryCta: { label: string; href: string };
   secondaryCta?: { label: string; href: string };
@@ -43,6 +44,7 @@ export default function ServicePageLayout({
   title,
   subtitle,
   heroImage,
+  heroImageAlt,
   heroSrcSet,
   primaryCta,
   secondaryCta,
@@ -64,7 +66,7 @@ export default function ServicePageLayout({
             src={heroImage}
             srcSet={heroSrcSet}
             sizes="100vw"
-            alt=""
+            alt={heroImageAlt ?? ""}
             className="w-full h-full object-cover max-w-full"
             loading="eager"
             fetchPriority="high"

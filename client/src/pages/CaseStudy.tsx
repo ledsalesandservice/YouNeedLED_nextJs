@@ -91,7 +91,7 @@ export default function CaseStudy() {
             src={cs.heroImage}
             srcSet={cs.heroImage.startsWith('/blog-images/') ? `${cs.heroImage.replace(/-1200w\.webp$/, '-800w.webp')} 800w, ${cs.heroImage} 1200w` : undefined}
             sizes="100vw"
-            alt=""
+            alt={cs.title}
             className="w-full h-full object-cover"
             loading="eager"
             width="1200"

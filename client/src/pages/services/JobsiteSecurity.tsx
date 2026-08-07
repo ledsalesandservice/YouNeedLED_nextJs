@@ -27,6 +27,7 @@ export default function JobsiteSecurity() {
       pageSlug="/services/jobsite-security"
       subtitle="Advanced wireless cameras and alarm systems for construction sites, equipment storage, and temporary locations. No power or internet required at your property."
       heroImage="/blog-images/blog-jobsite-1200w.webp"
+      heroImageAlt="Solar-powered wireless security camera on a South Jersey construction site"
       primaryCta={{ label: "Get Quote Today", href: "/contact" }}
       secondaryCta={{ label: "View Rental Options", href: "#rentals" }}
       features={[

@@ -562,13 +562,13 @@ You've seen our work in over 30 apartment communities across New Jersey. Now, le
     image: "/blog-images/blog-server-room-800w.webp",
     content: `'''
 
-[Back to Insights]()
+[Back to Insights](/blog)
 
 server room environmental monitoring sensors
 
 
 
-Server rooms fail in predictable ways. [Environmental monitoring sensors]() turn those “surprises” into visible trends and actionable alarms, so IT and facilities teams can respond before uptime is affected.
+Server rooms fail in predictable ways. [Environmental monitoring sensors](/services/video-surveillance) turn those “surprises” into visible trends and actionable alarms, so IT and facilities teams can respond before uptime is affected.
 
 ## What environmental monitoring should do in a real server room
 
@@ -619,7 +619,7 @@ Water detection is one of the most cost-effective protections you can add.
 
 Even in rooms with no plumbing, water arrives through roof penetrations, exterior walls, sprinkler piping in adjacent spaces, condensate lines, and accidental spills during maintenance. Sensing cable installed along likely pathways (perimeter, under CRAC units, near exterior wall seams, under any pipe routes) provides earlier notice than a single spot probe.
 
-[A well-built response plan]() pairs the alarm with a clear action list: who is called, how access is granted after hours, and what “safe shutdown” steps exist if water is near power distribution.
+[A well-built response plan](/blog) pairs the alarm with a clear action list: who is called, how access is granted after hours, and what “safe shutdown” steps exist if water is near power distribution.
 
 ## Airflow and differential pressure: prove the cooling plan is working
 
@@ -635,7 +635,7 @@ Server-room smoke detection must be handled as a life safety topic, not an IT ac
 
 Most facilities already have building fire alarm coverage, yet IT spaces can benefit from early warning detection methods and placement that reflect airflow and plenum design. Any smoke detection plan should coordinate with applicable NFPA requirements, local AHJ expectations, and existing fire alarm programming.
 
-If your monitoring platform ingests smoke status, treat it as situational awareness and escalation support, not a replacement for the [fire alarm system]().
+If your monitoring platform ingests smoke status, treat it as situational awareness and escalation support, not a replacement for the [fire alarm system](/services/fire-alarm-systems).
 
 ## Particulate monitoring: valuable in the right environments
 
@@ -662,7 +662,7 @@ Below is a field-friendly reference table many IT directors use as a starting po
 
 There is no single “best” transport. The right answer depends on building constraints, cybersecurity requirements, and how the monitoring data will be consumed.
 
-Wired sensors, especially Ethernet/PoE and hardwired loops, are preferred where reliability and security are top priorities. [Wireless sensors]() make sense where adding cable is disruptive or slow, where you need temporary coverage during renovation, or where you want to scale quickly across multiple IDFs and MDFs.
+Wired sensors, especially Ethernet/PoE and hardwired loops, are preferred where reliability and security are top priorities. [Wireless sensors](/services/video-surveillance) make sense where adding cable is disruptive or slow, where you need temporary coverage during renovation, or where you want to scale quickly across multiple IDFs and MDFs.
 
 A simple decision guide that works well in practice:
 
@@ -679,11 +679,11 @@ Good monitoring isn't about buying every sensor on the market. It's about gettin
 
 ## Need help building a reliable monitoring system?
 
-Our team has designed and installed environmental monitoring for data centers, network closets, and industrial facilities across [South Jersey](). We can help you select the right sensors, integrate them with your existing platforms, and build a system that prevents downtime, not just reports it.
+Our team has designed and installed environmental monitoring for data centers, network closets, and industrial facilities across [South Jersey](/service-areas). We can help you select the right sensors, integrate them with your existing platforms, and build a system that prevents downtime, not just reports it.
 
-[You Need L.E.D.]() is a [licensed and bonded]() technology services provider specializing in commercial security, communications, and [access control]().
+[You Need L.E.D.](/) is a [licensed and bonded](/about) technology services provider specializing in commercial security, communications, and [access control](/services/access-control).
 
-[Get a Free Quote]() or [View Our Services]()
+[Get a Free Quote](/contact) or [View Our Services](/service-areas)
 '''`,
   },
   {
@@ -694,19 +694,19 @@ Our team has designed and installed environmental monitoring for data centers, n
     excerpt: "Security camera systems are only as reliable as the pathways that carry video back to storage and operators. Once you move beyond a single building, copper Ethernet quickly runs into distance...",
     readTime: "7 min",
     image: "/blog-images/blog-network-800w.webp",
-    content: `[Back to Insights]()
+    content: `[Back to Insights](/blog)
 
 single mode vs multimode fiber for security cameras
 
 
 
-[Security camera systems]() are only as reliable as the pathways that carry video back to storage and operators. Once you move beyond a single building, copper Ethernet quickly runs into distance limits, grounding issues, and maintenance problems, especially across parking lots, campuses, marinas, industrial yards, and municipal corridors throughout [South Jersey](). That is where [a fiber backbone]() earns its keep.
+[Security camera systems](/services/video-surveillance) are only as reliable as the pathways that carry video back to storage and operators. Once you move beyond a single building, copper Ethernet quickly runs into distance limits, grounding issues, and maintenance problems, especially across parking lots, campuses, marinas, industrial yards, and municipal corridors throughout [South Jersey](/service-areas). That is where [a fiber backbone](/services/fiber-optic) earns its keep.
 
 The question comes up early in design: should the backbone be single-mode or multi-mode fiber? Both can run cameras well. The better choice depends on distance, growth plans, environment, and how you want the system to be supported over the next decade.
 
 ## Why fiber becomes the backbone for camera systems
 
-Fiber is not only about speed. It is often the most practical way to connect IDF closets, gatehouses, poles, and remote buildings without dealing with lightning-induced surge events that can punish copper between structures. It also helps when you need predictable performance for high-resolution video, [access control](), intercoms, and [building systems]() sharing the same pathways.
+Fiber is not only about speed. It is often the most practical way to connect IDF closets, gatehouses, poles, and remote buildings without dealing with lightning-induced surge events that can punish copper between structures. It also helps when you need predictable performance for high-resolution video, [access control](/services/access-control), intercoms, and building systems sharing the same pathways.
 
 In security projects, fiber is commonly used for:
 
@@ -755,7 +755,7 @@ Two practical points matter more than marketing specs:
 
 Multi-mode can run 10G and beyond over shorter distances, which is why it is common inside buildings. Single-mode can run those same speeds much farther, which is why it is popular for campus links.
 
-If your plan includes centralizing storage, adding [AI-based alerts](), or tying video into a SOC workflow, it is wise to plan uplinks that will not force a redesign later.
+If your plan includes centralizing storage, adding [AI-based alerts](/services/video-surveillance), or tying video into a SOC workflow, it is wise to plan uplinks that will not force a redesign later.
 
 ## Cost and availability: fiber is cheap, optics drive the budget
 
@@ -1403,7 +1403,7 @@ One sentence is fine, as long as it sets priorities.
 
 Vendors misquote when they are forced to guess what your building looks like and how your network behaves. Treat the RFP as a shared set of site facts.
 
-Include a site profile for each facility, even if it is brief. If you serve multiple locations across [South Jersey]() or nearby counties, do not rely on “typical” conditions. Write what is true per site.
+Include a site profile for each facility, even if it is brief. If you serve multiple locations across [South Jersey](/service-areas) or nearby counties, do not rely on “typical” conditions. Write what is true per site.
 
 After you explain the site, list what you already know you want.
 
@@ -1455,7 +1455,7 @@ If your IT team has bandwidth constraints, say so plainly and require the propos
 
 ## Installation scope: spell out the “boring” parts that change pricing
 
-Most [change orders]() come from unspoken installation assumptions. Your RFP should declare what is included, what is excluded, and what is unknown but likely.
+Most change orders come from unspoken installation assumptions. Your RFP should declare what is included, what is excluded, and what is unknown but likely.
 
 One sentence can prevent weeks of back-and-forth: “All labor, lifts, pathways, labeling, termination, testing, and commissioning are included unless listed as an exclusion.”
 
@@ -1463,7 +1463,7 @@ Then list the common scope dividers that vendors price differently.
 
 *   **Pathways and surfaces:** Conduit type, core drilling expectations, firestopping requirements, and patch/paint responsibility
 *   **Heights and access:** Pole mounts, parapets, ceiling types, lift access, roof rules, and any union or site escort requirements
-*   **Power and network:** New electrical work responsibility, PoE switch allowances, [fiber needs]() between IDFs, and UPS expectations
+*   **Power and network:** New electrical work responsibility, PoE switch allowances, [fiber needs](/services/fiber-optic) between IDFs, and UPS expectations
 
 If your organization requires prevailing wage, background checks, or specific safety documentation, include it here. That is not “paperwork,” it is real cost.
 
@@ -1477,7 +1477,7 @@ State deliverables in plain terms so vendors cannot omit them to look cheaper.
 *   **Documentation:** As-builts, IP plans, cable schedules, credentials handling process, and warranty serial lists
 *   **Training:** Onsite admin training, operator training, and a defined number of follow-up hours
 
-If you expect integration with [access control](), [intrusion detection](), or building systems, call out the specific integration point (VMS plugin, API, event triggers, door forced alarms, bookmarked video exports). Integration is where “included” often means “not included.”
+If you expect integration with [access control](/services/access-control), [intrusion detection](/services/intrusion-detection), or building systems, call out the specific integration point (VMS plugin, API, event triggers, door forced alarms, bookmarked video exports). Integration is where “included” often means “not included.”
 
 ## Use a pricing format that forces apples-to-apples bids
 
@@ -1508,7 +1508,7 @@ Spell out what is mandatory and what is preferred. Include a checkbox-style comp
 
 This is also where you can require vendor qualifications in a way that protects your organization, especially for public-facing facilities and high-demand environments.
 
-Across [South Jersey](), many organizations also prefer to work with a properly [licensed and bonded technology contractor](), with local service availability and clear escalation paths. If that matters to your site, put it in the RFP as a requirement, not a hope.
+Across [South Jersey](/service-areas), many organizations also prefer to work with a properly [licensed and bonded technology contractor](/about), with local service availability and clear escalation paths. If that matters to your site, put it in the RFP as a requirement, not a hope.
 
 ## Evaluation criteria: publish the rules so vendors bid honestly
 
@@ -1695,7 +1695,7 @@ The harder truth is that customers, auditors, and incident reports do not care t
 
 ## Why personal phone use becomes a business risk
 
-Using one number for everything creates confusion right where you can least afford it: the moment a customer decides whether to [trust you]().
+Using one number for everything creates confusion right where you can least afford it: the moment a customer decides whether to trust you.
 
 A business call comes in while you are off-site. You answer, but your caller ID shows a random mobile number. Your voicemail greeting is casual. Text messages land at 9:30 PM because clients assume you are always reachable. Then it snowballs: staff members share numbers with vendors, numbers get reused across jobs, and the organization slowly loses the ability to manage its own communications.
 
@@ -1733,7 +1733,7 @@ A personal phone number can create friction in small ways that cost real money: 
 
 ## What a business phone service actually gives you
 
-Most teams do not need a complicated call center to get the benefits. A [hosted PBX or VoIP]() [VoIP business phone service]() can be configured to feel polished on day one, then grow as your staffing and locations change across [South Jersey and the Philadelphia area]().
+Most teams do not need a complicated call center to get the benefits. A [hosted PBX or VoIP](/services/voip) [VoIP business phone service](/services/voip) can be configured to feel polished on day one, then grow as your staffing and locations change across [South Jersey and the Philadelphia area](/service-areas).
 
 After you define how your calls should flow, these are common building blocks:
 
@@ -1815,11 +1815,11 @@ After you have a clear plan, these evaluation points tend to matter most:
 
 ## How You Need L.E.D. supports business phone service in South Jersey and Philly
 
-[You Need L.E.D.]() is a [licensed and bonded]() professional technology services contractor focused on enterprise-grade communications and building technology. For organizations across South Jersey, that “under one roof” approach matters because phones do not live in isolation. Voice quality and reliability depend on network cabling, switching, firewall configuration, and how the system integrates with your day-to-day workflow.
+[You Need L.E.D.](/) is a [licensed and bonded](/about) professional technology services contractor focused on enterprise-grade communications and building technology. For organizations across South Jersey, that “under one roof” approach matters because phones do not live in isolation. Voice quality and reliability depend on network cabling, switching, firewall configuration, and how the system integrates with your day-to-day workflow.
 
-A typical engagement starts with a [free on-site consultation]() to review your current phone setup, your internet connection, and how calls should route across departments, shifts, and sites. From there, the team can design and install a hosted PBX or VoIP solution, set up desk phones and mobile apps, configure auto-attendants and ring groups, and support number porting so you do not lose continuity with customers.
+A typical engagement starts with a [free on-site consultation](/contact) to review your current phone setup, your internet connection, and how calls should route across departments, shifts, and sites. From there, the team can design and install a hosted PBX or VoIP solution, set up desk phones and mobile apps, configure auto-attendants and ring groups, and support number porting so you do not lose continuity with customers.
 
-Ongoing support is where many organizations feel the biggest improvement. When you have [24/7 local support]() with real humans, changes like updating greetings, adding an extension, rerouting calls during weather events, or handling an urgent outage become operational tasks, not stress points.
+Ongoing support is where many organizations feel the biggest improvement. When you have 24/7 local support with real humans, changes like updating greetings, adding an extension, rerouting calls during weather events, or handling an urgent outage become operational tasks, not stress points.
 
 If you are still giving out personal numbers, a business phone service is one of the cleanest upgrades you can make: it protects privacy, tightens control, and makes every call feel like it reached a real organization, because it did.
 
@@ -1837,7 +1837,7 @@ Contact You Need L.E.D. for a free consultation on professional security solutio
     image: "/blog-images/blog-modern-building-800w.webp",
     content: `A multi-tenant office building has a different security problem than a single-company headquarters. The lobby belongs to everyone. The loading dock is busy at odd hours. Vendors, cleaners, and short-term visitors move through shared corridors. Tenants want strong control of their own suites without feeling like the property is “locked down.”
 
-Good [access control]() in this setting is less about buying readers and more about designing rules that stay workable when tenants change, headcounts fluctuate, and after-hours schedules collide.
+Good [access control](/services/access-control) in this setting is less about buying readers and more about designing rules that stay workable when tenants change, headcounts fluctuate, and after-hours schedules collide.
 
 ## Start with the reality of shared space
 
@@ -1884,7 +1884,7 @@ A table can help when setting expectations with owners and tenants.
 | --- | --- | --- |
 | Card or fob | High volume daily use, straightforward operations | Lost credentials, replacement workflow, printing and inventory |
 | PIN keypad | Low-traffic doors, secondary verification | PIN sharing, shoulder-surfing, harder to audit “who” |
-| Mobile credential | Fast onboarding and offboarding, remote issuance | Device compatibility, policies for phone loss, [privacy]() questions |
+| Mobile credential | Fast onboarding and offboarding, remote issuance | Device compatibility, policies for phone loss, [privacy](/privacy-policy) questions |
 | Multi-factor (card + PIN, mobile + PIN) | Higher-risk doors, after-hours access | More user friction, more support calls if not trained well |
 
 Many properties standardize on one primary credential type, then use a second factor only where it makes sense (IT rooms, roof access, cash-handling areas, cultivation-related restricted areas, or other high-value spaces).
@@ -1916,9 +1916,9 @@ This is also where intrusion detection, intercoms, and elevator controls can fit
 
 ## Hardware and life safety: keep compliance in the design
 
-Multi-tenant buildings often have a mix of older doors, retrofitted frames, and tenant improvements. Access control hardware needs to be chosen and installed so doors still latch properly, meet [egress requirements](), and hold up under daily use.
+Multi-tenant buildings often have a mix of older doors, retrofitted frames, and tenant improvements. Access control hardware needs to be chosen and installed so doors still latch properly, meet egress requirements, and hold up under daily use.
 
-Many projects benefit from standardizing hardware quality at key doors. Commercial-grade locks and electrified hardware reduce service calls and keep doors secure under heavy traffic. Controllers and system units should be listed for access control use, and installations should respect local code requirements for emergency egress, fire-rated openings, and [fire alarm coordination]() where required.
+Many projects benefit from standardizing hardware quality at key doors. Commercial-grade locks and electrified hardware reduce service calls and keep doors secure under heavy traffic. Controllers and system units should be listed for access control use, and installations should respect local code requirements for emergency egress, fire-rated openings, and [fire alarm coordination](/services/fire-alarm-systems) where required.
 
 If you are upgrading access control, it is a good time to confirm that door closers, latch alignment, and strike reinforcement are not being overlooked. A reader on a door that does not close is not security.
 
@@ -1962,7 +1962,7 @@ Cloud-managed systems often shift spending from upfront server costs to predicta
 
 Multi-tenant access control has enough moving parts that design and support quality matter as much as brand selection. A local team that can survey the site, coordinate with door and frame conditions, integrate cameras and alarms, and provide responsive support is often the difference between a system tenants like and a system tenants work around.
 
-[You Need L.E.D.]() provides licensed and bonded technology services across [South Jersey](), with building technology work that commonly includes [access control](), [security cameras](), [intrusion detection](), [fire alarm coordination](), and communications systems. For property managers, having one NJ-licensed team that can design, install, integrate, and support these systems under one roof can simplify tenant coordination and speed up service when doors, hardware, and software all intersect.
+[You Need L.E.D.](/) provides licensed and bonded technology services across [South Jersey](/service-areas), with building technology work that commonly includes [access control](/services/access-control), [security cameras](/services/video-surveillance), [intrusion detection](/services/intrusion-detection), [fire alarm coordination](/services/fire-alarm-systems), and communications systems. For property managers, having one NJ-licensed team that can design, install, integrate, and support these systems under one roof can simplify tenant coordination and speed up service when doors, hardware, and software all intersect.
 
 A good next step is a walk-through that documents each opening, identifies shared vs. tenant-controlled doors, and produces a clear zone and schedule plan before equipment is finalized.`,
   },
@@ -1974,7 +1974,7 @@ A good next step is a walk-through that documents each opening, identifies share
     excerpt: "Hospitals in New Jersey rarely struggle with the _idea_ of security compliance. The hard part is that the “rules” come from multiple directions at once: state licensure, fire and life-safety code,...",
     readTime: "7 min",
     image: "/blog-images/blog-hospital-800w.webp",
-    content: `[Back to Insights]()
+    content: `[Back to Insights](/blog)
 
 
 
@@ -2016,7 +2016,7 @@ A useful internal format is: **requirement → control → proof**. You are not 
 
 Surveyors and investigators typically care about two things with cameras: whether you can reconstruct an incident and whether you protected patient privacy while doing it.
 
-A starting point is [coverage of public spaces]() and predictable risk zones: entrances, exits, lobbies, corridors, elevators (where permitted), parking areas, loading docks, and other high-traffic areas. Hospitals also often add tighter coverage around pharmacies, ED waiting, behavioral health corridors, cash handling, infant protection boundaries, and IT rooms.
+A starting point is coverage of public spaces and predictable risk zones: entrances, exits, lobbies, corridors, elevators (where permitted), parking areas, loading docks, and other high-traffic areas. Hospitals also often add tighter coverage around pharmacies, ED waiting, behavioral health corridors, cash handling, infant protection boundaries, and IT rooms.
 
 Just as important is where cameras _should not_ be used. Patient rooms, bathrooms, and changing areas are a high-risk privacy issue. If any camera view can capture a patient receiving care or being identified in a care context, treat that footage as PHI and secure it accordingly.
 
@@ -2033,7 +2033,7 @@ One of the easiest ways to fail the “real world” test is to have good camera
 
 ## Access control: doors, credentials, and the audit trail inspectors expect
 
-[Access control]() is often where hospitals drift over time. Buildings expand. Departments shift. Roles get copied and pasted. People keep access they no longer need.
+[Access control](/services/access-control) is often where hospitals drift over time. Buildings expand. Departments shift. Roles get copied and pasted. People keep access they no longer need.
 
 Your checklist should start with a clear list of restricted zones and the method used to control entry. After that, it should focus on credential lifecycle: issuance, change, and removal.
 
@@ -2053,11 +2053,11 @@ A strong program also links access control with HR events. When someone leaves, 
 
 ## Alarms: fire code requirements and security response expectations
 
-[Fire alarm and life-safety systems]() are the most codified part of the checklist. In NJ, hospitals are expected to comply with the Fire Code and applicable NFPA standards, with documented inspection and testing. Annual inspection and testing documentation is a frequent pressure point because a “we do it” answer is not enough. You need the paperwork.
+[Fire alarm and life-safety systems](/services/fire-alarm-systems) are the most codified part of the checklist. In NJ, hospitals are expected to comply with the Fire Code and applicable NFPA standards, with documented inspection and testing. Annual inspection and testing documentation is a frequent pressure point because a “we do it” answer is not enough. You need the paperwork.
 
 Also plan for impairment. Many facilities get caught flat-footed when a panel or a loop is down for service. If the fire alarm system is out of service beyond a certain timeframe, the Authority Having Jurisdiction may require a formal fire watch, which has its own documentation and staffing rules.
 
-Security alarms—like door-forced alarms on an access control system or [perimeter intrusion]() detection—are less standardized. Here, surveyors want to see that your alarms are:
+Security alarms—like door-forced alarms on an access control system or [perimeter intrusion](/services/intrusion-detection) detection—are less standardized. Here, surveyors want to see that your alarms are:
 
 *   **Tuned:** Not so noisy that they are ignored.
 *   **Actionable:** They route to a person or system that can respond.
@@ -2067,9 +2067,9 @@ Security alarms—like door-forced alarms on an access control system or [perime
 
 Compliance is not a one-time project. It is a cycle of assessing risk, implementing controls, testing those controls, and documenting everything. Using a checklist helps break that cycle into manageable pieces.
 
-For hospitals across [South Jersey](), working with a security integrator that understands healthcare-specific challenges is critical. An experienced partner can help with everything from [system design, installation, integration, and ongoing support]().
+For hospitals across [South Jersey](/service-areas), working with a security integrator that understands healthcare-specific challenges is critical. An experienced partner can help with everything from system design, installation, integration, and ongoing support.
 
-If you are reviewing your hospital’s security and compliance posture, the right technology partner makes all the difference. [You Need L.E.D.]() is a [licensed and bonded]() security systems integrator with deep experience in the healthcare vertical. Contact us for a no-obligation consultation.`,
+If you are reviewing your hospital’s security and compliance posture, the right technology partner makes all the difference. [You Need L.E.D.](/) is a [licensed and bonded](/about) security systems integrator with deep experience in the healthcare vertical. Contact us for a no-obligation consultation.`,
   },
   {
     slug: "apartment-security-challenges-south-jersey",
@@ -2276,13 +2276,13 @@ Big-box store cameras and self-installation seem cost-effective, but Hammonton's
 
 ## How You Need L.E.D. Designs and Installs Hammonton Systems
 
-Our [professional security camera installation]() process for Hammonton properties includes:
+Our [professional security camera installation](/services/video-surveillance) process for Hammonton properties includes:
 
 1.  **Free on-site survey:** We walk your property, identify vulnerabilities, and document optimal camera positions
 2.  **Custom system design:** Commercial-grade cameras matched to your specific needs (4K resolution, night vision, weather resistance)
 3.  **Professional installation:** Clean cable runs, weatherproof connections, and proper mounting to prevent tampering
 4.  **Network integration:** Secure configuration for remote viewing on your phone or computer
-5.  **Optional monitoring:** Integration with [24/7 professional monitoring]() services
+5.  **Optional monitoring:** Integration with 24/7 professional monitoring services
 
 ## Residential Security for Hammonton Homeowners
 
@@ -2297,7 +2297,7 @@ Hammonton's residential areas—from homes near Lake Nummy to properties along C
 
 Ready to protect your Hammonton home or business? Get a free, no-obligation quote from our NJ-licensed security professionals (License #34BF00056900).
 
-**Related:** Learn more about [security camera installation](), [AI-powered cameras for South Jersey](), and our services in [Atlantic County]().`,
+**Related:** Learn more about [security camera installation](/services/video-surveillance), [AI-powered cameras for South Jersey](/services/video-surveillance), and our services in [Atlantic County](/counties/atlantic-county-nj).`,
   },
   {
     slug: "ring-vs-professional-security-system",

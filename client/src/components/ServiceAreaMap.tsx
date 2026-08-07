@@ -51,20 +51,6 @@ const SERVICE_LOCATIONS: ServiceLocation[] = [
   {town:"Philadelphia",state:"PA",service:"CCTV"},
 ];
 
-const SERVICE_COLORS: Record<string, string> = {
-  "Fire Alarm": "#dc2626",
-  CCTV: "#2563eb",
-  "Access Control": "#16a34a",
-  "Low Voltage": "#d97706",
-};
-
-const LEGEND_ITEMS = [
-  { label: "Fire Alarm", color: "#dc2626" },
-  { label: "CCTV / Cameras", color: "#2563eb" },
-  { label: "Access Control", color: "#16a34a" },
-  { label: "Low Voltage", color: "#d97706" },
-];
-
 export default function ServiceAreaMap() {
   // Group by state
   const grouped = SERVICE_LOCATIONS.reduce<Record<string, ServiceLocation[]>>(
@@ -78,19 +64,6 @@ export default function ServiceAreaMap() {
 
   return (
     <div className="w-full">
-      {/* Legend */}
-      <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 mb-6">
-        {LEGEND_ITEMS.map((item) => (
-          <div key={item.label} className="flex items-center gap-2">
-            <span
-              className="inline-block w-3 h-3 rounded-full flex-shrink-0"
-              style={{ backgroundColor: item.color }}
-            />
-            <span className="text-sm text-white/80">{item.label}</span>
-          </div>
-        ))}
-      </div>
-
       {/* Coverage grid — replaces the Google Map */}
       <div className="rounded-xl overflow-hidden shadow-2xl border border-white/10 bg-white/5 p-6 md:p-8">
         <div className="flex items-center gap-2 mb-6 text-white/90">
@@ -114,12 +87,8 @@ export default function ServiceAreaMap() {
                 {locations.map((loc, i) => (
                   <div
                     key={`${loc.town}-${i}`}
-                    className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white/10 rounded-lg text-xs text-white/80"
+                    className="px-3 py-1.5 bg-white/15 rounded-lg text-xs text-white/90"
                   >
-                    <span
-                      className="inline-block w-2 h-2 rounded-full flex-shrink-0"
-                      style={{ backgroundColor: SERVICE_COLORS[loc.service] }}
-                    />
                     {loc.town}
                   </div>
                 ))}
@@ -131,7 +100,7 @@ export default function ServiceAreaMap() {
         {/* Regional coverage note */}
         <div className="mt-6 pt-4 border-t border-white/10 text-center">
           <p className="text-xs text-white/50">
-            Full-service coverage across NJ, PA, DE, and MD &middot; On-site service available throughout the Delaware Valley
+            Full-service coverage across New Jersey, plus VoIP, fiber, digital signage, and more in PA, DE, and MD &middot; On-site service available throughout the Delaware Valley
           </p>
         </div>
       </div>

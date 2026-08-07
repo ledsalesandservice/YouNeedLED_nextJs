@@ -5826,6 +5826,81 @@ const njBatch5Locations: LocationData[] = [
 ];
 
 // ============================================================
+// NJ ADDITIONAL TOWNS — BATCH 6
+// ============================================================
+const njBatch6Locations: LocationData[] = [
+  {
+    slug: "wyoming-nj",
+    name: "Wyoming",
+    state: "New Jersey",
+    stateAbbr: "NJ",
+    region: "Central Jersey",
+    fullService: true,
+    description: "Home cameras, alarms, and access control for Wyoming — the Millburn commuter section around the NJ Transit station, the homes off Wyoming and Glen Avenue, and the small offices near Millburn Avenue. NJ DCA licensed.",
+    industries: ["Residential Estates", "Professional Offices", "Small Medical Practices", "Houses of Worship", "Retail Storefronts"],
+    caseStudy: {
+      title: "Wyoming Avenue property with a detached carriage house",
+      challenge: "A large older home with a separate carriage house and a long driveway had one aging doorbell camera, no coverage on the second structure, and an alarm the owners had stopped trusting",
+      solution: "Full camera coverage on both buildings, a monitored alarm tied to the main house, keypad entry on the carriage house, and everything viewable from a phone",
+      results: ["Both structures on camera", "Carriage house on keypad entry", "Alarm monitored and trusted again"],
+    },
+    nearbyAreas: ["Millburn", "Short Hills", "Springfield", "Maplewood", "Summit"],
+    responseTime: "Most calls answered same-day, with next-morning scheduling for installs",
+    serviceRadius: "Wyoming, Millburn, and the surrounding Essex commuter towns",
+    heroTagline: "Discreet home cameras, monitored alarms, and door access for Wyoming's commuter blocks around the Millburn station.",
+    intro: "Wyoming is the commuter section of Millburn, the stretch built up around the NJ Transit station on the Morris & Essex line where much of the block rides into the city each morning. Most of what we handle here is residential — big older homes, detached garages, long driveways off Wyoming Avenue and Glen Avenue — along with the small professional and medical offices near Millburn Avenue. Homeowners want cameras they can check from a train platform, video doorbells, and alarms a monitoring center actually watches. The offices want controlled entry and phones that hold up. We treat security camera installation Wyoming work as detail work: hidden wire runs, tidy terminations, nothing that scars the trim on a hundred-year-old house.",
+    landmarks: ["Wyoming Avenue", "NJ Transit Wyoming station (Morris & Essex line)", "Wyoming Presbyterian Church", "Glen Avenue", "Millburn Avenue business district", "South Mountain Reservation"],
+    neighborhoods: ["Wyoming section", "Glen Avenue corridor", "Millburn Avenue downtown", "Short Hills border"],
+    localContext: "This is a commuter suburb, and that shapes the work more than any single business type. Homes sit empty through the workday while the owners are in the city, so alarms, motion cameras, and phone alerts matter as much as anything a store would buy. The houses are old and the lots are deep, which means detached garages, carriage houses, and long approaches that all want their own coverage. Along Millburn Avenue there's a thin band of professional and medical offices and a few storefronts that want controlled entry and voip phone service that doesn't drop a client call. It's quieter than a downtown, but the value packed into these properties keeps the security expectations high.",
+    spotlight: {
+      title: "Covering two buildings on a deep Wyoming lot",
+      body: "A large older home off Wyoming Avenue had a separate carriage house at the back of a long driveway, one tired doorbell camera, and an alarm the owners had quit trusting. We ran cameras across both structures, put the carriage house on keypad entry, tied a monitored alarm to the main house, and set the whole thing to view from a phone. Now the owners can glance at the driveway and the second building from a train platform, and the alarm is one they actually arm again.",
+    },
+    faqs: [
+      { q: "Do you install home security systems in the Wyoming section of Millburn?", a: "Yes — Wyoming and the surrounding Millburn and Short Hills blocks are steady residential work for us. Older homes with detached garages and long driveways get camera coverage, monitored alarms, and phone alerts, with wire runs kept hidden so nothing shows on the trim." },
+      { q: "Can you handle a small office near Millburn Avenue?", a: "We can. The professional and medical offices along Millburn Avenue get access control installation on entry doors, cameras on lobbies and lots, monitored alarms after hours, and phone service sized to a small practice rather than a big corporate build." },
+      { q: "How fast can you get to Wyoming?", a: "Most calls we answer same-day, and installs are usually scheduled for the next morning. Wyoming sits in the Essex commuter belt off the Morris & Essex line, and we cover Millburn, Short Hills, and Springfield regularly, so both service and new work turn around quickly." },
+    ],
+    proximity: "Wyoming is the Millburn commuter section on the Morris & Essex line, a short run from Short Hills, Springfield, Maplewood, and Summit.",
+  },
+  {
+    slug: "barnegat-light-nj",
+    name: "Barnegat Light",
+    state: "New Jersey",
+    stateAbbr: "NJ",
+    region: "Jersey Shore",
+    fullService: true,
+    description: "Salt-rated cameras, off-season monitoring, and alarms for Barnegat Light — the north tip of Long Beach Island, the Viking Village docks, Broadway, and the rentals off Long Beach Boulevard. NJ DCA licensed.",
+    industries: ["Vacation Rentals & Second Homes", "Commercial Fishing & Docks", "Seasonal Restaurants", "Marine & Dockside Retail", "Beachfront Property"],
+    caseStudy: {
+      title: "Cameras and fire protection at a Broadway seafood dock",
+      challenge: "A dockside seafood business near Viking Village had cameras that had corroded out in the salt air, no coverage on its coolers and loading area, and a fire panel that no longer passed inspection",
+      solution: "Marine-grade cameras across the docks and coolers, sealed cable runs, a new fire alarm panel brought up to code, and remote viewing for the owner",
+      results: ["Docks and coolers on salt-rated cameras", "Fire panel passing inspection again", "Loading area watched year-round from a phone"],
+    },
+    nearbyAreas: ["Ship Bottom", "Surf City", "Long Beach Island", "Manahawkin", "Beach Haven"],
+    responseTime: "On the island the same day through the summer season, quick turnaround in the off-months",
+    serviceRadius: "Barnegat Light and the north end of Long Beach Island",
+    heroTagline: "Corrosion-rated cameras, off-season alerts, and fire alarms for Barnegat Light's docks, rentals, and Broadway businesses.",
+    intro: "Up at the north tip of Long Beach Island, Barnegat Light is a working town as much as a resort one. Old Barney and the state park hold down one end, and the Viking Village docks put a commercial fishing fleet right in the middle of things. The security work here splits three ways: summer rentals and second homes that sit empty half the year, the seafood and dockside businesses along Broadway, and the seasonal spots off Long Beach Boulevard. Owners want cameras they can pull up from wherever they spend the winter, freeze and water alarms for the empty months, and cctv installation that survives the salt. Corrosion runs everything on this island, so we spec marine-grade housings and seal every run.",
+    landmarks: ["Barnegat Lighthouse (\"Old Barney\")", "Barnegat Light State Park", "Viking Village docks", "Broadway", "Long Beach Boulevard", "Barnegat Inlet"],
+    neighborhoods: ["North-end oceanfront blocks", "Viking Village dock district", "Bayside streets", "Long Beach Boulevard commercial stretch"],
+    localContext: "Two things define the work up here: the commercial fishing fleet and the second-home rhythm. Viking Village keeps a real dockside industry running — seafood retailers, cold storage, marine businesses — that needs year-round cameras, fire protection, and alarms rated for the weather off the inlet. The rest of the town empties out after Labor Day, so a lot of what owners ask for is off-season peace of mind: freeze sensors, water alarms, and cameras they can check from a home that might be two states away. Salt air is the constant enemy — standard gear pits and fails within a couple seasons, so everything we put in gets marine-grade housings and sealed terminations built to last on the water.",
+    spotlight: {
+      title: "Keeping a dockside seafood operation covered year-round",
+      body: "A seafood business near the Viking Village docks had lost its cameras to the salt air, ran no coverage on its coolers or loading area, and had a fire panel that no longer passed inspection. We put salt-rated cameras across the docks and cold storage, sealed every cable run against the weather off the inlet, replaced the fire alarm panel and brought it up to code, and gave the owner remote viewing. The loading area is watched year-round now, and the fire system passes again — both things a working dock on this island can't run without.",
+    },
+    faqs: [
+      { q: "Do you service Barnegat Light and the north end of LBI?", a: "Yes — Barnegat Light, Ship Bottom, and Surf City are regular stops for us on Long Beach Island. Rentals, second homes, and the dockside businesses off Broadway all get camera work, monitored alarms, and fire systems built for a shore town that runs hard in summer and empties out in winter." },
+      { q: "Can you watch a rental over the off-season?", a: "That's a big part of what we do here. Off-season packages pair cameras you can view from anywhere with freeze sensors and water alarms, all on monitored service, so if a pipe lets go or someone gets onto an empty property during the winter, you and the monitoring center know right away." },
+      { q: "Will cameras hold up in the salt air at the inlet?", a: "Standard gear pits and fails within a couple seasons out here, which is why every install gets marine-grade housings and sealed terminations. If you've searched security cameras near me and gotten quotes with builder-grade equipment, that's the difference on Long Beach Island — the hardware has to be rated for the water." },
+      { q: "Do you handle fire alarm inspections down here?", a: "We do. Barnegat Light's restaurants, rentals, and dockside businesses fall under New Jersey fire code, and we handle fire alarm installation and the panel work needed to pass inspection, then keep the system monitored so it holds up between visits." },
+    ],
+    proximity: "Barnegat Light caps the north end of Long Beach Island at Barnegat Inlet, a straight run down Long Beach Boulevard from Surf City, Ship Bottom, and Beach Haven, with Manahawkin over the causeway.",
+  },
+];
+
+// ============================================================
 // COMBINED EXPORT
 // ============================================================
 export const ALL_LOCATIONS: LocationData[] = [
@@ -5842,6 +5917,7 @@ export const ALL_LOCATIONS: LocationData[] = [
   ...njBatch3Locations,
   ...njBatch4Locations,
   ...njBatch5Locations,
+  ...njBatch6Locations,
 ];
 
 // Helper to get location by slug

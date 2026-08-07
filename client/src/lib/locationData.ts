@@ -49,6 +49,17 @@ export interface CountyData {
     solution: string;
     results: string[];
   };
+  // ---- Optional rich content fields (parity with LocationData) ----
+  // All optional so un-enriched county data still compiles and renders
+  // identically. Each section in CountyPage.tsx is skipped when undefined.
+  heroTagline?: string;
+  intro?: string;
+  landmarks?: string[];
+  neighborhoods?: string[];
+  localContext?: string;
+  spotlight?: { title: string; body: string };
+  faqs?: { q: string; a: string }[];
+  proximity?: string;
 }
 
 // Helper to generate a slug from a location name
@@ -2159,6 +2170,22 @@ export const COUNTY_DATA: CountyData[] = [
       solution: "Unified VoIP and camera platform with centralized management dashboard",
       results: ["Consistent guest experience", "Centralized security monitoring", "IT management costs reduced 40%"],
     },
+    heroTagline: "Casino floors in Atlantic City, blueberry farms in Hammonton, suburban offices in between — we install and service cameras, phones, and access control across all 23 Atlantic County towns.",
+    intro: "Atlantic County pulls in three directions at once. The shore end runs on casinos, boardwalk retail, and around-the-clock hospitality; the middle — Egg Harbor Township, Galloway, the county seat at Mays Landing — is suburban offices, medical suites, and big-box retail off the Black Horse Pike; and out west past the Expressway, Hammonton's blueberry farms and packing houses keep a season all their own. We've wired all three. Our shop is in Linwood, ten minutes from the shore towns and a straight run up the Expressway to the mainland, so we cover the whole county without treating any part of it as an afterthought.",
+    landmarks: ["Atlantic City Boardwalk & casino district", "Atlantic City Expressway", "Hamilton Mall (Mays Landing)", "Stockton University (Galloway)", "FAA William J. Hughes Technical Center (Egg Harbor Township)", "Hammonton's blueberry farms & the White Horse Pike"],
+    neighborhoods: ["Egg Harbor Township", "Galloway", "Hammonton", "Hamilton Township (Mays Landing)", "Pleasantville", "Somers Point"],
+    localContext: "A casino hotel and a blueberry co-op don't share a threat model. Boardwalk and Pike retail wants theft-deterrent camera coverage and clean point-of-sale sightlines; the medical and professional offices around Mays Landing and English Creek need access control that logs who came through which door; and Hammonton's growers want cameras that hold up over packing-house dust and cover equipment yards after the crew goes home. We spec each job to what the building actually does, not to a spare-parts catalog.",
+    spotlight: {
+      title: "One medical group, four Atlantic County offices",
+      body: "A primary-care group with offices in Egg Harbor Township, Galloway, Northfield, and Somers Point wanted the same setup at every location — HIPAA-minded camera angles, badge access on the record rooms, and phones that roll to whichever office is still open. We standardized the hardware so a front-desk hire at any site already knows the system, and pulled every camera back to one dashboard the practice manager checks from home.",
+    },
+    faqs: [
+      { q: "Which Atlantic County towns do you cover?", a: "All 23. We work the shore communities — Atlantic City, Ventnor, Margate, Brigantine — the mainland suburbs like Egg Harbor Township, Galloway, and Northfield, and the farm towns out west including Hammonton and Mays Landing. Being based in Linwood keeps us central to the whole county." },
+      { q: "How fast can you reach a job on the mainland versus the shore?", a: "Both are quick from our Linwood shop. Shore towns are usually 10 to 20 minutes; the Atlantic City Expressway or Black Horse Pike puts us in Mays Landing or Egg Harbor Township inside half an hour. Emergency calls get same-day service." },
+      { q: "Are you licensed to do this work in Atlantic County?", a: "Yes. We hold NJ DCA licensing for both burglar/security alarm and fire alarm work, and we carry it on every job in the county. That covers security camera installation, access control, and fire alarm systems — permitted and inspected wherever the township requires it." },
+      { q: "Do you handle 24-hour hospitality properties?", a: "We do. Casino hotels, boardwalk restaurants, and shore motels run around the clock, so we schedule cutovers for off-peak hours and keep after-hours support on call. Phone systems and cameras get installed without shutting the front desk down." },
+    ],
+    proximity: "Our Linwood headquarters sits inside Atlantic County itself — ten minutes from the shore and a straight shot up the Expressway to Mays Landing, Egg Harbor Township, and Hammonton.",
   },
   {
     slug: "burlington-county-nj",
@@ -2174,6 +2201,21 @@ export const COUNTY_DATA: CountyData[] = [
       solution: "Campus-wide IP camera deployment with access control and visitor management",
       results: ["Complete campus coverage", "Visitor tracking automated", "Security response time improved"],
     },
+    heroTagline: "Turnpike office parks, the Mount Holly courthouse, the edge of the Pine Barrens — Burlington County is a big spread, and we run cameras, phones, and card access across all of it.",
+    intro: "Burlington is the biggest county in the state by land, and driving across it tells the story. There are corporate towers and warehouse parks in the Mount Laurel and Moorestown corner, the courthouse and county seat in Mount Holly, Joint Base McGuire-Dix-Lakehurst anchoring the middle, and mile after mile of Pine Barrens and farmland running down toward the Batsto. We handle the whole range. A logistics tenant off Route 38 and a horse farm outside Medford call us for different reasons, but both get a licensed crew that knows the local inspectors and doesn't need a map to find the job.",
+    landmarks: ["Joint Base McGuire-Dix-Lakehurst", "Mount Holly (county seat) & the Burlington County courthouse", "Route 38 / Route 70 / I-295 corridor", "Moorestown Mall & the Route 73 office parks", "Historic Smithville & Rancocas Creek", "Columbus Farmers Market & the Pine Barrens edge"],
+    neighborhoods: ["Mount Laurel", "Moorestown", "Evesham (Marlton)", "Mount Holly", "Burlington Township", "Medford"],
+    localContext: "The northwest end runs on logistics and corporate tenants, and those buildings want camera coverage over loading docks plus access control installation that keeps dock doors and server rooms on separate credentials. Closer to the Joint Base, contractors deal with tighter documentation and want systems that hold up to an audit. Out in Medford, Southampton, and Pemberton, it's farms, garden centers, and small shops that need reliable coverage on outbuildings and equipment yards where the nearest neighbor is a quarter-mile off. One county, three rulebooks.",
+    spotlight: {
+      title: "Dock-to-office coverage for a Route 130 warehouse",
+      body: "A third-party logistics operator off Route 130 near Burlington City was running blind on its yard. We put fixed cameras on every dock door and the trailer lot, added license-plate capture at the gate, and split access control so drivers reach the dock area but not the front offices or the IT closet. The night shift now has eyes on the whole property, and the plate log has already settled two freight-damage disputes.",
+    },
+    faqs: [
+      { q: "Burlington County is huge — do you really cover all of it?", a: "We do. From Cinnaminson and Delran along the river, through Mount Laurel, Moorestown, and Evesham, out to Mount Holly, Medford, and the Pemberton and Pine Barrens townships, it's all our territory. The far corners take a little longer to reach, but they get the same crew and the same warranty." },
+      { q: "Do you work with businesses near Joint Base McGuire-Dix-Lakehurst?", a: "Yes. Contractors and suppliers around the Joint Base often need clean documentation and access logs that stand up to review, and we build systems with that in mind. We're NJ DCA licensed for both security and fire alarm work throughout the county." },
+      { q: "How quickly can you respond in Burlington County?", a: "Same-day for emergencies. Our crews run the Route 38, 70, and 295 corridors daily, so reaching Mount Laurel, Marlton, or Mount Holly is routine. The rural southeast townships are a longer drive, but we schedule around them rather than skipping them." },
+    ],
+    proximity: "We run the Route 38, 70, and 295 corridors through Burlington County most days, which keeps Mount Laurel, Moorestown, Marlton, and Mount Holly within easy reach of our crews.",
   },
   {
     slug: "camden-county-nj",
@@ -2189,6 +2231,21 @@ export const COUNTY_DATA: CountyData[] = [
       solution: "Enterprise security platform with HIPAA-compliant cameras and access control",
       results: ["HIPAA compliance across all facilities", "Centralized security operations center", "Patient and staff safety enhanced"],
     },
+    heroTagline: "Cooper and Rutgers on the Camden waterfront, retail strips in Cherry Hill and Voorhees, old boroughs along the PATCO line — we cover every town in Camden County.",
+    intro: "Camden County packs a lot into a small footprint. The waterfront and downtown hold the hospitals, universities, and government offices — Cooper, Rutgers–Camden, the county courthouse — while the eastern suburbs run on retail and medical, from the Cherry Hill Mall down Route 70 through Voorhees and Gloucester Township. The PATCO line stitches the older river towns like Collingswood and Haddonfield together, and the Winslow and Waterford end still has open ground. We've worked all of it for three decades, so we know which downtown buildings hide 1920s conduit and which suburban plazas were wired last week.",
+    landmarks: ["Cooper University Hospital (Camden)", "Camden waterfront — Adventure Aquarium & Battleship New Jersey", "Rutgers University–Camden & the county courthouse", "Cherry Hill Mall & the Route 70 corridor", "Route 42 / North–South Freeway", "PATCO Speedline"],
+    neighborhoods: ["Cherry Hill", "Voorhees", "Gloucester Township", "Haddonfield", "Collingswood", "Winslow Township"],
+    localContext: "Downtown Camden's institutions live under real compliance pressure — hospitals, campuses, and county offices need audited access, monitored alarms, and fire alarm installation that passes inspection the first time. The suburbs east of the city are retail and outpatient medical, where the concern shifts to storefront theft, parking-lot coverage, and phone systems that never drop a patient call. Older boroughs along the PATCO line throw in century-old buildings with wiring nobody has touched in years. We read the building before we quote it, so nobody gets surprised on install day.",
+    spotlight: {
+      title: "Rewiring a Camden County community center",
+      body: "A nonprofit running programs out of an aging Camden building came to us after its alarm kept false-tripping. The old panel was shot, so we replaced it, added cameras covering the entrances, food pantry, and parking area, and put badge access on the offices and supply rooms. Staff now arm and disarm from their phones, and the after-hours monitoring meant the board could stop paying for a guard it couldn't really afford.",
+    },
+    faqs: [
+      { q: "What towns in Camden County do you serve?", a: "All of them — Cherry Hill, Voorhees, and Gloucester Township on the retail side, the river boroughs like Collingswood, Haddonfield, and Pennsauken, the city of Camden itself, and the southern townships out toward Winslow and Waterford. We're a short drive from any of them." },
+      { q: "Do you handle healthcare and school security in the county?", a: "Regularly. Camden County has a heavy concentration of medical offices, hospitals, and schools, and those jobs need HIPAA-aware camera placement, controlled-door access, and code-compliant fire alarm work. We're NJ DCA licensed for both security and fire alarm systems." },
+      { q: "Can you service the older buildings downtown and in the boroughs?", a: "That's a lot of what we do. Camden City and towns like Collingswood and Haddonfield have buildings older than most alarm panels, and we're used to running clean cable through plaster walls and tight ceilings without tearing the place apart." },
+    ],
+    proximity: "From Linwood we run straight up Route 42 and the Atlantic City Expressway into Camden County, with Cherry Hill, Voorhees, and the waterfront all inside a comfortable service loop.",
   },
   {
     slug: "cape-may-county-nj",
@@ -2204,6 +2261,22 @@ export const COUNTY_DATA: CountyData[] = [
       solution: "Standardized smart lock and camera package with centralized management",
       results: ["All properties monitored from one dashboard", "Guest check-in automated", "Property damage reduced significantly"],
     },
+    heroTagline: "Cape May County lives and dies by the season — we set up cameras, alarms, and phones that protect shore properties in July and watch them through the empty months too.",
+    intro: "Cape May County is a string of barrier islands hung off a two-lane mainland, and everything here bends to the calendar. Summer packs the Wildwoods boardwalk, Ocean City's family blocks, and the Avalon and Stone Harbor rentals; by November half of it is boarded up and dark. That swing is the whole security problem. A rental owner needs eyes on an empty house all winter; a Cape May Victorian inn needs coverage that doesn't spook guests in season. We work the islands and the Route 9 mainland from Court House down to the Cape, and we build for both halves of the year.",
+    landmarks: ["Wildwoods Boardwalk", "Ocean City boardwalk & family beaches", "Cape May's Victorian historic district & the Cape May–Lewes Ferry", "Route 9 & the Garden State Parkway southern end", "Cape May Court House (county seat)", "Cape May County Park & Zoo"],
+    neighborhoods: ["Ocean City", "The Wildwoods (Wildwood, North Wildwood, Wildwood Crest)", "Stone Harbor & Avalon", "Sea Isle City", "Middle Township (Cape May Court House)", "Upper Township"],
+    localContext: "The rental and hospitality trade drives almost everything down here, and it creates two seasons of need. In summer it's crowd coverage, front-desk phones, and keeping a boardwalk stand's register in frame; the rest of the year it's watching shuttered houses, docks, and construction sites where the only visitors should be contractors. Salt air is its own enemy — gear that isn't rated for it corrodes in a couple of winters — so our cctv installation here uses weather-sealed cameras and mounts built to survive an off-season nor'easter. We size the system for August and make sure it still earns its keep in February.",
+    spotlight: {
+      title: "Off-season eyes on a Cape May County marina",
+      body: "A marina near Cape May Court House kept losing outboards and electronics over the winter, when the docks sit empty for weeks. We put weatherproof cameras along the slips and the dry-stack yard, added plate capture at the gate, and set motion alerts that ping the owner's phone after hours. Since the boats and the fuel dock went under watch, the winter break-ins stopped and the insurer trimmed the premium.",
+    },
+    faqs: [
+      { q: "Do you service the barrier island towns, not just the mainland?", a: "Yes — Ocean City, the Wildwoods, Sea Isle, Avalon, and Stone Harbor are all regular stops, along with Cape May and the Court House mainland. We cross the causeways year-round, including the quiet winter months when most of the island work actually happens." },
+      { q: "Can you watch my rental or second home when I'm not down the shore?", a: "That's one of our most common jobs here. We install cameras and monitored alarms you can check from anywhere, with alerts if a door opens or a pipe-freeze sensor trips. Plenty of owners run the whole thing from a phone up north all winter." },
+      { q: "Does the salt air really matter for equipment?", a: "A lot. Cameras and enclosures that aren't marine-rated corrode fast this close to the water. We spec weather-sealed hardware and stainless mounts so a shore install lasts years instead of seasons, which is cheaper than replacing bargain gear every other summer." },
+      { q: "Can you get installs done before the summer rush?", a: "We book the shoulder seasons hard for exactly that. Spring is when we get rentals, restaurants, and shops wired and tested so everything's running before the first big weekend. The off-season is also the easiest time to work an occupied property without disrupting guests." },
+    ],
+    proximity: "The Cape May County line is a short run down the Parkway or Route 9 from our Linwood base, so the islands and the Court House mainland are day-in, day-out territory for us.",
   },
   {
     slug: "cumberland-county-nj",
@@ -2219,6 +2292,21 @@ export const COUNTY_DATA: CountyData[] = [
       solution: "Camera system with environmental sensors and compliance reporting",
       results: ["FDA compliance monitoring automated", "Product safety enhanced", "Facility security improved"],
     },
+    heroTagline: "Out in Cumberland County — Vineland, Millville, Bridgeton, and the Bayshore farms — we install the cameras, phones, and alarms that keep agricultural and industrial operations covered.",
+    intro: "Cumberland County is farm country with an industrial streak. Vineland and the surrounding fields grow and pack a big share of South Jersey's produce; Millville carries a glassmaking history that turned into real manufacturing; and Bridgeton, the county seat, anchors the western end near the Delaware Bayshore. Route 55 and Route 49 tie it together, but the distances are real — this is the part of the state where a job can sit ten minutes down a road with no other building on it. We've spent years working these operations, from packing houses to machine shops, and we don't flinch at a site that's more field than parking lot.",
+    landmarks: ["Cumberland Mall & the Route 55 corridor (Vineland)", "WheatonArts & the Millville glass district", "Millville Executive Airport", "Bridgeton (county seat) & its historic district", "Route 49 across the Bayshore farm country", "The Delaware Bay / Bayshore"],
+    neighborhoods: ["Vineland", "Millville", "Bridgeton", "Upper Deerfield", "Maurice River Township", "Commercial Township"],
+    localContext: "Agriculture and food processing set the tone here, and both bring particular needs. Packing houses and cold storage want cameras that hold up to washdowns and dust, plus door access on product and chemical rooms for the audit trail buyers ask about. The machine shops and glass-adjacent manufacturers around Millville run expensive equipment and second shifts, so they care about yard coverage and after-hours alerts. And because so many sites sit off by themselves, reliable voip phone service and cellular-backed alarms matter more than in town — when the nearest help is fifteen minutes out, the system has to call for it on its own.",
+    spotlight: {
+      title: "Guarding equipment across a Vineland grower's yards",
+      body: "A Vineland produce operation was losing fuel, tools, and the odd piece of equipment from lots spread across a few properties. Trenching cable to each one wasn't worth it, so we put up solar-powered, cellular cameras with motion alerts on the fuel tanks and equipment rows, all feeding one app the owner and foreman share. The thefts dropped off within the first month, and nobody had to string a wire across a field.",
+    },
+    faqs: [
+      { q: "Do you actually come out to Cumberland County? It's a haul from the shore.", a: "We do, regularly. Vineland, Millville, and Bridgeton are steady work for us, along with the smaller Bayshore and farm townships. It's a longer drive than Cherry Hill, but we route around it and give the county the same crews and warranty as anywhere else." },
+      { q: "Can you secure farms and remote sites without power or internet at every corner?", a: "Yes — that's common out here. We use solar-powered, cellular cameras and alarms for outbuildings, fuel tanks, and equipment yards that sit far from a panel or a router. Everything reports back to one app, so a grower can watch scattered lots from a single screen." },
+      { q: "Do you handle food-processing and cold-storage compliance?", a: "We do. Cumberland has a lot of packing and processing work, and buyers increasingly want access logs and monitored conditions. We install cameras rated for washdown areas, door access on product and chemical rooms, and sensors that flag a temperature problem before product is lost." },
+    ],
+    proximity: "Cumberland County is a straight run west on Route 55 from our end of the shore, and Vineland, Millville, and Bridgeton are all on our regular service map.",
   },
   {
     slug: "gloucester-county-nj",
@@ -2234,6 +2322,21 @@ export const COUNTY_DATA: CountyData[] = [
       solution: "AI-powered camera system with parking lot coverage and tenant integration",
       results: ["Shoplifting reduced significantly", "Parking lot safety improved", "Tenant security dashboards provided"],
     },
+    heroTagline: "Gloucester County is building fast — the Deptford Mall, the Swedesboro warehouse corridor, the growth around Rowan — and we're on job sites across it every week with cameras, access, phones, and fire alarms.",
+    intro: "Gloucester County has been growing for years, and you can watch it happen driving Route 55. Deptford is retail and the mall; Glassboro has grown up around Rowan University; the Turnpike exits at Swedesboro and Woolwich have filled with distribution warehouses the size of small towns; and Mullica Hill still keeps its farm-and-antiques character just down the road from all of it. Woodbury, the county seat, holds the courthouse and the older commercial core. We work the whole arc — a new warehouse tenant near Logan and a family shop in Pitman are both routine calls for us.",
+    landmarks: ["Rowan University (Glassboro)", "Deptford Mall & the Route 42 corridor", "Woodbury (county seat) & the courthouse", "Route 55 & the NJ Turnpike interchange at Swedesboro", "The Logan / Swedesboro warehouse district", "Mullica Hill's historic Main Street"],
+    neighborhoods: ["Deptford", "Washington Township", "Glassboro", "Woodbury", "Mullica Hill (Harrison Township)", "Swedesboro / Woolwich"],
+    localContext: "The distribution boom out by the Turnpike changed what a lot of Gloucester County jobs look like — big buildings, big yards, and a real need for dock coverage, plate capture, and access control that keeps drivers out of the office side. Glassboro's growth around Rowan brings student housing and mixed-use, where landlords want cameras on common areas and entrances. Deptford and Washington Township retail worry about storefront theft and parking lots. And in Mullica Hill and the western townships, it's back to farms and small shops. We match the security camera installation in Gloucester County to whichever of those a site actually is.",
+    spotlight: {
+      title: "Locking down a Glassboro student-housing build",
+      body: "A landlord with a block of student rentals near Rowan was tired of propped doors, tailgating, and after-party damage nobody could pin down. We put mobile-credential access on the building entrances so a lost fob isn't a re-key, added cameras on the lobbies, laundry, and parking, and gave the property manager remote control of all of it. Turnover headaches dropped, and disputed-damage claims got a lot easier to settle.",
+    },
+    faqs: [
+      { q: "Which Gloucester County towns do you cover?", a: "All of them — Deptford, Washington Township, and Glassboro through the middle, Woodbury and the river towns, the Swedesboro and Woolwich warehouse belt, and out to Mullica Hill and Pitman. Route 55 and 42 make most of the county a quick trip for our crews." },
+      { q: "Do you work with the big distribution warehouses out by the Turnpike?", a: "Regularly. Those sites need loading-dock cameras, gate and plate capture, and access control that separates the warehouse floor from offices and IT. We scale the same platform up to cover a lot of square footage and tie it back to one monitoring point." },
+      { q: "Can you handle new construction and fit-outs on schedule?", a: "Yes. A lot of Gloucester County work is new builds and tenant fit-outs, so we coordinate with GCs, pull low-voltage during the rough-in, and get fire alarm and access systems inspected before a certificate of occupancy. Getting us in early saves opening walls twice." },
+    ],
+    proximity: "A straight shot up Route 55 puts our crews in Deptford, Glassboro, Woodbury, and the Swedesboro warehouse corridor, so Gloucester County stays well inside our regular routes.",
   },
   {
     slug: "ocean-county-nj",
@@ -2249,6 +2352,22 @@ export const COUNTY_DATA: CountyData[] = [
       solution: "Nurse call integration with VoIP, cameras in common areas, and access control",
       results: ["Resident safety enhanced", "Emergency response time improved", "Family communication portal enabled"],
     },
+    heroTagline: "Barrier-island rentals, Route 70 retirement communities, Lakewood's building boom — Ocean County keeps us busy year-round with cameras, VoIP, and access control.",
+    intro: "Ocean County is really a few counties wearing one name. The barrier islands — Long Beach Island, Seaside, Point Pleasant Beach — run on summer tourism and rentals; the Route 37 and Route 9 mainland around Toms River and Brick is year-round retail, medical, and marine business; Lakewood has become one of the fastest-growing places in the state, all new construction and commerce; and the western townships like Manchester and Berkeley hold big retirement communities with their own pace. Barnegat Bay ties it together. We cross the causeways in summer and work the mainland all year, and we've learned not to treat any of those Ocean Counties like the others.",
+    landmarks: ["Long Beach Island & the Route 72 causeway", "Seaside Heights boardwalk", "Toms River (county seat) & the Route 37 corridor", "Naval Air Station Lakehurst (Joint Base)", "Six Flags Great Adventure (Jackson)", "Barnegat Bay & the Point Pleasant marinas"],
+    neighborhoods: ["Toms River", "Brick", "Lakewood", "Jackson", "Manchester & Berkeley (retirement communities)", "Long Beach Island"],
+    localContext: "Each part of the county asks for something different. The islands and shore rentals want off-season coverage on empty houses, summer crowd-and-register visibility, and salt-rated gear that survives the bay air. The retirement communities out west care about entrance control, common-area cameras, and phone systems that connect to emergency response — small things that keep residents and families comfortable. Lakewood's growth means constant new commercial build-outs needing everything at once. And the marinas and boatyards along Barnegat Bay want eyes on the slips through winter — the kind of cctv installation that runs through the storms without a hiccup.",
+    spotlight: {
+      title: "One system across a Lakewood retail plaza",
+      body: "A developer opening a strip of storefronts in Lakewood wanted security in place before tenants signed. We ran a shared camera backbone over the parking lot and common areas, then set each unit up so an incoming tenant just adds interior cameras and a phone line without re-cabling. Leasing went faster because a shop owner could walk into coverage already live, and the property manager watches the whole center from one login.",
+    },
+    faqs: [
+      { q: "Do you cover both the islands and the mainland in Ocean County?", a: "Yes. Long Beach Island, Seaside, and Point Pleasant Beach are summer regulars, and Toms River, Brick, Lakewood, and the western townships are year-round work. We cross the causeways in season and keep steady routes on the mainland the rest of the year." },
+      { q: "Do you work with the retirement communities out toward Manchester and Berkeley?", a: "Often. Those communities and their clubhouses want entrance control, common-area cameras, and phone systems that reach emergency help quickly. We set systems up so residents and their families can rely on them without needing to be technical to use them." },
+      { q: "Can you handle Lakewood's new commercial construction?", a: "We stay busy with it. Lakewood builds constantly, and we coordinate with contractors to pull low-voltage during construction and get cameras, access control, and fire alarm systems inspected before opening. Bringing us in during the rough-in beats retrofitting a finished space." },
+      { q: "Are you licensed for this work in Ocean County?", a: "Yes. We carry NJ DCA licensing for security and fire alarm systems and work under it across the county, from the barrier islands to Jackson and Manchester. Permits and inspections are handled wherever the township requires them." },
+    ],
+    proximity: "Ocean County sits just up the Parkway from us, and between the LBI causeway, Toms River, and Lakewood it's a stretch we run often enough to know the traffic by heart.",
   },
   {
     slug: "salem-county-nj",
@@ -2264,6 +2383,21 @@ export const COUNTY_DATA: CountyData[] = [
       solution: "Solar-powered cameras with cellular connectivity and equipment GPS tracking",
       results: ["Equipment theft eliminated", "Perimeter monitoring 24/7", "Remote farm management enabled"],
     },
+    heroTagline: "Salem County is farmland, the Turnpike's first exit, and the nuclear plants on Artificial Island — we bring licensed camera, alarm, and phone work to a corner of the state most contractors skip.",
+    intro: "Salem is the least crowded county in New Jersey, and that shapes every job. It's mostly farmland and open road — Woodstown, Pilesgrove, and the Alloway and Quinton townships are field after field — with the PSEG nuclear complex out on Artificial Island and the industry around Deepwater and Carneys Point at the Turnpike's Exit 1. The city of Salem, the county seat, sits down on the Delaware near the old glassworks. A lot of contractors won't drive this far. We do. Whether it's a farm outside Woodstown or a shop on Route 49 in Pennsville, Salem County gets the same licensed crew as anywhere else we work.",
+    landmarks: ["Salem (county seat) & the historic courthouse", "PSEG nuclear complex on Artificial Island", "The NJ Turnpike's Exit 1 at Deepwater / Carneys Point", "Cowtown Rodeo & Market (Pilesgrove)", "Route 49 / Route 40 across the farm country", "Woodstown's Main Street"],
+    neighborhoods: ["Salem", "Pennsville", "Carneys Point", "Woodstown", "Pilesgrove", "Penns Grove"],
+    localContext: "Farming runs Salem County, and farm security is its own trade — equipment worth more than the buildings it sits in, fuel and chemical stores, and outbuildings a long way from the nearest road. We handle a lot of solar-powered, cellular cameras out here because trenching cable across acreage makes no sense. The energy and industrial work around Deepwater and Carneys Point brings tighter documentation and controlled access. And the small-town retail in Salem, Pennsville, and Woodstown wants the basics done right — storefront cameras, a monitored alarm, and honest fire alarm installation that passes the local inspector without a second trip.",
+    spotlight: {
+      title: "A Woodstown Main Street shop, done right the first time",
+      body: "A family retailer on Woodstown's Main Street had an alarm that cried wolf and no cameras worth the name. We swapped the tired panel for a monitored system, put cameras on the sales floor, register, and back door, and added a keypad the owner's kids could actually use. It's a small job by square footage, but out here that shop is the block — and now the owner sleeps through the night instead of driving in on every false trip.",
+    },
+    faqs: [
+      { q: "You're based near the shore — do you really service Salem County?", a: "We do. It's the far corner of our territory, but Salem, Pennsville, Carneys Point, Woodstown, and the farm townships are all on our map. Fewer contractors make the drive out here, which is exactly why we make a point of covering it properly." },
+      { q: "Can you secure a working farm spread across a lot of acreage?", a: "That's routine in Salem County. We use solar-powered, cellular cameras for equipment yards, fuel tanks, and outbuildings that sit far from power or internet, all reporting to one app. It beats running wire across fields and gives a grower eyes on property the road doesn't even reach." },
+      { q: "How long does it take you to reach a job in Salem County?", a: "It's a longer haul than our closer counties, so we plan routes and schedule ahead rather than promising a 45-minute pop-in. Emergencies still get same-day attention, and once we know a property, a lot of the follow-up service we can handle remotely." },
+    ],
+    proximity: "Salem County is the western edge of our range — a run out Route 40 or down the Turnpike — but Woodstown, Pennsville, and Carneys Point are all places we're glad to make the drive for.",
   },
 ];
 

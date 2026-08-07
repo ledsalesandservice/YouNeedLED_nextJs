@@ -7,6 +7,8 @@ import { useParams, Link, useLocation } from "wouter";
 import { useEffect } from "react";
 import { getLocationBySlug, LOCATION_SERVICES, ALL_LOCATIONS } from "@/lib/locationData";
 import type { LocationData } from "@/lib/locationData";
+import { SERVICE_AREA_TOWNS } from "@/lib/serviceAreaData";
+import type { ServiceAreaTown } from "@/lib/serviceAreaData";
 import { SITE } from "@/lib/siteData";
 import SEOHead from "@/components/SEOHead";
 import {
@@ -37,18 +39,33 @@ export default function LocationPage() {
 
   if (!location) return null;
 
-  // Build a case-insensitive town-name -> slug lookup so nearbyAreas render as
-  // real internal links. Also index a "Township"/"City"-suffix-stripped key.
-  const slugByName = new Map<string, string>();
+  // Build a case-insensitive town-name -> full-path lookup so nearbyAreas render
+  // as real internal links. Also index a "Township"/"City"-suffix-stripped key.
+  // ALL_LOCATIONS (/locations/:slug) take priority; SERVICE_AREA_TOWNS
+  // (/service-areas/:slug) only fill in names not already mapped.
+  const pathForArea = new Map<string, string>();
   const normalize = (n: string) => n.trim().toLowerCase();
   const stripSuffix = (n: string) =>
     n.trim().replace(/\s+(township|city)$/i, "").toLowerCase();
+  const addPath = (name: string, path: string) => {
+    for (const key of [normalize(name), stripSuffix(name)]) {
+      if (!pathForArea.has(key)) pathForArea.set(key, path);
+    }
+  };
   for (const loc of ALL_LOCATIONS as LocationData[]) {
-    slugByName.set(normalize(loc.name), loc.slug);
-    slugByName.set(stripSuffix(loc.name), loc.slug);
+    addPath(loc.name, `/locations/${loc.slug}`);
   }
-  const slugForArea = (area: string): string | undefined =>
-    slugByName.get(normalize(area)) ?? slugByName.get(stripSuffix(area));
+  for (const town of SERVICE_AREA_TOWNS as ServiceAreaTown[]) {
+    addPath(town.name, `/service-areas/${town.slug}`);
+  }
+  const resolveArea = (area: string): string | undefined =>
+    pathForArea.get(normalize(area)) ?? pathForArea.get(stripSuffix(area));
+
+  // Only nearby areas that resolve to a real page are rendered; the whole
+  // section (header + chips) is hidden when none resolve.
+  const resolvedAreas = location.nearbyAreas
+    .map((area) => ({ area, path: resolveArea(area) }))
+    .filter((entry): entry is { area: string; path: string } => Boolean(entry.path));
 
   const isCounty = location.name.includes("County");
   const isRegion = location.stateAbbr === "US";
@@ -247,26 +264,23 @@ export default function LocationPage() {
       {/* Nearby Areas */}
       <section className="py-16 lg:py-20 bg-white">
         <div className="container">
-          <h2 className="font-heading text-2xl font-bold text-slate-900 text-center mb-4">
-            Also Serving Nearby Areas
-          </h2>
-          <p className="text-center text-slate-600 mb-8 max-w-xl mx-auto">
-            Our {location.serviceRadius} coverage from {location.name} means we also serve these nearby communities.
-          </p>
-          <div className="flex flex-wrap justify-center gap-3 max-w-3xl mx-auto">
-            {location.nearbyAreas.map((area) => {
-              const slug = slugForArea(area);
-              return slug ? (
-                <Link key={area} href={`/locations/${slug}`} className="px-4 py-2 bg-slate-50 border border-slate-200 rounded-lg text-sm text-slate-700 hover:border-[#0e319a]/30 transition-colors">
-                  {area}
-                </Link>
-              ) : (
-                <span key={area} className="px-4 py-2 bg-slate-50 border border-slate-200 rounded-lg text-sm text-slate-700 hover:border-[#0e319a]/30 transition-colors">
-                  {area}
-                </span>
-              );
-            })}
-          </div>
+          {resolvedAreas.length > 0 && (
+            <>
+              <h2 className="font-heading text-2xl font-bold text-slate-900 text-center mb-4">
+                Also Serving Nearby Areas
+              </h2>
+              <p className="text-center text-slate-600 mb-8 max-w-xl mx-auto">
+                Our {location.serviceRadius} coverage from {location.name} means we also serve these nearby communities.
+              </p>
+              <div className="flex flex-wrap justify-center gap-3 max-w-3xl mx-auto">
+                {resolvedAreas.map(({ area, path }) => (
+                  <Link key={area} href={path} className="px-4 py-2 bg-slate-50 border border-slate-200 rounded-lg text-sm text-slate-700 hover:border-[#0e319a]/30 transition-colors">
+                    {area}
+                  </Link>
+                ))}
+              </div>
+            </>
+          )}
           <div className="text-center mt-8">
             <Link href="/service-areas" className="inline-flex items-center gap-2 text-sm font-medium text-[#0e319a] hover:text-[#0c2a82] transition-colors">
               View All Service Areas <ArrowRight className="w-3.5 h-3.5" />

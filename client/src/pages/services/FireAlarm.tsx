@@ -89,7 +89,7 @@ export default function FireAlarm() {
             <h2 className="font-heading text-2xl sm:text-3xl font-bold text-slate-900 mb-4">
               Fire Alarm Systems for South Jersey Commercial Properties
             </h2>
-            <p className="text-slate-600">We design, install, and service NFPA 72-compliant fire alarm systems for a wide range of commercial occupancies throughout South Jersey and the Delaware Valley.</p>
+            <p className="text-slate-600">We design, install, and service NFPA 72-compliant fire alarm systems for a wide range of commercial occupancies throughout New Jersey.</p>
           </FadeIn>
           <StaggerContainer className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {[

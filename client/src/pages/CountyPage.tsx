@@ -9,7 +9,7 @@ import { SITE } from "@/lib/siteData";
 import SEOHead from "@/components/SEOHead";
 import {
   Phone, ArrowRight, MapPin, Bot, Zap, Shield, CheckCircle2, Star,
-  Building2, Clock, BadgeCheck, Camera, KeyRound, Flame
+  Building2, Clock, BadgeCheck, Camera, KeyRound, Flame, Landmark, Home as HomeIcon
 } from "lucide-react";
 import NotFound from "./NotFound";
 
@@ -50,7 +50,7 @@ export default function CountyPage() {
               Security & Technology Services in {county.name}
             </h1>
             <p className="text-lg text-white/80 max-w-2xl mx-auto mb-8 leading-relaxed">
-              {county.description}
+              {county.heroTagline ?? county.description}
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Link
@@ -76,11 +76,50 @@ export default function CountyPage() {
           <div className="flex flex-wrap justify-center gap-x-10 gap-y-3 text-sm text-slate-600">
             <span className="flex items-center gap-2"><BadgeCheck className="w-4 h-4 text-[#0e319a]" /> NJ Licensed & Insured</span>
             <span className="flex items-center gap-2"><Clock className="w-4 h-4 text-[#0e319a]" /> Same-Day Emergency Service</span>
+            {county.proximity && (
+              <span className="flex items-center gap-2"><MapPin className="w-4 h-4 text-[#f97015]" /> {county.proximity}</span>
+            )}
             <span className="flex items-center gap-2"><Star className="w-4 h-4 text-[#f97015]" /> 34 Years Experience</span>
             <span className="flex items-center gap-2"><Shield className="w-4 h-4 text-[#0e319a]" /> 24/7 Monitoring Available</span>
           </div>
         </div>
       </section>
+
+      {/* Intro + Landmarks — regional coverage context (rendered only when enriched) */}
+      {(county.intro || county.localContext || (county.landmarks && county.landmarks.length > 0)) && (
+        <section className="py-16 lg:py-20 bg-white">
+          <div className="container">
+            <div className="grid lg:grid-cols-3 gap-12">
+              <div className="lg:col-span-2">
+                <h2 className="font-heading text-2xl sm:text-3xl font-bold text-slate-900 mb-5">
+                  Your Local Security &amp; Technology Team Across {county.name}
+                </h2>
+                {county.intro && (
+                  <p className="text-slate-600 leading-relaxed mb-5">{county.intro}</p>
+                )}
+                {county.localContext && (
+                  <p className="text-slate-600 leading-relaxed">{county.localContext}</p>
+                )}
+              </div>
+              {county.landmarks && county.landmarks.length > 0 && (
+                <div className="bg-slate-50 rounded-2xl border border-slate-200 p-7 h-fit">
+                  <div className="flex items-center gap-2 text-[#0e319a] text-sm font-semibold uppercase tracking-wider mb-4">
+                    <Landmark className="w-4 h-4 text-[#f97015]" /> Around {county.name}
+                  </div>
+                  <ul className="space-y-2.5">
+                    {county.landmarks.map((lm) => (
+                      <li key={lm} className="flex items-start gap-2 text-sm text-slate-700">
+                        <MapPin className="w-4 h-4 text-[#0e319a] mt-0.5 shrink-0" />
+                        {lm}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Services Overview */}
       <section className="py-16 lg:py-20 bg-white">
@@ -177,8 +216,44 @@ export default function CountyPage() {
         </div>
       </section>
 
+      {/* Local Project Spotlight + Regions — rendered only when enriched */}
+      {(county.spotlight || (county.neighborhoods && county.neighborhoods.length > 0)) && (
+        <section className="py-16 lg:py-20 bg-slate-50">
+          <div className="container">
+            <div className="grid lg:grid-cols-2 gap-12 items-start">
+              {county.spotlight && (
+                <div className="bg-white rounded-2xl border border-slate-200 p-8">
+                  <div className="flex items-center gap-2 text-[#f97015] text-xs font-semibold uppercase tracking-wider mb-4">
+                    <Building2 className="w-4 h-4" /> Local Project Spotlight
+                  </div>
+                  <h3 className="font-heading text-lg font-bold text-slate-900 mb-3">{county.spotlight.title}</h3>
+                  <p className="text-sm text-slate-600 leading-relaxed">{county.spotlight.body}</p>
+                </div>
+              )}
+              {county.neighborhoods && county.neighborhoods.length > 0 && (
+                <div>
+                  <h2 className="font-heading text-2xl sm:text-3xl font-bold text-slate-900 mb-4 flex items-center gap-2">
+                    <HomeIcon className="w-6 h-6 text-[#f97015]" /> Regions &amp; Municipalities We Cover
+                  </h2>
+                  <p className="text-slate-600 mb-6 leading-relaxed">
+                    Our crews work every corner of {county.name} — from the busiest corridors to the quiet townships. A few of the areas we're in regularly:
+                  </p>
+                  <div className="flex flex-wrap gap-3">
+                    {county.neighborhoods.map((n) => (
+                      <span key={n} className="px-4 py-2 bg-white border border-slate-200 rounded-lg text-sm text-slate-700">
+                        {n}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Industries */}
-      <section className="py-16 lg:py-20 bg-slate-50">
+      <section className="py-16 lg:py-20 bg-white">
         <div className="container text-center">
           <h2 className="font-heading text-2xl font-bold text-slate-900 mb-8">
             Industries We Serve in {county.name}
@@ -223,6 +298,32 @@ export default function CountyPage() {
           </div>
         </div>
       </section>
+
+      {/* County FAQ — rendered only when enriched with county-wide Q&A */}
+      {county.faqs && county.faqs.length > 0 && (
+        <section className="py-16 lg:py-20 bg-slate-50">
+          <div className="container max-w-3xl">
+            <h2 className="font-heading text-2xl sm:text-3xl font-bold text-slate-900 text-center mb-10">
+              {county.name} Coverage Questions, Answered
+            </h2>
+            <div className="space-y-4">
+              {county.faqs.map((faq, i) => (
+                <details key={i} className="bg-white rounded-xl border border-slate-200 overflow-hidden group">
+                  <summary className="flex items-center justify-between p-5 cursor-pointer list-none">
+                    <span className="font-heading text-sm font-semibold text-slate-900 pr-4">{faq.q}</span>
+                    <span className="text-slate-400 shrink-0 group-open:rotate-180 transition-transform">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polyline points="6 9 12 15 18 9"/></svg>
+                    </span>
+                  </summary>
+                  <div className="px-5 pb-5">
+                    <p className="text-sm text-slate-600 leading-relaxed">{faq.a}</p>
+                  </div>
+                </details>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Bottom CTA */}
       <section className="py-16 bg-white">
@@ -327,6 +428,11 @@ export default function CountyPage() {
                 name: `What security services do you offer in ${county.name}?`,
                 acceptedAnswer: { "@type": "Answer", text: `In ${county.name}, You Need L.E.D. offers: 4K security camera installation, access control systems (RFID, biometric, mobile credentials), NFPA 72 fire alarm systems, intrusion detection with 24/7 monitoring, hosted VoIP phone systems, jobsite security cameras, digital signage, and LEDConnect AI Voice Agents. All services backed by our NJ DCA license and 34 years of industry experience.` },
               },
+              ...(county.faqs ?? []).map((faq) => ({
+                "@type": "Question",
+                name: faq.q,
+                acceptedAnswer: { "@type": "Answer", text: faq.a },
+              })),
             ],
           }),
         }}

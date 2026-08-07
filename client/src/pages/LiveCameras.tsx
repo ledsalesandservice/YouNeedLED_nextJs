@@ -842,7 +842,7 @@ export default function LiveCameras() {
                   Live Camera Feeds
                 </h1>
                 <p className="text-gray-400 text-base max-w-xl">
-                  Real-time security camera streams installed and managed by You Need LED — serving South Jersey, the Delaware Valley, and beyond.
+                  Real-time security camera streams installed and managed by You Need LED — serving South Jersey and beyond.
                 </p>
               </div>
 

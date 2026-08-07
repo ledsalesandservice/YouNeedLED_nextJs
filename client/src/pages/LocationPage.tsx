@@ -5,7 +5,8 @@
  */
 import { useParams, Link, useLocation } from "wouter";
 import { useEffect } from "react";
-import { getLocationBySlug, LOCATION_SERVICES } from "@/lib/locationData";
+import { getLocationBySlug, LOCATION_SERVICES, ALL_LOCATIONS } from "@/lib/locationData";
+import type { LocationData } from "@/lib/locationData";
 import { SITE } from "@/lib/siteData";
 import SEOHead from "@/components/SEOHead";
 import {
@@ -35,6 +36,19 @@ export default function LocationPage() {
   }, [location, setLocation]);
 
   if (!location) return null;
+
+  // Build a case-insensitive town-name -> slug lookup so nearbyAreas render as
+  // real internal links. Also index a "Township"/"City"-suffix-stripped key.
+  const slugByName = new Map<string, string>();
+  const normalize = (n: string) => n.trim().toLowerCase();
+  const stripSuffix = (n: string) =>
+    n.trim().replace(/\s+(township|city)$/i, "").toLowerCase();
+  for (const loc of ALL_LOCATIONS as LocationData[]) {
+    slugByName.set(normalize(loc.name), loc.slug);
+    slugByName.set(stripSuffix(loc.name), loc.slug);
+  }
+  const slugForArea = (area: string): string | undefined =>
+    slugByName.get(normalize(area)) ?? slugByName.get(stripSuffix(area));
 
   const isCounty = location.name.includes("County");
   const isRegion = location.stateAbbr === "US";
@@ -240,11 +254,18 @@ export default function LocationPage() {
             Our {location.serviceRadius} coverage from {location.name} means we also serve these nearby communities.
           </p>
           <div className="flex flex-wrap justify-center gap-3 max-w-3xl mx-auto">
-            {location.nearbyAreas.map((area) => (
-              <span key={area} className="px-4 py-2 bg-slate-50 border border-slate-200 rounded-lg text-sm text-slate-700 hover:border-[#0e319a]/30 transition-colors">
-                {area}
-              </span>
-            ))}
+            {location.nearbyAreas.map((area) => {
+              const slug = slugForArea(area);
+              return slug ? (
+                <Link key={area} href={`/locations/${slug}`} className="px-4 py-2 bg-slate-50 border border-slate-200 rounded-lg text-sm text-slate-700 hover:border-[#0e319a]/30 transition-colors">
+                  {area}
+                </Link>
+              ) : (
+                <span key={area} className="px-4 py-2 bg-slate-50 border border-slate-200 rounded-lg text-sm text-slate-700 hover:border-[#0e319a]/30 transition-colors">
+                  {area}
+                </span>
+              );
+            })}
           </div>
           <div className="text-center mt-8">
             <Link href="/service-areas" className="inline-flex items-center gap-2 text-sm font-medium text-[#0e319a] hover:text-[#0c2a82] transition-colors">

@@ -21,6 +21,18 @@ export interface LocationData {
   nearbyAreas: string[];
   responseTime: string;
   serviceRadius: string;
+  // ---- Optional rich content fields (parity with ServiceAreaTown) ----
+  // All optional so existing (un-enriched) location data still compiles and
+  // renders identically. Each corresponding section in LocationPage.tsx is
+  // skipped when its field is undefined.
+  heroTagline?: string;
+  intro?: string;
+  landmarks?: string[];
+  neighborhoods?: string[];
+  localContext?: string;
+  spotlight?: { title: string; body: string };
+  faqs?: { q: string; a: string }[];
+  proximity?: string;
 }
 
 export interface CountyData {

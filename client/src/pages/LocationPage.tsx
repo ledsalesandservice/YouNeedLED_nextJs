@@ -14,7 +14,7 @@ import SEOHead from "@/components/SEOHead";
 import {
   Phone, ArrowRight, MapPin, Bot, Zap, Shield, Camera, KeyRound,
   Flame, Monitor, Cable, MessageSquare, Bell, CheckCircle2, Star,
-  Building2, Clock, BadgeCheck
+  Building2, Clock, BadgeCheck, Landmark, Home as HomeIcon
 } from "lucide-react";
 
 const iconMap: Record<string, React.ReactNode> = {
@@ -106,7 +106,7 @@ export default function LocationPage() {
                     : `Security Camera Installation in ${location.name}, ${location.stateAbbr}`}
             </h1>
             <p className="text-lg text-white/80 max-w-2xl mx-auto mb-8 leading-relaxed">
-              {location.description}
+              {location.heroTagline ?? location.description}
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Link
@@ -132,11 +132,50 @@ export default function LocationPage() {
           <div className="flex flex-wrap justify-center gap-x-10 gap-y-3 text-sm text-slate-600">
             <span className="flex items-center gap-2"><BadgeCheck className="w-4 h-4 text-[#0e319a]" /> NJ Licensed & Insured</span>
             <span className="flex items-center gap-2"><Clock className="w-4 h-4 text-[#0e319a]" /> {location.responseTime}</span>
+            {location.proximity && (
+              <span className="flex items-center gap-2"><MapPin className="w-4 h-4 text-[#f97015]" /> {location.proximity}</span>
+            )}
             <span className="flex items-center gap-2"><Star className="w-4 h-4 text-[#f97015]" /> 34 Years Experience</span>
             <span className="flex items-center gap-2"><Shield className="w-4 h-4 text-[#0e319a]" /> 24/7 Monitoring Available</span>
           </div>
         </div>
       </section>
+
+      {/* Intro + Landmarks — rich local context (rendered only when enriched) */}
+      {(location.intro || location.localContext || (location.landmarks && location.landmarks.length > 0)) && (
+        <section className="py-16 lg:py-20 bg-white">
+          <div className="container">
+            <div className="grid lg:grid-cols-3 gap-12">
+              <div className="lg:col-span-2">
+                <h2 className="font-heading text-2xl sm:text-3xl font-bold text-slate-900 mb-5">
+                  Your Local Security &amp; Technology Team in {location.name}
+                </h2>
+                {location.intro && (
+                  <p className="text-slate-600 leading-relaxed mb-5">{location.intro}</p>
+                )}
+                {location.localContext && (
+                  <p className="text-slate-600 leading-relaxed">{location.localContext}</p>
+                )}
+              </div>
+              {location.landmarks && location.landmarks.length > 0 && (
+                <div className="bg-slate-50 rounded-2xl border border-slate-200 p-7 h-fit">
+                  <div className="flex items-center gap-2 text-[#0e319a] text-sm font-semibold uppercase tracking-wider mb-4">
+                    <Landmark className="w-4 h-4 text-[#f97015]" /> Around {location.name}
+                  </div>
+                  <ul className="space-y-2.5">
+                    {location.landmarks.map((lm) => (
+                      <li key={lm} className="flex items-start gap-2 text-sm text-slate-700">
+                        <MapPin className="w-4 h-4 text-[#0e319a] mt-0.5 shrink-0" />
+                        {lm}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Services Grid */}
       <section className="py-16 lg:py-20 bg-white">
@@ -223,6 +262,42 @@ export default function LocationPage() {
         </div>
       </section>
 
+      {/* Local Spotlight + Neighborhoods — rendered only when enriched */}
+      {(location.spotlight || (location.neighborhoods && location.neighborhoods.length > 0)) && (
+        <section className="py-16 lg:py-20 bg-white">
+          <div className="container">
+            <div className="grid lg:grid-cols-2 gap-12 items-start">
+              {location.spotlight && (
+                <div className="bg-white rounded-2xl border border-slate-200 p-8">
+                  <div className="flex items-center gap-2 text-[#f97015] text-xs font-semibold uppercase tracking-wider mb-4">
+                    <Building2 className="w-4 h-4" /> Local Project Spotlight
+                  </div>
+                  <h3 className="font-heading text-lg font-bold text-slate-900 mb-3">{location.spotlight.title}</h3>
+                  <p className="text-sm text-slate-600 leading-relaxed">{location.spotlight.body}</p>
+                </div>
+              )}
+              {location.neighborhoods && location.neighborhoods.length > 0 && (
+                <div>
+                  <h2 className="font-heading text-2xl sm:text-3xl font-bold text-slate-900 mb-4 flex items-center gap-2">
+                    <HomeIcon className="w-6 h-6 text-[#f97015]" /> Neighborhoods We Serve
+                  </h2>
+                  <p className="text-slate-600 mb-6 leading-relaxed">
+                    We cover every corner of {location.name} — homes and businesses alike. A few of the sections we work in regularly:
+                  </p>
+                  <div className="flex flex-wrap gap-3">
+                    {location.neighborhoods.map((n) => (
+                      <span key={n} className="px-4 py-2 bg-slate-50 border border-slate-200 rounded-lg text-sm text-slate-700">
+                        {n}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* LEDConnect AI Voice Agent CTA — Featured on location pages per Derek */}
       <section className="py-16 lg:py-20 bg-gradient-to-br from-[#0e319a] to-[#081d5e]">
         <div className="container">
@@ -288,6 +363,32 @@ export default function LocationPage() {
           </div>
         </div>
       </section>
+
+      {/* Local FAQ — rendered only when enriched with town-specific Q&A */}
+      {location.faqs && location.faqs.length > 0 && (
+        <section className="py-16 lg:py-20 bg-slate-50">
+          <div className="container max-w-3xl">
+            <h2 className="font-heading text-2xl sm:text-3xl font-bold text-slate-900 text-center mb-10">
+              {location.name} Security Questions, Answered
+            </h2>
+            <div className="space-y-4">
+              {location.faqs.map((faq, i) => (
+                <details key={i} className="bg-white rounded-xl border border-slate-200 overflow-hidden group">
+                  <summary className="flex items-center justify-between p-5 cursor-pointer list-none">
+                    <span className="font-heading text-sm font-semibold text-slate-900 pr-4">{faq.q}</span>
+                    <span className="text-slate-400 shrink-0 group-open:rotate-180 transition-transform">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polyline points="6 9 12 15 18 9"/></svg>
+                    </span>
+                  </summary>
+                  <div className="px-5 pb-5">
+                    <p className="text-sm text-slate-600 leading-relaxed">{faq.a}</p>
+                  </div>
+                </details>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Bottom CTA */}
       <section className="py-16 bg-slate-50">
@@ -369,7 +470,24 @@ export default function LocationPage() {
         }}
       />
 
-      {/* FAQPage Schema — location-specific Q&A for AI Overviews and local search */}
+      {/* FAQPage Schema — town-specific Q&A when enriched, else generic fallback.
+          Only one FAQPage block is ever emitted to avoid duplicate schema. */}
+      {location.faqs && location.faqs.length > 0 ? (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              mainEntity: location.faqs.map((faq) => ({
+                "@type": "Question",
+                name: faq.q,
+                acceptedAnswer: { "@type": "Answer", text: faq.a },
+              })),
+            }),
+          }}
+        />
+      ) : (
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -401,6 +519,7 @@ export default function LocationPage() {
           }),
         }}
       />
+      )}
     </>
   );
 }

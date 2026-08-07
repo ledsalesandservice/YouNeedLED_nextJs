@@ -6,6 +6,10 @@ import { Link } from "wouter";
 import { SITE } from "@/lib/siteData";
 import { Phone, ArrowRight, ChevronDown } from "lucide-react";
 import { useState } from "react";
+import {
+  Breadcrumb, BreadcrumbList, BreadcrumbItem, BreadcrumbLink,
+  BreadcrumbPage, BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb";
 
 interface Feature {
   icon: React.ReactNode;
@@ -59,6 +63,31 @@ export default function ServicePageLayout({
 
   return (
     <>
+      {/* Visible breadcrumb nav — Home / Services / <Page Title> */}
+      <section className="bg-white border-b border-slate-100">
+        <div className="container py-3">
+          <Breadcrumb>
+            <BreadcrumbList className="text-slate-500">
+              <BreadcrumbItem>
+                <BreadcrumbLink asChild className="text-[#0e319a] hover:underline">
+                  <Link href="/">Home</Link>
+                </BreadcrumbLink>
+              </BreadcrumbItem>
+              <BreadcrumbSeparator />
+              {/* No dedicated /services index route exists on the site, so
+                  "Services" is a non-clickable label rather than a 404 link. */}
+              <BreadcrumbItem>
+                <span className="text-slate-500">Services</span>
+              </BreadcrumbItem>
+              <BreadcrumbSeparator />
+              <BreadcrumbItem>
+                <BreadcrumbPage className="text-slate-700 font-medium">{title}</BreadcrumbPage>
+              </BreadcrumbItem>
+            </BreadcrumbList>
+          </Breadcrumb>
+        </div>
+      </section>
+
       {/* Hero */}
       <section className="relative py-20 lg:py-28 bg-[#0e319a]">
         <div className="absolute inset-0 opacity-20">

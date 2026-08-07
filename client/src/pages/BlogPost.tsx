@@ -7,6 +7,10 @@ import { Link, useParams } from "wouter";
 import { ALL_BLOG_POSTS } from "@/lib/blogData";
 import { SITE } from "@/lib/siteData";
 import SEOHead from "@/components/SEOHead";
+import {
+  Breadcrumb, BreadcrumbList, BreadcrumbItem, BreadcrumbLink,
+  BreadcrumbPage, BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb";
 import { ArrowLeft, Clock, Calendar, Tag } from "lucide-react";
 
 export default function BlogPost() {
@@ -34,6 +38,30 @@ export default function BlogPost() {
         ogImage={post.image}
         ogType="article"
       />
+      {/* Visible breadcrumb nav — Home / Blog / <Post Title> */}
+      <section className="bg-white border-b border-slate-100">
+        <div className="container py-3">
+          <Breadcrumb>
+            <BreadcrumbList className="text-slate-500">
+              <BreadcrumbItem>
+                <BreadcrumbLink asChild className="text-[#0e319a] hover:underline">
+                  <Link href="/">Home</Link>
+                </BreadcrumbLink>
+              </BreadcrumbItem>
+              <BreadcrumbSeparator />
+              <BreadcrumbItem>
+                <BreadcrumbLink asChild className="text-[#0e319a] hover:underline">
+                  <Link href="/blog">Blog</Link>
+                </BreadcrumbLink>
+              </BreadcrumbItem>
+              <BreadcrumbSeparator />
+              <BreadcrumbItem>
+                <BreadcrumbPage className="text-slate-700 font-medium">{post.title}</BreadcrumbPage>
+              </BreadcrumbItem>
+            </BreadcrumbList>
+          </Breadcrumb>
+        </div>
+      </section>
       {/* Hero */}
       <section className="py-12 lg:py-16 bg-[#0e319a]">
         <div className="container max-w-3xl">

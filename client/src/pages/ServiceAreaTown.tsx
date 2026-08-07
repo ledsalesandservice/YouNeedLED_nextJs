@@ -11,6 +11,10 @@ import { LOCATION_SERVICES } from "@/lib/locationData";
 import { SITE } from "@/lib/siteData";
 import SEOHead from "@/components/SEOHead";
 import {
+  Breadcrumb, BreadcrumbList, BreadcrumbItem, BreadcrumbLink,
+  BreadcrumbPage, BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb";
+import {
   Phone, ArrowRight, MapPin, Bot, Zap, Shield, Camera, KeyRound,
   Flame, Monitor, Cable, MessageSquare, Bell, CheckCircle2, Star,
   Building2, Clock, BadgeCheck, Landmark, Home as HomeIcon
@@ -51,6 +55,31 @@ export default function ServiceAreaTown() {
         description={town.metaDescription}
         canonical={`/service-areas/${town.slug}`}
       />
+
+      {/* Visible breadcrumb nav — Home / Service Areas / <Town> */}
+      <section className="bg-white border-b border-slate-100">
+        <div className="container py-3">
+          <Breadcrumb>
+            <BreadcrumbList className="text-slate-500">
+              <BreadcrumbItem>
+                <BreadcrumbLink asChild className="text-[#0e319a] hover:underline">
+                  <Link href="/">Home</Link>
+                </BreadcrumbLink>
+              </BreadcrumbItem>
+              <BreadcrumbSeparator />
+              <BreadcrumbItem>
+                <BreadcrumbLink asChild className="text-[#0e319a] hover:underline">
+                  <Link href="/service-areas">Service Areas</Link>
+                </BreadcrumbLink>
+              </BreadcrumbItem>
+              <BreadcrumbSeparator />
+              <BreadcrumbItem>
+                <BreadcrumbPage className="text-slate-700 font-medium">{town.name}</BreadcrumbPage>
+              </BreadcrumbItem>
+            </BreadcrumbList>
+          </Breadcrumb>
+        </div>
+      </section>
 
       {/* Hero */}
       <section className="relative py-20 lg:py-28 bg-[#0e319a] overflow-hidden">

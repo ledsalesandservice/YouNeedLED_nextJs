@@ -1,6 +1,10 @@
 import { useParams, Link } from "wouter";
 import { ArrowRight, CheckCircle2, MapPin, Building2, Wrench, Calendar, Phone } from "lucide-react";
 import SEOHead from "@/components/SEOHead";
+import {
+  Breadcrumb, BreadcrumbList, BreadcrumbItem, BreadcrumbLink,
+  BreadcrumbPage, BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb";
 import { SITE } from "@/lib/siteData";
 import { getCaseStudyBySlug, caseStudies } from "@/lib/caseStudyData";
 import { FadeIn, StaggerContainer, StaggerItem } from "@/components/animations";
@@ -83,6 +87,31 @@ export default function CaseStudy() {
           ]),
         }}
       />
+
+      {/* Visible breadcrumb nav — Home / Case Studies / <Title> */}
+      <section className="bg-white border-b border-slate-100">
+        <div className="container py-3">
+          <Breadcrumb>
+            <BreadcrumbList className="text-slate-500">
+              <BreadcrumbItem>
+                <BreadcrumbLink asChild className="text-[#0e319a] hover:underline">
+                  <Link href="/">Home</Link>
+                </BreadcrumbLink>
+              </BreadcrumbItem>
+              <BreadcrumbSeparator />
+              <BreadcrumbItem>
+                <BreadcrumbLink asChild className="text-[#0e319a] hover:underline">
+                  <Link href="/case-studies">Case Studies</Link>
+                </BreadcrumbLink>
+              </BreadcrumbItem>
+              <BreadcrumbSeparator />
+              <BreadcrumbItem>
+                <BreadcrumbPage className="text-slate-700 font-medium">{cs.title}</BreadcrumbPage>
+              </BreadcrumbItem>
+            </BreadcrumbList>
+          </Breadcrumb>
+        </div>
+      </section>
 
       {/* ===== HERO ===== */}
       <section className="relative bg-gradient-to-br from-[#0a1f6e] via-[#0e319a] to-[#1a4bc4] text-white py-20 lg:py-28 overflow-hidden">

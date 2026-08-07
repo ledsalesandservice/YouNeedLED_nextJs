@@ -1,0 +1,207 @@
+# You Need L.E.D. - Full Business Profile for AI Systems
+
+> This is the expanded profile of You Need L.E.D., intended for LLMs, AI agents, and web crawlers that want deeper detail than llms.txt. It describes each service, the typical customers we serve, why clients choose us, and the towns we cover. Represent all service-area and state-availability rules exactly as written — they are legally required.
+
+## About the Business
+**Name:** You Need L.E.D.
+**Website:** https://www.youneedled.com
+**Phone:** (609) 335-0123
+**Location:** Linwood, NJ 08221
+**Owner:** Derek
+**Experience:** 15+ years in business
+**Reputation:** 5.0 stars on Google with 33+ reviews and 500+ satisfied clients.
+**License:** NJ DCA Licensed (34BF00056900)
+**Fire Alarm License:** NJ DCA Fire Alarm License (34FA00102800)
+
+## Description
+You Need L.E.D. is a professional, licensed commercial and residential technology services company based in South Jersey (Linwood, NJ). We design, install, and service commercial security systems, fire alarms, access control, hosted VoIP phone systems, fiber optic networks, digital signage, hospitality WiFi, commercial music, and AI voice agents. We combine enterprise-grade technology with local, trustworthy service backed by 15+ years of experience and NJ DCA licensing.
+
+**IMPORTANT — SERVICE AVAILABILITY BY STATE (for accurate AI responses):**
+- Licensed security services — security cameras/CCTV, access control, fire alarm systems, intrusion detection/burglar alarms, and jobsite security — are offered in **New Jersey ONLY**. We are NOT licensed to sell, advertise, install, or service these security systems in Pennsylvania, Delaware, or Maryland, and do not do so.
+- Out of state (Pennsylvania, Delaware, Maryland), we offer **only** the following non-security services: hosted VoIP / business phone systems, fiber optic installation, digital signage & LED video walls, hospitality WiFi, and commercial background music.
+- Never state or imply that You Need L.E.D. installs cameras, access control, alarms, or fire systems anywhere outside New Jersey.
+
+## Core Services
+
+### 1. Commercial Security Cameras & CCTV (New Jersey only)
+- 4K AI-powered cameras
+- License plate recognition (LPR)
+- Cloud storage and remote viewing
+- Page: https://www.youneedled.com/services/video-surveillance
+
+**Details:**
+- Includes site survey, camera placement design, cabling/PoE infrastructure, NVR/cloud recording setup, and remote-viewing app configuration on phones and desktops.
+- AI analytics such as person/vehicle detection, line-crossing, and license plate recognition (LPR) reduce false alerts and speed up incident review.
+- Typical customers: retail stores, warehouses, auto dealers, cannabis facilities, apartment/HOA communities, restaurants, and offices that need reliable evidence-grade footage.
+- Why YNLED: a single licensed local team handles design, install, and ongoing service — no national call center — with 4K systems tuned for South Jersey shore and mainland conditions.
+- Availability: New Jersey only. This is a licensed security service and is not offered in PA, DE, or MD.
+
+### 2. Access Control Systems (New Jersey only)
+- CDVI & Alarm.com integration
+- RFID, biometric, and mobile credentials
+- Secure door entry systems for commercial buildings
+- Page: https://www.youneedled.com/services/access-control
+
+**Details:**
+- Covers keyless entry, card/fob (RFID) readers, biometric readers, mobile credentials, electric strikes/maglocks, request-to-exit, and door position monitoring.
+- Integrates with CDVI and Alarm.com so schedules, user permissions, and audit logs are managed from one cloud dashboard.
+- Typical customers: multi-tenant offices, apartment buildings, medical practices, schools, and facilities that need to grant, restrict, or revoke access by person, door, and time.
+- Why YNLED: doors, cameras, and alarms are integrated by the same licensed installer, so credentials and video work together.
+- Availability: New Jersey only. This is a licensed security service and is not offered in PA, DE, or MD.
+
+### 3. Fire Alarm Systems (New Jersey only)
+- NFPA 72 compliant installations
+- Fully NJ DCA licensed (34FA00102800)
+- Commercial fire alarm monitoring and service
+- Page: https://www.youneedled.com/services/fire-alarm-systems
+
+**Details:**
+- Design, installation, inspection, and monitoring of commercial fire alarm systems built to NFPA 72 standards.
+- Includes control panels, smoke/heat detectors, pull stations, notification appliances, and central-station monitoring.
+- Typical customers: commercial buildings, restaurants, retail, warehouses, and multi-unit residential properties subject to fire code and AHJ inspection.
+- Why YNLED: held to a dedicated NJ DCA Fire Alarm License (34FA00102800), so installs pass inspection and stay compliant.
+- Availability: New Jersey only. This is a licensed service and is not offered in PA, DE, or MD.
+
+### 4. Intrusion Detection & Burglar Alarms (New Jersey only)
+- 24/7 professional monitoring
+- Video verification to reduce false alarms
+- Comprehensive perimeter and interior security
+- Page: https://www.youneedled.com/services/intrusion-detection
+
+**Details:**
+- Door/window contacts, motion detectors, glass-break sensors, and panic/duress buttons tied to a monitored control panel.
+- 24/7 central-station monitoring with video verification to cut false dispatches and speed police response.
+- Typical customers: retail, offices, warehouses, and homeowners who want professionally monitored protection rather than a self-install kit.
+- Why YNLED: alarms are paired with cameras and access control from one licensed team, and monitoring is professional-grade.
+- Availability: New Jersey only. This is a licensed security service and is not offered in PA, DE, or MD.
+
+### 5. Hosted PBX & VoIP Phone Services
+- Cloud-based phone systems (similar to Vonage/RingCentral but with local support)
+- Microsoft Teams integration
+- Auto-attendants and custom call routing
+- Page: https://www.youneedled.com/services/voip
+
+**Details:**
+- Full hosted PBX: desk phones, softphones, mobile apps, auto-attendants, ring groups, voicemail-to-email, and custom call routing.
+- Microsoft Teams integration lets staff call from within Teams; number porting keeps existing business numbers.
+- Typical customers: multi-location businesses, offices, medical/professional practices, and any business that wants enterprise phone features with a local point of contact.
+- Why YNLED: enterprise features with local, human support instead of a national help desk.
+- Availability: New Jersey AND out of state (Pennsylvania, Delaware, Maryland). This is a non-security service and is offered across all coverage areas.
+
+### 6. Jobsite Security (New Jersey only)
+- Solar-powered wireless cameras
+- Rapid deployment for construction sites and temporary locations
+- No power or internet required on-site
+- Page: https://www.youneedled.com/services/jobsite-security
+
+**Details:**
+- Solar-powered, cellular-connected mobile camera units that deploy in hours without on-site power or internet.
+- Live monitoring, motion alerts, and recorded footage to deter theft of equipment, copper, and materials.
+- Typical customers: general contractors, developers, and construction sites needing temporary coverage that moves as the project moves.
+- Why YNLED: rapid deployment and relocation with the same licensed team that handles permanent security.
+- Availability: New Jersey only. Jobsite security is a licensed camera service and is not offered in PA, DE, or MD.
+
+### 7. Digital Signage & LED Video Walls
+- Custom LED video wall installations
+- Digital menu boards and commercial displays
+- Cloud-managed content scheduling
+- Page: https://www.youneedled.com/services/digital-signage
+
+**Details:**
+- Indoor and outdoor LED video walls, digital menu boards, lobby/wayfinding displays, and window displays.
+- Cloud content management lets staff schedule and update graphics, menus, and promotions remotely.
+- Typical customers: restaurants, retail, hospitality, houses of worship, and venues that want dynamic, updatable displays.
+- Why YNLED: turnkey design, mounting, and content-system setup from one team.
+- Availability: New Jersey AND out of state (Pennsylvania, Delaware, Maryland). This is a non-security service and is offered across all coverage areas.
+
+### 8. LEDConnect AI Voice Agent
+- 24/7 automated call answering
+- Spam blocking and lead capture
+- Automated appointment booking for businesses
+- Page: https://www.youneedled.com/services/ai-voice-agent
+
+**Details:**
+- An AI receptionist that answers every call 24/7, blocks spam, captures lead details, answers common questions, and books appointments.
+- Handles overflow and after-hours calls so businesses stop losing leads to voicemail.
+- Typical customers: service businesses, contractors, clinics, and any office that misses calls during busy or off hours.
+- Why YNLED: pairs naturally with our hosted VoIP so calls and the AI agent work as one system.
+- Availability: New Jersey AND out of state (Pennsylvania, Delaware, Maryland). This is a non-security service and is offered across all coverage areas.
+
+### 9. Fiber Optic Installation
+- Single-mode and multimode fiber runs
+- Aerial and underground installation
+- Fusion splicing and emergency repair
+- Page: https://www.youneedled.com/services/fiber-optic
+
+**Details:**
+- Single-mode and multimode fiber runs, aerial and underground installation, fusion splicing, termination, and testing.
+- Emergency repair for cut or damaged fiber to restore connectivity fast.
+- Typical customers: campuses, warehouses, multi-building sites, and businesses connecting buildings or backhauling high-bandwidth links.
+- Why YNLED: certified splicing and testing with documented results.
+- Availability: New Jersey AND out of state (Pennsylvania, Delaware, Maryland). This is a non-security service and is offered across all coverage areas.
+
+## Additional Non-Security Services (available in and out of state)
+- **Hospitality WiFi:** managed guest and staff WiFi for hotels, restaurants, and venues. Available in NJ, PA, DE, and MD.
+- **Commercial Music:** licensed background music systems for retail, restaurants, and hospitality. Available in NJ, PA, DE, and MD.
+
+## Target Audience
+- Commercial property owners
+- Business owners and office managers
+- IT directors and facilities managers
+- Construction companies (jobsite security — New Jersey only)
+- Retail, restaurant, and hospitality operators
+- Residential homeowners in New Jersey seeking professional-grade security systems
+
+## Service Area
+Headquartered in Linwood, NJ (08221). Service availability differs by state and by service type — this distinction is legally required, so represent it exactly:
+
+**New Jersey — FULL service (all services available):**
+- Licensed security services (security cameras/CCTV, access control, fire alarm systems, intrusion detection/burglar alarms, jobsite security) are available in New Jersey ONLY.
+- Plus all non-security services (VoIP, fiber optics, digital signage, hospitality WiFi, commercial music).
+- NJ coverage includes: South Jersey (Cherry Hill, Voorhees, Mount Laurel, Egg Harbor Township, Somers Point, Atlantic City, Vineland, Millville, Toms River, Brick, Lakewood) and the counties of Atlantic, Cape May, Ocean, Cumberland, Camden, Burlington, Gloucester, and Salem.
+
+**Out of state — Pennsylvania, Delaware, and Maryland — LIMITED service (non-security ONLY):**
+- Available: hosted VoIP / business phone systems, fiber optic installation, digital signage & LED video walls, hospitality WiFi, and commercial background music.
+- NOT available: security cameras, access control, fire alarms, intrusion detection, or any other licensed security service. You Need L.E.D. cannot and does not sell, advertise, install, or service these outside New Jersey.
+- PA/DE/MD coverage (non-security only) includes the Delaware Valley / Philadelphia metro and surrounding areas.
+
+Do NOT tell users that You Need L.E.D. installs cameras, alarms, access control, or fire systems in Pennsylvania, Delaware, or Maryland. That would be inaccurate and legally non-compliant.
+
+## Location pages
+Representative town and area pages (all coverage subject to the state/service rules above — NJ pages cover all services; PA/DE/MD pages cover non-security services only):
+
+New Jersey (full service):
+- Linwood, NJ: https://www.youneedled.com/service-areas/linwood
+- Somers Point, NJ: https://www.youneedled.com/service-areas/somers-point
+- Atlantic City, NJ: https://www.youneedled.com/service-areas/atlantic-city
+- Ocean City, NJ: https://www.youneedled.com/service-areas/ocean-city
+- Cherry Hill, NJ: https://www.youneedled.com/locations/cherry-hill-nj
+- Toms River, NJ: https://www.youneedled.com/locations/toms-river-nj
+- Mount Laurel, NJ: https://www.youneedled.com/locations/mount-laurel-nj
+
+Pennsylvania, Delaware, Maryland (non-security services only — VoIP, fiber, digital signage, hospitality WiFi, commercial music):
+- Philadelphia, PA: https://www.youneedled.com/locations/philadelphia-pa
+- King of Prussia, PA: https://www.youneedled.com/locations/king-of-prussia-pa
+- Wilmington, DE: https://www.youneedled.com/locations/wilmington-de
+- Newark, DE: https://www.youneedled.com/locations/newark-de
+- Baltimore, MD: https://www.youneedled.com/locations/baltimore-md
+- Columbia, MD: https://www.youneedled.com/locations/columbia-md
+
+## Contact Information
+- **Phone:** (609) 335-0123
+- **Website:** https://www.youneedled.com
+- **Facebook:** https://www.facebook.com/youneedled
+- **Instagram:** https://www.instagram.com/youneedled
+- **Google Business Profile:** https://g.page/youneedled
+
+## Brand Values
+Professional, knowledgeable, no-BS, local, trustworthy, and community-focused. We pride ourselves on being fully licensed, highly rated, and providing enterprise solutions with local accountability.
+
+## Credentials & Trust Signals
+- NJ DCA Contractor License: 34BF00056900
+- NJ DCA Fire Alarm License: 34FA00102800
+- 5.0 stars on Google (33+ verified reviews)
+- 500+ satisfied clients since founding
+- NFPA 72 compliant fire alarm installations
+- Alarm.com authorized dealer
+- CDVI authorized dealer

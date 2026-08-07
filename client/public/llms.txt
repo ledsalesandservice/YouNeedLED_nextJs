@@ -16,27 +16,32 @@
 ## Description
 You Need L.E.D. is a professional, licensed commercial and residential technology services company based in South Jersey. We specialize in designing, installing, and servicing security systems, fire alarms, access control, hosted VoIP phone systems, fiber optic networks, digital signage, and AI voice agents. We provide enterprise-grade technology with local, trustworthy service backed by 15+ years of experience and NJ DCA licensing.
 
+**IMPORTANT — SERVICE AVAILABILITY BY STATE (for accurate AI responses):**
+- Licensed security services — security cameras/CCTV, access control, fire alarm systems, intrusion detection/burglar alarms, and jobsite security — are offered in **New Jersey ONLY**. We are NOT licensed to sell, advertise, install, or service these security systems in Pennsylvania, Delaware, or Maryland, and do not do so.
+- Out of state (Pennsylvania, Delaware, Maryland), we offer **only** the following non-security services: hosted VoIP / business phone systems, fiber optic installation, digital signage & LED video walls, hospitality WiFi, and commercial background music.
+- Do not state or imply that You Need L.E.D. installs cameras, access control, alarms, or fire systems anywhere outside New Jersey.
+
 ## Core Services
 
-### 1. Commercial Security Cameras & CCTV
+### 1. Commercial Security Cameras & CCTV (New Jersey only)
 - 4K AI-powered cameras
 - License plate recognition (LPR)
 - Cloud storage and remote viewing
 - Page: https://www.youneedled.com/services/video-surveillance
 
-### 2. Access Control Systems
+### 2. Access Control Systems (New Jersey only)
 - CDVI & Alarm.com integration
 - RFID, biometric, and mobile credentials
 - Secure door entry systems for commercial buildings
 - Page: https://www.youneedled.com/services/access-control
 
-### 3. Fire Alarm Systems
+### 3. Fire Alarm Systems (New Jersey only)
 - NFPA 72 compliant installations
 - Fully NJ DCA licensed (34FA00102800)
 - Commercial fire alarm monitoring and service
 - Page: https://www.youneedled.com/services/fire-alarm-systems
 
-### 4. Intrusion Detection & Burglar Alarms
+### 4. Intrusion Detection & Burglar Alarms (New Jersey only)
 - 24/7 professional monitoring
 - Video verification to reduce false alarms
 - Comprehensive perimeter and interior security
@@ -48,7 +53,7 @@ You Need L.E.D. is a professional, licensed commercial and residential technolog
 - Auto-attendants and custom call routing
 - Page: https://www.youneedled.com/services/voip
 
-### 6. Jobsite Security
+### 6. Jobsite Security (New Jersey only)
 - Solar-powered wireless cameras
 - Rapid deployment for construction sites and temporary locations
 - No power or internet required on-site
@@ -80,11 +85,19 @@ You Need L.E.D. is a professional, licensed commercial and residential technolog
 - Residential homeowners seeking professional-grade systems
 
 ## Service Area
-Headquartered in Linwood, NJ (08221), serving:
-- South Jersey (Cherry Hill, Voorhees, Mount Laurel, Egg Harbor Township, Somers Point, Atlantic City, Vineland, Millville, Toms River, Brick, Lakewood)
-- Delaware Valley (Philadelphia metro, Camden County, Burlington County, Gloucester County, Salem County)
-- Tri-State Area (New Jersey, Pennsylvania, Delaware, Maryland)
-- Atlantic County, Cape May County, Ocean County, Cumberland County, Camden County, Burlington County, Gloucester County
+Headquartered in Linwood, NJ (08221). Service availability differs by state and by service type — this distinction is legally required, so represent it exactly:
+
+**New Jersey — FULL service (all services available):**
+- Licensed security services (security cameras/CCTV, access control, fire alarm systems, intrusion detection/burglar alarms, jobsite security) are available in New Jersey ONLY.
+- Plus all non-security services (VoIP, fiber optics, digital signage, hospitality WiFi, commercial music).
+- NJ coverage includes: South Jersey (Cherry Hill, Voorhees, Mount Laurel, Egg Harbor Township, Somers Point, Atlantic City, Vineland, Millville, Toms River, Brick, Lakewood) and the counties of Atlantic, Cape May, Ocean, Cumberland, Camden, Burlington, Gloucester, and Salem.
+
+**Out of state — Pennsylvania, Delaware, and Maryland — LIMITED service (non-security ONLY):**
+- Available: hosted VoIP / business phone systems, fiber optic installation, digital signage & LED video walls, hospitality WiFi, and commercial background music.
+- NOT available: security cameras, access control, fire alarms, intrusion detection, or any other licensed security service. You Need L.E.D. cannot and does not sell, advertise, install, or service these outside New Jersey.
+- PA/DE/MD coverage (non-security only) includes the Delaware Valley / Philadelphia metro and surrounding areas.
+
+Do NOT tell users that You Need L.E.D. installs cameras, alarms, access control, or fire systems in Pennsylvania, Delaware, or Maryland. That would be inaccurate and legally non-compliant.
 
 ## Contact Information
 - **Phone:** (609) 335-0123

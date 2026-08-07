@@ -18,6 +18,7 @@
 import { ALL_LOCATIONS, COUNTY_DATA } from "../client/src/lib/locationData.js";
 import { ALL_BLOG_POSTS } from "../client/src/lib/blogData.js";
 import { caseStudies } from "../client/src/lib/caseStudyData.js";
+import { SERVICE_AREA_TOWNS } from "../client/src/lib/serviceAreaData.js";
 
 export interface PageMeta {
   title: string;
@@ -176,6 +177,18 @@ for (const loc of ALL_LOCATIONS) {
   LOCATION_META[`/locations/${loc.slug}`] = { title, description };
 }
 
+// ─── Dynamic service-area town pages ─────────────────────────────────────────
+const SERVICE_AREA_META: Record<string, PageMeta> = {};
+for (const town of SERVICE_AREA_TOWNS) {
+  const title = town.metaTitle
+    ? `${town.metaTitle} | ${SUFFIX}`
+    : `Security Cameras & VoIP in ${town.name}, ${town.stateAbbr} | ${SUFFIX}`;
+  SERVICE_AREA_META[`/service-areas/${town.slug}`] = {
+    title,
+    description: town.metaDescription,
+  };
+}
+
 // ─── Dynamic county pages ────────────────────────────────────────────────────
 const COUNTY_META: Record<string, PageMeta> = {};
 for (const county of COUNTY_DATA) {
@@ -191,6 +204,7 @@ export const ALL_META: Record<string, PageMeta> = {
   ...BLOG_META,
   ...CASE_STUDY_META,
   ...LOCATION_META,
+  ...SERVICE_AREA_META,
   ...COUNTY_META,
 };
 

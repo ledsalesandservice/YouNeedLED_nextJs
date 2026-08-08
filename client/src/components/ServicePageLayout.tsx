@@ -259,7 +259,7 @@ export default function ServicePageLayout({
               "@type": "BreadcrumbList",
               itemListElement: [
                 { "@type": "ListItem", position: 1, name: "Home", item: SITE.url },
-                { "@type": "ListItem", position: 2, name: "Services", item: `${SITE.url}/service-areas` },
+                { "@type": "ListItem", position: 2, name: "Service Areas", item: `${SITE.url}/service-areas` },
                 { "@type": "ListItem", position: 3, name: title, item: `${SITE.url}${pageSlug}` },
               ],
             }),

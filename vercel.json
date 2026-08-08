@@ -135,6 +135,10 @@
   ],
   "rewrites": [
     {
+      "source": "/review",
+      "destination": "/review/index.html"
+    },
+    {
       "source": "/cameras",
       "destination": "/cameras/index.html"
     },

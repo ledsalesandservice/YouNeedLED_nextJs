@@ -51,7 +51,6 @@ function enforceCanonical(req: Request, res: Response): boolean {
   const rawHost = ((req.headers["x-forwarded-host"] || req.headers.host || "") as string)
     .toLowerCase()
     .split(":")[0];
-  res.setHeader("X-Debug-Host", rawHost); // TEMP debug — remove after
 
   const url = req.url || "/";
   const questionIdx = url.indexOf("?");

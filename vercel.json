@@ -169,6 +169,28 @@
   ],
   "redirects": [
     {
+      "source": "/(.*)",
+      "destination": "https://www.youneedled.com/$1",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "youneedled.net"
+        }
+      ]
+    },
+    {
+      "source": "/(.*)",
+      "destination": "https://www.youneedled.com/$1",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "www.youneedled.net"
+        }
+      ]
+    },
+    {
       "source": "/quote-request",
       "destination": "/contact",
       "statusCode": 301

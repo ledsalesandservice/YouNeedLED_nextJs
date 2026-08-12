@@ -13,7 +13,10 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   }
 
   const resendApiKey = process.env.RESEND_API_KEY;
-  const toEmail = process.env.CONTACT_TO_EMAIL || "derek@youneedled.com";
+  // Contact form leads go to the monitored Gmail (youneedled@gmail.com) so
+  // Hermes' email-monitor catches them within minutes and alerts Derek on
+  // WhatsApp. Override with CONTACT_TO_EMAIL in Vercel if needed.
+  const toEmail = process.env.CONTACT_TO_EMAIL || "youneedled@gmail.com";
   // Use verified sender domain once youneedled.com is verified in Resend dashboard.
   // Until then, onboarding@resend.dev works without domain verification.
   const fromEmail = process.env.CONTACT_FROM_EMAIL || "YouNeedLED Website <onboarding@resend.dev>";

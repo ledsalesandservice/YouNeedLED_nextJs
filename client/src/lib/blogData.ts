@@ -4189,5 +4189,53 @@ It's right there in our name. We're not an AV company that dabbles in LED — LE
 Whether you're replacing a dying projector or building your first digital display, we'll design a system that fits your space and your budget — and show you the real 5-year numbers before you spend a dime.
 
 Call us at **(609) 335-0123** or visit **youneedled.com** for a free on-site consultation. Your customers are looking at that screen right now. Make it worth their while.`
+  },
+  {
+    slug: "lucy-the-elephant-live-cam-margate-nj",
+    title: "How We Put a 145-Year-Old Landmark Online: The Lucy the Elephant Live Cam Story",
+    category: "Technology",
+    date: "2026-08-05",
+    author: "Derek Weikel",
+    image: "/blog-images/lucy-hero-golden-hour.jpg",
+    excerpt: "Lucy the Elephant — Margate's 145-year-old, 65-foot National Historic Landmark — is now streaming live 24/7. Here's how the You Need L.E.D. team wired a 19th-century icon with modern PTZ cameras, and why it matters for South Jersey.",
+    readTime: "5 min read",
+    content: `# How We Put a 145-Year-Old Landmark Online: The Lucy the Elephant Live Cam Story
+
+On July 19, 2026 — the day before Lucy's 145th birthday — the world got a new way to see the Jersey Shore's most beloved landmark. Thanks to a partnership between **Save Lucy Committee, Inc.** and the team at **You Need L.E.D.**, Lucy the Elephant in Margate, NJ is now streaming **live, 24/7, from inside and out**.
+
+## The Landmark
+
+Lucy isn't just a building — she's history. Built in **1881** by Philadelphia developer James V. Lafferty, Lucy stands **65 feet tall** (six stories), weighs about **90 tons**, and is covered in 12,000 square feet of tin. She's the **oldest surviving roadside attraction in America**, was added to the National Register of Historic Places in 1971, and was designated a **National Historic Landmark** in 1976.
+
+She's also survived everything the Jersey Shore could throw at her: a scheduled demolition in 1970 (the Save Lucy Committee moved her 100 yards to safety), Superstorm Sandy, and a $1.4 million restoration that wrapped in 2022. In 2024, she got a $500K interior makeover. Now, thanks to modern camera technology, anyone with an internet connection can watch her — even from across the world.
+
+## The Project
+
+The goal was simple: give the world a window into Lucy — both the sweeping exterior views tourists know and the historic interior that millions have climbed through over the last 145 years.
+
+Our team installed **two professional PTZ (pan-tilt-zoom) cameras** — one capturing the exterior grounds and beachfront, one live inside the landmark itself. The interior install was the tricky part: working within a **145-year-old historic structure** means no shortcuts, no damage to the fabric of the building, and careful routing of every cable through spaces never designed for modern technology.
+
+If you've ever been inside Lucy, you know the drill: narrow spiral staircases, wooden beams, and tight attic spaces. That's where the work happened — running network cabling through the bones of a building older than most of the country's bridges.
+
+## Watch Lucy Live
+
+Both cameras stream 24/7, completely free:
+
+- **Exterior Live Cam** — the classic view of Lucy against the Margate skyline
+- **Interior Live Cam** — a look inside the historic structure
+
+You can watch both streams any time on our [Live Cameras page](/live-cameras), and they're also featured on the SeeTheView.com network with the "SeeTheView.com @ YouNeedLED.com" watermark.
+
+## Why This Matters for South Jersey
+
+Lucy draws visitors from around the world — she's regularly voted one of America's best roadside attractions. A live cam gives people who can't make the trip a reason to dream about the Jersey Shore, and gives locals a way to check on their favorite elephant any time of day.
+
+For You Need L.E.D., it's the kind of project we love: a local institution, a technical challenge, and a result the whole community can enjoy. From security cameras to fiber optics to live streaming infrastructure, our NJ DCA licensed team (License #34BF00056900) brings the same care to a 145-year-old landmark that we bring to every business and home we serve.
+
+## Want Your Property Streaming?
+
+Live cameras aren't just for famous elephants. We install professional camera systems for homes, businesses, hotels, and community spaces across South Jersey — with secure remote viewing from anywhere.
+
+Call us at **(609) 335-0123** or visit **youneedled.com** to talk about your project. And next time you're in Margate, say hi to Lucy — she's watching. 👋🐘`
   }
 ];

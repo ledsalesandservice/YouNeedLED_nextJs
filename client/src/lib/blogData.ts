@@ -4246,7 +4246,7 @@ Call us at **(609) 335-0123** or visit **youneedled.com** to talk about your pro
     excerpt: "A customer asked us to run Cat6 in the same conduit as their LED sign's power feed. NEC 800.133(A)(1)(c) says no. Here's the exact code language, the limited exceptions, and the compliant ways to do it.",
     readTime: "4 min read",
     author: "Derek Weikel",
-    image: "/blog-images/blog-led-display-1200w.webp",
+    image: "/blog-images/blog-network-1200w.webp",
     content: `# Can Ethernet Share a Conduit with LED Sign Power? The NEC Says No
 
 Last week a customer in Egg Harbor Township asked us to pull Cat6 Ethernet through the same conduit that feeds his LED sign — one pipe, power and data together, straight up the pole. It sounds convenient. It's also a code violation, and when we told him, he pushed back. So we pulled the rule and put it on the record, because this comes up more often than it should.

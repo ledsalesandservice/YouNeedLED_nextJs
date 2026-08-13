@@ -170,14 +170,14 @@ export default function CaseStudy() {
           <div className="grid lg:grid-cols-2 gap-12 items-start">
             <FadeIn>
               <div>
-                <p className="text-sm font-semibold text-[#f97015] uppercase tracking-wider mb-3">The Challenge</p>
+                <p className="text-sm font-semibold text-[#c2410c] uppercase tracking-wider mb-3">The Challenge</p>
                 <h2 className="font-heading text-2xl sm:text-3xl font-bold text-slate-900 mb-5">What the Client Was Dealing With</h2>
                 <p className="text-slate-600 leading-relaxed text-base">{cs.challenge}</p>
               </div>
             </FadeIn>
             <FadeIn>
               <div>
-                <p className="text-sm font-semibold text-[#f97015] uppercase tracking-wider mb-3">Our Approach</p>
+                <p className="text-sm font-semibold text-[#c2410c] uppercase tracking-wider mb-3">Our Approach</p>
                 <h2 className="font-heading text-2xl sm:text-3xl font-bold text-slate-900 mb-5">How You Need L.E.D. Solved It</h2>
                 <p className="text-slate-600 leading-relaxed text-base">{cs.solution}</p>
               </div>
@@ -190,7 +190,7 @@ export default function CaseStudy() {
       <section className="py-16 lg:py-20 bg-slate-50">
         <div className="container">
           <FadeIn className="text-center max-w-2xl mx-auto mb-12">
-            <p className="text-sm font-semibold text-[#f97015] uppercase tracking-wider mb-3">What We Installed</p>
+            <p className="text-sm font-semibold text-[#c2410c] uppercase tracking-wider mb-3">What We Installed</p>
             <h2 className="font-heading text-2xl sm:text-3xl font-bold text-slate-900">Solution Breakdown</h2>
           </FadeIn>
           <StaggerContainer className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
@@ -233,7 +233,7 @@ export default function CaseStudy() {
       <section className="py-16 lg:py-20 bg-white">
         <div className="container">
           <FadeIn className="text-center max-w-xl mx-auto mb-10">
-            <p className="text-sm font-semibold text-[#f97015] uppercase tracking-wider mb-3">Explore Services Used</p>
+            <p className="text-sm font-semibold text-[#c2410c] uppercase tracking-wider mb-3">Explore Services Used</p>
             <h2 className="font-heading text-2xl font-bold text-slate-900">Services Featured in This Project</h2>
           </FadeIn>
           <StaggerContainer className="grid sm:grid-cols-3 gap-5 max-w-3xl mx-auto">
@@ -253,7 +253,7 @@ export default function CaseStudy() {
       <section className="py-16 bg-slate-50">
         <div className="container">
           <FadeIn className="text-center mb-10">
-            <p className="text-sm font-semibold text-[#f97015] uppercase tracking-wider mb-3">More Projects</p>
+            <p className="text-sm font-semibold text-[#c2410c] uppercase tracking-wider mb-3">More Projects</p>
             <h2 className="font-heading text-2xl font-bold text-slate-900">Other Case Studies</h2>
           </FadeIn>
           <StaggerContainer className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-4xl mx-auto">
@@ -273,7 +273,7 @@ export default function CaseStudy() {
                     />
                   </div>
                   <div className="p-4">
-                    <span className="text-xs font-semibold text-[#f97015] uppercase tracking-wider">{other.industry}</span>
+                    <span className="text-xs font-semibold text-[#c2410c] uppercase tracking-wider">{other.industry}</span>
                     <h3 className="font-heading text-sm font-bold text-slate-900 mt-1 mb-2 leading-snug">{other.title}</h3>
                     <span className="inline-flex items-center gap-1 text-xs font-medium text-[#0e319a]">Read Case Study <ArrowRight className="w-3 h-3" /></span>
                   </div>
@@ -293,7 +293,7 @@ export default function CaseStudy() {
               You Need L.E.D. is NJ DCA Licensed with 34 years of industry experience serving South Jersey businesses. Get a free on-site assessment and custom quote.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <Link href="/contact" className="inline-flex items-center gap-2 px-7 py-3.5 bg-[#f97015] text-white font-semibold rounded-lg hover:bg-[#e86510] transition-colors text-sm shadow-lg">
+              <Link href="/contact" className="inline-flex items-center gap-2 px-7 py-3.5 bg-[#f97015] text-[#0a1040] font-semibold rounded-lg hover:bg-[#e86510] transition-colors text-sm shadow-lg">
                 Schedule Free Assessment <ArrowRight className="w-4 h-4" />
               </Link>
               <a href={SITE.phoneTel} className="inline-flex items-center gap-2 px-7 py-3.5 bg-[#0e319a] text-white font-semibold rounded-lg hover:bg-[#0c2a82] transition-colors text-sm">

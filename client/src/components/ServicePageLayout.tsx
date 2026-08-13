@@ -109,7 +109,7 @@ export default function ServicePageLayout({
           <div className="flex flex-wrap justify-center gap-4">
             <Link
               href={primaryCta.href}
-              className="inline-flex items-center gap-2 px-6 py-3.5 bg-[#f97015] text-white font-semibold rounded-lg hover:bg-[#e86510] transition-colors text-sm shadow-lg"
+              className="inline-flex items-center gap-2 px-6 py-3.5 bg-[#f97015] text-[#0a1040] font-semibold rounded-lg hover:bg-[#e86510] transition-colors text-sm shadow-lg"
             >
               {primaryCta.label} <ArrowRight className="w-4 h-4" />
             </Link>
@@ -128,6 +128,7 @@ export default function ServicePageLayout({
       {/* Features grid */}
       <section className="py-16 lg:py-20 bg-white">
         <div className="container">
+          <h2 className="sr-only">Key Features</h2>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {features.map((f) => (
               <div key={f.title} className="p-6 bg-white rounded-xl border border-slate-200">
@@ -277,7 +278,7 @@ export default function ServicePageLayout({
             Contact our licensed professionals for a comprehensive assessment.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <Link href="/contact" className="inline-flex items-center gap-2 px-6 py-3.5 bg-[#f97015] text-white font-semibold rounded-lg hover:bg-[#e86510] transition-colors text-sm">
+            <Link href="/contact" className="inline-flex items-center gap-2 px-6 py-3.5 bg-[#f97015] text-[#0a1040] font-semibold rounded-lg hover:bg-[#e86510] transition-colors text-sm">
               Request Assessment <ArrowRight className="w-4 h-4" />
             </Link>
             <a href={SITE.phoneTel} className="inline-flex items-center gap-2 px-6 py-3.5 bg-white/10 text-white font-semibold rounded-lg hover:bg-white/20 transition-colors border border-white/20 text-sm">

@@ -144,7 +144,7 @@ export default function ServiceAreas() {
       <section className="py-16 lg:py-20 bg-gradient-to-br from-[#0e319a] to-[#081d5e]">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center">
-            <span className="inline-flex items-center gap-2 px-3 py-1.5 bg-[#f97015]/20 text-[#f97015] rounded-full text-xs font-semibold uppercase tracking-wider mb-6">
+            <span className="inline-flex items-center gap-2 px-3 py-1.5 bg-[#f97015]/20 text-[#fb923c] rounded-full text-xs font-semibold uppercase tracking-wider mb-6">
               <Zap className="w-3.5 h-3.5" /> Available in All Service Areas
             </span>
             <h2 className="font-heading text-3xl sm:text-4xl font-bold text-white mb-5">
@@ -156,7 +156,7 @@ export default function ServiceAreas() {
             <div className="flex flex-wrap justify-center gap-4">
               <Link
                 href="/services/ai-voice-agent"
-                className="inline-flex items-center gap-2 px-6 py-3.5 bg-[#f97015] text-white font-semibold rounded-lg hover:bg-[#e86510] transition-colors text-sm shadow-lg shadow-orange-500/25"
+                className="inline-flex items-center gap-2 px-6 py-3.5 bg-[#f97015] text-[#0a1040] font-semibold rounded-lg hover:bg-[#e86510] transition-colors text-sm shadow-lg shadow-orange-500/25"
               >
                 <Bot className="w-4 h-4" /> Book a Free Demo <ArrowRight className="w-4 h-4" />
               </Link>

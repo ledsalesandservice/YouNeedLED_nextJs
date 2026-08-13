@@ -84,7 +84,7 @@ export default function CountyPage() {
             <div className="flex flex-wrap justify-center gap-4">
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 px-7 py-3.5 bg-[#f97015] text-white font-semibold rounded-lg hover:bg-[#e86510] transition-colors text-sm shadow-lg shadow-orange-500/25"
+                className="inline-flex items-center gap-2 px-7 py-3.5 bg-[#f97015] text-[#0a1040] font-semibold rounded-lg hover:bg-[#e86510] transition-colors text-sm shadow-lg shadow-orange-500/25"
               >
                 Get a Free Quote <ArrowRight className="w-4 h-4" />
               </Link>
@@ -214,7 +214,7 @@ export default function CountyPage() {
       <section className="py-16 lg:py-20 bg-white">
         <div className="container max-w-3xl">
           <div className="text-center mb-8">
-            <div className="inline-flex items-center gap-2 text-[#f97015] text-xs font-semibold uppercase tracking-wider mb-3">
+            <div className="inline-flex items-center gap-2 text-[#c2410c] text-xs font-semibold uppercase tracking-wider mb-3">
               <Building2 className="w-4 h-4" /> {county.name} Case Study
             </div>
             <h2 className="font-heading text-2xl sm:text-3xl font-bold text-slate-900">
@@ -252,7 +252,7 @@ export default function CountyPage() {
             <div className="grid lg:grid-cols-2 gap-12 items-start">
               {county.spotlight && (
                 <div className="bg-white rounded-2xl border border-slate-200 p-8">
-                  <div className="flex items-center gap-2 text-[#f97015] text-xs font-semibold uppercase tracking-wider mb-4">
+                  <div className="flex items-center gap-2 text-[#c2410c] text-xs font-semibold uppercase tracking-wider mb-4">
                     <Building2 className="w-4 h-4" /> Local Project Spotlight
                   </div>
                   <h3 className="font-heading text-lg font-bold text-slate-900 mb-3">{county.spotlight.title}</h3>
@@ -301,7 +301,7 @@ export default function CountyPage() {
       <section className="py-16 lg:py-20 bg-gradient-to-br from-[#0e319a] to-[#081d5e]">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center">
-            <span className="inline-flex items-center gap-2 px-3 py-1.5 bg-[#f97015]/20 text-[#f97015] rounded-full text-xs font-semibold uppercase tracking-wider mb-6">
+            <span className="inline-flex items-center gap-2 px-3 py-1.5 bg-[#f97015]/20 text-[#fb923c] rounded-full text-xs font-semibold uppercase tracking-wider mb-6">
               <Zap className="w-3.5 h-3.5" /> Available Throughout {county.name}
             </span>
             <h2 className="font-heading text-3xl sm:text-4xl font-bold text-white mb-5">
@@ -313,7 +313,7 @@ export default function CountyPage() {
             <div className="flex flex-wrap justify-center gap-4">
               <Link
                 href="/services/ai-voice-agent"
-                className="inline-flex items-center gap-2 px-6 py-3.5 bg-[#f97015] text-white font-semibold rounded-lg hover:bg-[#e86510] transition-colors text-sm shadow-lg shadow-orange-500/25"
+                className="inline-flex items-center gap-2 px-6 py-3.5 bg-[#f97015] text-[#0a1040] font-semibold rounded-lg hover:bg-[#e86510] transition-colors text-sm shadow-lg shadow-orange-500/25"
               >
                 <Bot className="w-4 h-4" /> Book a Free Demo <ArrowRight className="w-4 h-4" />
               </Link>

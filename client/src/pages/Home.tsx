@@ -105,7 +105,7 @@ export default function Home() {
               <div className="flex flex-wrap items-center gap-4">
                 <Link
                   href="/contact"
-                  className="inline-flex items-center gap-2 px-6 py-3.5 bg-[#f97015] text-white font-semibold rounded-lg hover:bg-[#e86510] transition-all shadow-lg shadow-orange-500/25 text-sm"
+                  className="inline-flex items-center gap-2 px-6 py-3.5 bg-[#f97015] text-[#0a1040] font-semibold rounded-lg hover:bg-[#e86510] transition-all shadow-lg shadow-orange-500/25 text-sm"
                 >
                   Get a Free Security Quote <ArrowRight className="w-4 h-4" />
                 </Link>
@@ -125,7 +125,7 @@ export default function Home() {
       <section className="py-20 lg:py-28 bg-white">
         <div className="container">
           <FadeIn className="text-center max-w-2xl mx-auto mb-14">
-            <p className="text-sm font-semibold text-[#f97015] uppercase tracking-wider mb-3">Our Services</p>
+            <p className="text-sm font-semibold text-[#c2410c] uppercase tracking-wider mb-3">Our Services</p>
             <h2 className="font-heading text-3xl sm:text-4xl font-bold text-slate-900 mb-4">
               Complete Security & Technology Solutions
             </h2>
@@ -162,7 +162,7 @@ export default function Home() {
         <div className="container">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <FadeIn direction="right">
-              <span className="inline-flex items-center gap-2 px-3 py-1.5 bg-[#f97015]/20 text-[#f97015] rounded-full text-xs font-semibold uppercase tracking-wider mb-6">
+              <span className="inline-flex items-center gap-2 px-3 py-1.5 bg-[#f97015]/20 text-[#fb923c] rounded-full text-xs font-semibold uppercase tracking-wider mb-6">
                 <Zap className="w-3.5 h-3.5" /> New Service
               </span>
               <h2 className="font-heading text-3xl sm:text-4xl font-bold text-white mb-5 leading-tight">
@@ -181,7 +181,7 @@ export default function Home() {
                   <div key={feat.title} className="flex gap-3 p-4 bg-white/5 rounded-lg border border-white/10">
                     <div className="text-[#f97015] shrink-0 mt-0.5">{feat.icon}</div>
                     <div>
-                      <h4 className="text-sm font-semibold text-white mb-1">{feat.title}</h4>
+                      <h3 className="text-sm font-semibold text-white mb-1">{feat.title}</h3>
                       <p className="text-xs text-white/60 leading-relaxed">{feat.desc}</p>
                     </div>
                   </div>
@@ -190,7 +190,7 @@ export default function Home() {
               <div className="flex flex-wrap gap-3">
                 <Link
                   href="/services/ai-voice-agent"
-                  className="inline-flex items-center gap-2 px-5 py-3 bg-[#f97015] text-white font-semibold rounded-lg hover:bg-[#e86510] transition-colors text-sm shadow-lg shadow-orange-500/25"
+                  className="inline-flex items-center gap-2 px-5 py-3 bg-[#f97015] text-[#0a1040] font-semibold rounded-lg hover:bg-[#e86510] transition-colors text-sm shadow-lg shadow-orange-500/25"
                 >
                   <Bot className="w-4 h-4" /> Book a Free Demo
                 </Link>
@@ -231,7 +231,7 @@ export default function Home() {
       <section className="py-20 lg:py-28 bg-slate-50">
         <div className="container">
           <div className="text-center max-w-2xl mx-auto mb-14">
-            <p className="text-sm font-semibold text-[#f97015] uppercase tracking-wider mb-3">Real Reviews from Real Clients</p>
+            <p className="text-sm font-semibold text-[#c2410c] uppercase tracking-wider mb-3">Real Reviews from Real Clients</p>
             <h2 className="font-heading text-3xl sm:text-4xl font-bold text-slate-900 mb-5">
               Trusted by 500+ South Jersey Businesses
             </h2>
@@ -312,7 +312,7 @@ export default function Home() {
       <section className="py-20 lg:py-28 bg-white">
         <div className="container">
           <div className="text-center max-w-2xl mx-auto mb-14">
-            <p className="text-sm font-semibold text-[#f97015] uppercase tracking-wider mb-3">Why Choose Us</p>
+            <p className="text-sm font-semibold text-[#c2410c] uppercase tracking-wider mb-3">Why Choose Us</p>
             <h2 className="font-heading text-3xl sm:text-4xl font-bold text-slate-900 mb-4">
               Licensed, Certified & Trusted
             </h2>
@@ -358,7 +358,7 @@ export default function Home() {
       <section className="py-20 lg:py-28 bg-[#0e319a]">
         <div className="container">
           <div className="text-center max-w-2xl mx-auto mb-14">
-            <p className="text-sm font-semibold text-[#f97015] uppercase tracking-wider mb-3">Coverage Area</p>
+            <p className="text-sm font-semibold text-[#fb923c] uppercase tracking-wider mb-3">Coverage Area</p>
             <h2 className="font-heading text-3xl sm:text-4xl font-bold text-white mb-4">
               Serving the Tri-State Area
             </h2>
@@ -411,7 +411,7 @@ export default function Home() {
       <section className="py-20 lg:py-28 bg-white">
         <div className="container">
           <FadeIn className="text-center max-w-2xl mx-auto mb-12">
-            <p className="text-sm font-semibold text-[#f97015] uppercase tracking-wider mb-3">From the Field</p>
+            <p className="text-sm font-semibold text-[#c2410c] uppercase tracking-wider mb-3">From the Field</p>
             <h2 className="font-heading text-3xl sm:text-4xl font-bold text-slate-900 mb-4">
               Real Installs. Real Results.
             </h2>
@@ -491,7 +491,7 @@ export default function Home() {
         <div className="container">
           <div className="flex items-end justify-between mb-10 gap-4 flex-wrap">
             <div>
-              <p className="text-sm font-semibold text-[#f97015] uppercase tracking-wider mb-3">Security Insights</p>
+              <p className="text-sm font-semibold text-[#c2410c] uppercase tracking-wider mb-3">Security Insights</p>
               <h2 className="font-heading text-3xl font-bold text-slate-900">Latest from Our Blog</h2>
             </div>
             <Link href="/blog" className="inline-flex items-center gap-1 text-sm font-medium text-[#0e319a] hover:text-[#0e319a]/80 transition-colors">
@@ -538,7 +538,7 @@ export default function Home() {
             <div className="flex flex-wrap justify-center gap-4">
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 px-6 py-3.5 bg-[#f97015] text-white font-semibold rounded-lg hover:bg-[#e86510] transition-colors text-sm shadow-lg"
+                className="inline-flex items-center gap-2 px-6 py-3.5 bg-[#f97015] text-[#0a1040] font-semibold rounded-lg hover:bg-[#e86510] transition-colors text-sm shadow-lg"
               >
                 Get Your Free Assessment <ArrowRight className="w-4 h-4" />
               </Link>

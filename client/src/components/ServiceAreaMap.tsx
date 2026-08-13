@@ -74,7 +74,7 @@ export default function ServiceAreaMap() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {Object.entries(grouped).map(([state, locations]) => (
             <div key={state}>
-              <h4 className="text-white font-semibold text-sm mb-3 uppercase tracking-wider">
+              <h3 className="text-white font-semibold text-sm mb-3 uppercase tracking-wider">
                 {state === "NJ"
                   ? "New Jersey"
                   : state === "DE"
@@ -82,7 +82,7 @@ export default function ServiceAreaMap() {
                   : state === "MD"
                   ? "Maryland"
                   : "Pennsylvania"}
-              </h4>
+              </h3>
               <div className="flex flex-wrap gap-2">
                 {locations.map((loc, i) => (
                   <div
@@ -99,7 +99,7 @@ export default function ServiceAreaMap() {
 
         {/* Regional coverage note */}
         <div className="mt-6 pt-4 border-t border-white/10 text-center">
-          <p className="text-xs text-white/50">
+          <p className="text-xs text-white/70">
             Full-service coverage across New Jersey, plus VoIP, fiber, digital signage, and more in PA, DE, and MD &middot; On-site service available throughout the Delaware Valley
           </p>
         </div>
@@ -118,7 +118,7 @@ export default function ServiceAreaMap() {
             className="bg-white/10 rounded-lg px-4 py-3 text-center"
           >
             <p className="text-xl font-bold text-white">{stat.value}</p>
-            <p className="text-xs text-white/60 mt-0.5">{stat.label}</p>
+            <p className="text-xs text-white/80 mt-0.5">{stat.label}</p>
           </div>
         ))}
       </div>

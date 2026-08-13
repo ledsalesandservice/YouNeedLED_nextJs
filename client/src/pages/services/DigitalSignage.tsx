@@ -317,7 +317,7 @@ export default function DigitalSignage() {
               </div>
               <a
                 href="/contact"
-                className="shrink-0 inline-flex items-center gap-2 bg-[#f97316] hover:bg-[#ea6c0a] text-white font-semibold px-7 py-3 rounded-lg transition-colors text-sm"
+                className="shrink-0 inline-flex items-center gap-2 bg-[#f97316] hover:bg-[#ea6c0a] text-[#0a1040] font-semibold px-7 py-3 rounded-lg transition-colors text-sm"
               >
                 Start Your Free Trial →
               </a>

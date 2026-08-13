@@ -68,18 +68,18 @@ export default function Contact() {
               <form onSubmit={handleSubmit} className="space-y-5">
                 <div className="grid sm:grid-cols-2 gap-5">
                   <div>
-                    <label className="block text-sm font-medium text-slate-700 mb-1.5">Full Name *</label>
+                    <label htmlFor="contact-name" className="block text-sm font-medium text-slate-700 mb-1.5">Full Name *</label>
                     <input
-                      type="text" required value={formData.name}
+                      type="text" id="contact-name" required value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                       className="w-full px-4 py-2.5 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-[#0e319a]/20 focus:border-[#0e319a] outline-none transition-colors"
                       placeholder="Your name"
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-slate-700 mb-1.5">Email *</label>
+                    <label htmlFor="contact-email" className="block text-sm font-medium text-slate-700 mb-1.5">Email *</label>
                     <input
-                      type="email" required value={formData.email}
+                      type="email" id="contact-email" required value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                       className="w-full px-4 py-2.5 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-[#0e319a]/20 focus:border-[#0e319a] outline-none transition-colors"
                       placeholder="your@email.com"
@@ -88,17 +88,18 @@ export default function Contact() {
                 </div>
                 <div className="grid sm:grid-cols-2 gap-5">
                   <div>
-                    <label className="block text-sm font-medium text-slate-700 mb-1.5">Phone</label>
+                    <label htmlFor="contact-phone" className="block text-sm font-medium text-slate-700 mb-1.5">Phone</label>
                     <input
-                      type="tel" value={formData.phone}
+                      type="tel" id="contact-phone" value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                       className="w-full px-4 py-2.5 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-[#0e319a]/20 focus:border-[#0e319a] outline-none transition-colors"
                       placeholder="(555) 000-0000"
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-slate-700 mb-1.5">Service Needed</label>
+                    <label htmlFor="contact-service" className="block text-sm font-medium text-slate-700 mb-1.5">Service Needed</label>
                     <select
+                      id="contact-service"
                       value={formData.service}
                       onChange={(e) => setFormData({ ...formData, service: e.target.value })}
                       className="w-full px-4 py-2.5 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-[#0e319a]/20 focus:border-[#0e319a] outline-none transition-colors bg-white"
@@ -116,8 +117,9 @@ export default function Contact() {
                   </div>
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-slate-700 mb-1.5">Message *</label>
+                  <label htmlFor="contact-message" className="block text-sm font-medium text-slate-700 mb-1.5">Message *</label>
                   <textarea
+                    id="contact-message"
                     required rows={5} value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     className="w-full px-4 py-2.5 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-[#0e319a]/20 focus:border-[#0e319a] outline-none transition-colors resize-none"
@@ -127,7 +129,7 @@ export default function Contact() {
                 <button
                   type="submit"
                   disabled={submitting}
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-[#f97015] text-white font-semibold rounded-lg hover:bg-[#e86510] transition-colors text-sm shadow-sm disabled:opacity-60 disabled:cursor-not-allowed"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-[#f97015] text-[#0a1040] font-semibold rounded-lg hover:bg-[#e86510] transition-colors text-sm shadow-sm disabled:opacity-60 disabled:cursor-not-allowed"
                 >
                   {submitting ? (
                     <><Loader2 className="w-4 h-4 animate-spin" /> Sending…</>

@@ -97,7 +97,7 @@ export default function VoIP() {
         <div className="container">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <span className="inline-flex items-center gap-2 px-3 py-1.5 bg-[#f97015]/20 text-[#f97015] rounded-full text-xs font-semibold uppercase tracking-wider mb-6">
+              <span className="inline-flex items-center gap-2 px-3 py-1.5 bg-[#f97015]/20 text-[#fb923c] rounded-full text-xs font-semibold uppercase tracking-wider mb-6">
                 <Zap className="w-3.5 h-3.5" /> Bundled with VoIP
               </span>
               <h2 className="font-heading text-3xl sm:text-4xl font-bold text-white mb-5 leading-tight">
@@ -121,7 +121,7 @@ export default function VoIP() {
               </div>
               <Link
                 href="/services/ai-voice-agent"
-                className="inline-flex items-center gap-2 px-6 py-3.5 bg-[#f97015] text-white font-semibold rounded-lg hover:bg-[#e86510] transition-colors text-sm shadow-lg shadow-orange-500/25"
+                className="inline-flex items-center gap-2 px-6 py-3.5 bg-[#f97015] text-[#0a1040] font-semibold rounded-lg hover:bg-[#e86510] transition-colors text-sm shadow-lg shadow-orange-500/25"
               >
                 <Bot className="w-4 h-4" /> Book a Free AI Voice Demo <ArrowRight className="w-4 h-4" />
               </Link>
@@ -136,7 +136,7 @@ export default function VoIP() {
       <section className="py-16 lg:py-20 bg-slate-50">
         <div className="container">
           <FadeIn className="text-center max-w-2xl mx-auto mb-12">
-            <p className="text-sm font-semibold text-[#f97015] uppercase tracking-wider mb-3">Industries We Serve</p>
+            <p className="text-sm font-semibold text-[#c2410c] uppercase tracking-wider mb-3">Industries We Serve</p>
             <h2 className="font-heading text-2xl sm:text-3xl font-bold text-slate-900 mb-4">
               VoIP Phone Systems for Every South Jersey Business
             </h2>
@@ -165,7 +165,7 @@ export default function VoIP() {
       <section className="py-14 bg-white">
         <div className="container">
           <FadeIn className="text-center max-w-2xl mx-auto mb-10">
-            <p className="text-sm font-semibold text-[#f97015] uppercase tracking-wider mb-3">Local Coverage</p>
+            <p className="text-sm font-semibold text-[#c2410c] uppercase tracking-wider mb-3">Local Coverage</p>
             <h2 className="font-heading text-2xl font-bold text-slate-900 mb-3">VoIP Installation Throughout South Jersey</h2>
           </FadeIn>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl mx-auto">

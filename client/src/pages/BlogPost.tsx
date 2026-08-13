@@ -141,7 +141,7 @@ export default function BlogPost() {
           <h2 className="font-heading text-2xl font-bold text-slate-900 mb-3">Ready to Get Started?</h2>
           <p className="text-slate-600 mb-6">Contact You Need L.E.D. for a free consultation on your security and technology needs.</p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <Link href="/contact" className="inline-flex items-center justify-center px-6 py-3 bg-[#f97015] text-white font-semibold rounded-lg hover:bg-[#e06010] transition-colors">
+            <Link href="/contact" className="inline-flex items-center justify-center px-6 py-3 bg-[#f97015] text-[#0a1040] font-semibold rounded-lg hover:bg-[#e06010] transition-colors">
               Get a Free Quote
             </Link>
             <a href="tel:+16093350123" className="inline-flex items-center justify-center px-6 py-3 border-2 border-[#0e319a] text-[#0e319a] font-semibold rounded-lg hover:bg-[#0e319a] hover:text-white transition-colors">
@@ -302,27 +302,29 @@ function getRelatedServices(category: string): { label: string; href: string; de
 function renderMarkdown(content: string) {
   const blocks = content.split("\n\n");
   const elements: React.ReactNode[] = [];
+  // Track emitted heading level so content headings never skip a level
+  // (post title is h1, so content starts at effective level 1)
+  let lastLevel = 1;
 
   for (let i = 0; i < blocks.length; i++) {
     const block = blocks[i].trim();
     if (!block) continue;
 
-    // Headings
-    if (block.startsWith("#### ")) {
-      elements.push(<h4 key={i}>{cleanInlineMarkdown(block.slice(5))}</h4>);
-      continue;
-    }
-    if (block.startsWith("### ")) {
-      elements.push(<h3 key={i}>{cleanInlineMarkdown(block.slice(4))}</h3>);
-      continue;
-    }
-    if (block.startsWith("## ")) {
-      elements.push(<h2 key={i}>{cleanInlineMarkdown(block.slice(3))}</h2>);
-      continue;
-    }
+    // Headings — normalize skips (e.g. h1 → h3 becomes h1 → h2)
+    let declared = 0;
+    if (block.startsWith("#### ")) declared = 4;
+    else if (block.startsWith("### ")) declared = 3;
+    else if (block.startsWith("## ")) declared = 2;
     // # h1 in content — render as h2 (h1 is reserved for the post title)
-    if (block.startsWith("# ")) {
-      elements.push(<h2 key={i}>{cleanInlineMarkdown(block.slice(2))}</h2>);
+    else if (block.startsWith("# ")) declared = 2;
+
+    if (declared > 0) {
+      const level = Math.max(2, Math.min(declared, lastLevel + 1));
+      lastLevel = level;
+      const text = cleanInlineMarkdown(block.replace(/^#{1,4}\s+/, ""));
+      if (level === 2) elements.push(<h2 key={i}>{text}</h2>);
+      else if (level === 3) elements.push(<h3 key={i}>{text}</h3>);
+      else elements.push(<h4 key={i}>{text}</h4>);
       continue;
     }
 

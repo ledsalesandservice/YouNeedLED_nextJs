@@ -18,7 +18,7 @@ export default function CaseStudies() {
       <section className="bg-gradient-to-br from-[#0a1f6e] via-[#0e319a] to-[#1a4bc4] text-white py-20 lg:py-28">
         <div className="container">
           <FadeIn className="max-w-3xl">
-            <p className="text-sm font-semibold text-[#f97015] uppercase tracking-wider mb-4">Real Projects. Real Results.</p>
+            <p className="text-sm font-semibold text-[#c2410c] uppercase tracking-wider mb-4">Real Projects. Real Results.</p>
             <h1 className="font-heading text-4xl sm:text-5xl font-bold mb-5 leading-tight">Case Studies</h1>
             <p className="text-lg text-white/80 max-w-xl">
               See how South Jersey businesses have used You Need L.E.D. to solve real security and technology challenges — with measurable results.
@@ -57,7 +57,7 @@ export default function CaseStudies() {
                         <span className="flex items-center gap-1 text-xs text-slate-500"><MapPin className="w-3 h-3" /> {cs.location}</span>
                         <span className="flex items-center gap-1 text-xs text-slate-500"><Building2 className="w-3 h-3" /> {cs.industry}</span>
                       </div>
-                      <span className="inline-flex items-center gap-1 text-sm font-semibold text-[#f97015]">Read More <ArrowRight className="w-3.5 h-3.5" /></span>
+                      <span className="inline-flex items-center gap-1 text-sm font-semibold text-[#c2410c]">Read More <ArrowRight className="w-3.5 h-3.5" /></span>
                     </div>
                   </div>
                 </Link>
@@ -75,7 +75,7 @@ export default function CaseStudies() {
             <p className="text-slate-600 mb-8 max-w-lg mx-auto">
               NJ DCA Licensed. 34 years of industry experience. 500+ satisfied clients across South Jersey and the Delaware Valley.
             </p>
-            <Link href="/contact" className="inline-flex items-center gap-2 px-8 py-4 bg-[#f97015] text-white font-semibold rounded-lg hover:bg-[#e86510] transition-colors text-sm shadow-lg">
+            <Link href="/contact" className="inline-flex items-center gap-2 px-8 py-4 bg-[#f97015] text-[#0a1040] font-semibold rounded-lg hover:bg-[#e86510] transition-colors text-sm shadow-lg">
               Get a Free Assessment <ArrowRight className="w-4 h-4" />
             </Link>
           </FadeIn>

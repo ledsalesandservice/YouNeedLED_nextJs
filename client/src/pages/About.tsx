@@ -107,7 +107,7 @@ export default function About() {
         <div className="container">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <p className="text-sm font-semibold text-[#f97015] uppercase tracking-wider mb-3">Our Story</p>
+              <p className="text-sm font-semibold text-[#c2410c] uppercase tracking-wider mb-3">Our Story</p>
               <h2 className="font-heading text-3xl font-bold text-slate-900 mb-6">From LED Lighting to Complete Security Solutions</h2>
               <div className="space-y-4 text-slate-600 leading-relaxed">
                 <p>
@@ -172,7 +172,7 @@ export default function About() {
             <span>{SITE.address.full}</span>
           </div>
           <p className="text-sm text-slate-500 mb-8">Serving the entire tri-state area from our Linwood, NJ headquarters.</p>
-          <Link href="/contact" className="inline-flex items-center gap-2 px-6 py-3.5 bg-[#f97015] text-white font-semibold rounded-lg hover:bg-[#e86510] transition-colors text-sm">
+          <Link href="/contact" className="inline-flex items-center gap-2 px-6 py-3.5 bg-[#f97015] text-[#0a1040] font-semibold rounded-lg hover:bg-[#e86510] transition-colors text-sm">
             Contact Us <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
@@ -188,7 +188,7 @@ export default function About() {
             Get a free consultation from our licensed team. We'll design a custom solution for your property.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <Link href="/contact" className="inline-flex items-center gap-2 px-6 py-3.5 bg-[#f97015] text-white font-semibold rounded-lg hover:bg-[#e86510] transition-colors text-sm">
+            <Link href="/contact" className="inline-flex items-center gap-2 px-6 py-3.5 bg-[#f97015] text-[#0a1040] font-semibold rounded-lg hover:bg-[#e86510] transition-colors text-sm">
               Get Free Consultation <ArrowRight className="w-4 h-4" />
             </Link>
             <a href={SITE.phoneTel} className="inline-flex items-center gap-2 px-6 py-3.5 bg-white/10 text-white font-semibold rounded-lg hover:bg-white/20 transition-colors border border-white/20 text-sm">

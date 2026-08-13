@@ -53,7 +53,7 @@ export default function AiVoiceAgentLanding() {
         </div>
         <div className="relative container">
           <div className="max-w-3xl mx-auto text-center">
-            <span className="inline-flex items-center gap-2 px-3 py-1.5 bg-[#f97015]/20 text-[#f97015] rounded-full text-xs font-semibold uppercase tracking-wider mb-6">
+            <span className="inline-flex items-center gap-2 px-3 py-1.5 bg-[#f97015]/20 text-[#fb923c] rounded-full text-xs font-semibold uppercase tracking-wider mb-6">
               <Zap className="w-3.5 h-3.5" /> LEDConnect AI Voice Agent
             </span>
             <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-[1.1] mb-6">
@@ -65,7 +65,7 @@ export default function AiVoiceAgentLanding() {
             <div className="flex flex-wrap justify-center gap-4">
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 px-7 py-3.5 bg-[#f97015] text-white font-semibold rounded-lg hover:bg-[#e86510] transition-colors text-sm shadow-lg shadow-orange-500/25"
+                className="inline-flex items-center gap-2 px-7 py-3.5 bg-[#f97015] text-[#0a1040] font-semibold rounded-lg hover:bg-[#e86510] transition-colors text-sm shadow-lg shadow-orange-500/25"
               >
                 <Bot className="w-4 h-4" /> Book a Free Demo <ArrowRight className="w-4 h-4" />
               </Link>
@@ -84,7 +84,7 @@ export default function AiVoiceAgentLanding() {
       <section className="py-20 lg:py-24 bg-white">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center mb-14">
-            <p className="text-sm font-semibold text-[#f97015] uppercase tracking-wider mb-3">The Real Cost</p>
+            <p className="text-sm font-semibold text-[#c2410c] uppercase tracking-wider mb-3">The Real Cost</p>
             <h2 className="font-heading text-3xl sm:text-4xl font-bold text-slate-900 mb-4">
               What Missed Calls and Slow Follow-Up Actually Cost You
             </h2>
@@ -115,7 +115,7 @@ export default function AiVoiceAgentLanding() {
         <div className="container">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <p className="text-sm font-semibold text-[#f97015] uppercase tracking-wider mb-3">The Hidden Drain</p>
+              <p className="text-sm font-semibold text-[#c2410c] uppercase tracking-wider mb-3">The Hidden Drain</p>
               <h2 className="font-heading text-3xl sm:text-4xl font-bold text-slate-900 mb-5">
                 Routine Tier-1 Requests Are Eating Your Team's Time
               </h2>
@@ -155,7 +155,7 @@ export default function AiVoiceAgentLanding() {
       <section className="py-20 lg:py-24 bg-white">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center mb-14">
-            <p className="text-sm font-semibold text-[#f97015] uppercase tracking-wider mb-3">Beyond Voicemail</p>
+            <p className="text-sm font-semibold text-[#c2410c] uppercase tracking-wider mb-3">Beyond Voicemail</p>
             <h2 className="font-heading text-3xl sm:text-4xl font-bold text-slate-900 mb-4">
               What an AI Voice Agent Actually Does
             </h2>
@@ -188,7 +188,7 @@ export default function AiVoiceAgentLanding() {
       <section className="py-20 lg:py-24 bg-slate-50">
         <div className="container max-w-4xl">
           <div className="text-center mb-14">
-            <p className="text-sm font-semibold text-[#f97015] uppercase tracking-wider mb-3">From Conversation to Action</p>
+            <p className="text-sm font-semibold text-[#c2410c] uppercase tracking-wider mb-3">From Conversation to Action</p>
             <h2 className="font-heading text-3xl sm:text-4xl font-bold text-slate-900 mb-4">
               How a Live Call Becomes a Structured PSA Ticket
             </h2>
@@ -222,7 +222,7 @@ export default function AiVoiceAgentLanding() {
       <section className="py-20 lg:py-24 bg-white">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center mb-14">
-            <p className="text-sm font-semibold text-[#f97015] uppercase tracking-wider mb-3">Practical Fit</p>
+            <p className="text-sm font-semibold text-[#c2410c] uppercase tracking-wider mb-3">Practical Fit</p>
             <h2 className="font-heading text-3xl sm:text-4xl font-bold text-slate-900 mb-4">
               Where AI Voice Agents Fit Into Your Service Desk Today
             </h2>
@@ -253,7 +253,7 @@ export default function AiVoiceAgentLanding() {
       <section className="py-20 lg:py-24 bg-slate-50">
         <div className="container max-w-5xl">
           <div className="text-center mb-14">
-            <p className="text-sm font-semibold text-[#f97015] uppercase tracking-wider mb-3">The Comparison</p>
+            <p className="text-sm font-semibold text-[#c2410c] uppercase tracking-wider mb-3">The Comparison</p>
             <h2 className="font-heading text-3xl sm:text-4xl font-bold text-slate-900 mb-4">
               AI vs. More Staff, Overtime &amp; Answering Services
             </h2>
@@ -302,7 +302,7 @@ export default function AiVoiceAgentLanding() {
       <section className="py-20 lg:py-24 bg-white">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center mb-14">
-            <p className="text-sm font-semibold text-[#f97015] uppercase tracking-wider mb-3">Buyer's Guide</p>
+            <p className="text-sm font-semibold text-[#c2410c] uppercase tracking-wider mb-3">Buyer's Guide</p>
             <h2 className="font-heading text-3xl sm:text-4xl font-bold text-slate-900 mb-4">
               What to Look For When Evaluating an AI Voice Solution
             </h2>
@@ -335,7 +335,7 @@ export default function AiVoiceAgentLanding() {
       <section className="py-20 lg:py-24 bg-slate-50">
         <div className="container max-w-4xl">
           <div className="text-center mb-14">
-            <p className="text-sm font-semibold text-[#f97015] uppercase tracking-wider mb-3">Getting Started</p>
+            <p className="text-sm font-semibold text-[#c2410c] uppercase tracking-wider mb-3">Getting Started</p>
             <h2 className="font-heading text-3xl sm:text-4xl font-bold text-slate-900 mb-4">
               Start With One Focused Use Case, Then Expand
             </h2>
@@ -353,7 +353,7 @@ export default function AiVoiceAgentLanding() {
                 <div className="w-14 h-14 rounded-xl bg-[#0e319a]/5 flex items-center justify-center text-[#0e319a] mx-auto mb-4">
                   {c.icon}
                 </div>
-                <p className="text-xs font-semibold text-[#f97015] uppercase tracking-wider mb-1">{c.phase}</p>
+                <p className="text-xs font-semibold text-[#c2410c] uppercase tracking-wider mb-1">{c.phase}</p>
                 <h3 className="font-heading text-base font-semibold text-slate-900 mb-2">{c.title}</h3>
                 <p className="text-sm text-slate-600 leading-relaxed">{c.desc}</p>
               </div>
@@ -372,7 +372,7 @@ export default function AiVoiceAgentLanding() {
             Book a free, no-pressure demo and we'll show you exactly how it would answer, resolve, and ticket your calls — tailored to your business.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <Link href="/contact" className="inline-flex items-center gap-2 px-7 py-3.5 bg-[#f97015] text-white font-semibold rounded-lg hover:bg-[#e86510] transition-colors text-sm shadow-lg">
+            <Link href="/contact" className="inline-flex items-center gap-2 px-7 py-3.5 bg-[#f97015] text-[#0a1040] font-semibold rounded-lg hover:bg-[#e86510] transition-colors text-sm shadow-lg">
               <Bot className="w-4 h-4" /> Book Your Free Demo <ArrowRight className="w-4 h-4" />
             </Link>
             <a href={SITE.phoneTel} className="inline-flex items-center gap-2 px-7 py-3.5 bg-white/10 text-white font-semibold rounded-lg hover:bg-white/20 transition-colors border border-white/20 text-sm">

@@ -69,7 +69,7 @@ export default function Testimonials() {
       {/* Hero */}
       <section className="py-20 lg:py-28 bg-[#0e319a]">
         <div className="container text-center">
-          <p className="text-sm font-semibold text-[#f97015] uppercase tracking-wider mb-3">Verified Google Reviews</p>
+          <p className="text-sm font-semibold text-[#c2410c] uppercase tracking-wider mb-3">Verified Google Reviews</p>
           <h1 className="font-heading text-4xl sm:text-5xl font-extrabold text-white mb-5">
             What Our Clients Say
           </h1>
@@ -208,7 +208,7 @@ export default function Testimonials() {
           <div className="flex flex-wrap justify-center gap-4">
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 px-6 py-3.5 bg-[#f97015] text-white font-semibold rounded-lg hover:bg-[#e86510] transition-colors text-sm"
+              className="inline-flex items-center gap-2 px-6 py-3.5 bg-[#f97015] text-[#0a1040] font-semibold rounded-lg hover:bg-[#e86510] transition-colors text-sm"
             >
               Get Free Consultation <ArrowRight className="w-4 h-4" />
             </Link>

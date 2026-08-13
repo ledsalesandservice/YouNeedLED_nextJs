@@ -118,7 +118,7 @@ export default function TermsOfService() {
                   </div>
                   <div className="grid sm:grid-cols-2 gap-4 mt-4">
                     <div className="bg-slate-50 rounded-lg p-4 border border-slate-200">
-                      <h4 className="font-semibold text-slate-900 mb-2">Service Implementation</h4>
+                      <h3 className="font-semibold text-slate-900 mb-2">Service Implementation</h3>
                       <ul className="space-y-1 text-slate-600">
                         {["Professional installation and setup","System configuration and testing","Staff training and documentation","Integration with existing systems","Performance optimization","Ongoing support activation"].map((item, i) => (
                           <li key={i} className="flex items-start gap-2"><span className="text-[#0e319a] mt-0.5">✓</span>{item}</li>
@@ -126,7 +126,7 @@ export default function TermsOfService() {
                       </ul>
                     </div>
                     <div className="bg-slate-50 rounded-lg p-4 border border-slate-200">
-                      <h4 className="font-semibold text-slate-900 mb-2">Customer Responsibilities</h4>
+                      <h3 className="font-semibold text-slate-900 mb-2">Customer Responsibilities</h3>
                       <ul className="space-y-1 text-slate-600">
                         {["Provide site access and readiness","Maintain reliable internet connection","Supply necessary facility information","Coordinate with building management","Ensure compliance with local codes","Participate in training sessions"].map((item, i) => (
                           <li key={i} className="flex items-start gap-2"><span className="text-[#0e319a] mt-0.5">✓</span>{item}</li>
@@ -144,7 +144,7 @@ export default function TermsOfService() {
                 <div className="space-y-6 text-sm text-slate-700">
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div className="bg-slate-50 rounded-lg p-4 border border-slate-200">
-                      <h4 className="font-semibold text-slate-900 mb-2">Payment Terms</h4>
+                      <h3 className="font-semibold text-slate-900 mb-2">Payment Terms</h3>
                       <ul className="space-y-1 text-slate-600">
                         {["Payment terms specified in each Service Order","Monthly billing for ongoing services","Net 30 payment terms for qualified businesses","Deposits may be required for large projects","Late fees apply to overdue accounts","Right to suspend service for non-payment"].map((item, i) => (
                           <li key={i} className="flex items-start gap-2"><span className="text-[#0e319a] mt-0.5">✓</span>{item}</li>
@@ -152,7 +152,7 @@ export default function TermsOfService() {
                       </ul>
                     </div>
                     <div className="bg-slate-50 rounded-lg p-4 border border-slate-200">
-                      <h4 className="font-semibold text-slate-900 mb-2">Accepted Payment Methods</h4>
+                      <h3 className="font-semibold text-slate-900 mb-2">Accepted Payment Methods</h3>
                       <ul className="space-y-1 text-slate-600">
                         {["Business checks","Credit cards (Visa, MasterCard, Amex)","ACH / electronic transfers","Wire transfers for large amounts","Financing options for qualified customers","Purchase orders for approved accounts"].map((item, i) => (
                           <li key={i} className="flex items-start gap-2"><span className="text-[#0e319a] mt-0.5">✓</span>{item}</li>
@@ -220,7 +220,7 @@ export default function TermsOfService() {
                   <p>Voice services include VOIP Phone service, SIP phone service, IP Fax, and Hosted PBX solutions.</p>
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div className="bg-slate-50 rounded-lg p-4 border border-slate-200">
-                      <h4 className="font-semibold text-slate-900 mb-2">Service Features</h4>
+                      <h3 className="font-semibold text-slate-900 mb-2">Service Features</h3>
                       <ul className="space-y-1 text-slate-600">
                         {["Auto-attendant functionality","Voicemail-to-email","Call forwarding and routing","Conference calling","Mobile app integration","Call analytics and reporting"].map((item, i) => (
                           <li key={i} className="flex items-start gap-2"><span className="text-[#0e319a] mt-0.5">✓</span>{item}</li>
@@ -228,7 +228,7 @@ export default function TermsOfService() {
                       </ul>
                     </div>
                     <div className="bg-slate-50 rounded-lg p-4 border border-slate-200">
-                      <h4 className="font-semibold text-slate-900 mb-2">Service Requirements</h4>
+                      <h3 className="font-semibold text-slate-900 mb-2">Service Requirements</h3>
                       <ul className="space-y-1 text-slate-600">
                         {["Reliable broadband internet connection","Compatible IP phones or softphones","Network QoS configuration","Adequate bandwidth for voice traffic","Power backup for critical phones","Network security compliance"].map((item, i) => (
                           <li key={i} className="flex items-start gap-2"><span className="text-[#0e319a] mt-0.5">✓</span>{item}</li>
@@ -247,7 +247,7 @@ export default function TermsOfService() {
                   <p>Security services include burglar alarms, camera systems, access control, and monitoring solutions.</p>
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div className="bg-slate-50 rounded-lg p-4 border border-slate-200">
-                      <h4 className="font-semibold text-slate-900 mb-2">System Capabilities</h4>
+                      <h3 className="font-semibold text-slate-900 mb-2">System Capabilities</h3>
                       <ul className="space-y-1 text-slate-600">
                         {["24/7 professional monitoring","Mobile app remote access","AI-powered video analytics","Integration with access control","Emergency notification systems","Cloud storage and backup"].map((item, i) => (
                           <li key={i} className="flex items-start gap-2"><span className="text-[#0e319a] mt-0.5">✓</span>{item}</li>
@@ -255,7 +255,7 @@ export default function TermsOfService() {
                       </ul>
                     </div>
                     <div className="bg-slate-50 rounded-lg p-4 border border-slate-200">
-                      <h4 className="font-semibold text-slate-900 mb-2">Compliance &amp; Standards</h4>
+                      <h3 className="font-semibold text-slate-900 mb-2">Compliance &amp; Standards</h3>
                       <ul className="space-y-1 text-slate-600">
                         {["UL listed equipment and installation","Local fire department integration","ADA accessibility compliance","Insurance industry requirements","Regular testing and maintenance"].map((item, i) => (
                           <li key={i} className="flex items-start gap-2"><span className="text-[#0e319a] mt-0.5">✓</span>{item}</li>
@@ -274,7 +274,7 @@ export default function TermsOfService() {
                   <p>Digital signage solutions include LED displays, interactive kiosks, and content management systems.</p>
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div className="bg-slate-50 rounded-lg p-4 border border-slate-200">
-                      <h4 className="font-semibold text-slate-900 mb-2">Content Management</h4>
+                      <h3 className="font-semibold text-slate-900 mb-2">Content Management</h3>
                       <ul className="space-y-1 text-slate-600">
                         {["Cloud-based content management","Scheduled content updates","Multi-location synchronization","Template and design library","Real-time content modification","Performance analytics"].map((item, i) => (
                           <li key={i} className="flex items-start gap-2"><span className="text-[#0e319a] mt-0.5">✓</span>{item}</li>
@@ -282,7 +282,7 @@ export default function TermsOfService() {
                       </ul>
                     </div>
                     <div className="bg-slate-50 rounded-lg p-4 border border-slate-200">
-                      <h4 className="font-semibold text-slate-900 mb-2">Hardware Support</h4>
+                      <h3 className="font-semibold text-slate-900 mb-2">Hardware Support</h3>
                       <ul className="space-y-1 text-slate-600">
                         {["Professional installation and mounting","Network connectivity setup","Power and cable management","Display calibration and optimization","Ongoing maintenance and support","Hardware warranty coverage"].map((item, i) => (
                           <li key={i} className="flex items-start gap-2"><span className="text-[#0e319a] mt-0.5">✓</span>{item}</li>
@@ -301,7 +301,7 @@ export default function TermsOfService() {
                   <p>YouNeedLED Connect is our integrated platform that unifies communication, security, and automation systems.</p>
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div className="bg-slate-50 rounded-lg p-4 border border-slate-200">
-                      <h4 className="font-semibold text-slate-900 mb-2">Platform Features</h4>
+                      <h3 className="font-semibold text-slate-900 mb-2">Platform Features</h3>
                       <ul className="space-y-1 text-slate-600">
                         {["Unified dashboard interface","Cross-system integration","Centralized user management","Automated workflows and triggers","Comprehensive reporting","Mobile and web access"].map((item, i) => (
                           <li key={i} className="flex items-start gap-2"><span className="text-[#0e319a] mt-0.5">✓</span>{item}</li>
@@ -309,7 +309,7 @@ export default function TermsOfService() {
                       </ul>
                     </div>
                     <div className="bg-slate-50 rounded-lg p-4 border border-slate-200">
-                      <h4 className="font-semibold text-slate-900 mb-2">Service Benefits</h4>
+                      <h3 className="font-semibold text-slate-900 mb-2">Service Benefits</h3>
                       <ul className="space-y-1 text-slate-600">
                         {["Simplified system management","Reduced training requirements","Enhanced operational efficiency","Improved incident response","Scalable architecture","Future-ready technology"].map((item, i) => (
                           <li key={i} className="flex items-start gap-2"><span className="text-[#0e319a] mt-0.5">✓</span>{item}</li>
@@ -330,7 +330,7 @@ export default function TermsOfService() {
                   <div><strong className="text-slate-900">Opt-Out & Cancellation</strong><p className="mt-1">You can cancel the SMS service at any time. Simply text "STOP" to the shortcode or phone number you received the message from. Upon sending "STOP", we will confirm your unsubscribe status via SMS. Following this confirmation, you will no longer receive SMS messages from us. To rejoin, sign up as you did initially, and we will resume sending SMS messages to you.</p></div>
                   <div><strong className="text-slate-900">Help & Support</strong><p className="mt-1">If you experience issues with the messaging program you can reply with the keyword "HELP" for more assistance, or you can get help directly at info@youneedled.com or (609) 335-0123.</p></div>
                   <div><strong className="text-slate-900">Carrier Liability & Rates</strong><p className="mt-1">Carriers are not liable for delayed or undelivered messages. As always, message and data rates may apply for any messages sent to you from us and to us from you. Message frequency varies. If you have any questions about your text plan or data plan, it is best to contact your wireless provider.</p></div>
-                  <div><strong className="text-slate-900">Privacy</strong><p className="mt-1">If you have any questions regarding privacy, please read our <Link href="/privacy-policy" className="text-[#0e319a] hover:underline">Privacy Policy</Link>. We explicitly do not sell, rent, or share your phone number or SMS consent data with any third parties for marketing purposes.</p></div>
+                  <div><strong className="text-slate-900">Privacy</strong><p className="mt-1">If you have any questions regarding privacy, please read our <Link href="/privacy-policy" className="text-[#0e319a] underline hover:no-underline">Privacy Policy</Link>. We explicitly do not sell, rent, or share your phone number or SMS consent data with any third parties for marketing purposes.</p></div>
                 </div>
               ),
             },
@@ -354,7 +354,7 @@ export default function TermsOfService() {
                   <p>We're here to help with any questions about this Agreement or our services.</p>
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div className="bg-slate-50 rounded-lg p-4 border border-slate-200">
-                      <h4 className="font-semibold text-slate-900 mb-2">Contact Us</h4>
+                      <h3 className="font-semibold text-slate-900 mb-2">Contact Us</h3>
                       <ul className="space-y-2 text-slate-600">
                         <li className="flex items-center gap-2"><Phone className="w-4 h-4 text-[#0e319a]" /><a href="tel:6093350123" className="hover:text-[#0e319a]">(609) 335-0123</a></li>
                         <li><a href="https://youneedled.com/contact" className="text-[#0e319a] hover:underline">youneedled.com/contact</a></li>
@@ -362,7 +362,7 @@ export default function TermsOfService() {
                       </ul>
                     </div>
                     <div className="bg-slate-50 rounded-lg p-4 border border-slate-200">
-                      <h4 className="font-semibold text-slate-900 mb-2">Business Address</h4>
+                      <h3 className="font-semibold text-slate-900 mb-2">Business Address</h3>
                       <address className="not-italic text-slate-600 leading-relaxed">
                         You Need L.E.D.<br />
                         199 New Rd Suite 61 #270<br />

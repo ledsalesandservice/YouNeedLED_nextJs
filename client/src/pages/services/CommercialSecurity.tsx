@@ -91,7 +91,7 @@ export default function CommercialSecurity() {
             Comprehensive security systems designed for businesses of all sizes. Licensed, insured, and trusted by 500+ clients across the tri-state area.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <Link href="/contact" className="inline-flex items-center gap-2 px-6 py-3.5 bg-[#f97015] text-white font-semibold rounded-lg hover:bg-[#e86510] transition-colors text-sm shadow-lg">
+            <Link href="/contact" className="inline-flex items-center gap-2 px-6 py-3.5 bg-[#f97015] text-[#0a1040] font-semibold rounded-lg hover:bg-[#e86510] transition-colors text-sm shadow-lg">
               Free Security Assessment <ArrowRight className="w-4 h-4" />
             </Link>
             <a href={SITE.phoneTel} className="inline-flex items-center gap-2 px-6 py-3.5 bg-white/10 text-white font-semibold rounded-lg hover:bg-white/20 transition-colors border border-white/20 text-sm">
@@ -105,7 +105,7 @@ export default function CommercialSecurity() {
       <section className="py-20 lg:py-28 bg-white">
         <div className="container">
           <div className="text-center max-w-2xl mx-auto mb-14">
-            <p className="text-sm font-semibold text-[#f97015] uppercase tracking-wider mb-3">Our Solutions</p>
+            <p className="text-sm font-semibold text-[#c2410c] uppercase tracking-wider mb-3">Our Solutions</p>
             <h2 className="font-heading text-3xl sm:text-4xl font-bold text-slate-900 mb-4">
               End-to-End Security Services
             </h2>
@@ -192,7 +192,7 @@ export default function CommercialSecurity() {
           <p className="text-white/80 mb-8 max-w-lg mx-auto">
             Schedule a free on-site security assessment with our licensed professionals.
           </p>
-          <Link href="/contact" className="inline-flex items-center gap-2 px-6 py-3.5 bg-[#f97015] text-white font-semibold rounded-lg hover:bg-[#e86510] transition-colors text-sm shadow-lg">
+          <Link href="/contact" className="inline-flex items-center gap-2 px-6 py-3.5 bg-[#f97015] text-[#0a1040] font-semibold rounded-lg hover:bg-[#e86510] transition-colors text-sm shadow-lg">
             Schedule Free Assessment <ArrowRight className="w-4 h-4" />
           </Link>
         </div>

@@ -39,7 +39,7 @@ export default function PrivacyPolicy() {
             <p className="text-slate-700 leading-relaxed">
               You Need L.E.D. LLC ("Company," "we," "us," or "our") is committed to protecting your privacy. This Privacy Policy
               explains how we collect, use, disclose, and safeguard your information when you visit our website{" "}
-              <a href="https://www.youneedled.com" className="text-[#0e319a]">www.youneedled.com</a> or contact us
+              <a href="https://www.youneedled.com" className="text-[#0e319a] underline">www.youneedled.com</a> or contact us
               about our security camera, fire alarm, access control, VoIP, and related technology services.
             </p>
             <p className="text-slate-700 leading-relaxed mt-4">
@@ -143,7 +143,7 @@ export default function PrivacyPolicy() {
               </ul>
               <p className="mt-3">
                 To exercise any of these rights, contact us at{" "}
-                <a href="mailto:info@youneedled.com" className="text-[#0e319a]">info@youneedled.com</a> or call{" "}
+                <a href="mailto:info@youneedled.com" className="text-[#0e319a] underline">info@youneedled.com</a> or call{" "}
                 <a href="tel:+16093350123" className="text-[#0e319a]">(609) 335-0123</a>.
               </p>
             </PolicySection>
@@ -193,10 +193,10 @@ export default function PrivacyPolicy() {
                   Phone: <a href="tel:+16093350123" className="text-[#0e319a]">(609) 335-0123</a>
                 </p>
                 <p className="text-slate-700">
-                  Email: <a href="mailto:info@youneedled.com" className="text-[#0e319a]">info@youneedled.com</a>
+                  Email: <a href="mailto:info@youneedled.com" className="text-[#0e319a] underline">info@youneedled.com</a>
                 </p>
                 <p className="text-slate-700">
-                  Website: <a href="https://www.youneedled.com" className="text-[#0e319a]">www.youneedled.com</a>
+                  Website: <a href="https://www.youneedled.com" className="text-[#0e319a] underline">www.youneedled.com</a>
                 </p>
               </div>
             </PolicySection>
@@ -211,7 +211,7 @@ export default function PrivacyPolicy() {
             </p>
             <a
               href="tel:+16093350123"
-              className="inline-flex items-center gap-2 bg-[#f97316] hover:bg-[#ea6c0a] text-white font-bold px-8 py-3 rounded-full transition-colors"
+              className="inline-flex items-center gap-2 bg-[#f97316] hover:bg-[#ea6c0a] text-[#0a1040] font-bold px-8 py-3 rounded-full transition-colors"
             >
               <Phone className="w-4 h-4" />
               (609) 335-0123

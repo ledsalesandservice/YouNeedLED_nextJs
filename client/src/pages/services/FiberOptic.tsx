@@ -142,7 +142,7 @@ export default function FiberOptic() {
         <section className="py-16 lg:py-20 bg-slate-50">
           <div className="container">
             <FadeIn className="text-center max-w-2xl mx-auto mb-12">
-              <p className="text-sm font-semibold text-[#f97015] uppercase tracking-wider mb-3">
+              <p className="text-sm font-semibold text-[#c2410c] uppercase tracking-wider mb-3">
                 Where We Work
               </p>
               <h2 className="font-heading text-2xl sm:text-3xl font-bold text-slate-900 mb-4">
@@ -249,7 +249,7 @@ export default function FiberOptic() {
         <section className="py-14 bg-slate-50">
           <div className="container">
             <FadeIn className="text-center max-w-2xl mx-auto mb-10">
-              <p className="text-sm font-semibold text-[#f97015] uppercase tracking-wider mb-3">
+              <p className="text-sm font-semibold text-[#c2410c] uppercase tracking-wider mb-3">
                 Local Coverage
               </p>
               <h2 className="font-heading text-2xl font-bold text-slate-900 mb-3">

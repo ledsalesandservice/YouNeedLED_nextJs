@@ -86,7 +86,7 @@ export default function FireAlarm() {
       <section className="py-16 lg:py-20 bg-white">
         <div className="container">
           <FadeIn className="text-center max-w-2xl mx-auto mb-12">
-            <p className="text-sm font-semibold text-[#f97015] uppercase tracking-wider mb-3">Industries We Serve</p>
+            <p className="text-sm font-semibold text-[#c2410c] uppercase tracking-wider mb-3">Industries We Serve</p>
             <h2 className="font-heading text-2xl sm:text-3xl font-bold text-slate-900 mb-4">
               Fire Alarm Systems for South Jersey Commercial Properties
             </h2>
@@ -116,7 +116,7 @@ export default function FireAlarm() {
       <section className="py-14 bg-slate-50">
         <div className="container">
           <FadeIn className="text-center max-w-2xl mx-auto mb-10">
-            <p className="text-sm font-semibold text-[#f97015] uppercase tracking-wider mb-3">Local Coverage</p>
+            <p className="text-sm font-semibold text-[#c2410c] uppercase tracking-wider mb-3">Local Coverage</p>
             <h2 className="font-heading text-2xl font-bold text-slate-900 mb-3">Fire Alarm Installation Throughout South Jersey</h2>
           </FadeIn>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl mx-auto">

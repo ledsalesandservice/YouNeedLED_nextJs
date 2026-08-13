@@ -109,9 +109,9 @@ export default function Footer() {
               </li>
             </ul>
             <div className="mt-5 pt-4 border-t border-white/10">
-              <p className="text-xs text-white/50">{SITE.hours.weekday}</p>
-              <p className="text-xs text-white/50">{SITE.hours.saturday}</p>
-              <p className="text-xs text-white/50">{SITE.hours.sunday}</p>
+              <p className="text-xs text-white/70">{SITE.hours.weekday}</p>
+              <p className="text-xs text-white/70">{SITE.hours.saturday}</p>
+              <p className="text-xs text-white/70">{SITE.hours.sunday}</p>
             </div>
           </div>
         </div>
@@ -120,12 +120,12 @@ export default function Footer() {
       {/* Bottom bar */}
       <div className="border-t border-white/10">
         <div className="container py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p className="text-xs text-white/40">
+          <p className="text-xs text-white/70">
             &copy; {new Date().getFullYear()} You Need L.E.D. All rights reserved. {SITE.license}
           </p>
           <div className="flex gap-4">
-            <Link href="/privacy-policy" className="text-xs text-white/40 hover:text-white/70 transition-colors">Privacy Policy</Link>
-            <Link href="/terms-of-service" className="text-xs text-white/40 hover:text-white/70 transition-colors">Terms of Service</Link>
+            <Link href="/privacy-policy" className="text-xs text-white/70 hover:text-white/70 transition-colors">Privacy Policy</Link>
+            <Link href="/terms-of-service" className="text-xs text-white/70 hover:text-white/70 transition-colors">Terms of Service</Link>
           </div>
         </div>
       </div>

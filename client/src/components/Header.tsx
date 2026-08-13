@@ -111,7 +111,7 @@ export default function Header() {
             </a>
             <Link
               href="/contact"
-              className="hidden sm:inline-flex items-center px-4 py-2 bg-[#f97015] text-white text-sm font-semibold rounded-lg hover:bg-[#e86510] transition-colors shadow-sm"
+              className="hidden sm:inline-flex items-center px-4 py-2 bg-[#f97015] text-[#0a1040] text-sm font-semibold rounded-lg hover:bg-[#e86510] transition-colors shadow-sm"
             >
               Request Quote
             </Link>

@@ -22,7 +22,7 @@ function Field({
       <label className="block text-sm font-semibold text-slate-700 mb-1">
         {label}{" "}
         {required ? <span className="text-red-500">*</span> : (
-          <span className="text-slate-400 font-normal">(optional)</span>
+          <span className="text-slate-500 font-normal">(optional)</span>
         )}
       </label>
       {children}
@@ -142,7 +142,7 @@ export default function ClientPortal() {
                 href="https://youneedled.simplelogin.net"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#f97015] text-white text-sm font-semibold rounded-lg hover:bg-orange-600 transition-colors"
+                className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#f97015] text-[#0a1040] text-sm font-semibold rounded-lg hover:bg-orange-600 transition-colors"
               >
                 Open Phone Portal <ExternalLink className="w-3.5 h-3.5" />
               </a>

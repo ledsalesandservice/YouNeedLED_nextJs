@@ -313,7 +313,7 @@ export default function CameraSequence() {
                       <button
                         key={sec}
                         onClick={() => { setIntervalSec(sec); setTimeLeft(sec); }}
-                        className={`text-xs px-2 py-1 rounded transition-colors ${interval === sec ? "bg-[#F97316] text-white" : "bg-gray-800 text-gray-400 hover:bg-gray-700"}`}
+                        className={`text-xs px-2 py-1 rounded transition-colors ${interval === sec ? "bg-[#F97316] text-[#0a1040]" : "bg-gray-800 text-gray-400 hover:bg-gray-700"}`}
                       >
                         {sec < 60 ? `${sec}s` : `${sec / 60}m`}
                       </button>
@@ -434,7 +434,7 @@ export default function CameraSequence() {
                     <button
                       key={sec}
                       onClick={() => { setIntervalSec(sec); setTimeLeft(sec); }}
-                      className={`text-[10px] px-2 py-1 rounded transition-colors ${interval === sec ? "bg-[#F97316] text-white" : "bg-white/10 text-gray-400 hover:bg-white/20"}`}
+                      className={`text-[10px] px-2 py-1 rounded transition-colors ${interval === sec ? "bg-[#F97316] text-[#0a1040]" : "bg-white/10 text-gray-400 hover:bg-white/20"}`}
                     >
                       {sec < 60 ? `${sec}s` : `${sec / 60}m`}
                     </button>

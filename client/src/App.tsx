@@ -147,8 +147,14 @@ function App() {
           <Toaster />
           <ScrollToTop />
           <div className="min-h-screen flex flex-col">
+            <a
+              href="#main"
+              className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[9999] focus:bg-[#0e319a] focus:text-white focus:px-4 focus:py-2 focus:rounded-lg focus:text-sm focus:font-semibold"
+            >
+              Skip to main content
+            </a>
             <Header />
-            <main className="flex-1">
+            <main id="main" className="flex-1">
               <PageTransition>
                 <Router />
               </PageTransition>

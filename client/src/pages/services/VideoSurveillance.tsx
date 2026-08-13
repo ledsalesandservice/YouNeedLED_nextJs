@@ -80,7 +80,7 @@ export default function VideoSurveillance() {
           <div className="container">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <FadeIn direction="right">
-                <p className="text-sm font-semibold text-[#f97015] uppercase tracking-wider mb-3">Why Resolution Matters</p>
+                <p className="text-sm font-semibold text-[#c2410c] uppercase tracking-wider mb-3">Why Resolution Matters</p>
                 <h2 className="font-heading text-2xl sm:text-3xl font-bold text-slate-900 mb-5">
                   4K Cameras Catch What Lower-Resolution Systems Miss
                 </h2>
@@ -124,7 +124,7 @@ export default function VideoSurveillance() {
         <section id="systems" className="py-16 lg:py-20 bg-slate-50">
           <div className="container">
             <FadeIn className="text-center max-w-2xl mx-auto mb-12">
-              <p className="text-sm font-semibold text-[#f97015] uppercase tracking-wider mb-3">Camera System Packages</p>
+              <p className="text-sm font-semibold text-[#c2410c] uppercase tracking-wider mb-3">Camera System Packages</p>
               <h2 className="font-heading text-2xl sm:text-3xl font-bold text-slate-900 mb-4">
                 Right-Sized Systems for Every Property
               </h2>
@@ -195,7 +195,7 @@ export default function VideoSurveillance() {
                     ))}
                   </ul>
                   {pkg.aiAddons && (
-                    <p className="text-xs text-[#f97015] font-semibold mb-4">✦ AI Intelligence Layer available as add-on</p>
+                    <p className="text-xs text-[#c2410c] font-semibold mb-4">✦ AI Intelligence Layer available as add-on</p>
                   )}
                   <Link href="/contact" className="block text-center px-4 py-2.5 bg-[#0e319a] text-white text-sm font-semibold rounded-lg hover:bg-[#0c2a85] transition-colors">
                     Get a Quote
@@ -210,7 +210,7 @@ export default function VideoSurveillance() {
         <section id="ai-features" className="py-16 lg:py-24 bg-white">
           <div className="container">
             <FadeIn className="text-center max-w-2xl mx-auto mb-14">
-              <p className="text-sm font-semibold text-[#f97015] uppercase tracking-wider mb-3">Optional Add-On</p>
+              <p className="text-sm font-semibold text-[#c2410c] uppercase tracking-wider mb-3">Optional Add-On</p>
               <h2 className="font-heading text-2xl sm:text-3xl font-bold text-slate-900 mb-4">
                 AI Intelligence Layer — Turn Your Cameras Into Smart Sensors
               </h2>
@@ -290,7 +290,7 @@ export default function VideoSurveillance() {
             {/* Advanced AI Features */}
             <FadeIn className="mb-14">
               <h3 className="font-heading text-lg font-bold text-slate-900 text-center mb-8">
-                Advanced AI Features <span className="text-sm font-normal text-[#f97015] ml-2">(Professional & Enterprise)</span>
+                Advanced AI Features <span className="text-sm font-normal text-[#c2410c] ml-2">(Professional & Enterprise)</span>
               </h3>
               <StaggerContainer className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
                 {[
@@ -352,7 +352,7 @@ export default function VideoSurveillance() {
                 </p>
                 <Link
                   href="/contact"
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-[#f97015] text-white font-semibold rounded-lg hover:bg-[#e86510] transition-colors text-sm"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-[#f97015] text-[#0a1040] font-semibold rounded-lg hover:bg-[#e86510] transition-colors text-sm"
                 >
                   Get an AI Upgrade Assessment <ArrowRight className="w-4 h-4" />
                 </Link>
@@ -365,7 +365,7 @@ export default function VideoSurveillance() {
         <section className="py-16 lg:py-20 bg-slate-50">
           <div className="container">
             <FadeIn className="text-center max-w-2xl mx-auto mb-12">
-              <p className="text-sm font-semibold text-[#f97015] uppercase tracking-wider mb-3">Industries We Serve</p>
+              <p className="text-sm font-semibold text-[#c2410c] uppercase tracking-wider mb-3">Industries We Serve</p>
               <h2 className="font-heading text-2xl sm:text-3xl font-bold text-slate-900 mb-4">
                 Security Camera Solutions for Every Business Type
               </h2>
@@ -400,7 +400,7 @@ export default function VideoSurveillance() {
         <section className="py-14 bg-white">
           <div className="container">
             <FadeIn className="text-center max-w-2xl mx-auto mb-10">
-              <p className="text-sm font-semibold text-[#f97015] uppercase tracking-wider mb-3">Local Coverage</p>
+              <p className="text-sm font-semibold text-[#c2410c] uppercase tracking-wider mb-3">Local Coverage</p>
               <h2 className="font-heading text-2xl sm:text-3xl font-bold text-slate-900 mb-4">
                 Security Camera Installation Throughout South Jersey
               </h2>

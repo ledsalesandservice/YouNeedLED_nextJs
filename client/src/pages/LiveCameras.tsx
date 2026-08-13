@@ -649,7 +649,7 @@ function CameraCard({ camera }: { camera: Camera }) {
               ) : (
                 <>
                   <WifiOff className="w-10 h-10 text-gray-700" />
-                  <span className="text-gray-600 text-xs font-medium">Offline</span>
+                  <span className="text-gray-400 text-xs font-medium">Offline</span>
                 </>
               )}
             </div>
@@ -676,7 +676,7 @@ function CameraCard({ camera }: { camera: Camera }) {
             ) : (
               <div className="flex items-center gap-1.5 bg-black/70 backdrop-blur-sm rounded-full px-2.5 py-1 border border-gray-700">
                 <span className="w-1.5 h-1.5 rounded-full bg-gray-600" />
-                <span className="text-[10px] font-bold text-gray-500 uppercase tracking-wider">Offline</span>
+                <span className="text-[10px] font-bold text-gray-400 uppercase tracking-wider">Offline</span>
               </div>
             )}
           </div>
@@ -709,12 +709,12 @@ function CameraCard({ camera }: { camera: Camera }) {
             <p className="text-white font-semibold text-sm group-hover:text-[#F97316] transition-colors">
               {camera.name}
             </p>
-            <p className="text-gray-600 text-xs mt-0.5">LED Live View · HLS Stream</p>
+            <p className="text-gray-400 text-xs mt-0.5">LED Live View · HLS Stream</p>
           </div>
           <span className={`text-xs px-2 py-0.5 rounded-full font-medium ${
             isLive
               ? "bg-green-900/40 text-green-400 border border-green-800/50"
-              : "bg-gray-800 text-gray-500 border border-gray-700"
+              : "bg-gray-800 text-gray-400 border border-gray-700"
           }`}>
             {isLive ? "● Live" : "Offline"}
           </span>
@@ -779,8 +779,8 @@ function YouTubeCameraCard({ cam }: { cam: YouTubeCamera }) {
           {cam.title}
         </p>
         <div className="flex items-center justify-between mt-1.5">
-          <p className="text-gray-500 text-xs">{cam.location}</p>
-          <span className="text-[10px] text-[#F97316]/80 font-medium bg-[#F97316]/10 border border-[#F97316]/20 rounded-full px-2 py-0.5">
+          <p className="text-gray-400 text-xs">{cam.location}</p>
+          <span className="text-[10px] text-[#fdba74] font-medium bg-[#F97316]/10 border border-[#F97316]/20 rounded-full px-2 py-0.5">
             {cam.installedBy}
           </span>
         </div>
@@ -850,12 +850,12 @@ export default function LiveCameras() {
               <div className="flex items-center gap-6 shrink-0">
                 <div className="text-center">
                   <div className="text-2xl font-bold text-white">{loading ? "…" : totalCount}</div>
-                  <div className="text-gray-500 text-xs uppercase tracking-wider mt-0.5">Cameras</div>
+                  <div className="text-gray-400 text-xs uppercase tracking-wider mt-0.5">Cameras</div>
                 </div>
                 <div className="w-px h-10 bg-gray-800" />
                 <div className="text-center">
                   <div className="text-2xl font-bold text-green-400">{loading ? "…" : liveCount + YT_CAMERAS.length + PARTNER_CAMERAS.length}</div>
-                  <div className="text-gray-500 text-xs uppercase tracking-wider mt-0.5">Live Now</div>
+                  <div className="text-gray-400 text-xs uppercase tracking-wider mt-0.5">Live Now</div>
                 </div>
               </div>
             </div>
@@ -872,7 +872,7 @@ export default function LiveCameras() {
                 <span className="w-2 h-2 rounded-full bg-[#F97316]" />
                 <h2 className="text-lg font-bold text-white">LED Live View</h2>
               </div>
-              <span className="text-xs text-gray-600 bg-gray-800 rounded-full px-2.5 py-0.5">HLS · Direct Stream</span>
+              <span className="text-xs text-gray-400 bg-gray-800 rounded-full px-2.5 py-0.5">HLS · Direct Stream</span>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
               {cameras.map(camera => (
@@ -912,7 +912,7 @@ export default function LiveCameras() {
                 Auto-Sequence All 8 Cameras
               </Link>
             </div>
-            <p className="text-gray-500 text-sm mb-6">
+            <p className="text-gray-400 text-sm mb-6">
               Live webcam feeds from the official You Need LED Security YouTube channel — real cameras, real South Jersey locations, streaming 24/7. Subscribe at{" "}
               <a href="https://www.youtube.com/@YouNeedLED-Security" target="_blank" rel="noopener noreferrer" className="text-red-400 hover:text-red-300 underline">youtube.com/@YouNeedLED-Security</a>.
             </p>
@@ -931,9 +931,9 @@ export default function LiveCameras() {
                 <Youtube className="w-4 h-4 text-red-500" />
                 <h2 className="text-lg font-bold text-white">South Jersey & Delaware Valley Cameras</h2>
               </div>
-              <span className="text-xs text-gray-600 bg-gray-800 rounded-full px-2.5 py-0.5">YouTube Live</span>
+              <span className="text-xs text-gray-400 bg-gray-800 rounded-full px-2.5 py-0.5">YouTube Live</span>
             </div>
-            <p className="text-gray-500 text-sm mb-6">
+            <p className="text-gray-400 text-sm mb-6">
               Live outdoor cameras installed and managed by You Need LED across South Jersey, the Jersey Shore, and the Delaware Valley. Click any camera to watch on YouTube.
             </p>
 
@@ -951,9 +951,9 @@ export default function LiveCameras() {
                 <Youtube className="w-4 h-4 text-gray-400" />
                 <h2 className="text-lg font-bold text-white">Partner Cameras</h2>
               </div>
-              <span className="text-xs text-gray-600 bg-gray-800 rounded-full px-2.5 py-0.5">YouTube Live</span>
+              <span className="text-xs text-gray-400 bg-gray-800 rounded-full px-2.5 py-0.5">YouTube Live</span>
             </div>
-            <p className="text-gray-500 text-sm mb-6">
+            <p className="text-gray-400 text-sm mb-6">
               Live cameras from our partner network at SeeTheView.com — beaches, skylines, wildlife, and landmarks from around the world. Click any camera to watch on YouTube.
             </p>
 
@@ -976,7 +976,7 @@ export default function LiveCameras() {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
               <a
                 href={SITE.phoneTel}
-                className="flex items-center gap-2 bg-[#F97316] hover:bg-[#EA6A0A] text-white font-semibold px-6 py-3 rounded-lg transition-colors text-sm"
+                className="flex items-center gap-2 bg-[#F97316] hover:bg-[#EA6A0A] text-[#0a1040] font-semibold px-6 py-3 rounded-lg transition-colors text-sm"
               >
                 <Phone className="w-4 h-4" />
                 Call {SITE.phone}

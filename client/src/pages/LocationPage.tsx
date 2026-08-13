@@ -143,7 +143,7 @@ export default function LocationPage() {
             <div className="flex flex-wrap justify-center gap-4">
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 px-7 py-3.5 bg-[#f97015] text-white font-semibold rounded-lg hover:bg-[#e86510] transition-colors text-sm shadow-lg shadow-orange-500/25"
+                className="inline-flex items-center gap-2 px-7 py-3.5 bg-[#f97015] text-[#0a1040] font-semibold rounded-lg hover:bg-[#e86510] transition-colors text-sm shadow-lg shadow-orange-500/25"
               >
                 Get a Free Quote <ArrowRight className="w-4 h-4" />
               </Link>
@@ -264,7 +264,7 @@ export default function LocationPage() {
               </div>
             </div>
             <div className="bg-white rounded-2xl border border-slate-200 p-8">
-              <div className="flex items-center gap-2 text-[#f97015] text-xs font-semibold uppercase tracking-wider mb-4">
+              <div className="flex items-center gap-2 text-[#c2410c] text-xs font-semibold uppercase tracking-wider mb-4">
                 <Building2 className="w-4 h-4" /> Case Study
               </div>
               <h3 className="font-heading text-lg font-bold text-slate-900 mb-3">{location.caseStudy.title}</h3>
@@ -301,7 +301,7 @@ export default function LocationPage() {
             <div className="grid lg:grid-cols-2 gap-12 items-start">
               {location.spotlight && (
                 <div className="bg-white rounded-2xl border border-slate-200 p-8">
-                  <div className="flex items-center gap-2 text-[#f97015] text-xs font-semibold uppercase tracking-wider mb-4">
+                  <div className="flex items-center gap-2 text-[#c2410c] text-xs font-semibold uppercase tracking-wider mb-4">
                     <Building2 className="w-4 h-4" /> Local Project Spotlight
                   </div>
                   <h3 className="font-heading text-lg font-bold text-slate-900 mb-3">{location.spotlight.title}</h3>
@@ -334,7 +334,7 @@ export default function LocationPage() {
       <section className="py-16 lg:py-20 bg-gradient-to-br from-[#0e319a] to-[#081d5e]">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center">
-            <span className="inline-flex items-center gap-2 px-3 py-1.5 bg-[#f97015]/20 text-[#f97015] rounded-full text-xs font-semibold uppercase tracking-wider mb-6">
+            <span className="inline-flex items-center gap-2 px-3 py-1.5 bg-[#f97015]/20 text-[#fb923c] rounded-full text-xs font-semibold uppercase tracking-wider mb-6">
               <Zap className="w-3.5 h-3.5" /> Now Available in {location.name}
             </span>
             <h2 className="font-heading text-3xl sm:text-4xl font-bold text-white mb-5">
@@ -353,7 +353,7 @@ export default function LocationPage() {
             <div className="flex flex-wrap justify-center gap-4">
               <Link
                 href="/services/ai-voice-agent"
-                className="inline-flex items-center gap-2 px-6 py-3.5 bg-[#f97015] text-white font-semibold rounded-lg hover:bg-[#e86510] transition-colors text-sm shadow-lg shadow-orange-500/25"
+                className="inline-flex items-center gap-2 px-6 py-3.5 bg-[#f97015] text-[#0a1040] font-semibold rounded-lg hover:bg-[#e86510] transition-colors text-sm shadow-lg shadow-orange-500/25"
               >
                 <Bot className="w-4 h-4" /> Book a Free Demo <ArrowRight className="w-4 h-4" />
               </Link>
@@ -432,7 +432,7 @@ export default function LocationPage() {
             Contact our licensed professionals for a free on-site assessment and custom quote.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <Link href="/contact" className="inline-flex items-center gap-2 px-7 py-3.5 bg-[#f97015] text-white font-semibold rounded-lg hover:bg-[#e86510] transition-colors text-sm shadow-lg">
+            <Link href="/contact" className="inline-flex items-center gap-2 px-7 py-3.5 bg-[#f97015] text-[#0a1040] font-semibold rounded-lg hover:bg-[#e86510] transition-colors text-sm shadow-lg">
               Schedule Free Assessment <ArrowRight className="w-4 h-4" />
             </Link>
             <a href={SITE.phoneTel} className="inline-flex items-center gap-2 px-7 py-3.5 bg-[#0e319a] text-white font-semibold rounded-lg hover:bg-[#0c2a82] transition-colors text-sm">

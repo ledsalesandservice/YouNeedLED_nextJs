@@ -51,7 +51,7 @@ export default function AiVoiceAgent() {
         <div className="relative container">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <span className="inline-flex items-center gap-2 px-3 py-1.5 bg-[#f97015]/20 text-[#f97015] rounded-full text-xs font-semibold uppercase tracking-wider mb-6">
+              <span className="inline-flex items-center gap-2 px-3 py-1.5 bg-[#f97015]/20 text-[#fb923c] rounded-full text-xs font-semibold uppercase tracking-wider mb-6">
                 <Zap className="w-3.5 h-3.5" /> New Service
               </span>
               <h1 className="font-heading text-4xl sm:text-5xl font-extrabold text-white leading-[1.1] mb-6">
@@ -63,7 +63,7 @@ export default function AiVoiceAgent() {
               <div className="flex flex-wrap gap-4 mb-8">
                 <Link
                   href="/contact"
-                  className="inline-flex items-center gap-2 px-6 py-3.5 bg-[#f97015] text-white font-semibold rounded-lg hover:bg-[#e86510] transition-colors text-sm shadow-lg shadow-orange-500/25"
+                  className="inline-flex items-center gap-2 px-6 py-3.5 bg-[#f97015] text-[#0a1040] font-semibold rounded-lg hover:bg-[#e86510] transition-colors text-sm shadow-lg shadow-orange-500/25"
                 >
                   <Bot className="w-4 h-4" /> Book a Free Demo <ArrowRight className="w-4 h-4" />
                 </Link>
@@ -104,7 +104,7 @@ export default function AiVoiceAgent() {
       <section className="py-20 lg:py-28 bg-white">
         <div className="container">
           <div className="text-center max-w-2xl mx-auto mb-14">
-            <p className="text-sm font-semibold text-[#f97015] uppercase tracking-wider mb-3">How It Works</p>
+            <p className="text-sm font-semibold text-[#c2410c] uppercase tracking-wider mb-3">How It Works</p>
             <h2 className="font-heading text-3xl sm:text-4xl font-bold text-slate-900 mb-4">
               Your AI Receptionist That Never Sleeps
             </h2>
@@ -162,7 +162,7 @@ export default function AiVoiceAgent() {
       <section className="py-20 lg:py-28 bg-white">
         <div className="container">
           <div className="text-center max-w-2xl mx-auto mb-14">
-            <p className="text-sm font-semibold text-[#f97015] uppercase tracking-wider mb-3">Who It's For</p>
+            <p className="text-sm font-semibold text-[#c2410c] uppercase tracking-wider mb-3">Who It's For</p>
             <h2 className="font-heading text-3xl sm:text-4xl font-bold text-slate-900 mb-4">
               Built for Local Businesses
             </h2>
@@ -215,7 +215,7 @@ export default function AiVoiceAgent() {
       <section className="py-20 lg:py-28 bg-white">
         <div className="container max-w-4xl">
           <div className="text-center mb-14">
-            <p className="text-sm font-semibold text-[#f97015] uppercase tracking-wider mb-3">Pricing</p>
+            <p className="text-sm font-semibold text-[#c2410c] uppercase tracking-wider mb-3">Pricing</p>
             <h2 className="font-heading text-3xl sm:text-4xl font-bold text-slate-900 mb-4">
               Simple, Transparent Pricing
             </h2>
@@ -255,7 +255,7 @@ export default function AiVoiceAgent() {
                   </li>
                 ))}
               </ul>
-              <Link href="/contact" className="block w-full text-center px-6 py-3 bg-[#f97015] text-white font-semibold rounded-lg hover:bg-[#e86510] transition-colors text-sm shadow-lg">
+              <Link href="/contact" className="block w-full text-center px-6 py-3 bg-[#f97015] text-[#0a1040] font-semibold rounded-lg hover:bg-[#e86510] transition-colors text-sm shadow-lg">
                 Book a Free Demo
               </Link>
             </div>
@@ -326,7 +326,7 @@ export default function AiVoiceAgent() {
             Book a free demo and see how LEDConnect AI Voice Agents can transform your business communications.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <Link href="/contact" className="inline-flex items-center gap-2 px-6 py-3.5 bg-[#f97015] text-white font-semibold rounded-lg hover:bg-[#e86510] transition-colors text-sm shadow-lg">
+            <Link href="/contact" className="inline-flex items-center gap-2 px-6 py-3.5 bg-[#f97015] text-[#0a1040] font-semibold rounded-lg hover:bg-[#e86510] transition-colors text-sm shadow-lg">
               <Bot className="w-4 h-4" /> Book Your Free Demo <ArrowRight className="w-4 h-4" />
             </Link>
             <a href={SITE.phoneTel} className="inline-flex items-center gap-2 px-6 py-3.5 bg-white/10 text-white font-semibold rounded-lg hover:bg-white/20 transition-colors border border-white/20 text-sm">

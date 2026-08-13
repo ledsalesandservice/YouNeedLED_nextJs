@@ -63,7 +63,7 @@ export default function FAQ() {
           <h2 className="font-heading text-2xl font-bold text-slate-900 mb-4">Still Have Questions?</h2>
           <p className="text-slate-600 mb-6">Our team is here to help. Contact us for a free consultation.</p>
           <div className="flex flex-wrap justify-center gap-4">
-            <Link href="/contact" className="inline-flex items-center gap-2 px-6 py-3 bg-[#f97015] text-white font-semibold rounded-lg hover:bg-[#e86510] transition-colors text-sm">
+            <Link href="/contact" className="inline-flex items-center gap-2 px-6 py-3 bg-[#f97015] text-[#0a1040] font-semibold rounded-lg hover:bg-[#e86510] transition-colors text-sm">
               Contact Us <ArrowRight className="w-4 h-4" />
             </Link>
             <a href={SITE.phoneTel} className="inline-flex items-center gap-2 px-6 py-3 bg-[#0e319a] text-white font-semibold rounded-lg hover:bg-[#0c2a82] transition-colors text-sm">

@@ -26,6 +26,7 @@ const NotFound          = lazy(() => import("./pages/NotFound"));
 const TermsOfService    = lazy(() => import("./pages/TermsOfService"));
 const PrivacyPolicy     = lazy(() => import("./pages/PrivacyPolicy"));
 const CaseStudies       = lazy(() => import("./pages/CaseStudies"));
+const Support           = lazy(() => import("./pages/Support"));
 const CaseStudy         = lazy(() => import("./pages/CaseStudy"));
 const Testimonials      = lazy(() => import("./pages/Testimonials"));
 
@@ -95,6 +96,7 @@ function Router() {
         <Route path="/blog" component={Blog} />
         <Route path="/blog/:slug" component={BlogPost} />
         <Route path="/faq" component={FAQ} />
+        <Route path="/support" component={Support} />
         <Route path="/client-portal" component={ClientPortal} />
         <Route path="/services/video-surveillance" component={VideoSurveillance} />
         <Route path="/services/access-control" component={AccessControl} />

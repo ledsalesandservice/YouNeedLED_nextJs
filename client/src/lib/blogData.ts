@@ -4237,5 +4237,58 @@ For You Need L.E.D., it's the kind of project we love: a local institution, a te
 Live cameras aren't just for famous elephants. We install professional camera systems for homes, businesses, hotels, and community spaces across South Jersey — with secure remote viewing from anywhere.
 
 Call us at **(609) 335-0123** or visit **youneedled.com** to talk about your project. And next time you're in Margate, say hi to Lucy — she's watching. 👋🐘`
+  },
+  {
+    slug: "can-ethernet-share-conduit-with-led-sign-power-nec",
+    title: "Can Ethernet Share a Conduit with LED Sign Power? The NEC Says No — Here's the Rule",
+    date: "2026-08-13",
+    category: "LED Signs",
+    excerpt: "A customer asked us to run Cat6 in the same conduit as their LED sign's power feed. NEC 800.133(A)(1)(c) says no. Here's the exact code language, the limited exceptions, and the compliant ways to do it.",
+    readTime: "4 min read",
+    author: "Derek Weikel",
+    image: "/blog-images/blog-led-display-1200w.webp",
+    content: `# Can Ethernet Share a Conduit with LED Sign Power? The NEC Says No
+
+Last week a customer in Egg Harbor Township asked us to pull Cat6 Ethernet through the same conduit that feeds his LED sign — one pipe, power and data together, straight up the pole. It sounds convenient. It's also a code violation, and when we told him, he pushed back. So we pulled the rule and put it on the record, because this comes up more often than it should.
+
+## The Rule: NEC 800.133(A)(1)(c)
+
+Ethernet cable is a **communications circuit**, governed by **Article 800** of the National Electrical Code. And Article 800 is explicit about what communications cable can share a raceway with:
+
+> "Communications wires and cables shall not be placed in any raceway, compartment, outlet box, junction box, or similar fitting with conductors of electric light, power, Class 1, non-power-limited fire alarm circuits, or medium-power network-powered broadband communications circuits."
+
+Your LED sign's supply is an **electric light/power circuit**. Ethernet is a **communications circuit**. Same conduit? Not permitted.
+
+## It's Not Just One Section
+
+The code backs this up in three more places:
+
+- **NEC 800.133(A)(2)** — communications circuits must keep a minimum **2-inch separation** from electric light and power conductors.
+- **NEC 725.136** — even if that Ethernet is carrying **Power over Ethernet (PoE)**, power-limited circuits still can't share a raceway with line-voltage conductors. PoE doesn't change the answer.
+- **NEC 300.3(C)(1)** — the general rule that allows mixed circuits in one raceway does **not** override Article 800's specific separation requirements.
+
+## The Exceptions (They're Narrow)
+
+Communications cable can share a raceway with power only if:
+
+- A **listed barrier** separates the compartments inside the raceway, or
+- The power conductors are in a **Chapter 3 wiring method with an overall covering** — a jacketed cable like MC or UF, not bare THHN pulled alongside the Cat6.
+
+Neither applies to the typical "run it all in one pipe" plan.
+
+## What We Actually Recommend
+
+For LED signs, we offer two code-compliant paths:
+
+1. **Separate conduit for the data run** — a second pipe up the pole, clean and simple.
+2. **Fiber optic** — nonconductive fiber is permitted with power conductors under **NEC 770.133(A)**. It's the standard answer for signs: fiber up the pole, a media converter at each end, no interference, no grounding headaches.
+
+## The Bottom Line
+
+We're not saying it because it's easier to sell a second conduit. We're saying it because the National Electrical Code says it — and because a violation found at inspection means a second trip, a re-pull, and a customer who pays twice.
+
+If you're planning a sign, a lighting upgrade, or any project where data and power need to meet, ask about the code-compliant path first. We'll design it right the first time.
+
+**You Need L.E.D.** is a full-service technology contractor serving South Jersey — LED signs, digital displays, security, fiber, and networking. Licensed by the **NJ Division of Consumer Affairs (#34BF00056900)**. Call **(609) 335-0123** or visit **youneedled.com** to talk through your project.`
   }
 ];

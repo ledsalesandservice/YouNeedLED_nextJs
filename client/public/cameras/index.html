@@ -152,9 +152,9 @@
             transition: all 0.5s ease;
             white-space: nowrap;
         }
-        .announcement-item.active { transform: translateY(0); opacity: 1; }
-        .announcement-item.above { transform: translateY(-100%); opacity: 0; }
-        .announcement-item.below { transform: translateY(100%); opacity: 0; }
+        .announcement-item.active { transform: translateY(0); opacity: 1; display: flex; }
+        .announcement-item.above { transform: translateY(-100%); opacity: 0; display: none; }
+        .announcement-item.below { transform: translateY(100%); opacity: 0; display: none; }
         .announcement-text {
             font-family: "JetBrains Mono", monospace;
             font-size: 0.75rem;

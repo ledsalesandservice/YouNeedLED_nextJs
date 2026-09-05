@@ -54,5 +54,31 @@ ${message}
     return res.status(500).json({ error: "Failed to send email" });
   }
 
+  // Request Quote form → LED CRM lead (auto-creates the client, de-dups on
+  // email/name, pings Derek on WhatsApp). Must never make the website form
+  // fail for the visitor, so errors are logged and swallowed.
+  await forwardLeadToCrm({ name, email, phone, service, message });
+
   return res.status(200).json({ ok: true });
+}
+
+async function forwardLeadToCrm(lead: Record<string, string | undefined>) {
+  const base = process.env.CRM_LEAD_URL || "https://crm.youneedled.com/api/website-lead";
+  const secret = process.env.CRM_LEAD_SECRET;
+  if (!secret) {
+    console.warn("CRM_LEAD_SECRET not set — lead not forwarded to CRM");
+    return;
+  }
+  try {
+    const url = `${base}${base.includes("?") ? "&" : "?"}secret=${encodeURIComponent(secret)}`;
+    const resp = await fetch(url, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ ...lead, source: "website_quote_form" }),
+      signal: AbortSignal.timeout(8000),
+    });
+    if (!resp.ok) console.error("CRM lead forward failed:", resp.status, (await resp.text()).slice(0, 200));
+  } catch (e) {
+    console.error("CRM lead forward error:", e);
+  }
 }

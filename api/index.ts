@@ -2,7 +2,7 @@ import express, { Request, Response } from "express";
 import path from "path";
 import { readFileSync } from "fs";
 import { fileURLToPath } from "url";
-import { getPageMeta, ALL_META } from "../server/seoMeta.js";
+import { getPageMeta, isKnownPath } from "../server/seoMeta.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -13,11 +13,6 @@ function escapeHtml(str: string): string {
     .replace(/"/g, "&quot;")
     .replace(/</g, "&lt;")
     .replace(/>/g, "&gt;");
-}
-
-function isKnownPath(urlPath: string): boolean {
-  const normalized = urlPath.length > 1 ? urlPath.replace(/\/$/, "") : urlPath;
-  return normalized in ALL_META;
 }
 
 function injectMeta(html: string, urlPath: string, is404 = false): string {

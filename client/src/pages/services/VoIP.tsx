@@ -173,8 +173,8 @@ export default function VoIP() {
               { city: "Cherry Hill, NJ", href: "/locations/cherry-hill-nj" },
               { city: "Voorhees, NJ", href: "/locations/voorhees-nj" },
               { city: "Mount Laurel, NJ", href: "/locations/mount-laurel-nj" },
-              { city: "Egg Harbor Township, NJ", href: "/locations/egg-harbor-township-nj" },
-              { city: "Somers Point, NJ", href: "/locations/somers-point-nj" },
+              { city: "Egg Harbor Township, NJ", href: "/service-areas/egg-harbor-township" },
+              { city: "Somers Point, NJ", href: "/service-areas/somers-point" },
               { city: "Atlantic City, NJ", href: "/locations/atlantic-city-nj" },
             ].map((loc) => (
               <Link key={loc.city} href={loc.href} className="flex items-center gap-2 p-4 bg-slate-50 rounded-lg border border-slate-200 hover:border-[#0e319a]/30 hover:shadow-sm transition-all text-sm font-medium text-slate-700 hover:text-[#0e319a]">

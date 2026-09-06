@@ -5,7 +5,6 @@
 import { Link } from "wouter";
 import { SITE } from "@/lib/siteData";
 import { Phone, ArrowRight, ChevronDown } from "lucide-react";
-import { useState } from "react";
 import {
   Breadcrumb, BreadcrumbList, BreadcrumbItem, BreadcrumbLink,
   BreadcrumbPage, BreadcrumbSeparator,
@@ -59,8 +58,6 @@ export default function ServicePageLayout({
   schemaType,
   pageSlug,
 }: Props) {
-  const [openFaq, setOpenFaq] = useState<number | null>(null);
-
   return (
     <>
       {/* Visible breadcrumb nav — Home / Services / <Page Title> */}
@@ -153,22 +150,19 @@ export default function ServicePageLayout({
             <h2 className="font-heading text-2xl sm:text-3xl font-bold text-slate-900 text-center mb-10">
               Frequently Asked Questions
             </h2>
+            {/* <details>/<summary> keeps every answer in the DOM for crawlers
+                (same pattern as LocationPage.tsx) while staying collapsible. */}
             <div className="space-y-3">
               {faqs.map((faq, i) => (
-                <div key={i} className="bg-white rounded-xl border border-slate-200 overflow-hidden">
-                  <button
-                    onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                    className="w-full flex items-center justify-between p-5 text-left"
-                  >
+                <details key={i} className="bg-white rounded-xl border border-slate-200 overflow-hidden group">
+                  <summary className="w-full flex items-center justify-between p-5 text-left cursor-pointer list-none">
                     <span className="font-heading text-sm font-semibold text-slate-900 pr-4">{faq.q}</span>
-                    <ChevronDown className={`w-5 h-5 text-slate-400 shrink-0 transition-transform ${openFaq === i ? "rotate-180" : ""}`} />
-                  </button>
-                  {openFaq === i && (
-                    <div className="px-5 pb-5">
-                      <p className="text-sm text-slate-600 leading-relaxed">{faq.a}</p>
-                    </div>
-                  )}
-                </div>
+                    <ChevronDown className="w-5 h-5 text-slate-400 shrink-0 transition-transform group-open:rotate-180" />
+                  </summary>
+                  <div className="px-5 pb-5">
+                    <p className="text-sm text-slate-600 leading-relaxed">{faq.a}</p>
+                  </div>
+                </details>
               ))}
             </div>
           </div>

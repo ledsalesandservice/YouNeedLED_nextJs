@@ -3,7 +3,7 @@ import { createServer } from "http";
 import path from "path";
 import { readFileSync } from "fs";
 import { fileURLToPath } from "url";
-import { getPageMeta, META_COUNT, ALL_META } from "./seoMeta.js";
+import { getPageMeta, META_COUNT, ALL_META, isKnownPath } from "./seoMeta.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -14,12 +14,6 @@ function escapeHtml(str: string): string {
     .replace(/"/g, "&quot;")
     .replace(/</g, "&lt;")
     .replace(/>/g, "&gt;");
-}
-
-/** Check if a URL path has explicit metadata (i.e., is a known page) */
-function isKnownPath(urlPath: string): boolean {
-  const normalized = urlPath.length > 1 ? urlPath.replace(/\/$/, "") : urlPath;
-  return normalized in ALL_META;
 }
 
 /** Inject per-page title + description into the index.html template. */

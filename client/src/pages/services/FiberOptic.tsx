@@ -261,7 +261,7 @@ export default function FiberOptic() {
                 { city: "Cherry Hill, NJ", href: "/locations/cherry-hill-nj" },
                 { city: "Mount Laurel, NJ", href: "/locations/mount-laurel-nj" },
                 { city: "Atlantic City, NJ", href: "/locations/atlantic-city-nj" },
-                { city: "Vineland, NJ", href: "/locations/vineland-nj" },
+                { city: "Camden, NJ", href: "/locations/camden-nj" },
                 { city: "Toms River, NJ", href: "/locations/toms-river-nj" },
                 { city: "Philadelphia, PA", href: "/locations/philadelphia-pa" },
               ].map((loc) => (

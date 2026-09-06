@@ -8,6 +8,7 @@
 import { ALL_LOCATIONS, COUNTY_DATA } from "./locationData";
 import { ALL_BLOG_POSTS as blogPosts, BlogPost } from "./blogData";
 import { caseStudies } from "./caseStudyData";
+import { SERVICE_AREA_TOWNS } from "./serviceAreaData";
 
 const BASE_URL = "https://www.youneedled.com";
 const TODAY = new Date().toISOString().split("T")[0];
@@ -25,8 +26,11 @@ export function getAllSitemapUrls(): string[] {
     "/blog",
     "/faq",
     "/client-portal",
-    "/cameras",
-    "/phone-systems",
+    "/support",
+    "/testimonials",
+    "/free-security-audit",
+    // NOTE: /cameras and /phone-systems are static landing pages that canonical
+    // to /services/video-surveillance and /services/voip — intentionally omitted.
     "/live-cameras",
     "/services/video-surveillance",
     "/services/access-control",
@@ -52,20 +56,7 @@ export function getAllSitemapUrls(): string[] {
 
   const countyUrls = COUNTY_DATA.map((c) => `/counties/${c.slug}`);
 
-  const serviceAreaUrls = [
-    "/ai-voice-agent",
-    "/service-areas/egg-harbor-township",
-    "/service-areas/somers-point",
-    "/service-areas/linwood",
-    "/service-areas/northfield",
-    "/service-areas/galloway",
-    "/service-areas/absecon",
-    "/service-areas/pleasantville",
-    "/service-areas/atlantic-city",
-    "/service-areas/ocean-city",
-    "/service-areas/ventnor",
-    "/service-areas/margate",
-  ];
+  const serviceAreaUrls = SERVICE_AREA_TOWNS.map((t) => `/service-areas/${t.slug}`);
 
   const blogUrls = blogPosts.map((b) => `/blog/${b.slug}`);
 
@@ -84,8 +75,12 @@ function buildSitemapXml(): string {
     { url: "/blog", priority: "0.8", changefreq: "weekly" },
     { url: "/faq", priority: "0.8", changefreq: "monthly" },
     { url: "/client-portal", priority: "0.5", changefreq: "yearly" },
-    { url: "/cameras", priority: "0.9", changefreq: "monthly" },
-    { url: "/phone-systems", priority: "0.9", changefreq: "monthly" },
+    { url: "/support", priority: "0.5", changefreq: "yearly" },
+    { url: "/testimonials", priority: "0.7", changefreq: "monthly" },
+    { url: "/free-security-audit", priority: "0.8", changefreq: "monthly" },
+    { url: "/ai-voice-agent", priority: "0.8", changefreq: "monthly" },
+    // /cameras and /phone-systems are static landing pages that canonical to
+    // /services/video-surveillance and /services/voip — intentionally omitted.
     { url: "/live-cameras", priority: "0.7", changefreq: "weekly" },
     { url: "/services/video-surveillance", priority: "0.9", changefreq: "monthly" },
     { url: "/services/access-control", priority: "0.9", changefreq: "monthly" },
@@ -126,6 +121,13 @@ function buildSitemapXml(): string {
   for (const county of [...COUNTY_DATA].sort((a, b) => a.slug.localeCompare(b.slug))) {
     entries.push(
       `  <url>\n    <loc>${BASE_URL}/counties/${county.slug}</loc>\n    <lastmod>${TODAY}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.7</priority>\n  </url>`
+    );
+  }
+
+  // Enriched town pages at /service-areas/:slug (client/src/lib/serviceAreaData.ts)
+  for (const town of [...SERVICE_AREA_TOWNS].sort((a, b) => a.slug.localeCompare(b.slug))) {
+    entries.push(
+      `  <url>\n    <loc>${BASE_URL}/service-areas/${town.slug}</loc>\n    <lastmod>${TODAY}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.8</priority>\n  </url>`
     );
   }
 

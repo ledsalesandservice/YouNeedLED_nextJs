@@ -12,7 +12,8 @@
  *  3. /case-studies/:slug — generated from caseStudies data
  *  4. /locations/:slug   — generated from ALL_LOCATIONS data
  *  5. /counties/:slug    — generated from COUNTY_DATA data
- *  6. Default fallback   (homepage title/description)
+ *  6. Pattern routes     — /live/:streamId (PATTERN_META, regex match)
+ *  7. Default fallback   (homepage title/description)
  */
 
 import { ALL_LOCATIONS, COUNTY_DATA } from "../client/src/lib/locationData.js";
@@ -84,8 +85,9 @@ const STATIC_META: Record<string, PageMeta> = {
     description: `Explore You Need L.E.D. services: 4K security cameras, VoIP phone systems, access control, fire alarms, intrusion detection & LEDConnect AI Voice Agents. NJ DCA Licensed in South Jersey. Call ${PHONE}.`,
   },
   "/services/video-surveillance": {
-    title: `Security Camera Installation South Jersey | ${SUFFIX}`,
-    description: `4K AI security camera installation in South Jersey. NJ DCA Licensed. Commercial & residential. Free quote — call ${PHONE}.`,
+    // Keep in sync with client/src/pages/services/VideoSurveillance.tsx <SEOHead title>
+    title: `Video Surveillance & Security Camera Installation South Jersey | ${SUFFIX}`,
+    description: `4K AI video surveillance and security camera installation in South Jersey. NJ DCA Licensed. Commercial & residential. Free quote — call ${PHONE}.`,
   },
   "/cameras": {
     title: `Security Camera Installation South Jersey | ${SUFFIX}`,
@@ -155,7 +157,25 @@ const STATIC_META: Record<string, PageMeta> = {
     title: `Client Portal | ${SUFFIX}`,
     description: `Access the You Need L.E.D. client portal to view your system status, service history, and account information. Call ${PHONE} for support.`,
   },
+  "/support": {
+    title: `Remote Support | ${SUFFIX}`,
+    description: `Download the You Need L.E.D. remote support tool so our technicians can connect to your system and help. NJ DCA Licensed. Call ${PHONE}.`,
+  },
 };
+
+// ─── Pattern-matched dynamic pages ───────────────────────────────────────────
+// Routes whose path segment is a runtime value (e.g. a camera stream ID) and
+// cannot be enumerated at build time. Checked after the exact-path lookup.
+const PATTERN_META: Array<{ pattern: RegExp; meta: PageMeta }> = [
+  {
+    // /live/:streamId — public HLS camera stream (client/src/pages/LiveView.tsx)
+    pattern: /^\/live\/[^/]+$/,
+    meta: {
+      title: `Live Security Camera Feed | ${SUFFIX}`,
+      description: `Live commercial-grade security camera feed streaming in real time from You Need L.E.D. 4K AI cameras with cloud storage. Call ${PHONE}.`,
+    },
+  },
+];
 
 // ─── Dynamic blog post pages ─────────────────────────────────────────────────
 const BLOG_META: Record<string, PageMeta> = {};
@@ -227,10 +247,24 @@ const NOT_FOUND_META: PageMeta = {
   description: "The page you are looking for doesn't exist. It may have been moved or deleted.",
 };
 
-export function getPageMeta(path: string): PageMeta {
+function normalizePath(path: string): string {
   // Normalize trailing slash (except root)
-  const normalized = path.length > 1 ? path.replace(/\/$/, "") : path;
-  return ALL_META[normalized] ?? NOT_FOUND_META;
+  return path.length > 1 ? path.replace(/\/$/, "") : path;
+}
+
+function matchPattern(normalized: string): PageMeta | undefined {
+  return PATTERN_META.find((p) => p.pattern.test(normalized))?.meta;
+}
+
+/** True when the path has explicit metadata (exact entry or dynamic pattern). */
+export function isKnownPath(path: string): boolean {
+  const normalized = normalizePath(path);
+  return normalized in ALL_META || matchPattern(normalized) !== undefined;
+}
+
+export function getPageMeta(path: string): PageMeta {
+  const normalized = normalizePath(path);
+  return ALL_META[normalized] ?? matchPattern(normalized) ?? NOT_FOUND_META;
 }
 
 /** Total number of URL paths with unique metadata (useful for verification) */

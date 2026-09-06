@@ -6,11 +6,8 @@ import { Link } from "wouter";
 import { SITE, FAQ_GENERAL } from "@/lib/siteData";
 import SEOHead from "@/components/SEOHead";
 import { Phone, ArrowRight } from "lucide-react";
-import { useState } from "react";
 
 export default function FAQ() {
-  const [openFaq, setOpenFaq] = useState<number | null>(0);
-
   return (
     <>
       <SEOHead
@@ -31,27 +28,24 @@ export default function FAQ() {
       {/* FAQ Content */}
       <section className="py-16 lg:py-20 bg-white">
         <div className="container max-w-3xl">
+          {/* <details>/<summary> keeps every answer in the DOM for crawlers.
+              First item starts open to preserve the previous default. */}
           <div className="space-y-3">
             {FAQ_GENERAL.map((faq, i) => (
-              <div key={i} className="bg-white rounded-xl border border-slate-200 overflow-hidden">
-                <button
-                  onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                  className="w-full flex items-center justify-between p-5 text-left"
-                >
+              <details key={i} open={i === 0} className="bg-white rounded-xl border border-slate-200 overflow-hidden group">
+                <summary className="w-full flex items-center justify-between p-5 text-left cursor-pointer list-none">
                   <span className="font-heading text-sm font-semibold text-slate-900 pr-4">{faq.q}</span>
                   <svg
-                    className={`w-5 h-5 text-slate-400 shrink-0 transition-transform ${openFaq === i ? "rotate-180" : ""}`}
+                    className="w-5 h-5 text-slate-400 shrink-0 transition-transform group-open:rotate-180"
                     viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"
                   >
                     <polyline points="6 9 12 15 18 9" />
                   </svg>
-                </button>
-                {openFaq === i && (
-                  <div className="px-5 pb-5">
-                    <p className="text-sm text-slate-600 leading-relaxed">{faq.a}</p>
-                  </div>
-                )}
-              </div>
+                </summary>
+                <div className="px-5 pb-5">
+                  <p className="text-sm text-slate-600 leading-relaxed">{faq.a}</p>
+                </div>
+              </details>
             ))}
           </div>
         </div>

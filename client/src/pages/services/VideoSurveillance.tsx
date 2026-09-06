@@ -9,8 +9,8 @@ export default function VideoSurveillance() {
   return (
     <>
       <SEOHead
-        title="Camera Installation Near Me | Security Cameras South Jersey | You Need L.E.D."
-        description="Looking for camera installation near you in South Jersey? You Need L.E.D. installs 4K AI security cameras for homes & businesses. NJ DCA Licensed. Call (609) 335-0123 for a free quote."
+        title="Video Surveillance & Security Camera Installation South Jersey"
+        description="4K AI video surveillance and security camera installation in South Jersey. NJ DCA Licensed. Commercial & residential. Free quote — call (609) 335-0123."
         canonical="/services/video-surveillance"
       />
       {/* Service Schema (FAQPage is handled by ServicePageLayout) */}
@@ -41,7 +41,7 @@ export default function VideoSurveillance() {
         },
       }) }} />
       <ServicePageLayout
-        title="Commercial Security Camera Systems"
+        title="Commercial Video Surveillance & Security Camera Installation in South Jersey"
         pageSlug="/services/video-surveillance"
         subtitle="Enterprise-grade 4K AI cameras with license plate recognition, cloud storage, and 24/7 remote monitoring. Installed by NJ DCA Licensed professionals serving South Jersey since 2010."
         heroImage={IMAGES.heroCameras}
@@ -413,8 +413,8 @@ export default function VideoSurveillance() {
                 { city: "Cherry Hill, NJ", href: "/locations/cherry-hill-nj" },
                 { city: "Voorhees, NJ", href: "/locations/voorhees-nj" },
                 { city: "Mount Laurel, NJ", href: "/locations/mount-laurel-nj" },
-                { city: "Egg Harbor Township, NJ", href: "/locations/egg-harbor-township-nj" },
-                { city: "Somers Point, NJ", href: "/locations/somers-point-nj" },
+                { city: "Egg Harbor Township, NJ", href: "/service-areas/egg-harbor-township" },
+                { city: "Somers Point, NJ", href: "/service-areas/somers-point" },
                 { city: "Atlantic City, NJ", href: "/locations/atlantic-city-nj" },
               ].map((loc) => (
                 <Link key={loc.city} href={loc.href} className="flex items-center gap-2 p-4 bg-slate-50 rounded-lg border border-slate-200 hover:border-[#0e319a]/30 hover:shadow-sm transition-all text-sm font-medium text-slate-700 hover:text-[#0e319a]">

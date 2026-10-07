@@ -185,13 +185,13 @@ export default defineConfig(({ command }) => {
     emptyOutDir: true,
     // Improve chunk splitting for better caching and smaller initial payload
     rollupOptions: {
-      output: {
-        manualChunks: {
-          // Separate vendor bundle so it can be cached independently
-          vendor: ["react", "react-dom"],
-          router: ["wouter"],
-          ui: ["lucide-react", "framer-motion"],
-        },
+              output: {
+                manualChunks(id) {
+                  if (id.includes("node_modules/react") && !id.includes("wouter")) return "vendor";
+                  if (id.includes("wouter")) return "router";
+                  if (id.includes("lucide-react") || id.includes("framer-motion") || id.includes("embla-carousel") || id.includes("cmdk") || id.includes("input-otp") || id.includes("class-variance-authority")) return "ui";
+                  if (id.includes("@radix-ui")) return "radix";
+                },
       },
     },
     // Increase chunk size warning threshold (our chunks are intentionally split)

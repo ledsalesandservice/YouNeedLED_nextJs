@@ -105,6 +105,11 @@ const STATIC_META: Record<string, PageMeta> = {
     title: `Intrusion Detection South Jersey | ${SUFFIX}`,
     description: `Commercial & residential alarm systems with 24/7 monitoring, video verification & mobile alerts. NJ DCA Licensed in South Jersey. Free quote: ${PHONE}.`,
   },
+  "/services/senior-care-wellness": {
+    // Keep in sync with client/src/pages/services/SeniorCareWellness.tsx <SEOHead title>
+    title: `Senior Care & Wellness Monitoring | Aging in Place | ${SUFFIX}`,
+    description: `Alarm.com-powered wellness monitoring for seniors in South Jersey. Non-intrusive activity sensors, one-touch video check-ins and 24/7 alerts that spot changes in routine early. Free consultation: ${PHONE}.`,
+  },
   "/services/jobsite-security": {
     title: `Construction Site Security Cameras NJ | ${SUFFIX}`,
     description: `Solar-powered wireless jobsite cameras for South Jersey construction sites. No power or internet needed. NJ DCA Licensed. Call ${PHONE}.`,

@@ -89,7 +89,7 @@ export default function SeniorCareWellness() {
       heroImage="/blog-images/blog-fire-alarm2-1200w.webp"
       heroImageAlt="Senior independent living at home supported by proactive wellness monitoring technology"
       primaryCta={{ label: "Free Wellness Consultation", href: "/contact" }}
-      secondaryCta={{ label: "Call (609) 335-0123", href: "/contact" }}
+      secondaryCta={{ label: "Call (609) 335-0123", href: SITE.phoneTel }}
       features={[
         { icon: <Activity className="w-6 h-6" />, title: "Know They're Safe", description: "Non-intrusive sensors tell you when important activity is — or isn't — happening, without a panic pendant." },
         { icon: <Eye className="w-6 h-6" />, title: "Stay Aware", description: "Door and cabinet sensors, plus fall-detection wearables that alert you even if the button is never pressed." },

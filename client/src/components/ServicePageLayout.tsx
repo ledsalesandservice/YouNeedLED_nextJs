@@ -111,12 +111,21 @@ export default function ServicePageLayout({
               {primaryCta.label} <ArrowRight className="w-4 h-4" />
             </Link>
             {secondaryCta && (
-              <Link
-                href={secondaryCta.href}
-                className="inline-flex items-center gap-2 px-6 py-3.5 bg-white/10 text-white font-semibold rounded-lg hover:bg-white/20 transition-colors border border-white/20 text-sm"
-              >
-                {secondaryCta.label}
-              </Link>
+              secondaryCta.href.startsWith("tel:") ? (
+                <a
+                  href={secondaryCta.href}
+                  className="inline-flex items-center gap-2 px-6 py-3.5 bg-white text-[#0e319a] font-semibold rounded-lg hover:bg-white/90 transition-colors text-sm"
+                >
+                  {secondaryCta.label}
+                </a>
+              ) : (
+                <Link
+                  href={secondaryCta.href}
+                  className="inline-flex items-center gap-2 px-6 py-3.5 bg-white/15 text-white font-semibold rounded-lg hover:bg-white/25 transition-colors border border-white/25 text-sm"
+                >
+                  {secondaryCta.label}
+                </Link>
+              )
             )}
           </div>
         </div>
@@ -269,14 +278,15 @@ export default function ServicePageLayout({
             Ready to Get Started?
           </h2>
           <p className="text-white/80 mb-8 max-w-lg mx-auto">
-            Contact our licensed professionals for a comprehensive assessment.
+            Talk to a real person about what you're trying to solve. We'll walk you through your options — no pressure, no
+            obligation.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Link href="/contact" className="inline-flex items-center gap-2 px-6 py-3.5 bg-[#f97015] text-[#0a1040] font-semibold rounded-lg hover:bg-[#e86510] transition-colors text-sm">
               Request Assessment <ArrowRight className="w-4 h-4" />
             </Link>
-            <a href={SITE.phoneTel} className="inline-flex items-center gap-2 px-6 py-3.5 bg-white/10 text-white font-semibold rounded-lg hover:bg-white/20 transition-colors border border-white/20 text-sm">
-              <Phone className="w-4 h-4" /> Emergency: {SITE.phone}
+            <a href={SITE.phoneTel} className="inline-flex items-center gap-2 px-6 py-3.5 bg-white text-[#0e319a] font-semibold rounded-lg hover:bg-white/90 transition-colors text-sm">
+              <Phone className="w-4 h-4" /> Call Us: {SITE.phone}
             </a>
           </div>
         </div>

@@ -11,7 +11,7 @@ import { FEATURED_BLOG_POSTS } from "@/lib/blogPreviewData";
 import SEOHead from "@/components/SEOHead";
 import {
   Phone, ArrowRight, Star, Shield, Clock, Users, Award,
-  Camera, KeyRound, Flame, ShieldAlert, HardHat, Monitor, Cable,
+  Camera, KeyRound, Flame, ShieldAlert, HardHat, Monitor, Cable, HeartPulse,
   Bot, PhoneOff, CalendarCheck, UserCheck, Zap, CheckCircle2,
   MapPin, ChevronRight, Youtube
 } from "lucide-react";
@@ -28,6 +28,7 @@ const iconMap: Record<string, React.ReactNode> = {
   HardHat: <Shield className="w-6 h-6" />,
   Monitor: <Monitor className="w-6 h-6" />,
   Cable: <Cable className="w-6 h-6" />,
+  HeartPulse: <HeartPulse className="w-6 h-6" />,
 };
 
 // Town-name → real page path. Service-area towns are mapped first so their

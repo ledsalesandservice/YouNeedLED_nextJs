@@ -45,6 +45,7 @@ export function getAllSitemapUrls(): string[] {
     "/services/fiber-optic",
     "/services/cannabis-security",
     "/services/business-phone-systems-south-jersey",
+    "/services/senior-care-wellness",
     "/case-studies",
     "/terms-of-service",
     "/privacy-policy",
@@ -96,6 +97,7 @@ function buildSitemapXml(): string {
     { url: "/services/fiber-optic", priority: "0.8", changefreq: "monthly" },
     { url: "/services/cannabis-security", priority: "0.9", changefreq: "monthly" },
     { url: "/services/business-phone-systems-south-jersey", priority: "0.9", changefreq: "monthly" },
+    { url: "/services/senior-care-wellness", priority: "0.8", changefreq: "monthly" },
     { url: "/terms-of-service", priority: "0.4", changefreq: "yearly" },
     { url: "/privacy-policy", priority: "0.4", changefreq: "yearly" },
   ];

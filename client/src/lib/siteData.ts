@@ -65,6 +65,7 @@ export const NAV_ITEMS = [
       { label: "Apartment Complexes", href: "/services/apartment-security" },
       { label: "Fiber Optic Installation", href: "/services/fiber-optic" },
       { label: "Cannabis Security", href: "/services/cannabis-security" },
+      { label: "Senior Care & Wellness Monitoring", href: "/services/senior-care-wellness" },
     ],
   },
   {
@@ -167,6 +168,12 @@ export const SERVICES = [
     description: "Cloud-managed digital displays for restaurants, retail, offices, healthcare, schools, and more. Professional installation throughout South Jersey.",
     href: "/services/digital-signage",
     icon: "Monitor",
+  },
+  {
+    title: "Senior Care & Wellness Monitoring",
+    description: "Proactive home wellness monitoring for seniors — non-intrusive sensors, fall detection, and Wellcam video check-ins so loved ones can age in place safely.",
+    href: "/services/senior-care-wellness",
+    icon: "HeartPulse",
   },
 ];
 

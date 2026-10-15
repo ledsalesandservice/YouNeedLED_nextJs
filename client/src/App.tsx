@@ -44,6 +44,7 @@ const DigitalSignage     = lazy(() => import("./pages/services/DigitalSignage"))
 const FiberOptic           = lazy(() => import("./pages/services/FiberOptic"));
 const CannabisSecurity     = lazy(() => import("./pages/services/CannabisSecurity"));
 const BusinessPhoneSystems = lazy(() => import("./pages/services/BusinessPhoneSystems"));
+const SeniorCareWellness = lazy(() => import("./pages/services/SeniorCareWellness"));
 
 // Dynamic location / county pages
 const LocationPage = lazy(() => import("./pages/LocationPage"));
@@ -113,6 +114,7 @@ function Router() {
         <Route path="/services/fiber-optic" component={FiberOptic} />
         <Route path="/services/cannabis-security" component={CannabisSecurity} />
         <Route path="/services/business-phone-systems-south-jersey" component={BusinessPhoneSystems} />
+        <Route path="/services/senior-care-wellness" component={SeniorCareWellness} />
         {/* Short URL aliases for landing pages */}
         <Route path="/cameras" component={VideoSurveillance} />
         <Route path="/phone-systems" component={VoIP} />

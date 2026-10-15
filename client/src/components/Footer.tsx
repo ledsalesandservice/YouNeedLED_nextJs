@@ -5,6 +5,7 @@
 import { Link } from "wouter";
 import { SITE } from "@/lib/siteData";
 import { Phone, Mail, MapPin, Youtube } from "lucide-react";
+import AlarmComLogo from "@/components/AlarmComLogo";
 
 export default function Footer() {
   return (
@@ -53,6 +54,7 @@ export default function Footer() {
                 { label: "LEDConnect AI Voice", href: "/services/ai-voice-agent" },
                 { label: "Digital Signage", href: "/services/digital-signage" },
                 { label: "Fiber Optic Cabling", href: "/services/fiber-optic" },
+                { label: "Senior Care & Wellness Monitoring", href: "/services/senior-care-wellness" },
                 { label: "Case Studies", href: "/case-studies" },
                 { label: "Client Testimonials", href: "/testimonials" },
                 { label: "Live Camera Feeds", href: "/live-cameras" },
@@ -114,6 +116,22 @@ export default function Footer() {
               <p className="text-xs text-white/70">{SITE.hours.sunday}</p>
             </div>
           </div>
+        </div>
+      </div>
+
+      {/* Powered by Alarm.com */}
+      <div className="border-t border-white/10">
+        <div className="container py-7 flex items-center justify-center">
+          <a
+            href="https://www.alarm.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-3 text-white hover:opacity-90 transition-opacity"
+            aria-label="Powered by Alarm.com"
+          >
+            <span className="text-[11px] uppercase tracking-[0.18em] text-white/55">Powered by</span>
+            <AlarmComLogo className="h-5 w-auto text-white" />
+          </a>
         </div>
       </div>
 
